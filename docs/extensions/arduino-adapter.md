@@ -1,366 +1,315 @@
 ---
 layout: default
 title: "Arduino adapter"
+description: "A carrier that connects an Arduino Uno-format shield to five Gadgeteer sockets of a controller, with software-configured signal direction and two Qwiic ports."
 permalink: /extensions/arduino-adapter
 ---
 
-# Arduino adapter
-
-This board connects selected Uno-format shields to Smoothieboard V2 Prime. It is an active routing and level-interface board, not a universal passive Uno pin adapter. A shield must have its own voltage, protocol, current and pin-use compatibility entry before it can be used.
-
-## How it works
-
-The board has five Gadgeteer host connectors, six SN74LV595A shift registers, return-path switches, three SN74LXC8T245 receivers, output drivers, an ADS7138 I2C ADC and a selectable PWM source. These parts configure and observe the shield interface. 
-
-## Power, signals and limits
-
-J1–J5 are separately labelled GB, GD, GE, GG and GC. They are not interchangeable ribbons. J6/J7/J8/J9 are the Uno digital, power and analogue headers; J10 is the shield ICSP header. J11 and J12 are distinct 3.3 V Qwiic buses from GB and GG, not one bridged bus. Shield IOREF/VIO, RESET, VIN and protected 5 V ownership must be checked for the actual shield; physical header fit alone does not establish electrical compatibility.
-
-## Board reference
-
-<details markdown="1">
-<summary>Reading the connector callouts</summary>
-
-The dark end of each pill gives the source contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
-
-- Red: 3.3 V supply.
-- Orange: 5 V supply.
-- Green: Control signal.
-- Green: Signal — use the printed function label.
-- Near-black: Circuit ground.
-- Grey: Not routed on this board.
-- Dark grey: Other source-labelled contact — read its exact function.
-
-A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
-
-</details>
-
-Start with the overview, then use all focused sheets for exact contacts, controls and links.
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-overview" src="/images/extensions/arduino-adapter/guides/reader-compact-overview.png" title="Active Arduino adapter — overview" alt="Active Arduino adapter — overview for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j1-1-5" src="/images/extensions/arduino-adapter/guides/reader-compact-j1-1-5-central-pills.png" title="J1 · GB host — j1 1 5" alt="J1 · GB host — j1 1 5 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j1-6-10" src="/images/extensions/arduino-adapter/guides/reader-compact-j1-6-10-central-pills.png" title="J1 · GB host — j1 6 10" alt="J1 · GB host — j1 6 10 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j2-1-5" src="/images/extensions/arduino-adapter/guides/reader-compact-j2-1-5-central-pills.png" title="J2 · GD host — j2 1 5" alt="J2 · GD host — j2 1 5 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j2-6-10" src="/images/extensions/arduino-adapter/guides/reader-compact-j2-6-10-central-pills.png" title="J2 · GD host — j2 6 10" alt="J2 · GD host — j2 6 10 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j3-1-5" src="/images/extensions/arduino-adapter/guides/reader-compact-j3-1-5-central-pills.png" title="J3 · GE host — j3 1 5" alt="J3 · GE host — j3 1 5 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j3-6-10" src="/images/extensions/arduino-adapter/guides/reader-compact-j3-6-10-central-pills.png" title="J3 · GE host — j3 6 10" alt="J3 · GE host — j3 6 10 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j4-1-5" src="/images/extensions/arduino-adapter/guides/reader-compact-j4-1-5-central-pills.png" title="J4 · GG host — j4 1 5" alt="J4 · GG host — j4 1 5 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j4-6-10" src="/images/extensions/arduino-adapter/guides/reader-compact-j4-6-10-central-pills.png" title="J4 · GG host — j4 6 10" alt="J4 · GG host — j4 6 10 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j5-1-5" src="/images/extensions/arduino-adapter/guides/reader-compact-j5-1-5-central-pills.png" title="J5 · GC host — j5 1 5" alt="J5 · GC host — j5 1 5 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j5-6-10" src="/images/extensions/arduino-adapter/guides/reader-compact-j5-6-10-central-pills.png" title="J5 · GC host — j5 6 10" alt="J5 · GC host — j5 6 10 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j6-1-5" src="/images/extensions/arduino-adapter/guides/reader-compact-j6-1-5-central-pills.png" title="J6 · Uno digital high — j6 1 5" alt="J6 · Uno digital high — j6 1 5 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j6-6-10" src="/images/extensions/arduino-adapter/guides/reader-compact-j6-6-10-central-pills.png" title="J6 · Uno digital high — j6 6 10" alt="J6 · Uno digital high — j6 6 10 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j7-1-5" src="/images/extensions/arduino-adapter/guides/reader-compact-j7-1-5-central-pills.png" title="J7 · Uno digital low — j7 1 5" alt="J7 · Uno digital low — j7 1 5 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j7-6-8" src="/images/extensions/arduino-adapter/guides/reader-compact-j7-6-8-central-pills.png" title="J7 · Uno digital low — j7 6 8" alt="J7 · Uno digital low — j7 6 8 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j8-1-5" src="/images/extensions/arduino-adapter/guides/reader-compact-j8-1-5-central-pills.png" title="J8 · Uno power — j8 1 5" alt="J8 · Uno power — j8 1 5 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j8-6-8" src="/images/extensions/arduino-adapter/guides/reader-compact-j8-6-8-central-pills.png" title="J8 · Uno power — j8 6 8" alt="J8 · Uno power — j8 6 8 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j9-1-5" src="/images/extensions/arduino-adapter/guides/reader-compact-j9-1-5-central-pills.png" title="J9 · Uno analog — j9 1 5" alt="J9 · Uno analog — j9 1 5 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j9-6-6" src="/images/extensions/arduino-adapter/guides/reader-compact-j9-6-6-central-pills.png" title="J9 · Uno analog — j9 6 6" alt="J9 · Uno analog — j9 6 6 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j10-1-5" src="/images/extensions/arduino-adapter/guides/reader-compact-j10-1-5-central-pills.png" title="J10 · Uno ICSP — j10 1 5" alt="J10 · Uno ICSP — j10 1 5 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j10-6-6" src="/images/extensions/arduino-adapter/guides/reader-compact-j10-6-6-central-pills.png" title="J10 · Uno ICSP — j10 6 6" alt="J10 · Uno ICSP — j10 6 6 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j11-1-4" src="/images/extensions/arduino-adapter/guides/reader-compact-j11-1-4-central-pills.png" title="J11 · Qwiic GB — j11 1 4" alt="J11 · Qwiic GB — j11 1 4 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-j12-1-4" src="/images/extensions/arduino-adapter/guides/reader-compact-j12-1-4-central-pills.png" title="J12 · Qwiic GG — j12 1 4" alt="J12 · Qwiic GG — j12 1 4 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-identity" src="/images/extensions/arduino-adapter/guides/reader-compact-identity-underside-caption.png" title="Active shield interface — identity" alt="Active shield interface — identity for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-registers" src="/images/extensions/arduino-adapter/guides/reader-compact-registers-underside-caption.png" title="Serial control chain — registers" alt="Serial control chain — registers for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-drivers" src="/images/extensions/arduino-adapter/guides/reader-compact-drivers-underside-caption.png" title="Shield output drivers — drivers" alt="Shield output drivers — drivers for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-return" src="/images/extensions/arduino-adapter/guides/reader-compact-return-underside-caption.png" title="Signal return paths — return" alt="Signal return paths — return for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-receivers" src="/images/extensions/arduino-adapter/guides/reader-compact-receivers-underside-caption.png" title="Shield signal receivers — receivers" alt="Shield signal receivers — receivers for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-route-low" src="/images/extensions/arduino-adapter/guides/reader-compact-route-low-underside-caption.png" title="Route selection low — route low" alt="Route selection low — route low for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-route-high" src="/images/extensions/arduino-adapter/guides/reader-compact-route-high-underside-caption.png" title="Route selection high — route high" alt="Route selection high — route high for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-branches" src="/images/extensions/arduino-adapter/guides/reader-compact-branches-underside-caption.png" title="Analog branch switches — branches" alt="Analog branch switches — branches for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-i2c" src="/images/extensions/arduino-adapter/guides/reader-compact-i2c.png" title="Shield I2C translation — i2c" alt="Shield I2C translation — i2c for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-adc" src="/images/extensions/arduino-adapter/guides/reader-compact-adc-underside-caption.png" title="Analog conversion — adc" alt="Analog conversion — adc for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-pwm" src="/images/extensions/arduino-adapter/guides/reader-compact-pwm-underside-caption.png" title="PWM source selection — pwm" alt="PWM source selection — pwm for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-power" src="/images/extensions/arduino-adapter/guides/reader-compact-power-underside-caption.png" title="Shield5V source path — power" alt="Shield5V source path — power for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-vio" src="/images/extensions/arduino-adapter/guides/reader-compact-vio-underside-caption.png" title="Shield logic selection — vio" alt="Shield logic selection — vio for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-reset" src="/images/extensions/arduino-adapter/guides/reader-compact-reset.png" title="Shield reset output — reset" alt="Shield reset output — reset for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-led1" src="/images/extensions/arduino-adapter/guides/reader-compact-led1.png" title="Signal state indicators — led1" alt="Signal state indicators — led1 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-led4" src="/images/extensions/arduino-adapter/guides/reader-compact-led4.png" title="Signal state indicators — led4" alt="Signal state indicators — led4 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-led7" src="/images/extensions/arduino-adapter/guides/reader-compact-led7.png" title="Signal state indicators — led7" alt="Signal state indicators — led7 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-led10" src="/images/extensions/arduino-adapter/guides/reader-compact-led10.png" title="Signal state indicators — led10" alt="Signal state indicators — led10 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-led13" src="/images/extensions/arduino-adapter/guides/reader-compact-led13.png" title="Signal state indicators — led13" alt="Signal state indicators — led13 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-led16" src="/images/extensions/arduino-adapter/guides/reader-compact-led16.png" title="Signal state indicators — led16" alt="Signal state indicators — led16 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-status" src="/images/extensions/arduino-adapter/guides/reader-compact-status.png" title="Power / fault indicators — status" alt="Power / fault indicators — status for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-esd" src="/images/extensions/arduino-adapter/guides/reader-compact-esd-underside-caption.png" title="Shield signal protection — esd" alt="Shield signal protection — esd for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-tp1" src="/images/extensions/arduino-adapter/guides/reader-compact-tp1-underside-caption.png" title="Supply / reset test pads — tp1" alt="Supply / reset test pads — tp1 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-tp5" src="/images/extensions/arduino-adapter/guides/reader-compact-tp5-underside-caption.png" title="Supply / reset test pads — tp5" alt="Supply / reset test pads — tp5 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-tp9" src="/images/extensions/arduino-adapter/guides/reader-compact-tp9-underside-caption.png" title="Supply / reset test pads — tp9" alt="Supply / reset test pads — tp9 for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-adc-filter" src="/images/extensions/arduino-adapter/guides/reader-compact-adc-filter-underside-caption.png" title="Analog input filtering — adc filter" alt="Analog input filtering — adc filter for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-qwiic-mount" src="/images/extensions/arduino-adapter/guides/reader-compact-qwiic-mount.png" title="Qwiic mounting contacts — qwiic mount" alt="Qwiic mounting contacts — qwiic mount for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-cautions" src="/images/extensions/arduino-adapter/guides/reader-compact-cautions.png" title="Board cautions — cautions" alt="Board cautions — cautions for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-adapter-v19-reader-compact-mounts" src="/images/extensions/arduino-adapter/guides/reader-compact-mounts.png" title="Mounting supports — mounts" alt="Mounting supports — mounts for arduino-adapter" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-### Connector contacts
-
-Contact numbering below is the PCB pad numbering, as in the board-reference drawing. Same-numbered duplicate lands are collapsed in this electrical table. Mechanical unnumbered pads are omitted. `NC` means unconnected, not a spare function. Named nets alone do not give direction; use the signal-path explanation above.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Connector | Contact(s) | Function/net |
-| --- | --- | --- |
-| J10 — UNO ICSP 2x3 MALE | 1 | `/UNO_D12` |
-| J10 — UNO ICSP 2x3 MALE | 2 | `+5V_SHD` |
-| J10 — UNO ICSP 2x3 MALE | 3 | `/UNO_D13` |
-| J10 — UNO ICSP 2x3 MALE | 4 | `/UNO_D11` |
-| J10 — UNO ICSP 2x3 MALE | 5 | `/RESET_N` |
-| J10 — UNO ICSP 2x3 MALE | 6 | `GND` |
-| J7 — UNO DIGITAL LOW 1x8 (D7..D0) | 1 | `/UNO_D7` |
-| J7 — UNO DIGITAL LOW 1x8 (D7..D0) | 2 | `/UNO_D6` |
-| J7 — UNO DIGITAL LOW 1x8 (D7..D0) | 3 | `/UNO_D5` |
-| J7 — UNO DIGITAL LOW 1x8 (D7..D0) | 4 | `/UNO_D4` |
-| J7 — UNO DIGITAL LOW 1x8 (D7..D0) | 5 | `/UNO_D3` |
-| J7 — UNO DIGITAL LOW 1x8 (D7..D0) | 6 | `/UNO_D2` |
-| J7 — UNO DIGITAL LOW 1x8 (D7..D0) | 7 | `/UNO_D1` |
-| J7 — UNO DIGITAL LOW 1x8 (D7..D0) | 8 | `/UNO_D0` |
-| J12 — QWIIC GG I2C2 (3V3 only) | 1 | `GND` |
-| J12 — QWIIC GG I2C2 (3V3 only) | 2 | `+3V3` |
-| J12 — QWIIC GG I2C2 (3V3 only) | 3 | `/GG_8` |
-| J12 — QWIIC GG I2C2 (3V3 only) | 4 | `/GG_9` |
-| J12 — QWIIC GG I2C2 (3V3 only) | MP | `GND` |
-| J3 — GADGETEER GE (SPI+GPIO) | 1 | `+3V3` |
-| J3 — GADGETEER GE (SPI+GPIO) | 2 | `+5V_HOST` |
-| J3 — GADGETEER GE (SPI+GPIO) | 3 | `/GE_3` |
-| J3 — GADGETEER GE (SPI+GPIO) | 4 | `/SR_OE_N` |
-| J3 — GADGETEER GE (SPI+GPIO) | 5 | `/GE_5` |
-| J3 — GADGETEER GE (SPI+GPIO) | 6 | `/GE_6` |
-| J3 — GADGETEER GE (SPI+GPIO) | 7 | `/GE_7` |
-| J3 — GADGETEER GE (SPI+GPIO) | 8 | `/GE_8` |
-| J3 — GADGETEER GE (SPI+GPIO) | 9 | `/GE_9` |
-| J3 — GADGETEER GE (SPI+GPIO) | 10 | `GND` |
-| J5 — GADGETEER GC (GPIO+TIM8 PWM) | 1 | `+3V3` |
-| J5 — GADGETEER GC (GPIO+TIM8 PWM) | 2 | `+5V_HOST` |
-| J5 — GADGETEER GC (GPIO+TIM8 PWM) | 3 | `/SR_RCLK` |
-| J5 — GADGETEER GC (GPIO+TIM8 PWM) | 4 | `/GC_4` |
-| J5 — GADGETEER GC (GPIO+TIM8 PWM) | 5 | `/GC_5` |
-| J5 — GADGETEER GC (GPIO+TIM8 PWM) | 6 | `/GC_6` |
-| J5 — GADGETEER GC (GPIO+TIM8 PWM) | 7 | `/GC_7` |
-| J5 — GADGETEER GC (GPIO+TIM8 PWM) | 8 | `/GC_8` |
-| J5 — GADGETEER GC (GPIO+TIM8 PWM) | 9 | `/GC_9` |
-| J5 — GADGETEER GC (GPIO+TIM8 PWM) | 10 | `GND` |
-| J1 — GADGETEER GB (UART/I2C3) | 1 | `+3V3` |
-| J1 — GADGETEER GB (UART/I2C3) | 2 | `+5V_HOST` |
-| J1 — GADGETEER GB (UART/I2C3) | 3 | `/SR_SER` |
-| J1 — GADGETEER GB (UART/I2C3) | 4 | `/GB_4` |
-| J1 — GADGETEER GB (UART/I2C3) | 5 | `/GB_5` |
-| J1 — GADGETEER GB (UART/I2C3) | 6 | `/SR_SRCLK` |
-| J1 — GADGETEER GB (UART/I2C3) | 7 | `/GB_7` |
-| J1 — GADGETEER GB (UART/I2C3) | 8 | `/GB_8` |
-| J1 — GADGETEER GB (UART/I2C3) | 9 | `/GB_9` |
-| J1 — GADGETEER GB (UART/I2C3) | 10 | `GND` |
-| J6 — UNO DIGITAL HIGH 1x10 (SCL..D8) | 1 | `/UNO_A5` |
-| J6 — UNO DIGITAL HIGH 1x10 (SCL..D8) | 2 | `/UNO_A4` |
-| J6 — UNO DIGITAL HIGH 1x10 (SCL..D8) | 4 | `GND` |
-| J6 — UNO DIGITAL HIGH 1x10 (SCL..D8) | 5 | `/UNO_D13` |
-| J6 — UNO DIGITAL HIGH 1x10 (SCL..D8) | 6 | `/UNO_D12` |
-| J6 — UNO DIGITAL HIGH 1x10 (SCL..D8) | 7 | `/UNO_D11` |
-| J6 — UNO DIGITAL HIGH 1x10 (SCL..D8) | 8 | `/UNO_D10` |
-| J6 — UNO DIGITAL HIGH 1x10 (SCL..D8) | 9 | `/UNO_D9` |
-| J6 — UNO DIGITAL HIGH 1x10 (SCL..D8) | 10 | `/UNO_D8` |
-| J6 | 3 | NC |
-| J9 — UNO ANALOG 1x6 (A0..A5) | 1 | `/UNO_A0` |
-| J9 — UNO ANALOG 1x6 (A0..A5) | 2 | `/UNO_A1` |
-| J9 — UNO ANALOG 1x6 (A0..A5) | 3 | `/UNO_A2` |
-| J9 — UNO ANALOG 1x6 (A0..A5) | 4 | `/UNO_A3` |
-| J9 — UNO ANALOG 1x6 (A0..A5) | 5 | `/UNO_A4` |
-| J9 — UNO ANALOG 1x6 (A0..A5) | 6 | `/UNO_A5` |
-| J8 — UNO POWER 1x8 (NC..VIN) | 2 | `VIO` |
-| J8 — UNO POWER 1x8 (NC..VIN) | 3 | `/RESET_N` |
-| J8 — UNO POWER 1x8 (NC..VIN) | 4 | `+3V3_SHD` |
-| J8 — UNO POWER 1x8 (NC..VIN) | 5 | `+5V_SHD` |
-| J8 — UNO POWER 1x8 (NC..VIN) | 6 | `GND` |
-| J8 — UNO POWER 1x8 (NC..VIN) | 7 | `GND` |
-| J8 — UNO POWER 1x8 (NC..VIN) | 8 | `/UNO_VIN` |
-| J8 | 1 | NC |
-| J11 — QWIIC GB I2C3 (3V3 only) | 1 | `GND` |
-| J11 — QWIIC GB I2C3 (3V3 only) | 2 | `+3V3` |
-| J11 — QWIIC GB I2C3 (3V3 only) | 3 | `/GB_8` |
-| J11 — QWIIC GB I2C3 (3V3 only) | 4 | `/GB_9` |
-| J11 — QWIIC GB I2C3 (3V3 only) | MP | `GND` |
-| J4 — GADGETEER GG (ADC+I2C2) | 1 | `+3V3` |
-| J4 — GADGETEER GG (ADC+I2C2) | 2 | `+5V_HOST` |
-| J4 — GADGETEER GG (ADC+I2C2) | 3 | `/GG_3` |
-| J4 — GADGETEER GG (ADC+I2C2) | 4 | `/GG_4` |
-| J4 — GADGETEER GG (ADC+I2C2) | 5 | `/GG_5` |
-| J4 — GADGETEER GG (ADC+I2C2) | 6 | `/GG_6` |
-| J4 — GADGETEER GG (ADC+I2C2) | 7 | `/GG_7` |
-| J4 — GADGETEER GG (ADC+I2C2) | 8 | `/GG_8` |
-| J4 — GADGETEER GG (ADC+I2C2) | 9 | `/GG_9` |
-| J4 — GADGETEER GG (ADC+I2C2) | 10 | `GND` |
-| J2 — GADGETEER GD (UART/PWM) | 1 | `+3V3` |
-| J2 — GADGETEER GD (UART/PWM) | 2 | `+5V_HOST` |
-| J2 — GADGETEER GD (UART/PWM) | 3 | `/GD_3` |
-| J2 — GADGETEER GD (UART/PWM) | 4 | `/GD_4` |
-| J2 — GADGETEER GD (UART/PWM) | 5 | `/GD_5` |
-| J2 — GADGETEER GD (UART/PWM) | 7 | `/GD_7` |
-| J2 — GADGETEER GD (UART/PWM) | 8 | `/GD_8` |
-| J2 — GADGETEER GD (UART/PWM) | 9 | `/GD_9` |
-| J2 — GADGETEER GD (UART/PWM) | 10 | `GND` |
-| J2 | 6 | NC |
-
+{% include _includes/extension-board-page.html %}
+
+
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Host adapters</p>
+    <h1 id="arduino-adapter">Arduino adapter</h1>
+    <p class="xb-lead">A carrier for Arduino Uno-format shields: five controller sockets (GB, GD, GE, GG and GC), software-selected signal direction, a 5&nbsp;V or 3.3&nbsp;V shield voltage and two Qwiic ports.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/arduino-adapter/v19/arduino-adapter-diagram.png" alt="Top view of the Arduino adapter.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-</details>
+<div class="xb-stats">
+  <div class="xb-stat"><b>Uno</b><span>shield format</span></div>
+  <div class="xb-stat"><b>5 sockets</b><span>GB GD GE GG GC</span></div>
+  <div class="xb-stat"><b>5 or 3.3 V</b><span>shield level</span></div>
+  <div class="xb-stat"><b>2 Qwiic</b><span>separate buses</span></div>
+  <div class="xb-stat"><b>Software</b><span>routed</span></div>
+  <div class="xb-stat"><b>112 × 54</b><span>millimetres</span></div>
+</div>
 
-Active components: `U17 SN74LXC8T245 shield-pin receiver 1 of 3 (A to B, 3V3 both sides)`; `U21 TMUX1219 router D3: native GC.4 or F1`; `U31 TMUX1219 router D13: native GE.9 or F7`; `U11 SN74LV4T125 quad output driver 5 of 5 (VCC = VIO)`; `U3 SN74LV595A shift register 3 of 6`; `U23 TMUX1219 router D5: native GD.7 or F0`; `U20 TMUX1219 router D2: native GC.5 or F3`; `U6 SN74LV595A shift register 6 of 6`; `U38 LM66100 ideal diode, backfeed block`; `U25 TMUX1219 router D7: native GB.7 or F7`; `U16 TMUX1511 quad return switch 5 of 5`; `U34 PCA9306 I2C translator (host 3V3 / shield VIO)`; `U26 TMUX1219 router D8: native GG.6 or F7`; `U5 SN74LV595A shift register 5 of 6`; `U24 TMUX1219 router D6: native GD.8 or F3`; `U15 TMUX1511 quad return switch 4 of 5`; `U18 SN74LXC8T245 shield-pin receiver 2 of 3 (A to B, 3V3 both sides)`; `U32 TMUX1511 analog/digital branch switch 1 of 2`; `U35 ADS7138 8-channel 12-bit I2C ADC`; `U4 SN74LV595A shift register 4 of 6`; `U37 TPS2553 shield 5V limiter`; `U13 TMUX1511 quad return switch 2 of 5`; `U28 TMUX1219 router D10: native GE.6 or F1`; `U9 SN74LV4T125 quad output driver 3 of 5 (VCC = VIO)`; `U8 SN74LV4T125 quad output driver 2 of 5 (VCC = VIO)`; `U19 SN74LXC8T245 shield-pin receiver 3 of 3 (A to B, 3V3 both sides)`; `U1 SN74LV595A shift register 1 of 6`; `U10 SN74LV4T125 quad output driver 4 of 5 (VCC = VIO)`; `U22 TMUX1219 router D4: native GE.5 or F2`; `U36 TMUX1208 PWM source selector (GC.6..GC.9 to F7)`; `U7 SN74LV4T125 quad output driver 1 of 5 (VCC = VIO)`; `U27 TMUX1219 router D9: native GD.9 or F6`; `U29 TMUX1219 router D11: native GE.7 or F3`; `U2 SN74LV595A shift register 2 of 6`; `U33 TMUX1511 analog/digital branch switch 2 of 2`; `U12 TMUX1511 quad return switch 1 of 5`; `U30 TMUX1219 router D12: native GE.8 or F1`; `U14 TMUX1511 quad return switch 3 of 5`. Check the matching datasheets for limits.
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+  <a href="#datasheets">Datasheets</a>
+</nav>
+{:/nomarkdown}
 
-### Additional solder links
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Shield signals stay unusable until software sets the routing registers; Smoothieware has no driver for them. Check the shield&rsquo;s supply, reset and pin use before applying power, and keep it isolated until then.
+</sl-alert>
 
-These are distinct physical solder-link footprints, including links whose references begin `SJ` rather than `JP`. Their labels and nets are listed below.
+## Tech specs {#specs}
 
-<details markdown="1">
-<summary>Contact inventory</summary>
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>Arduino shields on a controller</td></tr>
+    <tr><td>Sockets</td><td>J1 GB, J2 GD, J3 GE, J4 GG, J5 GC; not interchangeable</td></tr>
+    <tr><td>Shield headers</td><td>J6 to J10, Uno layout with ICSP</td></tr>
+    <tr><td>Routing</td><td>Six <a href="/images/extensions/arduino-adapter/datasheets/sn74lv595a.pdf">SN74LV595A</a> registers set direction and switches; ADS7138 reads analog</td></tr>
+    <tr><td>Shield voltage</td><td>SJ21: 5&nbsp;V (as delivered) or 3.3&nbsp;V</td></tr>
+    <tr><td>Qwiic</td><td>J11 (GB bus) and J12 (GG bus), 3.3&nbsp;V</td></tr>
+    <tr><td>Size</td><td>112 &times; 54&nbsp;mm</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-| Link | Label | Pad nets |
-| --- | --- | --- |
-| SJ12 | LED D11 link (bridged = lit) | 1=/LED_A_D11; 2=/LED_AN_D11 |
-| SJ21 | VIO select: 5V (default) / 3V3 | 1=+5V_SHD; 2=VIO; 3=+3V3_SHD |
-| SJ11 | LED D10 link (bridged = lit) | 1=/LED_A_D10; 2=/LED_AN_D10 |
-| SJ8 | LED D7 link (bridged = lit) | 1=/LED_A_D7; 2=/LED_AN_D7 |
-| SJ4 | LED D3 link (bridged = lit) | 1=/LED_A_D3; 2=/LED_AN_D3 |
-| SJ14 | LED D13 link (bridged = lit) | 1=/LED_A_D13; 2=/LED_AN_D13 |
-| SJ9 | LED D8 link (bridged = lit) | 1=/LED_A_D8; 2=/LED_AN_D8 |
-| SJ10 | LED D9 link (bridged = lit) | 1=/LED_A_D9; 2=/LED_AN_D9 |
-| SJ5 | LED D4 link (bridged = lit) | 1=/LED_A_D4; 2=/LED_AN_D4 |
-| SJ15 | LED A0 link (bridged = lit) | 1=/LED_A_A0; 2=/LED_AN_A0 |
-| SJ17 | LED A2 link (bridged = lit) | 1=/LED_A_A2; 2=/LED_AN_A2 |
-| SJ18 | LED A3 link (bridged = lit) | 1=/LED_A_A3; 2=/LED_AN_A3 |
-| SJ22 | VIN <- 5V (open by default) | 1=+5V_SHD; 2=/UNO_VIN |
-| SJ1 | LED D0 link (bridged = lit) | 1=/LED_A_D0; 2=/LED_AN_D0 |
-| SJ3 | LED D2 link (bridged = lit) | 1=/LED_A_D2; 2=/LED_AN_D2 |
-| SJ23 | power LED link (bridged = lit) | 1=/LED_PWR_A; 2=/LED_PWR_AN |
-| SJ16 | LED A1 link (bridged = lit) | 1=/LED_A_A1; 2=/LED_AN_A1 |
-| SJ6 | LED D5 link (bridged = lit) | 1=/LED_A_D5; 2=/LED_AN_D5 |
-| SJ2 | LED D1 link (bridged = lit) | 1=/LED_A_D1; 2=/LED_AN_D1 |
-| SJ19 | shield SDA pull-up link to VIO (bridged = fitted) | 1=/SDA_PU; 2=VIO |
-| SJ20 | shield SCL pull-up link to VIO (bridged = fitted) | 1=/SCL_PU; 2=VIO |
-| SJ13 | LED D12 link (bridged = lit) | 1=/LED_A_D12; 2=/LED_AN_D12 |
-| SJ7 | LED D6 link (bridged = lit) | 1=/LED_A_D6; 2=/LED_AN_D6 |
-| SJ24 | fault LED link (bridged = fitted) | 1=/LED_FLT_A; 2=/LED_FLT_AN |
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
-</details>
+## Board tour {#tour}
 
-## Practical use with Smoothieboard V2 Prime
+The numbers on the drawing match the list below it.
 
-A low-power Uno-format SPI shield, for example, cannot be connected as though D10–D13 were fixed passive host nets. The programmable router state and the shield's own driver are required.
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/arduino-adapter/v19/arduino-adapter-diagram.png" alt="Top view of the Arduino adapter with numbered markers explained in the list below.">
+      <a class="xb-mk xb-pb xb-pr" href="#tour-1" style="left:95.9%;top:25.8%" aria-label="1: Socket GB (J1)">1<span class="xb-pop"><b>Socket GB (J1)</b> — serial and I&sup2;C.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-2" style="left:4.0%;top:37.5%" aria-label="2: Socket GD (J2)">2<span class="xb-pop"><b>Socket GD (J2)</b> — serial and PWM.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-3" style="left:4.0%;top:63.3%" aria-label="3: Socket GE (J3)">3<span class="xb-pop"><b>Socket GE (J3)</b> — SPI.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-4" style="left:95.9%;top:77.6%" aria-label="4: Socket GG (J4)">4<span class="xb-pop"><b>Socket GG (J4)</b> — analog and I&sup2;C.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-5" style="left:95.9%;top:51.7%" aria-label="5: Socket GC (J5)">5<span class="xb-pop"><b>Socket GC (J5)</b> — PWM.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-6" style="left:36.4%;top:6.9%" aria-label="6: Shield digital high (J6)">6<span class="xb-pop"><b>Shield digital high (J6)</b> — D8 to SCL.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-7" style="left:60.0%;top:6.9%" aria-label="7: Shield digital low (J7)">7<span class="xb-pop"><b>Shield digital low (J7)</b> — D0 to D7.</span></a>
+      <a class="xb-mk" href="#tour-8" style="left:44.4%;top:93.0%" aria-label="8: Shield power (J8)">8<span class="xb-pop"><b>Shield power (J8)</b> — supplies and reset.</span></a>
+      <a class="xb-mk" href="#tour-9" style="left:64.4%;top:93.0%" aria-label="9: Shield analog (J9)">9<span class="xb-pop"><b>Shield analog (J9)</b> — A0 to A5.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-10" style="left:89.0%;top:7.8%" aria-label="10: Qwiic GB (J11)">10<span class="xb-pop"><b>Qwiic GB (J11)</b> — 3.3&nbsp;V.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-11" style="left:89.0%;top:92.1%" aria-label="11: Qwiic GG (J12)">11<span class="xb-pop"><b>Qwiic GG (J12)</b> — 3.3&nbsp;V.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Socket GB (J1)</b> — serial and I&sup2;C.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Socket GD (J2)</b> — serial and PWM.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Socket GE (J3)</b> — SPI.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Socket GG (J4)</b> — analog and I&sup2;C.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Socket GC (J5)</b> — PWM.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Shield digital high (J6)</b> — D8 to SCL.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Shield digital low (J7)</b> — D0 to D7.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Shield power (J8)</b> — supplies and reset.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Shield analog (J9)</b> — A0 to A5.</div></li>
+    <li id="tour-10"><span class="xb-n">10</span><div><b>Qwiic GB (J11)</b> — 3.3&nbsp;V.</div></li>
+    <li id="tour-11"><span class="xb-n">11</span><div><b>Qwiic GG (J12)</b> — 3.3&nbsp;V.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-The Qwiic-only diagram below covers a separate interface example; it does not configure an Uno shield. On the Smoothieboard V2 Prime, the host header rail contacts are 1 = limited 3.3 V, 2 = limited 5 V, 10 = ground; verify the actual unshrouded host header and cable orientation before applying power.
+### Lights {#lights}
 
-1. Identify the exact shield and enumerate every used digital, analogue, power, reset and ICSP contact.
-2. Compare those contacts with the output tables below.
-3. Before power, specify all five host sockets and the initial routing/output-enable state. Keep the shield isolated until the register-control protocol and supply selection are implemented.
-4. Treat J11 and J12 as separate buses; each attached Qwiic device still requires a compatible protocol driver and a combined power/pull-up budget.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th>Lit means</th><th>Disable it</th></tr></thead>
+  <tbody>
+    <tr><td>Signal lights</td><td>State of shield pins D1 to D13 and A0 to A3</td><td>Cut the matching link SJ2 to SJ18</td></tr>
+    <tr><td>Power light</td><td>Supply present</td><td>Cut SJ23</td></tr>
+    <tr><td>Fault light</td><td>Fault</td><td>Cut SJ24</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-### Qwiic-only spectral-sensor connection
+## Pinout {#pinout}
 
-This diagram traces the adapter’s J11 Qwiic bus to the spectral sensor board. It deliberately leaves Uno shields and J12 disconnected. Check physical cable orientation; the sensor also needs firmware support.
+Contact 1 is 3.3&nbsp;V, contact 2 is 5&nbsp;V and contact 10 ground on J1 to J5. The other contacts feed the routing circuits shown in the schematic.
 
-**Do not energize** until you have checked the supply, sequencing and fitted board.
+### Qwiic J11 and J12
 
-Use the native-contact circuit and all five contact keys together. Five individual GB/J33 host leads and four Qwiic signal/power leads reach the board contacts. Adapter J11 and sensor J3 use their four surface-mount signal contacts; the sensor’s alternative through-hole row has no separate leads. Confirm these attachment locations are accessible on your boards. Board-coordinate crops show every alternative contact and the complete Prime, adapter and sensor abstracts show their locations. Prime GB/J33 uses **I2C3**, whereas GG/J38 uses I2C2. This is a Qwiic-only application, with no Uno shield or separately powered Arduino attached.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td></tr>
+    <tr><td>3</td><td><span class="xb-pill xb-p-sig">SDA</span></td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">SCL</span></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="arduino-native-0" src="/images/extensions/arduino-adapter/guides/native-contact/arduino-native-reader.png" title="Prime to Arduino adapter J11 and spectral sensor — nine native-contact leads" alt="Prime to Arduino adapter J11 and spectral sensor — nine native-contact leads" caption="Adapter with spectral sensor board. Both host rails are required; retain SJ21 1–2. Unused shield connectors can remain energized. Check the rail budget and cable attachment; the sensor needs matching firmware." width=900 %}
+## What you need {#what-you-need}
 
-{% include _includes/extension-instruction-diagram.html id="arduino-native-1" src="/images/extensions/arduino-adapter/guides/native-contact/reader-contact-keys/J33-numbered-pads.png" title="Prime GB/J33 — complete contact key" alt="Prime GB/J33 — complete contact key" caption="Adapter with spectral sensor board. Both host rails are required; retain SJ21 1–2. Unused shield connectors can remain energized. Check the rail budget and cable attachment; the sensor needs matching firmware." width=420 %}
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>This adapter</b><span>And its cables.</span></div>
+  <div class="xb-card"><b>Smoothieboard V2 Prime</b><span>For the example.</span></div>
+  <div class="xb-card"><b>A Qwiic board</b><span>For example the spectral sensor board.</span></div>
+</div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="arduino-native-2" src="/images/extensions/arduino-adapter/guides/native-contact/reader-contact-keys/J1-numbered-pads.png" title="Adapter J1 — complete contact key" alt="Adapter J1 — complete contact key" caption="Adapter with spectral sensor board. Both host rails are required; retain SJ21 1–2. Unused shield connectors can remain energized. Check the rail budget and cable attachment; the sensor needs matching firmware." width=420 %}
+## Get started {#get-started}
 
-{% include _includes/extension-instruction-diagram.html id="arduino-native-3" src="/images/extensions/arduino-adapter/guides/native-contact/reader-contact-keys/J11-adapter-numbered-pads.png" title="Adapter J11 — surface-mount signal pads" alt="Adapter J11 — surface-mount signal pads" caption="Adapter with spectral sensor board. Both host rails are required; retain SJ21 1–2. Unused shield connectors can remain energized. Check the rail budget and cable attachment; the sensor needs matching firmware." width=420 %}
+This connects a Qwiic board to J11, with no shield fitted.
 
-{% include _includes/extension-instruction-diagram.html id="arduino-native-4" src="/images/extensions/arduino-adapter/guides/native-contact/reader-contact-keys/J3-sensor-numbered-pads.png" title="Spectral sensor J3 — surface-mount signal pads" alt="Spectral sensor J3 — surface-mount signal pads" caption="Adapter with spectral sensor board. Both host rails are required; retain SJ21 1–2. Unused shield connectors can remain energized. Check the rail budget and cable attachment; the sensor needs matching firmware." width=420 %}
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Check SJ21</h3>
+    <p>Pads 1&ndash;2 (5&nbsp;V).</p>
+  </li>
+  <li class="xb-step">
+    <h3>Wire the controller</h3>
+    <p>Prime GB/J33 contacts 1, 2, 8, 9 and 10 to J1, same numbers. Both supplies are needed.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Connect the board</h3>
+    <p>J11 to the Qwiic board, contacts 1 to 4.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Add software</h3>
+    <p>The attached device needs its own driver.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="arduino-native-5" src="/images/extensions/arduino-adapter/guides/native-contact/reader-contact-keys/SJ21-numbered-pads.png" title="Adapter SJ21 — retain default 1–2 VIO selection" alt="Adapter SJ21 — retain default 1–2 VIO selection" caption="Adapter with spectral sensor board. Both host rails are required; retain SJ21 1–2. Unused shield connectors can remain energized. Check the rail budget and cable attachment; the sensor needs matching firmware." width=420 %}
+## Configuration {#configuration}
 
-### Locate the contacts
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>A shield or Qwiic device</td><td>Your own driver; no Smoothieware module</td><td><a href="#config-main">Setup</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-Read these enlarged PCB contact keys together with the complete connection plan. Filled contacts are used; leave the others unused. Retain SJ21 contacts 1–2 for this example.
+### Setup {#config-main}
 
-{% include _includes/extension-instruction-diagram.html id="arduino-v19-compact-j33" src="/images/extensions/arduino-adapter/guides/compact-J33-numbered-pads.png" title="Prime GB / J33" alt="Prime GB / J33 for Arduino adapter Qwiic-only wiring" caption="Contact keys show PCB pads, not cable mating faces. Read the power and firmware limits below." width=420 %}
+Smoothieware has no driver for the routing registers or the analog converter, so there are no settings for shields.
 
-{% include _includes/extension-instruction-diagram.html id="arduino-v19-compact-j1" src="/images/extensions/arduino-adapter/guides/compact-J1-numbered-pads.png" title="Adapter J1" alt="Adapter J1 for Arduino adapter Qwiic-only wiring" caption="Contact keys show PCB pads, not cable mating faces. Read the power and firmware limits below." width=420 %}
+## How it works {#how-it-works}
 
-{% include _includes/extension-instruction-diagram.html id="arduino-v19-compact-j11-adapter" src="/images/extensions/arduino-adapter/guides/compact-J11-adapter-numbered-pads.png" title="Adapter J11 Qwiic" alt="Adapter J11 Qwiic for Arduino adapter Qwiic-only wiring" caption="Contact keys show PCB pads, not cable mating faces. Read the power and firmware limits below." width=420 %}
+Software writes the shift registers to choose, pin by pin, whether the controller drives a shield pin or reads it. Receivers and output drivers translate between the controller&rsquo;s 3.3&nbsp;V and the shield voltage.
 
-{% include _includes/extension-instruction-diagram.html id="arduino-v19-compact-j3-sensor" src="/images/extensions/arduino-adapter/guides/compact-J3-sensor-numbered-pads.png" title="Spectral sensor J3" alt="Spectral sensor J3 for Arduino adapter Qwiic-only wiring" caption="Contact keys show PCB pads, not cable mating faces. Read the power and firmware limits below." width=420 %}
+## Troubleshooting {#troubleshooting}
 
-{% include _includes/extension-instruction-diagram.html id="arduino-v19-compact-sj21" src="/images/extensions/arduino-adapter/guides/compact-SJ21-numbered-pads.png" title="Adapter SJ21 VIO selection" alt="Adapter SJ21 VIO selection for Arduino adapter Qwiic-only wiring" caption="Contact keys show PCB pads, not cable mating faces. Read the power and firmware limits below." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Shield does nothing</td><td>Routing registers not configured.</td></tr>
+    <tr><td>Qwiic device missing</td><td>Both controller supplies connected; J11 and J12 are separate buses.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-<details markdown="1">
-<summary>Additional wide circuit view</summary>
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
 
-{% include _includes/extension-instruction-diagram.html id="arduino-v19-prime-qwiic-spectral" title="Prime to Arduino adapter J11 and spectral sensor" src="/images/extensions/arduino-adapter/guides/prime-qwiic-spectral-installation.png" alt="Prime GB J33 through Arduino adapter J11 to spectral sensor, with five host wires and four Qwiic conductors" caption="Qwiic-only installation: default supply selection retained; no Uno shield attached." width=5200 %}
+## Downloads {#downloads}
 
-</details>
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/arduino-adapter/v19/arduino-adapter-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/arduino-adapter/v19/arduino-adapter-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/arduino-adapter/v19/arduino-adapter-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-Connect Prime GB/J33 contacts **1, 2, 8, 9 and 10** individually to adapter J1 contacts with the same numbers: limited 3.3 V, host 5 V, SDA, SCL and ground. J11 contacts **1 = ground, 2 = 3.3 V, 3 = SDA, 4 = SCL** connect to the same-numbered spectral-board J3 contacts. Verify contact numbers rather than cable colours; the diagram’s PCB-coordinate contact details are not physical mating-face drawings.
+## Appendix: mounting dimensions {#mounting}
 
-**Both host rails are required for the default link setting.** Although J11 supplies the sensor with 3.3 V, adapter SJ21 defaults to contacts 1–2, selecting the shield-side 5 V rail for the PCA9306 level translator’s VIO bias. The host 5 V path runs through the TPS2553 and LM66100. Do not substitute a 3.3 V-only host hookup or apply 5 V to J11’s 3.3 V contact. Adapter and sensor loads share the controller’s rail budget; check the current and protection margin.
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
 
-**Check bias timing.** C44 at the PCA9306 EN/VREF2 node is 100 nF. [TI’s PCA9306 guidance, sections 9.2.2.1 and 11.1](https://www.ti.com/lit/ds/symlink/pca9306.pdf) recommends a 100 pF filter there and explains that larger capacitance increases turn-on and turn-off time. Check startup and sequencing of the complete fitted circuit.
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 429" role="img" aria-labelledby="xb-aa-mount-t">
+  <title id="xb-aa-mount-t">Mounting drawing of the aa, component side: outline 112 by 54 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="180.0" y="78.0" width="600.0" height="289.3" rx="5.4" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M180.0 56H780.0"/><path d="M180.0 50V62"/><path d="M780.0 50V62"/><path d="M806.0 78.0V367.3"/><path d="M800.0 78.0h12"/><path d="M800.0 367.3h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">112</text>
+  <text x="818.0" y="227.6" font-size="15" font-weight="700" fill="#e6ebf2">54</text>
+  <circle cx="180.0" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="168.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M122.0 104.0h30" fill="none"/><path d="M156.0 104.0l-8 -4v8z"/><path d="M122.0 104.0v30" fill="none"/><path d="M122.0 138.0l-4 -8h8z"/></g>
+  <text x="160.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="118.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="255.0" cy="115.5" r="8.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M242.4 115.5h25.1M255.0 102.9v25.1" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="246.4" y="144.1" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  14.00, 7.00</text>
+  <circle cx="683.6" cy="115.5" r="8.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M671.0 115.5h25.1M683.6 102.9v25.1" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="692.1" y="144.1" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  94.00, 7.00</text>
+  <circle cx="255.0" cy="329.8" r="8.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M242.4 329.8h25.1M255.0 317.2v25.1" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="246.4" y="311.2" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  14.00, 47.00</text>
+  <circle cx="683.6" cy="329.8" r="8.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M671.0 329.8h25.1M683.6 317.2v25.1" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="692.1" y="311.2" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  94.00, 47.00</text>
+  <text x="480.0" y="397.3" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 112 × 54&nbsp;mm, corners rounded to a 1&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
 
-The AS7265x sensor chain needs matching firmware and acquisition software. Generic I2C connectivity does not provide a spectral measurement command. The Smoothieware application has no AS7265x driver.
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>14.00</td><td>7.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>94.00</td><td>7.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>3</td><td>14.00</td><td>47.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>4</td><td>94.00</td><td>47.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Smoothieware use
+## Appendix: electrical specifications {#electrical}
 
-The adapter needs software that configures its six SN74LV595A routing registers, return-path switches, direction/output enables and ADS7138 ADC before operating a specific shield. The V2 application does not supply this router/ADC backend: its actual SPI consumers are TMC2590/TMC26X motor drivers and MAX31855 temperature readout, and the application has no I2C device consumer implementing the ADS7138. Those unrelated settings cannot initialize this board. Do not copy shield firmware into Smoothieware or invent a register sequence. Custom firmware must handle pins, voltages and signal-source ownership, including the register-chain order, reset state and output-enable sequence, before it operates a shield.
+Levels set on the board.
 
-## Sources
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Shield level</td><td>SJ21</td><td>3.3 V</td><td>5 V</td><td>5 V</td><td>Selectable</td></tr>
+    <tr><td>Qwiic</td><td>J11, J12</td><td>—</td><td>3.3 V</td><td>—</td><td>Only</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-- [Source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/arduino-adapter/attempt/versions/v19)
-- [Design specification](https://github.com/arthurwolf/extension-boards/blob/main/src/arduino-adapter/specs.md)
-- [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/arduino-adapter/design.md)
-- [All extension boards](/extension-boards)
+## Appendix: datasheets {#datasheets}
 
+The first page of each important chip&rsquo;s datasheet. Click a page to open the PDF.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <a href="/images/extensions/arduino-adapter/datasheets/tmux1511.pdf"><img src="/images/extensions/arduino-adapter/datasheets/tmux1511-page1.png" alt="First page of the TMUX1511 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/arduino-adapter/datasheets/tmux1511.pdf">TMUX1511 four-channel signal switch with powered-off protection</a> — Texas Instruments, 45 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/arduino-adapter/datasheets/sn74lxc8t245.pdf"><img src="/images/extensions/arduino-adapter/datasheets/sn74lxc8t245-page1.png" alt="First page of the SN74LXC8T245 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/arduino-adapter/datasheets/sn74lxc8t245.pdf">SN74LXC8T245 eight-bit translating transceiver</a> — Texas Instruments, 39 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/arduino-adapter/datasheets/sn74lv595a.pdf"><img src="/images/extensions/arduino-adapter/datasheets/sn74lv595a-page1.png" alt="First page of the SN74LV595A datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/arduino-adapter/datasheets/sn74lv595a.pdf">SN74LV595A eight-bit shift register</a> — Texas Instruments, 39 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/arduino-adapter/datasheets/pca9306.pdf"><img src="/images/extensions/arduino-adapter/datasheets/pca9306-page1.png" alt="First page of the PCA9306 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/arduino-adapter/datasheets/pca9306.pdf">PCA9306 I2C voltage-level translator</a> — Texas Instruments, 38 pages.</figcaption>
+</figure>
+{:/nomarkdown}
+
+
+See all boards on the [extension boards](/extension-boards) page.

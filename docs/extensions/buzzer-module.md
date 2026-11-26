@@ -1,188 +1,190 @@
 ---
 layout: default
 title: "Buzzer module"
+description: "A 5 V active buzzer with a MOSFET driver, a Gadgeteer input and chain socket, and an alternative three-pin input."
 permalink: /extensions/buzzer-module
 ---
 
-# Buzzer module
-
-This small active-buzzer board makes a steady audible cue when its control signal is HIGH. Use it for an ordinary end-of-job indication or a bench output check. The buzzer supplies its own tone; it is not a programmable speaker or a guaranteed safety alarm.
-
-## How it works
-
-J1.3 and alternate header J3.3 feed the control path through a diode-OR arrangement. JP1 chooses the buzzer's 5 V supply source. J2 is a chain connector and JP2 controls forwarding of the consumed contact-3 signal.
-
-The board uses **BZ1 CMI-1295-0585T** from Same Sky (formerly CUI Devices), an internally driven magnetic buzzer. Its positive terminal connects to the 5 V supply chosen by JP1; its negative terminal reaches the drain of **Q1 DMN2056U-7**, an N-channel MOSFET. Q1 is numbered as 1 = gate, 2 = source and 3 = drain; source pin 2 connects to ground. R2 is the 100 Ω gate-series resistor, and R1 is the 10 kΩ pull-down on the diode-OR output. This circuit switches buzzer power locally rather than sourcing its current from a GPIO.
-
-## Power, signals and limits
-
-J3 is explicitly Ground/5V/Signal: pin 1 ground, pin 2 header 5 V and pin 3 control. Do not substitute the Signal/Ground/5V order used on some other extension boards. JP1 positions 1–2 select Gadgeteer 5 V; 2–3 select header 5 V. Do not bridge both sources. The [buzzer datasheet](https://www.sameskydevices.com/product/resource/cmi-1295-0585t.pdf) specifies 5 V nominal and **30 mA maximum at rated voltage**, not 30 mA typical. If the PDF is unavailable in your reader, Same Sky’s [manufacturer product page (Japanese)](https://jp.sameskydevices.com/product/audio/buzzers/audio-indicators/cmi-1295-0585t) also lists the part specifications and provides a datasheet link. Budget that buzzer load on the host’s 5 V supply, together with this board’s other consumption and every other attached load. This component figure is not an available-current rating for the Prime rail, cable or board. The [DMN2056U datasheet](https://www.diodes.com/datasheet/download/DMN2056U.pdf) identifies the N-channel device; its transistor current rating is not the board’s load rating.
-
-## Board reference
-
-<details markdown="1">
-<summary>Reading the connector callouts</summary>
-
-The dark end of each pill gives the contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
-
-- Red: 3.3 V supply.
-- Orange: 5 V supply.
-- Violet: Control signal.
-- Green: Signal — use the printed function label.
-- Near-black: Circuit ground.
-- Dark grey: Other labelled contact — read its exact function.
-
-A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
-
-</details>
-
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-reader-compact-overview" src="/images/extensions/buzzer-module/guides/reader-compact-overview.png" title="Active buzzer module — overview" alt="Active buzzer module — overview on the buzzer module" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-<details markdown="1">
-<summary>Larger combined reference</summary>
-
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-reference" src="/images/extensions/buzzer-module/guides/reader-reference.png" title="Annotated board reference" alt="Buzzer module annotated board reference, with numbered features." caption="Component-side reference. Dotted leaders locate parts and are not wires. Use the numbered detail views together; check mating orientation on your parts." width=1440 %}
-
-</details>
-
-Start with the overview, then use the focused sheets for exact contacts, controls and links. Check link continuity on your board; footprint defaults do not prove it.
-
-<details markdown="1">
-<summary>Focused contact and component sheets</summary>
+{% include _includes/extension-board-page.html %}
 
 
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-reader-compact-host-input-1-5" src="/images/extensions/buzzer-module/guides/reader-compact-host-input-1-5-central-pills.png" title="J1 · Host input — host input 1 5" alt="J1 · Host input — host input 1 5 on the buzzer module" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-reader-compact-host-input-6-10" src="/images/extensions/buzzer-module/guides/reader-compact-host-input-6-10-central-pills.png" title="J1 · Host input — host input 6 10" alt="J1 · Host input — host input 6 10 on the buzzer module" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-reader-compact-chain-output-1-5" src="/images/extensions/buzzer-module/guides/reader-compact-chain-output-1-5-central-pills.png" title="J2 · Chain output — chain output 1 5" alt="J2 · Chain output — chain output 1 5 on the buzzer module" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-reader-compact-chain-output-6-10" src="/images/extensions/buzzer-module/guides/reader-compact-chain-output-6-10-central-pills.png" title="J2 · Chain output — chain output 6 10" alt="J2 · Chain output — chain output 6 10 on the buzzer module" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-reader-compact-alternate-input-1-3" src="/images/extensions/buzzer-module/guides/reader-compact-alternate-input-1-3-central-pills.png" title="J3 · Alternate input — alternate input 1 3" alt="J3 · Alternate input — alternate input 1 3 on the buzzer module" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-reader-compact-buzzer-control" src="/images/extensions/buzzer-module/guides/reader-compact-buzzer-control.png" title="Buzzer control — buzzer control" alt="Buzzer control — buzzer control on the buzzer module" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-reader-compact-supply-selector" src="/images/extensions/buzzer-module/guides/reader-compact-supply-selector.png" title="Buzzer supply selector — supply selector" alt="Buzzer supply selector — supply selector on the buzzer module" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-reader-compact-control-chain-link" src="/images/extensions/buzzer-module/guides/reader-compact-control-chain-link.png" title="Control chain link — control chain link" alt="Control chain link — control chain link on the buzzer module" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-reader-compact-test-pads" src="/images/extensions/buzzer-module/guides/reader-compact-test-pads-underside-caption.png" title="Test pads — test pads" alt="Test pads — test pads on the buzzer module" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-reader-compact-mounting-holes" src="/images/extensions/buzzer-module/guides/reader-compact-mounting-holes.png" title="Mounting holes — mounting holes" alt="Mounting holes — mounting holes on the buzzer module" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-</details>
-
-Use the annotated reference sheets and contact details together with the complete circuit below. Their contact numbers are PCB pad numbers; check the fitted connector orientation and cable continuity before wiring.
-
-### buzzer-module — connector contacts
-
-Contact numbering below is the PCB's pad numbering, viewed as in the board-reference drawing. Same-numbered duplicate lands are collapsed in this table, and mechanical unnumbered pads are omitted. `NC` means unconnected, not a spare function. Net names alone do not indicate direction; use the signal-path explanation above.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Connector | Contact(s) | Function/net |
-| --- | --- | --- |
-| J3 — BUZZER IN (GND 5V SIG) | 1 | `GND` |
-| J3 — BUZZER IN (GND 5V SIG) | 2 | `/+5V_HDR` |
-| J3 — BUZZER IN (GND 5V SIG) | 3 | `/SIG_HDR` |
-| J2 — Y CHAIN | 1 | `+3V3` |
-| J2 — Y CHAIN | 2 | `+5V` |
-| J2 — Y CHAIN | 3 | `/CHAIN_P3` |
-| J2 — Y CHAIN | 4 | `/G_P4` |
-| J2 — Y CHAIN | 5 | `/G_P5` |
-| J2 — Y CHAIN | 6 | `/G_P6` |
-| J2 — Y CHAIN | 7 | `/G_P7` |
-| J2 — Y CHAIN | 8 | `/G_P8` |
-| J2 — Y CHAIN | 9 | `/G_P9` |
-| J2 — Y CHAIN | 10 | `GND` |
-| J1 — Y IN (host) | 1 | `+3V3` |
-| J1 — Y IN (host) | 2 | `+5V` |
-| J1 — Y IN (host) | 3 | `/Y_P3` |
-| J1 — Y IN (host) | 4 | `/G_P4` |
-| J1 — Y IN (host) | 5 | `/G_P5` |
-| J1 — Y IN (host) | 6 | `/G_P6` |
-| J1 — Y IN (host) | 7 | `/G_P7` |
-| J1 — Y IN (host) | 8 | `/G_P8` |
-| J1 — Y IN (host) | 9 | `/G_P9` |
-| J1 — Y IN (host) | 10 | `GND` |
-
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Indicators</p>
+    <h1 id="buzzer-module">Buzzer module</h1>
+    <p class="xb-lead">A small sounder for end-of-job and status signals: one logic output switches it on, and it makes its own tone.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/buzzer-module/v14/buzzer-module-diagram.png" alt="Top view of the Buzzer module.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-<details markdown="1">
-<summary>Combined connector and link details</summary>
+<div class="xb-stats">
+  <div class="xb-stat"><b>5 V</b><span>buzzer</span></div>
+  <div class="xb-stat"><b>30 mA</b><span>maximum</span></div>
+  <div class="xb-stat"><b>1 output</b><span>on or off</span></div>
+  <div class="xb-stat"><b>2 inputs</b><span>socket or header</span></div>
+  <div class="xb-stat"><b>Chain</b><span>pass-on socket</span></div>
+  <div class="xb-stat"><b>38 × 36</b><span>millimetres</span></div>
+</div>
 
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-connector-detail-01" src="/images/extensions/buzzer-module/guides/reader-connector-detail-01.png" title="Connector detail 01" alt="Buzzer module connector detail 01, with numbered features." caption="Component-side reference. Dotted leaders locate parts and are not wires. Use the numbered detail views together; check mating orientation on your parts." width=1440 %}
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+  <a href="#datasheets">Datasheets</a>
+</nav>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-connector-detail-02" src="/images/extensions/buzzer-module/guides/reader-connector-detail-02.png" title="Connector detail 02" alt="Buzzer module connector detail 02, with numbered features." caption="Component-side reference. Dotted leaders locate parts and are not wires. Use the numbered detail views together; check mating orientation on your parts." width=1440 %}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Not a safety alarm. Bridge only one pair on JP1, so two 5&nbsp;V supplies are never joined. J3 is wired ground, 5&nbsp;V, signal.
+</sl-alert>
 
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-link-detail-01" src="/images/extensions/buzzer-module/guides/reader-link-detail-01.png" title="Link detail 01" alt="Buzzer module link detail 01, with numbered features." caption="Component-side reference. Dotted leaders locate parts and are not wires. Use the numbered detail views together; check mating orientation on your parts." width=1440 %}
+## Tech specs {#specs}
 
-</details>
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>Audible signal</td></tr>
+    <tr><td>Buzzer</td><td><a href="/images/extensions/buzzer-module/datasheets/cmi-1295-0585t.pdf">CMI-1295-0585T</a>, internally driven, 5&nbsp;V, up to 30&nbsp;mA</td></tr>
+    <tr><td>Driver</td><td><a href="/images/extensions/buzzer-module/datasheets/dmn2056u.pdf">DMN2056U</a> MOSFET; high on contact 3 sounds the buzzer</td></tr>
+    <tr><td>Inputs</td><td>J1 socket contact 3, or J3 signal</td></tr>
+    <tr><td>Chain</td><td>J2; JP2 forwards contact 3 (bridged)</td></tr>
+    <tr><td>Supply select</td><td>JP1 pads 1&ndash;2: socket 5&nbsp;V (as delivered); 2&ndash;3: header 5&nbsp;V</td></tr>
+    <tr><td>Size</td><td>38 &times; 36&nbsp;mm</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
-### Links, controls and indicators
+## Board tour {#tour}
 
-JP1 selects one 5 V source: bridge 1–2 for Gadgeteer power or 2–3 for the alternate header. Keep the other pair open to avoid joining two supplies. JP1 has 1–2 bridged by default; to use header power, disconnect power and open that bridge before joining 2–3. JP2 is bridged by default. JP2 connects the host's contact-3 control signal to the chain; leave the chain unused for the initial example. Inspect the links on your board before applying power.
+The numbers on the drawing match the list below it.
 
-| Item | Label | Contact nets / observation |
-| --- | --- | --- |
-| JP1 | 5V SOURCE (1-2 GAD, 2-3 HDR) | 1 = +5V; 2 = /+5V_BUZ; 3 = /+5V_HDR |
-| JP2 | CHAIN P3 | 1 = /Y_P3; 2 = /CHAIN_P3 |
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/buzzer-module/v14/buzzer-module-diagram.png" alt="Top view of the Buzzer module with numbered markers explained in the list below.">
+      <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:22.4%;top:17.5%" aria-label="1: Input socket (J1)">1<span class="xb-pop"><b>Input socket (J1)</b> — from the controller.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-2" style="left:77.4%;top:17.5%" aria-label="2: Chain socket (J2)">2<span class="xb-pop"><b>Chain socket (J2)</b> — to the next module.</span></a>
+      <a class="xb-mk" href="#tour-3" style="left:72.9%;top:83.3%" aria-label="3: Header input (J3)">3<span class="xb-pop"><b>Header input (J3)</b> — ground, 5&nbsp;V, signal.</span></a>
+      <a class="xb-mk" href="#tour-4" style="left:37.9%;top:67.7%" aria-label="4: Buzzer (BZ1)">4<span class="xb-pop"><b>Buzzer (BZ1)</b> — the sounder.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-5" style="left:61.2%;top:40.1%" aria-label="5: Driver (Q1)">5<span class="xb-pop"><b>Driver (Q1)</b> — switches it.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-6" style="left:27.4%;top:40.1%" aria-label="6: Input diodes (D1)">6<span class="xb-pop"><b>Input diodes (D1)</b> — combine the two inputs.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-7" style="left:82.4%;top:38.9%" aria-label="7: Supply select (JP1)">7<span class="xb-pop"><b>Supply select (JP1)</b> — one pair only.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-8" style="left:47.4%;top:32.6%" aria-label="8: Chain link (JP2)">8<span class="xb-pop"><b>Chain link (JP2)</b> — forwards contact 3.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Input socket (J1)</b> — from the controller.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Chain socket (J2)</b> — to the next module.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Header input (J3)</b> — ground, 5&nbsp;V, signal.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Buzzer (BZ1)</b> — the sounder.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Driver (Q1)</b> — switches it.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Input diodes (D1)</b> — combine the two inputs.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Supply select (JP1)</b> — one pair only.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Chain link (JP2)</b> — forwards contact 3.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
+## Pinout {#pinout}
 
-</details>
+### J1: input socket
 
-## Practical use with Smoothieboard V2 Prime
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-5v">5 V</span></td></tr>
+    <tr><td>3</td><td><span class="xb-pill xb-p-sig">Control</span></td></tr>
+    <tr><td>4 to 9</td><td>Passed to J2</td></tr>
+    <tr><td>10</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The main view keeps both complete boards visible. The ten-core cable connects each numbered Prime GF/J37 contact to the same-numbered J1 contact. The onboard sounder uses contact 2 for 5 V, contact 3 for PB1 control and contact 10 for ground; the other contacts reach the board’s unused chain interface. Leave J2 and J3 disconnected for this example.
+### J3: header input
 
-J1 is a Samtec SHF-105-01-L-D-TH-LC header. In its unrotated PCB-front view, the notch is on the lower edge, the odd-numbered row is below the even-numbered row, and pin 1 is at the lower left. Read the numbered PCB pad keys in that view; looking into a loose socket gives a different view.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-5v">5 V</span></td></tr>
+    <tr><td>3</td><td><span class="xb-pill xb-p-sig">Control</span></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-[Samtec specifies FFSD or FFTP mates without strain relief for this header](https://www.samtec.com/products/shf-105-01-l-d-th-lc). The [FFSD family has several wiring arrangements](https://www.samtec.com/products/ffsd), so a grey ribbon and red edge alone do not establish a straight-through cable. The required electrical schedule is J37.1 to J1.1 through J37.10 to J1.10.
+## What you need {#what-you-need}
 
-Prime J37 is specified only by a generic 1.27 mm SMD header footprint. Its two rows of PCB copper-pad centres are 3.90 mm apart; those solder lands are not socket cavities. The Prime design does not identify the host header's manufacturer part number or post length. The dashed outline in the overview therefore locates a symbolic connection, rather than specifying a purchasable plug or its mating-face orientation.
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>This module</b><span>And a ten-wire cable or three leads.</span></div>
+  <div class="xb-card"><b>A free output</b><span>PB1 in the example.</span></div>
+</div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-whole-circuit" src="/images/extensions/buzzer-module/guides/whole-circuit/buzzer-whole-circuit.png" title="Prime and buzzer — complete boards and cable" alt="Complete Prime and buzzer boards joined by a grey ten-core ribbon with red pin-one edge; the sounder and driver are on the module." caption="Numbered electrical connection on a 5 mm grid; the supply uses JP1 1–2. Dashed yellow outlines mark plug locations, not mating geometry. Check numbered cable continuity, fitted links, connector fit and cable clearance before applying power." width=6800 %}
+## Get started {#get-started}
 
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-host-entry-detail" src="/images/extensions/buzzer-module/guides/whole-circuit/prime-j37-entry-detail.png" title="Prime J37 cable entry detail" alt="Enlarged host cable entry from the complete buzzer wiring diagram, with the grey cable entering the dashed symbolic plug." caption="Enlargement of the same wiring drawing. Follow the grey cable into the symbolic plug and use the numbered contact keys below. This is a board-side electrical illustration, not a mating-face view." width=800 %}
+This example uses PB1 on Smoothieboard V2 Prime GF/J37 (the 2590 version; check the pin on other boards).
 
-<details markdown="1">
-<summary>Three individual leads — alternative contact detail</summary>
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Check JP1</h3>
+    <p>Pads 1&ndash;2 bridged.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Connect</h3>
+    <p>With power off, cable GF/J37 to J1 contact for contact, or wire only contacts 2, 3 and 10. Leave J2 and J3 empty.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure</h3>
+    <p>Add the settings below.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Test</h3>
+    <p>Send <code>M106.9</code>, then <code>M107.9</code>.</p>
+    <p class="xb-expect">Sound, then silence.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-compact-installation" src="/images/extensions/buzzer-module/guides/native-contact/buzzer-native-reader.png" title="Sound the onboard buzzer" alt="Three individual leads connect J37 and J1 contacts 2, 3 and 10; the solder bridge supplies onboard BZ1 from limited host 5 V." caption="Three external leads attach to the odd and even connector rows. Keep the default JP1 1–2 bridge and leave 2–3 open. Keys are front views, not mating faces." width=2000 %}
+## Configuration {#configuration}
 
-This alternative connects only contacts 2, 3 and 10. It shows separated connector rows for legibility; the complete-board cable above preserves the board context. Do not combine this loose-lead alternative with a second supply on J3.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>A command that sounds the buzzer</td><td><a href="/switch">Switch</a>, digital output</td><td><a href="#config-main">Setup</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-</details>
-
-### Enlarged installation contact numbers
-
-Use these enlarged keys with the complete circuit above. Filled contacts identify the three functions used by the buzzer. The full ten-core cable also connects the other numbered contacts to the unused chain interface; in the individual-lead alternative those other contacts remain disconnected. Jumper keys identify the solder bridge to use. These sheets do not replace the circuit or establish cable mating-face orientation.
-
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-installation-key-j1" src="/images/extensions/buzzer-module/guides/native-contact/J1-numbered-pads.png" title="J1 contact numbers for this installation" alt="Enlarged component-side pad positions for J1; filled contacts are selected in the complete circuit." caption="Read with the complete wiring diagram above. This shows relative pad positions and numbering. It is a PCB front-coordinate projection, not a cable mating-face drawing; verify the actual connector orientation before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-installation-key-j37" src="/images/extensions/buzzer-module/guides/native-contact/J37-numbered-pads.png" title="J37 contact numbers for this installation" alt="Enlarged component-side pad positions for J37; filled contacts are selected in the complete circuit." caption="Read with the complete wiring diagram above. This shows relative pad positions and numbering. It is a PCB front-coordinate projection, not a cable mating-face drawing; verify the actual connector orientation before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="buzzer-module-v14-installation-key-jp1" src="/images/extensions/buzzer-module/guides/native-contact/JP1-numbered-pads.png" title="JP1 contact numbers for this installation" alt="Enlarged component-side pad positions for JP1; filled contacts are selected in the complete circuit." caption="Read with the complete wiring diagram above. This shows relative pad positions and numbering. It is a PCB front-coordinate projection, not a cable mating-face drawing; verify the actual connector orientation before wiring." width=420 %}
-
-The example turns the buzzer on and off from an ordinary V2 digital switch command using Prime2590 GF/J37.3 (PB1).
-
-The drawings show the ten-core cable and onboard sounder, and the optional three-lead alternative. The Prime2590 allocation applies only to that board and must not be copied to a different Prime. Its rail contacts are 1 = limited 3.3 V, 2 = limited 5 V, 10 = ground; check the unshrouded host header and cable orientation before applying power.
-
-1. With power off, choose the Gadgeteer supply using only JP1 positions 1–2, after checking the connector's pin-1 marker. Leave J3 unconnected.
-2. For the complete cable, connect GF/J37.1–10 to the matching J1.1–10 positions and verify each numbered conductor with power removed; the red edge identifies the intended pin-1 side only after that check. Contacts 2, 3 and 10 supply limited host 5 V, PB1 control and ground. If using individual leads instead, connect only those three matching positions and leave the other input contacts disconnected. Verify the host rail budget before power.
-3. Leave J2 unused for the initial test. Ensure PB1 is free and no other M106.9/M107.9 switch instance conflicts with the example.
-4. Start with the output inactive, send M106.9 to request sound, then M107.9 to stop. Test halt/reset/disconnect behavior before relying on an audible notification.
-
-## Smoothieware use
-
-The V2 switch configuration supports a digital output and named M-code on/off commands. This uses the board's own active tone; no audio driver or tone-frequency setting is needed. Do not use a PWM servo output or external load supply in place of the shown 5 V source.
-
-Merge these fields into the configuration’s existing single `[switch]` section, keeping its other switch entries; do not add a duplicate section. The `bench_buzzer` name, PB1 and command subcode 9 must be free. The following configures the PB1 active-high control example. The board connects J1.3 and J3.3 to the two BAT54C anodes; its common cathode feeds the MOSFET gate through 100 Ω, with a 10 kΩ pull-down before that resistor. A HIGH requests the local low-side switch to conduct. Use one control source for the initial test; check diode drops, gate drive and supply limits:
+### Setup {#config-main}
 
 ```ini
 [switch]
@@ -196,40 +198,107 @@ bench_buzzer.subcode = 9
 bench_buzzer.halt_set_to = false
 ```
 
-Use these command assignments only when no existing switch/fan configuration consumes them. With loads disabled, M106.9 requests sound and M107.9 requests silence. Check halt and reset behavior; do not infer it from startup_state.
+PB1, the name and <code>M106.9</code>/<code>M107.9</code> must be unused. Merge into an existing <code>[switch]</code> section.
+
+## How it works {#how-it-works}
+
+Either input passes through a diode and 100&nbsp;&Omega; to the MOSFET gate, which has a 10&nbsp;k&Omega; pull-down. A high level connects the buzzer to ground.
+
+## Troubleshooting {#troubleshooting}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>No sound</td><td>JP1 bridged on one pair, 5&nbsp;V on contact 2, PB1 changes.</td></tr>
+    <tr><td>Always on</td><td>A second control source on J3 or a command conflict.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
+
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/buzzer-module/v14/buzzer-module-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/buzzer-module/v14/buzzer-module-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/buzzer-module/v14/buzzer-module-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-bz-mount-t">
+  <title id="xb-bz-mount-t">Mounting drawing of the bz, component side: outline 38 by 36 millimetres with 2 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="300.6" y="78.0" width="358.9" height="340.0" rx="9.4" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M300.6 56H659.4"/><path d="M300.6 50V62"/><path d="M659.4 50V62"/><path d="M685.4 78.0V418.0"/><path d="M679.4 78.0h12"/><path d="M679.4 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">38</text>
+  <text x="697.4" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">36</text>
+  <circle cx="300.6" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="288.6" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M242.6 104.0h30" fill="none"/><path d="M276.6 104.0l-8 -4v8z"/><path d="M242.6 104.0v30" fill="none"/><path d="M242.6 138.0l-4 -8h8z"/></g>
+  <text x="280.6" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="238.6" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="376.1" cy="285.8" r="15.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M357.0 285.8h38.2M376.1 266.7v38.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="361.0" y="260.7" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  8.00, 22.00</text>
+  <circle cx="565.0" cy="285.8" r="15.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M545.9 285.8h38.2M565.0 266.7v38.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="580.1" y="260.7" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  28.00, 22.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 38 × 36&nbsp;mm, corners rounded to a 1&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>8.00</td><td>22.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>28.00</td><td>22.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Buzzer values from its datasheet.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Buzzer supply</td><td>5 V</td><td>—</td><td>5 V</td><td>—</td><td>Nominal</td></tr>
+    <tr><td>Buzzer current</td><td>At rated voltage</td><td>—</td><td>—</td><td>30 mA</td><td>Datasheet maximum</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: datasheets {#datasheets}
+
+The first page of each important chip&rsquo;s datasheet. Click a page to open the PDF.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <a href="/images/extensions/buzzer-module/datasheets/cmi-1295-0585t.pdf"><img src="/images/extensions/buzzer-module/datasheets/cmi-1295-0585t-page1.png" alt="First page of the CMI-1295-0585T datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/buzzer-module/datasheets/cmi-1295-0585t.pdf">CMI-1295-0585T magnetic buzzer datasheet</a> — Same Sky, 4 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/buzzer-module/datasheets/dmn2056u.pdf"><img src="/images/extensions/buzzer-module/datasheets/dmn2056u-page1.png" alt="First page of the DMN2056U datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/buzzer-module/datasheets/dmn2056u.pdf">DMN2056U N-channel MOSFET datasheet</a> — Diodes Incorporated, 8 pages.</figcaption>
+</figure>
+{:/nomarkdown}
 
 
-Subcode 9 in the [V2 digital-switch implementation](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp#L115-L438) is an example allocation: reserve `M106.9`/`M107.9` in the complete configuration before use. Startup and halt settings are logical OFF; they do not guarantee the electrical state during reset, bootloader operation, lost power or a disconnected cable. The `!` suffix, where shown, inverts that logical output.
-
-### Check the buzzer commands
-
-With machine loads disabled, begin with `M107.9`, request sound with `M106.9`, then send `M107.9` again. Allow each command to complete before the next. These are the expected results of the example configuration and circuit:
-
-<div class="extension-contact-table" role="region" aria-label="Buzzer command checks; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Condition | Expected logical state | Check if the result differs |
-| --- | --- | --- |
-| Configuration loaded | PB1 LOW; buzzer requested off | Confirm `startup_state = false`, the configured pin and exclusive ownership. Reset and bootloader intervals require a separate electrical check. |
-| `M106.9` | PB1 HIGH; buzzer requested on | If the pin changes but no sound occurs, check J1.2/J1.10, JP1 1–2, the fitted buzzer polarity and the local driver. |
-| `M107.9` | PB1 LOW; buzzer requested off | Check for a conflicting command assignment or a second active control source on J3.3. |
-| Firmware halt | Logical output forced off by `halt_set_to = false` | Verify the actual halted electrical state separately; a firmware setting does not cover reset, loss of power or cable disconnection. |
-
-</div>
-
-Disconnect power before changing links or moving a cable. J3 remains unused in this example, so another signal cannot keep the diode-OR control active after PB1 goes LOW.
-
-## Sources
-
-[Download the KiCad design files](/assets/downloads/extensions/buzzer-module/buzzer-module-cad-study.zip) for the editable PCB and schematic, project libraries, exports and board artwork. Open the complete extracted project hierarchy in KiCad 9 with its standard libraries installed; see `SOURCE-NOTES.txt` for dependencies, attribution and licence notices. The optional connector 3D model is omitted for redistribution reasons; the PCB and schematic remain editable, while the 3D viewer may report the missing body. Download size: 346,507 bytes.
-
-- [Design source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/buzzer-module/attempt/versions/v14)
-- [Specification](https://github.com/arthurwolf/extension-boards/blob/main/src/buzzer-module/specs.md)
-- [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/buzzer-module/design.md)
-- [All extension boards](/extension-boards)
-
-<details markdown="1">
-<summary>Additional board views</summary>
-
-{% include _includes/extension-board-visuals.html slug="buzzer-module" %}
-
-</details>
+See all boards on the [extension boards](/extension-boards) page.

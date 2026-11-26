@@ -1,166 +1,204 @@
 ---
 layout: default
 title: "D-sub-to-Gadgeteer OUT adapter"
+description: "The remote end of a DE-9 extension for a Gadgeteer socket: seven signals and 5 V in, a socket and a locally made 3.3 V out."
 permalink: /extensions/d-sub-to-gadgeteer-out
 ---
 
-# D-sub-to-Gadgeteer OUT adapter
+{% include _includes/extension-board-page.html %}
 
-OUT is the remote half of the custom IN-to-OUT DE-9 extension. It delivers the seven transported signals and 5 V, and creates a local 3.3 V rail for a compatible downstream module. It is not a general-purpose serial adapter.
 
-J1 receives the dedicated nine-conductor cable. The TPS70933 regulator derives LOCAL_3V3 from cable 5 V. J2 presents the remote Gadgeteer interface and J3 branches contacts 8/9 and the locally generated 3.3 V rail into a four-contact connector. It is a Qwiic interface only if the chosen host assigns contact 8 to SDA and contact 9 to SCL. Signal paths are copper paths with protection components, not a direction-detecting data repeater.
-
-## Power, signals and limits
-
-J1 DE-9 contacts 1/2/3/4/6/7/8 carry Gadgeteer signals 3/4/5/6/7/8/9; contact 5 is ground and 9 cable 5 V. J2.1 is locally generated 3.3 V, not the controller's 3.3 V rail. Do not drive either remote rail from an external supply. Never connect RS-232/Ethernet/another host.
-
-## Board reference
-
-<details markdown="1">
-<summary>Reading the connector callouts</summary>
-
-The dark end of each pill gives the contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
-
-- Red: 3.3 V supply.
-- Orange: 5 V supply.
-- Near-black: Circuit ground.
-- Dark grey: Other labelled contact — read its exact function.
-
-A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
-
-</details>
-
-{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-out-v26-reader-compact-overview" src="/images/extensions/d-sub-to-gadgeteer-out/guides/reader-compact-overview.png" title="DE-9 adapter · remote — overview" alt="DE-9 adapter · remote — overview" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-<details markdown="1">
-<summary>Larger combined reference</summary>
-
-{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-out-v26-reference" src="/images/extensions/d-sub-to-gadgeteer-out/guides/reader-reference.png" title="Annotated board reference" alt="Annotated board reference for d-sub-to-gadgeteer-out" caption="Component-side reference. Dotted leaders locate parts and are not wiring." width=1440 %}
-
-</details>
-
-Start with the overview, then use all focused sheets for exact contacts, controls and links.
-
-<details markdown="1">
-<summary>Focused contact and component sheets</summary>
-
-{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-out-v26-reader-compact-gadgeteer-1-5" src="/images/extensions/d-sub-to-gadgeteer-out/guides/reader-compact-gadgeteer-1-5-central-pills.png" title="J2 · Gadgeteer — gadgeteer 1 5" alt="J2 · Gadgeteer — gadgeteer 1 5" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-out-v26-reader-compact-gadgeteer-6-10" src="/images/extensions/d-sub-to-gadgeteer-out/guides/reader-compact-gadgeteer-6-10-central-pills.png" title="J2 · Gadgeteer — gadgeteer 6 10" alt="J2 · Gadgeteer — gadgeteer 6 10" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-out-v26-reader-compact-custom-de9-1-5" src="/images/extensions/d-sub-to-gadgeteer-out/guides/reader-compact-custom-de9-1-5-central-pills.png" title="J1 · Custom DE-9 — custom de9 1 5" alt="J1 · Custom DE-9 — custom de9 1 5" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-out-v26-reader-compact-custom-de9-6-9" src="/images/extensions/d-sub-to-gadgeteer-out/guides/reader-compact-custom-de9-6-9-central-pills.png" title="J1 · Custom DE-9 — custom de9 6 9" alt="J1 · Custom DE-9 — custom de9 6 9" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-out-v26-reader-compact-four-pin-breakout-1-4" src="/images/extensions/d-sub-to-gadgeteer-out/guides/reader-compact-four-pin-breakout-1-4-central-pills.png" title="J3 · 4-pin breakout — four pin breakout 1 4" alt="J3 · 4-pin breakout — four pin breakout 1 4" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-out-v26-reader-compact-signal-protection-2-5" src="/images/extensions/d-sub-to-gadgeteer-out/guides/reader-compact-signal-protection-2-5.png" title="Signal protection — signal protection 2 5" alt="Signal protection — signal protection 2 5" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-out-v26-reader-compact-signal-protection-6-8" src="/images/extensions/d-sub-to-gadgeteer-out/guides/reader-compact-signal-protection-6-8.png" title="Signal protection — signal protection 6 8" alt="Signal protection — signal protection 6 8" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-out-v26-reader-compact-supply-protection" src="/images/extensions/d-sub-to-gadgeteer-out/guides/reader-compact-supply-protection-underside-caption.png" title="Cable supply protector — supply protection" alt="Cable supply protector — supply protection" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-out-v26-reader-compact-breakout-pads" src="/images/extensions/d-sub-to-gadgeteer-out/guides/reader-compact-breakout-pads-underside-caption.png" title="Four-contact pad groups — breakout pads" alt="Four-contact pad groups — breakout pads" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-out-v26-reader-compact-regulator" src="/images/extensions/d-sub-to-gadgeteer-out/guides/reader-compact-regulator-underside-caption.png" title="Local 3.3 V regulator — regulator" alt="Local 3.3 V regulator — regulator" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-out-v26-reader-compact-test-pads" src="/images/extensions/d-sub-to-gadgeteer-out/guides/reader-compact-test-pads.png" title="Test pads — test pads" alt="Test pads — test pads" caption=" Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-</details>
-
-### Connector contacts
-
-Contact numbering below is the PCB's pad numbering, viewed using the board-reference drawing. Same-numbered duplicate lands are collapsed in this electrical table. Mechanical unnumbered pads are omitted here. `NC` means unconnected, not a spare. Named nets alone do not establish direction; use the signal-path explanation above.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Connector | Contact(s) | Saved-source function/net |
-| --- | --- | --- |
-| J2 — SHF-105-01-L-D-TH | 1 | `LOCAL_3V3` |
-| J2 — SHF-105-01-L-D-TH | 2 | `CABLE_5V` |
-| J2 — SHF-105-01-L-D-TH | 3 | `SIG3` |
-| J2 — SHF-105-01-L-D-TH | 4 | `SIG4` |
-| J2 — SHF-105-01-L-D-TH | 5 | `SIG5` |
-| J2 — SHF-105-01-L-D-TH | 6 | `SIG6` |
-| J2 — SHF-105-01-L-D-TH | 7 | `SIG7` |
-| J2 — SHF-105-01-L-D-TH | 8 | `SIG8` |
-| J2 — SHF-105-01-L-D-TH | 9 | `SIG9` |
-| J2 — SHF-105-01-L-D-TH | 10 | `GND` |
-| J1 — DE-9 SOCKET | 1 | `SIG3` |
-| J1 — DE-9 SOCKET | 2 | `SIG4` |
-| J1 — DE-9 SOCKET | 3 | `SIG5` |
-| J1 — DE-9 SOCKET | 4 | `SIG6` |
-| J1 — DE-9 SOCKET | 5 | `GND` |
-| J1 — DE-9 SOCKET | 6 | `SIG7` |
-| J1 — DE-9 SOCKET | 7 | `SIG8` |
-| J1 — DE-9 SOCKET | 8 | `SIG9` |
-| J1 — DE-9 SOCKET | 9 | `CABLE_5V` |
-| J3 — QWIIC I-ONLY | 1 | `GND` |
-| J3 — QWIIC I-ONLY | 2 | `LOCAL_3V3` |
-| J3 — QWIIC I-ONLY | 3 | `SIG8` |
-| J3 — QWIIC I-ONLY | 4 | `SIG9` |
-| J3 — QWIIC I-ONLY | MP | `GND` |
-
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Cabling adapters</p>
+    <h1 id="d-sub-to-gadgeteer-out">D-sub-to-Gadgeteer OUT adapter</h1>
+    <p class="xb-lead">The far end of a DE-9 cable extension: it receives seven signals and 5&nbsp;V, makes its own 3.3&nbsp;V and presents a ten-contact socket to a module.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/d-sub-to-gadgeteer-out/v26/d-sub-to-gadgeteer-out-diagram.png" alt="Top view of the D-sub-to-Gadgeteer OUT adapter.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-<details markdown="1">
-<summary>Combined connector and link details</summary>
+<div class="xb-stats">
+  <div class="xb-stat"><b>7 signals</b><span>direct</span></div>
+  <div class="xb-stat"><b>DE-9</b><span>socket</span></div>
+  <div class="xb-stat"><b>5 V</b><span>carried</span></div>
+  <div class="xb-stat"><b>ESD</b><span>every line</span></div>
+  <div class="xb-stat"><b>Qwiic</b><span>I²C branch</span></div>
+  <div class="xb-stat"><b>33 × 26</b><span>millimetres</span></div>
+</div>
 
-{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-out-v26-connector-detail-01" src="/images/extensions/d-sub-to-gadgeteer-out/guides/reader-connector-detail-01.png" title="Connector detail 01" alt="Connector detail 01 for d-sub-to-gadgeteer-out" caption="Component-side reference. Dotted leaders locate parts and are not wiring." width=1440 %}
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+  <a href="#datasheets">Datasheets</a>
+</nav>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="d-sub-to-gadgeteer-out-v26-connector-detail-02" src="/images/extensions/d-sub-to-gadgeteer-out/guides/reader-connector-detail-02.png" title="Connector detail 02" alt="Connector detail 02 for d-sub-to-gadgeteer-out" caption="Component-side reference. Dotted leaders locate parts and are not wiring." width=1440 %}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  This is not a serial port. Never connect a computer, an RS-232 or null-modem cable, or network equipment. A wrong or shorted cable can put 5&nbsp;V on a signal pin. No isolation or level conversion.
+</sl-alert>
 
-</details>
+## Tech specs {#specs}
 
-Active components: `U1 TPS70933DBVR 3.3V`. These identities are not a substitute for matching datasheet limits.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>Extend one socket over a nine-wire cable</td></tr>
+    <tr><td>DE-9</td><td>1&ndash;4: signals 3&ndash;6; 5: ground; 6&ndash;8: signals 7&ndash;9; 9: 5&nbsp;V</td></tr>
+    <tr><td>Protection</td><td><a href="/images/extensions/d-sub-to-gadgeteer-out/datasheets/tpd1e05u06.pdf">TPD1E05U06</a> on each signal; surge diode on 5&nbsp;V</td></tr>
+    <tr><td>3.3 V</td><td>Made on this board by a <a href="/images/extensions/d-sub-to-gadgeteer-out/datasheets/tps709.pdf">TPS70933</a> from the cable 5&nbsp;V</td></tr>
+    <tr><td>Qwiic (J3)</td><td>Underside; contacts 8 and 9 as SDA and SCL, for sockets of type I</td></tr>
+    <tr><td>Size</td><td>33 &times; 26&nbsp;mm</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-</details>
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
-## Practical use with Smoothieboard V2 Prime
+## Board tour {#tour}
 
-The example connects a normally-open dry button through the OUT board alone. Use four individual leads; the regulator and all supply contacts remain unpowered. No IN board, serial cable or powered peripheral is required.
+The numbers on the drawing match the list below it.
 
-{% include _includes/extension-instruction-diagram.html id="d-sub-out-v26-compact-main" src="/images/extensions/d-sub-to-gadgeteer-out/guides/compact-individual-leads.png" title="Prime to DE-9 OUT and dry button" alt="Prime to DE-9 OUT and dry button for the normally-open dry-contact example" caption="Four individual external leads, with both supply rails disconnected. PCB contact projections are not cable mating-face drawings. Not an RS-232 interface." width=420 %}
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/d-sub-to-gadgeteer-out/v26/d-sub-to-gadgeteer-out-diagram.png" alt="Top view of the D-sub-to-Gadgeteer OUT adapter with numbered markers explained in the list below.">
+      <a class="xb-mk xb-pb" href="#tour-1" style="left:34.1%;top:27.4%" aria-label="1: DE-9 socket (J1)">1<span class="xb-pop"><b>DE-9 socket (J1)</b> — from the IN adapter.</span></a>
+      <a class="xb-mk" href="#tour-2" style="left:29.9%;top:60.6%" aria-label="2: Module socket (J2)">2<span class="xb-pop"><b>Module socket (J2)</b> — ten contacts.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-3" style="left:25.6%;top:34.5%" aria-label="3: Protection diode D2">3<span class="xb-pop"><b>Protection diode D2</b> — signal 3.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-4" style="left:33.9%;top:34.5%" aria-label="4: Protection diode D3">4<span class="xb-pop"><b>Protection diode D3</b> — signal 4.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-5" style="left:42.2%;top:34.5%" aria-label="5: Protection diode D4">5<span class="xb-pop"><b>Protection diode D4</b> — signal 5.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-6" style="left:50.5%;top:34.5%" aria-label="6: Protection diode D5">6<span class="xb-pop"><b>Protection diode D5</b> — signal 6.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-7" style="left:58.8%;top:34.5%" aria-label="7: Protection diode D6">7<span class="xb-pop"><b>Protection diode D6</b> — signal 7.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-8" style="left:75.4%;top:34.5%" aria-label="8: Protection diode D8">8<span class="xb-pop"><b>Protection diode D8</b> — signal 9.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>DE-9 socket (J1)</b> — from the IN adapter.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Module socket (J2)</b> — ten contacts.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Protection diode D2</b> — signal 3.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Protection diode D3</b> — signal 4.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Protection diode D4</b> — signal 5.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Protection diode D5</b> — signal 6.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Protection diode D6</b> — signal 7.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Protection diode D8</b> — signal 9.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-1. With power removed, connect **Prime GF/J37.3 (PB1) to DE-9 J1.1 (SIG3)** and **GF/J37.10 (ground) to DE-9 J1.5**. Use identified individual contacts; do not attach a straight-through serial cable or a computer serial port.
-2. Connect the two normally-open button terminals to **Gadgeteer J2.3 (SIG3)** and **J2.10 (ground)**. D2 is the existing signal-to-ground transient clamp; no board pull-up or series resistor is assumed.
-3. Leave DE-9 J1.9 **CABLE_5V**, Gadgeteer J2.1 **LOCAL_3V3**, J2.2, every other signal and J3 Qwiic unused. This example does not energize the local regulator.
-4. Reserve PB1 and use its pull-up as shown below. Released reads HIGH and pressed reads LOW. A disconnected button also reads released; this wiring does not detect a broken cable. Test with machine loads disabled before using an action.
+## Pinout {#pinout}
 
-### Locate the contacts
+### J1: DE-9
 
-Read all three PCB contact keys with the complete diagram. Filled contacts are used; the others stay unused. Confirm actual numbering and cable orientation before connecting hardware.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1, 2, 3, 4</td><td>Signals 3 to 6</td></tr>
+    <tr><td>5</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+    <tr><td>6, 7, 8</td><td>Signals 7 to 9</td></tr>
+    <tr><td>9</td><td><span class="xb-pill xb-p-5v">5 V</span></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="d-sub-out-v26-compact-j37" src="/images/extensions/d-sub-to-gadgeteer-out/guides/compact-J37-numbered-pads.png" title="Prime GF / J37" alt="Prime GF / J37 for the normally-open dry-contact example" caption="Four individual external leads, with both supply rails disconnected. PCB contact projections are not cable mating-face drawings. Not an RS-232 interface." width=420 %}
+### J2: module socket
 
-{% include _includes/extension-instruction-diagram.html id="d-sub-out-v26-compact-j1" src="/images/extensions/d-sub-to-gadgeteer-out/guides/compact-J1-numbered-pads.png" title="Adapter DE-9 J1" alt="Adapter DE-9 J1 for the normally-open dry-contact example" caption="Four individual external leads, with both supply rails disconnected. PCB contact projections are not cable mating-face drawings. Not an RS-232 interface." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-3v3">Local 3.3 V</span></td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-5v">5 V</span></td></tr>
+    <tr><td>3 to 9</td><td>Signals 3 to 9</td></tr>
+    <tr><td>10</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="d-sub-out-v26-compact-j2" src="/images/extensions/d-sub-to-gadgeteer-out/guides/compact-J2-numbered-pads.png" title="Adapter Gadgeteer J2" alt="Adapter Gadgeteer J2 for the normally-open dry-contact example" caption="Four individual external leads, with both supply rails disconnected. PCB contact projections are not cable mating-face drawings. Not an RS-232 interface." width=420 %}
+### J3: Qwiic (underside)
 
-<details markdown="1">
-<summary>Paired IN and OUT path with power rails</summary>
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td></tr>
+    <tr><td>3</td><td>Signal 8 (SDA)</td></tr>
+    <tr><td>4</td><td>Signal 9 (SCL)</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-This view carries a dry button through the **IN and OUT** boards, including the rail paths. It is not the four-lead installation above; do not power it without checking the cable, regulator enable and rail budget.
+## What you need {#what-you-need}
 
-{% include _includes/extension-instruction-diagram.html id="dsub-pair-v24-v26-installation" src="/images/extensions/d-sub-to-gadgeteer-out/guides/paired-installation-wiring.png" title="Prime, DE-9 IN, OUT and normally-open button" alt="Paired connection with ten Prime conductors, nine custom DE-9 conductors and two dry-button wires." caption="Twenty-one electrical conductors; output local 3.3 V is unused." width=4800 %}
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>This adapter</b><span>And leads or the matching cable.</span></div>
+  <div class="xb-card"><b>A DE-9 cable</b><span>Wired straight, contact for contact, for use with the pair.</span></div>
+  <div class="xb-card"><b>A push button</b><span>For the example.</span></div>
+</div>
+{:/nomarkdown}
 
-The view contains these connections:
+## Get started {#get-started}
 
-- All ten Prime GF/J37 contacts are represented at matching IN J1 contacts, including supply rails.
-- All nine IN DE-9 J2 contacts are represented at same-numbered OUT DE-9 J1 contacts. This is a custom GPIO mapping, not RS-232 or a null-modem mapping.
-- The button path is Prime J37.3/PB1 → IN J1.3 → IN J2.1 → OUT J1.1 → OUT J2.3; the return uses DE-9 contact 5 and OUT J2.10.
-- OUT J2.1 is the regulator’s LOCAL_3V3 output, not a pass-through Prime rail. The comparison includes Prime 5 V at DE-9 contact 9 and the regulator input; check regulator behavior, rail budget and sensor loads before powering.
+This example reads a button through the OUT adapter alone, on Smoothieboard V2 Prime GF/J37.
 
-The drawing's separate connector symbols preserve electrical numbering; they are not mating-face views. Confirm cable continuity, orientation and supply allowance before connecting hardware. A powered I²C sensor is a separate installation requiring its exact driver, bus loading, pull-up and supply review.
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Wire the controller side</h3>
+    <p>With power off: Prime GF/J37.3 (PB1) to DE-9 contact 1, and GF/J37.10 to DE-9 contact 5.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Wire the button</h3>
+    <p>Wire a normally-open button between socket J2 contacts 3 and 10.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure</h3>
+    <p>Add the settings below; PB1 must be free.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Test</h3>
+    <p>With machine loads disabled, power up and press.</p>
+    <p class="xb-expect">The controller halts.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
-</details>
+## Configuration {#configuration}
 
-## Smoothieware use
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>A button at the end of a cable</td><td><a href="/buttons">Button box</a></td><td><a href="#config-main">Setup</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The adapters require no control protocol. The button uses the [V2 buttonbox parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/buttonbox/buttonbox.cpp#L49-L125):
+### Setup {#config-main}
 
 ```ini
 [button box]
@@ -169,16 +207,100 @@ extension_button.pin = PB1!^
 extension_button.press = KILL
 ```
 
-`^` enables the pull-up and `!` makes the grounded button active. `KILL` requests a software halt, not a safety-rated emergency stop. Merge the example into the complete configuration without assigning PB1 twice.  The adapters add no serial baud setting or automatic I²C support.
+<code>^</code> turns on the pull-up, <code>!</code> makes the grounded button active. <code>KILL</code> is a software halt, not a safety emergency stop. See <a href="/buttons">buttons</a>.
 
-- [Design source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/d-sub-to-gadgeteer-out/attempt/versions/v26)
-- [Design specification](https://github.com/arthurwolf/extension-boards/blob/main/src/d-sub-to-gadgeteer-out/specs.md)
-- [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/d-sub-to-gadgeteer-out/design.md)
-- [All extension boards](/extension-boards)
+## How it works {#how-it-works}
 
-<details markdown="1">
-<summary>Supplementary board views</summary>
+Signals pass straight through, each with an ESD diode to ground. The regulator turns the cable&rsquo;s 5&nbsp;V into the module&rsquo;s 3.3&nbsp;V. In the button example it stays unpowered. The direction of each signal is set by the attached devices.
 
-{% include _includes/extension-board-visuals.html slug="d-sub-to-gadgeteer-out" %}
+## Troubleshooting {#troubleshooting}
 
-</details>
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Button does nothing</td><td>Both wires, PB1 free, <code>^</code> and <code>!</code> present.</td></tr>
+    <tr><td>Unreliable I²C</td><td>Long cables need slower speeds and suitable pull-ups.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
+
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/d-sub-to-gadgeteer-out/v26/d-sub-to-gadgeteer-out-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/d-sub-to-gadgeteer-out/v26/d-sub-to-gadgeteer-out-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/d-sub-to-gadgeteer-out/v26/d-sub-to-gadgeteer-out-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-do-mount-t">
+  <title id="xb-do-mount-t">Mounting drawing of the do, component side: outline 33 by 26 millimetres with 0 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="264.2" y="78.0" width="431.5" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M264.2 56H695.8"/><path d="M264.2 50V62"/><path d="M695.8 50V62"/><path d="M721.8 78.0V418.0"/><path d="M715.8 78.0h12"/><path d="M715.8 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">33</text>
+  <text x="733.8" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">26</text>
+  <circle cx="264.2" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="252.2" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M206.2 104.0h30" fill="none"/><path d="M240.2 104.0l-8 -4v8z"/><path d="M206.2 104.0v30" fill="none"/><path d="M206.2 138.0l-4 -8h8z"/></g>
+  <text x="244.2" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="202.2" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 33 × 26&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Signal levels.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Signals</td><td>All seven</td><td>—</td><td>3.3 V</td><td>—</td><td>No level conversion</td></tr>
+    <tr><td>Supply</td><td>DE-9 contact 9</td><td>—</td><td>5 V</td><td>—</td><td>From the controller socket</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: datasheets {#datasheets}
+
+The first page of each important chip&rsquo;s datasheet. Click a page to open the PDF.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <a href="/images/extensions/d-sub-to-gadgeteer-out/datasheets/tpd1e05u06.pdf"><img src="/images/extensions/d-sub-to-gadgeteer-out/datasheets/tpd1e05u06-page1.png" alt="First page of the TPD1E05U06 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/d-sub-to-gadgeteer-out/datasheets/tpd1e05u06.pdf">TPD1E05U06 single-channel ESD protection diode</a> — Texas Instruments, 39 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/d-sub-to-gadgeteer-out/datasheets/tps709.pdf"><img src="/images/extensions/d-sub-to-gadgeteer-out/datasheets/tps709-page1.png" alt="First page of the TPS70933 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/d-sub-to-gadgeteer-out/datasheets/tps709.pdf">TPS709 150 mA low-dropout regulator</a> — Texas Instruments, 43 pages.</figcaption>
+</figure>
+{:/nomarkdown}
+
+
+See all boards on the [extension boards](/extension-boards) page.

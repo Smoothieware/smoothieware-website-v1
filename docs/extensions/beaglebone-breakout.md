@@ -1,272 +1,301 @@
 ---
 layout: default
 title: "BeagleBone breakout"
+description: "A buffered 3.3 V UART interface between a Gadgeteer U socket and the BeagleBone Black P9 header."
 permalink: /extensions/beaglebone-breakout
 ---
 
-# BeagleBone breakout
+{% include _includes/extension-board-page.html %}
 
-This UART carrier connects a BeagleBone header to a Smoothieboard UART. Its purpose is a separate Linux host for machine-control software; it does not add stepper drivers or replace the motion firmware.
-
-## How it works
-
-The board buffers each UART direction with SN74LVC1G126 devices and gates the paths using the host and BeagleBone power/reset state. J1.4 receives host TX and J1.5 returns host RX. J2 exposes only the required P9 subset, including P9.11 receive, P9.13 transmit, grounds, 3.3 V reference and reset.
-
-## Power, signals and limits
-
-J1.2 (host 5 V) is unconnected. J2 P9.5–P9.9 are unconnected. P9.10 carries SYS_RESETn to the buffer-enable circuit; it is not an unused contact. This carrier is not a general BeagleBone power supply. Supply the BeagleBone through its supported independent input and verify its exact model and P9 definition. Both sides use the 3.3 V UART domain; RS-232 levels must never be applied.
-
-## Board reference
-
-<details markdown="1">
-<summary>Reading the connector callouts</summary>
-
-The dark end of each pill gives the source contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
-
-- Red: 3.3 V supply.
-- Green: Signal — use the printed function label.
-- Near-black: Circuit ground.
-- Grey: Not routed on this board.
-- Dark grey: Other labelled contact — read its exact function.
-
-A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
-
-</details>
-
-Start with the overview, then use all focused sheets for exact contacts, controls and links.
-
-{% include _includes/extension-instruction-diagram.html id="beaglebone-breakout-v14-reader-compact-overview" src="/images/extensions/beaglebone-breakout/guides/reader-compact-overview.png" title="BeagleBone UART4 carrier — overview" alt="BeagleBone UART4 carrier — overview" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="beaglebone-breakout-v14-reader-compact-host-1-5" src="/images/extensions/beaglebone-breakout/guides/reader-compact-host-1-5-central-pills.png" title="J1 · Host UART connector — host 1 5" alt="J1 · Host UART connector — host 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="beaglebone-breakout-v14-reader-compact-host-6-10" src="/images/extensions/beaglebone-breakout/guides/reader-compact-host-6-10-central-pills.png" title="J1 · Host UART connector — host 6 10" alt="J1 · Host UART connector — host 6 10" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="beaglebone-breakout-v14-reader-compact-bbb-1-5" src="/images/extensions/beaglebone-breakout/guides/reader-compact-bbb-1-5-central-pills.png" title="J2 · Physical P9 pins1–14 — bbb 1 5" alt="J2 · Physical P9 pins1–14 — bbb 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="beaglebone-breakout-v14-reader-compact-bbb-6-10" src="/images/extensions/beaglebone-breakout/guides/reader-compact-bbb-6-10-central-pills.png" title="J2 · Physical P9 pins1–14 — bbb 6 10" alt="J2 · Physical P9 pins1–14 — bbb 6 10" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="beaglebone-breakout-v14-reader-compact-bbb-11-14" src="/images/extensions/beaglebone-breakout/guides/reader-compact-bbb-11-14-central-pills.png" title="J2 · Physical P9 pins1–14 — bbb 11 14" alt="J2 · Physical P9 pins1–14 — bbb 11 14" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="beaglebone-breakout-v14-reader-compact-host-tx" src="/images/extensions/beaglebone-breakout/guides/reader-compact-host-tx.png" title="Host to BBB data — host tx" alt="Host to BBB data — host tx" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="beaglebone-breakout-v14-reader-compact-bbb-tx" src="/images/extensions/beaglebone-breakout/guides/reader-compact-bbb-tx.png" title="BBB to host data — bbb tx" alt="BBB to host data — bbb tx" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="beaglebone-breakout-v14-reader-compact-enable" src="/images/extensions/beaglebone-breakout/guides/reader-compact-enable.png" title="Reset and power enable — enable" alt="Reset and power enable — enable" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="beaglebone-breakout-v14-reader-compact-tests1" src="/images/extensions/beaglebone-breakout/guides/reader-compact-tests1.png" title="UART and ground tests — tests1" alt="UART and ground tests — tests1" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="beaglebone-breakout-v14-reader-compact-tests2" src="/images/extensions/beaglebone-breakout/guides/reader-compact-tests2.png" title="BBB supply and reset tests — tests2" alt="BBB supply and reset tests — tests2" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-### bbb-uart — connector contacts
-
-Contact numbering below is the PCB pad numbering, viewed using the board-reference drawing. Same-numbered duplicate lands are collapsed in this electrical table. Mechanical unnumbered pads are omitted here. `NC` means unconnected, not a spare supported function. Named nets alone do not establish direction; use the signal-path explanation above.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Connector | Contact(s) | Function/net |
-| --- | --- | --- |
-| J1 — GADGETEER U IN | 1 | `+3V3_HOST` |
-| J1 — GADGETEER U IN | 4 | `HOST_TX_IN` |
-| J1 — GADGETEER U IN | 5 | `HOST_RX_OUT` |
-| J1 — GADGETEER U IN | 10 | `GND` |
-| J1 | 2, 3, 6, 7, 8, 9 | NC |
-| J2 — BBB P9 PLUG 1-14 | 1 | `GND` |
-| J2 — BBB P9 PLUG 1-14 | 2 | `GND` |
-| J2 — BBB P9 PLUG 1-14 | 3 | `VDD_3V3B` |
-| J2 — BBB P9 PLUG 1-14 | 4 | `VDD_3V3B` |
-| J2 — BBB P9 PLUG 1-14 | 10 | `SYS_RESETn` |
-| J2 — BBB P9 PLUG 1-14 | 11 | `BBB_RXD_OUT` |
-| J2 — BBB P9 PLUG 1-14 | 13 | `BBB_TXD_IN` |
-| J2 | 5, 6, 7, 8, 9, 12, 14 | NC |
-
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Host adapters</p>
+    <h1 id="beaglebone-breakout">BeagleBone breakout</h1>
+    <p class="xb-lead">A small board that plugs into BeagleBone Black P9 contacts 1 to 14 and carries a buffered serial link to a controller UART, so a Linux computer can act as a command host.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/beaglebone-breakout/v14/beaglebone-breakout-diagram.png" alt="Top view of the BeagleBone breakout.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-</details>
-
-Active components: `U2 SN74LVC1G126DBVR`; `U1 SN74LVC1G126DBVR`; `U3 SN74LVC1G08DBVR`. Check the matching datasheet limits.
-
-## Practical use with Smoothieboard V2 Prime
-
-### Host UART reference — computer and rails disconnected
-
-The intended computer is specifically BeagleBone Black Rev C. This carrier provides a buffered serial command-host interface, not another motion controller. The contact drawing shows Prime GB/J33.4 PB9 TX to carrier J1.4 HOST_TX_IN, .5 PH14 RX to J1.5 HOST_RX_OUT, and .10 ground to J1.10. The separate row views do not show mating-face orientation.
-
-**Do not energize this board.** All rails and all BeagleBone P9 contacts remain disconnected. Host 5 V J1.2 is NC. The two 3.3 V domains must remain separate; they are not interchangeable supplies.
-
-{% include _includes/extension-instruction-diagram.html id="beaglebone-native-0" src="/images/extensions/beaglebone-breakout/guides/native-contact/reader-legibility-corrected/bbb-native-reader.png" title="Prime and BeagleBone carrier — native UART contacts" alt="Prime and BeagleBone carrier — native UART contacts" caption="Three UART and ground contacts, shown unpowered. Both 3.3 V domains and BeagleBone P9 remain disconnected." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="beaglebone-native-1" src="/images/extensions/beaglebone-breakout/guides/native-contact/reader-contact-keys/J1-numbered-pads.png" title="J1 — contact key" alt="J1 — contact key" caption="Three UART and ground contacts, shown unpowered. Both 3.3 V domains and BeagleBone P9 remain disconnected." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="beaglebone-native-2" src="/images/extensions/beaglebone-breakout/guides/native-contact/reader-contact-keys/J2-numbered-pads.png" title="J2 — contact key" alt="J2 — contact key" caption="Three UART and ground contacts, shown unpowered. Both 3.3 V domains and BeagleBone P9 remain disconnected." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="beaglebone-native-3" src="/images/extensions/beaglebone-breakout/guides/native-contact/reader-contact-keys/J33-numbered-pads.png" title="J33 — contact key" alt="J33 — contact key" caption="Three UART and ground contacts, shown unpowered. Both 3.3 V domains and BeagleBone P9 remain disconnected." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="beaglebone-native-4" src="/images/extensions/beaglebone-breakout/guides/native-contact/reader-contact-keys/U1-numbered-pads.png" title="U1 — contact key" alt="U1 — contact key" caption="Three UART and ground contacts, shown unpowered. Both 3.3 V domains and BeagleBone P9 remain disconnected." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="beaglebone-native-5" src="/images/extensions/beaglebone-breakout/guides/native-contact/reader-contact-keys/U2-numbered-pads.png" title="U2 — contact key" alt="U2 — contact key" caption="Three UART and ground contacts, shown unpowered. Both 3.3 V domains and BeagleBone P9 remain disconnected." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="beaglebone-native-6" src="/images/extensions/beaglebone-breakout/guides/native-contact/reader-contact-keys/U3-numbered-pads.png" title="U3 — contact key" alt="U3 — contact key" caption="Three UART and ground contacts, shown unpowered. Both 3.3 V domains and BeagleBone P9 remain disconnected." width=420 %}
-
-The carrier J2 covers only P9 contacts 1–14: .1/.2 ground, .3/.4 VDD_3V3B, .10 SYS_RESETn, .11 UART4 RX and .13 UART4 TX. Contacts .5–9, .12 and .14 are NC in this carrier. This does not support substituting another BeagleBone model or treating NC contacts as GPIO. U1 carries host TX to computer RX; U2 carries computer TX to host RX under reset-dependent enable. U3 combines SYS_RESETn and the raw host rail; it is not a power-good supervisor. The Debian/UART4 procedure below can be prepared with the adapter disconnected.
-
-<details markdown="1">
-<summary>Computer and power wiring overview</summary>
-
-This overview is not a powered connection instruction. See the startup and interface limits below.
-
-Use a separately powered BeagleBone Black Rev C as the intended serial command host. The Linux procedure below gives a UART4 setup example.
-
-{% include _includes/extension-instruction-diagram.html id="bbb-v14-compact-prime-installation-wiring" src="/images/extensions/beaglebone-breakout/guides/compact-prime-installation-wiring.png" title="Prime to BeagleBone UART4 · thirteen-lead wiring" alt="Prime to BeagleBone UART4 · thirteen-lead wiring" caption="Both boards with contact locators. BeagleBone P9 and supply contacts are electrical endpoint symbols, not PCB art or mating views." width=420 %}
-
-### Enlarged contact keys
-
-These show PCB pad positions, not plug-face geometry. Filled pads identify the used connections; all open pads stay unused. Use them with the complete wiring diagram and verify fitted connector orientation with power removed.
-
-{% include _includes/extension-instruction-diagram.html id="bbb-v14-compact-J1-numbered-pads" src="/images/extensions/beaglebone-breakout/guides/compact-J1-numbered-pads.png" title="BeagleBone adapter · J1" alt="BeagleBone adapter · J1" caption="PCB contacts; not a cable mating face." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="bbb-v14-compact-J2-numbered-pads" src="/images/extensions/beaglebone-breakout/guides/compact-J2-numbered-pads.png" title="BeagleBone adapter · J2" alt="BeagleBone adapter · J2" caption="PCB contacts; not a cable mating face." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="bbb-v14-compact-J33-numbered-pads" src="/images/extensions/beaglebone-breakout/guides/compact-J33-numbered-pads.png" title="BeagleBone adapter · J33" alt="BeagleBone adapter · J33" caption="PCB contacts; not a cable mating face." width=420 %}
-
-<details>
-<summary>Wide wiring view</summary>
-
-{% include _includes/extension-instruction-diagram.html id="bbb-v14-prime-installation" src="/images/extensions/beaglebone-breakout/guides/prime-installation-wiring.png" title="Prime UART to BeagleBone Black UART4 — wiring" alt="Thirteen continuous conductors connecting Prime, the UART carrier, BeagleBone P9 contacts and its independent DC power supply" caption="Electrical path from Prime GB/J33 through the carrier to BeagleBone P9." width=4200 %}
-
-The wider view describes the same electrical connections.
-
-</details>
-
-With both boards unpowered, connect Prime GB/J33.1 to J1.1, .4/PB9 TX to J1.4, .5/PH14 RX to J1.5 and .10 ground to J1.10. **Host 5 V contact 2 is unused.** Verify numbered continuity and actual mating orientation; the electrical symbols are not connector mating faces.
-
-Connect board J2.1/.2 to BeagleBone P9.1/.2 ground, J2.3/.4 to P9.3/.4 VDD_3V3B, J2.10 to P9.10 SYS_RESETn, J2.11 to P9.11 UART4 RX and J2.13 to P9.13 UART4 TX. Host TX reaches the BeagleBone RX through U1; the reverse path uses U2. The interface shares ground and is not galvanically isolated. Buffer enables depend on BeagleBone reset and host-alive logic.
-
-Use the manufacturer's independent regulated 5 V ±0.25 V supply rated at least 1 A through the BeagleBone DC jack: 2.1 mm centre positive, 5.5 mm outer barrel ground. Do not infer that the host 5 V contact powers the computer. Resolve Linux UART4 pinmux, device node, client and matching baud before communication. Begin with harmless command/response and machine outputs disabled, never motion as a communications test.
-
-</details>
-
-### Power and startup limitation of the carrier
-
-Keep the two 3.3 V supplies separate: Prime J33.1 supplies the host-side buffer; BeagleBone P9.3/.4 supplies the BeagleBone-side buffer and enable logic. Their grounds are common. The BeagleBone needs an independent regulated 5 V ±0.25 V supply with at least 1 A capability through its 2.1 mm centre-positive, 5.5 mm outer-ground jack; peripherals can require additional current.
-
-The circuit has no defined startup sequence. U3, an SN74LVC1G08 AND gate powered by the BeagleBone, reads the raw Prime 3.3 V supply as a logic input. Its [TI datasheet](https://www.ti.com/lit/ds/symlink/sn74lvc1g08.pdf), sections 5.3 and 7.3.3, requires input transitions no slower than 10 ns/V at 3.3 V ±0.3 V and warns about slow CMOS inputs. The Prime MT9700 current-limited switch specifies no guaranteed output edge. U3 therefore does not establish that host power is stable. Neither “BeagleBone first” nor “Prime first” resolves this; shutdown and brownout behaviour are also undefined.
-
-The buffers’ partial-power-down leakage limit applies at a supply of exactly 0 V, rather than throughout a supply ramp. Check reset drive and endpoint margins as well. Do not connect the powered system without a defined power and reset procedure; do not bypass the enable gates or join the rails to work around it. The Linux setup below can be prepared with the adapter disconnected.
-
-## Smoothieware use
-
-### Prime console setup
-
-The V2 firmware provides the Prime side of a UART console on channel 1: PB9 transmits and PH14 receives. The adapter carries J1.4 HOST_TX_IN through U1 to J2.11 BBB_RXD_OUT, and J2.13 BBB_TXD_IN through U2 to J1.5 HOST_RX_OUT.
-
-After checking the model and header numbering, cable orientation, supply and reset behaviour, wire the Prime GB/J33 cable as follows:
-
-| Prime contact | Adapter contact | Function |
-| --- | --- | --- |
-| J33.1 limited 3.3 V | J1.1 +3V3_HOST | Host-side buffer supply only |
-| J33.4 PB9 TX | J1.4 HOST_TX_IN | Through U1 to BBB receive contact J2.11 |
-| J33.5 PH14 RX | J1.5 HOST_RX_OUT | From BBB transmit contact J2.13 through U2 |
-| J33.10 ground | J1.10 ground | Common logic return |
-
-Leave J1.2, J1.3 and J1.6–9 unused. Use no Prime 5 V or RTS/CTS wires. J2 is the board’s labelled BBB P9 contacts 1–14; its contacts 3/4 receive VDD_3V3B from the compatible, independently powered BeagleBone, while 1/2 are ground. **Do not join +3V3_HOST and VDD_3V3B.** J2.10 SYS_RESETn enables U2 directly and U1 through U3, which also checks the host supply. Do not bypass reset/output-enable circuitry.
-
-### Named Linux example: BeagleBone Black Rev C, Debian 11.7 IoT
-
-This software example uses the official **AM335x Debian 11.7 IoT microSD image dated 2023-09-02**, file `am335x-debian-11.7-iot-armhf-2023-09-02-4gb.img.xz`, with **kernel 5.10.168-ti-r71** and U-Boot 2022.04. The [official archive page](https://www.beagleboard.org/distros/am335x-11-7-2023-09-02-4gb-microsd-iot) identifies the image and checksum `58e76be5fd7415cca89f1187c6d96ed697b8d77fd2739ab4978f2d0ba9c87641`. This is a historical, version-pinned software example, not a recommendation to replace a maintained installation or expose an old image to untrusted networks. Use the official image instructions on a separate microSD; this procedure does not flash the eMMC or replace firmware.
-
-The following commands are **for the BeagleBone**, accessed through its existing independent SSH/USB-network session, not through the UART being configured. Do not run them on your workstation or Prime. First leave the adapter disconnected; the common-return, separate receiving-side 3.3 V supplies, independent DC input, reset/buffer and power-sequencing requirements remain prerequisites for later communication. A software procedure does not resolve those electrical limits.
-
-1. Confirm the environment before changing pins:
-
-   ```sh
-   cat /etc/dogtag
-   uname -r
-   tr -d '\000' < /proc/device-tree/model
-   command -v config-pin
-   tr -d '\000' < /proc/device-tree/chosen/base_dtb
-   ls -l /dev/ttyS4
-   config-pin -l P9_11
-   config-pin -l P9_13
-   config-pin -q P9_11
-   config-pin -q P9_13
-   ```
-
-   Require the dated Bullseye IoT image, kernel `5.10.168-ti-r71`, BeagleBone Black model, the `am335x-boneblack-uboot-univ.dts` base tree, readable helper queries and an available `uart` mode for **both** pins. The kernel's universal Black device tree provides those pinmux helpers and enables UART4; the matching driver uses its `serial4` alias for `/dev/ttyS4`. If these checks fail, stop this version-specific procedure. Do not guess a device name, download an arbitrary pin tool or apply instructions for an AI/AI-64/Blue board. Record the actual image/kernel and use a matching procedure.
-
-2. Check ownership without stopping another service:
-
-   ```sh
-   cat /proc/cmdline
-   systemctl is-active serial-getty@ttyS4.service
-   command -v fuser
-   sudo fuser -v /dev/ttyS4
-   ```
-
-   If `command -v fuser` reports no tool, install `psmisc` with `sudo apt-get install psmisc` before using it. `fuser` comes from that Debian package. The port must not be a kernel console, active serial login or another application's port. For a free port, the service should report `inactive`/not found and `fuser` should show no process (its nonzero exit for no user is expected). If occupied, resolve the specific owner in your configuration rather than blindly stopping a console. Do not use another serial client simultaneously.
-
-3. Set only the two data pins for this session, with the carrier still disconnected:
-
-   ```sh
-   sudo config-pin P9_11 uart
-   sudo config-pin P9_13 uart
-   config-pin -q P9_11
-   config-pin -q P9_13
-   ```
-
-   Both queries must report `uart`. P9.11 is BeagleBone UART4 **receive** and P9.13 **transmit**. These are pinmux changes, not logic-level conversion. They are session setup; repeat after a reboot and recheck ownership. Do not add a second UART overlay over these helpers or enable flow-control pins. The [official BeagleBoard UART example](https://docs.beagleboard.org/boards/capes/comms.html#test-code) uses this exact pin pair and `/dev/ttyS4`; only its UART pinmux instructions are relevant here, not the different cape's RS485 circuitry.
-
-4. Install and authorize the actual serial client on the BeagleBone:
-
-   ```sh
-   sudo apt-get update
-   sudo apt-get install python3-serial psmisc
-   python3 -c 'import serial; print(serial.VERSION)'
-   ls -l /dev/ttyS4
-   id -nG
-   ```
-
-   The [Bullseye package](https://packages.debian.org/bullseye/python3-serial) is `3.5~b0-1` (upstream client 3.5b0). Do not upgrade the kernel/image as part of this procedure. If the device is group `dialout` and your account lacks that group, add only the intended account:
-
-   ```sh
-   sudo usermod -a -G dialout "$(id -un)"
-   ```
-
-   Log out and open a new independent login, then recheck `id -nG` and the two pin modes. Do not make the device world-writable or run the interactive client as root. If package retrieval is unavailable for this historical environment, obtain the matching official Debian package through your maintained package setup; do not substitute an unverified script.
-
-5. On Prime, set up UART channel 1 (PB9 TX/PH14 RX), reserving the entire pin/channel allocation:
-
-   ```ini
-   [uart console]
-   enable = true
-   console = true
-   channel = 1
-   baudrate = 115200
-   bits = 8
-   stop_bits = 1
-   parity = none
-   ```
-
-   Merge this one section into the intended Prime configuration using the normal configuration workflow. This matches SmoothieV2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`; the actual installed firmware must match the expected parser. Do not run the Pi/USB-UART/Wi-Fi console on the same pins simultaneously.
-
-6. Only after the hardware prerequisites above are met, use the thirteen-lead carrier wiring. Host TX crosses through U1 to BeagleBone P9.11; P9.13 crosses through U2 to host RX. Keep machine motion/heater/tool outputs disabled. On the BeagleBone, start:
-
-   ```sh
-   python3 -m serial.tools.miniterm --parity N --eol LF /dev/ttyS4 115200
-   ```
-
-   The client should identify `115200,8,N,1`; RTS/CTS and XON/XOFF are off by default. No RTS/CTS wire is used. Type **only** `version` and press Enter once. `--eol LF` sends the line terminator expected by the Prime parser. Expect a read-only build/version response; absence or garbling is a failed communication check, not permission to send motion, change arbitrary pinmux or bridge supplies. Leave the client using **Ctrl+]**.
-
-## Sources
-
-- [Board source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/beaglebone-breakout/attempt/versions/v14)
-- [Design specification](https://github.com/arthurwolf/extension-boards/blob/main/src/beaglebone-breakout/specs.md)
-- [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/beaglebone-breakout/design.md)
-- [All extension boards](/extension-boards)
-
-<details markdown="1">
-{% include _includes/extension-board-visuals.html slug="beaglebone-breakout" %}
-
-</details>
+<div class="xb-stats">
+  <div class="xb-stat"><b>3.3 V</b><span>UART, no RS-232</span></div>
+  <div class="xb-stat"><b>2 buffers</b><span>one per direction</span></div>
+  <div class="xb-stat"><b>P9 1–14</b><span>BeagleBone Black</span></div>
+  <div class="xb-stat"><b>No power</b><span>transferred</span></div>
+  <div class="xb-stat"><b>No isolation</b><span>common ground</span></div>
+  <div class="xb-stat"><b>22 × 24</b><span>millimetres</span></div>
+</div>
+
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+  <a href="#datasheets">Datasheets</a>
+</nav>
+{:/nomarkdown}
+
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Do not power this board from a controller and a BeagleBone without your own defined power and reset sequence: the board&rsquo;s buffer enables do not guarantee safe behaviour during start-up, shutdown or brown-out. Never join the two 3.3&nbsp;V supplies, and never apply RS-232 levels.
+</sl-alert>
+
+## Tech specs {#specs}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>Serial link between a controller and a BeagleBone Black</td></tr>
+    <tr><td>Controller side</td><td>J1: 3.3&nbsp;V on 1, transmit on 4, receive on 5, ground on 10; 5&nbsp;V not connected</td></tr>
+    <tr><td>Computer side</td><td>J2 under the board: P9 contacts 1 to 14 (UART4 on 11 and 13)</td></tr>
+    <tr><td>Buffers</td><td>Two <a href="/images/extensions/beaglebone-breakout/datasheets/sn74lvc1g126.pdf">SN74LVC1G126</a>, enabled through an <a href="/images/extensions/beaglebone-breakout/datasheets/sn74lvc1g08.pdf">SN74LVC1G08</a> and the BeagleBone reset line</td></tr>
+    <tr><td>Power</td><td>The BeagleBone is powered separately, 5&nbsp;V &plusmn;0.25&nbsp;V, at least 1&nbsp;A</td></tr>
+    <tr><td>Size</td><td>22 &times; 24&nbsp;mm</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
+
+## Board tour {#tour}
+
+The numbers on the drawing match the list below it.
+
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/beaglebone-breakout/v14/beaglebone-breakout-diagram.png" alt="Top view of the BeagleBone breakout with numbered markers explained in the list below.">
+      <a class="xb-mk xb-pb" href="#tour-1" style="left:49.9%;top:16.7%" aria-label="1: Controller socket (J1)">1<span class="xb-pop"><b>Controller socket (J1)</b> — to the controller UART.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-2" style="left:55.4%;top:42.1%" aria-label="2: Controller-to-computer buffer (U1)">2<span class="xb-pop"><b>Controller-to-computer buffer (U1)</b> — drives BeagleBone receive.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-3" style="left:81.9%;top:42.1%" aria-label="3: Computer-to-controller buffer (U2)">3<span class="xb-pop"><b>Computer-to-controller buffer (U2)</b> — drives controller receive.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-4" style="left:28.3%;top:42.1%" aria-label="4: Enable gate (U3)">4<span class="xb-pop"><b>Enable gate (U3)</b> — combines reset and controller supply presence.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-5" style="left:14.1%;top:10.2%" aria-label="5: Ground test pad (TP1)">5<span class="xb-pop"><b>Ground test pad (TP1)</b> — for measurement.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-6" style="left:14.1%;top:19.7%" aria-label="6: Controller 3.3&nbsp;V pad (TP2)">6<span class="xb-pop"><b>Controller 3.3&nbsp;V pad (TP2)</b> — the controller-side supply.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-7" style="left:85.7%;top:19.7%" aria-label="7: BeagleBone 3.3&nbsp;V pad (TP5)">7<span class="xb-pop"><b>BeagleBone 3.3&nbsp;V pad (TP5)</b> — the computer-side supply.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-8" style="left:89.9%;top:53.5%" aria-label="8: Reset pad (TP6)">8<span class="xb-pop"><b>Reset pad (TP6)</b> — the BeagleBone reset line.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Controller socket (J1)</b> — to the controller UART.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Controller-to-computer buffer (U1)</b> — drives BeagleBone receive.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Computer-to-controller buffer (U2)</b> — drives controller receive.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Enable gate (U3)</b> — combines reset and controller supply presence.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Ground test pad (TP1)</b> — for measurement.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Controller 3.3&nbsp;V pad (TP2)</b> — the controller-side supply.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>BeagleBone 3.3&nbsp;V pad (TP5)</b> — the computer-side supply.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Reset pad (TP6)</b> — the BeagleBone reset line.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
+
+## Pinout {#pinout}
+
+### J1: controller socket
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>Controller 3.3&nbsp;V</td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">TX</span> from the controller</td></tr>
+    <tr><td>5</td><td><span class="xb-pill xb-p-sig">RX</span> to the controller</td></tr>
+    <tr><td>10</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+    <tr><td>2, 3, 6 to 9</td><td>Not connected</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### J2: BeagleBone P9
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>P9 contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1, 2</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+    <tr><td>3, 4</td><td>BeagleBone 3.3&nbsp;V (VDD_3V3B)</td></tr>
+    <tr><td>10</td><td>SYS_RESETn</td></tr>
+    <tr><td>11</td><td><span class="xb-pill xb-p-sig">UART4 RX</span></td></tr>
+    <tr><td>13</td><td><span class="xb-pill xb-p-sig">UART4 TX</span></td></tr>
+    <tr><td>5 to 9, 12, 14</td><td>Not connected</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## What you need {#what-you-need}
+
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>This board</b><span>Plus four leads to the controller.</span></div>
+  <div class="xb-card"><b>BeagleBone Black</b><span>With its own power supply.</span></div>
+  <div class="xb-card"><b>A power plan</b><span>A defined start-up and reset order.</span></div>
+</div>
+{:/nomarkdown}
+
+## Get started {#get-started}
+
+Prepare the wiring and the software with all power off.
+
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Mount on P9</h3>
+    <p>Contacts 1 to 14 only, with the board in the orientation shown by the silk screen (Ethernet end).</p>
+  </li>
+  <li class="xb-step">
+    <h3>Wire the controller</h3>
+    <p>Smoothieboard V2 Prime GB/J33 contacts 1, 4, 5 and 10 to J1 contacts with the same numbers.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Prepare UART4</h3>
+    <p>On the BeagleBone, enable UART4 for your Linux image and choose a client at 115200 baud, 8N1.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure the controller</h3>
+    <p>Add the settings below.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Test with outputs disabled</h3>
+    <p>Under your power and reset procedure, send <code>version</code>; never test with motion commands.</p>
+    <p class="xb-expect">The build information is returned.</p>
+  </li>
+</ol>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>A Linux computer as command host</td><td>UART console</td><td><a href="#config-main">Setup</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Setup {#config-main}
+
+```ini
+[uart console]
+enable = true
+console = true
+channel = 1
+baudrate = 115200
+bits = 8
+stop_bits = 1
+parity = none
+```
+
+With <code>console = true</code> the UART starts after the controller has finished booting ([console source](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/Consoles.cpp#L733-L761)). On the Prime, [channel 1 transmits on PB9 and receives on PH14](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Uart.cpp#L101-L135), header GB contacts 4 and 5. Reserve both pins. Use 115200 baud, 8N1 and no hardware flow control on the computer.
+
+## How it works {#how-it-works}
+
+Each direction passes through a buffer powered from the receiving side. The buffers are enabled according to the BeagleBone reset line and the presence of controller power. The two grounds are common.
+
+## Troubleshooting {#troubleshooting}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>No data</td><td>UART4 enabled on the BeagleBone, crossed signals, reset released.</td></tr>
+    <tr><td>Garbled text</td><td>Same baud rate and format on both sides.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
+
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/beaglebone-breakout/v14/beaglebone-breakout-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/beaglebone-breakout/v14/beaglebone-breakout-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/beaglebone-breakout/v14/beaglebone-breakout-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-bb-mount-t">
+  <title id="xb-bb-mount-t">Mounting drawing of the bb, component side: outline 22 by 24 millimetres with 0 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="324.2" y="78.0" width="311.7" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M324.2 56H635.8"/><path d="M324.2 50V62"/><path d="M635.8 50V62"/><path d="M661.8 78.0V418.0"/><path d="M655.8 78.0h12"/><path d="M655.8 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">22</text>
+  <text x="673.8" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">24</text>
+  <circle cx="324.2" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="312.2" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M266.2 104.0h30" fill="none"/><path d="M300.2 104.0l-8 -4v8z"/><path d="M266.2 104.0v30" fill="none"/><path d="M266.2 138.0l-4 -8h8z"/></g>
+  <text x="304.2" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="262.2" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 22 × 24&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Values from the silk screen and the BeagleBone supply requirement.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Logic</td><td>Both sides</td><td>—</td><td>3.3 V</td><td>—</td><td>Board silk</td></tr>
+    <tr><td>BeagleBone supply</td><td>Its own DC jack</td><td>4.75 V</td><td>5 V</td><td>5.25 V</td><td>At least 1 A</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: datasheets {#datasheets}
+
+The first page of each important chip&rsquo;s datasheet. Click a page to open the PDF.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <a href="/images/extensions/beaglebone-breakout/datasheets/sn74lvc1g126.pdf"><img src="/images/extensions/beaglebone-breakout/datasheets/sn74lvc1g126-page1.png" alt="First page of the SN74LVC1G126 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/beaglebone-breakout/datasheets/sn74lvc1g126.pdf">SN74LVC1G126 single bus buffer gate with 3-state output</a> — Texas Instruments, 49 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/beaglebone-breakout/datasheets/sn74lvc1g08.pdf"><img src="/images/extensions/beaglebone-breakout/datasheets/sn74lvc1g08-page1.png" alt="First page of the SN74LVC1G08 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/beaglebone-breakout/datasheets/sn74lvc1g08.pdf">SN74LVC1G08 single 2-input AND gate</a> — Texas Instruments, 50 pages.</figcaption>
+</figure>
+{:/nomarkdown}
+
+See all boards on the [extension boards](/extension-boards) page.

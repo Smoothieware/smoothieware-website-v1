@@ -1,204 +1,207 @@
 ---
 layout: default
-title: "USB/Serial breakout"
+title: "USB serial breakout"
+description: "A USB-B to 3.3 V UART interface on a Gadgeteer U connector, with an FT231XS bridge, activity lights and a chain socket."
 permalink: /extensions/usb-serial-breakout
 ---
 
-# USB/Serial breakout
+{% include _includes/extension-board-page.html %}
 
-This board integrates a USB-to-UART bridge between a computer and a controller U socket. It replaces a separate TTL USB cable for the defined interface. It is not a debug probe, USB host port or native Smoothie USB connection.
-
-## How it works
-
-The FT231XS-R bridge connects through a TXU0202 opposing-channel translator to host TX/RX. J3 is USB-B, J1 the host U input and J2 a configurable chain. The chain cannot safely share UART wires with a second active transmitter without explicit source selection at JP5.
-
-## Power, signal direction and limits
-
-J3.1 is USB VBUS, .2 D−, .3 D+ and .4 ground; shield also connects to ground on the board. J1.4/.5 are UART_HOST_TX/RX. USB and host supply rails are both present, so check backfeed behaviour for your power order, and check host logic levels and supply allocation.
-
-### UART source selection
-
-The default wiring uses J1 as the controller connection and leaves J2 disconnected. Controller TX at J1.4 reaches FT231XS RXD through U3. FT231XS TXD returns through U3 and R3 (33 Ω) to JP5.1. JP5.2 is controller RX at J1.5; the default 1–2 bridge selects that USB bridge output. JP5.3 instead reaches chain RX at J2.5. Open 1–2 before selecting 2–3; never connect both transmitters together.
-
-The controller-side 3.3 V net and FT231XS-side 3.3 V net are separate, with common ground. USB VBUS is separate from host 5 V. JP3/JP4/JP6 forward contacts 3/4/6 to the chain; contacts 7–9 have no circuit connection. JP8 feeds D1 and JP7 feeds D2; bridge CBUS programming must match before treating these as activity indicators.
-
-## Board reference
-
-<details markdown="1">
-<summary>Reading the connector callouts</summary>
-
-The dark end of each pill gives the source contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
-
-- Red: 3.3 V supply.
-- Orange: 5 V supply.
-- Near-black: Circuit ground.
-- Grey: Not routed on this board.
-- Dark grey: Other source-labelled contact — read its exact function.
-
-A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
-
-</details>
-
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-reader-compact-overview" src="/images/extensions/usb-serial-breakout/guides/reader-compact-overview.png" title="USB serial breakout — overview" alt="USB serial breakout — overview for usb-serial-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-<details markdown="1">
-<summary>Larger combined reference</summary>
-
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-reference" src="/images/extensions/usb-serial-breakout/guides/reader-reference.png" title="Annotated board reference" alt="Annotated board reference for usb-serial-breakout" caption="Component-side reference. Dotted leaders locate parts, not wires. Use all numbered detail views." width=1440 %}
-
-</details>
-
-Start with the overview, then use all focused sheets for exact contacts, controls and links.
-
-<details markdown="1">
-<summary>Focused contact and component sheets</summary>
-
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-reader-compact-host-1-5" src="/images/extensions/usb-serial-breakout/guides/reader-compact-host-1-5-central-pills.png" title="J1 · Host UART — host 1 5" alt="J1 · Host UART — host 1 5 for usb-serial-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-reader-compact-host-6-10" src="/images/extensions/usb-serial-breakout/guides/reader-compact-host-6-10-central-pills.png" title="J1 · Host UART — host 6 10" alt="J1 · Host UART — host 6 10 for usb-serial-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-reader-compact-chain-1-5" src="/images/extensions/usb-serial-breakout/guides/reader-compact-chain-1-5-central-pills.png" title="J2 · Chain UART — chain 1 5" alt="J2 · Chain UART — chain 1 5 for usb-serial-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-reader-compact-chain-6-10" src="/images/extensions/usb-serial-breakout/guides/reader-compact-chain-6-10-central-pills.png" title="J2 · Chain UART — chain 6 10" alt="J2 · Chain UART — chain 6 10 for usb-serial-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-reader-compact-usb-1-5" src="/images/extensions/usb-serial-breakout/guides/reader-compact-usb-1-5-central-pills.png" title="J3 · USB-B — usb 1 5" alt="J3 · USB-B — usb 1 5 for usb-serial-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-reader-compact-rx-selector" src="/images/extensions/usb-serial-breakout/guides/reader-compact-rx-selector.png" title="Receive source selector — rx selector" alt="Receive source selector — rx selector for usb-serial-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-reader-compact-chain-links" src="/images/extensions/usb-serial-breakout/guides/reader-compact-chain-links.png" title="Chain signal links — chain links" alt="Chain signal links — chain links for usb-serial-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-reader-compact-usb-bridge" src="/images/extensions/usb-serial-breakout/guides/reader-compact-usb-bridge.png" title="USB bridge circuitry — usb bridge" alt="USB bridge circuitry — usb bridge for usb-serial-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-reader-compact-uart-translation" src="/images/extensions/usb-serial-breakout/guides/reader-compact-uart-translation.png" title="Opposing UART channels — uart translation" alt="Opposing UART channels — uart translation for usb-serial-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-reader-compact-host-led" src="/images/extensions/usb-serial-breakout/guides/reader-compact-host-led.png" title="Controller to USB LED — host led" alt="Controller to USB LED — host led for usb-serial-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-reader-compact-usb-led" src="/images/extensions/usb-serial-breakout/guides/reader-compact-usb-led.png" title="USB to controller LED — usb led" alt="USB to controller LED — usb led for usb-serial-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-reader-compact-usb-tests" src="/images/extensions/usb-serial-breakout/guides/reader-compact-usb-tests-underside-caption.png" title="USB supply test pads — usb tests" alt="USB supply test pads — usb tests for usb-serial-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-reader-compact-host-tests" src="/images/extensions/usb-serial-breakout/guides/reader-compact-host-tests-underside-caption.png" title="Host supply test pads — host tests" alt="Host supply test pads — host tests for usb-serial-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-reader-compact-uart-tests" src="/images/extensions/usb-serial-breakout/guides/reader-compact-uart-tests-underside-caption.png" title="Serial test pads — uart tests" alt="Serial test pads — uart tests for usb-serial-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-reader-compact-mounts" src="/images/extensions/usb-serial-breakout/guides/reader-compact-mounts.png" title="Mounting holes — mounts" alt="Mounting holes — mounts for usb-serial-breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-</details>
-
-### Connector contact map
-
-The following is the PCB pad and net list; check physical continuity, mating orientation and current capacity on the board. Same-numbered duplicate lands are collapsed in this electrical table. `NC` is unconnected, not a spare.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Connector | Contact | Function/net |
-| --- | --- | --- |
-| J2 — GADGETEER U CHAIN | 1 | `+3V3` |
-| J2 — GADGETEER U CHAIN | 2 | `+5V` |
-| J2 — GADGETEER U CHAIN | 3 | `/P3_CHAIN` |
-| J2 — GADGETEER U CHAIN | 4 | `/UART_CHAIN_TX` |
-| J2 — GADGETEER U CHAIN | 5 | `/UART_CHAIN_RX` |
-| J2 — GADGETEER U CHAIN | 6 | `/P6_CHAIN` |
-| J2 — GADGETEER U CHAIN | 10 | `GND` |
-| J2 | 7, 8, 9 | NC |
-| J1 — GADGETEER U IN | 1 | `+3V3` |
-| J1 — GADGETEER U IN | 2 | `+5V` |
-| J1 — GADGETEER U IN | 3 | `/P3_HOST` |
-| J1 — GADGETEER U IN | 4 | `/UART_HOST_TX` |
-| J1 — GADGETEER U IN | 5 | `/UART_HOST_RX` |
-| J1 — GADGETEER U IN | 6 | `/P6_HOST` |
-| J1 — GADGETEER U IN | 10 | `GND` |
-| J1 | 7, 8, 9 | NC |
-| J3 — USB-B | 1 | `VBUS` |
-| J3 — USB-B | 2 | `/USB_DM_C` |
-| J3 — USB-B | 3 | `/USB_DP_C` |
-| J3 — USB-B | 4 | `GND` |
-| J3 — USB-B | 5 | `GND` |
-
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Signal interfaces</p>
+    <h1 id="usb-serial-breakout">USB serial breakout</h1>
+    <p class="xb-lead">Connect a computer to a controller serial port with an ordinary USB-B cable. An FT231XS bridge and a level translator sit between USB and the ten-contact UART socket.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/usb-serial-breakout/v15/usb-serial-breakout-diagram.png" alt="Top view of the USB serial breakout.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-<details markdown="1">
-<summary>Combined connector and link details</summary>
+<div class="xb-stats">
+  <div class="xb-stat"><b>USB-B</b><span>to the computer</span></div>
+  <div class="xb-stat"><b>3.3 V</b><span>UART</span></div>
+  <div class="xb-stat"><b>≤ 3 Mbaud</b><span>8N1</span></div>
+  <div class="xb-stat"><b>2 lights</b><span>traffic</span></div>
+  <div class="xb-stat"><b>Chain</b><span>second socket</span></div>
+  <div class="xb-stat"><b>48 × 38</b><span>millimetres</span></div>
+</div>
 
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-connector-detail-01" src="/images/extensions/usb-serial-breakout/guides/reader-connector-detail-01.png" title="Connector detail 01" alt="Connector detail 01 for usb-serial-breakout" caption="Component-side reference. Dotted leaders locate parts, not wires. Use all numbered detail views." width=1440 %}
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+  <a href="#datasheets">Datasheets</a>
+</nav>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-connector-detail-02" src="/images/extensions/usb-serial-breakout/guides/reader-connector-detail-02.png" title="Connector detail 02" alt="Connector detail 02 for usb-serial-breakout" caption="Component-side reference. Dotted leaders locate parts, not wires. Use all numbered detail views." width=1440 %}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  3.3&nbsp;V logic. This is a serial port, not the controller&rsquo;s native USB and not a debug probe. Connect with all power off, and never let two devices transmit toward the controller.
+</sl-alert>
 
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-link-detail-01" src="/images/extensions/usb-serial-breakout/guides/reader-link-detail-01.png" title="Link detail 01" alt="Link detail 01 for usb-serial-breakout" caption="Component-side reference. Dotted leaders locate parts, not wires. Use all numbered detail views." width=1440 %}
+## Tech specs {#specs}
 
-</details>
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>Serial console from a computer</td></tr>
+    <tr><td>Bridge</td><td>FTDI FT231XS-R, <a href="/images/extensions/usb-serial-breakout/datasheets/txu0202.pdf">TXU0202</a> translator</td></tr>
+    <tr><td>Host</td><td>J1: transmit from the controller on contact 4, receive on 5</td></tr>
+    <tr><td>USB</td><td>J3, USB-B; powers the bridge side only</td></tr>
+    <tr><td>Receive source</td><td>JP5: USB bridge (as delivered) or the chain socket</td></tr>
+    <tr><td>Chain</td><td>J2; contacts 3, 4 and 6 through links</td></tr>
+    <tr><td>Protection</td><td>USBLC6-2SC6 on the USB data lines, ferrite on USB power</td></tr>
+    <tr><td>Size</td><td>48 &times; 38&nbsp;mm, four M3 holes</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-### Links, indicators and controls
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
-The table lists the links and indicators. Check the fitted state of each link before cutting or bridging it. Indicator labels describe circuit signals.
+## Board tour {#tour}
 
-| Item | Label | Contact nets |
-| --- | --- | --- |
-| JP7 | CUT TO DISABLE D2 | 1=LED_D2_DISABLE; 2=/LED_USBTOU_A |
-| JP6 | P6 FWD | 1=/P6_HOST; 2=/P6_CHAIN |
-| JP5 | RX SRC | 1=/UART_BRG_RX_J; 2=/UART_HOST_RX; 3=/UART_CHAIN_RX |
-| JP8 | CUT TO DISABLE D1 | 1=LED_D1_DISABLE; 2=/LED_UTOUSB_A |
-| JP3 | P3 FWD | 1=/P3_HOST; 2=/P3_CHAIN |
-| D2 | AMBER USB>U | 1=/LED_USBTOU_K; 2=LED_D2_DISABLE |
-| JP4 | TX FWD | 1=/UART_HOST_TX; 2=/UART_CHAIN_TX |
-| D1 | AMBER U>USB | 1=/LED_UTOUSB_K; 2=LED_D1_DISABLE |
+The numbers on the drawing match the list below it.
 
-</details>
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/usb-serial-breakout/v15/usb-serial-breakout-diagram.png" alt="Top view of the USB serial breakout with numbered markers explained in the list below.">
+      <a class="xb-mk xb-pb" href="#tour-1" style="left:30.4%;top:11.6%" aria-label="1: Host socket (J1)">1<span class="xb-pop"><b>Host socket (J1)</b> — to the controller UART.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-2" style="left:69.5%;top:11.6%" aria-label="2: Chain socket (J2)">2<span class="xb-pop"><b>Chain socket (J2)</b> — passes rails and linked signals on.</span></a>
+      <a class="xb-mk" href="#tour-3" style="left:63.7%;top:58.9%" aria-label="3: USB-B socket (J3)">3<span class="xb-pop"><b>USB-B socket (J3)</b> — to the computer.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-4" style="left:50.0%;top:28.8%" aria-label="4: USB bridge (U1)">4<span class="xb-pop"><b>USB bridge (U1)</b> — FT231XS.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-5" style="left:23.9%;top:38.4%" aria-label="5: Translator (U3)">5<span class="xb-pop"><b>Translator (U3)</b> — separates the two 3.3&nbsp;V domains.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-6" style="left:59.4%;top:49.4%" aria-label="6: USB protection (U2)">6<span class="xb-pop"><b>USB protection (U2)</b> — ESD protection.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-7" style="left:69.5%;top:23.5%" aria-label="7: Receive source (JP5)">7<span class="xb-pop"><b>Receive source (JP5)</b> — bridge or chain.</span></a>
+      <a class="xb-mk" href="#tour-8" style="left:26.2%;top:88.1%" aria-label="8: Light D1">8<span class="xb-pop"><b>Light D1</b> — marked U&gt;USB.</span></a>
+      <a class="xb-mk" href="#tour-9" style="left:39.8%;top:88.1%" aria-label="9: Light D2">9<span class="xb-pop"><b>Light D2</b> — marked USB&gt;U.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Host socket (J1)</b> — to the controller UART.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Chain socket (J2)</b> — passes rails and linked signals on.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>USB-B socket (J3)</b> — to the computer.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>USB bridge (U1)</b> — FT231XS.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Translator (U3)</b> — separates the two 3.3&nbsp;V domains.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>USB protection (U2)</b> — ESD protection.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Receive source (JP5)</b> — bridge or chain.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Light D1</b> — marked U&gt;USB.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Light D2</b> — marked USB&gt;U.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-## Practical use with Smoothieboard V2 Prime
+### Lights {#lights}
 
-Use this native-contact circuit with all three keys. Four individual leads terminate on actual J33 and J1 contact artwork; a complete USB-B data cable connects the computer to the board connector. Its drawn endpoint identifies the socket opening, not exposed USB pins. Dashed orange locators show the crops on the complete board abstracts. Select JP5 1–2 only; keep 2–3 open, J2 unused and host 5 V disconnected.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th>Lit means</th><th>Disable it</th></tr></thead>
+  <tbody>
+    <tr><td>D1, amber (U&gt;USB)</td><td>Bridge activity output, as programmed in the FT231X</td><td>Cut JP8</td></tr>
+    <tr><td>D2, amber (USB&gt;U)</td><td>Bridge activity output, as programmed in the FT231X</td><td>Cut JP7</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-**Keep everything unpowered while making these connections.** Read the main drawing, both companion sheets and all three contact keys together.
+## Pinout {#pinout}
 
-{% include _includes/extension-instruction-diagram.html id="usb-serial-native-0" src="/images/extensions/usb-serial-breakout/guides/native-contact/reader-legibility-corrected/usb-serial-native-reader-candidate.png" title="Prime, USB serial carrier and computer — unpowered connection" alt="Unpowered connection with four Prime host leads and a complete USB-B cable assembly" caption="NO POWER while wiring. Read both companion sheets and all three contact keys. Four host leads and a USB cable assembly are used; JP5 selects 1–2 only, J2 and host 5 V stay disconnected. The supply domains are separate; check physical mating before power." width=900 %}
+### J1: host socket
 
-{% include _includes/extension-instruction-diagram.html id="usb-serial-v15-qualification-1" src="/images/extensions/usb-serial-breakout/guides/native-contact/reader-legibility-corrected/usb-serial-qualifications-1.png" title="USB serial — host leads, supply domains and JP5" alt="USB serial — host leads, supply domains and JP5" caption="Required companion: keep unpowered while wiring. Host 3.3 V and USB power are separate domains; host 5 V and J2 remain disconnected. JP5 1–2 is bridged and 2–3 is open." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-5v">5 V</span>, passed to J2</td></tr>
+    <tr><td>3, 6</td><td>Passed to J2 through JP3 and JP6</td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">TX</span> from the controller</td></tr>
+    <tr><td>5</td><td><span class="xb-pill xb-p-sig">RX</span> to the controller</td></tr>
+    <tr><td>7 to 9</td><td>Not connected</td></tr>
+    <tr><td>10</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="usb-serial-v15-qualification-2" src="/images/extensions/usb-serial-breakout/guides/native-contact/reader-legibility-corrected/usb-serial-qualifications-2.png" title="USB serial — mating, firmware and power notes" alt="USB serial — mating, firmware and power notes" caption="Required companion: pad coordinates do not show plug mating; check cable continuity before power." width=420 %}
+### Solder links
 
-{% include _includes/extension-instruction-diagram.html id="usb-serial-native-1" src="/images/extensions/usb-serial-breakout/guides/native-contact/reader-contact-keys/J33-numbered-pads.png" title="Prime GB/J33 — complete contact key" alt="Prime GB/J33 — complete contact key" caption="Four host leads plus a USB-B computer data cable. JP5 1–2 only; host 3.3 V and USB bridge supply remain separate domains. Check physical mating and voltage compatibility before power." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Link</th><th>Effect</th></tr></thead>
+  <tbody>
+    <tr><td>JP5</td><td>Pads 1&ndash;2 (as delivered): controller receives from USB. Pads 2&ndash;3: from the chain socket. Open one before bridging the other; never both.</td></tr>
+    <tr><td>JP3, JP4, JP6</td><td>Pass contact 3, controller transmit and contact 6 to J2</td></tr>
+    <tr><td>JP7, JP8</td><td>Cut to disable D2 or D1</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="usb-serial-native-2" src="/images/extensions/usb-serial-breakout/guides/native-contact/reader-contact-keys/J1-numbered-pads.png" title="Carrier J1 — complete contact key" alt="Carrier J1 — complete contact key" caption="Four host leads plus a USB-B computer data cable. JP5 1–2 only; host 3.3 V and USB bridge supply remain separate domains. Check physical mating and voltage compatibility before power." width=420 %}
+## What you need {#what-you-need}
 
-{% include _includes/extension-instruction-diagram.html id="usb-serial-native-3" src="/images/extensions/usb-serial-breakout/guides/native-contact/reader-contact-keys/JP5-numbered-pads.png" title="JP5 — bridge receive-source selection" alt="JP5 — bridge receive-source selection" caption="Four host leads plus a USB-B computer data cable. JP5 1–2 only; host 3.3 V and USB bridge supply remain separate domains. Check physical mating and voltage compatibility before power." width=420 %}
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>This board</b><span>Plus four leads to the controller.</span></div>
+  <div class="xb-card"><b>A USB-B cable</b><span>A data cable, to the computer.</span></div>
+  <div class="xb-card"><b>FTDI serial driver</b><span>And a terminal program.</span></div>
+</div>
+{:/nomarkdown}
 
-### Enlarged installation contact numbers
+## Get started {#get-started}
 
-These PCB front-coordinate projections are not plug or mating-face views. Filled pads are used; open pads remain unused. Read the keys with the complete circuit above.
+This opens a command console on Smoothieboard V2 Prime header GB/J33.
 
-{% include _includes/extension-instruction-diagram.html id="usb-serial-v15-installation-J33" src="/images/extensions/usb-serial-breakout/guides/installation-contact-keys/J33-numbered-pads.png" title="J33 installation contacts" alt="Numbered J33 PCB contacts with the UART path marked." caption="PCB coordinates, not a mating face. JP5 pads 1–2 are bridged; 2–3 remain open." width=420 %}
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Disconnect everything</h3>
+    <p>Including the USB cable: USB powers the bridge even when the controller is off.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Wire four leads</h3>
+    <p>J33 contacts 1, 4, 5 and 10 to J1 contacts with the same numbers. No 5&nbsp;V lead. Leave J2 empty and JP5 bridged 1&ndash;2.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure</h3>
+    <p>Add the settings below.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Connect and test</h3>
+    <p>Power the controller, plug in USB, open the serial port at 115200 baud 8N1 with no flow control and type <code>version</code> then Enter.</p>
+    <p class="xb-expect">The controller replies with its build information.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="usb-serial-v15-installation-J1" src="/images/extensions/usb-serial-breakout/guides/installation-contact-keys/J1-numbered-pads.png" title="J1 installation contacts" alt="Numbered J1 PCB contacts with the UART path marked." caption="PCB coordinates, not a mating face. JP5 pads 1–2 are bridged; 2–3 remain open." width=420 %}
+## Configuration {#configuration}
 
-{% include _includes/extension-instruction-diagram.html id="usb-serial-v15-installation-JP5" src="/images/extensions/usb-serial-breakout/guides/installation-contact-keys/JP5-numbered-pads.png" title="JP5 installation contacts" alt="Numbered JP5 PCB contacts with the UART path marked." caption="PCB coordinates, not a mating face. JP5 pads 1–2 are bridged; 2–3 remain open." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>A serial console over USB</td><td>UART console</td><td><a href="#config-main">Setup</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-<details markdown="1">
-<summary>Wider console electrical drawing</summary>
-
-{% include _includes/extension-instruction-diagram.html id="usb-serial-breakout-v15-integral-installation-retained-alternative" src="/images/extensions/usb-serial-breakout/guides/prime-installation-wiring.png" title="USB serial breakout — complete installation" alt="Source-numbered Prime, extension board and peripheral with continuous autorouted electrical paths." caption="Electrical schematic. Numbered symbols preserve electrical identities. Check physical connector mating." width=1950 %}
-
-</details>
-
-The connection uses the onboard FT231XS/TXU0202 interface, a USB-B data cable to the computer and four individual same-numbered leads to Prime GB/J33: J33.1 → J1.1, J33.4 → J1.4, J33.5 → J1.5 and J33.10 → J1.10. Leave host 5 V and all remaining contacts disconnected. Select JP5 pads 1–2 and leave 2–3 open; do not connect competing transmitters. USB supplies the bridge-side domain, while Prime supplies the host-side 3.3 V domain. Host 5 V is distinct from USB VBUS. No external TTL serial module is needed.
-
-The installation above uses **Smoothieboard V2 Prime GB/J33**, with channel 1 TX on contact 4 (PB9), RX on contact 5 (PH14), and ground on contact 10. Check physical mating and voltage compatibility. Read the drawing and both companion sheets together.
-
-1. Keep the computer USB cable, Prime and every other supply disconnected while checking the wiring. USB can energize the bridge even when Prime is off.
-2. Check the four host leads against the contact keys: J33.1/.4/.5/.10 to J1.1/.4/.5/.10. Every other host contact remains unused; do not substitute a fully populated U ribbon.
-3. Check that JP5 selects 1–2 only, 2–3 is open and J2 is unused. Check the fitted solder state of each link.
-4. Do not connect power until you have checked power sequencing, backfeed behaviour and physical mating.
-
-## Smoothieware configuration and use
-
-The FTDI bridge needs the normal computer-side serial driver. Smoothieware sees a UART, not USB packets; the USB-B and Gadgeteer power paths must be kept separate as described above.
-
-### UART console settings
-
-The [console parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/Consoles.cpp#L733-L761) implements the following settings. This example enables **channel 1** at **115200 bit/s, 8 data bits, no parity, one stop bit**:
+### Setup {#config-main}
 
 ```ini
 [uart console]
@@ -211,18 +214,111 @@ stop_bits = 1
 parity = none
 ```
 
-With `console = true`, the UART is initialized by the [console task after startup](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/Consoles.cpp#L515-L520), rather than immediately while parsing this section. Let the controller finish starting before sending `version`. If no reply arrives, check the startup log for UART initialization errors and confirm the selected channel, crossed TX/RX, common ground and terminal line ending; silence alone does not identify a failed adapter.
+With <code>console = true</code> the UART starts after the controller has finished booting ([console source](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/Consoles.cpp#L733-L761)). On the Prime, [channel 1 transmits on PB9 and receives on PH14](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Uart.cpp#L101-L135), header GB contacts 4 and 5. Reserve both pins. Use 115200 baud, 8N1 and no hardware flow control on the computer.
 
-On Prime, [channel 1 uses TX PB9 and RX PH14](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Uart.cpp#L101-L135); the [host pin table](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/pins.md#L188-L202) places them on **GB contacts 4 and 5**, with ground on contact 10. Channel 0 instead uses PD8/PB11, identified as GD contacts 4/5. On the Prime, GB is J33: contact 4 reaches PB9 through R74 (100 Ω), and contact 5 reaches PH14 through R75 (100 Ω). These channels are fixed HAL selections, not arbitrary GPIO assignments. Reserve the selected channel and both pins in the complete configuration; `console = false` initializes an auxiliary UART without starting its command-console reader.
+## How it works {#how-it-works}
 
-After the board-specific supply, direction and cable checks in this guide are complete, use a computer terminal at the matching 115200/8N1 settings, with hardware flow control disabled. Send `version` followed by LF (`\n`; CRLF also works, but CR alone is ignored): the [registered shell command](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/CommandShell.cpp#L1485-L1505) prints build information without requesting motion. A returned version identifies the running build; it does not check the adapter's electrical behaviour.
+USB data goes to the FT231X, which produces a 3.3&nbsp;V UART from USB power. The <a href="/images/extensions/usb-serial-breakout/datasheets/txu0202.pdf">TXU0202</a> passes each direction between that supply and the controller&rsquo;s 3.3&nbsp;V, with a common ground. USB 5&nbsp;V is not connected to the controller&rsquo;s 5&nbsp;V.
 
-## Sources
+## Troubleshooting {#troubleshooting}
 
-- [Prime PCB source](https://github.com/Smoothieware/Smoothieboard2/blob/7dc4f9a972ad3e3587952171e63b278ee9997f10/V2_P12_Prime2590/smoothiev2-prime.kicad_pcb) — GB/J33 and the R74/R75 UART paths.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>No serial port on the computer</td><td>Data-capable cable and FTDI driver.</td></tr>
+    <tr><td>No reply</td><td>Channel 1, crossed signals, ground, and a line feed at the end of the command.</td></tr>
+    <tr><td>Chain device conflicts</td><td>Only one transmitter: check JP5.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-- [Source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/usb-serial-breakout/attempt/versions/v15)
-- [Board specification](https://github.com/arthurwolf/extension-boards/blob/main/src/usb-serial-breakout/specs.md)
-- [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/usb-serial-breakout/design.md)
-- [All extension boards](/extension-boards)
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
 
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/usb-serial-breakout/v15/usb-serial-breakout-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/usb-serial-breakout/v15/usb-serial-breakout-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/usb-serial-breakout/v15/usb-serial-breakout-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-us-mount-t">
+  <title id="xb-us-mount-t">Mounting drawing of the us, component side: outline 48 by 38 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="265.3" y="78.0" width="429.5" height="340.0" rx="8.9" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M265.3 56H694.7"/><path d="M265.3 50V62"/><path d="M694.7 50V62"/><path d="M720.7 78.0V418.0"/><path d="M714.7 78.0h12"/><path d="M714.7 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">48</text>
+  <text x="732.7" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">38</text>
+  <circle cx="265.3" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="253.3" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M207.3 104.0h30" fill="none"/><path d="M241.3 104.0l-8 -4v8z"/><path d="M207.3 104.0v30" fill="none"/><path d="M207.3 138.0l-4 -8h8z"/></g>
+  <text x="245.3" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="203.3" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="301.1" cy="158.5" r="14.3" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M282.7 158.5h36.6M301.1 140.2v36.6" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="286.7" y="192.8" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  4.00, 9.00</text>
+  <circle cx="658.9" cy="158.5" r="14.3" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M640.6 158.5h36.6M658.9 140.2v36.6" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="673.3" y="192.8" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  44.00, 9.00</text>
+  <circle cx="301.1" cy="337.5" r="14.3" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M282.7 337.5h36.6M301.1 319.2v36.6" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="286.7" y="313.2" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  4.00, 29.00</text>
+  <circle cx="658.9" cy="337.5" r="14.3" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M640.6 337.5h36.6M658.9 319.2v36.6" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="673.3" y="313.2" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  44.00, 29.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 48 × 38&nbsp;mm, corners rounded to a 1&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>4.00</td><td>9.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>44.00</td><td>9.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>3</td><td>4.00</td><td>29.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>4</td><td>44.00</td><td>29.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Values from the silk screen.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Logic</td><td>J1</td><td>—</td><td>3.3 V</td><td>—</td><td>Board silk</td></tr>
+    <tr><td>Baud rate</td><td>FT231X</td><td>—</td><td>—</td><td>3 Mbaud</td><td>Board silk, 8N1</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: datasheets {#datasheets}
+
+The first page of each important chip&rsquo;s datasheet. Click a page to open the PDF.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <a href="/images/extensions/usb-serial-breakout/datasheets/txu0202.pdf"><img src="/images/extensions/usb-serial-breakout/datasheets/txu0202-page1.png" alt="First page of the TXU0202 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/usb-serial-breakout/datasheets/txu0202.pdf">TXU0202 two-bit fixed-direction level translator</a> — Texas Instruments, 41 pages.</figcaption>
+</figure>
+{:/nomarkdown}
+
+See all boards on the [extension boards](/extension-boards) page.

@@ -1,288 +1,326 @@
 ---
 layout: default
 title: "Teensy 4.1 to Gadgeteer host board"
+description: "A carrier that gives a Teensy 4.1 six Gadgeteer sockets and an I2C connector, with series resistors and ESD protection."
 permalink: /extensions/teensy-to-gadgeteer-host
 ---
 
-# Teensy 4.1 to Gadgeteer host board
+{% include _includes/extension-board-page.html %}
 
-Use this carrier to make a **PJRC Teensy 4.1 the controller** for Gadgeteer extension modules: read sensors, operate indicators, or communicate with a suitable SPI, UART or I²C peripheral. Six sockets bring out different Teensy functions. A Qwiic connector shares the I²C bus. The carrier contains no processor and runs no firmware; the program on the Teensy performs the work.
-
-This is an independent host adapter. **There is no Smoothieboard V2 Prime cable, Prime pin assignment or Smoothieware configuration for this use.** The practical example uses the Teensy itself to drive the [Buzzer module](/extensions/buzzer-module).
-
-## How the carrier works
-
-Each of the 31 assigned Teensy signals passes through a 100 Ω series resistor to its socket contact. A TPD4E1U06 array channel provides ESD protection. These parts provide **no level translation**: all signal contacts remain 3.3 V logic. A socket's capability letter describes its contact functions, not automatic software or module compatibility.
-
-Teensy VIN feeds the socket 5 V rail through a Schottky diode. Teensy 3.3 V feeds the socket 3.3 V rail through a ferrite bead. All grounds are common. The I²C connectors share one bus; the other sockets connect to distinct Teensy pin groups. There is no second MCU, autonomous device discovery or adapter-side protocol conversion.
-
-## Board reference
-
-This top view shows the board with the Teensy removed so its two receiving headers are visible. White dots identify contact 1 on the board; confirm the corresponding position on the mating plug. The contact keys give the complete electrical pinout at a readable size.
 
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-reference" src="/images/extensions/teensy-to-gadgeteer-host/guides/board-reference.png" title="Teensy host — board reference" alt="Top view of the Teensy carrier with callouts to the analog, I2C, PWM, UART, SPI and GPIO sockets and both host headers." caption="Qwiic J7 fitted; alternative J8 unpopulated, with its copper contacts retained. The contact keys and power/service key below complete this reference." width=660 %}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Host adapters</p>
+    <h1 id="teensy-to-gadgeteer-host">Teensy 4.1 to Gadgeteer host board</h1>
+    <p class="xb-lead">Make a Teensy 4.1 the controller for small modules: six ten-contact sockets (Y, A, S, U, I and P) and an I&sup2;C connector. The program on the Teensy does the work.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/teensy-to-gadgeteer-host/v06/teensy-to-gadgeteer-host-diagram.png" alt="Top view of the Teensy 4.1 to Gadgeteer host board.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
+</div>
+
+<div class="xb-stats">
+  <div class="xb-stat"><b>6 sockets</b><span>Y A S U I P</span></div>
+  <div class="xb-stat"><b>31</b><span>signals</span></div>
+  <div class="xb-stat"><b>100 Ω</b><span>series each</span></div>
+  <div class="xb-stat"><b>100 mA</b><span>3.3 V total</span></div>
+  <div class="xb-stat"><b>500 mA</b><span>5 V total</span></div>
+  <div class="xb-stat"><b>76 × 56</b><span>millimetres</span></div>
+</div>
+
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+  <a href="#datasheets">Datasheets</a>
+</nav>
 {:/nomarkdown}
 
-### Common socket contacts
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  3.3&nbsp;V signals only, not 5&nbsp;V tolerant. Never feed 3.3&nbsp;V in from outside, never join the board to a powered controller, and keep within the supply totals.
+</sl-alert>
 
-Every Gadgeteer socket is a Samtec SHF-105-01-L-D-TH, keyed 2×5 at 1.27 mm pitch. Use the board's contact numbers and a continuity-checked cable. A ribbon's colored edge or visually similar connector does not prove its pin-1 orientation.
-
-| Contact | Function on every socket | Direction and limit |
-| --- | --- | --- |
-| 1 | Filtered 3.3 V | Host output; 100 mA **total**, shared with I²C connectors |
-| 2 | Diode-fed 5 V | Host output; 500 mA **total**, not a guaranteed available USB allowance |
-| 10 | GND | Common signal and supply return |
-
-The socket tables list every remaining contact. `NC` means not connected on this board. GPIO direction is chosen by the Teensy program; unused signals must not be tied to a rail or another output.
-
-### GPIO socket — J1, type Y
-
-| Contact | Teensy pin | Function |
-| --- | --- | --- |
-| 3 | 24 | GPIO |
-| 4 | 25 | GPIO |
-| 5 | 26 | GPIO |
-| 6 | 27 | GPIO |
-| 7 | 28 | GPIO |
-| 8 | 29 | GPIO |
-| 9 | 30 | GPIO |
-
-These signals require **Teensy 4.1**. A Teensy 4.0 does not make the corresponding receiving-header connections.
+## Tech specs {#specs}
 
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-y-1" src="/images/extensions/teensy-to-gadgeteer-host/guides/j1-contacts-1-5.png" title="GPIO socket — contacts 1–5" alt="Readable electrical contact key for GPIO socket contacts 1 to 5, including both supply contacts." caption="Read with the top-view board map. Rows are expanded electrical keys, not a view into the physical cable plug." width=660 %}
-{:/nomarkdown}
-{::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-y-2" src="/images/extensions/teensy-to-gadgeteer-host/guides/j1-contacts-6-10.png" title="GPIO socket — contacts 6–10" alt="Readable electrical contact key for GPIO socket contacts 6 to 10, including common ground." caption="The two keys together cover every socket contact, including contacts unconnected on the board." width=660 %}
-{:/nomarkdown}
-
-### Analog socket — J2, type A
-
-| Contact | Teensy pin | Function |
-| --- | --- | --- |
-| 3 | 20 / A6 | Analog input |
-| 4 | 21 / A7 | Analog input |
-| 5 | 22 / A8 | Analog input |
-| 6 | 23 / A9 | GPIO |
-| 7 | NC | — |
-| 8 | NC | — |
-| 9 | NC | — |
-
-Keep analog inputs within the Teensy's supported 0–3.3 V range. GPIO contact 6 also has an analog function on the Teensy; that does not change the socket type or provide a higher voltage range.
-
-{::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-a-1" src="/images/extensions/teensy-to-gadgeteer-host/guides/j2-contacts-1-5.png" title="Analog socket — contacts 1–5" alt="Readable electrical contact key for Analog socket contacts 1 to 5, including both supply contacts." caption="Read with the top-view board map. Rows are expanded electrical keys, not a view into the physical cable plug." width=660 %}
-{:/nomarkdown}
-{::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-a-2" src="/images/extensions/teensy-to-gadgeteer-host/guides/j2-contacts-6-10.png" title="Analog socket — contacts 6–10" alt="Readable electrical contact key for Analog socket contacts 6 to 10, including common ground." caption="The two keys together cover every socket contact, including contacts unconnected on the board." width=660 %}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>Gadgeteer host ports for a Teensy 4.1</td></tr>
+    <tr><td>Seating</td><td>Two 1&times;24 sockets, 15.24&nbsp;mm apart</td></tr>
+    <tr><td>Protection</td><td>100&nbsp;&Omega; and <a href="/images/extensions/teensy-to-gadgeteer-host/datasheets/tpd4e1u06.pdf">TPD4E1U06</a> ESD arrays</td></tr>
+    <tr><td>Supplies</td><td>5&nbsp;V from Teensy VIN through a diode; 3.3&nbsp;V through a ferrite</td></tr>
+    <tr><td>I²C connector</td><td>2.54&nbsp;mm header, or a Qwiic socket, same bus as J5</td></tr>
+    <tr><td>Links</td><td>JP1, JP2 lights; JP3, JP4 I&sup2;C pull-ups</td></tr>
+    <tr><td>Size</td><td>76 &times; 56&nbsp;mm, four M3 holes</td></tr>
+    <tr><td>Licence</td><td>CERN-OHL-S-2.0</td></tr>
+  </tbody>
+</table></div>
 {:/nomarkdown}
 
-### SPI socket — J3, type S
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
-| Contact | Teensy pin | Function |
-| --- | --- | --- |
-| 3 | 4 | GPIO |
-| 4 | 5 | GPIO |
-| 5 | 6 | GPIO |
-| 6 | 10 | CS → |
-| 7 | 11 | MOSI → |
-| 8 | 12 | MISO ← |
-| 9 | 13 | SCK → |
+## Board tour {#tour}
 
-Arrows are relative to the Teensy acting as SPI controller. Pin 13 also drives the Teensy's onboard LED. Configure chip select, mode, clock and the device driver for the actual peripheral; a socket letter supplies none of those settings.
+The numbers on the drawing match the list below it.
 
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-s-1" src="/images/extensions/teensy-to-gadgeteer-host/guides/j3-contacts-1-5.png" title="SPI socket — contacts 1–5" alt="Readable electrical contact key for SPI socket contacts 1 to 5, including both supply contacts." caption="Read with the top-view board map. Rows are expanded electrical keys, not a view into the physical cable plug." width=660 %}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/teensy-to-gadgeteer-host/v06/teensy-to-gadgeteer-host-diagram.png" alt="Top view of the Teensy 4.1 to Gadgeteer host board with numbered markers explained in the list below.">
+      <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:-0.2%;top:32.3%" aria-label="1: Teensy row, VIN side (J9)">1<span class="xb-pop"></span></a>
+      <a class="xb-mk xb-pl" href="#tour-2" style="left:-0.2%;top:58.6%" aria-label="2: Teensy row, pin 0 side (J10)">2<span class="xb-pop"></span></a>
+      <a class="xb-mk" href="#tour-3" style="left:74.1%;top:81.3%" aria-label="3: GPIO socket (J1)">3<span class="xb-pop"><b>GPIO socket (J1)</b> — type Y.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-4" style="left:15.1%;top:9.6%" aria-label="4: Analog socket (J2)">4<span class="xb-pop"><b>Analog socket (J2)</b> — type A.</span></a>
+      <a class="xb-mk" href="#tour-5" style="left:44.6%;top:81.3%" aria-label="5: SPI socket (J3)">5<span class="xb-pop"><b>SPI socket (J3)</b> — type S.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-6" style="left:15.1%;top:81.3%" aria-label="6: Serial socket (J4)">6<span class="xb-pop"><b>Serial socket (J4)</b> — type U.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-7" style="left:44.6%;top:9.6%" aria-label="7: I&sup2;C socket (J5)">7<span class="xb-pop"><b>I&sup2;C socket (J5)</b> — type I.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-8" style="left:74.1%;top:9.6%" aria-label="8: PWM socket (J6)">8<span class="xb-pop"><b>PWM socket (J6)</b> — type P.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-9" style="left:79.9%;top:27.3%" aria-label="9: I&sup2;C header (J8)">9<span class="xb-pop"><b>I&sup2;C header (J8)</b> — 3.3&nbsp;V.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-10" style="left:47.6%;top:25.3%" aria-label="10: 5 V light (D2)">10<span class="xb-pop"><b>5 V light (D2)</b> — green.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-11" style="left:60.6%;top:25.3%" aria-label="11: 3.3 V light (D3)">11<span class="xb-pop"><b>3.3 V light (D3)</b> — green.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Teensy row, VIN side (J9)</b> — USB end marked.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Teensy row, pin 0 side (J10)</b> — the other row.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>GPIO socket (J1)</b> — type Y.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Analog socket (J2)</b> — type A.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>SPI socket (J3)</b> — type S.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Serial socket (J4)</b> — type U.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>I&sup2;C socket (J5)</b> — type I.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>PWM socket (J6)</b> — type P.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>I&sup2;C header (J8)</b> — 3.3&nbsp;V.</div></li>
+    <li id="tour-10"><span class="xb-n">10</span><div><b>5 V light (D2)</b> — green.</div></li>
+    <li id="tour-11"><span class="xb-n">11</span><div><b>3.3 V light (D3)</b> — green.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
 {:/nomarkdown}
-{::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-s-2" src="/images/extensions/teensy-to-gadgeteer-host/guides/j3-contacts-6-10.png" title="SPI socket — contacts 6–10" alt="Readable electrical contact key for SPI socket contacts 6 to 10, including common ground." caption="The two keys together cover every socket contact, including contacts unconnected on the board." width=660 %}
-{:/nomarkdown}
 
-### UART socket — J4, type U
-
-| Contact | Teensy pin | Function |
-| --- | --- | --- |
-| 3 | 2 | GPIO |
-| 4 | 1 | TX1 → |
-| 5 | 0 | RX1 ← |
-| 6 | 3 | GPIO |
-| 7 | NC | — |
-| 8 | NC | — |
-| 9 | NC | — |
-
-Use Teensy `Serial1` on pins 0/1. These are **3.3 V logic UART** signals, not RS-232 or RS-485 levels. For a directly wired peripheral, host TX goes to peripheral RX, host RX goes to peripheral TX, and grounds must be common.
-
-{::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-u-1" src="/images/extensions/teensy-to-gadgeteer-host/guides/j4-contacts-1-5.png" title="UART socket — contacts 1–5" alt="Readable electrical contact key for UART socket contacts 1 to 5, including both supply contacts." caption="Read with the top-view board map. Rows are expanded electrical keys, not a view into the physical cable plug." width=660 %}
-{:/nomarkdown}
-{::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-u-2" src="/images/extensions/teensy-to-gadgeteer-host/guides/j4-contacts-6-10.png" title="UART socket — contacts 6–10" alt="Readable electrical contact key for UART socket contacts 6 to 10, including common ground." caption="The two keys together cover every socket contact, including contacts unconnected on the board." width=660 %}
-{:/nomarkdown}
-
-### I²C socket — J5, type I
-
-| Contact | Teensy pin | Function |
-| --- | --- | --- |
-| 3 | 17 | GPIO |
-| 4 | NC | — |
-| 5 | NC | — |
-| 6 | 14 | GPIO |
-| 7 | NC | — |
-| 8 | 18 | SDA ↔ |
-| 9 | 19 | SCL ↔ |
-
-Pins 18/19 belong to the Teensy `Wire` bus. J5, Qwiic J7 and alternative J8 share addresses, capacitance and pull-up loading. Use 3.3 V bus pull-ups; never attach a module that pulls the bus to 5 V. Contact 3 is GPIO 17, not a PWM channel.
+### Lights {#lights}
 
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-i-1" src="/images/extensions/teensy-to-gadgeteer-host/guides/j5-contacts-1-5.png" title="I²C socket — contacts 1–5" alt="Readable electrical contact key for I²C socket contacts 1 to 5, including both supply contacts." caption="Read with the top-view board map. Rows are expanded electrical keys, not a view into the physical cable plug." width=660 %}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th>Lit means</th><th>Disable it</th></tr></thead>
+  <tbody>
+    <tr><td>D2, green</td><td>5&nbsp;V present</td><td>Cut JP1</td></tr>
+    <tr><td>D3, green</td><td>3.3&nbsp;V present</td><td>Cut JP2</td></tr>
+  </tbody>
+</table></div>
 {:/nomarkdown}
-{::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-i-2" src="/images/extensions/teensy-to-gadgeteer-host/guides/j5-contacts-6-10.png" title="I²C socket — contacts 6–10" alt="Readable electrical contact key for I²C socket contacts 6 to 10, including common ground." caption="The two keys together cover every socket contact, including contacts unconnected on the board." width=660 %}
-{:/nomarkdown}
 
-### PWM socket — J6, type P
+## Pinout {#pinout}
 
-| Contact | Teensy pin | Function |
-| --- | --- | --- |
-| 3 | 15 | GPIO |
-| 4 | NC | — |
-| 5 | NC | — |
-| 6 | 16 | GPIO |
-| 7 | 7 | PWM → |
-| 8 | 8 | PWM → |
-| 9 | 9 | PWM → |
-
-Pin 9 is the third PWM channel. Pins 7/8 can alternatively serve Teensy `Serial2`, so do not enable that UART while using them as PWM. These are logic signals; power loads need an appropriate driver.
+Contact 1 is 3.3&nbsp;V, contact 2 is 5&nbsp;V and contact 10 ground on J1 to J6; contacts not listed are not connected. Numbers are Teensy digital pins.
 
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-p-1" src="/images/extensions/teensy-to-gadgeteer-host/guides/j6-contacts-1-5.png" title="PWM socket — contacts 1–5" alt="Readable electrical contact key for PWM socket contacts 1 to 5, including both supply contacts." caption="Read with the top-view board map. Rows are expanded electrical keys, not a view into the physical cable plug." width=660 %}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Socket contact</th><th>Teensy pin</th></tr></thead>
+  <tbody>
+    <tr><td>J1: 3 to 9</td><td>24 to 30</td></tr>
+    <tr><td>J2: 3 to 6</td><td>20 (A6), 21 (A7), 22 (A8), 23</td></tr>
+    <tr><td>J3: 3 to 5</td><td>4, 5, 6</td></tr>
+    <tr><td>J3: 6 to 9</td><td>CS 10, MOSI 11, MISO 12, SCK 13</td></tr>
+    <tr><td>J4: 3 to 6</td><td>2, TX1 1, RX1 0, 3</td></tr>
+    <tr><td>J5: 3, 6, 8, 9</td><td>17, 14, SDA 18, SCL 19</td></tr>
+    <tr><td>J6: 3, 6 to 9</td><td>15, 16, 7, 8, 9</td></tr>
+    <tr><td>J8: 1 to 4</td><td>Ground, 3.3&nbsp;V, SDA 18, SCL 19</td></tr>
+  </tbody>
+</table></div>
 {:/nomarkdown}
-{::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-p-2" src="/images/extensions/teensy-to-gadgeteer-host/guides/j6-contacts-6-10.png" title="PWM socket — contacts 6–10" alt="Readable electrical contact key for PWM socket contacts 6 to 10, including common ground." caption="The two keys together cover every socket contact, including contacts unconnected on the board." width=660 %}
-{:/nomarkdown}
 
-### Host headers, Qwiic and controls
-
-Seat a Teensy 4.1 in the two 1×24 female 2.54 mm receiving headers, with its USB end at the marked end. The rows are 15.24 mm apart. The carrier is 76 × 56 mm, 1.6 mm thick, with four ungrounded M3 holes and three cable-tie holes. Check seating, screw-head clearance and USB/microSD access.
-
-Positions below run from the **USB end** along each row. They are receiving-header contact positions, not GPIO numbers.
-
-| Position | VIN row J9 | GPIO-0 row J10 |
-| --- | --- | --- |
-| 1 | VIN | GND |
-| 2 | GND | GPIO 0 |
-| 3 | 3.3 V | GPIO 1 |
-| 4 | GPIO 23 | GPIO 2 |
-| 5 | GPIO 22 | GPIO 3 |
-| 6 | GPIO 21 | GPIO 4 |
-| 7 | GPIO 20 | GPIO 5 |
-| 8 | GPIO 19 | GPIO 6 |
-| 9 | GPIO 18 | GPIO 7 |
-| 10 | GPIO 17 | GPIO 8 |
-| 11 | GPIO 16 | GPIO 9 |
-| 12 | GPIO 15 | GPIO 10 |
-| 13 | GPIO 14 | GPIO 11 |
-| 14 | GPIO 13 | GPIO 12 |
-| 15 | GND | 3.3 V |
-| 16 | GPIO 41 | GPIO 24 |
-| 17 | GPIO 40 | GPIO 25 |
-| 18 | GPIO 39 | GPIO 26 |
-| 19 | GPIO 38 | GPIO 27 |
-| 20 | GPIO 37 | GPIO 28 |
-| 21 | GPIO 36 | GPIO 29 |
-| 22 | GPIO 35 | GPIO 30 |
-| 23 | GPIO 34 | GPIO 31 |
-| 24 | GPIO 33 | GPIO 32 |
-
-GPIO 31–41 are not assigned to the six Gadgeteer sockets. A Teensy 4.0 would use the first 14 positions of each row, leaving GPIO socket J1 disconnected.
-
-Qwiic J7 is a four-contact JST SH connector at 1.0 mm pitch: **1 GND, 2 filtered 3.3 V, 3 SDA/Teensy 18, 4 SCL/Teensy 19**. Alternative J8 is a 1×4 2.54 mm header on the same numbered nets. Fit J7 **or** J8, not both; the drawings show J7. Qwiic carries no 5 V.
-
-| Feature | Default | Effect |
-| --- | --- | --- |
-| JP1 / green LED D2 | Closed | Opening JP1 disables only the 5 V indicator |
-| JP2 / green LED D3 | Closed | Opening JP2 disables only the 3.3 V indicator |
-| JP3 / SDA pull-up | Closed | Opening disconnects its 2.2 kΩ pull-up to filtered 3.3 V |
-| JP4 / SCL pull-up | Closed | Opening disconnects its 2.2 kΩ pull-up to filtered 3.3 V |
-| Seven test pads | +5VS, +3V3P, HOST_VIN, GND ×2, SDA, SCL | Measurement access; not supply inputs |
-
-The adapter has no reset or programming control. Program the Teensy through its own USB interface. Reconcile all parallel I²C pull-ups before cutting links: these links affect the shared bus, not only Qwiic. See [PJRC's Wire reference](https://www.pjrc.com/teensy/td_libs_Wire.html) for the host API; each peripheral still needs its own compatible driver.
+## What you need {#what-you-need}
 
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-service" src="/images/extensions/teensy-to-gadgeteer-host/guides/power-service-key.png" title="Teensy host — power and service key" alt="Readable Qwiic/header contact key, LED and I2C solder links, measurement pads and total supply limits." caption="Change solder links only with power disconnected. A lit indicator does not prove the rail is within specification or a peripheral works." width=660 %}
+<div class="xb-cards">
+  <div class="xb-card"><b>Teensy 4.1</b><span>With header pins.</span></div>
+  <div class="xb-card"><b>This board</b><span>And a USB lead.</span></div>
+  <div class="xb-card"><b>A module</b><span>For example the Buzzer module.</span></div>
+</div>
 {:/nomarkdown}
 
-## Power and connection limits
+## Get started {#get-started}
 
-- In the example, the Teensy's USB connection supplies VIN and D1 feeds socket contact 2. The diode drop puts this rail below VIN; check its actual voltage at the module under load.
-- The limits are **500 mA total on 5 V** and **100 mA total on 3.3 V**, summed across every socket and I²C connector. Host consumption, USB capability, cable loss and temperature can lower the usable allowance. The carrier has no current limiter.
-- Never inject external 3.3 V through socket contact 1, Qwiic or J8, including with the Teensy off. The ferrite provides no DC reverse-current isolation. D1 blocks back-feed only on the 5 V path.
-- Do not join this carrier to a powered Smoothieboard or another powered host. This is not an isolated host-to-host bridge, and its signal contacts are not 5 V tolerant.
-- Follow [PJRC's power instructions](https://www.pjrc.com/store/teensy41.html#power) for an external VIN supply and the VUSB–VIN link. The carrier diode does not isolate an external VIN source from USB at the Teensy itself.
-
-## Practical example: sound the Buzzer module
-
-Use **Teensy 4.1 + carrier + Buzzer module**, without another module or power source. The buzzer uses GPIO socket contact 3: **Teensy digital pin 24**. The module's own transistor switches its sounder; the Teensy drives a control input, not the sounder's supply current.
-
-The diagram below is an **electrical contact map, not a complete installation drawing**. Its detached cable rows establish the contact-number schedule; they do not show continuous connections to the native board contacts. Check physical plug orientation, cable fanout and cable fit before assembly.
+This example sounds the [Buzzer module](/extensions/buzzer-module).
 
 {::nomarkdown}
-{% include _includes/extension-instruction-diagram.html id="teensy-v05-buzzer-wiring" src="/images/extensions/teensy-to-gadgeteer-host/guides/full-wiring.png" title="Teensy host to Buzzer — electrical cable contact map" alt="Teensy carrier and buzzer board insets above a separate ten-conductor electrical contact map. The cable rows do not join the connectors in the board artwork. Contact 2 supplies 5 V, contact 3 carries Teensy 24 control and contact 10 supplies ground." caption="Electrical contact map only. The numbered cable rows are detached from their native connector contacts and drawn on a separate schematic grid. Check physical plug orientation, cable fanout and fit. Prove each cable contact number end-to-end; do not infer a mating-face layout from the rows. No Prime connection is applicable." width=660 %}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Seat the Teensy</h3>
+    <p>Power off, USB end at the marked end.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Prepare the module</h3>
+    <p>Bridge its JP1 pads 1&ndash;2 only.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Cable</h3>
+    <p>Join host J1 to the module&rsquo;s J1.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Upload</h3>
+    <p>Select Teensy 4.1 and upload the program below.</p>
+    <p class="xb-expect">100 ms of sound every second.</p>
+  </li>
+</ol>
 {:/nomarkdown}
 
-| Carrier GPIO socket J1 | Buzzer input J1 | Role |
-| --- | --- | --- |
-| 1 | 1 | 3.3 V forwarded to chain; no local buzzer load |
-| 2 | 2 | Diode-fed 5 V through the module's selected supply link |
-| 3 / Teensy 24 | 3 | HIGH requests sound; LOW requests silence |
-| 4–9 / Teensy 25–30 | Same numbered contact | Forwarded to chain; no local buzzer load |
-| 10 | 10 | Common ground and supply return |
+## Configuration {#configuration}
 
-Unused conductors remain present in the ten-core cable. They do not become grounds or extra power contacts. Leave the buzzer's chain socket and alternate three-pin input disconnected for the first example.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>Use a module from the Teensy</td><td>Your Teensy program; not a Smoothieboard module</td><td><a href="#config-main">Setup</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-### Assemble and commission
+### Setup {#config-main}
 
-1. Disconnect all power. Confirm the Qwiic population and Teensy orientation. Check for contact between mounting hardware, the module and exposed pads. Check mounting-screw clearance before using the M3 holes.
-2. Set the buzzer's supply link **JP1 to 1–2 only** for Gadgeteer 5 V; keep 2–3 open and alternate input J3 disconnected. Its default JP2 forwards contact 3 to the chain; leave the chain unused.
-3. With the cable detached, meter 1→1 through 10→10 and check for crossed or adjacent shorted contacts. Verify the actual contact-1 markers on both boards before mating.
-4. Join the carrier's **GPIO/Y socket J1** to the buzzer's **input J1**. The carrier's other socket letters and the buzzer's chain socket are different interfaces.
-5. First power the Teensy alone from USB and check the carrier's rails. Remove power, connect the checked cable, then check the loaded module supply against its requirements before running the example. A green LED is only a presence indicator.
-6. Program the Teensy with **Teensy 4.1** selected. Observe digital pin 24 with a suitable meter/oscilloscope, then check sound/silence. Remove power if supply or signal levels fall outside the module limits.
-
-### Teensy program
-
-This uses [PJRC's digital-output API](https://www.pjrc.com/teensy/td_digital.html). The buzzer is active: a steady HIGH requests its own tone; PWM pitch generation is unnecessary.
+Smoothieware is not involved: the Teensy is the host.
 
 ```cpp
-constexpr unsigned int BUZZER_PIN = 24;  // Carrier GPIO J1 contact 3.
-
+constexpr unsigned int BUZZER_PIN = 24;  // socket J1 contact 3
 void setup() {
-    digitalWrite(BUZZER_PIN, LOW);
-    pinMode(BUZZER_PIN, OUTPUT);
+  digitalWrite(BUZZER_PIN, LOW);
+  pinMode(BUZZER_PIN, OUTPUT);
 }
-
 void loop() {
-    digitalWrite(BUZZER_PIN, HIGH);
-    delay(100);
-    digitalWrite(BUZZER_PIN, LOW);
-    delay(900);
+  digitalWrite(BUZZER_PIN, HIGH); delay(100);
+  digitalWrite(BUZZER_PIN, LOW);  delay(900);
 }
 ```
 
-Expected program sequence: 100 ms sound request, then 900 ms silence request. The program does not define the output during reset, bootloading or faults. If pin 24 changes but there is no sound, check module contacts 2/10, its JP1 1–2 supply link, the connector and fitted local driver before changing the host pin.
+## How it works {#how-it-works}
 
-### Smoothieware support
+Each Teensy signal reaches its socket through 100&nbsp;&Omega;, with ESD protection. There is no level conversion or second processor.
 
-No adapter firmware is flashed, and no Smoothieware setting or G-code command applies to this independent Teensy-host circuit. Use a Teensy application and the peripheral's driver.
+## Troubleshooting {#troubleshooting}
 
-## Sources
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Socket J1 dead</td><td>It needs a Teensy 4.1; a 4.0 does not reach those pins.</td></tr>
+    <tr><td>Serial2 or PWM conflicts</td><td>J6 contacts 7 and 8 are also Serial2.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-- [Native CAD and two connector populations](https://github.com/arthurwolf/extension-boards/tree/main/src/teensy-to-gadgeteer-host/attempt/versions/v05)
-- [Interface description](https://github.com/arthurwolf/extension-boards/blob/main/src/teensy-to-gadgeteer-host/attempt/design-contract.json)
-- [Specification](https://github.com/arthurwolf/extension-boards/blob/main/src/teensy-to-gadgeteer-host/specs.md) and [design](https://github.com/arthurwolf/extension-boards/blob/main/src/teensy-to-gadgeteer-host/design.md)
-- [Buzzer sources](https://github.com/arthurwolf/extension-boards/tree/main/src/buzzer-module/attempt/versions/v14) and [module guide](/extensions/buzzer-module)
-- [PJRC Teensy 4.1](https://www.pjrc.com/store/teensy41.html), [pin cards](https://www.pjrc.com/teensy/pinout.html), [dimensions](https://www.pjrc.com/teensy/dimensions.html) and [schematics](https://www.pjrc.com/teensy/schematic.html)
-- [Diagram source manifest](/images/extensions/teensy-to-gadgeteer-host/guides/source-manifest.json): inputs, connector-pad identities, all 31 signal paths and ten electrical cable conductors.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
 
-Carrier source license: CERN-OHL-S-2.0. Printed URL: `smoothieware.org/extensions/teensy-to-gadgeteer-host`.
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/teensy-to-gadgeteer-host/v06/teensy-to-gadgeteer-host-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/teensy-to-gadgeteer-host/v06/teensy-to-gadgeteer-host-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/teensy-to-gadgeteer-host/v06/teensy-to-gadgeteer-host-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-te-mount-t">
+  <title id="xb-te-mount-t">Mounting drawing of the te, component side: outline 76 by 56 millimetres with 4 mounting holes and 3 cable-tie holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="249.3" y="78.0" width="461.4" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M249.3 56H710.7"/><path d="M249.3 50V62"/><path d="M710.7 50V62"/><path d="M736.7 78.0V418.0"/><path d="M730.7 78.0h12"/><path d="M730.7 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">76</text>
+  <text x="748.7" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">56</text>
+  <circle cx="249.3" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="237.3" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M191.3 104.0h30" fill="none"/><path d="M225.3 104.0l-8 -4v8z"/><path d="M191.3 104.0v30" fill="none"/><path d="M191.3 138.0l-4 -8h8z"/></g>
+  <text x="229.3" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="187.3" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="267.5" cy="96.2" r="9.7" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M253.8 96.2h27.4M267.5 82.5v27.4" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="257.8" y="158.2" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  3.00, 3.00</text>
+  <circle cx="692.5" cy="96.2" r="9.7" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M678.8 96.2h27.4M692.5 82.5v27.4" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="702.2" y="125.9" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  73.00, 3.00</text>
+  <circle cx="267.5" cy="399.8" r="9.7" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M253.8 399.8h27.4M267.5 386.1v27.4" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="257.8" y="380.1" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  3.00, 53.00</text>
+  <circle cx="692.5" cy="399.8" r="9.7" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M678.8 399.8h27.4M692.5 386.1v27.4" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="702.2" y="380.1" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  73.00, 53.00</text>
+  <circle cx="267.5" cy="129.6" r="7.6" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
+  <circle cx="671.2" cy="336.0" r="7.6" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
+  <circle cx="695.5" cy="345.1" r="7.6" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
+  <text x="544.8" y="113.0" text-anchor="middle" font-size="12" fill="#a9b4c2">cable tie</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 76 × 56&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>3.00</td><td>3.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>73.00</td><td>3.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>3</td><td>3.00</td><td>53.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>4</td><td>73.00</td><td>53.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>–</td><td>3.00</td><td>8.50</td><td>2.5&nbsp;mm, not plated</td><td>Cable tie</td></tr>
+    <tr><td>–</td><td>69.50</td><td>42.50</td><td>2.5&nbsp;mm, not plated</td><td>Cable tie</td></tr>
+    <tr><td>–</td><td>73.50</td><td>44.00</td><td>2.5&nbsp;mm, not plated</td><td>Cable tie</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Limits for the whole board.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>3.3 V load</td><td>All sockets</td><td>—</td><td>—</td><td>100 mA</td><td>Total</td></tr>
+    <tr><td>5 V load</td><td>All sockets</td><td>—</td><td>—</td><td>500 mA</td><td>Total</td></tr>
+    <tr><td>Signals</td><td>All</td><td>—</td><td>3.3 V</td><td>—</td><td>Not 5 V tolerant</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: datasheets {#datasheets}
+
+The first page of each important chip&rsquo;s datasheet. Click a page to open the PDF.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <a href="/images/extensions/teensy-to-gadgeteer-host/datasheets/tpd4e1u06.pdf"><img src="/images/extensions/teensy-to-gadgeteer-host/datasheets/tpd4e1u06-page1.png" alt="First page of the TPD4E1U06 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/teensy-to-gadgeteer-host/datasheets/tpd4e1u06.pdf">TPD4E1U06 four-channel ESD protection array</a> — Texas Instruments, 27 pages.</figcaption>
+</figure>
+{:/nomarkdown}
+
+
+See all boards on the [extension boards](/extension-boards) page.

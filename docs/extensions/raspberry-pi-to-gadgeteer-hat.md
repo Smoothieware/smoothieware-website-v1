@@ -1,56 +1,199 @@
 ---
 layout: default
-title: "Raspberry Pi 40-pin to Gadgeteer HAT"
+title: "Raspberry Pi to Gadgeteer HAT"
+description: "A Raspberry Pi 40-pin HAT with five Gadgeteer sockets and a Qwiic port, with series resistors and ESD protection on every GPIO."
 permalink: /extensions/raspberry-pi-to-gadgeteer-hat
 ---
 
-# Raspberry Pi 40-pin to Gadgeteer HAT
+{% include _includes/extension-board-page.html %}
 
-This adapter makes a Raspberry Pi the host for Gadgeteer extension boards. It routes the Pi's 40-pin header to five keyed 10-contact sockets: general GPIO, SPI, UART, I²C and PWM. A Qwiic connector shares the I²C bus. Typical applications are a Pi-controlled indicator or buzzer, a 3.3 V I²C sensor, or a Pi application communicating with a compatible SPI or UART module. Compatibility must be established from the module's actual contacts and electrical requirements, not its socket letter alone.
 
-**Do not energize this board without checking it first:** verify continuity, rails, polarity, current and boot state on your assembly before powered operation.
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Host adapters</p>
+    <h1 id="raspberry-pi-to-gadgeteer-hat">Raspberry Pi to Gadgeteer HAT</h1>
+    <p class="xb-lead">Make a Raspberry Pi the host for small modules: five ten-contact sockets (Y, S, U, I and P) and a Qwiic port, with a protected resistor on every GPIO line.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/raspberry-pi-to-gadgeteer-hat/v03/raspberry-pi-to-gadgeteer-hat-diagram.png" alt="Top view of the Raspberry Pi to Gadgeteer HAT.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
+</div>
 
-**Smoothieboard V2 Prime wiring and Smoothieware configuration are inapplicable:** the Pi is the host. This is not a Prime peripheral. Connecting two host sockets can join supplies and opposing outputs. The adapter contains no processor, GPIO expander, firmware or automatic module discovery. Its passive signal paths need a Pi application and, for a protocol device, that device's driver. No Smoothieware driver is supplied.
+<div class="xb-stats">
+  <div class="xb-stat"><b>5 sockets</b><span>Y S U I P</span></div>
+  <div class="xb-stat"><b>26 GPIO</b><span>all brought out</span></div>
+  <div class="xb-stat"><b>100 Ω</b><span>series each</span></div>
+  <div class="xb-stat"><b>3.3 V</b><span>signals</span></div>
+  <div class="xb-stat"><b>Qwiic</b><span>on the I²C bus</span></div>
+  <div class="xb-stat"><b>65 × 56</b><span>millimetres</span></div>
+</div>
 
-## Complete connection example: Pi host and Buzzer module
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+  <a href="#datasheets">Datasheets</a>
+</nav>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="pi-hat-v03-wiring" src="/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/full-wiring.png" title="Pi host, HAT and Buzzer — connections" alt="Raspberry Pi Gadgeteer HAT with Pi host seating at underside J8 and a keyed ten-contact ribbon to the Buzzer module, carrying GPIO5 control, 5 V and ground" caption="The HAT sits above the Pi's 40-pin header. C1 is one mechanically grouped ribbon, not an electrical junction; every member is listed below. Board contact positions are true to the PCB. The Pi is represented by its header interface under the HAT. Plug bodies and the cable escape are schematic." width=1000 %}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Check continuity, supplies, polarity, current and start-up states on your assembly before powering it. All signals are 3.3&nbsp;V and not 5&nbsp;V tolerant. There is no fuse or current limit on the forwarded supplies. Never cable a socket to another powered controller.
+</sl-alert>
 
-The peripheral is the [Buzzer module](/extensions/buzzer-module), with its local buzzer and switching circuit. Use the HAT's **J1 Type Y** socket and the module's **J1 input**. The Pi's **BCM GPIO5** is **physical header pin 29**, HAT **J8.29** and, after **R4 (100 Ω)**, HAT **J1.3**. The module takes command on **J1.3**. Its local circuit, rather than the Pi GPIO, drives the buzzer load.
+## Tech specs {#specs}
 
-{% include _includes/extension-instruction-diagram.html id="pi-hat-v03-electrical" src="/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/buzzer-electrical-paths.png" title="Follow command, supply and return" alt="Schematic electrical paths from Pi GPIO5 through HAT resistor R4 and ribbon contact 3 to Buzzer J1 contact 3, Pi 5 V through ideal diode U1 and contact 2, and common ground through contact 10" caption="This readable electrical panel deliberately spaces its contacts for explanation. It is not a mechanical connector-face drawing. It shows the complete paths." width=1000 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>Gadgeteer host ports for a Raspberry Pi</td></tr>
+    <tr><td>Header</td><td>2&times;20 socket under the board</td></tr>
+    <tr><td>Protection</td><td>100&nbsp;&Omega; and an ESD diode on every GPIO</td></tr>
+    <tr><td>3.3 V</td><td>From the Pi through a ferrite bead</td></tr>
+    <tr><td>5 V</td><td>From the Pi through an <a href="/images/extensions/raspberry-pi-to-gadgeteer-hat/datasheets/lm66100.pdf">LM66100</a> that blocks back-feeding; no current limit</td></tr>
+    <tr><td>Qwiic</td><td>J6 (or the alternative 2.54&nbsp;mm header J7), same bus as J4</td></tr>
+    <tr><td>Not connected</td><td>Pi contacts 27 and 28 (HAT ID); no EEPROM</td></tr>
+    <tr><td>Size</td><td>65 &times; 56&nbsp;mm, four 2.75&nbsp;mm HAT holes, 58 &times; 49&nbsp;mm pattern</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-| Duty | Complete path | Direction and notes |
-| --- | --- | --- |
-| Command | Pi physical 29 / GPIO5 → HAT J8.29 `GPIO5_H` → R4.1–2, 100 Ω → HAT J1.3 `J1_P3` → cable C1.3 → Buzzer J1.3 `/Y_P3` → its local control circuit | Pi output to module input. Check the 3.3 V command margin and boot state. |
-| Supply | Pi physical 2 and 4 → HAT J8.2/4 `H5V` → U1.1 VIN → U1.6 VOUT `P5V` → HAT J1.2 → C1.2 → Buzzer J1.2 → Buzzer JP1.1–2 → local buzzer supply | One Pi supply; check the voltage and available load current. |
-| Return | Buzzer J1.10 → C1.10 → HAT J1.10 `GND` → HAT J8 ground contacts → Pi ground | Common circuit return, not protective earth. |
-| Unused rail | HAT J1.1 `P3V3` → C1.1 → Buzzer J1.1 | The cable carries the rail; the Buzzer circuit does not load it. |
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
-The other seven cores remain present in the 10-contact ribbon. They are **not extra Buzzer commands**: contacts 4–9 carry the HAT's other GPIO allocations but have no local load in this Buzzer example; contact 1 carries 3.3 V. Leave other devices and the Buzzer chain output J2 disconnected. Leave Buzzer external input J3 disconnected. On the module, bridge **JP1 contacts 1–2 only** to select Gadgeteer 5 V; do not also bridge 2–3.
+## Board tour {#tour}
 
-{% include _includes/extension-instruction-diagram.html id="pi-hat-v03-cable" src="/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/cable-contact-key.png" title="C1 ribbon — all ten contacts" alt="Every contact from HAT J1 to Buzzer J1, with same-number mapping, GPIO5 command, supply and return, and the unused module contacts identified" caption="The required electrical map is 1→1 through 10→10. The red edge is only a contact-one identifier after you have checked it. Keying, stripe position and equal connector pitch alone do not prove a cable's continuity or mating-face orientation." width=1000 %}
+The numbers on the drawing match the list below it.
 
-### Connect and check the assembly
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/raspberry-pi-to-gadgeteer-hat/v03/raspberry-pi-to-gadgeteer-hat-diagram.png" alt="Top view of the Raspberry Pi to Gadgeteer HAT with numbered markers explained in the list below.">
+      <a class="xb-mk" href="#tour-1" style="left:49.5%;top:55.1%" aria-label="1: Y socket (J1)">1<span class="xb-pop"><b>Y socket (J1)</b> — general inputs and outputs.</span></a>
+      <a class="xb-mk" href="#tour-2" style="left:66.4%;top:55.1%" aria-label="2: S socket (J2)">2<span class="xb-pop"><b>S socket (J2)</b> — SPI.</span></a>
+      <a class="xb-mk" href="#tour-3" style="left:34.8%;top:55.1%" aria-label="3: U socket (J3)">3<span class="xb-pop"><b>U socket (J3)</b> — serial.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-4" style="left:22.3%;top:55.1%" aria-label="4: I socket (J4)">4<span class="xb-pop"><b>I socket (J4)</b> — I&sup2;C.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-5" style="left:82.2%;top:55.1%" aria-label="5: P socket (J5)">5<span class="xb-pop"><b>P socket (J5)</b> — PWM.</span></a>
+      <a class="xb-mk" href="#tour-6" style="left:55.1%;top:90.4%" aria-label="6: Qwiic port (J6)">6<span class="xb-pop"><b>Qwiic port (J6)</b> — 3.3&nbsp;V I&sup2;C.</span></a>
+      <a class="xb-mk" href="#tour-7" style="left:31.3%;top:79.6%" aria-label="7: Back-feed blocker (U1)">7<span class="xb-pop"><b>Back-feed blocker (U1)</b> — LM66100 on 5&nbsp;V.</span></a>
+      <a class="xb-mk" href="#tour-8" style="left:74.1%;top:72.3%" aria-label="8: 3.3 V light (LED1)">8<span class="xb-pop"><b>3.3 V light (LED1)</b> — green.</span></a>
+      <a class="xb-mk" href="#tour-9" style="left:49.9%;top:72.3%" aria-label="9: 5 V light (LED2)">9<span class="xb-pop"><b>5 V light (LED2)</b> — green.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Y socket (J1)</b> — general inputs and outputs.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>S socket (J2)</b> — SPI.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>U socket (J3)</b> — serial.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>I socket (J4)</b> — I&sup2;C.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>P socket (J5)</b> — PWM.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Qwiic port (J6)</b> — 3.3&nbsp;V I&sup2;C.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Back-feed blocker (U1)</b> — <a href="/images/extensions/raspberry-pi-to-gadgeteer-hat/datasheets/lm66100.pdf">LM66100</a> on 5&nbsp;V.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>3.3 V light (LED1)</b> — green.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>5 V light (LED2)</b> — green.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-1. Keep the Pi supply and every external supply disconnected. Confirm the connectors fitted on your HAT and Buzzer.
-2. Identify Pi physical pin 1 and HAT J8 contact 1. Seat the underside female J8 on the complete 2×20 Pi header without a one-row or one-column offset. Use the proper supports; header height, PoE clearance, case fit and standoff selection need checking on your assembly.
-3. Check the ribbon out of circuit: every contact must keep its number from HAT J1 to Buzzer J1, with no cross-shorts. Identify the connector mating faces and contact 1 from the actual assembly. Do not infer contact numbering from a photograph or the stripe.
-4. Select Buzzer JP1 1–2 and connect C1 to HAT J1 and Buzzer J1. Leave the module's J2/J3 and every other HAT port unused for this example. Do not attach another 5 V source through a module or Qwiic connector.
-5. Check continuity, rails, polarity, current and boot state before powered operation. The HAT's indicators are observations of local rail branches, not proof that GPIO, wiring or power is safe. Check command voltage at both sides of R4 and at the Buzzer input, not just whether an LED lights.
-6. Only after those checks, reserve BCM GPIO5 for this application and use the Pi software example below. Stop with the command low before disconnecting the module.
+### Lights {#lights}
 
-### Pi software example
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th>Lit means</th><th>Disable it</th></tr></thead>
+  <tbody>
+    <tr><td>LED1, green</td><td>3.3&nbsp;V present</td><td>Cut JP1</td></tr>
+    <tr><td>LED2, green</td><td>5&nbsp;V present</td><td>Cut JP2</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-GPIO Zero's documented output API uses **BCM numbering**, so `5` means GPIO5 / physical 29, not physical pin 5. Its `Buzzer` class produces on/off control; it does not generate musical tones. Use a Pi-supported GPIO backend; current GPIO Zero documentation identifies `lgpio` as the supported backend on Pi 5. GPIO device access permissions must be correct for the account running the script. See the [GPIO Zero Buzzer API](https://gpiozero.readthedocs.io/en/stable/api_output.html#buzzer) and [backend documentation](https://gpiozero.readthedocs.io/en/stable/api_pins.html).
+## Pinout {#pinout}
 
-This is an application example, not firmware. It assumes the module's active-high command operates correctly at the Pi-side voltage. Save as `hat_buzzer.py` on the Pi:
+On every socket contact 1 is 3.3&nbsp;V, contact 2 is 5&nbsp;V and contact 10 is ground. The full socket-to-GPIO map is in the schematic below. For example, J1 contact 3 is BCM GPIO5 (header pin 29).
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Qwiic contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td></tr>
+    <tr><td>3</td><td><span class="xb-pill xb-p-sig">SDA</span></td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">SCL</span></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## What you need {#what-you-need}
+
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>A Raspberry Pi</b><span>With the 40-pin header and a suitable supply.</span></div>
+  <div class="xb-card"><b>This HAT</b><span>With spacers.</span></div>
+  <div class="xb-card"><b>A module</b><span>3.3 V, for example the Buzzer module.</span></div>
+</div>
+{:/nomarkdown}
+
+## Get started {#get-started}
+
+This example drives the [Buzzer module](/extensions/buzzer-module) from the Pi.
+
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Fit the HAT</h3>
+    <p>Power off; seat all 40 contacts without offset.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Connect the buzzer</h3>
+    <p>On the module bridge JP1 pads 1&ndash;2 (power from the socket), then cable HAT J1 to the module&rsquo;s J1.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Check</h3>
+    <p>Continuity, rails and polarity.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Run the script</h3>
+    <p>Run the Python script below.</p>
+    <p class="xb-expect">The buzzer sounds briefly.</p>
+  </li>
+</ol>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>Use a module from the Pi</td><td>Your Pi program; not a Smoothieboard module</td><td><a href="#config-main">Setup</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Setup {#config-main}
+
+Smoothieware is not involved: the Pi is the host. With [GPIO Zero](https://gpiozero.readthedocs.io/en/stable/api_output.html), which uses BCM numbers:
 
 ```python
 from time import sleep
 from gpiozero import Buzzer
 
-# BCM GPIO5 = Pi physical 29 = HAT J1 contact 3.
 with Buzzer(5, active_high=True, initial_value=False) as buzzer:
     try:
         buzzer.on()
@@ -59,103 +202,120 @@ with Buzzer(5, active_high=True, initial_value=False) as buzzer:
         buzzer.off()
 ```
 
-Run with the supported backend installed and configured:
+Run it with <code>GPIOZERO_PIN_FACTORY=lgpio python3 hat_buzzer.py</code>.
 
-```sh
-GPIOZERO_PIN_FACTORY=lgpio python3 hat_buzzer.py
-```
+## How it works {#how-it-works}
 
-No Smoothieware setting, G-code command, device overlay or I²C/SPI enable step is required for this GPIO-only example. Other protocols require the corresponding Pi interface configuration and a driver for the chosen module. This guide does not claim deterministic motion timing from Linux GPIO or compatibility with every Gadgeteer board.
+Each header signal goes through 100&nbsp;&Omega; to its socket, with an ESD diode to ground. There is no level conversion. Older Pi firmware can briefly drive GPIO6, 14 and 16 during boot (J2.4, J3.4 and J2.5), so keep sensitive loads off those until checked.
 
-## Board reference and connector locations
+## Troubleshooting {#troubleshooting}
 
-{% include _includes/extension-instruction-diagram.html id="pi-hat-v03-reference" src="/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/board-reference.png" title="Annotated HAT reference" alt="Top view of the Raspberry Pi HAT with connector callout pills for Pi header J8, GPIO J1, SPI J2, UART J3, I2C J4, PWM J5 and Qwiic J6" caption="The drawing is generated from the PCB. Grey leaders locate connector groups and are not conductors. J8 is on the underside: its contacts are shown as a top-view projection. J6 is the fitted Qwiic connector; the alternate J7 lands remain unpopulated. Enlarged keys below explain every contact." width=1000 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Nothing happens</td><td>BCM numbering, not header pin numbers; check the supply lights.</td></tr>
+    <tr><td>Pi reboots</td><td>A module draws too much current; there is no limiter.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The board is 65 × 56 mm with 3 mm corner radii, 1.6 mm nominal thickness and four 2.75 mm drilled HAT mounting holes on a 58 × 49 mm pattern. Two additional 2.5 mm cable-tie holes and six fiducials are mechanical/manufacturing features, not electrical contacts. Check connector fit and PoE-stack clearance on your assembly. The electrical interface is intended for the standard 40-pin Pi header, including Pi models with a fitted header; that does **not** establish that this HAT physically fits every Pi, Zero, Pi 400, cooler, case or stacked accessory. The PoE keep-out is approximate.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
 
-All GPIO signals are **3.3 V only and not 5 V tolerant**. The board has no level shifters, analog inputs or galvanic isolation. A 100 Ω resistor and ESD diode do not convert a 5 V signal into a suitable Pi input. This agrees with the [Raspberry Pi GPIO electrical guidance](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#gpio). Signal directions below describe the protocol; a general GPIO's direction comes from software.
+## Downloads {#downloads}
 
-### Five Gadgeteer sockets: complete map
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/raspberry-pi-to-gadgeteer-hat/v03/raspberry-pi-to-gadgeteer-hat-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/raspberry-pi-to-gadgeteer-hat/v03/raspberry-pi-to-gadgeteer-hat-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/raspberry-pi-to-gadgeteer-hat/v03/raspberry-pi-to-gadgeteer-hat-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-Each J1–J5 socket has ten contacts at 1.27 mm pitch. On every socket, **1 = filtered 3.3 V `P3V3`**, **2 = forwarded 5 V `P5V`**, and **10 = common `GND`**. Power goes from the Pi to the module. GPIO numbers in this table are BCM numbers; `Pi` is the physical 40-pin header contact.
+## Appendix: mounting dimensions {#mounting}
 
-| Socket | Contact | Signal / direction in protocol use | Pi physical contact |
-| --- | --- | --- | --- |
-| J1 Y · GPIO | 3 / 4 / 5 / 6 / 7 / 8 / 9 | GPIO5 / 27 / 7 / 22 / 25 / 23 / 24; software-selected input or output | 29 / 13 / 26 / 15 / 22 / 16 / 18 |
-| J2 S · SPI | 3 / 4 / 5 | GPIO26 / 6 / 16; software-selected | 37 / 31 / 36 |
-| J2 S · SPI | 6 | GPIO8 CE0; Pi → peripheral | 24 |
-| J2 S · SPI | 7 | GPIO10 MOSI; Pi → peripheral | 19 |
-| J2 S · SPI | 8 | GPIO9 MISO; peripheral → Pi | 21 |
-| J2 S · SPI | 9 | GPIO11 SCLK; Pi → peripheral | 23 |
-| J3 U · UART | 3 | GPIO18; software-selected | 12 |
-| J3 U · UART | 4 / 5 | GPIO14 TX, Pi → peripheral / GPIO15 RX, peripheral → Pi | 8 / 10 |
-| J3 U · UART | 6 / 7 / 8 / 9 | Not connected | — |
-| J4 I · I²C | 3 / 6 | GPIO17 / GPIO4; software-selected | 11 / 7 |
-| J4 I · I²C | 8 / 9 | GPIO2 SDA, bidirectional / GPIO3 SCL, Pi clock role | 3 / 5 |
-| J4 I · I²C | 4 / 5 / 7 | Not connected | — |
-| J5 P · PWM | 3 / 6 | GPIO21 / GPIO20; software-selected | 40 / 38 |
-| J5 P · PWM | 7 / 8 / 9 | GPIO12 PWM0 / GPIO13 PWM1 / GPIO19 PWM1, Pi → peripheral | 32 / 33 / 35 |
-| J5 P · PWM | 4 / 5 | Not connected | — |
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
 
-GPIO2–27 are each assigned once among these five sockets. The Qwiic/header ports deliberately share the J4 I²C signals. GPIO13 and GPIO19 expose the same classic Pi hardware PWM channel; do not treat them as independent hardware waveforms. Alternate-function availability and operating-system setup still depend on the Pi model and its software. SPI settings, UART console allocation and any competing overlays must be checked before use; arbitrary GPIO access does not by itself enable these protocols.
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-ph-mount-t">
+  <title id="xb-ph-mount-t">Mounting drawing of the ph, component side: outline 65 by 56 millimetres with 4 mounting holes and 2 cable-tie holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="282.7" y="78.0" width="394.6" height="340.0" rx="18.2" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M282.7 56H677.3"/><path d="M282.7 50V62"/><path d="M677.3 50V62"/><path d="M703.3 78.0V418.0"/><path d="M697.3 78.0h12"/><path d="M697.3 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">65</text>
+  <text x="715.3" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">56</text>
+  <circle cx="282.7" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="270.7" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M224.7 104.0h30" fill="none"/><path d="M258.7 104.0l-8 -4v8z"/><path d="M224.7 104.0v30" fill="none"/><path d="M224.7 138.0l-4 -8h8z"/></g>
+  <text x="262.7" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="220.7" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="303.9" cy="99.2" r="8.3" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M291.6 99.2h24.7M303.9 86.9v24.7" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="295.6" y="127.6" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  3.50, 3.50</text>
+  <circle cx="656.1" cy="99.2" r="8.3" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M643.7 99.2h24.7M656.1 86.9v24.7" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="664.4" y="127.6" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  61.50, 3.50</text>
+  <circle cx="303.9" cy="396.8" r="8.3" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M291.6 396.8h24.7M303.9 384.4v24.7" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="295.6" y="378.4" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  3.50, 52.50</text>
+  <circle cx="656.1" cy="396.8" r="8.3" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M643.7 396.8h24.7M656.1 384.4v24.7" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="664.4" y="378.4" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  61.50, 52.50</text>
+  <circle cx="634.8" cy="351.2" r="7.6" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
+  <circle cx="367.7" cy="396.8" r="7.6" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
+  <text x="501.2" y="334.6" text-anchor="middle" font-size="12" fill="#a9b4c2">cable tie</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 65 × 56&nbsp;mm, corners rounded to a 3&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
 
-Older Pi firmware can briefly drive GPIO6, GPIO14 and GPIO16 during boot: HAT J2.4, J3.4 and J2.5. The 100 Ω series resistors do not suppress that state. Keep startup-sensitive loads disconnected until you have checked their boot behaviour.
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>3.50</td><td>3.50</td><td>2.75&nbsp;mm, not plated</td><td>Mounting</td></tr>
+    <tr><td>2</td><td>61.50</td><td>3.50</td><td>2.75&nbsp;mm, not plated</td><td>Mounting</td></tr>
+    <tr><td>3</td><td>3.50</td><td>52.50</td><td>2.75&nbsp;mm, not plated</td><td>Mounting</td></tr>
+    <tr><td>4</td><td>61.50</td><td>52.50</td><td>2.75&nbsp;mm, not plated</td><td>Mounting</td></tr>
+    <tr><td>–</td><td>58.00</td><td>45.00</td><td>2.5&nbsp;mm, not plated</td><td>Cable tie</td></tr>
+    <tr><td>–</td><td>14.00</td><td>52.50</td><td>2.5&nbsp;mm, not plated</td><td>Cable tie</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-Each enlarged key below carries all ten contacts, including supplies, returns and NCs. Their row order is an electrical inventory, **not a mating-face view**. Use the board contact marker and the actual connector drawing to resolve orientation.
+## Appendix: electrical specifications {#electrical}
 
-{% include _includes/extension-instruction-diagram.html id="pi-hat-j1" src="/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/contacts-j1.png" title="J1 — seven GPIO" alt="All ten Type Y contacts and their Raspberry Pi physical pin assignments" caption="GPIO5 on contact 3 is used in the Buzzer example." width=1000 %}
-{% include _includes/extension-instruction-diagram.html id="pi-hat-j2" src="/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/contacts-j2.png" title="J2 — SPI and GPIO" alt="All ten Type S contacts, SPI directions and Pi header pin assignments" caption="MOSI, MISO, clock and CE0 use the Pi's SPI0 signal allocation." width=1000 %}
-{% include _includes/extension-instruction-diagram.html id="pi-hat-j3" src="/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/contacts-j3.png" title="J3 — UART and GPIO" alt="All ten Type U contacts with Pi TX and RX and four unused contacts" caption="TX and RX are named from the Pi's perspective; connect a peripheral's RX to Pi TX, and its TX to Pi RX." width=1000 %}
-{% include _includes/extension-instruction-diagram.html id="pi-hat-j4" src="/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/contacts-j4.png" title="J4 — shared I²C and GPIO" alt="All ten Type I contacts and the common GPIO2 SDA and GPIO3 SCL assignments" caption="J4, J6 and J7 share one bus; they are not independent I²C controllers." width=1000 %}
-{% include _includes/extension-instruction-diagram.html id="pi-hat-j5" src="/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/contacts-j5.png" title="J5 — PWM and GPIO" alt="All ten Type P contacts including PWM0, two PWM1 outputs and unused contacts" caption="GPIO13 and GPIO19 must not be assumed to supply independent classic hardware PWM channels." width=1000 %}
+Values from the design.
 
-### Qwiic J6 and alternate J7
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Signals</td><td>All sockets</td><td>—</td><td>3.3 V</td><td>—</td><td>Not 5 V tolerant</td></tr>
+    <tr><td>Series resistance</td><td>Each GPIO</td><td>—</td><td>100 Ω</td><td>—</td><td>Parts list</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-| Contact | J6 and J7 function | Origin |
-| --- | --- | --- |
-| 1 | Ground | Common GND |
-| 2 | 3.3 V only | Filtered `P3V3` |
-| 3 | SDA | GPIO2, Pi physical 3, shared with J4.8 |
-| 4 | SCL | GPIO3, Pi physical 5, shared with J4.9 |
+## Appendix: datasheets {#datasheets}
 
-J6 is a JST SM04B-SRSS-TB Qwiic connector; its mounting pads are grounded mechanical pads, not additional signal contacts. J7 is the alternative 1×4 2.54 mm header in the same connector area. The board fits **J6 and leaves J7 unpopulated**; fit one or the other, not both. Neither port provides 5 V. J6 has D27/D28 on SDA/SCL; J7 has no separate local TVS pair and shares the common protected net. All attached I²C devices must tolerate the same 3.3 V bus and avoid duplicate addresses. Additional module pull-ups appear in parallel with the Pi's fixed 1.8 kΩ SDA/SCL pull-ups; the HAT adds none. Check the combined pull-up load and bus capacitance for the chosen devices and wiring.
+The first page of each important chip&rsquo;s datasheet. Click a page to open the PDF.
 
-{% include _includes/extension-instruction-diagram.html id="pi-hat-j6" src="/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/contacts-j6.png" title="J6 — fitted Qwiic" alt="Four Qwiic contacts: ground, filtered 3.3 V, GPIO2 SDA and GPIO3 SCL" caption="Pin numbers identify electrical contacts; establish the actual cable mating face before use." width=1000 %}
-{% include _includes/extension-instruction-diagram.html id="pi-hat-j7" src="/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/contacts-j7.png" title="J7 — unpopulated alternative" alt="Four alternative 2.54 mm header contacts with the same I2C mapping as J6" caption="This is the alternate header population, not a second fitted port on the board." width=1000 %}
+{::nomarkdown}
+<figure class="xb-fig">
+  <a href="/images/extensions/raspberry-pi-to-gadgeteer-hat/datasheets/lm66100.pdf"><img src="/images/extensions/raspberry-pi-to-gadgeteer-hat/datasheets/lm66100-page1.png" alt="First page of the LM66100 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/raspberry-pi-to-gadgeteer-hat/datasheets/lm66100.pdf">LM66100 ideal diode</a> — Texas Instruments, 23 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/raspberry-pi-to-gadgeteer-hat/datasheets/tpd1e10b06.pdf"><img src="/images/extensions/raspberry-pi-to-gadgeteer-hat/datasheets/tpd1e10b06-page1.png" alt="First page of the TPD1E10B06 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/raspberry-pi-to-gadgeteer-hat/datasheets/tpd1e10b06.pdf">TPD1E10B06 single-channel ESD protection diode</a> — Texas Instruments, 33 pages.</figcaption>
+</figure>
+{:/nomarkdown}
 
-### Pi header J8: all forty contacts
 
-J8 is the underside 2×20 receptacle. Pi physical 1/17 supply `H3V3`, 2/4 supply `H5V`, and 6/9/14/20/25/30/34/39 are common ground. Physical **27/28 are GPIO0/1 HAT-ID (`ID_SD`/`ID_SC`) and are not connected**. There is no identification EEPROM or automatic overlay loading. The name “HAT” describes the intended form/interface; it is not HAT certification.
-
-{% include _includes/extension-instruction-diagram.html id="pi-hat-header-one" src="/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/pi-header-1.png" title="Pi J8 — contacts 1–20" alt="First twenty Pi header contacts including supplies, grounds, I2C, UART and SPI GPIO" caption="Physical header numbers are distinct from BCM GPIO numbers. This table is not a connector mating-face drawing." width=1000 %}
-{% include _includes/extension-instruction-diagram.html id="pi-hat-header-two" src="/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/pi-header-2.png" title="Pi J8 — contacts 21–40" alt="Last twenty Pi header contacts including reserved unconnected HAT-ID contacts 27 and 28" caption="The drawing shows true contact centres; verify contact 1 and orientation on the actual assembly." width=1000 %}
-
-## Power, protection, indicators and test points
-
-The board has two power paths. Pi `H3V3` passes through **FB1**, a ferrite bead, to the sockets' `P3V3`, with C3/C4 decoupling. Pi `H5V` passes through **U1 LM66100** to `P5V`, with C1 on its input and C2/C5 on its output. U1 contact 3 CE is tied to its output `P5V`; the [TI LM66100 Rev. A datasheet, pin-functions table](https://www.ti.com/lit/ds/symlink/lm66100.pdf) permits CE-to-VOUT for reverse-current protection. The ST contact 5 is unconnected. The device's own ratings do not set a board, header or cable rating.
-
-The 5 V stage is there to block back-feeding into the Pi. There is **no output fuse or current limiter** on either forwarded rail. No usable current limit is specified for either rail. Do not use the Pi 4's 6 V absolute-maximum stress rating as an operating supply target. Power the Pi using its model-appropriate regulated supply and account for its own loads and every module.
-
-Every routed GPIO channel has a 100 Ω series resistor and TPD1E10B06 ESD diode; D1–D26 cover the 26 GPIO paths, and D27/D28 add local I²C protection. A ground-return via sits beside each of the 28 TVS diodes. There is no signal-level conversion or sustained-overvoltage protection. Motors, relays and other power loads require their own appropriate driver/interface rather than a direct GPIO load.
-
-| Item | Role | Reader action |
-| --- | --- | --- |
-| JP1 | Bridged solder jumper feeding R27/LED1 from `P3V3` | Cutting it disables only the 3.3 V indicator branch. It does not disconnect socket power. |
-| JP2 | Bridged solder jumper feeding R28/LED2 from `P5V` | Cutting it disables only the 5 V indicator branch. It does not disconnect socket power. |
-| LED1 | Green 3.3 V indicator through R27 1 kΩ | Shows its local branch state, not a voltage or current measurement. |
-| LED2 | Green 5 V indicator through R28 2.2 kΩ | An unlit LED does not prove absence of power. |
-| TP1 / TP2 | `H3V3` / `H5V`, before FB1/U1 | Pi-side rail measurement points. |
-| TP3 / TP4 | `P3V3` / `P5V`, after FB1/U1 | Module-side rail measurement points. |
-| TP5 / TP6 | `GND` / `GND` | Common circuit-ground references. |
-
-There are no user switches, adjustment controls, programming connectors or module-power selection jumpers on the HAT. Do not confuse the HAT's LED jumpers with the Buzzer's separate supply-selection jumper.
-
-{% include _includes/extension-instruction-diagram.html id="pi-hat-v03-controls" src="/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/power-controls.png" title="Power and control reference" alt="All HAT indicator jumpers, LEDs, rail test points and power stages" caption="Circuit roles. An indicator is not a measurement." width=1000 %}
-
-## Source files
-
-[Download the source files and notices](/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/native-source.zip). It contains the PCB, hierarchical KiCad schematics, project settings, custom footprints, BOM, netlist and notes. Three-dimensional models and standard KiCad libraries are not bundled. The hardware source declares CERN-OHL-S-2.0; retain original notices and consult the source's license terms.
-
-[Diagram source manifest](/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/source-manifest.json) records the exact PCB, schematic, contract, module and artwork hashes, contact identities and cable membership. [Shared-router input and result](/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/routing-scenes.json) distinguish the mechanical cable jacket from the separately spaced electrical explanation. The generator is `smoothie-diagrams/src/host-adapter-guides/raspberry_pi_hat.py`; generated SVGs are not edited by hand.
-
-Primary references: [Raspberry Pi header and GPIO documentation](https://www.raspberrypi.com/documentation/computers/raspberry-pi.html#gpio), [Raspberry Pi HAT source/design guide](https://github.com/raspberrypi/hats), [HAT mechanical drawing](https://github.com/raspberrypi/hats/blob/master/hat-board-mechanical.pdf), [TI LM66100 datasheet](https://www.ti.com/lit/ds/symlink/lm66100.pdf), and the source download above.
+See all boards on the [extension boards](/extension-boards) page.

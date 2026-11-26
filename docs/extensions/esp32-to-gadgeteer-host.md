@@ -1,277 +1,315 @@
 ---
 layout: default
 title: "ESP32 DevKit to Gadgeteer host board"
+description: "A carrier that gives an ESP32-DevKitC-32E five Gadgeteer sockets and an I2C connector, with series resistors and ESD protection."
 permalink: /extensions/esp32-to-gadgeteer-host
 ---
 
-# ESP32 DevKit to Gadgeteer host board
-
-This adapter lets an Espressif ESP32-DevKitC-32E act as a host for Smoothie Gadgeteer extension boards. The DevKit plugs into two 1x19 female 2.54 mm headers, and five Gadgeteer sockets (A, S, U, I and P) plus a Qwiic connector bring its pins out in the standard Gadgeteer pinout. It carries no firmware and no second microcontroller: only wiring, protection and power conditioning.
-
-This board carries no firmware and no application: provide your own ESP32 firmware.
-
-**Smoothieboard V2 Prime connection: inapplicable.** The ESP32 is the host. This board is not an extension that plugs into Prime; do not connect a Prime host socket to one of its host-output sockets. That would join host supplies and potentially opposing outputs. **Smoothieware settings: inapplicable.** No Smoothieware driver, ESP32 application or module firmware is supplied.
-
-Use this adapter when developing an ESP32 application for a particular Gadgeteer peripheral: first select a socket whose actual contacts match that peripheral, then provide firmware for its protocol and startup behavior. A socket letter alone does not establish compatibility. The worked Buzzer circuit below illustrates one such connection.
-
-## Board reference
-
-{% include _includes/extension-instruction-diagram.html id="esp32-host-v03-reference" src="/images/extensions/esp32-to-gadgeteer-host/guides/board-reference.png" title="ESP32 host adapter — annotated board" alt="Top-view board drawing of the ESP32 Gadgeteer host adapter with its five socket roles, DevKit seating headers and alternate I2C connector" caption="The DevKit is removed to expose the carrier. Pills identify connector groups; grey leaders locate them and are not electrical wires. The selected drawing shows the normal 2.54 mm J6 population. Check physical fit and cable mating before use." width=1000 %}
-
-Red denotes 3.3 V, orange 5 V, near-black circuit ground and blue the selected control signal. A white contact marker identifies native pin 1. The labels and numbered schedule determine electrical identity; colour alone does not. Circuit ground is not protective earth.
-
-### Every contact, indicator and solder link
-
-The details below cover **all 92 numbered connector contacts**, all **98 physical connector pad instances** (including the alternative J6 lands and its two ground mounting lands), and the **18 terminals of the LEDs, solder links and test pads**. Each row highlights its exact contact on a crop of the board drawing and names its function and direction or circuit duty. Grey leaders are annotations, not wires. General GPIO direction is application-defined; the protocol directions are the intended host roles.
-
-These are coordinate locators, not mating-face drawings. The long DevKit receiver rows are rigidly rotated 90° in their details; the whole-board overview above locates each receiver. The normal J6 drawing uses the 2.54 mm header. The separate JST-SH sheets show alternative lands, including both MP ground lands, and do not imply that both connector populations should be fitted.
-
-Underside controls are shown separately as **pad locators**, not added to the top assembly artwork. Their board-frame footprint origins, in millimetres measured from the upper-left board corner in the top-through-board coordinate frame, are: JP3 (41.6, 9.1), JP4 (41.6, 12.4), TP1 (15, 54.1), TP2 (18, 54.1), TP3 (21, 54.1), TP4 (32, 54.1), TP5 (34.7, 54.1), TP6 (38, 54.1). These coordinates are not a mirrored underside mating view.
-
-<details markdown="1">
-<summary>Analog socket A — J1</summary>
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j1-01" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j1-01.png" title="Analog socket A — contact detail 1" alt="J1 contact detail 1, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j1-02" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j1-02.png" title="Analog socket A — contact detail 2" alt="J1 contact detail 2, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-</details>
-
-<details markdown="1">
-<summary>SPI socket S — J2</summary>
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j2-01" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j2-01.png" title="SPI socket S — contact detail 1" alt="J2 contact detail 1, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j2-02" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j2-02.png" title="SPI socket S — contact detail 2" alt="J2 contact detail 2, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-</details>
-
-<details markdown="1">
-<summary>UART socket U — J3</summary>
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j3-01" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j3-01.png" title="UART socket U — contact detail 1" alt="J3 contact detail 1, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j3-02" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j3-02.png" title="UART socket U — contact detail 2" alt="J3 contact detail 2, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-</details>
-
-<details markdown="1">
-<summary>I²C socket I — J4</summary>
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j4-01" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j4-01.png" title="I²C socket I — contact detail 1" alt="J4 contact detail 1, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j4-02" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j4-02.png" title="I²C socket I — contact detail 2" alt="J4 contact detail 2, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-</details>
-
-<details markdown="1">
-<summary>GPIO socket P — J5</summary>
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j5-01" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j5-01.png" title="GPIO socket P — contact detail 1" alt="J5 contact detail 1, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j5-02" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j5-02.png" title="GPIO socket P — contact detail 2" alt="J5 contact detail 2, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-</details>
-
-<details markdown="1">
-<summary>I²C header — J6</summary>
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j6-01" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j6-01.png" title="I²C header — contact detail 1" alt="J6 contact detail 1, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-</details>
-
-<details markdown="1">
-<summary>DevKit J2 receiver — J7</summary>
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j7-01" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j7-01.png" title="DevKit J2 receiver — contact detail 1" alt="J7 contact detail 1, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j7-02" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j7-02.png" title="DevKit J2 receiver — contact detail 2" alt="J7 contact detail 2, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j7-03" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j7-03.png" title="DevKit J2 receiver — contact detail 3" alt="J7 contact detail 3, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j7-04" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j7-04.png" title="DevKit J2 receiver — contact detail 4" alt="J7 contact detail 4, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-</details>
-
-<details markdown="1">
-<summary>DevKit J3 receiver — J8</summary>
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j8-01" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j8-01.png" title="DevKit J3 receiver — contact detail 1" alt="J8 contact detail 1, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j8-02" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j8-02.png" title="DevKit J3 receiver — contact detail 2" alt="J8 contact detail 2, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j8-03" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j8-03.png" title="DevKit J3 receiver — contact detail 3" alt="J8 contact detail 3, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j8-04" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j8-04.png" title="DevKit J3 receiver — contact detail 4" alt="J8 contact detail 4, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-</details>
-
-<details markdown="1">
-<summary>Top indicators and links — controls-top</summary>
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-controls-top-01" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-controls-top-01.png" title="Top indicators and links — contact detail 1" alt="Controls-top contact detail 1, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-controls-top-02" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-controls-top-02.png" title="Top indicators and links — contact detail 2" alt="Controls-top contact detail 2, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-</details>
-
-<details markdown="1">
-<summary>Underside links and test pads — controls-bottom</summary>
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-controls-bottom-01" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-controls-bottom-01.png" title="Underside links and test pads — contact detail 1" alt="Controls-bottom contact detail 1, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-controls-bottom-02" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-controls-bottom-02.png" title="Underside links and test pads — contact detail 2" alt="Controls-bottom contact detail 2, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-</details>
-
-<details markdown="1">
-<summary>Alternative JST-SH copper — J6-alternative</summary>
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j6-alternative-01" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j6-alternative-01.png" title="Alternative JST-SH copper — contact detail 1" alt="J6-alternative contact detail 1, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-{% include _includes/extension-instruction-diagram.html id="esp32-v03-atlas-j6-alternative-02" src="/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j6-alternative-02.png" title="Alternative JST-SH copper — contact detail 2" alt="J6-alternative contact detail 2, with each exact contact highlighted beside its function and direction or circuit duty" caption="ESP32 adapter contact locator. Grey leaders identify contacts; they do not represent electrical connections." width=760 %}
-
-</details>
-
-## A complete example: ESP32 host and Buzzer module
-
-{% include _includes/extension-instruction-diagram.html id="esp32-host-v03-wiring" src="/images/extensions/esp32-to-gadgeteer-host/guides/full-wiring.png" title="ESP32 host, adapter and Buzzer — complete connection" alt="ESP32 DevKitC seated on the host adapter, with a ten-contact cable to the Buzzer module and individually scheduled control, supply and return contacts" caption="The DevKit enclosure is an illustrative top view with its source dimensions and header positions. A same-number cable is required. Verify connector fit, actual rail voltage, GPIO drive and firmware before powered use." width=1100 %}
-
-The peripheral is the [Buzzer module](/extensions/buzzer-module), including its actual local buzzer and switch stage. Use the module's Gadgeteer input J1, leave its chain output J2 and alternate input J3 disconnected, and select Gadgeteer power by bridging its JP1 contacts 1–2 only. Do not bridge contacts 2–3 as well. The adapter's PWM socket **J5 contact 3** supplies the command from **GPIO26**. No PWM waveform is required by an active buzzer: a steady asserted command is the intended sounding state; beeping requires application timing.
-
-### Follow all three functional paths
-
-| Function | Complete path | Direction and limit |
-| --- | --- | --- |
-| Buzzer command | DevKit J2.10 GPIO26 → adapter J7.10 → R10 100 Ω → adapter J5.3 `/P_P3` → cable 3 → Buzzer J1.3 `/Y_P3` → its diode-OR and gate circuit → local switching transistor | ESP32 output to module input; check the 3.3 V drive after the diode and the startup state |
-| Buzzer supply | One USB supply into the DevKit → DevKit 5V header J2.19 → adapter J7.19 `/HOST_5V` → D1 anode 2, cathode 1 → `+5V` → adapter J5.2 → cable 2 → Buzzer J1.2 → JP1 1–2 → local buzzer supply | Host to module; socket voltage is reduced by the host and adapter diodes; check actual voltage and available current |
-| Return | Buzzer ground and switching return → Buzzer J1.10 → cable 10 → adapter J5.10 `GND` → adapter J7.14 and J8.1/J8.7 → DevKit ground | Common circuit return; no earth or independent supply is implied |
-
-The DevKit's USB lead supplies both its logic regulator and the forwarded 5 V path. Its 3V3 header J2.1 reaches adapter J7.1, ferrite FB1 and every Gadgeteer contact 1; cable contact 1 is forwarded by this Buzzer module but does not supply its local buzzer load. Do not add another power source through the cable.
-
-{% include _includes/extension-instruction-diagram.html id="esp32-host-v03-cable-key" src="/images/extensions/esp32-to-gadgeteer-host/guides/cable-contact-key.png" title="ESP32-to-Buzzer cable — all ten contact identities" alt="All ten same-numbered cable contacts, including 3.3 V, 5 V, GPIO26 command, ground, unused contacts and the top-view keyed connector numbering" caption="The contact key is a board-top reference, not a mating-face drawing of a selected plug. Contact 1 must reach contact 1 and so on through both cable ends. A red ribbon edge is not sufficient proof. Establish the actual assembly orientation and de-energized continuity before use." width=1000 %}
-
-| Adapter J5 contact → Buzzer J1 contact | Signal | Module use |
-| --- | --- | --- |
-| 1 → 1 | +3.3 V | Forwarded; no local buzzer load |
-| 2 → 2 | +5 V after adapter D1 | Local buzzer power with JP1 1–2 selected |
-| 3 → 3 | GPIO26 via 100 Ω | Buzzer command |
-| 4 → 4 | NC at adapter | No local load; not an available host signal |
-| 5 → 5 | NC at adapter | No local load; not an available host signal |
-| 6 → 6 | GPIO15, strapping pin | No local load; forwarded to the disconnected chain port |
-| 7 → 7 | GPIO25 | No local load; forwarded to the disconnected chain port |
-| 8 → 8 | GPIO27 | No local load; forwarded to the disconnected chain port |
-| 9 → 9 | GPIO2, strapping pin | No local load; forwarded to the disconnected chain port |
-| 10 → 10 | GND | Common return |
-
-There is no generic Y socket on this host. The Buzzer consumes contact 3, supply and return, so this specific use works with these connections. Do not assume the same for arbitrary Y modules or chain another module without tracing every consumed contact and load.
-
-### Prepare and check the assembly
-
-1. Identify the exact DevKitC variant.
-2. With all power removed, seat a header-equipped WROOM DevKit only after comparing every header position. Put its antenna at ANTENNA and its USB connector at USB. Do not reverse it or offset either row.
-3. Select Buzzer JP1 1–2 and leave the alternate input and chain connector unused. Check all ten cable identities end to end, key clearance, contact-1 markers and absence of supply shorts with the actual connector populations.
-4. Provide an ESP32 application that configures GPIO26 as an output and establishes the intended silent state before enabling the peripheral.
-5. Before applying power, complete the rail, drive, reset and current checks described below. Use one DevKit supply option only.
-
-## References
-
-The [Espressif DevKitC V4 user guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32/esp32-devkitc/user_guide.html) establishes header numbering, the WROVER exclusions and mutually exclusive power options. See also the [V4 schematic](https://dl.espressif.com/dl/schematics/esp32_devkitc_v4_sch.pdf), [mechanical dimensions](https://dl.espressif.com/dl/schematics/esp32_devkitc_v4_dimensions.pdf), [ESP32 datasheet](https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf), [Samtec connector drawing](https://suddendocs.samtec.com/prints/shf-1xx-01-x-d-xx-xx-xx-mkt.pdf).
-
-
-## Which DevKit fits
-
-- Designed for: ESP32-DevKitC-32E (V4 layout) with an ESP32-WROOM-32E module and male headers. The two carrier header rows are 25.40 mm apart and each has 19 pins. The 32UE variant has the corresponding WROOM pinout; check its physical fit.
-- Does not fit without checking: other 38-pin ESP32 boards. Compare their header order with the table below first.
-- Do not use a WROVER (PSRAM) module: GPIO16 and GPIO17 are its PSRAM lines and are used here for the U socket.
-- The Espressif drawing dimensions the PCB body at 27.94 × 48.26 mm, with an additional 6.04 mm antenna projection above the body. The pin-1 row lies 1.30 mm below the body's top edge. The adapter is silk-marked ANTENNA at the pin-1 end and USB at the other end. Its symmetric socket arrangement does not prevent reversed insertion. Body, header height, antenna clearance, shrouded cable and Qwiic fit must be checked.
-
-## Sockets and pinouts
-
-Every Gadgeteer socket is a 2x5 1.27 mm shrouded keyed header. Pin 1 is 3.3 V, pin 2 is 5 V, pin 10 is GND; contacts not listed are not connected.
-
-| Socket | Contact | ESP32 pin and function |
-| --- | --- | --- |
-| J1 A (analog) | 3 | GPIO36 (ADC1, input only) |
-| | 4 | GPIO39 (ADC1, input only) |
-| | 5 | GPIO34 (ADC1, input only) |
-| | 6 | GPIO32 (ADC1) |
-| J2 S (SPI) | 3 | GPIO33 |
-| | 4 | GPIO13 |
-| | 5 | GPIO14 |
-| | 6 | CS, GPIO5 (boot strapping pin) |
-| | 7 | MOSI, GPIO23 |
-| | 8 | MISO, GPIO19 |
-| | 9 | SCK, GPIO18 |
-| J3 U (UART) | 3 | GPIO4 |
-| | 4 | TX, GPIO17 (UART2) |
-| | 5 | RX, GPIO16 (UART2) |
-| J4 I (I2C) | 3 | GPIO35 (input only) |
-| | 8 | SDA, GPIO21 |
-| | 9 | SCL, GPIO22 |
-| J5 P (PWM) | 3 | GPIO26 |
-| | 6 | GPIO15 (boot strapping pin) |
-| | 7 | PWM, GPIO25 |
-| | 8 | PWM, GPIO27 |
-| | 9 | PWM, GPIO2 (boot strapping pin) |
-| J6 Qwiic / 2.54 mm | 1 GND, 2 3.3 V, 3 SDA, 4 SCL | same SDA/SCL as J4; no 5 V on this connector |
-
-Not connected by this carrier: GPIO0, GPIO12, EN, the USB console pins GPIO1 and GPIO3, and the flash pins GPIO6 to GPIO11. There is no Y (7-GPIO) socket and no host-adapter daisy-chain connector. J1–J5 are separate host outputs. A module's chain connector does not create additional ESP32 GPIOs.
-
-All J1–J5 contact 1 positions are +3.3 V, contact 2 positions +5 V and contact 10 positions GND. Individually NC contacts are J1.7/8/9; J3.6/7/8/9; J4.4/5/6/7; and J5.4/5. J2 uses all contacts. GPIO34, 35, 36 and 39 are input-only. UART TX is from the ESP32 and RX is into it. SPI MOSI and SCK are from the host, MISO is into the host and CS selects the peripheral. I²C SDA is bidirectional and SCL is host-clocked for the intended controller use; hardware pins do not set a particular firmware bus mode. Remaining GPIO directions and PWM operation depend on the application. All 22 signal paths include a 100 Ω series resistor and socket-side TVS protection; those parts do not make the GPIO 5 V tolerant.
-
-### DevKit seating-header contact order
-
-Viewed from above with ANTENNA at the top, adapter J7 receives DevKit J2 and adapter J8 receives DevKit J3. Contact 1 is at the antenna end and contact 19 at the USB end on both rows. The number order below is not a mating-face cable order. “NC” means the DevKit pin is present but not connected by this adapter.
-
-| Contact | Adapter J7 / DevKit J2 | Adapter J8 / DevKit J3 |
-| --- | --- | --- |
-| 1 | 3V3 → HOST_3V3 | GND |
-| 2 | EN; NC | GPIO23 |
-| 3 | GPIO36 | GPIO22 |
-| 4 | GPIO39 | GPIO1 TX0; NC |
-| 5 | GPIO34 | GPIO3 RX0; NC |
-| 6 | GPIO35 | GPIO21 |
-| 7 | GPIO32 | GND |
-| 8 | GPIO33 | GPIO19 |
-| 9 | GPIO25 | GPIO18 |
-| 10 | GPIO26 | GPIO5 |
-| 11 | GPIO27 | GPIO17 |
-| 12 | GPIO14 | GPIO16 |
-| 13 | GPIO12; NC | GPIO4 |
-| 14 | GND | GPIO0; NC |
-| 15 | GPIO13 | GPIO2 |
-| 16 | GPIO9 D2; NC | GPIO15 |
-| 17 | GPIO10 D3; NC | GPIO8 D1; NC |
-| 18 | GPIO11 CMD; NC | GPIO7 D0; NC |
-| 19 | 5V → HOST_5V | GPIO6 CLK; NC |
-
-## Supply and limits
-
-- 3.3 V comes from the DevKit 3V3 pin (its onboard regulator, shared with the radio) through ferrite FB1 and 22 µF plus 100 nF local capacitance. Keep the total extension load within **100 mA**.
-- 5 V comes from the DevKit 5V pin through Schottky D1 (B5819W-7-F). Expect about 4.4–4.6 V at the sockets under USB power because there are two series diodes. Keep the total extension load within **500 mA**. Check the actual source, host consumption, temperature, diode, connector and cable together. A separate 5 V header supply is an alternative to USB, not an additional simultaneous source. There is no regulated 5 V output on this carrier.
-- The diode exists so that a 5 V source on a socket cable cannot push current back into the DevKit regulator input. It is not a reverse-polarity or over-voltage protector: the power rails are treated as trusted.
-- Every signal goes through a 100 ohm series resistor and one channel of a TPD4E1U06 ESD array. There is no level shifting. Signals must stay within 3.3 V; the ESP32 pins are not 5 V tolerant.
-- Qwiic and I2C: the DevKit has no I2C pull-ups, so 4.7 kohm pull-ups to 3.3 V are fitted on SDA and SCL, one solder jumper per line (JP3 and JP4, on the bottom) to remove them if another device already provides them.
-
-Use exactly one DevKit power source, as required by Espressif. Do not inject 3.3 V through Gadgeteer contact 1 or J6, including while the DevKit is off: FB1 provides no DC isolation or reverse-current blocking. D1 isolates only the forwarded 5 V path. There is no enforced current limiter on either rail. The Smoothieboard regulator's current budget is irrelevant to this ESP32 host.
-
-## Boot strapping warning
-
-GPIO2, GPIO5 and GPIO15 are boot strapping pins exposed at J5 and J2. Their reset levels affect boot behavior; a peripheral can interfere with boot or flashing. Verify the particular module's reset-time pulls and loads against the selected ESP32 datasheet, rather than relying on a generic resistor threshold. GPIO34–39 have no internal pull resistors. Use ADC1 on the A socket for the intended Wi-Fi sensing case and check your ESP-IDF driver and version before relying on ADC2 with Wi-Fi. Check booting with the actual load attached.
-
-## Options and jumpers
-
-| Item | What it does | Default |
-| --- | --- | --- |
-| J6 Qwiic | Populate either the JST SH 4-pin Qwiic/STEMMA QT connector or a 1x04 2.54 mm pin header on the same pads. 3.3 V only. | One of the two is fitted when you order |
-| JP1 | Cut to turn off the green 3.3 V LED | LED on |
-| JP2 | Cut to turn off the green 5 V LED | LED on |
-| JP3, JP4 | Cut to remove the SDA / SCL pull-ups | Pull-ups on |
-| TP1 to TP6 | Test pads on the bottom: 3V3, 5V, GND, SDA, SCL and a second GND | |
-
-## Mounting
-
-Three M3 holes (ungrounded) sit in the middle channel, 20 mm apart. Three 2.5 mm holes beside the socket columns take cable ties for strain relief. The board outline is 52.4 x 56.0 mm, two copper layers, black solder mask, white silkscreen.
-
-The board source declares CERN OHL-S 2.0.
+{% include _includes/extension-board-page.html %}
+
+
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Host adapters</p>
+    <h1 id="esp32-to-gadgeteer-host">ESP32 DevKit to Gadgeteer host board</h1>
+    <p class="xb-lead">Plug in an ESP32-DevKitC-32E and connect small modules: five ten-contact sockets (A, S, U, I and P) and a Qwiic or pin-header I&sup2;C connector. Your firmware does the work.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/esp32-to-gadgeteer-host/v03/esp32-to-gadgeteer-host-diagram.png" alt="Top view of the ESP32 DevKit to Gadgeteer host board.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
+</div>
+
+<div class="xb-stats">
+  <div class="xb-stat"><b>5 sockets</b><span>A S U I P</span></div>
+  <div class="xb-stat"><b>100 Ω</b><span>series each</span></div>
+  <div class="xb-stat"><b>100 mA</b><span>3.3 V total</span></div>
+  <div class="xb-stat"><b>500 mA</b><span>5 V total</span></div>
+  <div class="xb-stat"><b>3 holes</b><span>M3</span></div>
+  <div class="xb-stat"><b>52.4 × 56</b><span>millimetres</span></div>
+</div>
+
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+  <a href="#datasheets">Datasheets</a>
+</nav>
+{:/nomarkdown}
+
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  All signals are 3.3&nbsp;V and not 5&nbsp;V tolerant. Use exactly one DevKit power source, never feed 3.3&nbsp;V in through a socket, and never cable a socket to a powered controller. There is no current limiter.
+</sl-alert>
+
+## Tech specs {#specs}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>Gadgeteer host ports for an ESP32</td></tr>
+    <tr><td>DevKit</td><td>ESP32-DevKitC-32E (V4) with WROOM-32E, two rows of 19 pins 25.4&nbsp;mm apart; no WROVER modules</td></tr>
+    <tr><td>Protection</td><td>100&nbsp;&Omega; and a <a href="/images/extensions/esp32-to-gadgeteer-host/datasheets/tpd4e1u06.pdf">TPD4E1U06</a> ESD channel on every signal</td></tr>
+    <tr><td>3.3 V</td><td>From the DevKit regulator through a ferrite; total load up to 100&nbsp;mA</td></tr>
+    <tr><td>5 V</td><td>Through a Schottky diode, about 4.4 to 4.6&nbsp;V on USB power; up to 500&nbsp;mA</td></tr>
+    <tr><td>I²C pull-ups</td><td>4.7&nbsp;k&Omega;, removable with JP3 and JP4</td></tr>
+    <tr><td>I²C connector</td><td>J6: 2.54&nbsp;mm header, or a Qwiic socket on the same pads</td></tr>
+    <tr><td>Size</td><td>52.4 &times; 56&nbsp;mm</td></tr>
+    <tr><td>Licence</td><td>CERN OHL-S 2.0</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
+
+## Board tour {#tour}
+
+The numbers on the drawing match the list below it.
+
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/esp32-to-gadgeteer-host/v03/esp32-to-gadgeteer-host-diagram.png" alt="Top view of the ESP32 DevKit to Gadgeteer host board with numbered markers explained in the list below.">
+      <a class="xb-mk xb-pb" href="#tour-1" style="left:26.6%;top:6.0%" aria-label="1: Left DevKit row (J7)">1<span class="xb-pop"><b>Left DevKit row (J7)</b> — pin 1 at the antenna end.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-2" style="left:73.3%;top:6.0%" aria-label="2: Right DevKit row (J8)">2<span class="xb-pop"><b>Right DevKit row (J8)</b> — pin 1 at the antenna end.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-3" style="left:9.0%;top:15.8%" aria-label="3: Analog socket (J1)">3<span class="xb-pop"><b>Analog socket (J1)</b> — inputs.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-4" style="left:9.0%;top:74.8%" aria-label="4: SPI socket (J2)">4<span class="xb-pop"><b>SPI socket (J2)</b> — type S.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-5" style="left:90.9%;top:47.9%" aria-label="5: Serial socket (J3)">5<span class="xb-pop"><b>Serial socket (J3)</b> — type U.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-6" style="left:90.9%;top:21.5%" aria-label="6: I&sup2;C socket (J4)">6<span class="xb-pop"><b>I&sup2;C socket (J4)</b> — type I.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-7" style="left:9.0%;top:45.3%" aria-label="7: PWM socket (J5)">7<span class="xb-pop"><b>PWM socket (J5)</b> — type P.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-8" style="left:85.4%;top:76.7%" aria-label="8: I&sup2;C connector (J6)">8<span class="xb-pop"><b>I&sup2;C connector (J6)</b> — 3.3&nbsp;V.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-9" style="left:17.6%;top:95.0%" aria-label="9: 3.3 V light (D2)">9<span class="xb-pop"><b>3.3 V light (D2)</b> — green.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-10" style="left:80.1%;top:95.0%" aria-label="10: 5 V light (D3)">10<span class="xb-pop"><b>5 V light (D3)</b> — green.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Left DevKit row (J7)</b> — pin 1 at the antenna end.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Right DevKit row (J8)</b> — pin 1 at the antenna end.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Analog socket (J1)</b> — inputs.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>SPI socket (J2)</b> — type S.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Serial socket (J3)</b> — type U.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>I&sup2;C socket (J4)</b> — type I.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>PWM socket (J5)</b> — type P.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>I&sup2;C connector (J6)</b> — 3.3&nbsp;V.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>3.3 V light (D2)</b> — green.</div></li>
+    <li id="tour-10"><span class="xb-n">10</span><div><b>5 V light (D3)</b> — green.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
+
+### Lights {#lights}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th>Lit means</th><th>Disable it</th></tr></thead>
+  <tbody>
+    <tr><td>D2, green</td><td>3.3&nbsp;V present</td><td>Cut JP1</td></tr>
+    <tr><td>D3, green</td><td>5&nbsp;V present</td><td>Cut JP2</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Pinout {#pinout}
+
+Contact 1 is 3.3&nbsp;V, contact 2 is 5&nbsp;V and contact 10 ground on J1 to J5; contacts not listed are not connected.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Socket contact</th><th>ESP32 pin</th></tr></thead>
+  <tbody>
+    <tr><td>J1: 3, 4, 5, 6</td><td>GPIO36, 39, 34 (input only), 32</td></tr>
+    <tr><td>J2: 3, 4, 5</td><td>GPIO33, 13, 14</td></tr>
+    <tr><td>J2: 6, 7, 8, 9</td><td>CS 5, MOSI 23, MISO 19, SCK 18</td></tr>
+    <tr><td>J3: 3, 4, 5</td><td>GPIO4, TX 17, RX 16</td></tr>
+    <tr><td>J4: 3, 8, 9</td><td>GPIO35 (input only), SDA 21, SCL 22</td></tr>
+    <tr><td>J5: 3, 6</td><td>GPIO26, 15</td></tr>
+    <tr><td>J5: 7, 8, 9</td><td>GPIO25, 27, 2</td></tr>
+    <tr><td>J6: 1, 2, 3, 4</td><td>Ground, 3.3&nbsp;V, SDA, SCL</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+GPIO2, 5 and 15 set the boot mode: a module on them must not disturb their level during reset.
+
+## What you need {#what-you-need}
+
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>ESP32-DevKitC-32E</b><span>With header pins.</span></div>
+  <div class="xb-card"><b>This board</b><span>And a USB lead.</span></div>
+  <div class="xb-card"><b>A module</b><span>For example the Buzzer module.</span></div>
+</div>
+{:/nomarkdown}
+
+## Get started {#get-started}
+
+This example sounds the [Buzzer module](/extensions/buzzer-module).
+
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Seat the DevKit</h3>
+    <p>Power off. Antenna at the ANTENNA mark, USB connector at the USB mark, no offset.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Prepare the module</h3>
+    <p>Bridge its JP1 pads 1&ndash;2 only.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Cable</h3>
+    <p>Join host J5 to the module&rsquo;s J1, contact for contact.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Load firmware</h3>
+    <p>Make GPIO26 an output, low, before driving it high.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Test</h3>
+    <p>Set GPIO26 high, then low.</p>
+    <p class="xb-expect">The buzzer sounds, then stops.</p>
+  </li>
+</ol>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>Use a module from the ESP32</td><td>Your ESP32 firmware; not a Smoothieboard module</td><td><a href="#config-main">Setup</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Setup {#config-main}
+
+Smoothieware is not involved: the ESP32 is the host and runs your own firmware.
+
+## How it works {#how-it-works}
+
+The two header rows carry the DevKit pins through 100&nbsp;&Omega; resistors to the sockets, with ESD protection. A diode stops a 5&nbsp;V source on a cable from pushing current back into the DevKit.
+
+## Troubleshooting {#troubleshooting}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>DevKit will not flash</td><td>Remove modules from GPIO2, 5 and 15.</td></tr>
+    <tr><td>I²C fails</td><td>One set of pull-ups on the bus; correct address.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
+
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/esp32-to-gadgeteer-host/v03/esp32-to-gadgeteer-host-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/esp32-to-gadgeteer-host/v03/esp32-to-gadgeteer-host-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/esp32-to-gadgeteer-host/v03/esp32-to-gadgeteer-host-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-es-mount-t">
+  <title id="xb-es-mount-t">Mounting drawing of the es, component side: outline 52.4 by 56 millimetres with 3 mounting holes and 3 cable-tie holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="320.9" y="78.0" width="318.1" height="340.0" rx="6.1" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M320.9 56H639.1"/><path d="M320.9 50V62"/><path d="M639.1 50V62"/><path d="M665.1 78.0V418.0"/><path d="M659.1 78.0h12"/><path d="M659.1 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">52.4</text>
+  <text x="677.1" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">56</text>
+  <circle cx="320.9" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="308.9" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M262.9 104.0h30" fill="none"/><path d="M296.9 104.0l-8 -4v8z"/><path d="M262.9 104.0v30" fill="none"/><path d="M262.9 138.0l-4 -8h8z"/></g>
+  <text x="300.9" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="258.9" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="480.0" cy="153.9" r="9.7" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M466.3 153.9h27.4M480.0 140.2v27.4" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="489.7" y="183.6" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  26.20, 12.50</text>
+  <circle cx="480.0" cy="275.3" r="9.7" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M466.3 275.3h27.4M480.0 261.6v27.4" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="489.7" y="255.6" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  26.20, 32.50</text>
+  <circle cx="480.0" cy="396.8" r="9.7" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M466.3 396.8h27.4M480.0 383.0v27.4" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="489.7" y="377.0" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  26.20, 52.50</text>
+  <circle cx="344.6" cy="179.7" r="7.6" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
+  <circle cx="344.6" cy="283.5" r="7.6" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
+  <circle cx="615.4" cy="295.4" r="7.6" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
+  <text x="434.9" y="163.1" text-anchor="middle" font-size="12" fill="#a9b4c2">cable tie</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 52.4 × 56&nbsp;mm, corners rounded to a 1&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>26.20</td><td>12.50</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>26.20</td><td>32.50</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>3</td><td>26.20</td><td>52.50</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>–</td><td>3.90</td><td>16.75</td><td>2.5&nbsp;mm, not plated</td><td>Cable tie</td></tr>
+    <tr><td>–</td><td>3.90</td><td>33.85</td><td>2.5&nbsp;mm, not plated</td><td>Cable tie</td></tr>
+    <tr><td>–</td><td>48.50</td><td>35.80</td><td>2.5&nbsp;mm, not plated</td><td>Cable tie</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Limits for the whole board.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>3.3 V load</td><td>All sockets</td><td>—</td><td>—</td><td>100 mA</td><td>Total</td></tr>
+    <tr><td>5 V load</td><td>All sockets</td><td>—</td><td>—</td><td>500 mA</td><td>Total</td></tr>
+    <tr><td>Signals</td><td>All</td><td>—</td><td>3.3 V</td><td>—</td><td>Not 5 V tolerant</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: datasheets {#datasheets}
+
+The first page of each important chip&rsquo;s datasheet. Click a page to open the PDF.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <a href="/images/extensions/esp32-to-gadgeteer-host/datasheets/tpd4e1u06.pdf"><img src="/images/extensions/esp32-to-gadgeteer-host/datasheets/tpd4e1u06-page1.png" alt="First page of the TPD4E1U06 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/esp32-to-gadgeteer-host/datasheets/tpd4e1u06.pdf">TPD4E1U06 four-channel ESD protection array</a> — Texas Instruments, 27 pages.</figcaption>
+</figure>
+{:/nomarkdown}
+
+
+See all boards on the [extension boards](/extension-boards) page.

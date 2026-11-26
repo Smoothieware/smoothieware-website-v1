@@ -1,186 +1,300 @@
 ---
 layout: default
 title: "Qwiic-to-Gadgeteer adapter"
+description: "A passive adapter from a ten-contact Gadgeteer I²C socket to two 3.3 V Qwiic ports, with a chain socket."
 permalink: /extensions/qwiic-to-gadgeteer-adapter
 ---
 
-# Qwiic-to-Gadgeteer adapter
+{% include _includes/extension-board-page.html %}
 
-Use this passive adapter to connect compatible 3.3 V Qwiic peripherals to one host-provided I²C bus. It contains no controller, level translator or peripheral driver. A matching connector alone does not establish that Smoothieware supports the attached device.
-
-## Purpose and operation
-
-The board has two Gadgeteer connectors, two populated JST Qwiic ports and cuttable chain links on contacts 3–9. The first Qwiic port is wired to the host: Qwiic GND, 3.3 V, SDA and SCL connect to Gadgeteer contacts 10, 1, 8 and 9. The second Qwiic port is parallel to the first. Gadgeteer contact 2 (+5 V) passes to the chain only and is not wired to either Qwiic port. The two Qwiic connectors share a single bus; address conflicts and pull-up loading remain the devices’ responsibility.
-
-## Board reference
-
-<details markdown="1">
-<summary>Reading the connector callouts</summary>
-
-The dark end of each pill gives the contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
-
-- Red: 3.3 V supply.
-- Orange: 5 V supply.
-- Green: Signal — use the printed function label.
-- Near-black: Circuit ground.
-- Dark grey: Other labelled contact — read its exact function.
-
-A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
-
-</details>
-
-{% include _includes/extension-instruction-diagram.html id="qwiic-to-gadgeteer-adapter-v20-reader-compact-overview" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/reader-compact-overview.png" title="Qwiic bus adapter — overview" alt="Qwiic bus adapter — overview" caption="Component-side reference. Use the overview and every focused sheet together. Paired physical pads share numbered nets." width=420 %}
-
-<details markdown="1">
-<summary>Larger combined reference</summary>
-
-{% include _includes/extension-instruction-diagram.html id="qwiic-to-gadgeteer-adapter-v20-reference" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/reader-reference.png" title="Annotated board reference" alt="Qwiic bus adapter annotated board reference, with numbered features." caption="Component-side reference. Dotted leaders locate parts, not electrical wiring. Numbered details show the contacts." width=1440 %}
-
-</details>
-
-Use the overview with all focused contact and link sheets. J3 and J4 each contain two physical pad populations sharing contacts 1–4; do not confuse duplicate pads with separate bus signals.
-
-<details markdown="1">
-<summary>Focused contact and component sheets</summary>
-
-{% include _includes/extension-instruction-diagram.html id="qwiic-to-gadgeteer-adapter-v20-reader-compact-host-input-1-5" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/reader-compact-host-input-1-5-central-pills.png" title="J1 · Host input — host input 1 5" alt="J1 · Host input — host input 1 5" caption="Component-side reference. Use the overview and every focused sheet together. Paired physical pads share numbered nets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="qwiic-to-gadgeteer-adapter-v20-reader-compact-host-input-6-10" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/reader-compact-host-input-6-10-central-pills.png" title="J1 · Host input — host input 6 10" alt="J1 · Host input — host input 6 10" caption="Component-side reference. Use the overview and every focused sheet together. Paired physical pads share numbered nets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="qwiic-to-gadgeteer-adapter-v20-reader-compact-chain-output-1-5" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/reader-compact-chain-output-1-5-central-pills.png" title="J2 · Chain output — chain output 1 5" alt="J2 · Chain output — chain output 1 5" caption="Component-side reference. Use the overview and every focused sheet together. Paired physical pads share numbered nets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="qwiic-to-gadgeteer-adapter-v20-reader-compact-chain-output-6-10" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/reader-compact-chain-output-6-10-central-pills.png" title="J2 · Chain output — chain output 6 10" alt="J2 · Chain output — chain output 6 10" caption="Component-side reference. Use the overview and every focused sheet together. Paired physical pads share numbered nets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="qwiic-to-gadgeteer-adapter-v20-reader-compact-qwiic-port-j3-1-4" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/reader-compact-qwiic-port-j3-1-4-central-pills.png" title="J3 · Qwiic port — qwiic port j3 1 4" alt="J3 · Qwiic port — qwiic port j3 1 4" caption="Component-side reference. Use the overview and every focused sheet together. Paired physical pads share numbered nets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="qwiic-to-gadgeteer-adapter-v20-reader-compact-qwiic-port-j4-1-4" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/reader-compact-qwiic-port-j4-1-4-central-pills.png" title="J4 · Qwiic port — qwiic port j4 1 4" alt="J4 · Qwiic port — qwiic port j4 1 4" caption="Component-side reference. Use the overview and every focused sheet together. Paired physical pads share numbered nets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="qwiic-to-gadgeteer-adapter-v20-reader-compact-chain-links-3-6" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/reader-compact-chain-links-3-6.png" title="Chain links 3–6 — chain links 3 6" alt="Chain links 3–6 — chain links 3 6" caption="Component-side reference. Use the overview and every focused sheet together. Paired physical pads share numbered nets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="qwiic-to-gadgeteer-adapter-v20-reader-compact-chain-links-7-9" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/reader-compact-chain-links-7-9.png" title="Chain links 7–9 — chain links 7 9" alt="Chain links 7–9 — chain links 7 9" caption="Component-side reference. Use the overview and every focused sheet together. Paired physical pads share numbered nets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="qwiic-to-gadgeteer-adapter-v20-reader-compact-port-ground-pads" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/reader-compact-port-ground-pads.png" title="Qwiic port grounds — port ground pads" alt="Qwiic port grounds — port ground pads" caption="Component-side reference. Use the overview and every focused sheet together. Paired physical pads share numbered nets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="qwiic-to-gadgeteer-adapter-v20-reader-compact-test-pads" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/reader-compact-test-pads-underside-caption.png" title="Test pads — test pads" alt="Test pads — test pads" caption="Component-side reference. Use the overview and every focused sheet together. Paired physical pads share numbered nets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="qwiic-to-gadgeteer-adapter-v20-reader-compact-mounts" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/reader-compact-mounts.png" title="Board mounting holes — mounts" alt="Board mounting holes — mounts" caption="Component-side reference. Use the overview and every focused sheet together. Paired physical pads share numbered nets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="qwiic-to-gadgeteer-adapter-v20-reader-compact-cable-ties" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/reader-compact-cable-ties.png" title="Cable tie features — cable ties" alt="Cable tie features — cable ties" caption="Component-side reference. Use the overview and every focused sheet together. Paired physical pads share numbered nets." width=420 %}
-
-</details>
-
-<details markdown="1">
-<summary>Combined connector and link details</summary>
-
-{% include _includes/extension-instruction-diagram.html id="qwiic-to-gadgeteer-adapter-v20-connector-detail-01" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/reader-connector-detail-01.png" title="Connector detail 01" alt="Qwiic bus adapter connector detail 01, with numbered features." caption="Component-side reference. Dotted leaders locate parts, not electrical wiring. Numbered details show the contacts." width=1440 %}
-
-{% include _includes/extension-instruction-diagram.html id="qwiic-to-gadgeteer-adapter-v20-connector-detail-02" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/reader-connector-detail-02.png" title="Connector detail 02" alt="Qwiic bus adapter connector detail 02, with numbered features." caption="Component-side reference. Dotted leaders locate parts, not electrical wiring. Numbered details show the contacts." width=1440 %}
-
-{% include _includes/extension-instruction-diagram.html id="qwiic-to-gadgeteer-adapter-v20-link-detail-01" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/reader-link-detail-01.png" title="Link detail 01" alt="Qwiic bus adapter link detail 01, with numbered features." caption="Component-side reference. Dotted leaders locate parts, not electrical wiring. Numbered details show the contacts." width=1440 %}
-
-</details>
-
-## Contact table
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Contact | Net/function | Connection |
-|---|---|---|
-| J1.1 | 3V3 | J2.1 and both Qwiic J3.2/J4.2 |
-| J1.2 | 5V | J2.2 only; no Qwiic power connection |
-| J1.3–J1.7 | HOST3–HOST7 | J1 contacts; each reaches corresponding chain contact only while matching SJ link is closed |
-| J1.8 | SDA | Qwiic J3.3/J4.3, TP3, and chain through SJ8 |
-| J1.9 | SCL | Qwiic J3.4/J4.4, TP4, and chain through SJ9 |
-| J1.10 | GND | J2.10 and Qwiic J3.1/J4.1 |
-| SJ3–SJ7 | chain links | Individually connect host contacts 3–7 to corresponding chain positions |
-| SJ8/SJ9 | SDA/SCL chain links | Individually connect host bus lines to downstream chain; open if isolating chain |
-| TP1–TP5 | 3V3/5V/SDA/SCL/GND | High-impedance observation only; not injection or power inputs |
-
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Bus adapters</p>
+    <h1 id="qwiic-to-gadgeteer-adapter">Qwiic-to-Gadgeteer adapter</h1>
+    <p class="xb-lead">Plug 3.3&nbsp;V Qwiic sensors and modules into one controller I&sup2;C bus. Two Qwiic ports share the bus, and a second ten-contact socket passes it on.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/qwiic-to-gadgeteer-adapter/v20/qwiic-to-gadgeteer-adapter-diagram.png" alt="Top view of the Qwiic-to-Gadgeteer adapter.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-</details>
+<div class="xb-stats">
+  <div class="xb-stat"><b>2 ports</b><span>Qwiic</span></div>
+  <div class="xb-stat"><b>3.3 V</b><span>from the host</span></div>
+  <div class="xb-stat"><b>1 bus</b><span>shared I²C</span></div>
+  <div class="xb-stat"><b>7 links</b><span>cuttable chain contacts</span></div>
+  <div class="xb-stat"><b>Passive</b><span>no chips</span></div>
+  <div class="xb-stat"><b>38.5 × 36</b><span>millimetres</span></div>
+</div>
 
-The netlist does not resolve physical pin-1 orientation by itself; use the keyed connector and the board view. The 5 V chain contact must not be wired to a Qwiic device supply.
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+</nav>
+{:/nomarkdown}
 
-## Smoothieboard V2 Prime connection
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  3.3&nbsp;V only, and no hot-plugging. Use one powered host and no external Qwiic supply. The adapter is passive: it does not add Smoothieware support for the device you plug in.
+</sl-alert>
 
-The circuit below uses **Prime GG/J38 (I²C2)**: contacts **1 = 3.3 V, 8 = SDA, 9 = SCL, 10 = ground**. Connect only those four individual host leads to adapter J1 contacts with the same numbers. No 5 V lead is used. Check cable mating orientation at the host connector.
+## Tech specs {#specs}
 
-The J33 connector provides I²C3 on contacts 8/9, with 3.3 V on 1 and ground on 10. It is an alternative to the connector used in this drawing. Do not mix J33/I²C3 with J38/I²C2 in a configuration or installation. Check the total current draw against the Prime hardware limits before powering. Use one powered host, with no second host or external Qwiic supply.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>Connect Qwiic I&sup2;C peripherals to a controller</td></tr>
+    <tr><td>Host</td><td>J1, ten-contact socket: 3.3&nbsp;V on 1, SDA on 8, SCL on 9, ground on 10</td></tr>
+    <tr><td>Qwiic ports</td><td>J3 and J4 in parallel: ground, 3.3&nbsp;V, SDA, SCL</td></tr>
+    <tr><td>Chain</td><td>J2; contacts 3 to 9 linked through SJ3 to SJ9</td></tr>
+    <tr><td>5 V</td><td>Passes from J1 to J2 only; never reaches the Qwiic ports</td></tr>
+    <tr><td>Test pads</td><td>3.3&nbsp;V, 5&nbsp;V, SDA, SCL and ground, for measurement only</td></tr>
+    <tr><td>Size</td><td>38.5 &times; 36&nbsp;mm, four M3 holes, two cable-tie points</td></tr>
+    <tr><td>Licence</td><td>Open hardware, CERN-OHL-S-2.0</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Connect one Qwiic peripheral
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
-The illustrated example connects the adapter and the spectral-analysis module to Prime **GG/J38 (I²C2)**. This is the electrical connection; SmoothieV2 has no AS7265x measurement or setup sequence. Read the firmware section below before using the sensor. Leave other host contacts and unused adapter/sensor ports disconnected. Repeated contact numbers in the sheets are alternate pads on the same net; MP denotes unconnected mounting pads.
+## Board tour {#tour}
 
-Use these connected enlargements with all four contact keys. The drawing uses individual leads on the through-hole contacts of adapter J3 and sensor J3; their alternate SMD populations and mounting contacts remain unused. Dashed orange locators identify each crop on the whole-board drawing. The labelled adapter PCB relationships are internal connections, separate from the eight external leads.
+The numbers on the drawing match the list below it.
 
-{% include _includes/extension-instruction-diagram.html id="qwiic-native-0" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/native-contact/reader-legibility-corrected/qwiic-native-reader.png" title="Prime, adapter and spectral sensor — eight leads" alt="Prime, adapter and spectral sensor — eight leads" caption="Individual leads: 3.3 V, SDA, SCL and ground only; no 5 V lead. Check the supply budget and sensor setup before powering. Component-side contacts are not mating faces; use the numbered contact keys below." width=900 %}
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/qwiic-to-gadgeteer-adapter/v20/qwiic-to-gadgeteer-adapter-diagram.png" alt="Top view of the Qwiic-to-Gadgeteer adapter with numbered markers explained in the list below.">
+      <a class="xb-mk xb-pb" href="#tour-1" style="left:26.9%;top:34.1%" aria-label="1: Host socket (J1)">1<span class="xb-pop"><b>Host socket (J1)</b> — connects to the controller.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-2" style="left:75.8%;top:34.1%" aria-label="2: Chain socket (J2)">2<span class="xb-pop"><b>Chain socket (J2)</b> — passes rails and linked signals on.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-3" style="left:22.0%;top:86.8%" aria-label="3: Qwiic port J3">3<span class="xb-pop"><b>Qwiic port J3</b> — ground, 3.3&nbsp;V, SDA, SCL.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-4" style="left:80.7%;top:86.8%" aria-label="4: Qwiic port J4">4<span class="xb-pop"><b>Qwiic port J4</b> — the same bus as J3.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-5" style="left:26.9%;top:49.9%" aria-label="5: Chain links SJ3 to SJ7">5<span class="xb-pop"><b>Chain links SJ3 to SJ7</b> — copper links for host contacts 3 to 7; cut to disconnect.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-6" style="left:68.4%;top:49.9%" aria-label="6: SDA chain link (SJ8)">6<span class="xb-pop"><b>SDA chain link (SJ8)</b> — cut to keep SDA off the chain socket.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-7" style="left:76.8%;top:49.9%" aria-label="7: SCL chain link (SJ9)">7<span class="xb-pop"><b>SCL chain link (SJ9)</b> — cut to keep SCL off the chain socket.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-8" style="left:29.3%;top:15.7%" aria-label="8: Cable-tie point">8<span class="xb-pop"><b>Cable-tie point</b> — strain relief for the cables.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-9" style="left:14.6%;top:13.1%" aria-label="9: Mounting hole">9<span class="xb-pop"><b>Mounting hole</b> — one of four M3 holes.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Host socket (J1)</b> — connects to the controller.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Chain socket (J2)</b> — passes rails and linked signals on.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Qwiic port J3</b> — ground, 3.3&nbsp;V, SDA, SCL.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Qwiic port J4</b> — the same bus as J3.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Chain links SJ3 to SJ7</b> — copper links for host contacts 3 to 7; cut to disconnect.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>SDA chain link (SJ8)</b> — cut to keep SDA off the chain socket.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>SCL chain link (SJ9)</b> — cut to keep SCL off the chain socket.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Cable-tie point</b> — strain relief for the cables.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Mounting hole</b> — one of four M3 holes.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="qwiic-native-1" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/native-contact/reader-contact-keys/J38-numbered-pads.png" title="Prime GG/J38 — complete numbered contacts" alt="Prime GG/J38 — complete numbered contacts" caption="Individual leads: 3.3 V, SDA, SCL and ground only; no 5 V lead. Check the supply budget and sensor setup before powering. Component-side contacts are not mating faces; use the numbered contact keys below." width=420 %}
+## Pinout {#pinout}
 
-{% include _includes/extension-instruction-diagram.html id="qwiic-native-2" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/native-contact/reader-contact-keys/J1-numbered-pads.png" title="Adapter J1 — complete numbered contacts" alt="Adapter J1 — complete numbered contacts" caption="Individual leads: 3.3 V, SDA, SCL and ground only; no 5 V lead. Check the supply budget and sensor setup before powering. Component-side contacts are not mating faces; use the numbered contact keys below." width=420 %}
+### J1 and J2: ten-contact sockets
 
-{% include _includes/extension-instruction-diagram.html id="qwiic-native-3" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/native-contact/reader-contact-keys/J3-adapter-numbered-pads.png" title="Adapter J3 — used through-hole and unused alternate contacts" alt="Adapter J3 — used through-hole and unused alternate contacts" caption="Individual leads: 3.3 V, SDA, SCL and ground only; no 5 V lead. Check the supply budget and sensor setup before powering. Component-side contacts are not mating faces; use the numbered contact keys below." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>J1, host</th><th>J2, chain</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-5v">5 V</span></td><td><span class="xb-pill xb-p-5v">5 V</span></td></tr>
+    <tr><td>3 to 7</td><td>Passed on through SJ3 to SJ7</td><td>Linked contacts</td></tr>
+    <tr><td>8</td><td><span class="xb-pill xb-p-sig">SDA</span></td><td>SDA through SJ8</td></tr>
+    <tr><td>9</td><td><span class="xb-pill xb-p-sig">SCL</span></td><td>SCL through SJ9</td></tr>
+    <tr><td>10</td><td><span class="xb-pill xb-p-gnd">GND</span></td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="qwiic-native-4" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/native-contact/reader-contact-keys/J3-sensor-numbered-pads.png" title="Sensor J3 — used through-hole and unused alternate contacts" alt="Sensor J3 — used through-hole and unused alternate contacts" caption="Individual leads: 3.3 V, SDA, SCL and ground only; no 5 V lead. Check the supply budget and sensor setup before powering. Component-side contacts are not mating faces; use the numbered contact keys below." width=420 %}
+### J3 and J4: Qwiic ports
 
-<details markdown="1">
-<summary>Electrical ports view</summary>
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td></tr>
+    <tr><td>3</td><td><span class="xb-pill xb-p-sig">SDA</span></td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">SCL</span></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-These drawings arrange ports by function rather than showing where each lead lands on the board. Use the circuit above for wiring.
+All links SJ3 to SJ9 are closed as delivered. Cable colours in the Qwiic system are black, red, blue and yellow for contacts 1 to 4 ([SparkFun Qwiic](https://www.sparkfun.com/qwiic)).
 
-{% include _includes/extension-instruction-diagram.html id="qwiic-compact-spectral-connection-plan" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/compact-spectral-connection-plan.png" title="Prime, Qwiic adapter and spectral module connection plan" alt="Prime, Qwiic adapter and spectral module connection plan" caption="Connection plan with individual numbered leads. Component-side pads are not mating faces." width=420 %}
+## What you need {#what-you-need}
 
-{% include _includes/extension-instruction-diagram.html id="qwiic-J1-compact-numbered-pads" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/J1-compact-numbered-pads.png" title="Numbered contacts: J1" alt="Numbered contacts: J1" caption="Connection plan with individual numbered leads. Component-side pads are not mating faces." width=420 %}
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>This board</b><span>Plus four leads to the controller.</span></div>
+  <div class="xb-card"><b>A Qwiic device</b><span>3.3 V, with a Qwiic cable.</span></div>
+  <div class="xb-card"><b>Software for the device</b><span>Check that something can actually read it.</span></div>
+</div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="qwiic-J3-adapter-compact-numbered-pads" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/J3-adapter-compact-numbered-pads.png" title="Numbered contacts: J3-adapter" alt="Numbered contacts: J3-adapter" caption="Connection plan with individual numbered leads. Component-side pads are not mating faces." width=420 %}
+## Get started {#get-started}
 
-{% include _includes/extension-instruction-diagram.html id="qwiic-J3-sensor-compact-numbered-pads" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/J3-sensor-compact-numbered-pads.png" title="Numbered contacts: J3-sensor" alt="Numbered contacts: J3-sensor" caption="Connection plan with individual numbered leads. Component-side pads are not mating faces." width=420 %}
+This wires the adapter to the I&sup2;C2 bus on Smoothieboard V2 Prime header GG/J38.
 
-{% include _includes/extension-instruction-diagram.html id="qwiic-J38-compact-numbered-pads" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/J38-compact-numbered-pads.png" title="Numbered contacts: J38" alt="Numbered contacts: J38" caption="Connection plan with individual numbered leads. Component-side pads are not mating faces." width=420 %}
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Disconnect power</h3>
+    <p>Check the Prime GG/J38 contact numbering before connecting.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Wire four leads</h3>
+    <p>J38 contacts 1, 8, 9 and 10 to J1 contacts with the same numbers. Leave the 5&nbsp;V contact unconnected.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Plug in the device</h3>
+    <p>Connect its Qwiic cable to J3 or J4.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Check addresses and current</h3>
+    <p>Two devices must not share an address, pull-up resistors act in parallel, and the total current must stay within the controller&rsquo;s 3.3&nbsp;V limits.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Power up and measure</h3>
+    <p>Measure between the 3.3&nbsp;V and ground test pads.</p>
+    <p class="xb-expect">About 3.3&nbsp;V on the 3.3&nbsp;V pad.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
-</details>
+## Configuration {#configuration}
 
-The Qwiic-side contact order is **1 ground, 2 3.3 V, 3 SDA, 4 SCL**. SparkFun specifies the matching cable colours as black, red, blue and yellow respectively and requires a 3.3 V interface. These are connector-system conventions, not an assembled current rating for this adapter or the Prime supply. See [SparkFun's Qwiic compatibility and pinout specification](https://www.sparkfun.com/qwiic).
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>Wire an I²C peripheral</td><td>None needed for the adapter</td><td><a href="#config-main">Setup</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-1. Disconnect power. Verify the Prime GG/J38 pin map and the four individual leads (1, 8, 9 and 10) to adapter J1. Do not rely on connector appearance alone.
-2. For the illustrated spectral board, connect adapter J3 through-hole contacts 1–4 individually to sensor J3 through-hole contacts 1–4. Leave both alternate SMD populations unused. This diagram is not a keyed cable mating view. Leave adapter J2/J4 and sensor J1/J2 disconnected.
-3. Check the full electrical path: J38.10 → J1.10 → J3.1 ground; J38.1 → J1.1 → J3.2 supply; J38.8 → J1.8 → J3.3 SDA; J38.9 → J1.9 → J3.4 SCL. The host's 5 V contact must not reach the Qwiic supply.
-4. Confirm the peripheral's address, current requirement, bus voltage and pull-up population against that exact module's documentation. Multiple pull-up resistors act in parallel; the second adapter port does not create another I²C controller or resolve address conflicts. SDA is the shared data line; SCL is the shared clock line.
-5. Check device-specific Smoothieware support before expecting a reading or command. There is no generic configuration for arbitrary Qwiic devices. The electrical connection above does not add a firmware feature.
+### Setup {#config-main}
 
-## Firmware interaction
+The adapter needs no configuration. Smoothieware has no general-purpose I&sup2;C module, so a device works only if Smoothieware has a driver for it. For example, there is no AS7265x spectral sensor driver in Smoothieware V2.
 
-The adapter itself needs no firmware driver. It merely exposes an I²C electrical bus; Smoothieware V2 documents pin names and the HAL, but has no generic user-configurable I²C peripheral protocol interface. Do not promise that an arbitrary Qwiic sensor can be read/configured by Smoothieware. Smoothieware does not support a Qwiic device that needs native firmware interaction. Device-specific host software outside Smoothieware is a separate use case.
+## How it works {#how-it-works}
 
-## Connect a spectral sensor through the adapter
+The board is copper only: J1, J3 and J4 share the same 3.3&nbsp;V, SDA, SCL and ground nets. J2 receives 3.3&nbsp;V, 5&nbsp;V and ground directly and the other contacts through the cut links. It does not translate levels, add pull-ups to the bus or create a second I&sup2;C controller.
 
-This example uses Prime GG/J38 (I2C2), the adapter and the spectral-analysis board. Connect only host contacts 1, 8, 9 and 10 individually to adapter J1 contacts with the same numbers. Four individual through-hole leads connect adapter J3 to spectral-board J3: **1 ground, 2 limited 3.3 V, 3 SDA, 4 SCL**. Adapter host contacts 1/8/9/10 reach Qwiic contacts 2/3/4/1 respectively. The host 5 V contact does not reach the Qwiic cable. Leave adapter J2/J4 and spectral J1/J2 disconnected in this example.
+## Troubleshooting {#troubleshooting}
 
-<details markdown="1">
-<summary>Ten-conductor view</summary>
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Device not seen</td><td>Swap check: SDA on contact 8, SCL on contact 9, common ground.</td></tr>
+    <tr><td>Two devices conflict</td><td>They need different addresses.</td></tr>
+    <tr><td>Bus unreliable</td><td>Shorten cables and count the pull-up resistors in parallel.</td></tr>
+    <tr><td>Chain board sees nothing</td><td>Check that its links SJ3 to SJ9 are still closed.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-This drawing includes ten host conductors and function-arranged ports; use the four-lead procedure above.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
 
-{% include _includes/extension-instruction-diagram.html id="qwiic-v20-prime-spectral-installation" src="/images/extensions/qwiic-to-gadgeteer-adapter/guides/prime-installation-wiring.png" title="Prime through the Qwiic adapter to the spectral board" alt="Ten host conductors and four Qwiic conductors show the numbered power ground SDA and SCL mapping through the adapter" caption="Adapter dots represent PCB nets labelled with both contacts; the electrical ports are arranged by function, not physical pin position." width=2900 %}
+## Downloads {#downloads}
 
-</details>
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/qwiic-to-gadgeteer-adapter/v20/qwiic-to-gadgeteer-adapter-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/qwiic-to-gadgeteer-adapter/v20/qwiic-to-gadgeteer-adapter-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/qwiic-to-gadgeteer-adapter/v20/qwiic-to-gadgeteer-adapter-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The spectral board contains an AS72651/52/53 sensor cluster. SmoothieV2 has no AS7265x acquisition driver; connecting I2C does not supply one. Confirm the sensor flash image and total supply loading before use.
+## Appendix: mounting dimensions {#mounting}
 
-## Source files and further reading
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
 
-- [PCB source](https://github.com/arthurwolf/extension-boards/blob/main/src/qwiic-to-gadgeteer-adapter/attempt/versions/v20/qwiic-to-gadgeteer-adapter.kicad_pcb)
-- [Schematic netlist](https://github.com/arthurwolf/extension-boards/blob/main/src/qwiic-to-gadgeteer-adapter/attempt/versions/v20/exports/schematic-netlist.xml)
-- [Family specification](https://github.com/arthurwolf/extension-boards/blob/main/src/qwiic-to-gadgeteer-adapter/specs.md)
-- [All extension boards](/extension-boards)
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-qw-mount-t">
+  <title id="xb-qw-mount-t">Mounting drawing of the qw, component side: outline 38.5 by 36 millimetres with 4 mounting holes and 2 cable-tie holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="298.2" y="78.0" width="363.6" height="340.0" rx="9.4" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M298.2 56H661.8"/><path d="M298.2 50V62"/><path d="M661.8 50V62"/><path d="M687.8 78.0V418.0"/><path d="M681.8 78.0h12"/><path d="M681.8 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">38.5</text>
+  <text x="699.8" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">36</text>
+  <circle cx="298.2" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="286.2" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M240.2 104.0h30" fill="none"/><path d="M274.2 104.0l-8 -4v8z"/><path d="M240.2 104.0v30" fill="none"/><path d="M240.2 138.0l-4 -8h8z"/></g>
+  <text x="278.2" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="236.2" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="345.4" cy="115.8" r="15.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M326.3 115.8h38.2M345.4 96.7v38.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="330.3" y="158.0" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 4.00</text>
+  <circle cx="534.3" cy="115.8" r="15.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M515.2 115.8h38.2M534.3 96.7v38.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="549.4" y="158.0" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  25.00, 4.00</text>
+  <circle cx="345.4" cy="304.7" r="15.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M326.3 304.7h38.2M345.4 285.6v38.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="330.3" y="279.6" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 24.00</text>
+  <circle cx="534.3" cy="304.7" r="15.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M515.2 304.7h38.2M534.3 285.6v38.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="549.4" y="279.6" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  25.00, 24.00</text>
+  <circle cx="402.1" cy="125.2" r="11.8" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
+  <circle cx="449.3" cy="125.2" r="11.8" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
+  <text x="425.7" y="104.4" text-anchor="middle" font-size="12" fill="#a9b4c2">cable tie</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 38.5 × 36&nbsp;mm, corners rounded to a 1&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
 
-<details markdown="1">
-<summary>Supplementary board views</summary>
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>5.00</td><td>4.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>25.00</td><td>4.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>3</td><td>5.00</td><td>24.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>4</td><td>25.00</td><td>24.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>–</td><td>11.00</td><td>5.00</td><td>2.5&nbsp;mm, not plated</td><td>Cable tie</td></tr>
+    <tr><td>–</td><td>16.00</td><td>5.00</td><td>2.5&nbsp;mm, not plated</td><td>Cable tie</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-board-visuals.html slug="qwiic-to-gadgeteer-adapter" %}
+## Appendix: electrical specifications {#electrical}
 
-</details>
+Values come from the silk screen and design files.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Supply and logic</td><td>Qwiic ports</td><td>—</td><td>3.3 V</td><td>—</td><td>Board silk: 3.3 V only, no external power</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+See all boards on the [extension boards](/extension-boards) page.

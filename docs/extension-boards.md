@@ -326,7 +326,7 @@ Historical entries appear alongside related modern boards. A similar name does n
   </tr>
   <tr>
     <td><a href="/extensions/gadgeteer-to-can" aria-label="Open the Gadgeteer-to-CAN adapter guide"><img src="/images/extensions/gadgeteer-to-can/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/gadgeteer-to-can">Gadgeteer-to-CAN adapter</a></p><p>This adapter provides an isolated CAN physical interface between compatible controller TX/RX signals and a CANH/CANL bus.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/gadgeteer-to-can">Gadgeteer-to-CAN adapter</a></p><p>An isolated CAN transceiver between a controller CAN transmit and receive pair and a three-way CAN bus terminal.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/historical-jauart-usb-uart-adapter" aria-label="Open the jaUART CP2104 USB-UART adapter guide"><img src="/images/extensions/historical-jauart-usb-uart-adapter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -346,11 +346,11 @@ Historical entries appear alongside related modern boards. A similar name does n
   </tr>
   <tr>
     <td><a href="/extensions/qwiic-to-gadgeteer-adapter" aria-label="Open the Qwiic-to-Gadgeteer adapter guide"><img src="/images/extensions/qwiic-to-gadgeteer-adapter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/qwiic-to-gadgeteer-adapter">Qwiic-to-Gadgeteer adapter</a></p><p>Connects compatible 3.3 V I²C peripherals through the documented ten-contact host interface and four Qwiic-style ports.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/qwiic-to-gadgeteer-adapter">Qwiic-to-Gadgeteer adapter</a></p><p>A passive adapter from a ten-contact Gadgeteer I²C socket to two 3.3 V Qwiic ports, with a chain socket.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/serial-to-wifi-board" aria-label="Open the Serial to WiFi Board guide"><img src="/images/extensions/serial-to-wifi-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/serial-to-wifi-board">Serial to WiFi Board</a></p><p>A UART-to-Wi-Fi bridge using an ESP32-C3-MINI-1-N4X.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/serial-to-wifi-board">Serial to WiFi Board</a></p><p>An ESP32-C3 module on a Gadgeteer UART socket, for building a network serial bridge to the controller.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/spi-hub" aria-label="Open the SPI Hub guide"><img src="/images/extensions/spi-hub/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -370,15 +370,15 @@ Historical entries appear alongside related modern boards. A similar name does n
   </tr>
   <tr>
     <td><a href="/extensions/usb-serial-breakout" aria-label="Open the USB/Serial breakout guide"><img src="/images/extensions/usb-serial-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/usb-serial-breakout">USB/Serial breakout</a></p><p>This board integrates a USB-to-UART bridge between a computer and a controller U socket.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/usb-serial-breakout">USB/Serial breakout</a></p><p>A USB-B to 3.3 V UART interface on a Gadgeteer U connector, with an FT231XS bridge, activity lights and a chain socket.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/wireless-gadgeteer-extender" aria-label="Open the Wireless gadgeteer extender guide"><img src="/images/extensions/wireless-gadgeteer-extender/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/wireless-gadgeteer-extender">Wireless gadgeteer extender</a></p><p>Uses paired nRF52832 radio endpoints to sample and reproduce seven direction-assigned digital channels.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/wireless-gadgeteer-extender">Wireless gadgeteer extender</a></p><p>One board per end of a radio link carrying seven digital channels, based on the MDBT42Q nRF52832 module, for use with your own firmware.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/wireless-series-master" aria-label="Open the Wireless series — Smoothieboard-side “Master guide"><img src="/images/extensions/wireless-series-master/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/wireless-series-master">Wireless series — Smoothieboard-side “Master</a></p><p>A host-side radio controller for remote I/O, using an ATSAMD21 and an nRF24L01+ module.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/wireless-series-master">Wireless series — Smoothieboard-side “Master</a></p><p>A radio controller board with an ATSAMD21 microcontroller and nRF24L01+ module on a Gadgeteer socket, for remote input and output with your own firmware.</p></td>
   </tr>
 </tbody>
 <tbody aria-labelledby="displays-controls-and-accessories">
@@ -389,7 +389,7 @@ Historical entries appear alongside related modern boards. A similar name does n
   </tr>
   <tr>
     <td><a href="/extensions/buzzer-module" aria-label="Open the Buzzer module guide"><img src="/images/extensions/buzzer-module/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/buzzer-module">Buzzer module</a></p><p>An active buzzer that makes a steady audible cue when its control signal is HIGH.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/buzzer-module">Buzzer module</a></p><p>A 5 V active buzzer with a MOSFET driver, a Gadgeteer input and chain socket, and an alternative three-pin input.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/camera-trigger-board" aria-label="Open the Camera trigger board guide"><img src="/images/extensions/camera-trigger-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -421,7 +421,7 @@ Historical entries appear alongside related modern boards. A similar name does n
   </tr>
   <tr>
     <td><a href="/extensions/sd-card-breakout" aria-label="Open the SD card breakout guide"><img src="/images/extensions/sd-card-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/sd-card-breakout">SD card breakout</a></p><p>Adds one removable microSD socket over SPI.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/sd-card-breakout">SD card breakout</a></p><p>A microSD socket on a Gadgeteer SPI connector, with card detect, an output buffer and a configurable chain socket.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/universal-panel-adapter" aria-label="Open the Universal panel adapter guide"><img src="/images/extensions/universal-panel-adapter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -432,15 +432,15 @@ Historical entries appear alongside related modern boards. A similar name does n
   <tr class="extension-board-category"><th id="host-adapters-and-prototyping" colspan="2" scope="rowgroup">Host adapters and prototyping</th></tr>
   <tr>
     <td><a href="/extensions/arduino-adapter" aria-label="Open the Arduino adapter guide"><img src="/images/extensions/arduino-adapter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/arduino-adapter">Arduino adapter</a></p><p>Connects compatible Uno-format shields to Smoothieboard V2 Prime.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/arduino-adapter">Arduino adapter</a></p><p>A carrier that connects an Arduino Uno-format shield to five Gadgeteer sockets of a controller, with software-configured signal direction and two Qwiic ports.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/arduino-to-gadgeteer-shield" aria-label="Open the Arduino-to-Gadgeteer shield guide"><img src="/images/extensions/arduino-to-gadgeteer-shield/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/arduino-to-gadgeteer-shield">Arduino-to-Gadgeteer shield</a></p><p>This shield makes an Arduino Due act as a host for Gadgeteer modules.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/arduino-to-gadgeteer-shield">Arduino-to-Gadgeteer shield</a></p><p>A shield that gives an Arduino Due six Gadgeteer sockets and a Qwiic port, with switched signals and current-limited supply rails.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/beaglebone-breakout" aria-label="Open the BeagleBone breakout guide"><img src="/images/extensions/beaglebone-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/beaglebone-breakout">BeagleBone breakout</a></p><p>This UART carrier connects a BeagleBone header to a Smoothieboard UART.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/beaglebone-breakout">BeagleBone breakout</a></p><p>A buffered 3.3 V UART interface between a Gadgeteer U socket and the BeagleBone Black P9 header.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/breadboard-board" aria-label="Open the Breadboard board guide"><img src="/images/extensions/breadboard-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -468,11 +468,11 @@ Historical entries appear alongside related modern boards. A similar name does n
   </tr>
   <tr>
     <td><a href="/extensions/d-sub-to-gadgeteer-in" aria-label="Open the D-sub-to-Gadgeteer IN adapter guide"><img src="/images/extensions/d-sub-to-gadgeteer-in/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/d-sub-to-gadgeteer-in">D-sub-to-Gadgeteer IN adapter</a></p><p>IN is the host-side half of a dedicated DE-9 cable extension.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/d-sub-to-gadgeteer-in">D-sub-to-Gadgeteer IN adapter</a></p><p>The controller end of a DE-9 extension for a Gadgeteer socket: seven signals, 5 V and ground onto a DE-9 cable.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/d-sub-to-gadgeteer-out" aria-label="Open the D-sub-to-Gadgeteer OUT adapter guide"><img src="/images/extensions/d-sub-to-gadgeteer-out/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/d-sub-to-gadgeteer-out">D-sub-to-Gadgeteer OUT adapter</a></p><p>OUT is the remote half of the custom IN-to-OUT DE-9 extension.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/d-sub-to-gadgeteer-out">D-sub-to-Gadgeteer OUT adapter</a></p><p>The remote end of a DE-9 extension for a Gadgeteer socket: seven signals and 5 V in, a socket and a locally made 3.3 V out.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/historical-dual-digital-potentiometer" aria-label="Open the Dual-device I2C digital potentiometer guide"><img src="/images/extensions/historical-dual-digital-potentiometer/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -480,7 +480,7 @@ Historical entries appear alongside related modern boards. A similar name does n
   </tr>
   <tr>
     <td><a href="/extensions/esp32-to-gadgeteer-host" aria-label="Open the ESP32 DevKit to Gadgeteer host board guide"><img src="/images/extensions/esp32-to-gadgeteer-host/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/esp32-to-gadgeteer-host">ESP32 DevKit to Gadgeteer host board</a></p><p>Host adapter that lets an ESP32-DevKitC-32E run compatible Gadgeteer extension boards; it is not a Smoothieboard accessory.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/esp32-to-gadgeteer-host">ESP32 DevKit to Gadgeteer host board</a></p><p>A carrier that gives an ESP32-DevKitC-32E five Gadgeteer sockets and an I²C connector, with series resistors and ESD protection.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/historical-five-port-gadgeteer-header-adapter" aria-label="Open the Five-port Gadgeteer header adapter guide"><img src="/images/extensions/historical-five-port-gadgeteer-header-adapter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -488,15 +488,15 @@ Historical entries appear alongside related modern boards. A similar name does n
   </tr>
   <tr>
     <td><a href="/extensions/intel-edison-breakout" aria-label="Open the Intel Edison breakout guide"><img src="/images/extensions/intel-edison-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/intel-edison-breakout">Intel Edison breakout</a></p><p>A host carrier for the Intel Edison.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/intel-edison-breakout">Intel Edison breakout</a></p><p>A carrier for the Intel Edison module with its own regulator, a translated serial link to a controller and a USB Micro-B port.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/papilio-adapter" aria-label="Open the Papilio adapter guide"><img src="/images/extensions/papilio-adapter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/papilio-adapter">Papilio adapter</a></p><p>This passive adapter connects 3.3 V FPGA wing signals to seven Gadgeteer GPIO positions.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/papilio-adapter">Papilio adapter</a></p><p>A passive adapter from a Gadgeteer socket to the eight-signal Papilio FPGA wing header, with 470 ohm series resistors.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/parallel-port-breakout" aria-label="Open the Parallel-port bench test jig guide"><img src="/images/extensions/parallel-port-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/parallel-port-breakout">Parallel-port bench test jig</a></p><p>A parallel-port bench test jig with isolated output and return channels. Do not connect it to a host or a machine.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/parallel-port-breakout">Parallel-port bench test jig</a></p><p>A bench fixture with digital isolators for exercising twelve parallel-port outputs and five inputs against a dummy DB25.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/perma-proto-gadgeteer" aria-label="Open the Gadgeteer perma-proto guide"><img src="/images/extensions/perma-proto-gadgeteer/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -504,11 +504,11 @@ Historical entries appear alongside related modern boards. A similar name does n
   </tr>
   <tr>
     <td><a href="/extensions/raspberry-pi-to-gadgeteer-hat" aria-label="Open the Raspberry Pi 40-pin to Gadgeteer HAT guide"><img src="/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/raspberry-pi-hat-abstract.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/raspberry-pi-to-gadgeteer-hat">Raspberry Pi 40-pin to Gadgeteer HAT</a></p><p>Host adapter that turns a Raspberry Pi 40-pin GPIO header into five Gadgeteer sockets; it runs independently of Smoothieboard.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/raspberry-pi-to-gadgeteer-hat">Raspberry Pi 40-pin to Gadgeteer HAT</a></p><p>A Raspberry Pi 40-pin HAT with five Gadgeteer sockets and a Qwiic port, with series resistors and ESD protection on every GPIO.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/raspberry-pi-zero-breakout" aria-label="Open the Raspberry Pi Zero breakout guide"><img src="/images/extensions/raspberry-pi-zero-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/raspberry-pi-zero-breakout">Raspberry Pi Zero breakout</a></p><p>Connects a Raspberry Pi Zero-family host to Smoothieboard by UART and a protected 5 V supply.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/raspberry-pi-zero-breakout">Raspberry Pi Zero breakout</a></p><p>A Raspberry Pi Zero carrier with a buffered serial link to a controller, a power input and a supply selector.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/historical-raspberry-pi-zero-ethernet" aria-label="Open the Raspberry Pi Zero carrier with Ethernet guide"><img src="/images/extensions/historical-raspberry-pi-zero-ethernet/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -528,7 +528,7 @@ Historical entries appear alongside related modern boards. A similar name does n
   </tr>
   <tr>
     <td><a href="/extensions/teensy-to-gadgeteer-host" aria-label="Open the Teensy 4.1 to Gadgeteer host board guide"><img src="/images/extensions/teensy-to-gadgeteer-host/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/teensy-to-gadgeteer-host">Teensy 4.1 to Gadgeteer host board</a></p><p>Host adapter that lets a Teensy 4.1 run compatible Gadgeteer extension boards; it has no Smoothieware firmware of its own.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/teensy-to-gadgeteer-host">Teensy 4.1 to Gadgeteer host board</a></p><p>A carrier that gives a Teensy 4.1 six Gadgeteer sockets and an I²C connector, with series resistors and ESD protection.</p></td>
   </tr>
 </tbody>
 </table>

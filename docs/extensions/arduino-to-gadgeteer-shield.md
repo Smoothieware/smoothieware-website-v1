@@ -1,308 +1,329 @@
 ---
 layout: default
 title: "Arduino-to-Gadgeteer shield"
+description: "A shield that gives an Arduino Due six Gadgeteer sockets and a Qwiic port, with switched signals and current-limited supply rails."
 permalink: /extensions/arduino-to-gadgeteer-shield
 ---
 
-# Arduino-to-Gadgeteer shield
-
-This shield makes an Arduino Due act as a host for Gadgeteer modules. It is the opposite direction from the Uno-shield adapter: its six Gadgeteer sockets are outputs from the Due. It is not an extension board that should be cabled directly between two powered hosts.
-
-## How it works
-
-J1–J6 export Y/A/P/S/U/I interfaces; J7 branches the I socket's I2C bus as 3.3 V Qwiic. Host-powered TMUX1511 switches isolate signal paths when disabled. The rail stages are TPS259631 auto-retry 125 mA limiters; they do not latch off. JP1 arms the board through the host power-enable net.
-
-## Power, signals and limits
-
-The Due is the source of the exported rails. Never connect the shield's Gadgeteer power pins to a separately powered Smoothieboard socket as if both were peripherals. Keep each exported rail within 80 mA; the I/O domain is 3.3 V. The shield provides no general 5 V signal translation. J7 is GND, 3.3 V, SDA, SCL and shares the J6 bus.
-
-## Board reference
-
-<details markdown="1">
-<summary>Reading the connector callouts</summary>
-
-The dark end of each pill gives the contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
-
-- Red: 3.3 V supply.
-- Orange: 5 V supply.
-- Near-black: Circuit ground.
-- Grey: Not routed in this board.
-- Dark grey: Other labelled contact — read its exact function.
-
-A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
-
-</details>
-
-Start with the overview, then use all focused sheets for exact contacts, controls and links. Default solder-link footprints do not show whether a link is closed on your board.
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-overview" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-overview.png" title="Due to Gadgeteer shield — overview" alt="Due to Gadgeteer shield — overview" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j1-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j1-1-5-central-pills.png" title="J1 · Gadgeteer Y — j1 1 5" alt="J1 · Gadgeteer Y — j1 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j1-6-10" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j1-6-10-central-pills.png" title="J1 · Gadgeteer Y — j1 6 10" alt="J1 · Gadgeteer Y — j1 6 10" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j2-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j2-1-5-central-pills.png" title="J2 · Gadgeteer A — j2 1 5" alt="J2 · Gadgeteer A — j2 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j2-6-10" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j2-6-10-central-pills.png" title="J2 · Gadgeteer A — j2 6 10" alt="J2 · Gadgeteer A — j2 6 10" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j3-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j3-1-5-central-pills.png" title="J3 · Gadgeteer P — j3 1 5" alt="J3 · Gadgeteer P — j3 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j3-6-10" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j3-6-10-central-pills.png" title="J3 · Gadgeteer P — j3 6 10" alt="J3 · Gadgeteer P — j3 6 10" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j4-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j4-1-5-central-pills.png" title="J4 · Gadgeteer S — j4 1 5" alt="J4 · Gadgeteer S — j4 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j4-6-10" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j4-6-10-central-pills.png" title="J4 · Gadgeteer S — j4 6 10" alt="J4 · Gadgeteer S — j4 6 10" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j5-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j5-1-5-central-pills.png" title="J5 · Gadgeteer U — j5 1 5" alt="J5 · Gadgeteer U — j5 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j5-6-10" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j5-6-10-central-pills.png" title="J5 · Gadgeteer U — j5 6 10" alt="J5 · Gadgeteer U — j5 6 10" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j6-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j6-1-5-central-pills.png" title="J6 · Gadgeteer I — j6 1 5" alt="J6 · Gadgeteer I — j6 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j6-6-10" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j6-6-10-central-pills.png" title="J6 · Gadgeteer I — j6 6 10" alt="J6 · Gadgeteer I — j6 6 10" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-j7-1-4" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-j7-1-4-central-pills.png" title="J7 · Qwiic I2C — j7 1 4" alt="J7 · Qwiic I2C — j7 1 4" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh1-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh1-1-5-central-pills.png" title="JH1 · Due power — jh1 1 5" alt="JH1 · Due power — jh1 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh1-6-8" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh1-6-8-central-pills.png" title="JH1 · Due power — jh1 6 8" alt="JH1 · Due power — jh1 6 8" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh2-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh2-1-5-central-pills.png" title="JH2 · Due analog low — jh2 1 5" alt="JH2 · Due analog low — jh2 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh2-6-8" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh2-6-8-central-pills.png" title="JH2 · Due analog low — jh2 6 8" alt="JH2 · Due analog low — jh2 6 8" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh3-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh3-1-5-central-pills.png" title="JH3 · Due analog high — jh3 1 5" alt="JH3 · Due analog high — jh3 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh3-6-8" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh3-6-8-central-pills.png" title="JH3 · Due analog high — jh3 6 8" alt="JH3 · Due analog high — jh3 6 8" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh4-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh4-1-5-central-pills.png" title="JH4 · Due digital low — jh4 1 5" alt="JH4 · Due digital low — jh4 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh4-6-8" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh4-6-8-central-pills.png" title="JH4 · Due digital low — jh4 6 8" alt="JH4 · Due digital low — jh4 6 8" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh5-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh5-1-5-central-pills.png" title="JH5 · Due PWM high — jh5 1 5" alt="JH5 · Due PWM high — jh5 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh5-6-10" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh5-6-10-central-pills.png" title="JH5 · Due PWM high — jh5 6 10" alt="JH5 · Due PWM high — jh5 6 10" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh6-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh6-1-5-central-pills.png" title="JH6 · Due communication — jh6 1 5" alt="JH6 · Due communication — jh6 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh6-6-8" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh6-6-8-central-pills.png" title="JH6 · Due communication — jh6 6 8" alt="JH6 · Due communication — jh6 6 8" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh7-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh7-1-5-central-pills.png" title="JH7 · Due extended GPIO — jh7 1 5" alt="JH7 · Due extended GPIO — jh7 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh7-6-10" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh7-6-10-central-pills.png" title="JH7 · Due extended GPIO — jh7 6 10" alt="JH7 · Due extended GPIO — jh7 6 10" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh7-11-15" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh7-11-15-central-pills.png" title="JH7 · Due extended GPIO — jh7 11 15" alt="JH7 · Due extended GPIO — jh7 11 15" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh7-16-20" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh7-16-20-central-pills.png" title="JH7 · Due extended GPIO — jh7 16 20" alt="JH7 · Due extended GPIO — jh7 16 20" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh7-21-25" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh7-21-25-central-pills.png" title="JH7 · Due extended GPIO — jh7 21 25" alt="JH7 · Due extended GPIO — jh7 21 25" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh7-26-30" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh7-26-30-central-pills.png" title="JH7 · Due extended GPIO — jh7 26 30" alt="JH7 · Due extended GPIO — jh7 26 30" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh7-31-35" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh7-31-35-central-pills.png" title="JH7 · Due extended GPIO — jh7 31 35" alt="JH7 · Due extended GPIO — jh7 31 35" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh7-36-36" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh7-36-36-central-pills.png" title="JH7 · Due extended GPIO — jh7 36 36" alt="JH7 · Due extended GPIO — jh7 36 36" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh8-1-5" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh8-1-5-central-pills.png" title="JH8 · Due SPI — jh8 1 5" alt="JH8 · Due SPI — jh8 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-jh8-6-6" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-jh8-6-6-central-pills.png" title="JH8 · Due SPI — jh8 6 6" alt="JH8 · Due SPI — jh8 6 6" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-switches" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-switches.png" title="Signal-path architecture — switches" alt="Signal-path architecture — switches" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-analog" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-analog.png" title="Analog input series/filter — analog" alt="Analog input series/filter — analog" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-series" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-series.png" title="Digital port series paths — series" alt="Digital port series paths — series" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-pullups" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-pullups.png" title="Port pull-ups — pullups" alt="Port pull-ups — pullups" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-enable" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-enable-underside-caption.png" title="User power-enable header — enable" alt="User power-enable header — enable" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-supervision" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-supervision.png" title="Signal enable supervision — supervision" alt="Signal enable supervision — supervision" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-rail0" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-rail0-underside-caption.png" title="Port3.3V power path — rail0" alt="Port3.3V power path — rail0" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-rail1" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-rail1-underside-caption.png" title="Port5V power path — rail1" alt="Port5V power path — rail1" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-sense" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-sense.png" title="Port rail sense dividers — sense" alt="Port rail sense dividers — sense" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-fault" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-fault-underside-caption.png" title="Fault / isolated indication — fault" alt="Fault / isolated indication — fault" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-esd" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-esd.png" title="Signal ESD networks — esd" alt="Signal ESD networks — esd" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-tests0" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-tests0.png" title="Supply / signal test pads — tests0" alt="Supply / signal test pads — tests0" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-tests4" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-tests4.png" title="Supply / signal test pads — tests4" alt="Supply / signal test pads — tests4" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-tests8" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-tests8.png" title="Supply / signal test pads — tests8" alt="Supply / signal test pads — tests8" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-tests12" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-tests12.png" title="Supply / signal test pads — tests12" alt="Supply / signal test pads — tests12" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-tests16" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-tests16.png" title="Supply / signal test pads — tests16" alt="Supply / signal test pads — tests16" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="arduino-to-gadgeteer-shield-v23-reader-compact-mounts" src="/images/extensions/arduino-to-gadgeteer-shield/guides/reader-compact-mounts.png" title="Mechanical supports — mounts" alt="Mechanical supports — mounts" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-The annotated sheets above show the board; the contact table below lists the same contacts. Follow the wiring section for the connection procedure.
-
-### Connector contacts
-
-Contact numbering below is the PCB pad numbering, as shown on the board-reference drawing. Duplicate lands with the same number are shown once, and unnumbered mechanical pads are omitted. Check mating orientation before connecting. `NC` means unconnected, not a spare supported function. Net names alone do not establish direction; use the signal-path explanation above.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Connector | Contact(s) | Function/net |
-| --- | --- | --- |
-| J7 — SM04B-SRSS-TB(LF)(SN) | 1 | `gnd` |
-| J7 — SM04B-SRSS-TB(LF)(SN) | 2 | `port_3v3` |
-| J7 — SM04B-SRSS-TB(LF)(SN) | 3 | `i_8` |
-| J7 — SM04B-SRSS-TB(LF)(SN) | 4 | `i_9` |
-| J7 — SM04B-SRSS-TB(LF)(SN) | MP | `gnd` |
-| J3 — SHF-105-01-L-D-TH | 1 | `port_3v3` |
-| J3 — SHF-105-01-L-D-TH | 2 | `port_5v` |
-| J3 — SHF-105-01-L-D-TH | 3 | `p_3` |
-| J3 — SHF-105-01-L-D-TH | 6 | `p_6` |
-| J3 — SHF-105-01-L-D-TH | 7 | `p_7` |
-| J3 — SHF-105-01-L-D-TH | 8 | `p_8` |
-| J3 — SHF-105-01-L-D-TH | 9 | `p_9` |
-| J3 — SHF-105-01-L-D-TH | 10 | `gnd` |
-| J3 | 4, 5 | NC |
-| J4 — SHF-105-01-L-D-TH | 1 | `port_3v3` |
-| J4 — SHF-105-01-L-D-TH | 2 | `port_5v` |
-| J4 — SHF-105-01-L-D-TH | 3 | `s_3` |
-| J4 — SHF-105-01-L-D-TH | 4 | `s_4` |
-| J4 — SHF-105-01-L-D-TH | 5 | `s_5` |
-| J4 — SHF-105-01-L-D-TH | 6 | `s_6` |
-| J4 — SHF-105-01-L-D-TH | 7 | `s_7` |
-| J4 — SHF-105-01-L-D-TH | 8 | `s_8` |
-| J4 — SHF-105-01-L-D-TH | 9 | `s_9` |
-| J4 — SHF-105-01-L-D-TH | 10 | `gnd` |
-| J2 — SHF-105-01-L-D-TH | 1 | `port_3v3` |
-| J2 — SHF-105-01-L-D-TH | 2 | `port_5v` |
-| J2 — SHF-105-01-L-D-TH | 3 | `a_3` |
-| J2 — SHF-105-01-L-D-TH | 4 | `a_4` |
-| J2 — SHF-105-01-L-D-TH | 5 | `a_5` |
-| J2 — SHF-105-01-L-D-TH | 6 | `a_6` |
-| J2 — SHF-105-01-L-D-TH | 10 | `gnd` |
-| J2 | 7, 8, 9 | NC |
-| J1 — SHF-105-01-L-D-TH | 1 | `port_3v3` |
-| J1 — SHF-105-01-L-D-TH | 2 | `port_5v` |
-| J1 — SHF-105-01-L-D-TH | 3 | `y_3` |
-| J1 — SHF-105-01-L-D-TH | 4 | `y_4` |
-| J1 — SHF-105-01-L-D-TH | 5 | `y_5` |
-| J1 — SHF-105-01-L-D-TH | 6 | `y_6` |
-| J1 — SHF-105-01-L-D-TH | 7 | `y_7` |
-| J1 — SHF-105-01-L-D-TH | 8 | `y_8` |
-| J1 — SHF-105-01-L-D-TH | 9 | `y_9` |
-| J1 — SHF-105-01-L-D-TH | 10 | `gnd` |
-| J6 — SHF-105-01-L-D-TH | 1 | `port_3v3` |
-| J6 — SHF-105-01-L-D-TH | 2 | `port_5v` |
-| J6 — SHF-105-01-L-D-TH | 3 | `i_3` |
-| J6 — SHF-105-01-L-D-TH | 6 | `i_6` |
-| J6 — SHF-105-01-L-D-TH | 8 | `i_8` |
-| J6 — SHF-105-01-L-D-TH | 9 | `i_9` |
-| J6 — SHF-105-01-L-D-TH | 10 | `gnd` |
-| J6 | 4, 5, 7 | NC |
-| J5 — SHF-105-01-L-D-TH | 1 | `port_3v3` |
-| J5 — SHF-105-01-L-D-TH | 2 | `port_5v` |
-| J5 — SHF-105-01-L-D-TH | 3 | `u_3` |
-| J5 — SHF-105-01-L-D-TH | 4 | `u_4` |
-| J5 — SHF-105-01-L-D-TH | 5 | `u_5` |
-| J5 — SHF-105-01-L-D-TH | 6 | `u_6` |
-| J5 — SHF-105-01-L-D-TH | 10 | `gnd` |
-| J5 | 7, 8, 9 | NC |
-| JH1 — TSW-108-07-L-S | 3 | `host_reset_n` |
-| JH1 — TSW-108-07-L-S | 4 | `host_3v3` |
-| JH1 — TSW-108-07-L-S | 5 | `host_5v` |
-| JH1 — TSW-108-07-L-S | 6 | `gnd` |
-| JH1 — TSW-108-07-L-S | 7 | `gnd` |
-| JH1 | 1, 2, 8 | NC |
-| JH7 — TSW-118-07-G-D | 3 | `host_d22` |
-| JH7 — TSW-118-07-G-D | 4 | `host_d23` |
-| JH7 — TSW-118-07-G-D | 5 | `host_d24` |
-| JH7 — TSW-118-07-G-D | 6 | `host_d25` |
-| JH7 — TSW-118-07-G-D | 7 | `host_d26` |
-| JH7 — TSW-118-07-G-D | 8 | `host_d27` |
-| JH7 — TSW-118-07-G-D | 9 | `host_d28` |
-| JH7 — TSW-118-07-G-D | 10 | `host_d29` |
-| JH7 — TSW-118-07-G-D | 11 | `host_d30` |
-| JH7 — TSW-118-07-G-D | 12 | `host_d31` |
-| JH7 — TSW-118-07-G-D | 13 | `host_d32` |
-| JH7 — TSW-118-07-G-D | 14 | `host_d33` |
-| JH7 — TSW-118-07-G-D | 15 | `host_d34` |
-| JH7 — TSW-118-07-G-D | 16 | `host_d35` |
-| JH7 — TSW-118-07-G-D | 17 | `host_d36` |
-| JH7 — TSW-118-07-G-D | 18 | `host_d37` |
-| JH7 — TSW-118-07-G-D | 19 | `host_d38` |
-| JH7 — TSW-118-07-G-D | 35 | `gnd` |
-| JH7 — TSW-118-07-G-D | 36 | `gnd` |
-| JH7 | 1, 2, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34 | NC |
-| JH3 | 1, 2, 3, 4, 5, 6, 7, 8 | NC |
-| JH2 — TSW-108-07-L-S | 1 | `host_a0` |
-| JH2 — TSW-108-07-L-S | 2 | `host_a1` |
-| JH2 — TSW-108-07-L-S | 3 | `host_a2` |
-| JH2 | 4, 5, 6, 7, 8 | NC |
-| JH5 — TSW-110-07-L-S | 1 | `host_d8` |
-| JH5 — TSW-110-07-L-S | 3 | `host_d10` |
-| JH5 — TSW-110-07-L-S | 7 | `gnd` |
-| JH5 | 2, 4, 5, 6, 8, 9, 10 | NC |
-| JH6 — TSW-108-07-L-S | 5 | `host_d18` |
-| JH6 — TSW-108-07-L-S | 6 | `host_d19` |
-| JH6 — TSW-108-07-L-S | 7 | `host_d20` |
-| JH6 — TSW-108-07-L-S | 8 | `host_d21` |
-| JH6 | 1, 2, 3, 4 | NC |
-| JH8 — SSW-103-01-G-D | 1 | `host_miso` |
-| JH8 — SSW-103-01-G-D | 3 | `host_sck` |
-| JH8 — SSW-103-01-G-D | 4 | `host_mosi` |
-| JH8 — SSW-103-01-G-D | 6 | `gnd` |
-| JH8 | 2, 5 | NC |
-| JH4 — TSW-108-07-L-S | 7 | `host_d6` |
-| JH4 — TSW-108-07-L-S | 8 | `host_d7` |
-| JH4 | 1, 2, 3, 4, 5, 6 | NC |
-
+{% include _includes/extension-board-page.html %}
+
+
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Host adapters</p>
+    <h1 id="arduino-to-gadgeteer-shield">Arduino-to-Gadgeteer shield</h1>
+    <p class="xb-lead">Turn an Arduino Due into a host for small modules: six ten-contact sockets (Y, A, P, S, U and I) and a Qwiic port, with current-limited rails and signals that stay disconnected until the board is armed.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/arduino-to-gadgeteer-shield/v23/arduino-to-gadgeteer-shield-diagram.png" alt="Top view of the Arduino-to-Gadgeteer shield.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-</details>
+<div class="xb-stats">
+  <div class="xb-stat"><b>6 sockets</b><span>Y A P S U I</span></div>
+  <div class="xb-stat"><b>3.3 V</b><span>signals</span></div>
+  <div class="xb-stat"><b>80 mA</b><span>per rail</span></div>
+  <div class="xb-stat"><b>Armed</b><span>by jumper JP1</span></div>
+  <div class="xb-stat"><b>Qwiic</b><span>shares the I socket</span></div>
+  <div class="xb-stat"><b>Due</b><span>only</span></div>
+</div>
 
-### Links, controls and indicators
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+  <a href="#datasheets">Datasheets</a>
+</nav>
+{:/nomarkdown}
 
-The footprint values identify each control or indication. A cut-to-disable LED link affects only the indication, not the protected circuit. Check a link's default state on your board before cutting or bridging it.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  For the Arduino Due only: 3.3&nbsp;V signals. The sockets are outputs of the Due, so never cable one to another powered controller. Keep each exported supply within 80&nbsp;mA.
+</sl-alert>
 
-| Item | Label | Contact nets / observation |
-| --- | --- | --- |
-| JP1 | TSW-102-07-L-S | 1 = host_3v3; 2 = power_enable |
-| D89 | RED FAULT OR ISOLATED | 1 = signal_enable; 2 = FAULT_ISOLATED_LED_R |
-| JP83 | CUT TO DISABLE FAULT_ISOLATED | 1 = host_3v3; 2 = FAULT_ISOLATED_LED |
-| D134 | BAT54HGW-Q FAULT LED ANTIPARALLEL | 1 = FAULT_ISOLATED_LED_R; 2 = signal_enable |
+## Tech specs {#specs}
 
-## Practical use with Smoothieboard V2 Prime
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>Gadgeteer host ports for an Arduino Due</td></tr>
+    <tr><td>Sockets</td><td>J1 Y (D22 to D28), J2 A (A0 to A2), J3 P (PWM D6 to D8), J4 S (SPI, chip select D10), J5 U (Serial1), J6 I (SDA20, SCL21)</td></tr>
+    <tr><td>Qwiic</td><td>J7: ground, 3.3&nbsp;V, SDA, SCL, same bus as J6</td></tr>
+    <tr><td>Signal switches</td><td><a href="/images/extensions/arduino-to-gadgeteer-shield/datasheets/tmux1511.pdf">TMUX1511</a>, enabled only when armed and the rails are good</td></tr>
+    <tr><td>Supply rails</td><td>3.3&nbsp;V and 5&nbsp;V, auto-retry limiters (125&nbsp;mA trip); use up to 80&nbsp;mA each</td></tr>
+    <tr><td>Arming</td><td>JP1; remove it to disconnect</td></tr>
+    <tr><td>Light</td><td>Red: fault or isolated</td></tr>
+    <tr><td>Licence</td><td>Open hardware, CERN-OHL-S-2.0</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-Use the board to test a compatible low-power I2C Gadgeteer/Qwiic module from an Arduino Due. The board is a host, so communicating with Smoothieboard would need a separate host-to-host interface.
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
-Verify the host header and cable orientation before applying power.
+## Board tour {#tour}
 
-1. Confirm the host is the Arduino Due and inspect the downward perimeter and central SPI connector orientation before fitting the shield.
-2. Leave JP1 unarmed while selecting safe Due pin modes and checking each attached module's power ownership.
-3. Use only one powered host. J6.8/J7.3 are the same SDA net and J6.9/J7.4 the same SCL net; account for both branches' pull-ups and addresses.
-4. Due Serial1 D18/D19 go to the U socket and the central SPI to the S socket. Check the shield-to-Due contacts before writing your sketch.
+The numbers on the drawing match the list below it.
 
-## Smoothieware use
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/arduino-to-gadgeteer-shield/v23/arduino-to-gadgeteer-shield-diagram.png" alt="Top view of the Arduino-to-Gadgeteer shield with numbered markers explained in the list below.">
+      <a class="xb-mk xb-pb xb-pr" href="#tour-1" style="left:78.2%;top:14.6%" aria-label="1: Y socket (J1)">1<span class="xb-pop"><b>Y socket (J1)</b> — general inputs and outputs.</span></a>
+      <a class="xb-mk" href="#tour-2" style="left:54.0%;top:79.6%" aria-label="2: A socket (J2)">2<span class="xb-pop"><b>A socket (J2)</b> — analog.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-3" style="left:54.0%;top:14.6%" aria-label="3: P socket (J3)">3<span class="xb-pop"><b>P socket (J3)</b> — PWM.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-4" style="left:34.7%;top:14.6%" aria-label="4: S socket (J4)">4<span class="xb-pop"><b>S socket (J4)</b> — SPI.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-5" style="left:78.2%;top:79.6%" aria-label="5: U socket (J5)">5<span class="xb-pop"><b>U socket (J5)</b> — serial.</span></a>
+      <a class="xb-mk" href="#tour-6" style="left:34.7%;top:79.6%" aria-label="6: I socket (J6)">6<span class="xb-pop"><b>I socket (J6)</b> — I&sup2;C.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-7" style="left:4.6%;top:43.5%" aria-label="7: Qwiic port (J7)">7<span class="xb-pop"><b>Qwiic port (J7)</b> — the I bus again.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-8" style="left:18.8%;top:36.3%" aria-label="8: Arm jumper (JP1)">8<span class="xb-pop"><b>Arm jumper (JP1)</b> — connects signals when fitted.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-9" style="left:97.5%;top:54.3%" aria-label="9: Fault light (D89)">9<span class="xb-pop"><b>Fault light (D89)</b> — red.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-10" style="left:80.1%;top:30.8%" aria-label="10: Signal switches">10<span class="xb-pop"><b>Signal switches</b> — TMUX1511 parts isolate the sockets.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Y socket (J1)</b> — general inputs and outputs.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>A socket (J2)</b> — analog.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>P socket (J3)</b> — PWM.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>S socket (J4)</b> — SPI.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>U socket (J5)</b> — serial.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>I socket (J6)</b> — I&sup2;C.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Qwiic port (J7)</b> — the I bus again.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Arm jumper (JP1)</b> — connects signals when fitted.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Fault light (D89)</b> — red.</div></li>
+    <li id="tour-10"><span class="xb-n">10</span><div><b>Signal switches</b> — <a href="/images/extensions/arduino-to-gadgeteer-shield/datasheets/tmux1511.pdf">TMUX1511</a> parts isolate the sockets.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-This is an Arduino Due host shield, so a Smoothieware extension-board driver is not its normal control mechanism. Due application software must configure the exported pins and each peripheral protocol. There is no Smoothieware-on-Due port or direct Prime connection for this board.
+### Lights {#lights}
 
-## Sources
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th>Lit means</th><th>Disable it</th></tr></thead>
+  <tbody>
+    <tr><td>D89, red</td><td>Fault, or signals isolated</td><td>Cut JP83 (back)</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-- [Board source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/arduino-to-gadgeteer-shield/attempt/versions/v23)
-- [Design specification](https://github.com/arthurwolf/extension-boards/blob/main/src/arduino-to-gadgeteer-shield/specs.md)
-- [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/arduino-to-gadgeteer-shield/design.md)
-- [All extension boards](/extension-boards)
+## Pinout {#pinout}
 
-<details markdown="1">
-<summary>Additional board views</summary>
+### Sockets
 
-Active components: `U4 TMUX1511PWR`; `U3 TMUX1511PWR`; `U6 TMUX1511PWR`; `U1 TMUX1511PWR`; `U11 MAX40200AUK+T`; `U13 TPS3808G33DBVR`; `U5 TMUX1511PWR`; `U15 TPS3808G01DBVR`; `U8 TMUX1511PWR`; `U14 TPS3808G01DBVR`; `U12 MAX40200AUK+T`; `U2 TMUX1511PWR`; `U7 TMUX1511PWR`; `U10 TPS259631DDAR AUTO RETRY 125mA`; `U9 TPS259631DDAR AUTO RETRY 125mA`. Check the matching datasheets for limits.
+Contact 1 is the limited 3.3&nbsp;V, contact 2 the limited 5&nbsp;V and contact 10 ground on J1 to J6.
 
-{% include _includes/extension-board-visuals.html slug="arduino-to-gadgeteer-shield" %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Socket</th><th>Contacts to Due pins</th></tr></thead>
+  <tbody>
+    <tr><td>J1 Y</td><td>3 to 9: D22 to D28</td></tr>
+    <tr><td>J2 A</td><td>3 to 5: A0 to A2; 6: D29</td></tr>
+    <tr><td>J3 P</td><td>3 and 6: D30, D31; 7 to 9: D6 to D8</td></tr>
+    <tr><td>J4 S</td><td>3 to 5: D32 to D34; 6: D10; 7: MOSI; 8: MISO; 9: SCK</td></tr>
+    <tr><td>J5 U</td><td>3: D35; 4: D18; 5: D19; 6: D36</td></tr>
+    <tr><td>J6 I</td><td>3: D37; 6: D38; 8: D20 (SDA); 9: D21 (SCL)</td></tr>
+    <tr><td>J7 Qwiic</td><td>1 ground, 2 3.3&nbsp;V, 3 SDA, 4 SCL</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-</details>
+## What you need {#what-you-need}
+
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>Arduino Due</b><span>No other Arduino model.</span></div>
+  <div class="xb-card"><b>This shield</b><span>Fitted with the power off.</span></div>
+  <div class="xb-card"><b>Low-current modules</b><span>3.3 V signals.</span></div>
+</div>
+{:/nomarkdown}
+
+## Get started {#get-started}
+
+Start with the shield disarmed.
+
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Fit the shield</h3>
+    <p>With power off, check the header positions, including the central SPI connector.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Remove JP1</h3>
+    <p>Signals stay isolated.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Load a sketch</h3>
+    <p>Set safe pin modes first.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Connect one module</h3>
+    <p>Check its supply current and that it has no other power source.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Arm</h3>
+    <p>Fit JP1.</p>
+    <p class="xb-expect">The red light goes out and the sockets are connected.</p>
+  </li>
+</ol>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>Use the sockets</td><td>Your Arduino Due sketch; not a Smoothieboard module</td><td><a href="#config-main">Setup</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Setup {#config-main}
+
+Smoothieware does not run on the Arduino Due, so there is no Smoothieware configuration. The Due sketch sets up each pin and protocol.
+
+## How it works {#how-it-works}
+
+Supervisors watch the arming jumper and both limited rails. Only when all are good are the <a href="/images/extensions/arduino-to-gadgeteer-shield/datasheets/tmux1511.pdf">TMUX1511</a> switches enabled, connecting Due pins to the sockets.
+
+## Troubleshooting {#troubleshooting}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Red light stays on</td><td>Fit JP1, remove the module and check for a short or an overload on a rail.</td></tr>
+    <tr><td>I²C conflicts</td><td>J6 and J7 are one bus: check addresses and pull-ups.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
+
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/arduino-to-gadgeteer-shield/v23/arduino-to-gadgeteer-shield-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/arduino-to-gadgeteer-shield/v23/arduino-to-gadgeteer-shield-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/arduino-to-gadgeteer-shield/v23/arduino-to-gadgeteer-shield-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 455" role="img" aria-labelledby="xb-ag-mount-t">
+  <title id="xb-ag-mount-t">Mounting drawing of the ag, component side: outline 101.6 by 53.34 millimetres with 6 mounting holes and 2 cable-tie holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="180.0" y="78.0" width="600.0" height="315.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M180.0 56H780.0"/><path d="M180.0 50V62"/><path d="M780.0 50V62"/><path d="M806.0 78.0V393.0"/><path d="M800.0 78.0h12"/><path d="M800.0 393.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">101.6</text>
+  <text x="818.0" y="240.5" font-size="15" font-weight="700" fill="#e6ebf2">53.34</text>
+  <circle cx="180.0" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="168.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M122.0 104.0h30" fill="none"/><path d="M156.0 104.0l-8 -4v8z"/><path d="M122.0 104.0v30" fill="none"/><path d="M122.0 138.0l-4 -8h8z"/></g>
+  <text x="160.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="118.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="270.0" cy="93.0" r="9.4" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M256.6 93.0h26.9M270.0 79.6v26.9" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="260.6" y="122.4" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  15.24, 2.54</text>
+  <circle cx="712.5" cy="93.0" r="9.4" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M699.1 93.0h26.9M712.5 79.6v26.9" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="721.9" y="122.4" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  90.17, 2.54</text>
+  <circle cx="570.0" cy="183.0" r="9.4" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M556.6 183.0h26.9M570.0 169.6v26.9" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="579.4" y="212.4" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  66.04, 17.78</text>
+  <circle cx="570.0" cy="348.0" r="9.4" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M556.6 348.0h26.9M570.0 334.6v26.9" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="579.4" y="328.6" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  66.04, 45.72</text>
+  <circle cx="262.5" cy="378.0" r="9.4" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M249.1 378.0h26.9M262.5 364.6v26.9" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="253.1" y="358.6" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">5</tspan>  13.97, 50.80</text>
+  <circle cx="750.0" cy="378.0" r="9.4" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M736.6 378.0h26.9M750.0 364.6v26.9" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="759.4" y="358.6" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">6</tspan>  96.52, 50.80</text>
+  <circle cx="197.7" cy="95.7" r="7.4" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
+  <circle cx="227.2" cy="95.7" r="7.4" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
+  <text x="212.5" y="121.1" text-anchor="middle" font-size="12" fill="#a9b4c2">cable tie</text>
+  <text x="480.0" y="423.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 101.6 × 53.34&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>15.24</td><td>2.54</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>90.17</td><td>2.54</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>3</td><td>66.04</td><td>17.78</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>4</td><td>66.04</td><td>45.72</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>5</td><td>13.97</td><td>50.80</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>6</td><td>96.52</td><td>50.80</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>–</td><td>3.00</td><td>3.00</td><td>2.5&nbsp;mm, not plated</td><td>Cable tie</td></tr>
+    <tr><td>–</td><td>8.00</td><td>3.00</td><td>2.5&nbsp;mm, not plated</td><td>Cable tie</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Values from the silk screen and parts list.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Rail current</td><td>Each rail</td><td>—</td><td>—</td><td>80 mA</td><td>Shared by all sockets</td></tr>
+    <tr><td>Signal level</td><td>All signals</td><td>—</td><td>3.3 V</td><td>—</td><td>Board silk</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: datasheets {#datasheets}
+
+The first page of each important chip&rsquo;s datasheet. Click a page to open the PDF.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <a href="/images/extensions/arduino-to-gadgeteer-shield/datasheets/tmux1511.pdf"><img src="/images/extensions/arduino-to-gadgeteer-shield/datasheets/tmux1511-page1.png" alt="First page of the TMUX1511 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/arduino-to-gadgeteer-shield/datasheets/tmux1511.pdf">TMUX1511 four-channel signal switch with powered-off protection</a> — Texas Instruments, 45 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/arduino-to-gadgeteer-shield/datasheets/tps2596.pdf"><img src="/images/extensions/arduino-to-gadgeteer-shield/datasheets/tps2596-page1.png" alt="First page of the TPS259631 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/arduino-to-gadgeteer-shield/datasheets/tps2596.pdf">TPS2596 family eFuse</a> — Texas Instruments, 47 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/arduino-to-gadgeteer-shield/datasheets/tps3808.pdf"><img src="/images/extensions/arduino-to-gadgeteer-shield/datasheets/tps3808-page1.png" alt="First page of the TPS3808 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/arduino-to-gadgeteer-shield/datasheets/tps3808.pdf">TPS3808 low-quiescent-current supervisor</a> — Texas Instruments, 39 pages.</figcaption>
+</figure>
+{:/nomarkdown}
+
+
+See all boards on the [extension boards](/extension-boards) page.

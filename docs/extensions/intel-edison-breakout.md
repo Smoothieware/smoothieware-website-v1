@@ -1,167 +1,214 @@
 ---
 layout: default
 title: "Intel Edison breakout"
+description: "A carrier for the Intel Edison module with its own regulator, a translated serial link to a controller and a USB Micro-B port."
 permalink: /extensions/intel-edison-breakout
 ---
 
-# Intel Edison breakout
+{% include _includes/extension-board-page.html %}
 
-This is a host carrier for the Intel Edison module, a platform Intel has discontinued. The circuit includes an AP63200 regulator, an SN74AXC4T774 translator and a 70-contact Edison connector.
 
-## Interfaces, power and operating limits
-
-J1 U input contacts 3 RESET_OUT_N, 4 UART_RX_IN, 5 UART_TX_OUT and 6 PWR_OFF carry translated control/serial functions. J2 is external1 positive, 2 ground and is labelled 5–24 V. JP1 chooses external or host source and must never be treated as permission to parallel supplies. J3 supplies the Edison VSYS contacts and exposes the 1.8 V UART pins46 TX and 61 RX. J4 is USB Micro-B. Most Edison contacts remain explicitly unconnected; do not infer a general GPIO breakout.
-
-## Board reference
-
-<details markdown="1">
-<summary>Reading the connector callouts</summary>
-
-The dark end of each pill gives the contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
-
-- Red: 3.3 V supply.
-- Orange: 5 V supply.
-- Violet: Control signal.
-- Green: Signal — use the printed function label.
-- Near-black: Circuit ground.
-- Grey: Not routed in this board.
-- Cyan: Selectable supply — check the jumper or rail-selection instructions.
-- Dark grey: Other labelled contact — read its exact function.
-
-A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
-
-</details>
-
-Start with the overview, then use all focused sheets for exact contacts, controls and links. Default solder-link footprints do not show whether a link is closed on your board.
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-overview" src="/images/extensions/intel-edison-breakout/guides/reader-compact-overview.png" title="Intel Edison carrier — overview" alt="Intel Edison carrier — overview" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j1-1-5" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j1-1-5-central-pills.png" title="J1 · Host UART — j1 1 5" alt="J1 · Host UART — j1 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j1-6-10" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j1-6-10-central-pills.png" title="J1 · Host UART — j1 6 10" alt="J1 · Host UART — j1 6 10" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j2-1-2" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j2-1-2-central-pills.png" title="J2 · External supply — j2 1 2" alt="J2 · External supply — j2 1 2" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-1-5" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-1-5-central-pills.png" title="J3 · Edison70 contacts — j3 1 5" alt="J3 · Edison70 contacts — j3 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-6-10" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-6-10-central-pills.png" title="J3 · Edison70 contacts — j3 6 10" alt="J3 · Edison70 contacts — j3 6 10" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-11-15" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-11-15-central-pills.png" title="J3 · Edison70 contacts — j3 11 15" alt="J3 · Edison70 contacts — j3 11 15" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-16-20" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-16-20-central-pills.png" title="J3 · Edison70 contacts — j3 16 20" alt="J3 · Edison70 contacts — j3 16 20" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-21-25" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-21-25-central-pills.png" title="J3 · Edison70 contacts — j3 21 25" alt="J3 · Edison70 contacts — j3 21 25" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-26-30" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-26-30-central-pills.png" title="J3 · Edison70 contacts — j3 26 30" alt="J3 · Edison70 contacts — j3 26 30" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-31-35" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-31-35-central-pills.png" title="J3 · Edison70 contacts — j3 31 35" alt="J3 · Edison70 contacts — j3 31 35" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-36-40" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-36-40-central-pills.png" title="J3 · Edison70 contacts — j3 36 40" alt="J3 · Edison70 contacts — j3 36 40" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-41-45" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-41-45-central-pills.png" title="J3 · Edison70 contacts — j3 41 45" alt="J3 · Edison70 contacts — j3 41 45" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-46-50" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-46-50-central-pills.png" title="J3 · Edison70 contacts — j3 46 50" alt="J3 · Edison70 contacts — j3 46 50" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-51-55" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-51-55-central-pills.png" title="J3 · Edison70 contacts — j3 51 55" alt="J3 · Edison70 contacts — j3 51 55" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-56-60" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-56-60-central-pills.png" title="J3 · Edison70 contacts — j3 56 60" alt="J3 · Edison70 contacts — j3 56 60" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-61-65" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-61-65-central-pills.png" title="J3 · Edison70 contacts — j3 61 65" alt="J3 · Edison70 contacts — j3 61 65" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j3-66-70" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j3-66-70-central-pills.png" title="J3 · Edison70 contacts — j3 66 70" alt="J3 · Edison70 contacts — j3 66 70" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j4-1-5" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j4-1-5-central-pills.png" title="J4 · USB micro-B — j4 1 5" alt="J4 · USB micro-B — j4 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-j4-6-6" src="/images/extensions/intel-edison-breakout/guides/reader-compact-j4-6-6-central-pills.png" title="J4 · USB micro-B — j4 6 6" alt="J4 · USB micro-B — j4 6 6" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-jp1-1-3" src="/images/extensions/intel-edison-breakout/guides/reader-compact-jp1-1-3-central-pills.png" title="JP1 · Supply selection — jp1 1 3" alt="JP1 · Supply selection — jp1 1 3" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-uart" src="/images/extensions/intel-edison-breakout/guides/reader-compact-uart.png" title="UART translation directions — uart" alt="UART translation directions — uart" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-reset" src="/images/extensions/intel-edison-breakout/guides/reader-compact-reset.png" title="Reset state translation — reset" alt="Reset state translation — reset" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-source" src="/images/extensions/intel-edison-breakout/guides/reader-compact-source.png" title="External versus host supply — source" alt="External versus host supply — source" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-buck" src="/images/extensions/intel-edison-breakout/guides/reader-compact-buck-underside-caption.png" title="Protected supply and buck — buck" alt="Protected supply and buck — buck" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-off" src="/images/extensions/intel-edison-breakout/guides/reader-compact-off.png" title="Power-off control — off" alt="Power-off control — off" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-usb" src="/images/extensions/intel-edison-breakout/guides/reader-compact-usb.png" title="USB data and VBUS path — usb" alt="USB data and VBUS path — usb" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-led" src="/images/extensions/intel-edison-breakout/guides/reader-compact-led.png" title="Supply indicator — led" alt="Supply indicator — led" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-faults" src="/images/extensions/intel-edison-breakout/guides/reader-compact-faults-underside-caption.png" title="Protection status LEDs — faults" alt="Protection status LEDs — faults" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-fault-clamp" src="/images/extensions/intel-edison-breakout/guides/reader-compact-fault-clamp-underside-caption.png" title="Fault LED reverse clamp — fault clamp" alt="Fault LED reverse clamp — fault clamp" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-aux" src="/images/extensions/intel-edison-breakout/guides/reader-compact-aux-underside-caption.png" title="Protection auxiliary paths — aux" alt="Protection auxiliary paths — aux" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-tests0" src="/images/extensions/intel-edison-breakout/guides/reader-compact-tests0-underside-caption.png" title="Supply / control test pads — tests0" alt="Supply / control test pads — tests0" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-tests5" src="/images/extensions/intel-edison-breakout/guides/reader-compact-tests5-underside-caption.png" title="Supply / control test pads — tests5" alt="Supply / control test pads — tests5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="intel-edison-breakout-v21-reader-compact-mounts" src="/images/extensions/intel-edison-breakout/guides/reader-compact-mounts.png" title="Mounts / module retention — mounts" alt="Mounts / module retention — mounts" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-Read the overview and all focused sheets together; use the connection section for installation.
-
-The following is the pad-to-net schedule. Net labels identify circuit nodes; they are not wire colours or voltage and current ratings. Explicit unconnected contacts must remain unused. Duplicate physical pads with the same contact number represent alternative lands, not extra channels. Check the selector bridge position on your board before altering it.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Member / reference | Label / control | Kind | Numbered contacts / assigned nodes |
-|---|---|---|---|
-| intel-edison-breakout / J1 | GADGETEER U IN | Connector | 1: +3V3; 2: /+5V_HOST; 3: /RESET_OUT_N; 4: /UART_RX_IN; 5: /UART_TX_OUT; 6: /PWR_OFF; 7: unconnected-(J1-Pin_7-Pad7); 8: unconnected-(J1-Pin_8-Pad8); 9: unconnected-(J1-Pin_9-Pad9); 10: GND |
-| intel-edison-breakout / J2 | EXT 5-24V DC + GND | Connector | 1: /EXT_IN; 2: GND |
-| intel-edison-breakout / J3 | EDISON 70P DF40 | Connector | 1: GND; 2: /VSYS; 3: /USB_ID; 4: /VSYS; 5: GND; 6: /VSYS; 7: unconnected-(J3-MSIC_SLP_CLK3-Pad7); 8: unconnected-(J3-3.3V-Pad8); 9: GND; 10: unconnected-(J3-3.3V-Pad10); 11: GND; 12: /EDI_1V8; 13: GND; 14: /VSYS; 15: GND; 16: /USB_DP; 17: unconnected-(J3-PWRBTN#-Pad17); 18: /USB_DN; 19: GND; 20: /USB_VBUS; 21: unconnected-(J3-PSW-Pad21); 22: unconnected-(J3-GP134_UART_2_RX-Pad22); 23: unconnected-(J3-V_VBAT_BKUP-Pad23); 24: unconnected-(J3-GP44-Pad24); 25: unconnected-(J3-GP165-Pad25); 26: unconnected-(J3-GP45-Pad26); 27: unconnected-(J3-GP135_UART_2_TX-Pad27); 28: unconnected-(J3-GP46-Pad28); 29: unconnected-(J3-Unused-Pad29); 30: unconnected-(J3-GP47-Pad30); 31: unconnected-(J3-RCVR_MODE-Pad31); 32: unconnected-(J3-GP48-Pad32); 33: unconnected-(J3-GP13_PWM1-Pad33); 34: unconnected-(J3-GP49-Pad34); 35: unconnected-(J3-GP12_PWM0-Pad35); 36: /EDI_RESET_OUT_N; 37: unconnected-(J3-GP182_PWM2-Pad37); 38: unconnected-(J3-Unused-Pad38); 39: unconnected-(J3-GP183_PWM3-Pad39); 40: unconnected-(J3-Unused-Pad40); 41: unconnected-(J3-GP19_I2C_1_SCL-Pad41); 42: unconnected-(J3-GP15-Pad42); 43: unconnected-(J3-GP20_I2C_1_SDA-Pad43); 44: unconnected-(J3-GP84-Pad44); 45: unconnected-(J3-GP27_I2C_6_SCL-Pad45); 46: /EDI_UART1_TX; 47: unconnected-(J3-GP28_I2C_6_SDA-Pad47); 48: unconnected-(J3-GP14-Pad48); 49: unconnected-(J3-Unused-Pad49); 50: unconnected-(J3-GP42-Pad50); 51: unconnected-(J3-GP111-Pad51); 52: unconnected-(J3-GP40-Pad52); 53: unconnected-(J3-GP110-Pad53); 54: unconnected-(J3-GP41-Pad54); 55: unconnected-(J3-GP109-Pad55); 56: unconnected-(J3-GP43-Pad56); 57: unconnected-(J3-GP115-Pad57); 58: unconnected-(J3-GP78-Pad58); 59: unconnected-(J3-GP114-Pad59); 60: unconnected-(J3-GP77-Pad60); 61: /EDI_UART1_RX; 62: unconnected-(J3-GP79-Pad62); 63: unconnected-(J3-GP129_UART_1_RTS-Pad63); 64: unconnected-(J3-GP82-Pad64); 65: unconnected-(J3-GP128_UART_1_CTS-Pad65); 66: unconnected-(J3-GP80-Pad66); 67: unconnected-(J3-OSC_CLK_OUT_0-Pad67); 68: unconnected-(J3-GP83-Pad68); 69: unconnected-(J3-FW_RCVR-Pad69); 70: unconnected-(J3-GP81-Pad70) |
-| intel-edison-breakout / J4 | USB MICRO-B | Connector | 1: /USB_VBUS; 2: /USB_DN; 3: /USB_DP; 4: /USB_ID; 5: GND; 6: GND |
-| intel-edison-breakout / D3 | LED GREEN | Indicator | 1: GND; 2: LED_D3_DISABLE |
-| intel-edison-breakout / DF2 | LTST-C170KRKT | Indicator | 1: /P_edison_FLT; 2: /P_edison_FLT_A |
-| intel-edison-breakout / DF5 | LTST-C170KRKT | Indicator | 1: /P_edison_OV_K; 2: /P_edison_OV_A |
-| intel-edison-breakout / DF8 | LTST-C170KRKT | Indicator | 1: /P_edison_C1; 2: /P_edison_REV_A |
-| intel-edison-breakout / TP1 | TP GND | Observation only | 1: GND |
-| intel-edison-breakout / TP10 | TP BUCK_EN | Observation only | 1: /BUCK_EN |
-| intel-edison-breakout / TP2 | TP VIN | Observation only | 1: /VIN |
-| intel-edison-breakout / TP3 | TP VSYS | Observation only | 1: /VSYS |
-| intel-edison-breakout / TP4 | TP EDI_1V8 | Observation only | 1: /EDI_1V8 |
-| intel-edison-breakout / TP5 | TP GND | Observation only | 1: GND |
-| intel-edison-breakout / TP6 | TP +3V3 | Observation only | 1: +3V3 |
-| intel-edison-breakout / TP7 | TP +5V_HOST | Observation only | 1: /+5V_HOST |
-| intel-edison-breakout / TP8 | TP RESET_OUT_N | Observation only | 1: /RESET_OUT_N |
-| intel-edison-breakout / TP9 | TP GND | Observation only | 1: GND |
-| intel-edison-breakout / JP1 | SRC EXT / HOST | Service link/selector | 1: /EXT_D; 2: /VIN_RAW; 3: /+5V_HOST |
-| intel-edison-breakout / JP2 | CUT TO DISABLE D3 | Service link/selector | 1: LED_D3_DISABLE; 2: /LED_A |
-| intel-edison-breakout / SJF1 | CUT FAULT LED | Service link/selector | 1: /P_edison_FLT_R; 2: /P_edison_FLT_A |
-| intel-edison-breakout / SJF2 | CUT OV LED | Service link/selector | 1: /P_edison_OV_R; 2: /P_edison_OV_A |
-| intel-edison-breakout / SJF3 | CUT REVERSE LED | Service link/selector | 1: /P_edison_REV_R; 2: /P_edison_REV_A |
-
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Host adapters</p>
+    <h1 id="intel-edison-breakout">Intel Edison breakout</h1>
+    <p class="xb-lead">Carry an Intel Edison module: an on-board regulator makes its supply, a level translator links its serial port to a 3.3&nbsp;V controller, and USB is brought out.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/intel-edison-breakout/v21/intel-edison-breakout-diagram.png" alt="Top view of the Intel Edison breakout.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-</details>
+<div class="xb-stats">
+  <div class="xb-stat"><b>5–24 V</b><span>external DC</span></div>
+  <div class="xb-stat"><b>3.8 V</b><span>module supply</span></div>
+  <div class="xb-stat"><b>UART</b><span>translated to 3.3 V</span></div>
+  <div class="xb-stat"><b>USB</b><span>Micro-B</span></div>
+  <div class="xb-stat"><b>70-pin</b><span>module connector</span></div>
+  <div class="xb-stat"><b>52.5 × 47</b><span>millimetres</span></div>
+</div>
 
-## Practical connection to Smoothieboard V2 Prime
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+  <a href="#datasheets">Datasheets</a>
+</nav>
+{:/nomarkdown}
 
-Do not power the carrier until you have checked the power circuit, power sequencing and cable orientation.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  The Edison module is discontinued by Intel. Check your module&rsquo;s power and sequencing requirements before applying power. Never join the external and host supplies, no hot-plugging, and keep metal and copper away from the antenna end.
+</sl-alert>
 
-Identify the exact Edison module and its power and sequencing requirements before powering the carrier. Trace J3 orientation and every VSYS/ground contact, leave the host disconnected and use a limited bench supply only after the power circuit has been checked. The Prime GB/J33 UART1 signal allocation is documented below; it does not cover power ordering, translator enables or reset/shutdown integration. The carrier's U socket does not match the Prime Raspberry-Pi-Zero host interface.
+## Tech specs {#specs}
 
-The GF/J37 contact map applies only to **V2 P12 Prime2590**: contacts 1/2/10 are limited 3.3 V/limited 5 V/ground, and contacts 3–9 are PB1/PJ4/PA4/PG0/PJ3/PG1/PJ2. The host header is unshrouded; verify numbered continuity and cable orientation with power removed. Reserve pins in the complete machine configuration. No rail-current allowance, other Prime board, timer route or bus mux is implied by this map.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>Edison module carrier</td></tr>
+    <tr><td>Supply</td><td>J2, 5 to 24&nbsp;V DC, or host 5&nbsp;V; JP1 selects one</td></tr>
+    <tr><td>Regulator</td><td><a href="/images/extensions/intel-edison-breakout/datasheets/ap63200.pdf">AP63200</a>, about 3.8&nbsp;V for the module</td></tr>
+    <tr><td>Serial</td><td>Module UART1 through an <a href="/images/extensions/intel-edison-breakout/datasheets/sn74axc4t774.pdf">SN74AXC4T774</a> to J1 contacts 4 and 5</td></tr>
+    <tr><td>Control</td><td>J1 contact 3 reset output; contact 6 high switches the module off</td></tr>
+    <tr><td>USB</td><td>J4 Micro-B with ESD protection; supply detect only</td></tr>
+    <tr><td>Module</td><td>Fits J3 with 2.0&nbsp;mm standoffs</td></tr>
+    <tr><td>Size</td><td>52.5 &times; 47&nbsp;mm</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Smoothieware behaviour and commissioning
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
-### Host setup still required
+## Board tour {#tour}
 
-The carrier’s serial path is Edison UART1: module contact46 is TX and61 is RX; the UART2 contacts22/27 are not connected to that path. The Intel hardware guide establishes these signal identities, not a Linux serial device or working carrier image. Choose UART1 setup instructions for the actual Edison software image and verify translator direction, enable/reset sequencing and power domains before using a Prime serial console. USB connector presence does not establish a command-host protocol or replace that setup.
+The numbers on the drawing match the list below it.
 
-The carrier translator requires no high-level driver by itself, but a working Edison link needs a defined serial/USB protocol, boot/reset sequence and host software. SmoothieV2 does not include these.
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/intel-edison-breakout/v21/intel-edison-breakout-diagram.png" alt="Top view of the Intel Edison breakout with numbered markers explained in the list below.">
+      <a class="xb-mk xb-pb xb-pr" href="#tour-1" style="left:90.0%;top:25.6%" aria-label="1: Module connector (J3)">1<span class="xb-pop"><b>Module connector (J3)</b> — 70 contacts for the Edison.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-2" style="left:8.9%;top:16.2%" aria-label="2: Controller socket (J1)">2<span class="xb-pop"><b>Controller socket (J1)</b> — serial, reset and power-off.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-3" style="left:14.6%;top:73.8%" aria-label="3: External power (J2)">3<span class="xb-pop"><b>External power (J2)</b> — 5 to 24&nbsp;V DC.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-4" style="left:7.8%;top:59.0%" aria-label="4: Supply selector (JP1)">4<span class="xb-pop"><b>Supply selector (JP1)</b> — external or host, never both.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-5" style="left:17.8%;top:53.4%" aria-label="5: Regulator (U1)">5<span class="xb-pop"><b>Regulator (U1)</b> — AP63200.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-6" style="left:27.0%;top:20.2%" aria-label="6: Level translator (U2)">6<span class="xb-pop"><b>Level translator (U2)</b> — 3.3&nbsp;V to 1.8&nbsp;V.</span></a>
+      <a class="xb-mk" href="#tour-7" style="left:39.2%;top:76.7%" aria-label="7: USB socket (J4)">7<span class="xb-pop"><b>USB socket (J4)</b> — Micro-B.</span></a>
+      <a class="xb-mk" href="#tour-8" style="left:60.0%;top:75.4%" aria-label="8: Power light (D3)">8<span class="xb-pop"><b>Power light (D3)</b> — green.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-9" style="left:24.6%;top:34.9%" aria-label="9: Power-off transistor (Q1)">9<span class="xb-pop"><b>Power-off transistor (Q1)</b> — driven by contact 6.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Module connector (J3)</b> — 70 contacts for the Edison.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Controller socket (J1)</b> — serial, reset and power-off.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>External power (J2)</b> — 5 to 24&nbsp;V DC.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Supply selector (JP1)</b> — external or host, never both.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Regulator (U1)</b> — <a href="/images/extensions/intel-edison-breakout/datasheets/ap63200.pdf">AP63200</a>.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Level translator (U2)</b> — 3.3&nbsp;V to 1.8&nbsp;V.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>USB socket (J4)</b> — Micro-B.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Power light (D3)</b> — green.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Power-off transistor (Q1)</b> — driven by contact 6.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-### Prime console for the Edison carrier
+### Lights {#lights}
 
-The carrier uses Edison UART1, not UART2. Prime GB/J33.4 PB9 TX reaches board J1.4 `/UART_RX_IN`, U2 B2/pin13 → A2/pin4, then Edison J3.61 RX. Edison J3.46 TX reaches U2 A1/pin3 → B1/pin14, J1.5 `/UART_TX_OUT`, then Prime GB/J33.5 PH14 RX. J1.10 is signal ground. The SN74AXC4T774 translator has a 1.8 V module domain and 3.3 V host domain; this topology does not itself set its power ordering, reset or enables. Leave J1.3 reset observation and J1.6 PWR_OFF unconnected in the three-signal console allocation unless separately assigned; UART firmware does not implement an Edison shutdown service.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th>Lit means</th><th>Disable it</th></tr></thead>
+  <tbody>
+    <tr><td>D3, green</td><td>Power present</td><td>Cut JP2</td></tr>
+    <tr><td>Fault light (back)</td><td>Electronic fuse fault</td><td>Cut SJF1</td></tr>
+    <tr><td>Overvoltage light (back)</td><td>Input overvoltage</td><td>Cut SJF2</td></tr>
+    <tr><td>Reverse light (back)</td><td>Reverse polarity</td><td>Cut SJF3</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-Once supplies, module, cable and translator operation are checked, use:
+## Pinout {#pinout}
+
+### J1: controller socket
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-5v">5 V</span> (supply only if selected at JP1)</td></tr>
+    <tr><td>3</td><td><span class="xb-pill xb-p-sig">Reset</span> output from the module</td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">RX</span> into the module</td></tr>
+    <tr><td>5</td><td><span class="xb-pill xb-p-sig">TX</span> from the module</td></tr>
+    <tr><td>6</td><td><span class="xb-pill xb-p-sig">Power off</span>: high switches the module off</td></tr>
+    <tr><td>7 to 9</td><td>Not connected</td></tr>
+    <tr><td>10</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### J2: external power
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-5v">5 to 24 V +</span></td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## What you need {#what-you-need}
+
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>This board</b><span>With mounting hardware for the module.</span></div>
+  <div class="xb-card"><b>An Intel Edison</b><span>With its software image.</span></div>
+  <div class="xb-card"><b>A power supply</b><span>5 to 24 V DC.</span></div>
+</div>
+{:/nomarkdown}
+
+## Get started {#get-started}
+
+This sets up a serial link between the Edison and Smoothieboard V2 Prime.
+
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Fit the module</h3>
+    <p>Check J3 orientation and fit the standoffs with power off.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Select the supply</h3>
+    <p>Set JP1 to external or host.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Wire the serial link</h3>
+    <p>Prime GB/J33 contact 4 to J1 contact 4, contact 5 to contact 5, contact 10 to contact 10.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure both ends</h3>
+    <p>Add the controller settings below and enable UART1 on the Edison image at 115200 baud, 8N1.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Power and test</h3>
+    <p>Send <code>version</code> from the Edison.</p>
+    <p class="xb-expect">The controller replies.</p>
+  </li>
+</ol>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>A command host on the Edison</td><td>UART console</td><td><a href="#config-main">Setup</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Setup {#config-main}
 
 ```ini
 [uart console]
@@ -174,22 +221,115 @@ stop_bits = 1
 parity = none
 ```
 
-Enable UART1 with the installed Edison image's supported setup; verify its pin ownership and serial client without assuming a device pathname. Set 115200/8N1 with no hardware flow control and send `version` followed by LF (`\n`); CRLF works; CR alone does not dispatch. A response shows communication only; it says nothing about power, reset or shutdown behaviour.
+With <code>console = true</code> the UART starts after the controller has finished booting ([console source](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/Consoles.cpp#L733-L761)). On the Prime, [channel 1 transmits on PB9 and receives on PH14](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Uart.cpp#L101-L135), header GB contacts 4 and 5. Reserve both pins. Use 115200 baud, 8N1 and no hardware flow control on the computer.
 
-Reserve every listed pin and command in the complete configuration. Merge entries into existing sections rather than duplicating sections.
+## How it works {#how-it-works}
 
-## Sources
+The regulator turns the selected input into the module supply. The translator runs between the module&rsquo;s 1.8&nbsp;V logic and the controller&rsquo;s 3.3&nbsp;V. The carrier does not run any software for shutdown or reset.
 
-- [Intel Edison carrier PCB](https://github.com/arthurwolf/extension-boards/blob/main/src/intel-edison-breakout/attempt/versions/v21/intel-edison-breakout.kicad_pcb)
-- [Specification](https://github.com/arthurwolf/extension-boards/blob/main/src/intel-edison-breakout/specs.md)
-- [Architecture](https://github.com/arthurwolf/extension-boards/blob/main/src/intel-edison-breakout/design.md)
-- [Component review](https://github.com/arthurwolf/extension-boards/blob/main/src/intel-edison-breakout/component-review.md)
-- [V2 configuration example](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/ConfigSamples/config-3d.ini)
-- [All extension boards](/extension-boards)
+## Troubleshooting {#troubleshooting}
 
-<details markdown="1">
-<summary>Supplementary views</summary>
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Module does not start</td><td>JP1 selection, supply polarity, power-off input low.</td></tr>
+    <tr><td>No serial data</td><td>The module uses UART1, not UART2.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-board-visuals.html slug="intel-edison-breakout" %}
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
 
-</details>
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/intel-edison-breakout/v21/intel-edison-breakout-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/intel-edison-breakout/v21/intel-edison-breakout-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/intel-edison-breakout/v21/intel-edison-breakout-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-ie-mount-t">
+  <title id="xb-ie-mount-t">Mounting drawing of the ie, component side: outline 52.5 by 47 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="290.1" y="78.0" width="379.8" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M290.1 56H669.9"/><path d="M290.1 50V62"/><path d="M669.9 50V62"/><path d="M695.9 78.0V418.0"/><path d="M689.9 78.0h12"/><path d="M689.9 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">52.5</text>
+  <text x="707.9" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">47</text>
+  <circle cx="290.1" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="278.1" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M232.1 104.0h30" fill="none"/><path d="M266.1 104.0l-8 -4v8z"/><path d="M232.1 104.0v30" fill="none"/><path d="M232.1 138.0l-4 -8h8z"/></g>
+  <text x="270.1" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="228.1" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="635.2" cy="97.7" r="6.5" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M624.7 97.7h21.0M635.2 87.2v21.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="641.7" y="124.3" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  47.70, 2.73</text>
+  <circle cx="452.9" cy="110.6" r="11.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M437.3 110.6h31.1M452.9 95.0v31.1" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="441.3" y="142.1" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  22.50, 4.50</text>
+  <circle cx="452.9" cy="255.2" r="11.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M437.3 255.2h31.1M452.9 239.7v31.1" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="441.3" y="233.7" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  22.50, 24.50</text>
+  <circle cx="507.1" cy="367.4" r="6.5" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M496.6 367.4h21.0M507.1 356.9v21.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="513.6" y="350.9" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  30.00, 40.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 52.5 × 47&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>47.70</td><td>2.73</td><td>1.8&nbsp;mm, not plated</td><td>Mounting</td></tr>
+    <tr><td>2</td><td>22.50</td><td>4.50</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>3</td><td>22.50</td><td>24.50</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>4</td><td>30.00</td><td>40.00</td><td>1.8&nbsp;mm, not plated</td><td>Mounting</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Values from the silk screen.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>External supply</td><td>J2</td><td>5 V</td><td>—</td><td>24 V</td><td>Board silk</td></tr>
+    <tr><td>Module supply</td><td>VSYS</td><td>—</td><td>3.8 V</td><td>—</td><td>Board silk</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: datasheets {#datasheets}
+
+The first page of each important chip&rsquo;s datasheet. Click a page to open the PDF.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <a href="/images/extensions/intel-edison-breakout/datasheets/ap63200.pdf"><img src="/images/extensions/intel-edison-breakout/datasheets/ap63200-page1.png" alt="First page of the AP63200 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/intel-edison-breakout/datasheets/ap63200.pdf">AP63200 family buck converter datasheet</a> — Diodes Incorporated, 18 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/intel-edison-breakout/datasheets/sn74axc4t774.pdf"><img src="/images/extensions/intel-edison-breakout/datasheets/sn74axc4t774-page1.png" alt="First page of the SN74AXC4T774 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/intel-edison-breakout/datasheets/sn74axc4t774.pdf">SN74AXC4T774 four-bit translating transceiver</a> — Texas Instruments, 43 pages.</figcaption>
+</figure>
+{:/nomarkdown}
+
+
+See all boards on the [extension boards](/extension-boards) page.
