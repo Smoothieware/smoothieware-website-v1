@@ -119,7 +119,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
     <li id="tour-4"><span class="xb-n">4</span><div><b>Motor X header</b> — four pins for one bipolar motor: coil 1 on 1B and 1A, coil 2 on 2A and 2B.</div></li>
     <li id="tour-5"><span class="xb-n">5</span><div><b>Motor Y header</b> — the same four pins for the second motor.</div></li>
     <li id="tour-6"><span class="xb-n">6</span><div><b>Motor Z header</b> — the same four pins for the third motor.</div></li>
-    <li id="tour-7"><span class="xb-n">7</span><div><b>Driver chips</b> — three Allegro A5984 stepper drivers, one per motor, X at the top. Each has an exposed pad soldered to the board on its underside.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Driver chips</b> — three Allegro <a href="/images/extensions/three-channel-a5984-stepper-driver/datasheets/a5984.pdf">A5984</a> stepper drivers, one per motor, X at the top. Each has an exposed pad soldered to the board on its underside.</div></li>
     <li id="tour-8"><span class="xb-n">8</span><div><b>Current trimmers</b> — one trimmer below each driver sets that motor’s current. The single pad on the side facing its driver chip is the wiper, where you measure VREF.</div></li>
     <li id="tour-9"><span class="xb-n">9</span><div><b>Microstep positions</b> — three 0603 positions above each driver, from left to right MS3, MS2 and MS1. A fitted link makes that input high.</div></li>
     <li id="tour-10"><span class="xb-n">10</span><div><b>Sense resistors</b> — two 0.1 Ω resistors per driver that measure the coil current.</div></li>
@@ -135,7 +135,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 
 ### INPUT Y: control connector
 
-Connect INPUT Y to the header labelled **G_F** (J37) on the Smoothieboard V2 Prime with a straight ten-way cable. The last column is the name you use for each pin in the configuration file.
+Connect INPUT Y to the header labelled **G_F** (J37) on the Smoothieboard V2 Prime (Prime2590 and Prime2660 designs) with a straight ten-way cable. The last column is the name you use for each pin in the configuration file.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
@@ -373,7 +373,7 @@ A higher supply voltage helps a motor keep torque at speed, and does not raise t
 
 Each rising edge on STEP advances the <a href="/images/extensions/three-channel-a5984-stepper-driver/datasheets/a5984.pdf">A5984</a> by one microstep; its internal translator works out the two coil currents, so the controller only sends pulses and a direction level.
 
-The driver switches each coil on until the voltage on its sense resistor reaches the level set by VREF, then lets the current decay for a short off time and repeats. This is current chopping. On this board a resistor from the ROSC pin to ground selects the chip&rsquo;s adaptive decay mode with a 16&nbsp;µs off time.
+The driver switches each coil on until the voltage on its sense resistor reaches the level set by VREF, then lets the current decay for a short off time and repeats. This is current chopping. On this board a 0&nbsp;&Omega; link ties each ROSC pin to ground, which selects the chip&rsquo;s adaptive decay mode with a 16&nbsp;µs off time.
 
 All three enable pins share one line with a 10&nbsp;kΩ pull-up to 3.3&nbsp;V, so the outputs stay off until the controller drives it low.
 
@@ -435,7 +435,7 @@ The board has no indicator lights. A multimeter on the power terminal and on INP
 </table></div>
 {:/nomarkdown}
 
-Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting/).
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
 
 {% include _includes/stepper-driver-board-comparison.html %}
 
@@ -540,7 +540,7 @@ The last column gives the basis for each figure. Datasheet values are for the dr
     <tr><td>Logic input high</td><td>STEP, DIR, ENABLE</td><td>2.0&nbsp;V</td><td>—</td><td>—</td><td>Datasheet</td></tr>
     <tr><td>Logic input low</td><td>STEP, DIR, ENABLE</td><td>—</td><td>—</td><td>0.8&nbsp;V</td><td>Datasheet</td></tr>
     <tr><td>Step pulse, high and low</td><td>STEP</td><td>1&nbsp;µs</td><td>—</td><td>—</td><td>Datasheet</td></tr>
-    <tr><td>Direction setup and hold</td><td>DIR</td><td>400&nbsp;ns</td><td>—</td><td>—</td><td>Datasheet</td></tr>
+    <tr><td>Direction setup and hold</td><td>DIR</td><td>—</td><td>400&nbsp;ns</td><td>—</td><td>Datasheet, typical</td></tr>
     <tr><td>VREF</td><td>Each trimmer</td><td>0&nbsp;V</td><td>—</td><td>1.32&nbsp;V</td><td>Simulated with nominal parts</td></tr>
     <tr><td>Peak current setting, top of trimmer</td><td>Each motor</td><td>—</td><td>1.65&nbsp;A</td><td>1.96&nbsp;A</td><td>Simulated; upper value with all tolerances at their worst. A setting, not a continuous rating.</td></tr>
     <tr><td>Output on-resistance, high plus low side</td><td>Each coil</td><td>—</td><td>0.64&nbsp;&Omega;</td><td>0.86&nbsp;&Omega;</td><td>Datasheet, at 2&nbsp;A</td></tr>
@@ -606,4 +606,4 @@ The first page of the driver chip&rsquo;s datasheet. Click the page to open the 
 </figure>
 {:/nomarkdown}
 
-See all boards on the [extension boards](/extension-boards) page.
+See also the [earlier single description of this three-channel design](/extensions/historical-a5984-stepper-driver). See all boards on the [extension boards](/extension-boards) page.
