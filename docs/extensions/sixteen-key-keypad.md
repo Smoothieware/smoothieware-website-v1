@@ -84,11 +84,11 @@ The numbers on the drawing match the list below it. The board is shown from the 
       <a class="xb-mk xb-pb xb-pr" href="#tour-2" style="left:93.9%;top:20.5%" aria-label="2: chain socket chain (j2)">2<span class="xb-pop"><b>Chain socket CHAIN (J2)</b> — Continues the bus.</span></a>
       <a class="xb-mk xb-pb" href="#tour-3" style="left:75.0%;top:5.7%" aria-label="3: qwiic connector (j3)">3<span class="xb-pop"><b>Qwiic connector (J3)</b> — The same bus on a four-way cable.</span></a>
       <a class="xb-mk xb-pb" href="#tour-4" style="left:50.0%;top:21.3%" aria-label="4: i/o expander (u1)">4<span class="xb-pop"><b>I/O expander (U1)</b> — PCF8574: four lines drive rows, four read columns.</span></a>
-      <a class="xb-mk xb-pb" href="#tour-5" style="left:24.8%;top:47.5%" aria-label="5: keys (sw1 to sw16)">5<span class="xb-pop"><b>Keys (SW1 to SW16)</b> — Read by row and column.</span></a>
-      <a class="xb-mk" href="#tour-6" style="left:50.0%;top:95.4%" aria-label="6: key diodes (d1 to d16)">6<span class="xb-pop"><b>Key diodes (D1 to D16)</b> — One per key, preventing false readings with several keys held.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-5" style="left:15.5%;top:39.8%" aria-label="5: keys (sw1 to sw16)">5<span class="xb-pop"><b>Keys (SW1 to SW16)</b> — Read by row and column.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-6" style="left:22.3%;top:95.4%" aria-label="6: key diodes (d1 to d16)">6<span class="xb-pop"><b>Key diodes (D1 to D16)</b> — One per key, preventing false readings with several keys held.</span></a>
       <a class="xb-mk xb-pb" href="#tour-7" style="left:35.3%;top:20.9%" aria-label="7: address links (jp10 to jp12)">7<span class="xb-pop"><b>Address links (JP10 to JP12)</b> — Add 1, 2 and 4 to the base address when closed.</span></a>
       <a class="xb-mk xb-pb" href="#tour-8" style="left:70.7%;top:29.1%" aria-label="8: pull-up links (jp1, jp2)">8<span class="xb-pop"><b>Pull-up links (JP1, JP2)</b> — Closed as delivered.</span></a>
-      <a class="xb-mk xb-pb" href="#tour-9" style="left:61.2%;top:19.4%" aria-label="9: chain links (jp3, jp8, jp9)">9<span class="xb-pop"><b>Chain links (JP3, JP8, JP9)</b> — Interrupt open; bus closed.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-9" style="left:16.3%;top:18.0%" aria-label="9: chain links (jp3, jp8, jp9)">9<span class="xb-pop"><b>Chain links (JP3, JP8, JP9)</b> — Interrupt open; bus closed.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-10" style="left:6.5%;top:4.9%" aria-label="10: mounting hole">10<span class="xb-pop"><b>Mounting hole</b> — One of four M3 holes.</span></a>
     </div>
   </div>

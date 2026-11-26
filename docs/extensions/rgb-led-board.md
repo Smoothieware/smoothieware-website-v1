@@ -85,7 +85,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
       <img src="/images/extensions/rgb-led-board/rgb-led-board-diagram.png" alt="Top view of the RGB LED board with 10 numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:6.8%;top:28.0%" aria-label="1: input socket p in (j1)">1<span class="xb-pop"><b>Input socket P IN (J1)</b> — Red on contact 7, green on 8, blue on 9; 5&nbsp;V on 2.</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-2" style="left:93.2%;top:28.0%" aria-label="2: chain socket chain (j2)">2<span class="xb-pop"><b>Chain socket CHAIN (J2)</b> — Next board.</span></a>
-      <a class="xb-mk" href="#tour-3" style="left:50.0%;top:64.0%" aria-label="3: rgb leds (d1 to d4)">3<span class="xb-pop"><b>RGB LEDs (D1 to D4)</b> — All four are driven together.</span></a>
+      <a class="xb-mk" href="#tour-3" style="left:30.5%;top:51.2%" aria-label="3: rgb leds (d1 to d4)">3<span class="xb-pop"><b>RGB LEDs (D1 to D4)</b> — All four are driven together.</span></a>
       <a class="xb-mk xb-pb" href="#tour-4" style="left:50.0%;top:28.0%" aria-label="4: colour switches (q1 to q3)">4<span class="xb-pop"><b>Colour switches (Q1 to Q3)</b> — One MOSFET per colour.</span></a>
       <a class="xb-mk xb-pb" href="#tour-5" style="left:48.2%;top:22.0%" aria-label="5: gate resistors (r1 to r6)">5<span class="xb-pop"><b>Gate resistors (R1 to R6)</b> — Series resistors and pull-downs.</span></a>
       <a class="xb-mk xb-pb" href="#tour-6" style="left:30.5%;top:42.1%" aria-label="6: led resistors (r10 to r21)">6<span class="xb-pop"><b>LED resistors (R10 to R21)</b> — 180&nbsp;&Omega; for red, 120&nbsp;&Omega; for green and blue.</span></a>

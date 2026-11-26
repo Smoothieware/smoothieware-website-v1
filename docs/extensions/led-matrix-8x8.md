@@ -87,7 +87,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
       <a class="xb-mk" href="#tour-5" style="left:33.3%;top:76.8%" aria-label="5: level buffer (u2)">5<span class="xb-pop"><b>Level buffer (U2)</b> — Turns 3.3&nbsp;V signals into 5&nbsp;V.</span></a>
       <a class="xb-mk" href="#tour-6" style="left:75.0%;top:86.6%" aria-label="6: brightness resistor (r1)">6<span class="xb-pop"><b>Brightness resistor (R1)</b> — Sets the peak LED current.</span></a>
       <a class="xb-mk" href="#tour-7" style="left:25.0%;top:87.8%" aria-label="7: load pull-up (r2)">7<span class="xb-pop"><b>Load pull-up (R2)</b> — Keeps chip select idle while the controller starts.</span></a>
-      <a class="xb-mk" href="#tour-8" style="left:62.5%;top:67.9%" aria-label="8: supply capacitors (c1 to c3)">8<span class="xb-pop"><b>Supply capacitors (C1 to C3)</b> — On 5&nbsp;V.</span></a>
+      <a class="xb-mk" href="#tour-8" style="left:75.0%;top:68.3%" aria-label="8: supply capacitors (c1 to c3)">8<span class="xb-pop"><b>Supply capacitors (C1 to C3)</b> — On 5&nbsp;V.</span></a>
       <a class="xb-mk xb-pl" href="#tour-9" style="left:19.4%;top:70.7%" aria-label="9: chain links">9<span class="xb-pop"><b>Chain links</b> — Load open; data and clock closed.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-10" style="left:8.3%;top:7.3%" aria-label="10: mounting hole">10<span class="xb-pop"><b>Mounting hole</b> — One of four M3 holes.</span></a>
     </div>
