@@ -8,6 +8,7 @@ History: see CHANGELOG.archive.md.
 
 ### Fixed
 
+- Extension board drawings now show the solder pads of underside-mounted pin headers, plated test points and prototyping holes.
 - Extension board drawings on the board directory and board pages now show their mounting and cable-tie holes.
 
 ### Changed
