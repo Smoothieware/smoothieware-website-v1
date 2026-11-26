@@ -8,6 +8,8 @@ History: see CHANGELOG.archive.md.
 
 ### Changed
 
+- Use only transparent black board renders in the extension directory and leave rows without suitable artwork blank.
+
 - Rewrote the extension board pages as finished product pages, without design-status or revision wording, and reduced the extension board directory to board (with a preview linking to its page) and purpose.
 
 - Organize the extension board directory in a single table grouped by function, with thumbnails beside the board guide links and descriptions.
