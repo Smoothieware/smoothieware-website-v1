@@ -6,6 +6,10 @@ History: see CHANGELOG.archive.md.
 
 ## [Unreleased]
 
+### Fixed
+
+- Extension board drawings on the board directory and board pages now show their mounting and cable-tie holes.
+
 ### Changed
 
 - Extension board pages: rebuilt 20 more pages (Qwiic, SD card, wireless, USB and serial Wi-Fi, CAN, the Arduino, BeagleBone, Edison, Papilio, Raspberry Pi, ESP32 and Teensy host adapters, the parallel-port jig, both D-sub adapters and the buzzer module) to the current page layout, and updated their directory descriptions.
