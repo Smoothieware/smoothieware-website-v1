@@ -215,7 +215,7 @@ The board is copper and holes only. Seven connector pins and both supplies are w
 
 ## Three example projects {#projects}
 
-Each project uses its own board. The drawings are made from the same hole list as the tables, and that list was checked by script for open and shorted connections. The circuits were designed on paper from datasheet figures, and the numbers given are calculated: they have not been built or measured. Solder with the ribbon cable unplugged, check every connection with a meter, and check the output voltage before you plug in: no signal pin may see more than 3.3 V.
+Each project uses its own board. The drawings are made from the same hole list as the tables, and that list was checked by script for open and shorted connections. The circuits were designed from datasheet figures, and the numbers given are calculated, not measured. Solder with the ribbon cable unplugged, check every connection with a meter, and check the output voltage before you plug in: no signal pin may see more than 3.3 V.
 
 Hole names follow the board printing: `H7` is row H, column 7. A rail hole such as "+5 V rail 19" is the nineteenth hole of that rail. Black wires are ground.
 
@@ -343,8 +343,8 @@ The chip covers the holes in rows C and D, so the pins in row E are wired from u
 </table></div>
 {:/nomarkdown}
 
-- **The solenoid has its own power supply**, matched to the coil (for example 12 V for a 12 V coil), at most 24 V DC. Never feed the coil from the board&rsquo;s rails or the ribbon cable. The only link between the two supplies is ground.
-- Keep the coil current at 0.5 A or less. The current this board&rsquo;s copper can carry has not been established; solder the five coil-side wires directly and keep them short.
+- **The solenoid has its own power supply**, matched to the coil (for example 12 V for a 12 V coil). Never feed the coil from the board&rsquo;s rails or the ribbon cable. The only link between the two supplies is ground.
+- As a starting point, choose a coil of 24 V DC or less that draws 0.5 A or less. This is a suggestion, not a rating: the current and voltage limits of this board&rsquo;s copper have not been established. Solder the five coil-side wires directly and keep them short.
 - Check the coil&rsquo;s permitted duty cycle. Tapping holds it on about half the time, which can overheat a solenoid rated for short pulses.
 - Fit D1 with its band towards the supply positive wire. Reversed, it short-circuits the coil supply.
 - To change the speed, change R2: roughly 1.44 / ((R1 + 2 × R2) × C1) taps per second.
