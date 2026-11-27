@@ -8,6 +8,7 @@ History: see CHANGELOG.archive.md.
 
 ### Fixed
 
+- Gate boards page: added the bench-test wiring diagram to Get started.
 - Extension board pages: more numbered board-tour points on six older boards, and mounting-dimension drawings on five older boards.
 - Extension board pages: the board drawings now show lights in their real colours, solder links, test pads and the holes of parts soldered underneath; page text that called these "not drawn" is corrected.
 
