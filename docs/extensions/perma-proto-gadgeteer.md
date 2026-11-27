@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Gadgeteer perma-proto"
-description: "A solderable breadboard-style prototype board on a Smoothieboard Gadgeteer port, with three worked projects."
+description: "A solderable breadboard-style prototype board on a Smoothieboard Gadgeteer port, with four worked projects."
 permalink: /extensions/perma-proto-gadgeteer
 ---
 
@@ -205,13 +205,14 @@ Start with the simplest circuit, one button between a signal and ground, to prov
     <tr><td>A touch switch</td><td>Switch</td><td><a href="#project-touch">Setup</a></td></tr>
     <tr><td>A solenoid that taps while on</td><td>Switch</td><td><a href="#project-tapper">Setup</a></td></tr>
     <tr><td>A hand-turned jog wheel</td><td>MPG</td><td><a href="#project-wheel">Setup</a></td></tr>
+    <tr><td>Delayed STEP and DIR for an external driver</td><td>Motion (actuator)</td><td><a href="#delay-setup">Setup</a></td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ### Setup {#config-main}
 
-The setting for the button of Get started. The three projects have their own: [touch switch](#project-touch), [tapper](#project-tapper) and [handwheel](#project-wheel). They share some pins, and a pin can be claimed by one setting only.
+The setting for the button of Get started. The four projects have their own: [touch switch](#project-touch), [tapper](#project-tapper), [handwheel](#project-wheel) and [STEP and DIR delay](#delay-setup). They share some pins, and a pin can be claimed by one setting only.
 
 ```ini
 [button box]
@@ -262,7 +263,7 @@ J2 and its wiring holes J3 sit left of the prototype area, so they take no strip
 {:/nomarkdown}
 
 
-## Three example projects {#projects}
+## Four example projects {#projects}
 
 Each project uses its own board. The drawings are made from the same hole list as the tables, and that list was checked by script for open and shorted connections. The circuits were designed from datasheet figures, and the numbers given are calculated, not measured. Solder with the ribbon cable unplugged, check every connection with a meter, and check the output voltage before you plug in: no signal pin may see more than 3.3 V.
 
@@ -501,6 +502,164 @@ The [MPG module](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095
 **Test** with motor power disconnected from the machine&rsquo;s drivers or the axis free to move: check that A and B each switch between about 0 V and 3.3 V as you turn, then turn one revolution and compare the reported X position.
 
 
+### Project 4: delay the STEP and DIR signals {#project-delay}
+
+This circuit takes a STEP and a DIR signal from two Gadgeteer pins and passes them to an external stepper driver a fixed time later: about 1, 10 or 20 µs, set by the capacitors you fit. A signal turns on later and turns off later. A DIP switch chooses whether STEP, DIR or both are delayed. Use it when one signal has to arrive after the other, for example to give a driver more time between a direction change and the next step, or to line up one motor with another that has a slower signal path.
+
+**What it looks like in time.** The graph shows the 10 µs setting. The dashed lines mark when the controller changes a pin; the white bars are the delay.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="STEP and DIR timing before and after the circuit">
+  <svg viewBox="0 0 1000 546" role="img" aria-labelledby="xb-delay-timing"><title id="xb-delay-timing">Timing of STEP and DIR over 120 microseconds: at the controller pins, and at the output with both signals delayed by 10 microseconds, only STEP delayed, and only DIR delayed.</title><path d="M355.0 48V506" stroke="#4a515c" stroke-width="1" stroke-dasharray="3 5"/><path d="M505.0 48V506" stroke="#4a515c" stroke-width="1" stroke-dasharray="3 5"/><path d="M655.0 48V506" stroke="#4a515c" stroke-width="1" stroke-dasharray="3 5"/><path d="M830.0 48V506" stroke="#4a515c" stroke-width="1" stroke-dasharray="3 5"/><path d="M280.0 48V506" stroke="#4a515c" stroke-width="1" stroke-dasharray="3 5"/><path d="M742.5 48V506" stroke="#4a515c" stroke-width="1" stroke-dasharray="3 5"/><text x="20" y="36" font-size="15" font-weight="700" fill="#ffffff" text-anchor="start">At the controller pins (input)</text><text x="216" y="72" font-size="14" font-weight="700" fill="#5fb3ff" text-anchor="end">STEP in (PB1)</text><path d="M230 78 H355.0 V52 H373.8 V78 H505.0 V52 H523.8 V78 H655.0 V52 H673.8 V78 H830.0 V52 H848.8 V78 H980" fill="none" stroke="#5fb3ff" stroke-width="2.5"/><text x="216" y="118" font-size="14" font-weight="700" fill="#f2c418" text-anchor="end">DIR in (PJ4)</text><path d="M230 124 H280.0 V98 H742.5 V124 H980" fill="none" stroke="#f2c418" stroke-width="2.5"/><text x="20" y="158" font-size="15" font-weight="700" fill="#ffffff" text-anchor="start">Output: both delayed (switches 2 and 4 on)</text><text x="216" y="194" font-size="14" font-weight="700" fill="#5fb3ff" text-anchor="end">STEP out</text><path d="M230 200 H417.5 V174 H437.5 V200 H567.5 V174 H587.5 V200 H717.5 V174 H737.5 V200 H892.5 V174 H912.5 V200 H980" fill="none" stroke="#5fb3ff" stroke-width="2.5"/><text x="216" y="240" font-size="14" font-weight="700" fill="#f2c418" text-anchor="end">DIR out</text><path d="M230 246 H342.5 V220 H805.0 V246 H980" fill="none" stroke="#f2c418" stroke-width="2.5"/><path d="M505.0 166H567.5M505.0 161v10M567.5 161v10" stroke="#ffffff" stroke-width="1.5" fill="none"/><text x="499" y="171" font-size="13" font-weight="400" fill="#ffffff" text-anchor="end">10 µs</text><path d="M742.5 212H805.0M742.5 207v10M805.0 207v10" stroke="#ffffff" stroke-width="1.5" fill="none"/><text x="736" y="217" font-size="13" font-weight="400" fill="#ffffff" text-anchor="end">10 µs</text><text x="20" y="280" font-size="15" font-weight="700" fill="#ffffff" text-anchor="start">Output: only STEP delayed (switches 2 and 3 on)</text><text x="216" y="316" font-size="14" font-weight="700" fill="#5fb3ff" text-anchor="end">STEP out</text><path d="M230 322 H417.5 V296 H437.5 V322 H567.5 V296 H587.5 V322 H717.5 V296 H737.5 V322 H892.5 V296 H912.5 V322 H980" fill="none" stroke="#5fb3ff" stroke-width="2.5"/><text x="216" y="362" font-size="14" font-weight="700" fill="#f2c418" text-anchor="end">DIR out</text><path d="M230 368 H280.0 V342 H742.5 V368 H980" fill="none" stroke="#f2c418" stroke-width="2.5"/><path d="M505.0 288H567.5M505.0 283v10M567.5 283v10" stroke="#ffffff" stroke-width="1.5" fill="none"/><text x="499" y="293" font-size="13" font-weight="400" fill="#ffffff" text-anchor="end">10 µs</text><text x="20" y="402" font-size="15" font-weight="700" fill="#ffffff" text-anchor="start">Output: only DIR delayed (switches 1 and 4 on)</text><text x="216" y="438" font-size="14" font-weight="700" fill="#5fb3ff" text-anchor="end">STEP out</text><path d="M230 444 H355.0 V418 H373.8 V444 H505.0 V418 H523.8 V444 H655.0 V418 H673.8 V444 H830.0 V418 H848.8 V444 H980" fill="none" stroke="#5fb3ff" stroke-width="2.5"/><text x="216" y="484" font-size="14" font-weight="700" fill="#f2c418" text-anchor="end">DIR out</text><path d="M230 490 H342.5 V464 H805.0 V490 H980" fill="none" stroke="#f2c418" stroke-width="2.5"/><path d="M742.5 456H805.0M742.5 451v10M805.0 451v10" stroke="#ffffff" stroke-width="1.5" fill="none"/><text x="736" y="461" font-size="13" font-weight="400" fill="#ffffff" text-anchor="end">10 µs</text><path d="M230.0 510v7" stroke="#a9b4c2"/><path d="M292.5 510v7" stroke="#a9b4c2"/><path d="M355.0 510v7" stroke="#a9b4c2"/><path d="M417.5 510v7" stroke="#a9b4c2"/><path d="M480.0 510v7" stroke="#a9b4c2"/><path d="M542.5 510v7" stroke="#a9b4c2"/><path d="M605.0 510v7" stroke="#a9b4c2"/><path d="M667.5 510v7" stroke="#a9b4c2"/><path d="M730.0 510v7" stroke="#a9b4c2"/><path d="M792.5 510v7" stroke="#a9b4c2"/><path d="M855.0 510v7" stroke="#a9b4c2"/><path d="M917.5 510v7" stroke="#a9b4c2"/><path d="M980.0 510v7" stroke="#a9b4c2"/><path d="M230 510H980" stroke="#a9b4c2"/><text x="230" y="533" font-size="13" font-weight="400" fill="#a9b4c2" text-anchor="middle">0</text><text x="355" y="533" font-size="13" font-weight="400" fill="#a9b4c2" text-anchor="middle">20</text><text x="480" y="533" font-size="13" font-weight="400" fill="#a9b4c2" text-anchor="middle">40</text><text x="605" y="533" font-size="13" font-weight="400" fill="#a9b4c2" text-anchor="middle">60</text><text x="730" y="533" font-size="13" font-weight="400" fill="#a9b4c2" text-anchor="middle">80</text><text x="855" y="533" font-size="13" font-weight="400" fill="#a9b4c2" text-anchor="middle">100</text><text x="980" y="533" font-size="13" font-weight="400" fill="#a9b4c2" text-anchor="middle">120</text><text x="216" y="533" font-size="13" font-weight="400" fill="#a9b4c2" text-anchor="end">time in µs</text></svg>
+  </div>
+  <figcaption>Calculated, typical, not measured. The controller&rsquo;s STEP pulse is drawn 3 µs wide; a delayed STEP pulse leaves with the width set by R2 and C2, about 3.2 µs, so it ends one delay later plus any difference between the two widths. The few tens of nanoseconds the chips add are not drawn.</figcaption>
+</figure>
+{:/nomarkdown}
+
+#### How it works {#delay-how}
+
+- **STEP** pulses are only a few microseconds long, shorter than most of these delays. A resistor and capacitor alone would swallow them, so the <a href="/images/extensions/perma-proto-gadgeteer/datasheets/cd74hc123.pdf">CD74HC123</a> does it with two one-shot timers. The first starts when STEP rises and runs for the delay (R1 with C1). When it ends, it starts the second, which sends out a new pulse about 3.2 µs long (R2 with C2).
+- **DIR** stays at one level for much longer than the delay, so a resistor slowly charging a capacitor is enough. The <a href="/images/extensions/perma-proto-gadgeteer/datasheets/sn74hc14.pdf">SN74HC14</a> inverter switches only when that voltage crosses its threshold. Two such stages in a row (R3 with C3, R4 with C4) invert the signal twice, and each edge passes one charging and one discharging stage, so turning on and turning off are delayed by the same calculated time.
+- **SW1** connects each screw of CN1 either to the controller pin or to the delayed signal.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want delayed</th><th>Switch 1</th><th>Switch 2</th><th>Switch 3</th><th>Switch 4</th></tr></thead>
+  <tbody>
+    <tr><td>STEP and DIR</td><td>off</td><td><b>ON</b></td><td>off</td><td><b>ON</b></td></tr>
+    <tr><td>STEP only</td><td>off</td><td><b>ON</b></td><td><b>ON</b></td><td>off</td></tr>
+    <tr><td>DIR only</td><td><b>ON</b></td><td>off</td><td>off</td><td><b>ON</b></td></tr>
+    <tr><td>Neither (straight through)</td><td><b>ON</b></td><td>off</td><td><b>ON</b></td><td>off</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Set switches with the controller off. In each pair (1 and 2, 3 and 4) turn exactly one on: with both off that output is not connected, and with both on the direct signal wins while R5 or R6 limits the current. The drawings show 2 and 4 on.
+
+#### Which capacitors {#delay-capacitors}
+
+Version A uses one fixed capacitor per position. Version B adds a screwdriver-adjustable (trimmer) capacitor beside a smaller fixed one, and uses different values for R1, R3 and R4. Use C0G (NP0) ceramic capacitors.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Delay you want</th><th>A: C1 (STEP)</th><th>A: C3 and C4 (DIR)</th><th>A: calculated STEP / DIR</th><th>B: C1 beside VC1</th><th>B: C3 and C4 beside VC2 and VC3</th><th>B: trimmer range STEP / DIR</th></tr></thead>
+  <tbody>
+    <tr><td>1 µs</td><td>220 pF</td><td>47 pF</td><td>1.0 / 1.0 µs</td><td>none</td><td>none</td><td>0.6 to 2.6 µs / 0.5 to 2.3 µs</td></tr>
+    <tr><td>10 µs</td><td>2.2 nF</td><td>510 pF</td><td>10.3 / 9.9 µs</td><td>180 pF</td><td>200 pF</td><td>9.0 to 11.0 µs / 9.0 to 10.8 µs</td></tr>
+    <tr><td>20 µs</td><td>4.3 nF</td><td>1 nF</td><td>20.2 / 19.3 µs</td><td>390 pF</td><td>430 pF</td><td>18.9 to 20.9 µs / 18.7 to 20.5 µs</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+All delays are calculated from typical datasheet figures at 3.3 V, with 5 pF assumed for the board and chip input where it matters; none has been measured. Chips differ: the DIR delay of a particular <a href="/images/extensions/perma-proto-gadgeteer/datasheets/sn74hc14.pdf">SN74HC14</a> can be roughly half to one and a half times the figure shown, because its switching thresholds vary. The STEP delay varies less, but the formula used here underestimates it for small capacitors, most at 1 µs. If the delay matters, build version B and set it with an oscilloscope; if the trimmer cannot reach it, change the fixed capacitor beside it by one step.
+
+#### Version A: fixed capacitors {#delay-fixed}
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <a href="/images/extensions/perma-proto-gadgeteer/projects/delay-fixed.webp"><img src="/images/extensions/perma-proto-gadgeteer/projects/delay-fixed.webp" alt="Perma-proto board with a 74HC123, a 74HC14, a four-position DIP switch, fixed capacitors, resistors and a three-pin screw terminal wired to a stepper driver" style="display:block;width:100%;height:auto;margin:0 auto"></a>
+  <figcaption>Version A. Green brings STEP from GPIO 1 (pin PB1); yellow brings DIR from GPIO 2 (pin PJ4). Select the drawing to open it full size.</figcaption>
+</figure>
+{:/nomarkdown}
+
+#### Version B: screwdriver trimmers {#delay-trim}
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <a href="/images/extensions/perma-proto-gadgeteer/projects/delay-trim.webp"><img src="/images/extensions/perma-proto-gadgeteer/projects/delay-trim.webp" alt="The same delay circuit with three screwdriver trimmer capacitors VC1, VC2 and VC3 added" style="display:block;width:100%;height:auto;margin:0 auto"></a>
+  <figcaption>Version B adds VC1 (STEP), VC2 and VC3 (DIR) and one wire from A20 to A23. Select the drawing to open it full size.</figcaption>
+</figure>
+{:/nomarkdown}
+
+#### Parts and wires {#delay-parts}
+
+Both chips straddle the middle gap with the notch towards the connectors. No track needs cutting. The chips run from the +3.3 V rail; the +5 V rail is not used.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Part</th><th>A: fixed capacitors</th><th>B: trimmers</th><th>Holes</th><th>Job</th></tr></thead>
+  <tbody>
+    <tr><td>U1</td><td><a href="/images/extensions/perma-proto-gadgeteer/datasheets/cd74hc123.pdf">CD74HC123</a> DIP-16 dual one-shot timer</td><td>same</td><td>pins 16 to 9 in F21–F28; pins 1 to 8 in G21–G28</td><td>delays STEP and rebuilds the pulse</td></tr>
+    <tr><td>U2</td><td><a href="/images/extensions/perma-proto-gadgeteer/datasheets/sn74hc14.pdf">SN74HC14</a> DIP-14 Schmitt-trigger inverters</td><td>same</td><td>pins 14 to 8 in F1–F7; pins 1 to 7 in G1–G7</td><td>delays DIR</td></tr>
+    <tr><td>SW1</td><td>4-position DIP switch</td><td>same</td><td>positions 1 to 4 across the gap: F9/G9, F10/G10, F11/G11, F12/G12, ON towards the top edge</td><td>picks delayed or direct for each signal</td></tr>
+    <tr><td>CN1</td><td>3-pin screw terminal, 5.08 mm pitch</td><td>same</td><td>pins in B9 (STEP), B11 (DIR), B13 (GND), wire entry towards the top edge</td><td>lead to the stepper driver</td></tr>
+    <tr><td>R1</td><td>10 kΩ</td><td>100 kΩ</td><td>D22 to D26</td><td>sets the STEP delay with C1</td></tr>
+    <tr><td>C1</td><td>see the table above</td><td>see the table above (nothing for 1 µs)</td><td>B22 to B23</td><td>sets the STEP delay</td></tr>
+    <tr><td>VC1</td><td>not fitted</td><td>7–50 pF trimmer</td><td>C20 to C22</td><td>fine adjustment of STEP</td></tr>
+    <tr><td>R2</td><td>10 kΩ</td><td>10 kΩ</td><td>L27 to +3.3 V rail 27</td><td>sets the output pulse width with C2</td></tr>
+    <tr><td>C2</td><td>680 pF</td><td>680 pF</td><td>K26 to K27</td><td>output STEP pulse of about 3.2 µs</td></tr>
+    <tr><td>R3</td><td>10 kΩ</td><td>22 kΩ</td><td>D2 to D8</td><td>first DIR delay stage</td></tr>
+    <tr><td>R4</td><td>10 kΩ</td><td>22 kΩ</td><td>L5 to L8</td><td>second DIR delay stage</td></tr>
+    <tr><td>C3</td><td>see the table above</td><td>see the table above (nothing for 1 µs)</td><td>E2 to E4</td><td>first DIR delay stage</td></tr>
+    <tr><td>C4</td><td>same value as C3</td><td>same value as C3</td><td>J5 to J7</td><td>second DIR delay stage</td></tr>
+    <tr><td>VC2</td><td>not fitted</td><td>7–50 pF trimmer</td><td>B2 to B4</td><td>fine adjustment of the first DIR stage</td></tr>
+    <tr><td>VC3</td><td>not fitted</td><td>7–50 pF trimmer</td><td>H5 to H7</td><td>fine adjustment of the second DIR stage</td></tr>
+    <tr><td>R5</td><td>330 Ω</td><td>330 Ω</td><td>I25 to I29</td><td>limits current if switches 1 and 2 are both on</td></tr>
+    <tr><td>R6</td><td>330 Ω</td><td>330 Ω</td><td>I6 to I12</td><td>limits current if switches 3 and 4 are both on</td></tr>
+    <tr><td>R7</td><td>100 kΩ</td><td>100 kΩ</td><td>K22 to lower ground rail 22</td><td>holds STEP low while the pin is not driven</td></tr>
+    <tr><td>R8</td><td>100 kΩ</td><td>100 kΩ</td><td>K11 to lower ground rail 11</td><td>holds DIR low while the pin is not driven</td></tr>
+    <tr><td>C5, C6</td><td>100 nF ceramic</td><td>100 nF ceramic</td><td>C5: B21 to upper ground rail 21; C6: B1 to upper ground rail 1</td><td>supply decoupling, one per chip</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Wire</th><th>From</th><th>To</th></tr></thead>
+  <tbody>
+    <tr><td>Top: red</td><td>E21</td><td>E26</td></tr>
+    <tr><td>Top: red</td><td>+3.3 V rail 29</td><td>B26</td></tr>
+    <tr><td>Top: red</td><td>K23</td><td>+3.3 V rail 23</td></tr>
+    <tr><td>Top: red</td><td>+3.3 V rail 1</td><td>D1</td></tr>
+    <tr><td>Top: black</td><td>L21</td><td>lower ground rail 21</td></tr>
+    <tr><td>Top: black</td><td>L28</td><td>lower ground rail 28</td></tr>
+    <tr><td>Top: black</td><td>A28</td><td>upper ground rail 28</td></tr>
+    <tr><td>Top: black</td><td>A4</td><td>upper ground rail 4</td></tr>
+    <tr><td>Top: black</td><td>A6</td><td>upper ground rail 6</td></tr>
+    <tr><td>Top: black</td><td>L1</td><td>lower ground rail 1</td></tr>
+    <tr><td>Top: black</td><td>L3</td><td>lower ground rail 3</td></tr>
+    <tr><td>Top: black</td><td>K7</td><td>lower ground rail 7</td></tr>
+    <tr><td>Top: black</td><td>E13</td><td>upper ground rail 14</td></tr>
+    <tr><td>Top: violet</td><td>J24</td><td>E27</td></tr>
+    <tr><td>Top: orange</td><td>E3</td><td>J8</td></tr>
+    <tr><td>Top: yellow</td><td>D15</td><td>E8</td></tr>
+    <tr><td>Top: yellow</td><td>E15</td><td>H11</td></tr>
+    <tr><td>Top: green</td><td>H14</td><td>H9</td></tr>
+    <tr><td>Top: green</td><td>L14</td><td>J22</td></tr>
+    <tr><td>Top: blue</td><td>L29</td><td>J10</td></tr>
+    <tr><td>Top: white</td><td>E9</td><td>E10</td></tr>
+    <tr><td>Top: yellow</td><td>E11</td><td>E12</td></tr>
+    <tr><td>Version B only, top: blue</td><td>A20</td><td>A23</td></tr>
+    <tr><td>Off board: white</td><td>CN1, the screw over B9</td><td>driver STEP input</td></tr>
+    <tr><td>Off board: yellow</td><td>CN1, the screw over B11</td><td>driver DIR input</td></tr>
+    <tr><td>Off board: black</td><td>CN1, the screw over B13</td><td>driver logic ground</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+#### Limits {#delay-limits}
+
+- **Step rate.** A step that arrives before the STEP timer has finished restarts it, and steps are lost. Keep the step rate below about 150,000 per second at 1 µs, 70,000 at 10 µs and 35,000 at 20 µs (calculated, with margin). The step rate is `steps_per_mm` × speed in mm/s; for example 400 steps/mm at 30 mm/s is 12,000 per second.
+- **Outputs** are 3.3 V logic from a small chip, through 330 Ω when delayed. Connect them to driver inputs specified for 3.3 V logic. Do not assume they can drive an opto-isolated input: check its current and voltage, and add a buffer if needed.
+- **Power-up.** The timer can send one stray STEP pulse as power comes on. Home the axis after switching on.
+- **Polarity.** The STEP timer reacts to the rising edge, so do not invert the step pin with `!`. DIR may be inverted.
+
+#### Setup {#delay-setup}
+
+Give one motor the two Gadgeteer pins as its STEP and DIR pins. This example moves the Z motor (`gamma`) to an external driver, so the controller&rsquo;s own Z driver output no longer steps; change these lines in your existing `gamma` settings. It claims PB1 and PJ4, which the other projects on this page also use.
+
+```ini
+[actuator]
+gamma.driver = external
+gamma.step_pin = PB1
+gamma.dir_pin = PJ4
+```
+
+The controller&rsquo;s default STEP pulse (`step_pulse_us = 1` in the `[system]` section) works with this circuit and needs no change. These keys are read by the [motion setup](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/robot/Robot.cpp) in the firmware.
+
+**Test** before connecting the driver: with an oscilloscope, put one probe on the controller pin side (column 14, rows G–L, for STEP; column 15, rows A–E, for DIR) and one on the CN1 screw, then jog Z slowly. The output edge should follow the input edge by the delay you chose. In version B, turn VC1 for STEP, and VC2 and VC3 by equal amounts for DIR, with a plastic trimming tool, and read the delay with the tool removed.
+
 ## Troubleshooting {#troubleshooting}
 
 {::nomarkdown}
@@ -517,6 +676,9 @@ The [MPG module](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095
     <tr><td>Tapper silent</td><td>Measure chip pin 4 (near 3.3 V when on) and pin 8 (5 V); then check the coil supply, the chip&rsquo;s orientation and the wires.</td></tr>
     <tr><td>Handwheel does not move the axis</td><td>Check both outputs switch, the coil pairs, and that the start-up log shows the MPG loaded.</td></tr>
     <tr><td>Handwheel jitters back and forth</td><td>One channel is not switching: check its coil wires, feedback resistor and clamp diodes.</td></tr>
+    <tr><td>No delayed STEP pulses</td><td>Check switch 2 is on and switch 1 off, the violet wire J24 to E27, and 3.3 V on chip pins 3, 11 and 16 of U1.</td></tr>
+    <tr><td>Delayed axis loses steps</td><td>The step rate is too high for the delay: lower the speed or use a shorter delay.</td></tr>
+    <tr><td>DIR delay far from the table</td><td>Normal spread between chips: change C3 and C4 together, or build version B.</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -537,6 +699,8 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
     <tr><td><a href="/images/extensions/perma-proto-gadgeteer/projects/touch.webp">Touch switch drawing (WebP)</a></td><td>Populated board, full size</td></tr>
     <tr><td><a href="/images/extensions/perma-proto-gadgeteer/projects/tapper.webp">Tapper drawing (WebP)</a></td><td>Populated board, full size</td></tr>
     <tr><td><a href="/images/extensions/perma-proto-gadgeteer/projects/wheel.webp">Handwheel drawing (WebP)</a></td><td>Populated board, full size</td></tr>
+    <tr><td><a href="/images/extensions/perma-proto-gadgeteer/projects/delay-fixed.webp">Delay drawing, fixed capacitors (WebP)</a></td><td>Populated board, full size</td></tr>
+    <tr><td><a href="/images/extensions/perma-proto-gadgeteer/projects/delay-trim.webp">Delay drawing, trimmers (WebP)</a></td><td>Populated board, full size</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
@@ -624,6 +788,14 @@ The first page of each important chip&rsquo;s datasheet. Click a page to open th
 <figure class="xb-fig">
   <a href="/images/extensions/perma-proto-gadgeteer/datasheets/irlz44n.pdf"><img src="/images/extensions/perma-proto-gadgeteer/datasheets/irlz44n-page1.png" alt="First page of the IRLZ44N datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
   <figcaption><a href="/images/extensions/perma-proto-gadgeteer/datasheets/irlz44n.pdf">IRLZ44NPbF HEXFET Power MOSFET</a> — Infineon (International Rectifier), 10 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/perma-proto-gadgeteer/datasheets/cd74hc123.pdf"><img src="/images/extensions/perma-proto-gadgeteer/datasheets/cd74hc123-page1.png" alt="First page of the CD74HC123 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/perma-proto-gadgeteer/datasheets/cd74hc123.pdf">CD54/74HC123 Dual Retriggerable Monostable Multivibrators with Reset</a> — Texas Instruments, 24 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/perma-proto-gadgeteer/datasheets/sn74hc14.pdf"><img src="/images/extensions/perma-proto-gadgeteer/datasheets/sn74hc14-page1.png" alt="First page of the SN74HC14 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/perma-proto-gadgeteer/datasheets/sn74hc14.pdf">SNx4HC14 Hex Inverters with Schmitt-Trigger Inputs</a> — Texas Instruments, 38 pages.</figcaption>
 </figure>
 {:/nomarkdown}
 

@@ -24,6 +24,7 @@ History: see CHANGELOG.archive.md.
 
 ### Added
 
+- Gadgeteer perma-proto page: new example project that delays STEP and DIR signals by about 1, 10 or 20 µs, with a DIP switch to choose which signal, fixed-capacitor and trimmer-capacitor drawings, a capacitor table, a timing graph and two chip datasheets.
 - A page for the Endstop inputs (basic) board: pinout, wiring, configuration, limits, mounting, electrical and simulation data, with a comparison against the Endstop and probe inputs (advanced) board on both pages.
 - Perma-proto Gadgeteer board page rebuilt, with three example projects (touch plate switch, 555 solenoid tapper, stepper motor as handwheel), populated-board drawings and Smoothie V2 settings.
 - The 22 newest extension board pages: 3D rendering downloads removed, simulation values and chart labels made readable, indicator lights listed one column per light, and the chain figure label kept inside its box.
