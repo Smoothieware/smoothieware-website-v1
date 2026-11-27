@@ -541,13 +541,28 @@ Set switches with the controller off. In each pair (1 and 2, 3 and 4) turn exact
 
 Version A uses one fixed capacitor per position. Version B adds a screwdriver-adjustable (trimmer) capacitor beside a smaller fixed one, and uses different values for R1, R3 and R4. Use C0G (NP0) ceramic capacitors.
 
+**Version A, fixed capacitors**
+
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>Delay you want</th><th>A: C1 (STEP)</th><th>A: C3 and C4 (DIR)</th><th>A: calculated STEP / DIR</th><th>B: C1 beside VC1</th><th>B: C3 and C4 beside VC2 and VC3</th><th>B: trimmer range STEP / DIR</th></tr></thead>
+  <thead><tr><th>Delay you want</th><th>C1 (STEP)</th><th>C3 and C4 (DIR)</th><th>Calculated STEP / DIR</th></tr></thead>
   <tbody>
-    <tr><td>1 µs</td><td>220 pF</td><td>47 pF</td><td>1.0 / 1.0 µs</td><td>none</td><td>none</td><td>0.6 to 2.6 µs / 0.5 to 2.3 µs</td></tr>
-    <tr><td>10 µs</td><td>2.2 nF</td><td>510 pF</td><td>10.3 / 9.9 µs</td><td>180 pF</td><td>200 pF</td><td>9.0 to 11.0 µs / 9.0 to 10.8 µs</td></tr>
-    <tr><td>20 µs</td><td>4.3 nF</td><td>1 nF</td><td>20.2 / 19.3 µs</td><td>390 pF</td><td>430 pF</td><td>18.9 to 20.9 µs / 18.7 to 20.5 µs</td></tr>
+    <tr><td>1 µs</td><td>220 pF</td><td>47 pF</td><td>1.0 / 1.0 µs</td></tr>
+    <tr><td>10 µs</td><td>2.2 nF</td><td>510 pF</td><td>10.3 / 9.9 µs</td></tr>
+    <tr><td>20 µs</td><td>4.3 nF</td><td>1 nF</td><td>20.2 / 19.3 µs</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+**Version B, fixed capacitor beside each trimmer**
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Delay you want</th><th>C1, beside VC1</th><th>C3 and C4, beside VC2 and VC3</th><th>Trimmer range, STEP</th><th>Trimmer range, DIR</th></tr></thead>
+  <tbody>
+    <tr><td>1 µs</td><td>none</td><td>none</td><td>0.6 to 2.6 µs</td><td>0.5 to 2.3 µs</td></tr>
+    <tr><td>10 µs</td><td>180 pF</td><td>200 pF</td><td>9.0 to 11.0 µs</td><td>9.0 to 10.8 µs</td></tr>
+    <tr><td>20 µs</td><td>390 pF</td><td>430 pF</td><td>18.9 to 20.9 µs</td><td>18.7 to 20.5 µs</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
