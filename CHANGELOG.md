@@ -23,6 +23,7 @@ History: see CHANGELOG.archive.md.
 
 ### Fixed
 
+- Extension board pages: 34 older boards now show full component drawings (connectors, parts and silkscreen from their design files) instead of bare top views.
 - Extension board pages: older boards gained "Get started" wiring drawings and step cards, and wrong contact labels and wire colours in some wiring drawings were corrected.
 - Extension board pages that lacked them now show a wiring figure in "Get started" and a signal-path figure in "How it works".
 - Bouni analog and RS-485 spindle control pages and the raw pins breakout page: old-style wiring pictures replaced with current wiring, signal-path and chaining figures; a 3D rendering removed from the gate boards page.
