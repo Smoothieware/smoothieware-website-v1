@@ -86,7 +86,7 @@ permalink: /extensions/historical-extruder-toolhead-harness-with-motor
       <a class="xb-mk xb-pr" href="#tour-6" style="left:89.0%;top:81.9%" aria-label="6: Connector J9">6<span class="xb-pop"><b>Connector J9</b> — Connector J9.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-7" style="left:20.2%;top:29.6%" aria-label="7: Connector J10">7<span class="xb-pop"><b>Connector J10</b> — Connector J10.</span></a>
       <a class="xb-mk xb-pb" href="#tour-8" style="left:45.0%;top:22.0%" aria-label="8: Hotend connector J3">8<span class="xb-pop"><b>Hotend connector J3</b> — XT30 connector; contacts <code>H-</code> and <code>VBB</code>.</span></a>
-      <a class="xb-mk" href="#tour-9" style="left:38.0%;top:45.0%" aria-label="9: Main harness J1">9<span class="xb-pop"><b>Main harness J1</b> — Solder points of the incoming harness: <code>5V</code>, <code>GND</code>, <code>S</code>, <code>P</code>, <code>T+</code>, <code>T-</code>, <code>H-</code>, <code>VBB</code>, <code>F1</code>, <code>F2</code>.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-9" style="left:38.0%;top:45.0%" aria-label="9: Main harness J1">9<span class="xb-pop"><b>Main harness J1</b> — Solder points of the incoming harness: <code>5V</code>, <code>GND</code>, <code>S</code>, <code>P</code>, <code>T+</code>, <code>T-</code>, <code>H-</code>, <code>VBB</code>, <code>F1</code>, <code>F2</code>.</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-10" style="left:80.0%;top:34.0%" aria-label="10: Motor harness J2">10<span class="xb-pop"><b>Motor harness J2</b> — Motor contacts marked <code>A+</code>, <code>A-</code>, <code>B-</code>, <code>B+</code>.</span></a>
     </div>
   </div>
