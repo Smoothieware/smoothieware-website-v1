@@ -65,7 +65,7 @@ permalink: /extensions/spi-pt100-amplifier-board
     <tr><td>Sensor</td><td>Four-way screw terminal J3 (F+, RTD+, RTD&minus;, F&minus;). Wiring mode is set by solder links JP1, JP2 and JP10 and by the converter configuration.</td></tr>
     <tr><td>Sockets</td><td>Two 10-contact Gadgeteer S sockets: J1 IN and J2 CHAIN. Chaining does not allocate an independent chip select.</td></tr>
     <tr><td>Light</td><td>One red light D1 on the data-ready line, with a cut link</td></tr>
-    <tr><td>Test points</td><td>Fifteen: grounds, 3.3&nbsp;V, 5&nbsp;V, the four SPI lines, data ready, bias, REFIN&minus;, RTD sense positive and negative (not drawn in the top view)</td></tr>
+    <tr><td>Test points</td><td>Fifteen: grounds, 3.3&nbsp;V, 5&nbsp;V, the four SPI lines, data ready, bias, REFIN&minus;, RTD sense positive and negative</td></tr>
     <tr><td>Size</td><td>48 &times; 40&nbsp;mm with four M3 mounting holes</td></tr>
     <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a></td></tr>
     <tr><td>Licence</td><td>Open hardware, CERN-OHL-S-2.0</td></tr>
@@ -90,7 +90,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
       <a class="xb-mk xb-pb" href="#tour-4" style="left:50.5%;top:47.6%" aria-label="4: converter">4<span class="xb-pop"><b>RTD converter (U1)</b> — a MAX31865 that excites the sensor, measures it and reports over SPI.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-5" style="left:20.5%;top:42.4%" aria-label="5: ready light">5<span class="xb-pop"><b>Data-ready light (D1)</b> — a red light on the converter&rsquo;s data-ready line. Cut JP12 to disable it.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-6" style="left:20.5%;top:33.5%" aria-label="6: ready link">6<span class="xb-pop"><b>Data-ready link (JP11)</b> — an open solder link that would route the data-ready line to host contact 3.</span></a>
-      <a class="xb-mk" href="#tour-7" style="left:58.2%;top:58.4%" aria-label="7: wiring-mode links">7<span class="xb-pop"><b>Wiring-mode links (JP10, JP1, JP2)</b> — JP10 (F2) selects the force-2 connection for the three-wire mode; JP1 and JP2 are the two-wire links. The links are not drawn.</span></a>
+      <a class="xb-mk" href="#tour-7" style="left:58.2%;top:58.4%" aria-label="7: wiring-mode links">7<span class="xb-pop"><b>Wiring-mode links (JP10, JP1, JP2)</b> — JP10 (F2) selects the force-2 connection for the three-wire mode; JP1 and JP2 are the two-wire links.</span></a>
       <a class="xb-mk xb-pb" href="#tour-8" style="left:50%;top:33.3%" aria-label="8: chain link row">8<span class="xb-pop"><b>Chain link row (JP3 to JP9)</b> — solder links, marked 3 to 9 on the silk, that pass the host lines through to the chain socket.</span></a>
     </div>
   </div>
@@ -101,7 +101,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
     <li id="tour-4"><span class="xb-n">4</span><div><b>RTD converter (U1)</b> — a MAX31865 that excites the sensor, measures it and reports over SPI.</div></li>
     <li id="tour-5"><span class="xb-n">5</span><div><b>Data-ready light (D1)</b> — a red light on the converter&rsquo;s data-ready line. Cut JP12 to disable it.</div></li>
     <li id="tour-6"><span class="xb-n">6</span><div><b>Data-ready link (JP11)</b> — an open solder link that would route the data-ready line to host contact 3.</div></li>
-    <li id="tour-7"><span class="xb-n">7</span><div><b>Wiring-mode links (JP10, JP1, JP2)</b> — JP10 (F2) selects the force-2 connection for the three-wire mode; JP1 and JP2 are the two-wire links. The links are not drawn.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Wiring-mode links (JP10, JP1, JP2)</b> — JP10 (F2) selects the force-2 connection for the three-wire mode; JP1 and JP2 are the two-wire links.</div></li>
     <li id="tour-8"><span class="xb-n">8</span><div><b>Chain link row (JP3 to JP9)</b> — solder links, marked 3 to 9 on the silk, that pass the host lines through to the chain socket.</div></li>
   </ol>
   <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>

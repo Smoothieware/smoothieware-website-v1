@@ -267,7 +267,7 @@ The board adds no pulse timing of its own: the controller generates the pulse tr
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-leds">
-  <thead><tr><th>Light</th><th><span class="xb-led xb-led-green"></span>OUT 1 to 7 HIGH (D11 to D17)</th><th><span class="xb-led xb-led-green"></span>CONN PWR (D2)</th></tr></thead>
+  <thead><tr><th>Light</th><th><span class="xb-led xb-led-amber"></span>OUT 1 to 7 HIGH (D11 to D17)</th><th><span class="xb-led xb-led-green"></span>CONN PWR (D2)</th></tr></thead>
   <tbody>
     <tr><td>Where</td><td>Below the fuse row, labelled OUT n HIGH</td><td>Lower right, near J9</td></tr>
     <tr><td>Lit means</td><td>That channel&rsquo;s output is high</td><td>Connector power is present</td></tr>

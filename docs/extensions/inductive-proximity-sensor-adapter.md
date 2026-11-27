@@ -285,7 +285,7 @@ The design does not say how the optocoupler behaves at the sensor&rsquo;s off-st
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table class="xb-leds">
-  <thead><tr><th>Light</th><th><span class="xb-led xb-led-amber"></span>OUT LOW (NPN) (DN)</th><th><span class="xb-led xb-led-amber"></span>OUT HIGH (PNP) (DP)</th><th><span class="xb-led xb-led-amber"></span>FIELD POWER (DPWR)</th></tr></thead>
+  <thead><tr><th>Light</th><th><span class="xb-led xb-led-amber"></span>OUT LOW (NPN) (DN)</th><th><span class="xb-led xb-led-amber"></span>OUT HIGH (PNP) (DP)</th><th><span class="xb-led xb-led-green"></span>FIELD POWER (DPWR)</th></tr></thead>
   <tbody>
     <tr><td>Where</td><td>Middle of the board, left</td><td>Middle of the board, right</td><td>Right side, near the field terminal</td></tr>
     <tr><td>Lit means</td><td>The NPN optocoupler is conducting</td><td>The PNP optocoupler is conducting</td><td>The protected sensor supply is present</td></tr>

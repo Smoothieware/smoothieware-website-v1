@@ -78,7 +78,7 @@ Every figure with its basis is in the [electrical specifications](#electrical) a
 
 ## Board tour {#tour}
 
-The numbers on the drawing match the list below it. The board is shown from the component side. The mounting holes, test points and solder links are not drawn in this view.
+The numbers on the drawing match the list below it. The board is shown from the component side. The test points are on the underside and are not drawn.
 
 {::nomarkdown}
 <figure class="xb-tour">
@@ -93,7 +93,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
       <a class="xb-mk" href="#tour-6" style="left:57.9%;top:60%" aria-label="6: resistors">6<span class="xb-pop"><b>Resistors (R1, R2)</b> — R1 (3.3&nbsp;k&Omega;) joins the host MOSI line to the sensor data line; R2 (10&nbsp;k&Omega;) pulls the chip-select line up to 3.3&nbsp;V.</span></a>
       <a class="xb-mk" href="#tour-7" style="left:58%;top:70.2%" aria-label="7: bulk capacitor">7<span class="xb-pop"><b>Bulk capacitor (C1)</b> — a 10&nbsp;&micro;F capacitor.</span></a>
       <a class="xb-mk" href="#tour-8" style="left:44.5%;top:79.8%" aria-label="8: capacitor row">8<span class="xb-pop"><b>Capacitors (C2 to C6)</b> — C3 (10&nbsp;&micro;F), C5 (4.7&nbsp;&micro;F) and 100&nbsp;nF capacitors C2, C4 and C6 for the supplies; the sensor&rsquo;s analogue supply is brought out to test point TP4.</span></a>
-      <a class="xb-mk xb-pb" href="#tour-9" style="left:43%;top:46.6%" aria-label="9: chain links">9<span class="xb-pop"><b>Chain links (JP3 to JP9)</b> — seven solder links between the input and the chain socket, in a row under the label CS OPEN. They are not drawn in the top view. JP3 and JP6 are open as delivered, JP4, JP5, JP7, JP8 and JP9 are bridged.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-9" style="left:43%;top:46.6%" aria-label="9: chain links">9<span class="xb-pop"><b>Chain links (JP3 to JP9)</b> — seven solder links between the input and the chain socket, in a row under the label CS OPEN. JP3 and JP6 are open as delivered, JP4, JP5, JP7, JP8 and JP9 are bridged.</span></a>
     </div>
   </div>
   <ol class="xb-tour-list">
@@ -105,7 +105,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
     <li id="tour-6"><span class="xb-n">6</span><div><b>Resistors (R1, R2)</b> — R1 (3.3&nbsp;k&Omega;) joins the host MOSI line to the sensor data line; R2 (10&nbsp;k&Omega;) pulls the chip-select line up to 3.3&nbsp;V.</div></li>
     <li id="tour-7"><span class="xb-n">7</span><div><b>Bulk capacitor (C1)</b> — a 10&nbsp;&micro;F capacitor.</div></li>
     <li id="tour-8"><span class="xb-n">8</span><div><b>Capacitors (C2 to C6)</b> — C3 (10&nbsp;&micro;F), C5 (4.7&nbsp;&micro;F) and 100&nbsp;nF capacitors C2, C4 and C6 for the supplies; the sensor&rsquo;s analogue supply is brought out to test point TP4.</div></li>
-    <li id="tour-9"><span class="xb-n">9</span><div><b>Chain links (JP3 to JP9)</b> — seven solder links between the input and the chain socket, in a row under the label CS OPEN. They are not drawn in the top view. JP3 and JP6 are open as delivered, JP4, JP5, JP7, JP8 and JP9 are bridged.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Chain links (JP3 to JP9)</b> — seven solder links between the input and the chain socket, in a row under the label CS OPEN. JP3 and JP6 are open as delivered, JP4, JP5, JP7, JP8 and JP9 are bridged.</div></li>
   </ol>
   <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
 </figure>

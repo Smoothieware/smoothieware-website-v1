@@ -93,7 +93,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
       <a class="xb-mk xb-pb" href="#tour-5" style="left:24.4%;top:47.2%" aria-label="5: excitation transistor">5<span class="xb-pop"><b>Excitation transistor (Q1)</b> — a BSS84 P-channel MOSFET that passes the excitation current to the sensor force line under control of the first amplifier half.</span></a>
       <a class="xb-mk" href="#tour-6" style="left:27.7%;top:75.1%" aria-label="6: diode">6<span class="xb-pop"><b>Diode (D1)</b> — a 1N4148W small-signal diode in the force path.</span></a>
       <a class="xb-mk" href="#tour-7" style="left:50%;top:63.8%" aria-label="7: clamp array">7<span class="xb-pop"><b>Clamp array (D2)</b> — a TPD4E1U06 protection array on the sensor-side lines.</span></a>
-      <a class="xb-mk" href="#tour-8" style="left:71%;top:67%" aria-label="8: two-wire links">8<span class="xb-pop"><b>Two-wire links (JP10, JP11)</b> — solder links marked 2W F+/S+ and 2W F&minus;/S&minus;. Open means four-wire operation. The links are not drawn.</span></a>
+      <a class="xb-mk" href="#tour-8" style="left:71%;top:67%" aria-label="8: two-wire links">8<span class="xb-pop"><b>Two-wire links (JP10, JP11)</b> — solder links marked 2W F+/S+ and 2W F&minus;/S&minus;. Open means four-wire operation.</span></a>
       <a class="xb-mk xb-pb" href="#tour-9" style="left:66.4%;top:49.7%" aria-label="9: resistor network">9<span class="xb-pop"><b>Precision resistor network (R1 to R7)</b> — 0.1&nbsp;% resistors that set the gain and offset of the sensing amplifier half.</span></a>
     </div>
   </div>
@@ -105,7 +105,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
     <li id="tour-5"><span class="xb-n">5</span><div><b>Excitation transistor (Q1)</b> — a BSS84 P-channel MOSFET that passes the excitation current to the sensor force line under control of the first amplifier half.</div></li>
     <li id="tour-6"><span class="xb-n">6</span><div><b>Diode (D1)</b> — a 1N4148W small-signal diode in the force path.</div></li>
     <li id="tour-7"><span class="xb-n">7</span><div><b>Clamp array (D2)</b> — a TPD4E1U06 protection array on the sensor-side lines.</div></li>
-    <li id="tour-8"><span class="xb-n">8</span><div><b>Two-wire links (JP10, JP11)</b> — solder links marked 2W F+/S+ and 2W F&minus;/S&minus;. Open means four-wire operation. The links are not drawn.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Two-wire links (JP10, JP11)</b> — solder links marked 2W F+/S+ and 2W F&minus;/S&minus;. Open means four-wire operation.</div></li>
     <li id="tour-9"><span class="xb-n">9</span><div><b>Precision resistor network (R1 to R7)</b> — 0.1&nbsp;% resistors that set the gain and offset of the sensing amplifier half.</div></li>
   </ol>
   <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>

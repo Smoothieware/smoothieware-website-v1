@@ -73,7 +73,7 @@ Every figure with its basis is in the [electrical specifications](#electrical) a
 
 ## Board tour {#tour}
 
-The numbers on the drawing match the list below it. The board is shown from the component side. The mounting holes, test points, solder links and the supply switch with its red light are not drawn.
+The numbers on the drawing match the list below it. The board is shown from the component side. The supply switch with its red light, five of the test points and one solder link are on the underside and are not drawn.
 
 {::nomarkdown}
 <figure class="xb-tour">

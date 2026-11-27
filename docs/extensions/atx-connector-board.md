@@ -79,7 +79,7 @@ Every figure with its limits and its basis is in the [electrical specifications]
 
 ## Board tour {#tour}
 
-The numbers on the drawing match the list below it. The board is shown from the component side. The solder links and the test points are not visible in the drawing; they are named in the pinout.
+The numbers on the drawing match the list below it. The board is shown from the component side. Most of the test points are on the underside and are not visible in the drawing; they are named in the pinout.
 
 {::nomarkdown}
 <figure class="xb-tour">

@@ -78,7 +78,7 @@ Every figure is in the [electrical specifications](#electrical) appendix; the ho
 
 ## Board tour {#tour}
 
-The numbers on each drawing match the list below it. Boards are shown from the component side. The test points and the solder links are not visible in the drawings; they are named in the pinout.
+The numbers on each drawing match the list below it. Boards are shown from the component side. Most of the test points are on the underside and are not visible in the drawings; they are named in the pinout.
 
 ### Emitter
 
