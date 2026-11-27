@@ -44,6 +44,7 @@ permalink: /extensions/historical-extruder-toolhead-harness-with-motor
   <a href="#how-it-works">How it works</a>
   <a href="#troubleshooting">Troubleshooting</a>
   <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting dimensions</a>
   <a href="#electrical">Electrical specifications</a>
 </nav>
 {:/nomarkdown}
@@ -84,6 +85,9 @@ permalink: /extensions/historical-extruder-toolhead-harness-with-motor
       <a class="xb-mk xb-pb xb-pl" href="#tour-5" style="left:7.0%;top:7.0%" aria-label="5: Connector J5">5<span class="xb-pop"><b>Connector J5</b> — Connector J5.</span></a>
       <a class="xb-mk xb-pr" href="#tour-6" style="left:89.0%;top:81.9%" aria-label="6: Connector J9">6<span class="xb-pop"><b>Connector J9</b> — Connector J9.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-7" style="left:20.2%;top:29.6%" aria-label="7: Connector J10">7<span class="xb-pop"><b>Connector J10</b> — Connector J10.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-8" style="left:45.0%;top:22.0%" aria-label="8: Hotend connector J3">8<span class="xb-pop"><b>Hotend connector J3</b> — XT30 connector; contacts <code>H-</code> and <code>VBB</code>.</span></a>
+      <a class="xb-mk" href="#tour-9" style="left:38.0%;top:45.0%" aria-label="9: Main harness J1">9<span class="xb-pop"><b>Main harness J1</b> — Solder points of the incoming harness: <code>5V</code>, <code>GND</code>, <code>S</code>, <code>P</code>, <code>T+</code>, <code>T-</code>, <code>H-</code>, <code>VBB</code>, <code>F1</code>, <code>F2</code>.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-10" style="left:80.0%;top:34.0%" aria-label="10: Motor harness J2">10<span class="xb-pop"><b>Motor harness J2</b> — Motor contacts marked <code>A+</code>, <code>A-</code>, <code>B-</code>, <code>B+</code>.</span></a>
     </div>
   </div>
   <ol class="xb-tour-list" start="1">
@@ -94,6 +98,9 @@ permalink: /extensions/historical-extruder-toolhead-harness-with-motor
     <li id="tour-5"><span class="xb-n">5</span><div><b>Connector J5</b> — Connector J5.</div></li>
     <li id="tour-6"><span class="xb-n">6</span><div><b>Connector J9</b> — Connector J9.</div></li>
     <li id="tour-7"><span class="xb-n">7</span><div><b>Connector J10</b> — Connector J10.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Hotend connector J3</b> — XT30 connector; contacts <code>H-</code> and <code>VBB</code>.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Main harness J1</b> — Solder points of the incoming harness: <code>5V</code>, <code>GND</code>, <code>S</code>, <code>P</code>, <code>T+</code>, <code>T-</code>, <code>H-</code>, <code>VBB</code>, <code>F1</code>, <code>F2</code>.</div></li>
+    <li id="tour-10"><span class="xb-n">10</span><div><b>Motor harness J2</b> — Motor contacts marked <code>A+</code>, <code>A-</code>, <code>B-</code>, <code>B+</code>.</div></li>
   </ol>
   <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
 </figure>
@@ -283,6 +290,32 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
     <tr><td><a href="https://github.com/Ccecil/ExtruderBoardMotor-V0.1/blob/d8bdb5473508d71ce422fd9ebc1819611b4c32f7/README.md">Original README.md</a></td><td>Design source</td></tr>
   </tbody>
 </table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+The board file has no mounting holes; its large unplated holes belong to the harness and motor wire connections.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-m-extruder-toolhead-harness-with-motor-mount-t">
+  <title id="xb-m-extruder-toolhead-harness-with-motor-mount-t">Mounting drawing of the board, component side: outline 50 by 50 millimetres without mounting holes.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="310.0" y="78.0" width="340.0" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M310.0 56H650.0"/><path d="M310.0 50V62"/><path d="M650.0 50V62"/><path d="M676.0 78.0V418.0"/><path d="M670.0 78.0h12"/><path d="M670.0 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">50</text>
+  <text x="688.0" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">50</text>
+  <circle cx="310.0" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="298.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M252.0 104.0h30" fill="none"/><path d="M286.0 104.0l-8 -4v8z"/><path d="M252.0 104.0v30" fill="none"/><path d="M252.0 138.0l-4 -8h8z"/></g>
+  <text x="290.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="248.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  
+  </svg>
+  </div>
+  <figcaption>Board outline 50 × 50&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
 {:/nomarkdown}
 
 ## Appendix: electrical specifications {#electrical}

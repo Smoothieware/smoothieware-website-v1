@@ -44,6 +44,7 @@ permalink: /extensions/historical-differential-spi-lvds-extender
   <a href="#how-it-works">How it works</a>
   <a href="#troubleshooting">Troubleshooting</a>
   <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting dimensions</a>
   <a href="#electrical">Electrical specifications</a>
 </nav>
 {:/nomarkdown}
@@ -283,6 +284,32 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
     <tr><td><a href="https://github.com/Ccecil/LVDS_SPI">Ccecil upstream project</a></td><td>Design source</td></tr>
   </tbody>
 </table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+The board file has no mounting holes; its unplated holes locate the two RJ45 connectors.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-m-differential-spi-lvds-extender-mount-t">
+  <title id="xb-m-differential-spi-lvds-extender-mount-t">Mounting drawing of the board, component side: outline 53 by 35 millimetres without mounting holes.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="222.6" y="78.0" width="514.9" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M222.6 56H737.4"/><path d="M222.6 50V62"/><path d="M737.4 50V62"/><path d="M763.4 78.0V418.0"/><path d="M757.4 78.0h12"/><path d="M757.4 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">53</text>
+  <text x="775.4" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">35</text>
+  <circle cx="222.6" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="210.6" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M164.6 104.0h30" fill="none"/><path d="M198.6 104.0l-8 -4v8z"/><path d="M164.6 104.0v30" fill="none"/><path d="M164.6 138.0l-4 -8h8z"/></g>
+  <text x="202.6" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="160.6" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  
+  </svg>
+  </div>
+  <figcaption>Board outline 53 × 35&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
 {:/nomarkdown}
 
 ## Appendix: electrical specifications {#electrical}

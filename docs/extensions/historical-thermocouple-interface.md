@@ -83,6 +83,8 @@ permalink: /extensions/historical-thermocouple-interface
       <a class="xb-mk xb-pb" href="#tour-5" style="left:59.4%;top:32.1%" aria-label="5: Diode D2">5<span class="xb-pop"><b>Diode D2</b> — Clock.</span></a>
       <a class="xb-mk" href="#tour-6" style="left:38.3%;top:62.6%" aria-label="6: Capacitor C1">6<span class="xb-pop"><b>Capacitor C1</b> — Capacitor C1, marked <code>10µF</code> in the board file. Connects to <code>+3V3</code>, <code>GND</code>.</span></a>
       <a class="xb-mk" href="#tour-7" style="left:34.9%;top:50.0%" aria-label="7: Capacitor C2">7<span class="xb-pop"><b>Capacitor C2</b> — Capacitor C2, marked <code>10nF</code> in the board file.</span></a>
+      <a class="xb-mk" href="#tour-8" style="left:48.2%;top:67.5%" aria-label="8: Resistor R1">8<span class="xb-pop"><b>Resistor R1</b> — 10 kΩ from <code>+3V3</code> to diode D1.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-9" style="left:21.0%;top:83.3%" aria-label="9: Mounting hole">9<span class="xb-pop"><b>Mounting hole</b> — M3; one in each corner.</span></a>
     </div>
   </div>
   <ol class="xb-tour-list" start="1">
@@ -93,6 +95,8 @@ permalink: /extensions/historical-thermocouple-interface
     <li id="tour-5"><span class="xb-n">5</span><div><b>Diode D2</b> — Clock.</div></li>
     <li id="tour-6"><span class="xb-n">6</span><div><b>Capacitor C1</b> — Capacitor C1, marked <code>10µF</code> in the board file. Connects to <code>+3V3</code>, <code>GND</code>.</div></li>
     <li id="tour-7"><span class="xb-n">7</span><div><b>Capacitor C2</b> — Capacitor C2, marked <code>10nF</code> in the board file.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Resistor R1</b> — 10 kΩ from <code>+3V3</code> to diode D1.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Mounting hole</b> — M3; one in each corner.</div></li>
   </ol>
   <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
 </figure>

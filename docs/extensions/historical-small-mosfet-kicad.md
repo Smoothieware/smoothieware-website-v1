@@ -83,6 +83,10 @@ permalink: /extensions/historical-small-mosfet-kicad
       <a class="xb-mk" href="#tour-4" style="left:50.0%;top:51.9%" aria-label="4: Transistor">4<span class="xb-pop"><b>Transistor</b> — IRLR024.</span></a>
       <a class="xb-mk xb-pb" href="#tour-5" style="left:62.0%;top:36.6%" aria-label="5: Indicator">5<span class="xb-pop"><b>Indicator</b> — Shows the output state.</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-6" style="left:84.3%;top:42.3%" aria-label="6: Flyback diode">6<span class="xb-pop"><b>Flyback diode</b> — Clamps inductive spikes.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-7" style="left:49.2%;top:37.3%" aria-label="7: Resistor R35">7<span class="xb-pop"><b>Resistor R35</b> — 10 Ω, between the logic input and the transistor gate.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-8" style="left:43.6%;top:37.3%" aria-label="8: Resistor R36">8<span class="xb-pop"><b>Resistor R36</b> — 100 kΩ, from the logic input to ground.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-9" style="left:55.6%;top:37.3%" aria-label="9: Resistor R37">9<span class="xb-pop"><b>Resistor R37</b> — 1.5 kΩ, in series with the indicator.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-10" style="left:18.2%;top:85.3%" aria-label="10: Mounting hole">10<span class="xb-pop"><b>Mounting hole</b> — 3.2 mm hole for an M3 screw; one in each corner.</span></a>
     </div>
   </div>
   <ol class="xb-tour-list" start="1">
@@ -92,6 +96,10 @@ permalink: /extensions/historical-small-mosfet-kicad
     <li id="tour-4"><span class="xb-n">4</span><div><b>Transistor</b> — IRLR024.</div></li>
     <li id="tour-5"><span class="xb-n">5</span><div><b>Indicator</b> — Shows the output state.</div></li>
     <li id="tour-6"><span class="xb-n">6</span><div><b>Flyback diode</b> — Clamps inductive spikes.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Resistor R35</b> — 10 Ω, between the logic input and the transistor gate.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Resistor R36</b> — 100 kΩ, from the logic input to ground.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Resistor R37</b> — 1.5 kΩ, in series with the indicator.</div></li>
+    <li id="tour-10"><span class="xb-n">10</span><div><b>Mounting hole</b> — 3.2 mm hole for an M3 screw; one in each corner.</div></li>
   </ol>
   <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
 </figure>

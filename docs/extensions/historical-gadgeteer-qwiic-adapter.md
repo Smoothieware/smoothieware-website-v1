@@ -76,11 +76,15 @@ permalink: /extensions/historical-gadgeteer-qwiic-adapter
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
     <div class="xb-tour-stage">
       <img src="/images/extensions/historical-gadgeteer-qwiic-adapter/historical-gadgeteer-qwiic-adapter-diagram.png" alt="Annotated top view of the Gadgeteer Qwiic hub board">
-      <a class="xb-mk xb-pb" href="#tour-1" style="left:22.2%;top:32.9%" aria-label="1: Header J5">1<span class="xb-pop"><b>Header J5</b> — From the host.</span></a>
-      <a class="xb-mk" href="#tour-2" style="left:22.2%;top:70.0%" aria-label="2: Header J6">2<span class="xb-pop"><b>Header J6</b> — Continues the header.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:22.2%;top:32.9%" aria-label="1: Header J5">1<span class="xb-pop"><b>Header J5</b> — From the host.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-2" style="left:22.2%;top:70.0%" aria-label="2: Header J6">2<span class="xb-pop"><b>Header J6</b> — Continues the header.</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-3" style="left:85.2%;top:16.9%" aria-label="3: Qwiic port 1">3<span class="xb-pop"><b>Qwiic port 1</b> — J2–J4 are identical.</span></a>
       <a class="xb-mk xb-pb" href="#tour-4" style="left:58.0%;top:30.0%" aria-label="4: Indicator">4<span class="xb-pop"><b>Indicator</b> — Onboard LED.</span></a>
       <a class="xb-mk xb-pb" href="#tour-5" style="left:46.9%;top:30.0%" aria-label="5: Resistor R1">5<span class="xb-pop"><b>Resistor R1</b> — Resistor R1, marked <code>1k</code> in the board file. Connects to <code>+3V3</code>.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-6" style="left:82.6%;top:39.2%" aria-label="6: Qwiic port J2">6<span class="xb-pop"><b>Qwiic port J2</b> — Contacts 1 to 4: <code>GND</code>, <code>+3V3</code>, <code>SDA</code>, <code>SCL</code>.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-7" style="left:82.6%;top:59.8%" aria-label="7: Qwiic port J3">7<span class="xb-pop"><b>Qwiic port J3</b> — Same four contacts as J2.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-8" style="left:82.6%;top:80.4%" aria-label="8: Qwiic port J4">8<span class="xb-pop"><b>Qwiic port J4</b> — Same four contacts as J2.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-9" style="left:51.9%;top:15.5%" aria-label="9: Mounting hole H1">9<span class="xb-pop"><b>Mounting hole H1</b> — 3.2 mm hole for an M3 screw.</span></a>
     </div>
   </div>
   <ol class="xb-tour-list" start="1">
@@ -89,6 +93,10 @@ permalink: /extensions/historical-gadgeteer-qwiic-adapter
     <li id="tour-3"><span class="xb-n">3</span><div><b>Qwiic port 1</b> — J2–J4 are identical.</div></li>
     <li id="tour-4"><span class="xb-n">4</span><div><b>Indicator</b> — Onboard LED.</div></li>
     <li id="tour-5"><span class="xb-n">5</span><div><b>Resistor R1</b> — Resistor R1, marked <code>1k</code> in the board file. Connects to <code>+3V3</code>.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Qwiic port J2</b> — Contacts 1 to 4: <code>GND</code>, <code>+3V3</code>, <code>SDA</code>, <code>SCL</code>.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Qwiic port J3</b> — Same four contacts as J2.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Qwiic port J4</b> — Same four contacts as J2.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Mounting hole H1</b> — 3.2 mm hole for an M3 screw.</div></li>
   </ol>
   <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
 </figure>

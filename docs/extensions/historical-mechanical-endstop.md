@@ -84,6 +84,7 @@ permalink: /extensions/historical-mechanical-endstop
       <a class="xb-mk xb-pr" href="#tour-5" style="left:91.2%;top:53.2%" aria-label="5: Resistor R1">5<span class="xb-pop"><b>Resistor R1</b> — Resistor R1, marked <code>1k</code> in the board file. Connects to <code>VCC</code>.</span></a>
       <a class="xb-mk" href="#tour-6" style="left:47.6%;top:56.2%" aria-label="6: Resistor R2">6<span class="xb-pop"><b>Resistor R2</b> — Resistor R2, marked <code>10k</code> in the board file. Connects to <code>VCC</code>, <code>~SIG</code>.</span></a>
       <a class="xb-mk" href="#tour-7" style="left:42.4%;top:56.2%" aria-label="7: Capacitor C1">7<span class="xb-pop"><b>Capacitor C1</b> — Capacitor C1, marked <code>100n</code> in the board file. Connects to <code>~SIG</code>, <code>GND</code>.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-8" style="left:88.1%;top:18.8%" aria-label="8: Second mounting hole">8<span class="xb-pop"><b>Second mounting hole</b> — M3.</span></a>
     </div>
   </div>
   <ol class="xb-tour-list" start="1">
@@ -94,6 +95,7 @@ permalink: /extensions/historical-mechanical-endstop
     <li id="tour-5"><span class="xb-n">5</span><div><b>Resistor R1</b> — Resistor R1, marked <code>1k</code> in the board file. Connects to <code>VCC</code>.</div></li>
     <li id="tour-6"><span class="xb-n">6</span><div><b>Resistor R2</b> — Resistor R2, marked <code>10k</code> in the board file. Connects to <code>VCC</code>, <code>~SIG</code>.</div></li>
     <li id="tour-7"><span class="xb-n">7</span><div><b>Capacitor C1</b> — Capacitor C1, marked <code>100n</code> in the board file. Connects to <code>~SIG</code>, <code>GND</code>.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Second mounting hole</b> — M3.</div></li>
   </ol>
   <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
 </figure>

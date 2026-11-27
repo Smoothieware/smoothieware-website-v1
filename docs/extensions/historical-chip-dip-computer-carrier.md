@@ -44,6 +44,7 @@ permalink: /extensions/historical-chip-dip-computer-carrier
   <a href="#how-it-works">How it works</a>
   <a href="#troubleshooting">Troubleshooting</a>
   <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting dimensions</a>
   <a href="#electrical">Electrical specifications</a>
 </nav>
 {:/nomarkdown}
@@ -238,6 +239,32 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
     <tr><td><a href="/images/extensions/historical-native-source-package-20261018.zip">Download the editable historical diagram and source package</a></td><td>Download</td></tr>
   </tbody>
 </table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+The board file has no separate mounting-hole parts. The computer module footprint includes one 3.08&nbsp;mm unplated hole centred 3.95, 3.82&nbsp;mm from the top-left corner.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-m-chip-dip-computer-carrier-mount-t">
+  <title id="xb-m-chip-dip-computer-carrier-mount-t">Mounting drawing of the board, component side: outline 40.89 by 60.2 millimetres without mounting holes.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="364.5" y="78.0" width="231.0" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M364.5 56H595.5"/><path d="M364.5 50V62"/><path d="M595.5 50V62"/><path d="M621.5 78.0V418.0"/><path d="M615.5 78.0h12"/><path d="M615.5 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">40.89</text>
+  <text x="633.5" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">60.2</text>
+  <circle cx="364.5" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="352.5" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M306.5 104.0h30" fill="none"/><path d="M340.5 104.0l-8 -4v8z"/><path d="M306.5 104.0v30" fill="none"/><path d="M306.5 138.0l-4 -8h8z"/></g>
+  <text x="344.5" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="302.5" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  
+  </svg>
+  </div>
+  <figcaption>Board outline 40.89 × 60.2&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
 {:/nomarkdown}
 
 ## Appendix: electrical specifications {#electrical}

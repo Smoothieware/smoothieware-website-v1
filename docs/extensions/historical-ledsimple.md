@@ -85,6 +85,7 @@ permalink: /extensions/historical-ledsimple
       <a class="xb-mk" href="#tour-5" style="left:41.9%;top:50.0%" aria-label="5: LED D3">5<span class="xb-pop"><b>LED D3</b> — LED D3, marked <code>P5</code> in the board file. Connects to <code>GND</code>.</span></a>
       <a class="xb-mk" href="#tour-6" style="left:58.1%;top:50.0%" aria-label="6: LED D5">6<span class="xb-pop"><b>LED D5</b> — LED D5, marked <code>P7</code> in the board file. Connects to <code>GND</code>.</span></a>
       <a class="xb-mk" href="#tour-7" style="left:66.3%;top:50.0%" aria-label="7: LED D6">7<span class="xb-pop"><b>LED D6</b> — LED D6, marked <code>P8</code> in the board file. Connects to <code>GND</code>.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-8" style="left:9.5%;top:50.0%" aria-label="8: Mounting pad">8<span class="xb-pop"><b>Mounting pad</b> — One of the two round pads at the ends of the board, around the mounting position.</span></a>
     </div>
   </div>
   <ol class="xb-tour-list" start="1">
@@ -95,6 +96,7 @@ permalink: /extensions/historical-ledsimple
     <li id="tour-5"><span class="xb-n">5</span><div><b>LED D3</b> — LED D3, marked <code>P5</code> in the board file. Connects to <code>GND</code>.</div></li>
     <li id="tour-6"><span class="xb-n">6</span><div><b>LED D5</b> — LED D5, marked <code>P7</code> in the board file. Connects to <code>GND</code>.</div></li>
     <li id="tour-7"><span class="xb-n">7</span><div><b>LED D6</b> — LED D6, marked <code>P8</code> in the board file. Connects to <code>GND</code>.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Mounting pad</b> — One of the two round pads at the ends of the board, around the mounting position.</div></li>
   </ol>
   <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
 </figure>
