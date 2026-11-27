@@ -339,10 +339,6 @@ defaults:
       path: "troubleshooting/stopping-smoothie-for-include.md"
     values:
       sitemap: false
-  - scope:
-      path: "troubleshooting/troubleshooting-for-include.md"
-    values:
-      sitemap: false
 
 # Point include root at current directory (inside Docker this is /usr/src/app which contains all files)
 includes_dir: "."

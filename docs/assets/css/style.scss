@@ -390,6 +390,11 @@ img[src*="icon."] {
 }
 
 
+/* Pages that show their own title mark it with {: .show-title}. */
+.markdown-body > h1.show-title:first-child {
+  display: block;
+}
+
 /* Extension guides need their board name before the task instructions. */
 .markdown-body.extension-guide > h1:first-child {
   display: block;

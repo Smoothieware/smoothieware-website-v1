@@ -402,4 +402,10 @@ For more information and advanced examples, see the [on_boot.gcode documentation
 {% include hardware/wiring/general-appendixes-for-include.md %}
 
 
-{% include troubleshooting/troubleshooting-for-include.md %}
+# Troubleshooting
+
+If something does not work, the troubleshooting page lists the steps to follow and the most common power, configuration, web interface and movement problems.
+
+{::nomarkdown}
+<sl-button variant="primary" size="large" href="/troubleshooting">Go to the troubleshooting page</sl-button>
+{:/nomarkdown}

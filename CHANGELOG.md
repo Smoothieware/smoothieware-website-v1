@@ -16,6 +16,9 @@ History: see CHANGELOG.archive.md.
 - Extension board pages: the board drawings now show lights in their real colours, solder links, test pads and the holes of parts soldered underneath; page text that called these "not drawn" is corrected.
 
 ### Changed
+- Troubleshooting page: the comic is half as large and floats to the right of the text, the empty table of contents is gone, and the title, sections and problems use heading levels 1, 2 and 3.
+- Troubleshooting page: the long config override article inside the steps is now a short warning box linking to the override pages, as its own numbered step.
+- The 3D printer guide no longer repeats the whole troubleshooting page; it links to it.
 - Troubleshooting page: the board LED section is more compact, in two columns, with smaller transparent animations.
 - Troubleshooting page: the board status LED pictures are back as new animations, shown separately for V1 and V2 boards, replacing unrelated placeholder photos.
 - Endstop inputs (basic) board page: updated for the current hardware, with 3.3 V controller signals in both supply positions, a resettable sensor fuse, static-discharge protection, test pads, new voltage figures and `^` pin settings.
