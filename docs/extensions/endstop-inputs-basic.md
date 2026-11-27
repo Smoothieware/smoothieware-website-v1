@@ -12,7 +12,7 @@ permalink: /extensions/endstop-inputs-basic
   <div>
     <p class="xb-eyebrow">Extension board · Inputs</p>
     <h1 id="endstop-inputs-basic">Endstop inputs (basic)</h1>
-    <p class="xb-lead">Connect seven limit or homing switches to your controller through one ten-way cable. Each input has a three-pin connector, a red light that shows its state and a simple filter. The circuit uses only resistors, capacitors, diodes and lights.</p>
+    <p class="xb-lead">Connect seven limit or homing switches to your controller through one ten-way cable. Each input has a three-pin connector, a red light that shows its state and a simple filter. A resettable fuse and protection diodes guard the wires that leave the board.</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>
@@ -29,7 +29,7 @@ permalink: /extensions/endstop-inputs-basic
   <div class="xb-stat"><b>7</b><span>switch inputs</span></div>
   <div class="xb-stat"><b>7 lights</b><span>one per input</span></div>
   <div class="xb-stat"><b>3.3 or 5 V</b><span>sensor supply, set by a jumper</span></div>
-  <div class="xb-stat"><b>1.2 ms</b><span>delay when a switch closes, simulated</span></div>
+  <div class="xb-stat"><b>0.8 ms</b><span>delay when a switch closes, simulated</span></div>
   <div class="xb-stat"><b>1 cable</b><span>ten ways to the controller</span></div>
   <div class="xb-stat"><b>77 × 27</b><span>millimetres, two layers</span></div>
 </div>
@@ -56,18 +56,14 @@ permalink: /extensions/endstop-inputs-basic
 </nav>
 {:/nomarkdown}
 
-<sl-alert variant="danger" open>
-<strong>5V position: it can damage a Smoothieboard V2.</strong> The controller pins behind INP0 (<code>PB1</code>), INP2 (<code>PA4</code>) and INP5 (<code>PG1</code>) are not 5&nbsp;V tolerant: the chip maker&rsquo;s limit is 4.0&nbsp;V. Leave the jumper cap on <strong>3V3</strong>. See <a href="#jp1">supply selector JP1</a>.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  The <b>+</b> pins share one <b>resettable fuse</b>. It reacts slowly, so a short from + to − still loads the controller&rsquo;s supply until it trips: wire with all power off. The inputs have no isolation, nothing here has been surge tested, and the board is not a safety device: wire an emergency stop so that it cuts power by itself.
 </sl-alert>
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  The <b>+</b> pins have <b>no fuse or current limit</b>: a short from + to − shorts the controller&rsquo;s own supply. Wire with all power off. The inputs have no isolation or surge protection, and the board is not a safety device: wire an emergency stop so that it cuts power by itself.
-</sl-alert>
-
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  Made for <b>mechanical switches</b>. A closed input reaches only about 0.7&nbsp;V at the controller, so end every pin name with <b><code>-</code></b> (no pull resistor), and read <a href="#sensors">before connecting an electronic sensor</a>. Keep the supply jumper on <b>3V3</b> with a Smoothieboard V2.
+  <b>Never put more than 5&nbsp;V on an S pin</b>, in either jumper position. An electronic sensor must also pull S below about <b>0.5&nbsp;V</b> to read low: see <a href="#sensors">before connecting one</a>.
 </sl-alert>
 
 {% include _includes/endstop-board-comparison.html %}
@@ -78,15 +74,17 @@ permalink: /extensions/endstop-inputs-basic
 <div class="xb-tablewrap"><table class="xb-spec">
   <tbody>
     <tr><td>Inputs</td><td>Seven, INP0 to INP6, each with signal, ground and supply pins</td></tr>
-    <tr><td>Meant for</td><td>Mechanical switches and dry contacts to ground</td></tr>
-    <tr><td>Sensor supply</td><td>3.3&nbsp;V or 5&nbsp;V from the controller, one jumper for all seven. No fuse or current limit.</td></tr>
-    <tr><td>Pull-up</td><td>1&nbsp;k&Omega; to the selected supply, in each channel</td></tr>
+    <tr><td>Meant for</td><td>Mechanical switches, dry contacts to ground, and sensors that pull low strongly enough</td></tr>
+    <tr><td>Sensor supply</td><td>3.3&nbsp;V or 5&nbsp;V from the controller, one jumper for all seven, through one resettable fuse (holds 0.2&nbsp;A at 23&nbsp;&deg;C).</td></tr>
+    <tr><td>Pull-up</td><td>1&nbsp;k&Omega; to 3.3&nbsp;V in each channel, whatever the jumper says</td></tr>
     <tr><td>Filter</td><td>5.6&nbsp;k&Omega; and 100&nbsp;nF between each channel and its controller pin</td></tr>
-    <tr><td>Delay</td><td>1.2&nbsp;ms to read closed and 0.6&nbsp;ms to read open (simulated, 3V3)</td></tr>
-    <tr><td>Signal levels at the controller</td><td>Open: 3.3&nbsp;V. Closed: about 0.68&nbsp;V. Not inverted. (Simulated, 3V3.)</td></tr>
+    <tr><td>Delay</td><td>0.8&nbsp;ms to read closed and 0.7&nbsp;ms to read open (simulated)</td></tr>
+    <tr><td>Signal levels at the controller</td><td>Open: 3.3&nbsp;V in both jumper positions. Closed: about 0.28&nbsp;V. Not inverted. (Simulated.)</td></tr>
     <tr><td>Indicators</td><td>One red light per input, lit while the input is pulled low</td></tr>
     <tr><td>Controller connectors</td><td>INPUT Y and CHAIN Y, 2×5 at 1.27&nbsp;mm (Gadgeteer type Y)</td></tr>
     <tr><td>Sensor connectors</td><td>Seven 3-pin 2.54&nbsp;mm keyed headers (Molex KK&nbsp;254, 22-23-2031)</td></tr>
+    <tr><td>Protection</td><td>A diode against static discharge on each S pin and on the + supply. Fitted, not tested.</td></tr>
+    <tr><td>Test points</td><td>Pads on the back for the seven signals, the supplies and ground</td></tr>
     <tr><td>Isolation</td><td>None. Controller ground and sensor ground are the same.</td></tr>
     <tr><td>Size</td><td>77 × 27&nbsp;mm, two copper layers, four M3 holes on 70 × 20&nbsp;mm</td></tr>
     <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> and Smoothieware V2, through the <a href="/endstops">endstops</a> and <a href="/zprobe">probe</a> modules</td></tr>
@@ -105,15 +103,17 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/endstop-inputs-basic/endstop-inputs-basic-diagram.png" alt="Top view of the Endstop inputs (basic) board with nine numbered markers that are explained in the list below.">
+      <img src="/images/extensions/endstop-inputs-basic/endstop-inputs-basic-diagram.png" alt="Top view of the Endstop inputs (basic) board with eleven numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pl" href="#tour-1" style="left:7.0%;top:50.0%" aria-label="1: controller connector (input y)">1<span class="xb-pop"><b>Controller connector (INPUT Y)</b> — a 2×5, 1.27 mm Gadgeteer Y shrouded header for the ribbon cable from the controller. <i>Pin 1 is the lower contact of its right-hand column.</i></span></a>
       <a class="xb-mk xb-pr" href="#tour-2" style="left:93.0%;top:50.0%" aria-label="2: chain connector (chain y)">2<span class="xb-pop"><b>Chain connector (CHAIN Y)</b> — a second header wired contact for contact to INPUT Y, for another board.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-3" style="left:15.8%;top:15.5%" aria-label="3: sensor connectors inp0 to inp6">3<span class="xb-pop"><b>Sensor connectors INP0 to INP6</b> — seven 3-pin 2.54 mm keyed headers, one per switch. <i>Printed pin order from left to right: + , − , S.</i></span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-4" style="left:12.4%;top:41.6%" aria-label="4: input lights">4<span class="xb-pop"><b>Input lights</b> — one red light per input, lit while that input is pulled low, for example while a switch to ground is closed.</span></a>
-      <a class="xb-mk xb-pl" href="#tour-5" style="left:12.4%;top:50.6%" aria-label="5: input diodes">5<span class="xb-pop"><b>Input diodes</b> — one diode per input between the sensor’s S pin and the rest of the channel.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-5" style="left:12.4%;top:50.6%" aria-label="5: input diodes">5<span class="xb-pop"><b>Input diodes</b> — one low-drop (Schottky) diode per input between the sensor’s S pin and the rest of the channel.</span></a>
       <a class="xb-mk xb-pl" href="#tour-6" style="left:20.6%;top:67.2%" aria-label="6: filter capacitors">6<span class="xb-pop"><b>Filter capacitors</b> — one 100 nF capacitor per input, which smooths contact bounce and short noise pulses.</span></a>
       <a class="xb-mk xb-pr" href="#tour-7" style="left:79.1%;top:62.0%" aria-label="7: signal links jp2 to jp8">7<span class="xb-pop"><b>Signal links JP2 to JP8</b> — one cuttable solder link per input, between the channel and its controller pin. <i>All are closed as delivered.</i></span></a>
-      <a class="xb-mk" href="#tour-8" style="left:45.6%;top:82.8%" aria-label="8: supply selector jp1">8<span class="xb-pop"><b>Supply selector JP1</b> — a three-pin header whose jumper cap picks 3.3 V (left) or 5 V (right) for the + pins and for the high level of every input. <i>Use the 3V3 position with a Smoothieboard V2.</i></span></a>
+      <a class="xb-mk" href="#tour-8" style="left:45.6%;top:82.8%" aria-label="8: supply selector jp1">8<span class="xb-pop"><b>Supply selector JP1</b> — a three-pin header whose jumper cap picks 3.3 V (left) or 5 V (right) for the + pins only. <i>The signals to the controller stay at 3.3 V.</i></span></a>
+      <a class="xb-mk" href="#tour-10" style="left:21.1%;top:43.4%" aria-label="10: protection diodes">10<span class="xb-pop"><b>Protection diodes</b> — one beside each channel, from the S pin to ground, plus one on the sensor supply. They divert static discharge.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-11" style="left:64.5%;top:81.8%" aria-label="11: resettable fuse">11<span class="xb-pop"><b>Resettable fuse</b> — in the sensor supply, between the jumper and the + pins. It goes high-resistance on a lasting overload and recovers after the fault is removed and it cools.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-9" style="left:5.7%;top:15.5%" aria-label="9: mounting holes">9<span class="xb-pop"><b>Mounting holes</b> — four 3.2 mm holes for M3 screws on a 70 × 20 mm rectangle, not connected to anything.</span></a>
     </div>
   </div>
@@ -122,11 +122,13 @@ The numbers on the drawing match the list below it. The board is shown from the 
     <li id="tour-2"><span class="xb-n">2</span><div><b>Chain connector (CHAIN Y)</b> — a second header wired contact for contact to INPUT Y, for another board.</div></li>
     <li id="tour-3"><span class="xb-n">3</span><div><b>Sensor connectors INP0 to INP6</b> — seven 3-pin 2.54 mm keyed headers, one per switch. <small>Printed pin order from left to right: + , − , S.</small></div></li>
     <li id="tour-4"><span class="xb-n">4</span><div><b>Input lights</b> — one red light per input, lit while that input is pulled low, for example while a switch to ground is closed.</div></li>
-    <li id="tour-5"><span class="xb-n">5</span><div><b>Input diodes</b> — one diode per input between the sensor’s S pin and the rest of the channel.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Input diodes</b> — one low-drop (Schottky) diode per input between the sensor’s S pin and the rest of the channel.</div></li>
     <li id="tour-6"><span class="xb-n">6</span><div><b>Filter capacitors</b> — one 100 nF capacitor per input, which smooths contact bounce and short noise pulses.</div></li>
     <li id="tour-7"><span class="xb-n">7</span><div><b>Signal links JP2 to JP8</b> — one cuttable solder link per input, between the channel and its controller pin. <small>All are closed as delivered.</small></div></li>
-    <li id="tour-8"><span class="xb-n">8</span><div><b>Supply selector JP1</b> — a three-pin header whose jumper cap picks 3.3 V (left) or 5 V (right) for the + pins and for the high level of every input. <small>Use the 3V3 position with a Smoothieboard V2.</small></div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Supply selector JP1</b> — a three-pin header whose jumper cap picks 3.3 V (left) or 5 V (right) for the + pins only. <small>The signals to the controller stay at 3.3 V.</small></div></li>
     <li id="tour-9"><span class="xb-n">9</span><div><b>Mounting holes</b> — four 3.2 mm holes for M3 screws on a 70 × 20 mm rectangle, not connected to anything.</div></li>
+    <li id="tour-10"><span class="xb-n">10</span><div><b>Protection diodes</b> — one beside each channel, from the S pin to ground, plus one on the sensor supply. They divert static discharge.</div></li>
+    <li id="tour-11"><span class="xb-n">11</span><div><b>Resettable fuse</b> — in the sensor supply, between the jumper and the + pins. It goes high-resistance on a lasting overload and recovers after the fault is removed and it cools.</div></li>
   </ol>
   <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. Repeated channels have one marker. On a small screen, scroll the drawing sideways.</figcaption>
 </figure>
@@ -142,7 +144,7 @@ Connect INPUT Y to the header labelled **G_F** on the Smoothieboard V2 Prime wit
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Pin</th><th>Signal</th><th>What it does</th><th>Prime pin (header G_F)</th></tr></thead>
   <tbody>
-    <tr><td>1</td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td><td>Feeds the lights, and the + pins in the 3V3 position</td><td>3.3 V</td></tr>
+    <tr><td>1</td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td><td>Feeds the lights and input pull-ups, and the + pins in the 3V3 position</td><td>3.3 V</td></tr>
     <tr><td>2</td><td><span class="xb-pill xb-p-5v">5 V</span></td><td>Feeds the + pins in the 5V position</td><td>5 V</td></tr>
     <tr><td>3</td><td><span class="xb-pill xb-p-sig">INP0</span></td><td>State of input INP0: high when open, low when closed</td><td><code>PB1</code></td></tr>
     <tr><td>4</td><td><span class="xb-pill xb-p-sig">INP1</span></td><td>State of input INP1: high when open, low when closed</td><td><code>PJ4</code></td></tr>
@@ -171,7 +173,7 @@ Connect INPUT Y to the header labelled **G_F** on the Smoothieboard V2 Prime wit
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Pin</th><th>Printed</th><th>Function</th></tr></thead>
   <tbody>
-    <tr><td>3 (left)</td><td>+</td><td><span class="xb-pill xb-p-3v3">3.3 V or 5 V, set by JP1</span></td></tr>
+    <tr><td>3 (left)</td><td>+</td><td><span class="xb-pill xb-p-3v3">3.3 V or 5 V, set by JP1, fused</span></td></tr>
     <tr><td>2 (middle)</td><td>−</td><td><span class="xb-pill xb-p-gnd">GND</span></td></tr>
     <tr><td>1 (right)</td><td>S</td><td><span class="xb-pill xb-p-sig">Signal</span></td></tr>
   </tbody>
@@ -195,7 +197,7 @@ Check the order of any ready-made switch cable against the printed **+ − S** b
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Pin</th><th>On CHAIN Y</th><th>Used by this board</th><th>As delivered</th></tr></thead>
   <tbody>
-    <tr><td>1</td><td>3.3&nbsp;V from INPUT Y</td><td>Yes: lights and the 3V3 position</td><td>Passed through</td></tr>
+    <tr><td>1</td><td>3.3&nbsp;V from INPUT Y</td><td>Yes: lights, pull-ups and the 3V3 position</td><td>Passed through</td></tr>
     <tr><td>2</td><td>5&nbsp;V from INPUT Y</td><td>Only in the 5V position</td><td>Passed through</td></tr>
     <tr><td>3</td><td>Controller pin of INP0</td><td>Yes, through link JP2</td><td>Passed through; JP2 closed</td></tr>
     <tr><td>4</td><td>Controller pin of INP1</td><td>Yes, through link JP3</td><td>Passed through; JP3 closed</td></tr>
@@ -230,7 +232,7 @@ Check the order of any ready-made switch cable against the printed **+ − S** b
 <ol class="xb-steps">
   <li class="xb-step">
     <h3>Set the supply jumper</h3>
-    <p>With all power off, put the jumper cap on JP1 across the middle pin and the pin marked <b>3V3</b> (the left one). Never fit a cap or solder across all three pins.</p>
+    <p>With all power off, put the jumper cap on JP1 across the middle pin and the pin marked <b>3V3</b> (the left one) for a plain switch. Never fit a cap or solder across all three pins.</p>
   </li>
   <li class="xb-step">
     <h3>Connect the controller</h3>
@@ -270,7 +272,7 @@ The board needs no module of its own: each input is an ordinary controller pin, 
 </table></div>
 {:/nomarkdown}
 
-End each pin name with **`-`**, which switches the controller&rsquo;s pull resistor off. Without it the firmware turns a pull-up on, even when the name has no `^`. That pull-up would raise the level of a closed switch to about 1&nbsp;V, at the limit of what reads as low; the board already has a pull-up on every input. Each pin can be claimed by one entry only. Merge the lines into your configuration file, adding to a section that already exists.
+End each pin name with **`^`**, which turns the controller&rsquo;s pull-up on (the firmware also does so when the name has neither `^` nor `v`). A closed switch then still reads low (at most 0.94&nbsp;V simulated, below the 0.99&nbsp;V limit), and an unplugged cable reads as triggered. If a long or resistive cable makes a closed switch read open, `-` (no pull resistor) gives more margin, but an unplugged cable is then not detected. Each pin can be claimed by one entry only. Merge the lines into your configuration file, adding to a section that already exists.
 
 ### 1. Limit switches (Endstops module) {#config-limits}
 
@@ -279,17 +281,17 @@ Normally closed switches on INP0 to INP2:
 ```ini
 [endstops]
 maxx.enable       = true
-maxx.pin          = PB1-      # INP0  (G_F pin 3)
+maxx.pin          = PB1^      # INP0  (G_F pin 3)
 maxx.axis         = X
 maxx.limit_enable = true      # halt when hit during a move
 
 maxy.enable       = true
-maxy.pin          = PJ4-      # INP1  (G_F pin 4)
+maxy.pin          = PJ4^      # INP1  (G_F pin 4)
 maxy.axis         = Y
 maxy.limit_enable = true
 
 maxz.enable       = true
-maxz.pin          = PA4-      # INP2  (G_F pin 5)
+maxz.pin          = PA4^      # INP2  (G_F pin 5)
 maxz.axis         = Z
 maxz.limit_enable = true
 ```
@@ -301,7 +303,7 @@ A normally closed switch at the low end of X on INP3, used by `G28`:
 ```ini
 [endstops]
 minx.enable           = true
-minx.pin              = PG0-         # INP3  (G_F pin 6)
+minx.pin              = PG0^         # INP3  (G_F pin 6)
 minx.axis             = X
 minx.homing_direction = home_to_min
 minx.homing_position  = 0
@@ -321,7 +323,7 @@ A normally open contact on INP6, such as a touch plate that the tool connects to
 ```ini
 [zprobe]
 enable        = true
-probe_pin     = PJ2!-         # INP6  (G_F pin 9), contact that closes to ground
+probe_pin     = PJ2!^         # INP6  (G_F pin 9), contact that closes to ground
 slow_feedrate = 2             # mm/s while probing
 fast_feedrate = 20            # mm/s between probe points
 probe_height  = 5             # mm above the surface to start from
@@ -336,7 +338,7 @@ A contact on INP4 that is closed while the door is shut:
 ```ini
 [switch]
 door.enable             = true
-door.input_pin          = PJ3-        # INP4  (G_F pin 7)
+door.input_pin          = PJ3^        # INP4  (G_F pin 7)
 door.input_pin_behavior = momentary
 door.output_on_command  = M600        # contact open: suspend the job
 door.output_off_command = M601        # contact closed again: resume
@@ -349,7 +351,7 @@ A button on INP5 that closes its contact to ground when pressed:
 ```ini
 [kill button]
 enable        = true
-pin           = PG1-          # INP5  (G_F pin 8)
+pin           = PG1^          # INP5  (G_F pin 8)
 toggle_enable = false         # true for a latching button
 unkill_enable = true          # holding the button about 2 s clears the halt
 ```
@@ -372,7 +374,7 @@ This button acts through the firmware. It does not replace an emergency stop tha
 
 - **No `!` for normally closed switches.** A closed switch reads 0 and an open one reads 1, which the endstops module treats as triggered.
 - **An input with nothing connected reads 1.** Enable only the inputs that have a switch.
-- **An unplugged ribbon cable is not detected reliably.** With the pull resistors off, the pins float, so run `M119` and press each switch after any rewiring.
+- **An unplugged ribbon cable reads 1** with `^`, so normally closed limit switches then show as triggered. Still run `M119` and press each switch after any rewiring.
 - **Extra filtering.** `common.debounce_ms` under `[endstops]` adds a debounce time in the firmware.
 
 ## Wiring switches and sensors {#sensors}
@@ -391,7 +393,7 @@ This button acts through the firmware. It does not replace an emergency stop tha
 
 Use the normally closed contact for limits and homing: a broken switch wire then reads as triggered.
 
-**Electronic sensors need care.** The signal passes through a diode before it reaches the controller, so the sensor must pull S very close to ground: below about 0.26&nbsp;V in the 3V3 position for the controller to read low down to −10&nbsp;&deg;C, and below 0.32&nbsp;V at 25&nbsp;&deg;C (simulated, about 4&nbsp;mA to sink). Many open-collector and NPN sensors do not guarantee that. The sensor must also work from the voltage JP1 selects, which is 3.3&nbsp;V with a Smoothieboard V2. For sensors that need 5&nbsp;V or more, use the [Endstop and probe inputs (advanced)](/extensions/endstop-and-probe-inputs-advanced) board within its stated range.
+**Electronic sensors need care.** The signal passes through a diode before it reaches the controller, so the sensor must pull S close to ground: below about 0.50&nbsp;V down to &minus;10&nbsp;&deg;C with a worst-case diode, or 0.61&nbsp;V with a typical one, while sinking about 5&nbsp;mA (simulated, `-` pin setting; the pull-up leaves less margin). Check the sensor&rsquo;s datasheet. A 5&nbsp;V sensor can be powered with the cap on **5V**, and its output may drive S up to 5&nbsp;V. For sensors that need more than 5&nbsp;V, use the [Endstop and probe inputs (advanced)](/extensions/endstop-and-probe-inputs-advanced) board within its stated range.
 
 ## How it works {#how-it-works}
 
@@ -400,16 +402,16 @@ Use the normally closed contact for limits and homing: a broken switch wire then
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="One input channel">
   <svg viewBox="0 0 1000 320" role="img" aria-labelledby="xb-eb-how">
     <title id="xb-eb-how">Each channel: the switch pulls a node low through a diode, a light shows it, and a resistor and capacitor filter the signal on its way to the controller.</title>
-    <rect x="20" y="60" width="160" height="100" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="100.0" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Switch</text><text x="100.0" y="108" text-anchor="middle" font-size="14" fill="#a9b4c2">S to ground</text><rect x="270" y="60" width="160" height="100" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="350.0" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Diode</text><text x="350.0" y="108" text-anchor="middle" font-size="14" fill="#a9b4c2">blocks higher</text><text x="350.0" y="128" text-anchor="middle" font-size="14" fill="#a9b4c2">outside voltage</text><rect x="520" y="60" width="180" height="100" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="610.0" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Channel node</text><text x="610.0" y="108" text-anchor="middle" font-size="14" fill="#a9b4c2">1 kΩ pull-up to</text><text x="610.0" y="128" text-anchor="middle" font-size="14" fill="#a9b4c2">the selected supply</text><rect x="800" y="60" width="180" height="100" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="890.0" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Filter</text><text x="890.0" y="108" text-anchor="middle" font-size="14" fill="#a9b4c2">5.6 kΩ and</text><text x="890.0" y="128" text-anchor="middle" font-size="14" fill="#a9b4c2">100 nF</text><rect x="520" y="220" width="180" height="80" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="610.0" y="246" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Red light</text><text x="610.0" y="268" text-anchor="middle" font-size="14" fill="#a9b4c2">from 3.3 V, 680 Ω</text><rect x="800" y="220" width="180" height="80" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="890.0" y="246" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Controller pin</text><text x="890.0" y="268" text-anchor="middle" font-size="14" fill="#a9b4c2">through a link</text><path d="M180 110H270" fill="none" stroke="#5fb3ff" stroke-width="3"/><path d="M430 110H520" fill="none" stroke="#5fb3ff" stroke-width="3"/><path d="M700 110H800" fill="none" stroke="#5fb3ff" stroke-width="3"/><path d="M610 220V160" fill="none" stroke="#ff6b6b" stroke-width="3"/><path d="M890 160V220" fill="none" stroke="#5fb3ff" stroke-width="3"/>
+    <rect x="20" y="60" width="160" height="100" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="100.0" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Switch</text><text x="100.0" y="108" text-anchor="middle" font-size="14" fill="#a9b4c2">S to ground</text><rect x="270" y="60" width="160" height="100" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="350.0" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Diode</text><text x="350.0" y="108" text-anchor="middle" font-size="14" fill="#a9b4c2">blocks higher</text><text x="350.0" y="128" text-anchor="middle" font-size="14" fill="#a9b4c2">outside voltage</text><rect x="520" y="60" width="180" height="100" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="610.0" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Channel node</text><text x="610.0" y="108" text-anchor="middle" font-size="14" fill="#a9b4c2">1 kΩ pull-up to</text><text x="610.0" y="128" text-anchor="middle" font-size="14" fill="#a9b4c2">3.3 V</text><rect x="800" y="60" width="180" height="100" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="890.0" y="86" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Filter</text><text x="890.0" y="108" text-anchor="middle" font-size="14" fill="#a9b4c2">5.6 kΩ and</text><text x="890.0" y="128" text-anchor="middle" font-size="14" fill="#a9b4c2">100 nF</text><rect x="520" y="220" width="180" height="80" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="610.0" y="246" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Red light</text><text x="610.0" y="268" text-anchor="middle" font-size="14" fill="#a9b4c2">from 3.3 V, 680 Ω</text><rect x="800" y="220" width="180" height="80" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="890.0" y="246" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Controller pin</text><text x="890.0" y="268" text-anchor="middle" font-size="14" fill="#a9b4c2">through a link</text><path d="M180 110H270" fill="none" stroke="#5fb3ff" stroke-width="3"/><path d="M430 110H520" fill="none" stroke="#5fb3ff" stroke-width="3"/><path d="M700 110H800" fill="none" stroke="#5fb3ff" stroke-width="3"/><path d="M610 220V160" fill="none" stroke="#ff6b6b" stroke-width="3"/><path d="M890 160V220" fill="none" stroke="#5fb3ff" stroke-width="3"/>
   </svg>
   </div>
   <figcaption>One of the seven identical channels.</figcaption>
 </figure>
 {:/nomarkdown}
 
-Each channel has a node pulled up by 1&nbsp;kΩ to the supply selected by JP1. A switch to ground pulls that node low through a diode, which also lights the channel&rsquo;s light from the 3.3&nbsp;V supply.
+Each channel has a node pulled up by 1&nbsp;kΩ to 3.3&nbsp;V. A switch to ground pulls that node low through a diode, which also lights the channel&rsquo;s light.
 
-The diode lets the sensor pull the node down but stops a higher outside voltage on S from reaching the node. Its own voltage drop is why a closed input rests well above 0&nbsp;V.
+The diode lets the sensor pull the node down but stops a higher voltage on S, up to 5&nbsp;V, from reaching the node. A second diode from S to ground diverts static discharge before it reaches the channel.
 
 A 5.6&nbsp;kΩ resistor and a 100&nbsp;nF capacitor then smooth the signal before it goes to the controller pin.
 
@@ -423,15 +425,15 @@ A 5.6&nbsp;kΩ resistor and a 100&nbsp;nF capacitor then smooth the signal befor
 
 ### Supply selector JP1 {#jp1}
 
-With the cap on 5V, every open input puts about 5&nbsp;V on its controller pin, whether or not a sensor is plugged in. On the STM32H7 processor family used by Smoothieboard V2, <code>PB1</code>, <code>PA4</code> and <code>PG1</code> accept at most 4.0&nbsp;V ([ST STM32H743 datasheet](https://www.st.com/resource/en/datasheet/stm32h743bi.pdf), pin definitions and voltage characteristics; the matching STM32H745 document was not checked). If you need the 5V position, first cut links JP2, JP4 and JP7, which takes INP0, INP2 and INP5 out of use, or power the sensor from elsewhere and keep the cap on 3V3.
+The jumper picks only the voltage on the **+** pins. The signals to the controller are 3.3&nbsp;V in both positions.
 
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Jumper cap</th><th>+ pins</th><th>Open input at the controller</th><th>Use</th></tr></thead>
   <tbody>
-    <tr><td>Middle and <b>3V3</b> (left)</td><td>3.3&nbsp;V</td><td>3.3&nbsp;V</td><td>Smoothieboard V2 and other 3.3&nbsp;V controllers</td></tr>
-    <tr><td>Middle and <b>5V</b> (right)</td><td>5&nbsp;V</td><td>5.0&nbsp;V</td><td>Only where every connected controller pin accepts 5&nbsp;V, with no pull resistor enabled. On a Smoothieboard V2, cut JP2, JP4 and JP7 first</td></tr>
-    <tr><td>No cap</td><td>Not powered</td><td>Not defined</td><td>Do not use</td></tr>
+    <tr><td>Middle and <b>3V3</b> (left)</td><td>3.3&nbsp;V</td><td>3.3&nbsp;V</td><td>Switches and 3.3&nbsp;V sensors</td></tr>
+    <tr><td>Middle and <b>5V</b> (right)</td><td>5&nbsp;V</td><td>3.3&nbsp;V</td><td>5&nbsp;V sensors</td></tr>
+    <tr><td>No cap</td><td>Not powered</td><td>3.3&nbsp;V</td><td>Switches still work; sensors get no power</td></tr>
     <tr><td>All three joined</td><td>Never: this joins the 3.3&nbsp;V and 5&nbsp;V supplies</td><td>—</td><td>Never</td></tr>
   </tbody>
 </table></div>
@@ -440,6 +442,10 @@ With the cap on 5V, every open input puts about 5&nbsp;V on its controller pin, 
 ### Signal links JP2 to JP8
 
 Each link joins one channel to its controller pin: JP2 for INP0 up to JP8 for INP6, left to right. Cutting a link frees that controller pin for something plugged into CHAIN Y. The input then no longer reaches the controller; its light still works. Solder the pads together to restore it.
+
+### Test pads
+
+The back of the board has labelled round pads: **Y3** to **Y9** (the seven controller signals), **3V3**, **5V**, **V+** (after the jumper), **VS** (after the fuse, on the + pins) and two **GND** pads. There is also a box for writing a serial number.
 
 ## Chaining a second board {#chaining}
 
@@ -457,10 +463,10 @@ CHAIN Y is wired contact for contact to INPUT Y: power, ground and all seven sig
   <tbody>
     <tr><td>A light stays dark when its switch is closed</td><td>No 3.3&nbsp;V, or the switch is not between S and −.</td><td>Check the cable is in INPUT Y and pin 1 goes to pin 1; join S and − with a wire: the light must come on.</td></tr>
     <tr><td>Every input reads wrong</td><td>JP1 has no cap, or the cable is not on G_F.</td><td>Fit the cap on 3V3 and check both cable ends.</td></tr>
-    <tr><td>The light is on but <code>M119</code> shows 1</td><td>The low level does not reach the controller threshold, or the pin is not the one configured.</td><td>End the pin name with <code>-</code> and no <code>^</code>, check the link JP2 to JP8 is closed, and check the <a href="#sensors">sensor limits</a>.</td></tr>
+    <tr><td>The light is on but <code>M119</code> shows 1</td><td>The low level does not reach the controller threshold, or the pin is not the one configured.</td><td>Check the <code>v</code> modifier is not used, try <code>-</code>, check the link JP2 to JP8 is closed, and check the <a href="#sensors">sensor limits</a>.</td></tr>
     <tr><td><code>M119</code> does not list the pin</td><td>The input is not configured.</td><td>Check <code>enable = true</code> and the pin name, then restart.</td></tr>
     <tr><td>The machine halts with <code>ALARM: Hard limit</code> as soon as an axis moves</td><td>An enabled limit input reads triggered.</td><td>Send <code>M119</code>; disable unused entries and check the switch wiring.</td></tr>
-    <tr><td>The controller resets or loses power when a switch is plugged in</td><td>The + pin is shorted to ground.</td><td>Unplug it and check the cable order against + − S.</td></tr>
+    <tr><td>The controller resets, or the + pins lose power, when a switch is plugged in</td><td>The + pin is shorted to ground; the fuse may have tripped.</td><td>Turn power off, unplug it, check the cable order against + − S, and let the fuse cool.</td></tr>
     <tr><td>An input triggers by itself during motion</td><td>Electrical noise on the switch cable.</td><td>Route it away from motor cables and set <code>common.debounce_ms</code>.</td></tr>
   </tbody>
 </table></div>
@@ -537,19 +543,20 @@ One channel; the seven channels are identical.
 <div class="xb-tablewrap"><table class="xb-elec">
   <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
   <tbody>
-    <tr><td>Sensor supply</td><td>+ pins, 3V3 position</td><td>—</td><td>3.3&nbsp;V</td><td>—</td><td>From the controller</td></tr>
-    <tr><td>Sensor supply</td><td>+ pins, 5V position</td><td>—</td><td>5&nbsp;V</td><td>—</td><td>From the controller</td></tr>
-    <tr><td>Sensor supply current</td><td>+ pins</td><td>—</td><td>—</td><td><b>Open</b></td><td>No fuse on the board; set by the controller supply</td></tr>
-    <tr><td>Closed input voltage</td><td>Controller pin, 3V3</td><td>0.62&nbsp;V</td><td>0.68&nbsp;V</td><td>0.74&nbsp;V</td><td>Simulated, 60, 25 and −10&nbsp;&deg;C, S at 0&nbsp;V, no controller pull resistor</td></tr>
-    <tr><td>Closed input voltage</td><td>Controller pin, 5V</td><td>0.64&nbsp;V</td><td>0.70&nbsp;V</td><td>0.76&nbsp;V</td><td>Simulated, same conditions</td></tr>
-    <tr><td>Open input voltage</td><td>Controller pin</td><td>—</td><td>3.3 / 5.0&nbsp;V</td><td>—</td><td>Simulated, 3V3 / 5V position</td></tr>
-    <tr><td>Contact current</td><td>S pin, closed</td><td>—</td><td>4.1 / 5.7&nbsp;mA</td><td>—</td><td>Simulated, 3V3 / 5V</td></tr>
-    <tr><td>Light current</td><td>Closed input</td><td>—</td><td>1.5&nbsp;mA</td><td>—</td><td>Simulated, assumed red light model</td></tr>
-    <tr><td>Total current, all seven closed</td><td>Controller supplies</td><td>—</td><td>29 / 40&nbsp;mA</td><td>—</td><td>Calculated from the simulated channel, 3V3 / 5V, no sensor power</td></tr>
-    <tr><td>Sensor low voltage still read low</td><td>S pin, 3V3</td><td>—</td><td>—</td><td>0.26&nbsp;V</td><td>Simulated, −10&nbsp;&deg;C, 0.99&nbsp;V controller threshold</td></tr>
-    <tr><td>Switch and cable resistance</td><td>S to − loop</td><td>—</td><td>—</td><td>95 / 58&nbsp;&Omega;</td><td>Simulated, 25&nbsp;&deg;C, 3V3 / 5V; keep well below</td></tr>
-    <tr><td>Delay, closing</td><td>To 0.99&nbsp;V</td><td>—</td><td>1.2&nbsp;ms</td><td>—</td><td>Simulated, 3V3</td></tr>
-    <tr><td>Delay, opening</td><td>To 2.31&nbsp;V</td><td>—</td><td>0.6&nbsp;ms</td><td>—</td><td>Simulated, 3V3</td></tr>
+    <tr><td>Sensor supply</td><td>+ pins, 3V3 position</td><td>—</td><td>3.3&nbsp;V</td><td>—</td><td>From the controller, less the fuse drop</td></tr>
+    <tr><td>Sensor supply</td><td>+ pins, 5V position</td><td>—</td><td>5&nbsp;V</td><td>—</td><td>From the controller, less the fuse drop</td></tr>
+    <tr><td>Sensor supply current, all + pins together</td><td>Fuse</td><td>—</td><td>0.2&nbsp;A hold</td><td>0.42&nbsp;A trip</td><td>Fuse datasheet at 23&nbsp;&deg;C; holds about 0.14&nbsp;A at 60&nbsp;&deg;C</td></tr>
+    <tr><td>Fuse resistance</td><td>+ supply</td><td>0.65&nbsp;&Omega;</td><td>—</td><td>2.6&nbsp;&Omega;</td><td>Fuse datasheet, the upper value after a trip or reflow</td></tr>
+    <tr><td>Closed input voltage</td><td>Controller pin, no pull</td><td>0.18&nbsp;V</td><td>0.28&nbsp;V</td><td>0.50&nbsp;V</td><td>Simulated: typical diode at 60 and 25&nbsp;&deg;C; worst-case diode at &minus;10&nbsp;&deg;C</td></tr>
+    <tr><td>Closed input voltage</td><td>Controller pin, 30&nbsp;k&Omega; pull-up</td><td>0.67&nbsp;V</td><td>0.76&nbsp;V</td><td>0.94&nbsp;V</td><td>Simulated, same cases</td></tr>
+    <tr><td>Open input voltage</td><td>Controller pin</td><td>—</td><td>3.3&nbsp;V</td><td>—</td><td>Simulated, both jumper positions, also with S driven to 5&nbsp;V</td></tr>
+    <tr><td>Contact current</td><td>S pin, closed</td><td>—</td><td>5.0&nbsp;mA</td><td>—</td><td>Simulated, from 3.3&nbsp;V</td></tr>
+    <tr><td>Light current</td><td>Closed input</td><td>—</td><td>2.0&nbsp;mA</td><td>—</td><td>Simulated, assumed red light model</td></tr>
+    <tr><td>Total current, all seven closed</td><td>Controller 3.3&nbsp;V</td><td>—</td><td>35&nbsp;mA</td><td>—</td><td>Calculated from the simulated channel, no sensor power</td></tr>
+    <tr><td>Sensor low voltage still read low</td><td>S pin, no pull</td><td>—</td><td>—</td><td>0.50&nbsp;V</td><td>Simulated, &minus;10&nbsp;&deg;C, worst-case diode, 0.99&nbsp;V controller threshold</td></tr>
+    <tr><td>Switch and cable resistance</td><td>S to − loop, no pull</td><td>—</td><td>—</td><td>215&nbsp;&Omega;</td><td>Simulated, 25&nbsp;&deg;C, typical diode; keep well below</td></tr>
+    <tr><td>Delay, closing</td><td>To 0.99&nbsp;V</td><td>—</td><td>0.8&nbsp;ms</td><td>—</td><td>Simulated</td></tr>
+    <tr><td>Delay, opening</td><td>To 2.31&nbsp;V</td><td>—</td><td>0.7&nbsp;ms</td><td>—</td><td>Simulated</td></tr>
     <tr><td>Operating temperature</td><td>Board</td><td><b>Open</b></td><td>—</td><td><b>Open</b></td><td>Not established</td></tr>
   </tbody>
 </table></div>
@@ -564,8 +571,10 @@ These are limits of parts and not operating conditions.
   <thead><tr><th>Circuit</th><th>Pin or device stress</th><th>Absolute limit</th></tr></thead>
   <tbody>
     <tr><td>Filter capacitors</td><td>Voltage</td><td>50&nbsp;V (part value)</td></tr>
-    <tr><td>Input diodes</td><td>Reverse voltage on S above the channel node</td><td><b>Open</b></td></tr>
-    <tr><td>Sensor pins</td><td>Electrostatic discharge and surge</td><td><b>Open</b>: no protection parts</td></tr>
+    <tr><td>S pins</td><td>Voltage to ground</td><td>5&nbsp;V (stand-off rating of the protection diode)</td></tr>
+    <tr><td>Input diodes</td><td>Reverse voltage</td><td>30&nbsp;V (part rating)</td></tr>
+    <tr><td>Resettable fuse</td><td>Voltage across it, fault current</td><td>24&nbsp;V, 100&nbsp;A (part rating)</td></tr>
+    <tr><td>Sensor pins</td><td>Electrostatic discharge and surge</td><td><b>Open</b>: protection diodes fitted, board not tested</td></tr>
     <tr><td>Resistors and lights</td><td>Power and current</td><td><b>Open</b></td></tr>
   </tbody>
 </table></div>
@@ -573,30 +582,30 @@ These are limits of parts and not operating conditions.
 
 ## Appendix: simulation {#simulation}
 
-One input channel was simulated in ngspice with generic diode and light models, a 100&nbsp;MΩ controller input unless stated, and low and high thresholds of 0.99&nbsp;V and 2.31&nbsp;V. These are not measurements.
+One input channel was simulated in ngspice with diode models matched to the datasheet limits (typical and worst-case), a generic light model, the protection diode as 45&nbsp;pF, a 100&nbsp;MΩ controller input unless stated, and low and high thresholds of 0.99&nbsp;V and 2.31&nbsp;V. These are not measurements.
 
 {::nomarkdown}
 <figure class="xb-fig">
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Controller pin voltage over time">
   <svg viewBox="0 0 1000 360" role="img" aria-labelledby="xb-eb-plot">
-    <title id="xb-eb-plot">Simulated controller pin voltage: it falls below the low threshold 1.2 milliseconds after the switch closes and rises above the high threshold 0.6 milliseconds after it opens.</title>
-    <path d="M100 300H900" fill="none" stroke="#3a414c" stroke-width="1.5"/><text x="88" y="305" text-anchor="end" font-size="14" fill="#a9b4c2">0 V</text><path d="M100 225H900" fill="none" stroke="#3a414c" stroke-width="1.5"/><text x="88" y="230" text-anchor="end" font-size="14" fill="#a9b4c2">1 V</text><path d="M100 150H900" fill="none" stroke="#3a414c" stroke-width="1.5"/><text x="88" y="155" text-anchor="end" font-size="14" fill="#a9b4c2">2 V</text><path d="M100 75H900" fill="none" stroke="#3a414c" stroke-width="1.5"/><text x="88" y="80" text-anchor="end" font-size="14" fill="#a9b4c2">3 V</text><path d="M100 225.75H900" fill="none" stroke="#ffcc33" stroke-width="1.5" stroke-dasharray="6 5"/><text x="896" y="219.75" text-anchor="end" font-size="14" fill="#ffcc33">reads low below 0.99 V</text><path d="M100 126.75H900" fill="none" stroke="#ffcc33" stroke-width="1.5" stroke-dasharray="6 5"/><text x="896" y="120.75" text-anchor="end" font-size="14" fill="#ffcc33">reads high above 2.31 V</text><text x="100.0" y="322" text-anchor="middle" font-size="14" fill="#a9b4c2">0</text><text x="200.0" y="322" text-anchor="middle" font-size="14" fill="#a9b4c2">2</text><text x="300.0" y="322" text-anchor="middle" font-size="14" fill="#a9b4c2">4</text><text x="400.0" y="322" text-anchor="middle" font-size="14" fill="#a9b4c2">6</text><text x="500.0" y="322" text-anchor="middle" font-size="14" fill="#a9b4c2">8</text><text x="600.0" y="322" text-anchor="middle" font-size="14" fill="#a9b4c2">10</text><text x="700.0" y="322" text-anchor="middle" font-size="14" fill="#a9b4c2">12</text><text x="800.0" y="322" text-anchor="middle" font-size="14" fill="#a9b4c2">14</text><text x="900.0" y="322" text-anchor="middle" font-size="14" fill="#a9b4c2">16</text><text x="500" y="345" text-anchor="middle" font-size="14" fill="#a9b4c2">time in milliseconds</text><path d="M100.0 52.5 L101.3 52.5 L103.3 52.5 L105.3 52.5 L107.3 52.5 L109.3 52.5 L111.3 52.5 L113.3 52.5 L115.3 52.5 L117.3 52.5 L119.3 52.5 L121.3 52.5 L123.3 52.5 L125.3 52.5 L127.3 52.5 L129.3 52.5 L131.3 52.5 L133.3 52.5 L135.3 52.5 L137.3 52.5 L139.3 52.5 L141.3 52.5 L143.3 52.5 L145.3 52.5 L147.3 52.5 L149.3 52.5 L150.0 52.5 L150.7 57.2 L152.7 70.4 L154.7 82.6 L156.7 94.1 L158.7 104.7 L160.7 114.6 L162.7 123.8 L164.7 132.4 L166.7 140.4 L168.7 147.9 L170.7 154.8 L172.7 161.3 L174.7 167.3 L176.7 172.9 L178.7 178.1 L180.7 182.9 L182.7 187.5 L184.7 191.7 L186.7 195.6 L188.7 199.3 L190.7 202.7 L192.7 205.8 L194.7 208.8 L196.7 211.5 L198.7 214.1 L200.7 216.5 L202.7 218.7 L204.7 220.7 L206.7 222.7 L208.7 224.4 L210.7 226.1 L212.7 227.7 L214.7 229.1 L216.7 230.5 L218.7 231.7 L220.7 232.9 L222.7 234.0 L224.7 235.0 L226.7 235.9 L228.7 236.8 L230.7 237.6 L232.7 238.4 L234.7 239.1 L236.7 239.7 L238.7 240.4 L240.7 240.9 L242.7 241.5 L244.7 242.0 L246.7 242.4 L248.7 242.9 L250.7 243.3 L252.7 243.6 L254.7 244.0 L256.7 244.3 L258.7 244.6 L260.7 244.9 L262.7 245.1 L264.7 245.4 L266.7 245.6 L268.7 245.8 L270.7 246.0 L272.7 246.2 L274.7 246.4 L276.7 246.5 L278.7 246.7 L280.7 246.8 L282.7 246.9 L284.7 247.1 L286.7 247.2 L288.7 247.3 L290.7 247.4 L292.7 247.5 L294.7 247.6 L296.7 247.6 L298.7 247.7 L300.7 247.8 L302.7 247.8 L304.7 247.9 L306.7 247.9 L308.7 248.0 L310.7 248.0 L312.7 248.1 L314.7 248.1 L316.7 248.2 L318.7 248.2 L320.7 248.2 L322.7 248.3 L324.7 248.3 L326.7 248.3 L328.7 248.3 L330.7 248.4 L332.7 248.4 L334.7 248.4 L336.7 248.4 L338.7 248.4 L340.7 248.5 L342.7 248.5 L344.7 248.5 L346.7 248.5 L348.7 248.5 L350.7 248.5 L352.7 248.5 L354.7 248.5 L356.7 248.6 L358.7 248.6 L360.7 248.6 L362.7 248.6 L364.7 248.6 L366.7 248.6 L368.7 248.6 L370.7 248.6 L372.7 248.6 L374.7 248.6 L376.7 248.6 L378.7 248.6 L380.7 248.6 L382.7 248.6 L384.7 248.6 L386.7 248.6 L388.7 248.6 L390.7 248.6 L392.7 248.6 L394.7 248.7 L396.7 248.7 L398.7 248.7 L400.7 248.7 L402.7 248.7 L404.7 248.7 L406.7 248.7 L408.7 248.7 L410.7 248.7 L412.7 248.7 L414.7 248.7 L416.7 248.7 L418.7 248.7 L420.7 248.7 L422.7 248.7 L424.7 248.7 L426.7 248.7 L428.7 248.7 L430.7 248.7 L432.7 248.7 L434.7 248.7 L436.7 248.7 L438.7 248.7 L440.7 248.7 L442.7 248.7 L444.7 248.7 L446.7 248.7 L448.7 248.7 L450.7 248.7 L452.7 248.7 L454.7 248.7 L456.7 248.7 L458.7 248.7 L460.7 248.7 L462.7 248.7 L464.7 248.7 L466.7 248.7 L468.7 248.7 L470.7 248.7 L472.7 248.7 L474.7 248.7 L476.7 248.7 L478.7 248.7 L480.7 248.7 L482.7 248.7 L484.7 248.7 L486.7 248.7 L488.7 248.7 L490.7 248.7 L492.7 248.7 L494.7 248.7 L496.7 248.7 L498.7 248.7 L500.0 248.7 L500.0 248.6 L501.4 240.6 L503.4 229.6 L505.4 219.2 L507.4 209.4 L509.4 200.1 L511.4 191.5 L513.4 183.3 L515.4 175.6 L517.4 168.4 L519.4 161.5 L521.4 155.1 L523.4 149.1 L525.4 143.4 L527.4 138.1 L529.4 133.0 L531.4 128.3 L533.4 123.8 L535.4 119.7 L537.4 115.7 L539.4 112.0 L541.4 108.5 L543.4 105.2 L545.4 102.1 L547.4 99.2 L549.4 96.4 L551.4 93.9 L553.4 91.4 L555.4 89.1 L557.4 87.0 L559.4 85.0 L561.4 83.1 L563.4 81.3 L565.4 79.6 L567.4 78.0 L569.4 76.5 L571.4 75.1 L573.4 73.7 L575.4 72.5 L577.4 71.3 L579.4 70.2 L581.4 69.2 L583.4 68.2 L585.4 67.3 L587.4 66.4 L589.4 65.6 L591.4 64.8 L593.4 64.1 L595.4 63.4 L597.4 62.8 L599.4 62.2 L601.4 61.6 L603.4 61.1 L605.4 60.6 L607.4 60.1 L609.4 59.6 L611.4 59.2 L613.4 58.8 L615.4 58.5 L617.4 58.1 L619.4 57.8 L621.4 57.5 L623.4 57.2 L625.4 56.9 L627.4 56.7 L629.4 56.4 L631.4 56.2 L633.4 56.0 L635.4 55.8 L637.4 55.6 L639.4 55.4 L641.4 55.2 L643.4 55.1 L645.4 54.9 L647.4 54.8 L649.4 54.6 L651.4 54.5 L653.4 54.4 L655.4 54.3 L657.4 54.2 L659.4 54.1 L661.4 54.0 L663.4 53.9 L665.4 53.8 L667.4 53.7 L669.4 53.7 L671.4 53.6 L673.4 53.5 L675.4 53.5 L677.4 53.4 L679.4 53.4 L681.4 53.3 L683.4 53.3 L685.4 53.2 L687.4 53.2 L689.4 53.1 L691.4 53.1 L693.4 53.1 L695.4 53.0 L697.4 53.0 L699.4 53.0 L701.4 53.0 L703.4 52.9 L705.4 52.9 L707.4 52.9 L709.4 52.9 L711.4 52.8 L713.4 52.8 L715.4 52.8 L717.4 52.8 L719.4 52.8 L721.4 52.8 L723.4 52.7 L725.4 52.7 L727.4 52.7 L729.4 52.7 L731.4 52.7 L733.4 52.7 L735.4 52.7 L737.4 52.7 L739.4 52.7 L741.4 52.6 L743.4 52.6 L745.4 52.6 L747.4 52.6 L749.4 52.6 L751.4 52.6 L753.4 52.6 L755.4 52.6 L757.4 52.6 L759.4 52.6 L761.4 52.6 L763.4 52.6 L765.4 52.6 L767.4 52.6 L769.4 52.6 L771.4 52.6 L773.4 52.6 L775.4 52.6 L777.4 52.6 L779.4 52.6 L781.4 52.6 L783.4 52.6 L785.4 52.6 L787.4 52.6 L789.4 52.5 L791.4 52.5 L793.4 52.5 L795.4 52.5 L797.4 52.5 L799.4 52.5 L801.4 52.5 L803.4 52.5 L805.4 52.5 L807.4 52.5 L809.4 52.5 L811.4 52.5 L813.4 52.5 L815.4 52.5 L817.4 52.5 L819.4 52.5 L821.4 52.5 L823.4 52.5 L825.4 52.5 L827.4 52.5 L829.4 52.5 L831.4 52.5 L833.4 52.5 L835.4 52.5 L837.4 52.5 L839.4 52.5 L841.4 52.5 L843.4 52.5 L845.4 52.5 L847.4 52.5 L849.4 52.5 L851.4 52.5 L853.4 52.5 L855.4 52.5 L857.4 52.5 L859.4 52.5 L861.4 52.5 L863.4 52.5 L865.4 52.5 L867.4 52.5 L869.4 52.5 L871.4 52.5 L873.4 52.5 L875.4 52.5 L877.4 52.5 L879.4 52.5 L881.4 52.5 L883.4 52.5 L885.4 52.5 L887.4 52.5 L889.4 52.5 L891.4 52.5 L893.4 52.5 L895.4 52.5 L897.4 52.5 L899.4 52.5" fill="none" stroke="#5fb3ff" stroke-width="3.5"/><text x="150.0" y="30" text-anchor="start" font-size="14" fill="#a9b4c2">switch closes</text><text x="500.0" y="30" text-anchor="start" font-size="14" fill="#a9b4c2">switch opens</text><path d="M150.0 40V300" fill="none" stroke="#a9b4c2" stroke-width="1"/><path d="M500.0 40V300" fill="none" stroke="#a9b4c2" stroke-width="1"/>
+    <title id="xb-eb-plot">Simulated controller pin voltage: it falls below the low threshold 0.8 milliseconds after the switch closes and rises above the high threshold 0.7 milliseconds after it opens.</title>
+    <path d="M100 300H900" fill="none" stroke="#3a414c" stroke-width="1.5"/><text x="88" y="305" text-anchor="end" font-size="14" fill="#a9b4c2">0 V</text><path d="M100 225H900" fill="none" stroke="#3a414c" stroke-width="1.5"/><text x="88" y="230" text-anchor="end" font-size="14" fill="#a9b4c2">1 V</text><path d="M100 150H900" fill="none" stroke="#3a414c" stroke-width="1.5"/><text x="88" y="155" text-anchor="end" font-size="14" fill="#a9b4c2">2 V</text><path d="M100 75H900" fill="none" stroke="#3a414c" stroke-width="1.5"/><text x="88" y="80" text-anchor="end" font-size="14" fill="#a9b4c2">3 V</text><path d="M100 225.75H900" fill="none" stroke="#ffcc33" stroke-width="1.5" stroke-dasharray="6 5"/><text x="896" y="219.75" text-anchor="end" font-size="14" fill="#ffcc33">reads low below 0.99 V</text><path d="M100 126.75H900" fill="none" stroke="#ffcc33" stroke-width="1.5" stroke-dasharray="6 5"/><text x="896" y="120.75" text-anchor="end" font-size="14" fill="#ffcc33">reads high above 2.31 V</text><text x="100.0" y="322" text-anchor="middle" font-size="14" fill="#a9b4c2">0</text><text x="200.0" y="322" text-anchor="middle" font-size="14" fill="#a9b4c2">2</text><text x="300.0" y="322" text-anchor="middle" font-size="14" fill="#a9b4c2">4</text><text x="400.0" y="322" text-anchor="middle" font-size="14" fill="#a9b4c2">6</text><text x="500.0" y="322" text-anchor="middle" font-size="14" fill="#a9b4c2">8</text><text x="600.0" y="322" text-anchor="middle" font-size="14" fill="#a9b4c2">10</text><text x="700.0" y="322" text-anchor="middle" font-size="14" fill="#a9b4c2">12</text><text x="800.0" y="322" text-anchor="middle" font-size="14" fill="#a9b4c2">14</text><text x="900.0" y="322" text-anchor="middle" font-size="14" fill="#a9b4c2">16</text><text x="500" y="345" text-anchor="middle" font-size="14" fill="#a9b4c2">time in milliseconds</text><path d="M100.0 52.5 L102.0 52.5 L104.0 52.5 L106.0 52.5 L108.1 52.5 L110.1 52.5 L112.1 52.5 L114.1 52.5 L116.1 52.5 L118.1 52.5 L120.1 52.5 L122.1 52.5 L124.1 52.5 L126.1 52.5 L128.1 52.5 L130.2 52.5 L132.2 52.5 L134.2 52.5 L136.2 52.5 L138.2 52.5 L140.2 52.5 L142.2 52.5 L144.2 52.5 L146.2 52.5 L148.2 52.5 L150.3 54.9 L152.3 70.3 L154.3 84.7 L156.3 98.0 L158.3 110.5 L160.3 122.0 L162.3 132.8 L164.3 142.9 L166.3 152.2 L168.3 160.9 L170.3 169.0 L172.3 176.6 L174.3 183.6 L176.3 190.1 L178.3 196.2 L180.3 201.9 L182.3 207.2 L184.3 212.1 L186.3 216.7 L188.3 221.0 L190.3 224.9 L192.3 228.6 L194.3 232.1 L196.3 235.3 L198.3 238.3 L200.3 241.0 L202.3 243.6 L204.3 246.0 L206.3 248.3 L208.3 250.4 L210.3 252.3 L212.3 254.1 L214.3 255.8 L216.3 257.4 L218.3 258.9 L220.3 260.2 L222.3 261.5 L224.3 262.7 L226.3 263.8 L228.3 264.8 L230.3 265.7 L232.3 266.6 L234.3 267.5 L236.3 268.2 L238.3 268.9 L240.3 269.6 L242.3 270.2 L244.3 270.8 L246.3 271.4 L248.3 271.9 L250.4 272.3 L252.4 272.8 L254.5 273.2 L256.5 273.6 L258.5 273.9 L260.5 274.3 L262.5 274.6 L264.5 274.8 L266.5 275.1 L268.5 275.3 L270.5 275.6 L272.5 275.8 L274.5 276.0 L276.5 276.2 L278.5 276.3 L280.5 276.5 L282.5 276.6 L284.5 276.8 L286.5 276.9 L288.5 277.0 L290.5 277.1 L292.5 277.2 L294.5 277.3 L296.5 277.4 L298.5 277.5 L300.5 277.6 L302.6 277.7 L304.6 277.7 L306.6 277.8 L308.6 277.9 L310.6 277.9 L312.6 278.0 L314.6 278.0 L316.6 278.1 L318.6 278.1 L320.6 278.1 L322.6 278.2 L324.6 278.2 L326.6 278.2 L328.6 278.3 L330.6 278.3 L332.6 278.3 L334.6 278.3 L336.6 278.4 L338.6 278.4 L340.6 278.4 L342.6 278.4 L344.6 278.4 L346.6 278.4 L348.6 278.5 L350.6 278.5 L352.6 278.5 L354.6 278.5 L356.6 278.5 L358.6 278.5 L360.6 278.5 L362.6 278.5 L364.7 278.5 L366.7 278.5 L368.7 278.6 L370.7 278.6 L372.7 278.6 L374.8 278.6 L376.8 278.6 L378.8 278.6 L380.8 278.6 L382.8 278.6 L384.8 278.6 L386.9 278.6 L388.9 278.6 L390.9 278.6 L392.9 278.6 L394.9 278.6 L396.9 278.6 L398.9 278.6 L400.9 278.6 L402.9 278.6 L404.9 278.6 L406.9 278.6 L408.9 278.6 L410.9 278.6 L412.9 278.6 L415.0 278.6 L417.0 278.6 L419.0 278.6 L421.0 278.6 L423.0 278.6 L425.0 278.6 L427.0 278.6 L429.0 278.6 L431.0 278.6 L433.0 278.6 L435.0 278.6 L437.0 278.6 L439.0 278.6 L441.0 278.6 L443.1 278.6 L445.1 278.6 L447.1 278.6 L449.1 278.6 L451.1 278.6 L453.1 278.6 L455.2 278.6 L457.2 278.6 L459.2 278.6 L461.2 278.6 L463.2 278.6 L465.2 278.6 L467.3 278.6 L469.3 278.6 L471.3 278.6 L473.3 278.6 L475.3 278.6 L477.3 278.6 L479.3 278.6 L481.3 278.6 L483.3 278.6 L485.3 278.6 L487.3 278.6 L489.3 278.6 L491.3 278.6 L493.3 278.6 L495.3 278.6 L497.3 278.6 L499.3 278.6 L501.3 269.9 L503.3 257.1 L505.3 245.1 L507.4 233.2 L509.4 222.6 L511.4 212.6 L513.4 203.2 L515.4 194.3 L517.4 186.0 L519.4 178.1 L521.4 170.7 L523.4 163.8 L525.4 157.2 L527.4 151.1 L529.4 145.3 L531.4 139.8 L533.4 134.7 L535.4 129.9 L537.4 125.3 L539.4 121.0 L541.4 117.0 L543.4 113.2 L545.4 109.6 L547.4 106.3 L549.4 103.1 L551.4 100.1 L553.4 97.3 L555.4 94.7 L557.4 92.2 L559.4 89.9 L561.4 87.7 L563.4 85.6 L565.4 83.7 L567.4 81.8 L569.4 80.1 L571.4 78.5 L573.4 77.0 L575.4 75.5 L577.4 74.2 L579.4 72.9 L581.4 71.7 L583.4 70.6 L585.4 69.5 L587.4 68.5 L589.4 67.6 L591.4 66.7 L593.4 65.9 L595.4 65.1 L597.4 64.3 L599.4 63.6 L601.4 63.0 L603.4 62.4 L605.4 61.8 L607.4 61.2 L609.4 60.7 L611.4 60.2 L613.4 59.8 L615.5 59.3 L617.6 58.9 L619.6 58.5 L621.7 58.2 L623.7 57.8 L625.8 57.5 L627.9 57.2 L629.9 56.9 L631.9 56.7 L633.9 56.4 L635.9 56.2 L637.9 56.0 L639.9 55.8 L641.9 55.6 L643.9 55.4 L645.9 55.2 L647.9 55.1 L649.9 54.9 L651.9 54.8 L653.9 54.7 L655.9 54.5 L657.9 54.4 L659.9 54.3 L661.9 54.2 L663.9 54.1 L666.0 54.0 L668.0 53.9 L670.1 53.8 L672.1 53.7 L674.1 53.7 L676.1 53.6 L678.1 53.5 L680.1 53.5 L682.1 53.4 L684.1 53.4 L686.1 53.3 L688.2 53.3 L690.2 53.2 L692.2 53.2 L694.2 53.1 L696.2 53.1 L698.2 53.1 L700.2 53.0 L702.2 53.0 L704.2 53.0 L706.2 53.0 L708.2 52.9 L710.2 52.9 L712.2 52.9 L714.2 52.9 L716.3 52.8 L718.3 52.8 L720.3 52.8 L722.3 52.8 L724.3 52.8 L726.3 52.8 L728.3 52.7 L730.3 52.7 L732.3 52.7 L734.3 52.7 L736.4 52.7 L738.4 52.7 L740.5 52.7 L742.5 52.7 L744.5 52.7 L746.5 52.6 L748.5 52.6 L750.5 52.6 L752.5 52.6 L754.5 52.6 L756.5 52.6 L758.5 52.6 L760.5 52.6 L762.6 52.6 L764.6 52.6 L766.6 52.6 L768.6 52.6 L770.6 52.6 L772.6 52.6 L774.6 52.6 L776.6 52.6 L778.6 52.6 L780.6 52.6 L782.6 52.6 L784.6 52.6 L786.6 52.6 L788.6 52.6 L790.6 52.6 L792.6 52.6 L794.7 52.5 L796.7 52.5 L798.7 52.5 L800.7 52.5 L802.7 52.5 L804.7 52.5 L806.7 52.5 L808.8 52.5 L810.9 52.5 L812.9 52.5 L814.9 52.5 L816.9 52.5 L818.9 52.5 L820.9 52.5 L822.9 52.5 L824.9 52.5 L826.9 52.5 L828.9 52.5 L830.9 52.5 L832.9 52.5 L834.9 52.5 L836.9 52.5 L838.9 52.5 L841.0 52.5 L843.0 52.5 L845.1 52.5 L847.2 52.5 L849.2 52.5 L851.3 52.5 L853.3 52.5 L855.4 52.5 L857.5 52.5 L859.5 52.5 L861.5 52.5 L863.5 52.5 L865.5 52.5 L867.5 52.5 L869.5 52.5 L871.5 52.5 L873.5 52.5 L875.5 52.5 L877.5 52.5 L879.5 52.5 L881.5 52.5 L883.6 52.5 L885.6 52.5 L887.6 52.5 L889.6 52.5 L891.6 52.5 L893.6 52.5 L895.7 52.5 L897.8 52.5 L899.8 52.5 L900.0 52.5" fill="none" stroke="#5fb3ff" stroke-width="3.5"/><text x="150.0" y="30" text-anchor="start" font-size="14" fill="#a9b4c2">switch closes</text><text x="500.0" y="30" text-anchor="start" font-size="14" fill="#a9b4c2">switch opens</text><path d="M150.0 40V300" fill="none" stroke="#a9b4c2" stroke-width="1"/><path d="M500.0 40V300" fill="none" stroke="#a9b4c2" stroke-width="1"/>
   </svg>
   </div>
-  <figcaption>Simulated voltage at the controller pin (blue), 3V3 position, no controller pull resistor.</figcaption>
+  <figcaption>Simulated voltage at the controller pin (blue), no controller pull resistor.</figcaption>
 </figure>
 <div class="xb-tablewrap"><table>
-  <thead><tr><th>Controller pin setting (3V3 position)</th><th>Closed level, −10 to 60&nbsp;&deg;C</th><th>Reads low reliably</th></tr></thead>
+  <thead><tr><th>Controller pin setting</th><th>Closed level, typical diode, &minus;10 to 60&nbsp;&deg;C</th><th>Reads low</th></tr></thead>
   <tbody>
-    <tr><td>No pull resistor (<code>-</code>)</td><td>0.62 to 0.74&nbsp;V</td><td>Yes</td></tr>
-    <tr><td>Pull-up (default or <code>^</code>), 50&nbsp;k&Omega;</td><td>0.89 to 1.00&nbsp;V</td><td>Marginal</td></tr>
-    <tr><td>Pull-up (default or <code>^</code>), 40&nbsp;k&Omega;</td><td>0.95 to 1.06&nbsp;V</td><td>Marginal</td></tr>
-    <tr><td>Pull-up (default or <code>^</code>), 30&nbsp;k&Omega;</td><td>1.05 to 1.14&nbsp;V</td><td>No</td></tr>
+    <tr><td>No pull resistor (<code>-</code>)</td><td>0.18 to 0.39&nbsp;V</td><td>Yes</td></tr>
+    <tr><td>Pull-up (default or <code>^</code>), 50&nbsp;k&Omega;</td><td>0.49 to 0.68&nbsp;V</td><td>Yes</td></tr>
+    <tr><td>Pull-up (default or <code>^</code>), 40&nbsp;k&Omega;</td><td>0.56 to 0.75&nbsp;V</td><td>Yes</td></tr>
+    <tr><td>Pull-up (default or <code>^</code>), 30&nbsp;k&Omega;</td><td>0.67 to 0.85&nbsp;V (worst-case diode: up to 0.94)</td><td>Yes, small margin</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
-Not simulated: noise and surge on long cables, electrostatic discharge, the behaviour of particular sensors, and heating.
+Not simulated: noise and surge on long cables, electrostatic discharge, the fuse, the behaviour of particular sensors, and heating.
 
 ## Appendix: historical page {#historical}
 

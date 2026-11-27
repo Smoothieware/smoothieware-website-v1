@@ -3338,18 +3338,18 @@
   "endstop-inputs-basic": [
     {
       "role": "endstop inputs basic",
-      "version": "v02",
+      "version": "v04",
       "cad_source_path": "extension-boards/src/endstop-inputs-basic/attempt/website/endstop-inputs.kicad_pcb",
-      "cad_sha256": "44e51ad39faca1826d541f0638ac08bf3e689bd59e5dc94d332224ff0cf00b27",
+      "cad_sha256": "d3026ad5d32bfd950d9759bb8dc535bdf2879371abf5fceb385ce2a89d7f8516",
       "diagram": {
         "url": "/images/extensions/endstop-inputs-basic/endstop-inputs-basic-diagram.png",
-        "sha256": "0ac5b7a325b0dfe00b09076bb753c9aa64daa91ed8e626f97e7b0818ab95fa64",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/endstop-inputs-basic/v02/endstop-inputs.svg",
+        "sha256": "38aee890206447d4fd2a196987cf2b377bc870e0e43eb8d85628fdf03527e2e4",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/endstop-inputs-basic/v04/endstop-inputs.svg",
         "source_hash_matches": true,
-        "embedded_cad_sha256": "44e51ad39faca1826d541f0638ac08bf3e689bd59e5dc94d332224ff0cf00b27",
-        "caption": "v02; drawn from the website copy of the board file.",
+        "embedded_cad_sha256": "d3026ad5d32bfd950d9759bb8dc535bdf2879371abf5fceb385ce2a89d7f8516",
+        "caption": "v04; drawn from the website copy of the board file.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/endstop-inputs-basic/endstop-inputs-basic-diagram.svg",
-        "archived_svg_sha256": "16feca65ef2dd1c74523d0e23c15d4b8c6355dae6f122900bb1a511c64b65bb7"
+        "archived_svg_sha256": "0d446e0eec18a8cdca181d9d57dea7d25c4ce6d25d5f55f67dc8102ba07791a5"
       },
       "renders": []
     }

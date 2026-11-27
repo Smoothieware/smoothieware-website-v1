@@ -130,6 +130,7 @@ History: see CHANGELOG.archive.md.
 
 ### Changed
 
+- Endstop inputs (basic) board page: updated for the current hardware, with 3.3 V controller signals in both supply positions, a resettable sensor fuse, static-discharge protection, test pads, new voltage figures and `^` pin settings.
 - The "Compare the MOSFET boards" table is now a three-board feature table with ticks and crosses, with a few specification rows at the top.
 - Removed the in-development Gadgeteer revision section and its angled rendering from the small MOSFET page.
 
