@@ -228,6 +228,16 @@ Hardware only: no Smoothieware setting is needed for the trigger and disconnect 
 
 The MAX6818 debounces the eight inputs, a 4068 combines them, and the latching relay K2 controls the power relay K1, which switches the fused supply between its normally closed and normally open outputs.
 
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
+  <svg viewBox="0 0 1000 142" role="img" aria-labelledby="xb-historical-flambehub-path"><title id="xb-historical-flambehub-path">Eight inputs then MAX6818, debounces then 4068, combines them then Latching relay K2 then Power relay K1, switches fused supply.</title><rect x="20" y="14" width="165" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="102" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Eight inputs</text><text x="102" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><rect x="219" y="14" width="165" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="301" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">MAX6818</text><text x="301" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2">debounces</text><path d="M188.8 70H209.8" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M208 63L217 70L208 77Z" fill="#5fb3ff"/><rect x="418" y="14" width="165" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="500" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">4068</text><text x="500" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2">combines them</text><path d="M387.6 70H408.6" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M407 63L416 70L407 77Z" fill="#5fb3ff"/><rect x="616" y="14" width="165" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="699" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Latching relay K2</text><text x="699" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><path d="M586.4000000000001 70H607.4000000000001" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M605 63L614 70L605 77Z" fill="#5fb3ff"/><rect x="815" y="14" width="165" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="898" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Power relay K1</text><text x="898" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2">switches fused supply</text><path d="M785.2 70H806.2" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M804 63L813 70L804 77Z" fill="#5fb3ff"/></svg>
+  </div>
+  <figcaption>How the signals pass through this board.</figcaption>
+</figure>
+{:/nomarkdown}
+
+
 ## Troubleshooting {#troubleshooting}
 
 {::nomarkdown}

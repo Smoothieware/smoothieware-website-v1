@@ -149,6 +149,15 @@ permalink: /extensions/historical-gadgeteer-led-breakout
 A one-channel test on Smoothieboard V2 Prime.
 
 {::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Wiring">
+  <svg viewBox="0 0 1000 424" role="img" aria-labelledby="xb-historical-gadgeteer-led-breakout-wire"><title id="xb-historical-gadgeteer-led-breakout-wire">Wiring: controller contact 3 to J1 contact 3; controller contact 10 to J1 contact 10.</title><image href="/images/extensions/historical-gadgeteer-led-breakout/directory-board-render.png" x="220" y="14" width="560" height="182"/><text x="130" y="244" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Prime header J37</text><text x="870" y="244" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J1 on this board</text><rect x="30" y="256" width="200" height="150" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="130" y="327" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Smoothieboard</text><text x="130" y="347" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">V2 Prime</text><rect x="770" y="256" width="200" height="150" rx="8" fill="#2b2f35" stroke="#9aa2ad" stroke-width="1.5"/><path d="M230 316.0H770" fill="none" stroke="#2f7fe0" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="316" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><circle cx="770" cy="316" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><text x="216" y="321" text-anchor="end" font-size="14" font-weight="700" fill="#e6ebf2">3</text><text x="784" y="321" text-anchor="start" font-size="14" fill="#e6ebf2">3  LED D1</text><rect x="400" y="305" width="200" height="22" rx="11" fill="#2f7fe0" stroke="#2f7fe0" stroke-width="1.5"/><text x="500" y="321" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">3 to 3: LED D1</text><path d="M230 346.0H770" fill="none" stroke="#8b949e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="346" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><circle cx="770" cy="346" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><text x="216" y="351" text-anchor="end" font-size="14" font-weight="700" fill="#e6ebf2">10</text><text x="784" y="351" text-anchor="start" font-size="14" fill="#e6ebf2">10  GND</text><rect x="400" y="335" width="200" height="22" rx="11" fill="#8b949e" stroke="#8b949e" stroke-width="1.5"/><text x="500" y="351" text-anchor="middle" font-size="13" font-weight="700" fill="#111">10 to 10: GND</text></svg>
+  </div>
+  <figcaption>Wiring for this procedure. Yellow rings mark the connectors used. Make and change connections with the power off.</figcaption>
+</figure>
+{:/nomarkdown}
+
+{::nomarkdown}
 <ol class="xb-steps">
   <li class="xb-step">
     <h3>Wire two leads</h3>
@@ -188,6 +197,16 @@ historical_led.halt_set_to = false
 ## How it works {#how-it-works}
 
 Header contact 3 drives D1 through a 1 kΩ resistor to ground, and so on up to contact 9 and D7. The 3.3 V and 5 V contacts do not power the LEDs.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
+  <svg viewBox="0 0 1000 142" role="img" aria-labelledby="xb-historical-gadgeteer-led-breakout-path"><title id="xb-historical-gadgeteer-led-breakout-path">Header contact 3 to 9 then 1 kΩ resistor each then LEDs D1 to D7 then Ground.</title><rect x="20" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="127" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Header contact 3 to 9</text><text x="127" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><rect x="268" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="376" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">1 kΩ resistor each</text><text x="376" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><path d="M238.5 70H259.5" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M258 63L266 70L258 77Z" fill="#5fb3ff"/><rect x="517" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="624" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">LEDs D1 to D7</text><text x="624" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><path d="M487.0 70H508.0" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M506 63L515 70L506 77Z" fill="#5fb3ff"/><rect x="766" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="873" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Ground</text><text x="873" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><path d="M735.5 70H756.5" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M754 63L764 70L754 77Z" fill="#5fb3ff"/></svg>
+  </div>
+  <figcaption>How the signals pass through this board.</figcaption>
+</figure>
+{:/nomarkdown}
+
 
 ## Troubleshooting {#troubleshooting}
 

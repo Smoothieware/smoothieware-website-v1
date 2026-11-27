@@ -157,6 +157,15 @@ permalink: /extensions/historical-large-mosfet-kicad
 A first test on Smoothieboard V2 Prime with a small load or none, after identifying the fitted transistor.
 
 {::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Wiring">
+  <svg viewBox="0 0 1000 472" role="img" aria-labelledby="xb-historical-large-mosfet-kicad-wire"><title id="xb-historical-large-mosfet-kicad-wire">Wiring: controller contact GND to JP1 contact 1; controller contact 3 to JP1 contact 3.</title><image href="/images/extensions/historical-large-mosfet-kicad/directory-board-render.png" x="369" y="14" width="262" height="230"/><circle cx="497" cy="47" r="17" fill="none" stroke="#ffcc33" stroke-width="3"/><rect x="478" y="66" width="38" height="19" rx="9" fill="#ffcc33" stroke="#ffcc33" stroke-width="1.5"/><text x="497" y="80" text-anchor="middle" font-size="13" font-weight="700" fill="#111">JP1</text><text x="130" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Prime header J37 wires</text><text x="870" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">JP1 on this board</text><rect x="30" y="304" width="200" height="150" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="130" y="375" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Smoothieboard</text><text x="130" y="395" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">V2 Prime</text><rect x="770" y="304" width="200" height="150" rx="8" fill="#2b2f35" stroke="#9aa2ad" stroke-width="1.5"/><path d="M230 364.0H770" fill="none" stroke="#8b949e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="364" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><circle cx="770" cy="364" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><text x="216" y="369" text-anchor="end" font-size="14" font-weight="700" fill="#e6ebf2">GND</text><text x="784" y="369" text-anchor="start" font-size="14" fill="#e6ebf2">1  GND</text><rect x="400" y="353" width="200" height="22" rx="11" fill="#8b949e" stroke="#8b949e" stroke-width="1.5"/><text x="500" y="369" text-anchor="middle" font-size="13" font-weight="700" fill="#111">GND to 1: GND</text><path d="M230 394.0H770" fill="none" stroke="#2f7fe0" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="394" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><circle cx="770" cy="394" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><text x="216" y="399" text-anchor="end" font-size="14" font-weight="700" fill="#e6ebf2">3</text><text x="784" y="399" text-anchor="start" font-size="14" fill="#e6ebf2">3  FET-LOGIC-IN</text><rect x="400" y="383" width="200" height="22" rx="11" fill="#2f7fe0" stroke="#2f7fe0" stroke-width="1.5"/><text x="500" y="399" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">3 to 3: FET-LOGIC-IN</text></svg>
+  </div>
+  <figcaption>Identify the fitted transistor first; add the fused supply and a small load with power off. D11 clamps inductive spikes.</figcaption>
+</figure>
+{:/nomarkdown}
+
+{::nomarkdown}
 <ol class="xb-steps">
   <li class="xb-step">
     <h3>Identify the transistor</h3>
@@ -195,6 +204,16 @@ board_test.halt_set_to = false
 ## How it works {#how-it-works}
 
 The input drives the transistor gate through 10 Ω, and 100 kΩ holds it off when nothing drives it. The load connects between supply positive and the switched terminal; D11 clamps the voltage spike of an inductive load when it is switched off.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
+  <svg viewBox="0 0 1000 142" role="img" aria-labelledby="xb-historical-large-mosfet-kicad-path"><title id="xb-historical-large-mosfet-kicad-path">Input on JP1 then 10 Ω to the gate, 100 kΩ holds it off then Transistor then Load between supply positive and switched terminal.</title><rect x="20" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="127" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Input on JP1</text><text x="127" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><rect x="268" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="376" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">10 Ω to the gate</text><text x="376" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2">100 kΩ holds it off</text><path d="M238.5 70H259.5" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M258 63L266 70L258 77Z" fill="#5fb3ff"/><rect x="517" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="624" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Transistor</text><text x="624" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><path d="M487.0 70H508.0" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M506 63L515 70L506 77Z" fill="#5fb3ff"/><rect x="766" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="873" y="47" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Load between supply</text><text x="873" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">positive and switched</text><text x="873" y="83" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">terminal</text><text x="873" y="103" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><path d="M735.5 70H756.5" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M754 63L764 70L754 77Z" fill="#5fb3ff"/></svg>
+  </div>
+  <figcaption>How the signals pass through this board.</figcaption>
+</figure>
+{:/nomarkdown}
+
 
 ## Troubleshooting {#troubleshooting}
 

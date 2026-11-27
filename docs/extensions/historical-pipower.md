@@ -195,6 +195,16 @@ On Smoothieboard V2 Prime, channel 1 transmits on PB9 and receives on PH14. See 
 
 R1 pulls the button node to 5 V and C2 filters it; SW1 or a switch on J8 grounds it. Bridging JP1 connects the node to the Pi header. The node is pulled to 5 V: check that your Pi input tolerates it before bridging.
 
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
+  <svg viewBox="0 0 1000 142" role="img" aria-labelledby="xb-historical-pipower-path"><title id="xb-historical-pipower-path">5 V through R1, C2 filters then Button node, SW1 or J8 switch grounds it then JP1 bridged then Pi header.</title><rect x="20" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="127" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">5 V through R1</text><text x="127" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2">C2 filters</text><rect x="268" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="376" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Button node</text><text x="376" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2">SW1 or J8 switch grounds it</text><path d="M238.5 70H259.5" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M258 63L266 70L258 77Z" fill="#5fb3ff"/><rect x="517" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="624" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">JP1 bridged</text><text x="624" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><path d="M487.0 70H508.0" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M506 63L515 70L506 77Z" fill="#5fb3ff"/><rect x="766" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="873" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Pi header</text><text x="873" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><path d="M735.5 70H756.5" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M754 63L764 70L754 77Z" fill="#5fb3ff"/></svg>
+  </div>
+  <figcaption>How the signals pass through this board.</figcaption>
+</figure>
+{:/nomarkdown}
+
+
 ## Troubleshooting {#troubleshooting}
 
 {::nomarkdown}

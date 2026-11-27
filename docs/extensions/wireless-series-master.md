@@ -226,6 +226,16 @@ There is no Smoothieware setting for this board. Whatever the controller sees on
 
 The microcontroller drives the radio module over its own SPI bus and reads or drives host contacts 3 to 9 through an <a href="/images/extensions/wireless-series-master/datasheets/sn74cb3q3245.pdf">SN74CB3Q3245</a> bus switch.
 
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
+  <svg viewBox="0 0 1000 142" role="img" aria-labelledby="xb-wireless-series-master-path"><title id="xb-wireless-series-master-path">Host contacts 3 to 9 then SN74CB3Q3245 bus switch then Microcontroller then Radio module on its own SPI bus.</title><rect x="20" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="127" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Host contacts 3 to 9</text><text x="127" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><rect x="268" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="376" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">SN74CB3Q3245 bus switch</text><text x="376" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><path d="M238.5 70H259.5" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M258 63L266 70L258 77Z" fill="#5fb3ff"/><rect x="517" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="624" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Microcontroller</text><text x="624" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><path d="M487.0 70H508.0" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M506 63L515 70L506 77Z" fill="#5fb3ff"/><rect x="766" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="873" y="56" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Radio module on its own</text><text x="873" y="74" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">SPI bus</text><text x="873" y="94" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><path d="M735.5 70H756.5" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M754 63L764 70L754 77Z" fill="#5fb3ff"/></svg>
+  </div>
+  <figcaption>How the signals pass through this board.</figcaption>
+</figure>
+{:/nomarkdown}
+
+
 ## Troubleshooting {#troubleshooting}
 
 {::nomarkdown}

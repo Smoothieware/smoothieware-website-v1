@@ -155,6 +155,15 @@ permalink: /extensions/historical-mechanical-endstop
 A bench test on Smoothieboard V2 Prime with machine loads disabled.
 
 {::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Wiring">
+  <svg viewBox="0 0 1000 472" role="img" aria-labelledby="xb-historical-mechanical-endstop-wire"><title id="xb-historical-mechanical-endstop-wire">Wiring: controller contact 1 to P1 contact 1; controller contact 10 to P1 contact 2; controller contact 3 to P1 contact 3.</title><image href="/images/extensions/historical-mechanical-endstop/directory-board-render.png" x="252" y="14" width="495" height="230"/><circle cx="422" cy="129" r="17" fill="none" stroke="#ffcc33" stroke-width="3"/><rect x="403" y="148" width="38" height="19" rx="9" fill="#ffcc33" stroke="#ffcc33" stroke-width="1.5"/><text x="422" y="162" text-anchor="middle" font-size="13" font-weight="700" fill="#111">P1</text><text x="130" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Prime header J37</text><text x="870" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">P1 on this board</text><rect x="30" y="304" width="200" height="150" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="130" y="375" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Smoothieboard</text><text x="130" y="395" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">V2 Prime</text><rect x="770" y="304" width="200" height="150" rx="8" fill="#2b2f35" stroke="#9aa2ad" stroke-width="1.5"/><path d="M230 349.0H770" fill="none" stroke="#2f7fe0" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="349" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><circle cx="770" cy="349" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><text x="216" y="354" text-anchor="end" font-size="14" font-weight="700" fill="#e6ebf2">1</text><text x="784" y="354" text-anchor="start" font-size="14" fill="#e6ebf2">1  VCC</text><rect x="400" y="338" width="200" height="22" rx="11" fill="#2f7fe0" stroke="#2f7fe0" stroke-width="1.5"/><text x="500" y="354" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">1 to 1: VCC</text><path d="M230 379.0H770" fill="none" stroke="#8b949e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="379" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><circle cx="770" cy="379" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><text x="216" y="384" text-anchor="end" font-size="14" font-weight="700" fill="#e6ebf2">10</text><text x="784" y="384" text-anchor="start" font-size="14" fill="#e6ebf2">2  GND</text><rect x="400" y="368" width="200" height="22" rx="11" fill="#8b949e" stroke="#8b949e" stroke-width="1.5"/><text x="500" y="384" text-anchor="middle" font-size="13" font-weight="700" fill="#111">10 to 2: GND</text><path d="M230 409.0H770" fill="none" stroke="#2f7fe0" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="409" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><circle cx="770" cy="409" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><text x="216" y="414" text-anchor="end" font-size="14" font-weight="700" fill="#e6ebf2">3</text><text x="784" y="414" text-anchor="start" font-size="14" fill="#e6ebf2">3  ~SIG</text><rect x="400" y="398" width="200" height="22" rx="11" fill="#2f7fe0" stroke="#2f7fe0" stroke-width="1.5"/><text x="500" y="414" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">3 to 3: ~SIG</text></svg>
+  </div>
+  <figcaption>Wiring for this procedure. Yellow rings mark the connectors used. Make and change connections with the power off.</figcaption>
+</figure>
+{:/nomarkdown}
+
+{::nomarkdown}
 <ol class="xb-steps">
   <li class="xb-step">
     <h3>Wire three leads</h3>
@@ -190,6 +199,16 @@ extension_test.limit_enable = false
 ## How it works {#how-it-works}
 
 The switch connects the signal to ground or to VCC depending on its position, with a 10 kΩ pull-up and a 100 nF capacitor on the signal. Because the pull-up is on the board, a firmware pull-down does not remove it.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
+  <svg viewBox="0 0 1000 142" role="img" aria-labelledby="xb-historical-mechanical-endstop-path"><title id="xb-historical-mechanical-endstop-path">Switch position then Signal to ground or VCC then 10 kΩ pull-up and 100 nF capacitor then Controller input.</title><rect x="20" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="127" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Switch position</text><text x="127" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><rect x="268" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="376" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Signal to ground or VCC</text><text x="376" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><path d="M238.5 70H259.5" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M258 63L266 70L258 77Z" fill="#5fb3ff"/><rect x="517" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="624" y="56" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">10 kΩ pull-up and 100</text><text x="624" y="74" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">nF capacitor</text><text x="624" y="94" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><path d="M487.0 70H508.0" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M506 63L515 70L506 77Z" fill="#5fb3ff"/><rect x="766" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="873" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Controller input</text><text x="873" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><path d="M735.5 70H756.5" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M754 63L764 70L754 77Z" fill="#5fb3ff"/></svg>
+  </div>
+  <figcaption>How the signals pass through this board.</figcaption>
+</figure>
+{:/nomarkdown}
+
 
 ## Troubleshooting {#troubleshooting}
 

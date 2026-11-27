@@ -152,6 +152,15 @@ The numbers on the drawing match the list below it.
 This example uses PB1 on Smoothieboard V2 Prime GF/J37 (the 2590 version; check the pin on other boards).
 
 {::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Wiring">
+  <svg viewBox="0 0 1000 472" role="img" aria-labelledby="xb-buzzer-module-wire"><title id="xb-buzzer-module-wire">Wiring: controller contact 2 to J1 contact 2; controller contact 3 to J1 contact 3; controller contact 10 to J1 contact 10.</title><image href="/images/extensions/buzzer-module/v14/buzzer-module-diagram.webp" x="384" y="14" width="231" height="230"/><circle cx="436" cy="54" r="17" fill="none" stroke="#ffcc33" stroke-width="3"/><rect x="417" y="73" width="38" height="19" rx="9" fill="#ffcc33" stroke="#ffcc33" stroke-width="1.5"/><text x="436" y="87" text-anchor="middle" font-size="13" font-weight="700" fill="#111">J1</text><text x="130" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Prime header GF/J37</text><text x="870" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J1 on this board</text><rect x="30" y="304" width="200" height="150" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="130" y="375" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Smoothieboard</text><text x="130" y="395" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">V2 Prime</text><rect x="770" y="304" width="200" height="150" rx="8" fill="#2b2f35" stroke="#9aa2ad" stroke-width="1.5"/><path d="M230 349.0H770" fill="none" stroke="#e8820c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="349" r="5" fill="#e8820c" stroke="#fff" stroke-width="1.5"/><circle cx="770" cy="349" r="5" fill="#e8820c" stroke="#fff" stroke-width="1.5"/><text x="216" y="354" text-anchor="end" font-size="14" font-weight="700" fill="#e6ebf2">2</text><text x="784" y="354" text-anchor="start" font-size="14" fill="#e6ebf2">2  5 V</text><rect x="400" y="338" width="200" height="22" rx="11" fill="#e8820c" stroke="#e8820c" stroke-width="1.5"/><text x="500" y="354" text-anchor="middle" font-size="13" font-weight="700" fill="#111">2 to 2: 5 V</text><path d="M230 379.0H770" fill="none" stroke="#2f7fe0" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="379" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><circle cx="770" cy="379" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><text x="216" y="384" text-anchor="end" font-size="14" font-weight="700" fill="#e6ebf2">3</text><text x="784" y="384" text-anchor="start" font-size="14" fill="#e6ebf2">3  Control</text><rect x="400" y="368" width="200" height="22" rx="11" fill="#2f7fe0" stroke="#2f7fe0" stroke-width="1.5"/><text x="500" y="384" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">3 to 3: Control</text><path d="M230 409.0H770" fill="none" stroke="#8b949e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="409" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><circle cx="770" cy="409" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><text x="216" y="414" text-anchor="end" font-size="14" font-weight="700" fill="#e6ebf2">10</text><text x="784" y="414" text-anchor="start" font-size="14" fill="#e6ebf2">10  GND</text><rect x="400" y="398" width="200" height="22" rx="11" fill="#8b949e" stroke="#8b949e" stroke-width="1.5"/><text x="500" y="414" text-anchor="middle" font-size="13" font-weight="700" fill="#111">10 to 10: GND</text></svg>
+  </div>
+  <figcaption>Wiring for this procedure. Yellow rings mark the connectors used. Make and change connections with the power off.</figcaption>
+</figure>
+{:/nomarkdown}
+
+{::nomarkdown}
 <ol class="xb-steps">
   <li class="xb-step">
     <h3>Check JP1</h3>
@@ -203,6 +212,16 @@ PB1, the name and <code>M106.9</code>/<code>M107.9</code> must be unused. Merge 
 ## How it works {#how-it-works}
 
 Either input passes through a diode and 100&nbsp;&Omega; to the MOSFET gate, which has a 10&nbsp;k&Omega; pull-down. A high level connects the buzzer to ground.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
+  <svg viewBox="0 0 1000 142" role="img" aria-labelledby="xb-buzzer-module-path"><title id="xb-buzzer-module-path">Either input, J1 or the second input then Diode and 100 Ω, 10 kΩ pull-down on gate then MOSFET, high level switches it on then Buzzer, connected to ground, sounds.</title><rect x="20" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="127" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Either input</text><text x="127" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2">J1 or the second input</text><rect x="268" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="376" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Diode and 100 Ω</text><text x="376" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2">10 kΩ pull-down on gate</text><path d="M238.5 70H259.5" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M258 63L266 70L258 77Z" fill="#5fb3ff"/><rect x="517" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="624" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">MOSFET</text><text x="624" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2">high level switches it on</text><path d="M487.0 70H508.0" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M506 63L515 70L506 77Z" fill="#5fb3ff"/><rect x="766" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="873" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Buzzer</text><text x="873" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2">connected to ground, sounds</text><path d="M735.5 70H756.5" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M754 63L764 70L754 77Z" fill="#5fb3ff"/></svg>
+  </div>
+  <figcaption>How the signals pass through this board.</figcaption>
+</figure>
+{:/nomarkdown}
+
 
 ## Troubleshooting {#troubleshooting}
 

@@ -227,6 +227,16 @@ This example reads a 5 V-side contact through channel 1 on PB1.
 
 Each channel is the usual single-MOSFET translator: gate on 3.3 V, one pull-up per side. Either side can pull the line low; a high level comes from the resistor, so edges rise slowly on long or capacitive wires. See the [BSS138PS datasheet](https://www.nexperia.com/pip/BSS138PS).
 
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
+  <svg viewBox="0 0 1000 142" role="img" aria-labelledby="xb-historical-gadgeteer-3v3-5v-level-shifter-path"><title id="xb-historical-gadgeteer-3v3-5v-level-shifter-path">3.3 V side, with pull-up then One MOSFET per channel, gate on 3.3 V then 5 V side, with pull-up.</title><rect x="46" y="14" width="280" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="186" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">3.3 V side</text><text x="186" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2">with pull-up</text><rect x="360" y="14" width="280" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="500" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">One MOSFET per channel</text><text x="500" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2">gate on 3.3 V</text><path d="M330.0 70H351.0" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M349 63L358 70L349 77Z" fill="#5fb3ff"/><rect x="674" y="14" width="280" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="814" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">5 V side</text><text x="814" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2">with pull-up</text><path d="M644.0 70H665.0" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M663 63L672 70L663 77Z" fill="#5fb3ff"/></svg>
+  </div>
+  <figcaption>How the signals pass through this board.</figcaption>
+</figure>
+{:/nomarkdown}
+
+
 ## Troubleshooting {#troubleshooting}
 
 {::nomarkdown}

@@ -146,10 +146,20 @@ CHAIN pin 9 is unconnected. The passed-through rails and ground belong to the co
 
 ## Get started {#get-started}
 
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Wiring">
+  <svg viewBox="0 0 1000 472" role="img" aria-labelledby="xb-single-channel-small-mosfet-advanced-output-wire"><title id="xb-single-channel-small-mosfet-advanced-output-wire">Wiring: controller contact ground to J1 contact 1; controller contact command to J1 contact 3.</title><image href="/images/extensions/single-channel-small-mosfet-advanced-output/v29/single-channel-small-mosfet-advanced-output-diagram.png" x="418" y="14" width="165" height="230"/><text x="130" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Three-pin harness</text><text x="870" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J1 on this board</text><image href="/images/extensions/single-channel-small-mosfet-advanced-output/v29/single-channel-small-mosfet-advanced-output-diagram.png" x="418" y="14" width="165" height="230"/><text x="130" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Three-pin harness</text><text x="870" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J1 on this board</text><rect x="30" y="304" width="200" height="150" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="130" y="384" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Your controller</text><rect x="770" y="304" width="200" height="150" rx="8" fill="#2b2f35" stroke="#9aa2ad" stroke-width="1.5"/><path d="M230 364.0H770" fill="none" stroke="#8b949e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="364" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><circle cx="770" cy="364" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><text x="216" y="369" text-anchor="end" font-size="14" font-weight="700" fill="#e6ebf2">ground</text><text x="784" y="369" text-anchor="start" font-size="14" fill="#e6ebf2">1  ground</text><rect x="400" y="353" width="200" height="22" rx="11" fill="#8b949e" stroke="#8b949e" stroke-width="1.5"/><text x="500" y="369" text-anchor="middle" font-size="13" font-weight="700" fill="#111">ground to 1: ground</text><path d="M230 394.0H770" fill="none" stroke="#2f7fe0" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="394" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><circle cx="770" cy="394" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><text x="216" y="399" text-anchor="end" font-size="14" font-weight="700" fill="#e6ebf2">command</text><text x="784" y="399" text-anchor="start" font-size="14" fill="#e6ebf2">3  command</text><rect x="400" y="383" width="200" height="22" rx="11" fill="#2f7fe0" stroke="#2f7fe0" stroke-width="1.5"/><text x="500" y="399" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">command to 3: command</text></svg>
+  </div>
+  <figcaption>Contacts shown are for the three-pin harness: ground to pin 1, command to pin 3, pin 2 empty. Supply goes to J2 and load to J3, per the pinout.</figcaption>
+</figure>
+{:/nomarkdown}
+
 1. Power down. Choose one local command source at [SJ14](#options).
 2. For Gadgeteer, plug the controller's type-Y ribbon into **Y IN**. For the three-pin harness, wire controller ground to pin 1 and the command to pin 3. Leave pin 2 empty.
 3. Connect the external supply to **J2** and the load to **J3** using the polarity in the pinout. Keep the field and controller returns separate to preserve isolation.
 4. Configure the chosen controller pin to start and halt low. Bring up the board with a current-limited supply and a small test load.
+
 
 ## Configuration {#configuration}
 
@@ -186,6 +196,16 @@ Route both load wires to **J3**. The board switches the negative load return. Th
 ## How it works {#how-it-works}
 
 The optocoupler passes the selected command across the isolation barrier. The protected field supply powers the gate driver. The gate is held low when the command is absent or the bias supply is below its startup threshold. The field circuit also provides reverse-polarity and overcurrent protection and a path for inductive current at turn-off.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
+  <svg viewBox="0 0 1000 142" role="img" aria-labelledby="xb-single-channel-small-mosfet-advanced-output-path"><title id="xb-single-channel-small-mosfet-advanced-output-path">Command then Optocoupler, isolation barrier then Gate driver, fed by protected field supply then MOSFET then Load on J3.</title><rect x="20" y="14" width="165" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="102" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Command</text><text x="102" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><rect x="219" y="14" width="165" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="301" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Optocoupler</text><text x="301" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2">isolation barrier</text><path d="M188.8 70H209.8" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M208 63L217 70L208 77Z" fill="#5fb3ff"/><rect x="418" y="14" width="165" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="500" y="57" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Gate driver</text><text x="500" y="77" text-anchor="middle" font-size="13" fill="#a9b4c2">fed by protected field</text><text x="500" y="93" text-anchor="middle" font-size="13" fill="#a9b4c2">supply</text><path d="M387.6 70H408.6" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M407 63L416 70L407 77Z" fill="#5fb3ff"/><rect x="616" y="14" width="165" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="699" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">MOSFET</text><text x="699" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><path d="M586.4000000000001 70H607.4000000000001" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M605 63L614 70L605 77Z" fill="#5fb3ff"/><rect x="815" y="14" width="165" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="898" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Load on J3</text><text x="898" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><path d="M785.2 70H806.2" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M804 63L813 70L804 77Z" fill="#5fb3ff"/></svg>
+  </div>
+  <figcaption>How the signals pass through this board.</figcaption>
+</figure>
+{:/nomarkdown}
+
 
 ## Source selector {#options}
 

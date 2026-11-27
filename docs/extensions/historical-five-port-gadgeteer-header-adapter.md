@@ -201,6 +201,16 @@ This passive board needs no setting of its own. Configure the pin each signal co
 
 Contacts 3–9 of each port run straight to one seven-contact row: J1 to J8, J2 to J9, J3 to J11, J4 to J12 and J5 to J13. All 3.3 V, 5 V and ground contacts are common.
 
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
+  <svg viewBox="0 0 1000 270" role="img" aria-labelledby="xb-historical-five-port-gadgeteer-header-adapter-path"><title id="xb-historical-five-port-gadgeteer-header-adapter-path">J1 to J5, contacts 3 to 9 then Straight tracks then J8, J9, J11, J12, J13, one row per port. All ports then Common 3.3 V, 5 V and ground.</title><rect x="46" y="14" width="280" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="186" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">J1 to J5, contacts 3 to 9</text><text x="186" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><rect x="360" y="14" width="280" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="500" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Straight tracks</text><text x="500" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><path d="M330.0 70H351.0" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M349 63L358 70L349 77Z" fill="#5fb3ff"/><rect x="674" y="14" width="280" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="814" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">J8, J9, J11, J12, J13</text><text x="814" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2">one row per port</text><path d="M644.0 70H665.0" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M663 63L672 70L663 77Z" fill="#5fb3ff"/><rect x="203" y="142" width="280" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="343" y="193" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">All ports</text><text x="343" y="213" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><rect x="517" y="142" width="280" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="657" y="193" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Common 3.3 V, 5 V and ground</text><text x="657" y="213" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><path d="M487.0 198H508.0" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M506 191L515 198L506 205Z" fill="#5fb3ff"/></svg>
+  </div>
+  <figcaption>How the signals pass through this board, one path per row.</figcaption>
+</figure>
+{:/nomarkdown}
+
+
 ## Troubleshooting {#troubleshooting}
 
 {::nomarkdown}

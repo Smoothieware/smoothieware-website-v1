@@ -221,6 +221,16 @@ See [endstops](/endstops). Syntax checked against firmware commit `2a21c0108b1d0
 
 Each switch connects between a field input and ground. The MAX6818 ignores contact bounce and presents a stable level on the matching output. `_EN` enables the outputs and `_CH` flags that an input changed, until the outputs are read. The chip details are in the [MAX6816–MAX6818 datasheet](https://www.analog.com/en/products/max6816.html).
 
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
+  <svg viewBox="0 0 1000 142" role="img" aria-labelledby="xb-historical-bounce-stop-path"><title id="xb-historical-bounce-stop-path">Switches, between field input and ground then MAX6818, ignores contact bounce then Stable outputs, enabled by _EN then _CH, flags a change until outputs are read.</title><rect x="20" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="127" y="57" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Switches</text><text x="127" y="77" text-anchor="middle" font-size="13" fill="#a9b4c2">between field input and</text><text x="127" y="93" text-anchor="middle" font-size="13" fill="#a9b4c2">ground</text><rect x="268" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="376" y="65" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">MAX6818</text><text x="376" y="85" text-anchor="middle" font-size="13" fill="#a9b4c2">ignores contact bounce</text><path d="M238.5 70H259.5" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M258 63L266 70L258 77Z" fill="#5fb3ff"/><rect x="517" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="624" y="56" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Stable outputs, enabled</text><text x="624" y="74" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">by _EN</text><text x="624" y="94" text-anchor="middle" font-size="13" fill="#a9b4c2"></text><path d="M487.0 70H508.0" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M506 63L515 70L506 77Z" fill="#5fb3ff"/><rect x="766" y="14" width="214" height="112" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="873" y="57" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">_CH</text><text x="873" y="77" text-anchor="middle" font-size="13" fill="#a9b4c2">flags a change until outputs</text><text x="873" y="93" text-anchor="middle" font-size="13" fill="#a9b4c2">are read</text><path d="M735.5 70H756.5" fill="none" stroke="#5fb3ff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><path d="M754 63L764 70L754 77Z" fill="#5fb3ff"/></svg>
+  </div>
+  <figcaption>How the signals pass through this board.</figcaption>
+</figure>
+{:/nomarkdown}
+
+
 ## Troubleshooting {#troubleshooting}
 
 {::nomarkdown}
