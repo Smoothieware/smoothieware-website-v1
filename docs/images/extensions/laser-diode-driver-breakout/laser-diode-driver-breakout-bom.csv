@@ -1,117 +1,69 @@
-Reference,Value,Footprint,DNP
-C5,100nF X7R 50V 0603,Custom:Group3_C5,False
-C6,100nF X7R 50V 0603,Custom:Group3_C6,False
-C7,100nF X7R 50V 0603,Custom:Group3_C7,False
-C8,100nF X7R 50V 0603,Custom:Group3_C8,False
-C80,22nF 25V X7R,Protection:C80_C_0603_1608Metric,False
-C81,100nF 100V X7R,Protection:C81_C_0805_2012Metric,False
-C82,1uF 100V X7R,Protection:C82_C_1210_3225Metric,False
-C83,100nF 25V X7R,Protection:C83_C_0603_1608Metric,False
-C84,100nF 25V X7R,Protection:C84_C_0603_1608Metric,False
-C85,10nF 25V X7R,Protection:C85_C_0603_1608Metric,False
-C86,10uF 16V X7R,Protection:C86_C_0805_2012Metric,False
-C9,100nF X7R 50V 0603,Custom:Group3_C9,False
-CBOOST,220nF,Custom:Group3_CBOOST,False
-CIN1,2.2uF 50V,Custom:Group3_CIN1,False
-CIN2,22uF 50V hybrid,Custom:Group3_CIN2,False
-CLOOP,10nF,Custom:Group3_CLOOP,False
-CNTCF,100nF,Custom:Group3_CNTCF,False
-COUT,2.2uF 25V,Custom:Group3_COUT,False
-CT1,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
-CT2,CABLE TIE,Fancification_Mechanical:CableTie_NPTH_2_5mm,False
-CU2B,100nF X7R 50V 0603,Custom:Group3_CU2B,False
-CU2IN,1uF 50V,Custom:Group3_CU2IN,False
-CU2OUT,1uF 10V,Custom:Group3_CU2OUT,False
-CVC1,3.3nF,Custom:Group3_CVC1,False
-CVC2,100nF,Custom:Group3_CVC2,False
-D1,B240A,Custom:Group3_D1,False
-D2,B340A,Custom:Group3_D2,False
-D3,PESD3V3U1UL,Custom:Group3_D3,False
-D4,PESD3V3U1UL,Custom:Group3_D4,False
-D80,RED EFUSE_FAULT,Protection:D80_LED_0603_1608Metric,False
-D81,BAT54HGW-Q FAULT LED REVERSE CLAMP,Protection:D81_D_SOD-323,False
-D82,BAS21J 300V POSITIVE AUX,Protection:D82_D_SOD-323F,False
-D83,BZT52C4V7 4.7V AUX CLAMP,Protection:D83_D_SOD-123,False
-D84,BAT54HGW-Q NEGATIVE SENSE CLAMP,Protection:D84_D_SOD-323,False
-D85,AMBER OVERVOLTAGE,Protection:D85_LED_0603_1608Metric,False
-D86,BAS21J 300V REVERSE AUX,Protection:D86_D_SOD-323F,False
-D87,BZT52C4V3 4.3V REVERSE CLAMP,Protection:D87_D_SOD-123,False
-D88,RED REVERSE_BLINK,Protection:D88_LED_0603_1608Metric,False
-D89,BAT54HGW-Q REVERSE AUX NEGATIVE CLAMP,Protection:D89_D_SOD-323,False
-D90,BAT54HGW-Q OV AUX NEGATIVE CLAMP,Protection:D90_D_SOD-323,False
-H1,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
-H2,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
-H3,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
-H4,MountingHole_3.2mm_M3,MountingHole:MountingHole_3.2mm_M3,False
-J1,GADGETEER_Y_IN,Custom:Samtec_SHF105_SMD,False
-J2,GADGETEER_Y_CHAIN,Custom:Samtec_SHF105_SMD,False
-J3,9-15VDC_IN,Custom:Group3_J3,False
-J4,LASER_HEAD_DUMMY_ONLY,Custom:Group3_J4,False
-JP80,CUT TO DISABLE EFUSE_FAULT,Protection:JP80_SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
-JP81,CUT TO DISABLE OVERVOLTAGE,Protection:JP81_SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
-JP82,CUT TO DISABLE REVERSE_BLINK,Protection:JP82_SolderJumper-2_P1.3mm_Bridged_RoundedPad1.0x1.5mm,False
-L1,10uH,Custom:Group3_L1,False
-LK1,0R,Custom:Group3_LK1,False
-LK10,0R,Custom:Group3_LK10,False
-LK2,0R,Custom:Group3_LK2,False
-LK3,0R,Custom:Group3_LK3,True
-LK4,0R,Custom:Group3_LK4,False
-LK5,0R,Custom:Group3_LK5,False
-LK6,0R,Custom:Group3_LK6,True
-LK7,0R,Custom:Group3_LK7,True
-LK8,0R,Custom:Group3_LK8,False
-LK9,0R,Custom:Group3_LK9,False
-Q1,AO3400A,Custom:Group3_Q1,False
-Q2,2N7002,Custom:Group3_Q2,False
-Q3,2N7002,Custom:Group3_Q3,False
-R80,8.06k 1%,Protection:R80_R_0603_1608Metric,False
-R81,137k 0.1%,Protection:R81_R_0603_1608Metric,False
-R82,10k 0.1%,Protection:R82_R_0603_1608Metric,False
-R83,10k 1%,Protection:R83_R_0805_2012Metric,False
-R84,2.2k 0.5W,Protection:R84_R_1206_3216Metric,False
-R85,402k 0.1%,Protection:R85_R_0603_1608Metric,False
-R86,10k 0.1%,Protection:R86_R_0603_1608Metric,False
-R87,4.7k 1%,Protection:R87_R_0603_1608Metric,False
-R88,2.2k 0.5W,Protection:R88_R_1206_3216Metric,False
-R89,47k 1%,Protection:R89_R_0603_1608Metric,False
-R90,47k 1%,Protection:R90_R_0603_1608Metric,False
-R91,4.7k 1%,Protection:R91_R_0603_1608Metric,False
-RBLEED,100k,Custom:Group3_RBLEED,False
-RCOLD1,10.0k,Custom:Group3_RCOLD1,False
-RCOLD2,40.2k,Custom:Group3_RCOLD2,False
-RHOT1,28.0k,Custom:Group3_RHOT1,False
-RHOT2,10.0k,Custom:Group3_RHOT2,False
-RLOOPD,1.00k,Custom:Group3_RLOOPD,False
-RLOOPPD,100k,Custom:Group3_RLOOPPD,False
-RLOOPR,1.00k,Custom:Group3_RLOOPR,False
-RNTCF,1.00k,Custom:Group3_RNTCF,False
-RNTCPU,10.0k 0.1%,Custom:Group3_RNTCPU,False
-RPERMITPU,10k,Custom:Group3_RPERMITPU,False
-RPWM1,100R,Custom:Group3_RPWM1,False
-RPWMDRV,1.00k,Custom:Group3_RPWMDRV,False
-RPWMPD,10k,Custom:Group3_RPWMPD,False
-RQ1G,100R,Custom:Group3_RQ1G,False
-RQ1PD,10k,Custom:Group3_RQ1PD,False
-RQ2G,100R,Custom:Group3_RQ2G,False
-RQ2PD,10k,Custom:Group3_RQ2PD,False
-RQ3G,100R,Custom:Group3_RQ3G,False
-RQ3PD,10k,Custom:Group3_RQ3PD,False
-RRT,20k,Custom:Group3_RRT,False
-RSHDN1,10k,Custom:Group3_RSHDN1,False
-RSHDN2,10k,Custom:Group3_RSHDN2,False
-RU2LOAD,3.00k,Custom:Group3_RU2LOAD,False
-RVADJ1,1.78k,Custom:Group3_RVADJ1,False
-RVADJ2,10k,Custom:Group3_RVADJ2,False
-RVC,10k,Custom:Group3_RVC,False
-U1,LT3474IFE,Custom:LT3474_FE16_EP,False
-U2,TLV76033,Custom:Group3_U2,False
-U3,TLV810EA29,Custom:Group3_U3,False
-U4,TLV7012,Custom:TI_DGK0008A_VSSOP8,False
-U5,SN74LVC1G97,Custom:Group3_U5,False
-U6,SN74LVC1G97,Custom:Group3_U6,False
-U7,SN74LVC1G97,Custom:Group3_U7,False
-U8,SN74LVC1G97,Custom:Group3_U8,False
-U80,TPS26600PWPR AUTO-RETRY EFUSE,Protection:U80_HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm,False
-U81,TPS3700DDCR OV STATUS,Protection:U81_SOT-23-6,False
-U82,LMC555CM/NOPB REVERSE BLINK,Protection:U82_SOIC-8_3.9x4.9mm_P1.27mm,False
-U9,SN74LVC1G97,Custom:Group3_U9,False
+References,Quantity,Value,Footprint,Manufacturer,MPN,Source
+C1,1,1uF 50V X7R,Capacitor_SMD:C_0805_2012Metric,Samsung Electro-Mechanics,CL21B105KBFNNNE,https://www.digikey.ca/en/products/detail/samsung-electro-mechanics/CL21B105KBFNNNE/3886687
+C10,1,10uF 50V X7R,Capacitor_SMD:C_1206_3216Metric,Samsung Electro-Mechanics,CL31B106KBHNNNE,https://www.lcsc.com/product-detail/C89632.html
+C12,1,220nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,Murata,GRM188R71E224KA88D,https://www.digikey.ca/en/products/detail/murata-electronics/GRM188R71E224KA88D/702831
+C13,1,2.2uF 25V X7R,Capacitor_SMD:C_0805_2012Metric,Murata,GCM21BR71E225KA73L,https://www.digikey.at/en/products/detail/murata-electronics/GCM21BR71E225KA73L/1641661
+C14,1,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,Samsung Electro-Mechanics,CL10B104KA8NNNC,https://www.lcsc.com/product-detail/C1590.html
+C15,1,3.3nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,Samsung Electro-Mechanics,CL10B332KB8NNNC,https://www.lcsc.com/product-detail/C1613.html
+C2,1,2.2uF 16V X7R,Capacitor_SMD:C_0805_2012Metric,Samsung Electro-Mechanics,CL21B225KOFNNNE,https://www.lcsc.com/product-detail/C28234.html
+C20,1,22nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,Samsung Electro-Mechanics,CL10B223KB8NNNC,https://www.lcsc.com/product-detail/C21122.html
+C21,1,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,Samsung Electro-Mechanics,CL10B104KB8NNNC,https://www.lcsc.com/product-detail/C1591.html
+C22,1,10uF 35V X7R,Capacitor_SMD:C_1206_3216Metric,Samsung Electro-Mechanics,CL31B106KLHNNNE,https://www.lcsc.com/product-detail/C16195875.html
+C3 C4 C5 C6 C7 C8,6,100nF 16V X7R,Capacitor_SMD:C_0603_1608Metric,Samsung Electro-Mechanics,CL10B104KO8NNNC,https://jlcpcb.com/partdetail/67585-CL10B104KO8NNNC/C66501
+D1 D2,2,B140HB,Diode_SMD:D_SMB,Diodes Incorporated,B140HB-13-F,https://www.diodes.com/assets/Datasheets/ds30170.pdf
+D10,1,GREEN POWER,LED_SMD:LED_0603_1608Metric,Lite-On,LTST-C190KGKT,https://www.digikey.com/en/products/detail/liteon/LTST-C190KGKT/386815
+D11,1,YELLOW READY,LED_SMD:LED_0603_1608Metric,Lite-On,LTST-C190KSKT,https://www.lcsc.com/product-detail/C125095.html
+D12,1,GREEN PERMIT,LED_SMD:LED_0603_1608Metric,Lite-On,LTST-C190KGKT,https://www.digikey.com/en/products/detail/liteon/LTST-C190KGKT/386815
+D13,1,RED LASER PWM,LED_SMD:LED_0603_1608Metric,Lite-On,LTST-C190KRKT,https://www.digikey.com/en/products/detail/lite-on-inc/LTST-C190KRKT/386817
+D14,1,RED TEMPERATURE,LED_SMD:LED_0603_1608Metric,Lite-On,LTST-C190KRKT,https://www.digikey.com/en/products/detail/lite-on-inc/LTST-C190KRKT/386817
+D3 D4 D5,3,PESD3V3U1UL,Diode_SMD:D_SOD-882,Nexperia,"PESD3V3U1UL,315",https://assets.nexperia.com/documents/data-sheet/PESD3V3U1UL.pdf
+D40,1,RED FAULT,LED_SMD:LED_0603_1608Metric,Lite-On,LTST-C190KRKT,https://www.digikey.com/en/products/detail/lite-on-inc/LTST-C190KRKT/386817
+D41 D43 D45,3,1N4148WS,Diode_SMD:D_SOD-323,Diodes Incorporated,1N4148WS-7-F,
+D42,1,BAT54WS,Diode_SMD:D_SOD-323,Diodes Incorporated,BAT54WS-7-F,
+D44,1,RED OVERVOLTAGE,LED_SMD:LED_0603_1608Metric,Lite-On,LTST-C190KRKT,https://www.digikey.com/en/products/detail/lite-on-inc/LTST-C190KRKT/386817
+D46,1,BZT52C3V9S,Diode_SMD:D_SOD-323,Diodes Incorporated,BZT52C3V9S-7-F,
+D47,1,RED BLINK REVERSE,LED_SMD:LED_0805_2012Metric,Xinglight,XL-2012SURC-DS,https://www.lcsc.com/product-detail/C3646926.html
+D6,1,SMBJ28CA,Diode_SMD:D_SMB,Littelfuse,SMBJ28CA,https://www.littelfuse.com/media?resourcetype=datasheets&itemid=smbj
+J1,1,Y IN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC,https://suddendocs.samtec.com/catalog_english/shf.pdf
+J2,1,Y CHAIN,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC,https://suddendocs.samtec.com/catalog_english/shf.pdf
+J3,1,DC IN SCREW,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",Phoenix Contact,1715721,
+J4,1,LASER HEAD MICRO-FIT,Connector_Molex:Molex_Micro-Fit_3.0_43045-0600_2x03_P3.00mm_Horizontal,Molex,43045-0600,https://www.molex.com/en-us/products/part-detail/430450600
+J5,1,LASER HEAD SCREW 5.08,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-6-5.08_1x06_P5.08mm_Horizontal",Phoenix Contact,1710726,https://www.phoenixcontact.com/en-pc/products/pcb-terminal-block-mkds-15-6-508-1710726
+J6,1,LASER HEAD 2.54,Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical,Samtec,TSW-106-07-G-S,https://www.digikey.co.uk/en/products/detail/samtec-inc/TSW-106-07-G-S/1101321
+J7,1,DC IN XT30,Connector_AMASS:AMASS_XT30PW-M_1x02_P2.50mm_Horizontal,Amass,XT30PW-M,https://www.tme.eu/Document/6eb2005a51a52592b3f19e8a450c54c8/XT30PW-M.pdf
+J8,1,CURRENT SELECT,Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical,Samtec,TSW-103-07-G-D,https://au.element14.com/samtec/tsw-103-07-g-d/connector-header-6pos-2row-2-54mm/dp/2748590
+J9,1,DC IN 2.54,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,Samtec,TSW-102-07-G-S,https://www.digikey.com/en/products/detail/samtec-inc/TSW-102-07-G-S/1101325
+L1,1,10uH 3A,Inductor_SMD:L_Coilcraft_XAL4040-XXX,Coilcraft,XAL4040-103MEC,https://www.coilcraft.com/getmedia/0e4e4a6e-7a79-4a83-9c46-6a7d1fa8b2d8/xal4000.pdf
+Q1,1,AO3400A,Package_TO_SOT_SMD:SOT-23,Alpha and Omega Semiconductor,AO3400A,https://www.aosmd.com/pdfs/datasheet/AO3400A.pdf
+R1 R3 R4 R7 R16 R18 R22 R50 R51 R52 R53 R54,12,1k,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603FR-071KL,https://uk.rs-online.com/web/p/surface-mount-resistors/1995478
+R10,1,4.7k,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603FR-074K7L,https://octopart.com/part/yageo-group/RC0603FR-074K7L
+R11,1,23.2k 1%,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603FR-0723K2L,https://www.datasheets.com/yageo/rc0603fr-0723k2l
+R13,1,1k 1%,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603FR-071KL,https://uk.rs-online.com/web/p/surface-mount-resistors/1995478
+R19,1,4.7k,Resistor_SMD:R_0805_2012Metric,Yageo,RC0805FR-074K7L,https://www.lcsc.com/product-detail/C60816.html
+R2 R5 R17 R21,4,10k,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603FR-0710KL,https://www.lcsc.com/product-detail/C98220.html
+R20,1,80.6k 1%,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603FR-0780K6L,https://octopart.com/part/yageo-group/RC0603FR-0780K6L
+R23 R24,2,100k,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603FR-07100KL,https://www.lcsc.com/product-detail/C14675.html
+R25,1,15.4k 1%,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603FR-0715K4L,https://www.futureelectronics.com/en/it/p/passives--resistors--fixed-resistors/rc0603fr-0715k4l-yageo-5826268
+R26,1,5.11k 1%,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603FR-075K11L,https://www.lcsc.com/product-detail/C112314.html
+R27,1,7.68k 1%,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603FR-077K68L,https://www.futureelectronics.com/p/passives--resistors--fixed-resistors/rc0603fr-077k68l-yageo-9502303
+R28,1,1.91k 1%,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603FR-071K91L,https://www.avnet.com/americas/product/yageo/rc0603fr-071k91l/evolve-45558572/
+R29,1,0R,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603JR-070RL,https://www.digikey.ca/en/products/detail/yageo/RC0603JR-070RL/726675
+R30,1,10R,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603FR-0710RL,https://www.lcsc.com/product-detail/C109318.html
+R40,1,348k 1%,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603FR-07348KL,https://www.lcsc.com/product-detail/C273746.html
+R41,1,26.7k 1%,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603FR-0726K7L,https://www.ibselectronics.com/part/yageo/rc0603fr-0726k7l/104366/
+R42,1,30.1k 1%,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603FR-0730K1L,https://uk.rs-online.com/web/p/surface-mount-resistors/2424101
+R43,1,8.06k 1%,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603FR-078K06L,https://www.digikey.ca/en/products/detail/yageo/RC0603FR-078K06L/730336
+R44 R47,2,4.7k 0.25W,Resistor_SMD:R_1206_3216Metric,Yageo,RC1206FR-074K7L,https://www.digikey.ca/en/products/detail/yageo/RC1206FR-074K7L/728887
+R45,1,54.9k 0.1%,Resistor_SMD:R_0603_1608Metric,Yageo,RT0603BRD0754K9L,https://www.digikey.be/en/products/detail/yageo/RT0603BRD0754K9L/1072577
+R46,1,10k 0.1%,Resistor_SMD:R_0603_1608Metric,Yageo,RT0603BRD0710KL,https://www.digikey.ie/en/products/detail/yageo/RT0603BRD0710KL/4340589
+R48,1,1k 0.25W,Resistor_SMD:R_1206_3216Metric,Yageo,RC1206FR-071KL,https://www.digikey.at/en/products/detail/yageo/RC1206FR-071KL/728387
+R6 R8 R12 R14 R15,5,10k 1%,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603FR-0710KL,https://www.lcsc.com/product-detail/C98220.html
+R9,1,1M,Resistor_SMD:R_0603_1608Metric,Yageo,RC0603FR-071ML,https://www.digikey.ca/en/products/detail/yageo/RC0603FR-071ML/726844
+U1,1,LT3474IFE#PBF,SmoothieBoardgen:LT3474_FE16_EP,Analog Devices,LT3474IFE#PBF,https://www.analog.com/media/en/technical-documentation/data-sheets/3474fd.pdf
+U2,1,SN74HCS08PWR,Package_SO:TSSOP-14_4.4x5mm_P0.65mm,Texas Instruments,SN74HCS08PWR,https://www.ti.com/lit/ds/symlink/sn74hcs08.pdf
+U3,1,SN74LVC1G175DBVR,Package_TO_SOT_SMD:SOT-23-6,Texas Instruments,SN74LVC1G175DBVR,https://www.ti.com/lit/ds/symlink/sn74lvc1g175.pdf
+U4,1,TLV7022DGKR,Package_SO:VSSOP-8_3x3mm_P0.65mm,Texas Instruments,TLV7022DGKR,https://www.ti.com/lit/ds/symlink/tlv7012.pdf
+U5,1,TLV809EA29DBZR,Package_TO_SOT_SMD:SOT-23,Texas Instruments,TLV809EA29DBZR,https://www.ti.com/lit/ds/symlink/tlv809e.pdf
+U6,1,TLV76033DBZR,Package_TO_SOT_SMD:SOT-23,Texas Instruments,TLV76033DBZR,https://www.ti.com/lit/ds/symlink/tlv760.pdf
+U7,1,TPS26600PWPR,Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.66x2.46mm,Texas Instruments,TPS26600PWPR,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+U8,1,TL431BIDBZR,Package_TO_SOT_SMD:SOT-23,Texas Instruments,TL431BIDBZR,https://www.ti.com/lit/ds/symlink/tl431.pdf

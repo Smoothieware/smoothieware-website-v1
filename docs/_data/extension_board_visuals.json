@@ -1699,41 +1699,40 @@
   "laser-diode-driver-breakout": [
     {
       "role": "laser diode driver breakout",
-      "version": "v44",
-      "cad_source_path": "extension-boards/src/laser-diode-driver-breakout/attempt/versions/v44/laser-diode-driver-breakout.kicad_pcb",
-      "cad_sha256": "29190bd32ade9ca284d2a26fde32d4fad564721081468c95828877ccd27ad2e6",
+      "version": "v46",
+      "cad_source_path": "extension-boards/src/laser-diode-driver-breakout/attempt/versions/v46/laser-diode-driver-breakout.kicad_pcb",
+      "cad_sha256": "b9941b8ec28c16e78d0fe9d674798b3da6738e40f5881f099a82de08d7254014",
       "diagram": {
         "url": "/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-diagram.png",
-        "sha256": "a777928191d85abbea2a56b7650dadfa37339f6baff0dd5859026c36d87120b1",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/laser-diode-driver-breakout/v44/laser-diode-driver-breakout.svg",
+        "sha256": "8c8cd6ded436669d23fbbd37317648b48b76f42030ee9574344f5b9a8dea33e3",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/laser-diode-driver-breakout/v46/laser-diode-driver-breakout.svg",
         "source_hash_matches": true,
-        "embedded_cad_sha256": "29190bd32ade9ca284d2a26fde32d4fad564721081468c95828877ccd27ad2e6",
-        "caption": "v44; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/laser-diode-driver-breakout/laser-diode-driver-breakout-diagram.svg",
-        "archived_svg_sha256": "ce4ee38cb653873c31a3c42afd7a75291f8e641100ddf0aae70e625e005a43d4",
-        "previous_svg_sha256": "fce8bbdfd4114d20dde9e37a854f73bc68d0bbf1d9c665b9fbf182495cfbddf0"
+        "embedded_cad_sha256": "b9941b8ec28c16e78d0fe9d674798b3da6738e40f5881f099a82de08d7254014",
+        "caption": "v46; drawn from this CAD revision.",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/laser-diode-driver-breakout/laser-diode-driver-breakout-diagram-v46.svg",
+        "archived_svg_sha256": "95d2b2c883017f971c969480d56bad248fbf639ac3c341a574a66d3d42f3355a"
       },
       "renders": [
         {
           "url": "/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-populated-isometric.png",
-          "sha256": "bd94e786022d55843c7490fc30fb027f71dd31adb1b073511c2953b7666aee65",
-          "source_path": "extension-boards/src/laser-diode-driver-breakout/attempt/versions/v44/populations/laser-diode-driver-breakout/normal/populated-isometric.png",
+          "sha256": "6e9e008dafd174bc94391b1c0ae231ab253a24852e9605e8f9f94eb03ae89a85",
+          "source_path": "extension-boards/src/laser-diode-driver-breakout/attempt/versions/v46/renders/populated-isometric.png",
           "label": "Populated board, perspective view",
-          "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
+          "caption": "Computer render, not a photograph."
         },
         {
           "url": "/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-populated-top.png",
-          "sha256": "326dfeff425dc5e557822743e7340c7bbc945e1127d91fdc2ed1b6f87aa37ea8",
-          "source_path": "extension-boards/src/laser-diode-driver-breakout/attempt/versions/v44/populations/laser-diode-driver-breakout/normal/populated-top.png",
+          "sha256": "41ded19f9b4a4b3a1ad3e082f8e32a7f06feec9f14566c85e22c0d8a34bfe596",
+          "source_path": "extension-boards/src/laser-diode-driver-breakout/attempt/versions/v46/renders/populated-top.png",
           "label": "Populated board, top view",
-          "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
+          "caption": "Computer render, not a photograph."
         },
         {
           "url": "/images/extensions/laser-diode-driver-breakout/laser-diode-driver-breakout-populated-bottom.png",
-          "sha256": "17d3affb9368c7a1af82bad0390f504521ac3b07b9303924d57da4a44229cc2a",
-          "source_path": "extension-boards/src/laser-diode-driver-breakout/attempt/versions/v44/populations/laser-diode-driver-breakout/normal/populated-bottom.png",
+          "sha256": "d8e02c65d435c3626ac7f87a950d43f4bc69d2067465c86816710d88a3b0cde9",
+          "source_path": "extension-boards/src/laser-diode-driver-breakout/attempt/versions/v46/renders/populated-bottom.png",
           "label": "Populated board, bottom view",
-          "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
+          "caption": "Computer render, not a photograph."
         }
       ]
     }

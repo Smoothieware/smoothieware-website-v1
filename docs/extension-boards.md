@@ -271,7 +271,7 @@ Historical entries appear alongside related modern boards. A similar name does n
   </tr>
   <tr>
     <td><a href="/extensions/laser-diode-driver-breakout" aria-label="Open the Laser diode driver breakout guide"><img src="/images/extensions/laser-diode-driver-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/laser-diode-driver-breakout">Laser diode driver breakout</a></p><p>A constant-current driver for one 445 nm laser diode with hardware permission logic. Use it with a dummy load only; do not connect a real laser diode.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/laser-diode-driver-breakout">Laser diode driver breakout</a></p><p>Drives a bare laser diode at 0.25 to 1 A from the controller’s PWM signal, with arming, safety loop and temperature cut-out in hardware.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/laser-emitter-board" aria-label="Open the Laser light emitter guide"><img src="/images/extensions/laser-emitter-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>

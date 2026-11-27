@@ -8,6 +8,7 @@ History: see CHANGELOG.archive.md.
 
 ### Fixed
 
+- Laser diode driver page rewritten for the real-diode board: wiring diagrams, pinout, Smoothieware V2 configuration examples, troubleshooting and simulation results. The page comes with new laser head, door switch, key switch and Smoothieboard Prime drawings and hosted chip datasheets. Updated to board revision v46: regulator diode moved next to the regulator, alignment marks, a second ground test point, manufacturing notes and full part numbers, with new drawing, renders, schematic and parts list.
 - Laser power-supply adapter page: simulation graphs redrawn in the site dark style (same data).
 - Three older breakout board pages now have eight board-tour points; the Bouni spindle chooser page shows both boards.
 - Extruder harness page: corrected board-tour popup placement.
