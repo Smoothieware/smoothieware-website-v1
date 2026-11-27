@@ -1,386 +1,217 @@
 ---
 layout: default
-title: "Chip Breakout Board (C.H.I.P)"
+title: "C.H.I.P. breakout board"
+description: "Carrier for a C.H.I.P. v1.0 single-board computer: serial link to the controller and a protected 7 to 24 V power input."
 permalink: /extensions/chip-breakout-board
 ---
 
-# Chip Breakout Board (C.H.I.P)
+{% include _includes/extension-board-page.html %}
 
-This carrier board connects a C.H.I.P. single-board computer to Smoothieboard over UART and provides a power path for it. It is for a matching C.H.I.P. module, not a generic 40-pin computer connector.
 
-## How it works
-
-J1.4 receives host TX and J1.5 returns host RX through SN74LVC1G126 buffers. The C.H.I.P. UART nets reach J3.3 TX and J3.5 RX. J4 carries the module power/reference subset. An LMR51430 regulator handles the external-input path; the host 5 V path has a separate diode.
-
-## Power, signals and limits
-
-The J2 silkscreen says external 7–24 V DC. J4.2 is CHIP_5V and J4.5 CHIP_3V3; they have different purposes. Check the module header orientation and its power requirements in the module documentation before connecting. Never apply external voltage to the Gadgeteer rails.
-
-## Board reference
-
-<details markdown="1">
-<summary>Reading the connector callouts</summary>
-
-The dark end of each pill gives the source contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
-
-- Red: 3.3 V supply.
-- Orange: 5 V supply.
-- Green: Signal — use the printed function label.
-- Near-black: Circuit ground.
-- Grey: Not routed.
-- Cyan: Selected supply — check the jumper or rail-selection instructions.
-- Dark grey: Other labelled contact — read its exact function.
-
-A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
-
-</details>
-
-Start with the overview, then use all focused sheets for exact contacts, controls and links. Check the continuity of footprint-default links on your board.
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-overview" src="/images/extensions/chip-breakout-board/guides/reader-compact-overview.png" title="C.H.I.P. serial carrier — overview" alt="C.H.I.P. serial carrier — overview" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-host-1-5" src="/images/extensions/chip-breakout-board/guides/reader-compact-host-1-5-central-pills.png" title="J1 · Host UART — host 1 5" alt="J1 · Host UART — host 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-host-6-10" src="/images/extensions/chip-breakout-board/guides/reader-compact-host-6-10-central-pills.png" title="J1 · Host UART — host 6 10" alt="J1 · Host UART — host 6 10" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-external-1-2" src="/images/extensions/chip-breakout-board/guides/reader-compact-external-1-2-central-pills.png" title="J2 · External supply — external 1 2" alt="J2 · External supply — external 1 2" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-module-u14-1-5" src="/images/extensions/chip-breakout-board/guides/reader-compact-module-u14-1-5-central-pills.png" title="J3 · Module U14 — module u14 1 5" alt="J3 · Module U14 — module u14 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-module-u14-6-10" src="/images/extensions/chip-breakout-board/guides/reader-compact-module-u14-6-10-central-pills.png" title="J3 · Module U14 — module u14 6 10" alt="J3 · Module U14 — module u14 6 10" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-module-u14-11-15" src="/images/extensions/chip-breakout-board/guides/reader-compact-module-u14-11-15-central-pills.png" title="J3 · Module U14 — module u14 11 15" alt="J3 · Module U14 — module u14 11 15" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-module-u14-16-20" src="/images/extensions/chip-breakout-board/guides/reader-compact-module-u14-16-20-central-pills.png" title="J3 · Module U14 — module u14 16 20" alt="J3 · Module U14 — module u14 16 20" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-module-u14-21-25" src="/images/extensions/chip-breakout-board/guides/reader-compact-module-u14-21-25-central-pills.png" title="J3 · Module U14 — module u14 21 25" alt="J3 · Module U14 — module u14 21 25" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-module-u14-26-30" src="/images/extensions/chip-breakout-board/guides/reader-compact-module-u14-26-30-central-pills.png" title="J3 · Module U14 — module u14 26 30" alt="J3 · Module U14 — module u14 26 30" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-module-u14-31-35" src="/images/extensions/chip-breakout-board/guides/reader-compact-module-u14-31-35-central-pills.png" title="J3 · Module U14 — module u14 31 35" alt="J3 · Module U14 — module u14 31 35" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-module-u14-36-40" src="/images/extensions/chip-breakout-board/guides/reader-compact-module-u14-36-40-central-pills.png" title="J3 · Module U14 — module u14 36 40" alt="J3 · Module U14 — module u14 36 40" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-module-u13-1-5" src="/images/extensions/chip-breakout-board/guides/reader-compact-module-u13-1-5-central-pills.png" title="J4 · Module U13 — module u13 1 5" alt="J4 · Module U13 — module u13 1 5" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-module-u13-6-10" src="/images/extensions/chip-breakout-board/guides/reader-compact-module-u13-6-10-central-pills.png" title="J4 · Module U13 — module u13 6 10" alt="J4 · Module U13 — module u13 6 10" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-module-u13-11-12" src="/images/extensions/chip-breakout-board/guides/reader-compact-module-u13-11-12-central-pills.png" title="J4 · Module U13 — module u13 11 12" alt="J4 · Module U13 — module u13 11 12" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-power-selector" src="/images/extensions/chip-breakout-board/guides/reader-compact-power-selector.png" title="Module power selector — power selector" alt="Module power selector — power selector" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-host-to-module" src="/images/extensions/chip-breakout-board/guides/reader-compact-host-to-module.png" title="Host-to-module UART path — host to module" alt="Host-to-module UART path — host to module" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-module-to-host" src="/images/extensions/chip-breakout-board/guides/reader-compact-module-to-host.png" title="Module-to-host UART path — module to host" alt="Module-to-host UART path — module to host" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-external-power" src="/images/extensions/chip-breakout-board/guides/reader-compact-external-power-underside-caption.png" title="External supply conversion — external power" alt="External supply conversion — external power" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-host-power" src="/images/extensions/chip-breakout-board/guides/reader-compact-host-power.png" title="Host supply and module clamp — host power" alt="Host supply and module clamp — host power" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-activity-leds" src="/images/extensions/chip-breakout-board/guides/reader-compact-activity-leds.png" title="UART activity indicators — activity leds" alt="UART activity indicators — activity leds" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-power-led" src="/images/extensions/chip-breakout-board/guides/reader-compact-power-led.png" title="Module power indicator — power led" alt="Module power indicator — power led" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-warning-leds" src="/images/extensions/chip-breakout-board/guides/reader-compact-warning-leds-underside-caption.png" title="External protection warnings — warning leds" alt="External protection warnings — warning leds" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-power-tests" src="/images/extensions/chip-breakout-board/guides/reader-compact-power-tests-underside-caption.png" title="Power test pads — power tests" alt="Power test pads — power tests" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-signal-tests" src="/images/extensions/chip-breakout-board/guides/reader-compact-signal-tests-underside-caption.png" title="UART and host reference tests — signal tests" alt="UART and host reference tests — signal tests" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-breakout-board-v19-reader-compact-mounts" src="/images/extensions/chip-breakout-board/guides/reader-compact-mounts-underside-caption.png" title="Ground test and mounting — mounts" alt="Ground test and mounting — mounts" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-These reference sheets show the board and its numbered contacts. Use every focused sheet together with the connector table.
-
-### chip-breakout — saved connector contacts
-
-Contact numbering below is the PCB's pad numbering, as shown in the board reference drawing. Same-numbered duplicate lands are collapsed in this electrical table. Mechanical unnumbered pads are omitted here. Check connector population and mating before use. `NC` means unconnected, not a spare supported function. Named nets alone do not establish direction; use the signal-path explanation above.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Connector | Contact(s) | Function/net |
-| --- | --- | --- |
-| J3 — CHIP U14 SOCKET 2x20 | 1 | `GND` |
-| J3 — CHIP U14 SOCKET 2x20 | 3 | `/CHIP_TX_IN` |
-| J3 — CHIP U14 SOCKET 2x20 | 5 | `/CHIP_RX_OUT` |
-| J3 | 2, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40 | NC |
-| J2 — EXT + 7-24V DC / - | 1 | `/VEXT_IN` |
-| J2 — EXT + 7-24V DC / - | 2 | `GND` |
-| J4 — CHIP U13 SOCKET 2x06 | 1 | `GND` |
-| J4 — CHIP U13 SOCKET 2x06 | 2 | `/CHIP_5V` |
-| J4 — CHIP U13 SOCKET 2x06 | 4 | `GND` |
-| J4 — CHIP U13 SOCKET 2x06 | 5 | `/CHIP_3V3` |
-| J4 | 3, 6, 7, 8, 9, 10, 11, 12 | NC |
-| J1 — GADGETEER U IN | 1 | `/HOST_3V3` |
-| J1 — GADGETEER U IN | 2 | `/HOST_5V` |
-| J1 — GADGETEER U IN | 4 | `/HOST_TX_IN` |
-| J1 — GADGETEER U IN | 5 | `/HOST_RX_OUT` |
-| J1 — GADGETEER U IN | 10 | `GND` |
-| J1 | 3, 6, 7, 8, 9 | NC |
-
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Host computers</p>
+    <h1 id="chip-breakout-board">C.H.I.P. breakout board</h1>
+    <p class="xb-lead">Mount a C.H.I.P. v1.0 computer next to your controller: buffered serial lines on one ribbon cable, and a protected 7&ndash;24&nbsp;V input that powers the module.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/chip-breakout-board/v19/chip-breakout-board-diagram.png" alt="Top view of the C.H.I.P. breakout board.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-### Links, controls and indicators
-
-The footprint values identify the intended control or indication. A cut-to-disable LED link affects indication only. Check link population and default state against the schematic before cutting or bridging.
-
-| Item | Label | Contact nets |
-| --- | --- | --- |
-| JP1 | CUT TO DISABLE D5 | 1 = LED_D5_DISABLE; 2 = /LED_TXD_A |
-| JP3 | CUT TO DISABLE D7 | 1 = LED_D7_DISABLE; 2 = /LED_PWR_A |
-| D5 | LED amber TXD | 1 = /CHIP_RX_OUT; 2 = LED_D5_DISABLE |
-| JP2 | CUT TO DISABLE D6 | 1 = LED_D6_DISABLE; 2 = /LED_RXD_A |
-| D6 | LED amber RXD | 1 = /HOST_RX_OUT; 2 = LED_D6_DISABLE |
-| D7 | LED green POWER 5V | 1 = GND; 2 = LED_D7_DISABLE |
-
-### chip-breakout — additional solder links
-
-These are distinct physical solder-link footprints, including links whose references begin `SJ` rather than `JP`.
-
-| Link | Label | Pad nets |
-| --- | --- | --- |
-| SJ1 | PWR SRC EXT \| HOST | 1=/BUCK_5V; 2=/CHIP_5V; 3=/HOST_5V_D |
-| SJF3 | CUT REVERSE LED | 1=/P_chip_REV_R; 2=/P_chip_REV_A |
-| SJF2 | CUT OV LED | 1=/P_chip_OV_R; 2=/P_chip_OV_A |
-| SJF1 | CUT FAULT LED | 1=/P_chip_FLT_R; 2=/P_chip_FLT_A |
-
-</details>
-
-## Practical use with Smoothieboard V2 Prime
-
-The intended use is a C.H.I.P. Linux host sending serial G-code to the motion controller. Settle which of the two power-source paths supplies the module, using the module documentation, before powering it.
-
-On the Smoothieboard V2 Prime P12 (Prime2590) GB/J33 header, the rail contacts are 1 = limited 3.3 V, 2 = limited 5 V, 10 = ground. Verify the actual unshrouded host header and cable orientation before applying power.
-
-<details markdown="1">
-<summary>Individual native contact keys</summary>
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j1-1-2" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J1-1-2.png" title="Native contact board J1 1 2" alt="Native contact board J1 1 2" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j1-10-11" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J1-10-11.png" title="Native contact board J1 10 11" alt="Native contact board J1 10 11" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j1-2-3" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J1-2-3.png" title="Native contact board J1 2 3" alt="Native contact board J1 2 3" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j1-3-4" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J1-3-4.png" title="Native contact board J1 3 4" alt="Native contact board J1 3 4" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j1-4-5" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J1-4-5.png" title="Native contact board J1 4 5" alt="Native contact board J1 4 5" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j1-5-6" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J1-5-6.png" title="Native contact board J1 5 6" alt="Native contact board J1 5 6" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j1-6-7" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J1-6-7.png" title="Native contact board J1 6 7" alt="Native contact board J1 6 7" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j1-7-8" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J1-7-8.png" title="Native contact board J1 7 8" alt="Native contact board J1 7 8" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j1-8-9" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J1-8-9.png" title="Native contact board J1 8 9" alt="Native contact board J1 8 9" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j1-9-10" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J1-9-10.png" title="Native contact board J1 9 10" alt="Native contact board J1 9 10" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j1-mechanical-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J1-mechanical-0.png" title="Native contact board J1 mechanical 0" alt="Native contact board J1 mechanical 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j1-mechanical-1" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J1-mechanical-1.png" title="Native contact board J1 mechanical 1" alt="Native contact board J1 mechanical 1" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j2-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J2-1-0.png" title="Native contact board J2 1 0" alt="Native contact board J2 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j2-2-1" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J2-2-1.png" title="Native contact board J2 2 1" alt="Native contact board J2 2 1" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-1-0.png" title="Native contact board J3 1 0" alt="Native contact board J3 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-10-9" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-10-9.png" title="Native contact board J3 10 9" alt="Native contact board J3 10 9" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-11-10" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-11-10.png" title="Native contact board J3 11 10" alt="Native contact board J3 11 10" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-12-11" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-12-11.png" title="Native contact board J3 12 11" alt="Native contact board J3 12 11" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-13-12" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-13-12.png" title="Native contact board J3 13 12" alt="Native contact board J3 13 12" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-14-13" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-14-13.png" title="Native contact board J3 14 13" alt="Native contact board J3 14 13" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-15-14" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-15-14.png" title="Native contact board J3 15 14" alt="Native contact board J3 15 14" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-16-15" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-16-15.png" title="Native contact board J3 16 15" alt="Native contact board J3 16 15" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-17-16" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-17-16.png" title="Native contact board J3 17 16" alt="Native contact board J3 17 16" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-18-17" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-18-17.png" title="Native contact board J3 18 17" alt="Native contact board J3 18 17" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-19-18" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-19-18.png" title="Native contact board J3 19 18" alt="Native contact board J3 19 18" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-2-1" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-2-1.png" title="Native contact board J3 2 1" alt="Native contact board J3 2 1" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-20-19" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-20-19.png" title="Native contact board J3 20 19" alt="Native contact board J3 20 19" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-21-20" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-21-20.png" title="Native contact board J3 21 20" alt="Native contact board J3 21 20" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-22-21" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-22-21.png" title="Native contact board J3 22 21" alt="Native contact board J3 22 21" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-23-22" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-23-22.png" title="Native contact board J3 23 22" alt="Native contact board J3 23 22" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-24-23" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-24-23.png" title="Native contact board J3 24 23" alt="Native contact board J3 24 23" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-25-24" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-25-24.png" title="Native contact board J3 25 24" alt="Native contact board J3 25 24" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-26-25" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-26-25.png" title="Native contact board J3 26 25" alt="Native contact board J3 26 25" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-27-26" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-27-26.png" title="Native contact board J3 27 26" alt="Native contact board J3 27 26" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-28-27" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-28-27.png" title="Native contact board J3 28 27" alt="Native contact board J3 28 27" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-29-28" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-29-28.png" title="Native contact board J3 29 28" alt="Native contact board J3 29 28" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-3-2" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-3-2.png" title="Native contact board J3 3 2" alt="Native contact board J3 3 2" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-30-29" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-30-29.png" title="Native contact board J3 30 29" alt="Native contact board J3 30 29" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-31-30" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-31-30.png" title="Native contact board J3 31 30" alt="Native contact board J3 31 30" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-32-31" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-32-31.png" title="Native contact board J3 32 31" alt="Native contact board J3 32 31" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-33-32" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-33-32.png" title="Native contact board J3 33 32" alt="Native contact board J3 33 32" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-34-33" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-34-33.png" title="Native contact board J3 34 33" alt="Native contact board J3 34 33" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-35-34" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-35-34.png" title="Native contact board J3 35 34" alt="Native contact board J3 35 34" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-36-35" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-36-35.png" title="Native contact board J3 36 35" alt="Native contact board J3 36 35" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-37-36" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-37-36.png" title="Native contact board J3 37 36" alt="Native contact board J3 37 36" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-38-37" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-38-37.png" title="Native contact board J3 38 37" alt="Native contact board J3 38 37" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-39-38" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-39-38.png" title="Native contact board J3 39 38" alt="Native contact board J3 39 38" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-4-3" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-4-3.png" title="Native contact board J3 4 3" alt="Native contact board J3 4 3" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-40-39" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-40-39.png" title="Native contact board J3 40 39" alt="Native contact board J3 40 39" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-5-4" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-5-4.png" title="Native contact board J3 5 4" alt="Native contact board J3 5 4" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-6-5" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-6-5.png" title="Native contact board J3 6 5" alt="Native contact board J3 6 5" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-7-6" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-7-6.png" title="Native contact board J3 7 6" alt="Native contact board J3 7 6" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-8-7" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-8-7.png" title="Native contact board J3 8 7" alt="Native contact board J3 8 7" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j3-9-8" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J3-9-8.png" title="Native contact board J3 9 8" alt="Native contact board J3 9 8" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j4-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J4-1-0.png" title="Native contact board J4 1 0" alt="Native contact board J4 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j4-10-9" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J4-10-9.png" title="Native contact board J4 10 9" alt="Native contact board J4 10 9" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j4-11-10" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J4-11-10.png" title="Native contact board J4 11 10" alt="Native contact board J4 11 10" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j4-12-11" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J4-12-11.png" title="Native contact board J4 12 11" alt="Native contact board J4 12 11" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j4-2-1" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J4-2-1.png" title="Native contact board J4 2 1" alt="Native contact board J4 2 1" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j4-3-2" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J4-3-2.png" title="Native contact board J4 3 2" alt="Native contact board J4 3 2" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j4-4-3" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J4-4-3.png" title="Native contact board J4 4 3" alt="Native contact board J4 4 3" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j4-5-4" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J4-5-4.png" title="Native contact board J4 5 4" alt="Native contact board J4 5 4" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j4-6-5" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J4-6-5.png" title="Native contact board J4 6 5" alt="Native contact board J4 6 5" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j4-7-6" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J4-7-6.png" title="Native contact board J4 7 6" alt="Native contact board J4 7 6" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j4-8-7" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J4-8-7.png" title="Native contact board J4 8 7" alt="Native contact board J4 8 7" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-j4-9-8" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-J4-9-8.png" title="Native contact board J4 9 8" alt="Native contact board J4 9 8" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-jp1-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-JP1-1-0.png" title="Native contact board JP1 1 0" alt="Native contact board JP1 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-jp1-2-1" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-JP1-2-1.png" title="Native contact board JP1 2 1" alt="Native contact board JP1 2 1" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-jp2-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-JP2-1-0.png" title="Native contact board JP2 1 0" alt="Native contact board JP2 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-jp2-2-1" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-JP2-2-1.png" title="Native contact board JP2 2 1" alt="Native contact board JP2 2 1" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-jp3-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-JP3-1-0.png" title="Native contact board JP3 1 0" alt="Native contact board JP3 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-jp3-2-1" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-JP3-2-1.png" title="Native contact board JP3 2 1" alt="Native contact board JP3 2 1" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-sj1-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-SJ1-1-0.png" title="Native contact board SJ1 1 0" alt="Native contact board SJ1 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-sj1-2-1" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-SJ1-2-1.png" title="Native contact board SJ1 2 1" alt="Native contact board SJ1 2 1" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-sj1-3-2" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-SJ1-3-2.png" title="Native contact board SJ1 3 2" alt="Native contact board SJ1 3 2" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-sjf1-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-SJF1-1-0.png" title="Native contact board SJF1 1 0" alt="Native contact board SJF1 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-sjf1-2-1" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-SJF1-2-1.png" title="Native contact board SJF1 2 1" alt="Native contact board SJF1 2 1" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-sjf2-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-SJF2-1-0.png" title="Native contact board SJF2 1 0" alt="Native contact board SJF2 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-sjf2-2-1" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-SJF2-2-1.png" title="Native contact board SJF2 2 1" alt="Native contact board SJF2 2 1" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-sjf3-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-SJF3-1-0.png" title="Native contact board SJF3 1 0" alt="Native contact board SJF3 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-sjf3-2-1" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-SJF3-2-1.png" title="Native contact board SJF3 2 1" alt="Native contact board SJF3 2 1" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-tp1-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-TP1-1-0.png" title="Native contact board TP1 1 0" alt="Native contact board TP1 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-tp10-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-TP10-1-0.png" title="Native contact board TP10 1 0" alt="Native contact board TP10 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-tp11-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-TP11-1-0.png" title="Native contact board TP11 1 0" alt="Native contact board TP11 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-tp2-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-TP2-1-0.png" title="Native contact board TP2 1 0" alt="Native contact board TP2 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-tp3-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-TP3-1-0.png" title="Native contact board TP3 1 0" alt="Native contact board TP3 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-tp4-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-TP4-1-0.png" title="Native contact board TP4 1 0" alt="Native contact board TP4 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-tp5-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-TP5-1-0.png" title="Native contact board TP5 1 0" alt="Native contact board TP5 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-tp6-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-TP6-1-0.png" title="Native contact board TP6 1 0" alt="Native contact board TP6 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-tp7-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-TP7-1-0.png" title="Native contact board TP7 1 0" alt="Native contact board TP7 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-tp8-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-TP8-1-0.png" title="Native contact board TP8 1 0" alt="Native contact board TP8 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-board-tp9-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/board-TP9-1-0.png" title="Native contact board TP9 1 0" alt="Native contact board TP9 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-prime-j33-1-0" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/prime-J33-1-0.png" title="Native contact prime J33 1 0" alt="Native contact prime J33 1 0" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-prime-j33-10-9" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/prime-J33-10-9.png" title="Native contact prime J33 10 9" alt="Native contact prime J33 10 9" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-prime-j33-2-1" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/prime-J33-2-1.png" title="Native contact prime J33 2 1" alt="Native contact prime J33 2 1" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-prime-j33-3-2" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/prime-J33-3-2.png" title="Native contact prime J33 3 2" alt="Native contact prime J33 3 2" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-prime-j33-4-3" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/prime-J33-4-3.png" title="Native contact prime J33 4 3" alt="Native contact prime J33 4 3" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-prime-j33-5-4" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/prime-J33-5-4.png" title="Native contact prime J33 5 4" alt="Native contact prime J33 5 4" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-prime-j33-6-5" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/prime-J33-6-5.png" title="Native contact prime J33 6 5" alt="Native contact prime J33 6 5" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-prime-j33-7-6" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/prime-J33-7-6.png" title="Native contact prime J33 7 6" alt="Native contact prime J33 7 6" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-prime-j33-8-7" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/prime-J33-8-7.png" title="Native contact prime J33 8 7" alt="Native contact prime J33 8 7" caption="Numbered contact key." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="chip-v19-native-reader-contact-keys-prime-j33-9-8" src="/images/extensions/chip-breakout-board/guides/native-contact/reader-contact-keys/prime-J33-9-8.png" title="Native contact prime J33 9 8" alt="Native contact prime J33 9 8" caption="Numbered contact key." width=420 %}
-
-</details>
-
-1. Verify the exact C.H.I.P. module and both U13/U14 connector orientations before fitting the carrier. Most mechanically present contacts are deliberately NC.
-2. Choose and review a single power-ownership scheme before connecting USB, host 5 V or the external inlet. Do not assume a diode proves every back-power case.
-3. Use the GB/J33 console wiring documented below: J33.4 PB9 TX to J1.4, J33.5 PH14 RX to J1.5, and J33.10 ground to J1.10. Check the carrier's separate 3.3 V supplies, cross-domain enables and power ordering as well as the signal wiring.
-4. Test harmless serial command/response with motor and heater circuits disabled only after power sequencing and voltage limits are verified.
-
-## Smoothieware use
-
-### Host setup still required
-
-The carrier uses the C.H.I.P. v1.0 UART1 contacts: U14.3 transmits to the Prime receive path, and U14.5 receives from the Prime transmit path. It needs a Linux serial client, not a C.H.I.P.-specific Smoothieware motion driver. Identify the actual Linux image and UART1 device/pin setup from matching host documentation before choosing client commands or disabling services. Do not use another C.H.I.P. carrier’s connector order. The Prime console endpoint runs at 115200/8N1.
-
-A compatible UART command host needs no C.H.I.P.-specific motion driver. The Prime UART console supports channel 1 on PB9 TX/PH14 RX at 115200/8N1 without hardware flow control.
-
-### Prime console for the C.H.I.P. carrier
-
-The carrier needs no C.H.I.P.-specific Smoothieware motion driver. Its UART path is non-inverting: Prime GB/J33.4 PB9 TX reaches board J1.4, U2 input2/output4, then module U14/J3.5 RX. Module U14/J3.3 TX reaches U3 input2/output4, board J1.5, then Prime GB/J33.5 PH14 RX. Signal return is J1.10 GND. Do not infer power compatibility from these directions: U2/U3 have separate HOST_3V3/CHIP_3V3 supplies and cross-domain output-enable connections; check which side supplies each rail and the supply ordering.
-
-After checking signal direction, module header, supplies and cable, configure the Prime endpoint:
+<div class="xb-stats">
+  <div class="xb-stat"><b>C.H.I.P.</b><span>v1.0 module</span></div>
+  <div class="xb-stat"><b>UART</b><span>3.3 V</span></div>
+  <div class="xb-stat"><b>7–24 V</b><span>external input</span></div>
+  <div class="xb-stat"><b>2 ways</b><span>power source</span></div>
+  <div class="xb-stat"><b>3 + 3</b><span>status and fault lights</span></div>
+  <div class="xb-stat"><b>67.8 × 43</b><span>millimetres</span></div>
+</div>
+
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+  <a href="#datasheets">Datasheets</a>
+</nav>
+{:/nomarkdown}
+
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Made for the C.H.I.P. v1.0 module only, not for other computers with a similar header. Set the power selector before fitting the module, never feed external voltage into the controller rails, and do not hot-plug anything.
+</sl-alert>
+
+## Tech specs {#specs}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>C.H.I.P. carrier with serial link and power</td></tr>
+    <tr><td>Host socket</td><td>J1 (U IN), 2 &times; 5 at 1.27&nbsp;mm; contacts 1, 2, 4, 5 and 10 used</td></tr>
+    <tr><td>Module sockets</td><td>J3 (2 &times; 20, module U14) and J4 (2 &times; 6, module U13)</td></tr>
+    <tr><td>Serial buffers</td><td>Two <a href="/images/extensions/chip-breakout-board/datasheets/sn74lvc1g126.pdf">SN74LVC1G126</a>, one per direction</td></tr>
+    <tr><td>External input</td><td>J2, 7 to 24&nbsp;V DC, protected by a <a href="/images/extensions/chip-breakout-board/datasheets/tps2660.pdf">TPS2660</a>0 eFuse, regulated to 5&nbsp;V by an <a href="/images/extensions/chip-breakout-board/datasheets/lmr51430.pdf">LMR51430</a></td></tr>
+    <tr><td>Power selector</td><td>SJ1: 1 to 2 external (as delivered), 2 to 3 controller 5&nbsp;V</td></tr>
+    <tr><td>Size</td><td>67.8 &times; 43&nbsp;mm, two M3 mounting holes</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
+
+## Board tour {#tour}
+
+The numbers on the drawing match the list below it.
+
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/chip-breakout-board/v19/chip-breakout-board-diagram.png" alt="Top view of the C.H.I.P. breakout board with numbered markers explained in the list below.">
+      <a class="xb-mk xb-pb xb-pr" href="#tour-1" style="left:92.4%;top:24.4%" aria-label="1: Controller socket (U IN)">1<span class="xb-pop"><b>Controller socket (U IN)</b> — serial lines and controller rails.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-2" style="left:14.8%;top:14.3%" aria-label="2: Module socket (J3)">2<span class="xb-pop"><b>Module socket (J3)</b> — serial transmit and receive pins of the module.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-3" style="left:14.8%;top:93.4%" aria-label="3: Module power socket (J4)">3<span class="xb-pop"><b>Module power socket (J4)</b> — 5&nbsp;V charge input and the module&rsquo;s 3.3&nbsp;V.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-4" style="left:89.4%;top:85.9%" aria-label="4: Power input (J2)">4<span class="xb-pop"><b>Power input (J2)</b> — 7 to 24&nbsp;V DC; observe + and &minus;.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-5" style="left:90.3%;top:71.7%" aria-label="5: Power selector (SJ1)">5<span class="xb-pop"><b>Power selector (SJ1)</b> — external or controller supply.</span></a>
+      <a class="xb-mk" href="#tour-6" style="left:71.0%;top:62.2%" aria-label="6: 5 V regulator (U1)">6<span class="xb-pop"><b>5 V regulator (U1)</b> — converts the external input.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-7" style="left:81.0%;top:41.1%" aria-label="7: Serial buffers (U2, U3)">7<span class="xb-pop"><b>Serial buffers (U2, U3)</b> — one per direction.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-8" style="left:89.6%;top:48.8%" aria-label="8: Send light (TXD)">8<span class="xb-pop"><b>Send light (TXD)</b> — controller to module.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-9" style="left:89.6%;top:55.5%" aria-label="9: Receive light (RXD)">9<span class="xb-pop"><b>Receive light (RXD)</b> — module to controller.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-10" style="left:89.6%;top:62.2%" aria-label="10: 5 V light (D7)">10<span class="xb-pop"><b>5 V light (D7)</b> — module supply present.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Controller socket (U IN)</b> — serial lines and controller rails.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Module socket (J3)</b> — serial transmit and receive pins of the module.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Module power socket (J4)</b> — 5&nbsp;V charge input and the module&rsquo;s 3.3&nbsp;V.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Power input (J2)</b> — 7 to 24&nbsp;V DC; observe + and &minus;.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Power selector (SJ1)</b> — external or controller supply.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>5 V regulator (U1)</b> — converts the external input.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Serial buffers (U2, U3)</b> — one per direction.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Send light (TXD)</b> — controller to module.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Receive light (RXD)</b> — module to controller.</div></li>
+    <li id="tour-10"><span class="xb-n">10</span><div><b>5 V light (D7)</b> — module supply present.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
+
+### Lights {#lights}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th>Lit means</th><th>Disable it</th></tr></thead>
+  <tbody>
+    <tr><td>D5, amber (TXD)</td><td>Controller-to-module line activity</td><td>JP1</td></tr>
+    <tr><td>D6, amber (RXD)</td><td>Module-to-controller line activity</td><td>JP2</td></tr>
+    <tr><td>D7, green</td><td>5&nbsp;V to the module present</td><td>JP3</td></tr>
+    <tr><td>Underside, three</td><td>Input protection reports a fault, over-voltage or reversed input</td><td>Cut link SJF1 (fault), SJF2 (over-voltage), SJF3 (reverse)</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Pinout {#pinout}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J1</th><th>Signal</th><th>Smoothieboard V2 Prime header G_B (J33)</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td><td>powers the controller side of the buffers</td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-5v">5 V</span></td><td>used only with SJ1 on 2 to 3</td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">serial TX</span> (controller sends)</td><td><code>PB9</code>, then module U14 pin 5</td></tr>
+    <tr><td>5</td><td><span class="xb-pill xb-p-sig">serial RX</span> (controller receives)</td><td><code>PH14</code>, from module U14 pin 3</td></tr>
+    <tr><td>10</td><td><span class="xb-pill xb-p-gnd">GND</span></td><td></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Contacts 3 and 6 to 9 are not used.
+
+### Module and power connections
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Connector</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>J2 pin 1 (+), pin 2 (&minus;)</td><td>External 7 to 24&nbsp;V DC</td></tr>
+    <tr><td>J3 pins 3 and 5</td><td>Module U14 transmit and receive</td></tr>
+    <tr><td>J4 pin 2</td><td>5&nbsp;V to the module&rsquo;s CHG-IN</td></tr>
+    <tr><td>J4 pin 5</td><td>The module&rsquo;s 3.3&nbsp;V, powers the module side of the buffers</td></tr>
+    <tr><td>J3 pin 1, J4 pins 1 and 4</td><td>Ground</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## What you need {#what-you-need}
+
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>This board</b><span>Built from the design files in Downloads</span></div>
+  <div class="xb-card"><b>A C.H.I.P. v1.0 computer</b><span>With a Linux image on which you can use its first extra serial port (UART1).</span></div>
+  <div class="xb-card"><b>A ten-wire cable</b><span>Both ends 2 &times; 5 contacts at 1.27&nbsp;mm pitch, wired 1 to 1. A 2.54&nbsp;mm jumper plug does not fit. The Prime header has no keyed housing, so check contact 1 at both ends.</span></div>
+  <div class="xb-card"><b>A power supply</b><span>7 to 24&nbsp;V DC, or the controller&rsquo;s 5&nbsp;V if it can supply the module&rsquo;s peak current.</span></div>
+</div>
+{:/nomarkdown}
+
+## Get started {#get-started}
+
+This sets up a serial console between the module and Smoothieboard V2 Prime.
+
+
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Choose the supply</h3>
+    <p>With everything off, set SJ1: 1 to 2 for the external input, 2 to 3 for controller power. Never bridge all three pads. Do not also power the module from another source without checking that module&rsquo;s documentation.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Fit the module</h3>
+    <p>Check pin 1 of both module headers (U13 and U14) before pressing it in.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Connect the controller</h3>
+    <p>G_B (J33) contacts 1, 2, 4, 5 and 10 to the same J1 contacts.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure both sides</h3>
+    <p>Add the controller setting below. On the module, enable UART1, remove any login console from it, and set 115200 baud, 8 data bits, no parity, 1 stop bit, no hardware flow control.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Test</h3>
+    <p>With motors and heaters disabled, send <code>version</code> followed by a new line from the module.</p>
+    <p class="xb-expect">The controller answers with its firmware version.</p>
+  </li>
+</ol>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>A serial console on the controller</td><td>UART console</td><td><a href="#config-uart">1</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### 1. Serial console (UART console) {#config-uart}
 
 ```ini
 [uart console]
@@ -393,16 +224,114 @@ stop_bits = 1
 parity = none
 ```
 
-On the actual C.H.I.P. Linux image, enable the UART1 routed to these contacts, remove any competing console from that port, and select that image's serial device. Device names and Linux commands depend on the image. Set its client to 115200 baud, 8 data bits, no parity, 1 stop bit and no hardware flow control. Send `version` followed by LF (`\n`); CRLF also works, while CR alone is ignored. The response requests no motion and proves only that communication succeeded during that test.
+Channel 1 uses PB9 (send) and PH14 (receive) on Prime. The module needs no special driver in the controller, only a serial program ([console source](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Uart.cpp)). The board does one job, so there is one example.
 
-Reserve every listed pin and command in the complete configuration. Merge entries into existing sections rather than duplicating sections.
+## How it works {#how-it-works}
 
-## Sources
+The two serial lines each pass through a buffer powered by the receiving side&rsquo;s 3.3&nbsp;V and enabled by the sending side&rsquo;s, so check that both supplies are present before expecting data. The external input goes through an eFuse that blocks reversed and out-of-range voltage and lights a fault light on the underside, then a regulator makes 5&nbsp;V. SJ1 selects whether that or the controller&rsquo;s 5&nbsp;V (through a diode) feeds the module.
 
-Active components: `U2 SN74LVC1G126DBVR host->CHIP`; `U3 SN74LVC1G126DBVR CHIP->host`; `U1 LMR51430YDDCR`; `UF2 TL431BIDBZR`; `UF1 TPS26600PWPR`.
+## Troubleshooting {#troubleshooting}
 
-- [Source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/chip-breakout-board/attempt/versions/v19)
-- [Design specification](https://github.com/arthurwolf/extension-boards/blob/main/src/chip-breakout-board/specs.md)
-- [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/chip-breakout-board/design.md)
-- [All extension boards](/extension-boards)
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>No answer</td><td>Module serial port setup, send and receive contacts, both 3.3&nbsp;V supplies.</td></tr>
+    <tr><td>Module restarts</td><td>Supply too weak, especially with controller power.</td></tr>
+    <tr><td>No 5 V light</td><td>SJ1 position, input polarity and voltage, underside fault lights.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
+
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/chip-breakout-board/v19/chip-breakout-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/chip-breakout-board/v19/chip-breakout-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/chip-breakout-board/v19/chip-breakout-board-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-cb-mount-t">
+  <title id="xb-cb-mount-t">Mounting drawing of the cb, component side: outline 67.8 by 43 millimetres with 2 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="212.0" y="78.0" width="536.1" height="340.0" rx="7.9" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M212.0 56H748.0"/><path d="M212.0 50V62"/><path d="M748.0 50V62"/><path d="M774.0 78.0V418.0"/><path d="M768.0 78.0h12"/><path d="M768.0 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">67.8</text>
+  <text x="786.0" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">43</text>
+  <circle cx="212.0" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="200.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M154.0 104.0h30" fill="none"/><path d="M188.0 104.0l-8 -4v8z"/><path d="M154.0 104.0v30" fill="none"/><path d="M154.0 138.0l-4 -8h8z"/></g>
+  <text x="192.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="150.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="235.7" cy="382.4" r="12.7" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M219.0 382.4h33.3M235.7 365.8v33.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="223.0" y="359.8" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  3.00, 38.50</text>
+  <circle cx="552.0" cy="382.4" r="12.7" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M535.3 382.4h33.3M552.0 365.8v33.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="564.6" y="359.8" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  43.00, 38.50</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 67.8 × 43&nbsp;mm, corners rounded to a 1&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>3.00</td><td>38.50</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>43.00</td><td>38.50</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Values from the board printing and design.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>External input</td><td>J2</td><td>7 V</td><td>—</td><td>24 V</td><td>Board silk</td></tr>
+    <tr><td>Module charge input</td><td>J4 pin 2</td><td>—</td><td>5.0 V</td><td>6.3 V</td><td>Board silk CHG-IN</td></tr>
+    <tr><td>Serial levels</td><td>J1</td><td>—</td><td>3.3 V</td><td>—</td><td>Board silk</td></tr>
+    <tr><td>Module current</td><td>5 V</td><td>—</td><td>—</td><td>Open</td><td>Take from the module&rsquo;s documentation</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: datasheets {#datasheets}
+
+The first page of each important chip&rsquo;s datasheet. Click a page to open the PDF.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <a href="/images/extensions/chip-breakout-board/datasheets/lmr51430.pdf"><img src="/images/extensions/chip-breakout-board/datasheets/lmr51430-page1.png" alt="First page of the LMR51430 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/chip-breakout-board/datasheets/lmr51430.pdf">LMR51430 step-down converter</a> — Texas Instruments, 33 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/chip-breakout-board/datasheets/sn74lvc1g126.pdf"><img src="/images/extensions/chip-breakout-board/datasheets/sn74lvc1g126-page1.png" alt="First page of the SN74LVC1G126 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/chip-breakout-board/datasheets/sn74lvc1g126.pdf">SN74LVC1G126 single bus buffer</a> — Texas Instruments, 49 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/chip-breakout-board/datasheets/tps2660.pdf"><img src="/images/extensions/chip-breakout-board/datasheets/tps2660-page1.png" alt="First page of the TPS2660 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/chip-breakout-board/datasheets/tps2660.pdf">TPS2660 industrial eFuse with reverse-input protection</a> — Texas Instruments, 55 pages.</figcaption>
+</figure>
+{:/nomarkdown}
+
+
+See all boards on the [extension boards](/extension-boards) page.

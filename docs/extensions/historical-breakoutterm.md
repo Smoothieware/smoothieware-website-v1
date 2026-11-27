@@ -1,219 +1,178 @@
 ---
 layout: default
-title: "BreakoutTerm \u2014 recovered upstream design"
+title: "BreakoutTerm"
+description: "Ten-contact screw-terminal breakout: pinout with its reversed terminal numbering."
 permalink: /extensions/historical-breakoutterm
 ---
 
-# BreakoutTerm — recovered upstream design
-
-This passive breakout moves a ten-contact host interface to a screw-terminal row and repeats it on another host connector. It makes field wiring easier but does not add protection or change signal voltage.
-
-Read the [four-lead dry-button checklist](#connect-and-try-it), then the [button configuration](#smoothieware-use). P2 terminal numbering runs opposite to P1/P3 contact numbering; the tables below keep those identities explicit.
-
-## Documented source and compatibility
-
-This guide describes the [retained original Smoothieboard2 source](https://github.com/Smoothieware/Smoothieboard2/tree/52ab340de33180a975b25f856c161993488e6ace/extensions/BreakoutTerm), not a newer board with a similar purpose. The original host generation predates Smoothieboard V2 Prime. Connector compatibility must be established contact by contact.
-
-## Power, signals and controls
-
-P1/P3 are straight-through host connectors. The terminal row P2 is reversed: .1 ground, .2 P9, .3 P8, .4 P7, .5 P6, .6 P5, .7 P4, .8 P3, .9 +5V and .10 +3V3. Never assume terminal number equals host contact number. No configuration jumper or active IC is present.
-
-### Annotated connector and component reference
-
-This reference was newly derived from the documented native PCB, preserving its outline, source graphics, footprint positions and numbered pads. **P2 terminal numbering is reversed relative to the host contacts.** Purple artwork projects the source bottom silkscreen onto the native board view; it is not a bottom cable mating-face view. Courtyards do not establish connector body geometry.
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-compact-function-reader-00-overview" src="/images/extensions/historical-breakoutterm/guides/source-derived-reader-compact/reader-00-overview.png" title="Board overview" alt="Board overview" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-compact-function-reader-00-mandatory-limits" src="/images/extensions/historical-breakoutterm/guides/source-derived-reader-compact/reader-00-mandatory-limits.png" title="Mandatory connection limits" alt="Mandatory connection limits" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-<details markdown="1">
-<summary>Connector and component functions</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-compact-function-reader-m1-1" src="/images/extensions/historical-breakoutterm/guides/source-derived-reader-compact/reader-m1-1.png" title="M1 1" alt="M1 1" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-compact-function-reader-m2-1" src="/images/extensions/historical-breakoutterm/guides/source-derived-reader-compact/reader-m2-1.png" title="M2 1" alt="M2 1" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-compact-function-reader-p1-1" src="/images/extensions/historical-breakoutterm/guides/source-derived-reader-compact/reader-p1-1.png" title="P1 1" alt="P1 1" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-compact-function-reader-p1-2" src="/images/extensions/historical-breakoutterm/guides/source-derived-reader-compact/reader-p1-2.png" title="P1 2" alt="P1 2" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-compact-function-reader-p2-1" src="/images/extensions/historical-breakoutterm/guides/source-derived-reader-compact/reader-p2-1.png" title="P2 1" alt="P2 1" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-compact-function-reader-p2-2" src="/images/extensions/historical-breakoutterm/guides/source-derived-reader-compact/reader-p2-2.png" title="P2 2" alt="P2 2" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-compact-function-reader-p3-1" src="/images/extensions/historical-breakoutterm/guides/source-derived-reader-compact/reader-p3-1.png" title="P3 1" alt="P3 1" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-compact-function-reader-p3-2" src="/images/extensions/historical-breakoutterm/guides/source-derived-reader-compact/reader-p3-2.png" title="P3 2" alt="P3 2" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-</details>
-
-<details markdown="1">
-<summary>Original contact audits and supplementary source views</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-00-overview" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/00-overview.png" title="BreakoutTerm — overview" alt="BreakoutTerm — overview" caption="P2 numbering is reversed. Check mating and rail ratings before powering. CERN-OHL-1.2 attribution retained." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-p1-1" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/p1-1.png" title="BreakoutTerm — p1 1" alt="BreakoutTerm — p1 1" caption="P2 numbering is reversed. Check mating and rail ratings before powering. CERN-OHL-1.2 attribution retained." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-p1-2" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/p1-2.png" title="BreakoutTerm — p1 2" alt="BreakoutTerm — p1 2" caption="P2 numbering is reversed. Check mating and rail ratings before powering. CERN-OHL-1.2 attribution retained." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-p2-1" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/p2-1.png" title="BreakoutTerm — p2 1" alt="BreakoutTerm — p2 1" caption="P2 numbering is reversed. Check mating and rail ratings before powering. CERN-OHL-1.2 attribution retained." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-p2-2" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/p2-2.png" title="BreakoutTerm — p2 2" alt="BreakoutTerm — p2 2" caption="P2 numbering is reversed. Check mating and rail ratings before powering. CERN-OHL-1.2 attribution retained." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-p3-1" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/p3-1.png" title="BreakoutTerm — p3 1" alt="BreakoutTerm — p3 1" caption="P2 numbering is reversed. Check mating and rail ratings before powering. CERN-OHL-1.2 attribution retained." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-p3-2" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/p3-2.png" title="BreakoutTerm — p3 2" alt="BreakoutTerm — p3 2" caption="P2 numbering is reversed. Check mating and rail ratings before powering. CERN-OHL-1.2 attribution retained." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-mounting-and-controls" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/mounting-and-controls.png" title="BreakoutTerm — mounting and controls" alt="BreakoutTerm — mounting and controls" caption="P2 numbering is reversed. Check mating and rail ratings before powering. CERN-OHL-1.2 attribution retained." width=420 %}
-
-</details>
-
-<details markdown="1">
-<summary>Every individual numbered pad</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p1-01" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p1-01.png" title="BreakoutTerm — pin p1 01" alt="BreakoutTerm — pin p1 01" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p1-02" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p1-02.png" title="BreakoutTerm — pin p1 02" alt="BreakoutTerm — pin p1 02" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p1-03" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p1-03.png" title="BreakoutTerm — pin p1 03" alt="BreakoutTerm — pin p1 03" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p1-04" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p1-04.png" title="BreakoutTerm — pin p1 04" alt="BreakoutTerm — pin p1 04" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p1-05" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p1-05.png" title="BreakoutTerm — pin p1 05" alt="BreakoutTerm — pin p1 05" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p1-06" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p1-06.png" title="BreakoutTerm — pin p1 06" alt="BreakoutTerm — pin p1 06" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p1-07" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p1-07.png" title="BreakoutTerm — pin p1 07" alt="BreakoutTerm — pin p1 07" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p1-08" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p1-08.png" title="BreakoutTerm — pin p1 08" alt="BreakoutTerm — pin p1 08" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p1-09" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p1-09.png" title="BreakoutTerm — pin p1 09" alt="BreakoutTerm — pin p1 09" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p1-10" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p1-10.png" title="BreakoutTerm — pin p1 10" alt="BreakoutTerm — pin p1 10" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p2-01" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p2-01.png" title="BreakoutTerm — pin p2 01" alt="BreakoutTerm — pin p2 01" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p2-02" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p2-02.png" title="BreakoutTerm — pin p2 02" alt="BreakoutTerm — pin p2 02" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p2-03" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p2-03.png" title="BreakoutTerm — pin p2 03" alt="BreakoutTerm — pin p2 03" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p2-04" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p2-04.png" title="BreakoutTerm — pin p2 04" alt="BreakoutTerm — pin p2 04" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p2-05" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p2-05.png" title="BreakoutTerm — pin p2 05" alt="BreakoutTerm — pin p2 05" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p2-06" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p2-06.png" title="BreakoutTerm — pin p2 06" alt="BreakoutTerm — pin p2 06" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p2-07" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p2-07.png" title="BreakoutTerm — pin p2 07" alt="BreakoutTerm — pin p2 07" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p2-08" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p2-08.png" title="BreakoutTerm — pin p2 08" alt="BreakoutTerm — pin p2 08" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p2-09" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p2-09.png" title="BreakoutTerm — pin p2 09" alt="BreakoutTerm — pin p2 09" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p2-10" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p2-10.png" title="BreakoutTerm — pin p2 10" alt="BreakoutTerm — pin p2 10" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p3-01" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p3-01.png" title="BreakoutTerm — pin p3 01" alt="BreakoutTerm — pin p3 01" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p3-02" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p3-02.png" title="BreakoutTerm — pin p3 02" alt="BreakoutTerm — pin p3 02" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p3-03" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p3-03.png" title="BreakoutTerm — pin p3 03" alt="BreakoutTerm — pin p3 03" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p3-04" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p3-04.png" title="BreakoutTerm — pin p3 04" alt="BreakoutTerm — pin p3 04" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p3-05" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p3-05.png" title="BreakoutTerm — pin p3 05" alt="BreakoutTerm — pin p3 05" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p3-06" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p3-06.png" title="BreakoutTerm — pin p3 06" alt="BreakoutTerm — pin p3 06" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p3-07" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p3-07.png" title="BreakoutTerm — pin p3 07" alt="BreakoutTerm — pin p3 07" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p3-08" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p3-08.png" title="BreakoutTerm — pin p3 08" alt="BreakoutTerm — pin p3 08" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p3-09" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p3-09.png" title="BreakoutTerm — pin p3 09" alt="BreakoutTerm — pin p3 09" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-source-derived-pin-p3-10" src="/images/extensions/historical-breakoutterm/guides/source-derived-annotated/pin-p3-10.png" title="BreakoutTerm — pin p3 10" alt="BreakoutTerm — pin p3 10" caption="Numbered native pad and source locator. Verify the reversed P2 order; this is not a connector mating-face drawing or a rail-rating claim." width=420 %}
-
-</details>
-
-[Matching native source, licence and notices](/images/extensions/historical-breakoutterm/guides/native-contact-reference/native-source-and-notices.zip). New source-derived drawings and annotations retain CERN-OHL-1.2 attribution.
-
-<details markdown="1">
-<summary>Retained functional reference sheets</summary>
-
-These focused sheets combine source-derived board artwork, numbered native-coordinate keys and function callouts. Use all sheets together. Coordinate keys locate source pads; they are not verified connector mating views.
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-functional-p2-functions-01" src="/images/extensions/historical-breakoutterm/guides/functional-reference/p2-functions-01.png" title="P2 — contact functions" alt="P2 source-position contacts and function pills" caption="Front-coordinate projection; underside parts explicitly identified. Match numbers with function pills. Check physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-functional-p2-functions-02" src="/images/extensions/historical-breakoutterm/guides/functional-reference/p2-functions-02.png" title="P2 — contact functions" alt="P2 source-position contacts and function pills" caption="Front-coordinate projection; underside parts explicitly identified. Match numbers with function pills. Check physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-functional-m2-functions-01" src="/images/extensions/historical-breakoutterm/guides/functional-reference/m2-functions-01.png" title="M2 — contact functions" alt="M2 source-position contacts and function pills" caption="Front-coordinate projection; underside parts explicitly identified. Match numbers with function pills. Check physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-functional-m1-functions-01" src="/images/extensions/historical-breakoutterm/guides/functional-reference/m1-functions-01.png" title="M1 — contact functions" alt="M1 source-position contacts and function pills" caption="Front-coordinate projection; underside parts explicitly identified. Match numbers with function pills. Check physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-functional-p1-functions-01" src="/images/extensions/historical-breakoutterm/guides/functional-reference/p1-functions-01.png" title="P1 — contact functions" alt="P1 source-position contacts and function pills" caption="Front-coordinate projection; underside parts explicitly identified. Match numbers with function pills. Check physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-functional-p1-functions-02" src="/images/extensions/historical-breakoutterm/guides/functional-reference/p1-functions-02.png" title="P1 — contact functions" alt="P1 source-position contacts and function pills" caption="Front-coordinate projection; underside parts explicitly identified. Match numbers with function pills. Check physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-functional-p3-functions-01" src="/images/extensions/historical-breakoutterm/guides/functional-reference/p3-functions-01.png" title="P3 — contact functions" alt="P3 source-position contacts and function pills" caption="Front-coordinate projection; underside parts explicitly identified. Match numbers with function pills. Check physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-functional-p3-functions-02" src="/images/extensions/historical-breakoutterm/guides/functional-reference/p3-functions-02.png" title="P3 — contact functions" alt="P3 source-position contacts and function pills" caption="Front-coordinate projection; underside parts explicitly identified. Match numbers with function pills. Check physical mating before connecting." width=420 %}
-
-[Matching native source, licence and drawing notice](/images/extensions/historical-breakoutterm/guides/native-contact-reference/native-source-and-notices.zip). Source-derived additions dated 2026-10-18; retain the CERN-OHL-1.2 licence and source notices with derivatives.
-
-</details>
-
-
-## Connect and try it
-
-For a grounded pushbutton on Prime GF.3 PB1, wire the signal to P2.8 and return to P2.1; P1.3 reaches P2.8. Confirm the connector orientation and keep P2.9/.10 supply terminals away from the signal. Tighten terminals to a proven connector specification, not an invented torque.
-
-### Check all four external leads
-
-With power off, identify P1 and P2 from the numbered contact views. Check the selected PCB's signal path P1.3 → P2.8 and ground path P1.10 → P2.1 before adding the button.
-
-| Lead | First end | Second end |
-|---|---|---|
-| Host signal | Prime J37.3 / PB1 | BreakoutTerm P1.3 |
-| Host return | Prime J37.10 / ground | BreakoutTerm P1.10 |
-| Button signal | BreakoutTerm P2.8 | One normally-open button contact |
-| Button return | BreakoutTerm P2.1 | Other normally-open button contact |
-
-The two PCB paths are internal connections, not two more external wires. Leave P1 supply contacts, P2.9/.10 and the entire P3 connector unused. Check that the button is open when released and connects only the selected signal and return when pressed; an external voltage source is not part of this dry-contact example.
-
-Before enabling the button configuration, disable machine loads and reserve PB1 for this input. A pressed or held-at-startup button can request the software halt; releasing it does not clear that halt. If the halt is asserted unexpectedly, turn power off and check the normally-open contact choice and reversed P2 numbering before changing pin inversion. This input does not disconnect machine power.
-
-### Prime dry-button whole-board wiring
-
-Use two individual host leads: **GF/J37.3 (PB1) → P1.3**, and **GF/J37.10 (ground) → P1.10**. Connect a normally-open dry button between **P2.8 and P2.1**. Leave supply contacts and the P3 daisy-chain connector unused.
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-external-installation" src="/images/extensions/historical-breakoutterm/guides/wholeboard-readable/wholeboard-wiring.png" title="Complete-board dry-button connection" alt="Complete Prime and historical BreakoutTerm with four dry-button leads" caption="J37.3 to P1.3, J37.10 to P1.10, P2.8 and P2.1 to the normally-open button. All other contacts open." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-wholeboard-j37-contact-key" src="/images/extensions/historical-breakoutterm/guides/wholeboard-buttonbox/j37-contact-key.png" title="Prime J37 native contact key" alt="Prime J37 native contact key" caption="Companion to the complete-board four-lead diagram; check the fitted hardware before use." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-wholeboard-p1-contact-key" src="/images/extensions/historical-breakoutterm/guides/wholeboard-buttonbox/p1-contact-key.png" title="BreakoutTerm P1 native contact key" alt="BreakoutTerm P1 native contact key" caption="Companion to the complete-board four-lead diagram; check the fitted hardware before use." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-wholeboard-p2-contact-key" src="/images/extensions/historical-breakoutterm/guides/wholeboard-buttonbox/p2-contact-key.png" title="Reversed P2 terminal numbers" alt="Reversed P2 terminal numbers" caption="Companion to the complete-board four-lead diagram; check the fitted hardware before use." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-wholeboard-internal-net-relationships" src="/images/extensions/historical-breakoutterm/guides/wholeboard-buttonbox/internal-net-relationships.png" title="PCB relationships, not extra leads" alt="PCB relationships, not extra leads" caption="Companion to the complete-board four-lead diagram; check the fitted hardware before use." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-wholeboard-mandatory-limits" src="/images/extensions/historical-breakoutterm/guides/wholeboard-buttonbox/mandatory-limits.png" title="Mandatory connection limits" alt="Mandatory connection limits" caption="Companion to the complete-board four-lead diagram; check the fitted hardware before use." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-wholeboard-firmware-input" src="/images/extensions/historical-breakoutterm/guides/wholeboard-buttonbox/firmware-input.png" title="Matching button-box configuration" alt="Matching button-box configuration" caption="Companion to the complete-board four-lead diagram; check the fitted hardware before use." width=1200 %}
-
-<details markdown="1">
-<summary>Earlier contact-only electrical plan</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-contact-plan-retained" src="/images/extensions/historical-breakoutterm/guides/passive-contact-plan/external-installation.png" title="Prime dry-button source-contact plan" alt="Prime PB1 and ground through the historical breakoutterm to a normally-open dry button; four external leads and two source PCB paths" caption="Supplementary source-contact plan: solid electrical paths preserve the native PCB nets; dashed locators identify contacts without adding connections. The historical board view is a native-contact reconstruction, not the missing populated abstract." width=420 %}
-
-</details>
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-p1-numbered-contacts" src="/images/extensions/historical-breakoutterm/guides/passive-contact-plan/p1-numbered-contacts.png" title="P1 numbered contact key" alt="Historical breakoutterm P1 numbered contacts, with signal contact 3 and ground contact 10 selected" caption="P1 contact key. Contact numbering follows the selected native PCB, not a presumed cable colour order." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-breakoutterm-p2-numbered-contacts" src="/images/extensions/historical-breakoutterm/guides/passive-contact-plan/p2-numbered-contacts.png" title="P2 numbered contact key" alt="Historical breakoutterm P2 numbered contacts, with signal contact 8 and ground contact 1 selected" caption="P2 contact key. Confirm the actual assembly and viewing side; do not infer a connector housing from the contact marks." width=420 %}
-
-Derived from the original PCB under CERN-OHL v1.2; attribution, licence and matching original source are retained in the [source-and-notices bundle](/images/extensions/historical-breakoutterm/guides/native-contact-reference/native-source-and-notices.zip). The Prime view retains its existing source attribution. No supply rail or available current budget is implied.
-
-## Smoothieware use
-
-This passive breakout needs no board driver. For the normally-open button wired above, merge these entries into the existing `[button box]` section without duplicating an allocated pin or button name.
+{% include _includes/extension-board-page.html %}
+
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Wiring</p>
+    <h1 id="historical-breakoutterm">BreakoutTerm</h1>
+    <p class="xb-lead">Moves a ten-contact host header to a row of screw terminals and repeats it on a second header.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#downloads">Downloads</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/historical-breakoutterm/directory-board-render.png" alt="Top view of the BreakoutTerm board">
+    <figcaption>Top view drawn from the original board file. This is a drawing, not a photograph.</figcaption>
+  </figure>
+</div>
+
+<div class="xb-stats">
+  <div class="xb-stat"><b>10</b><span>terminals</span></div>
+  <div class="xb-stat"><b>3</b><span>connectors</span></div>
+  <div class="xb-stat"><b>0</b><span>active parts</span></div>
+  <div class="xb-stat"><b>reversed</b><span>numbering</span></div>
+  <div class="xb-stat"><b>37 × 28.5 mm</b><span>board size</span></div>
+  <div class="xb-stat"><b>2</b><span>mounting holes</span></div>
+</div>
+
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#chaining">Chaining</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting dimensions</a>
+  <a href="#electrical">Electrical specifications</a>
+</nav>
+{:/nomarkdown}
+
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <b>The terminal numbers run backwards.</b> Terminal 1 is ground and terminals 9 and 10 carry 5 V and 3.3 V. Check the pinout table before tightening a wire. This is a historical Smoothieboard2 design, not a current board.
+</sl-alert>
+
+## Tech specs {#specs}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Function</td><td>Passive screw-terminal breakout</td></tr>
+    <tr><td>Connectors</td><td>P1 and P3: ten-contact headers. P2: ten screw terminals</td></tr>
+    <tr><td>Mapping</td><td>P2 numbering is the reverse of P1 and P3</td></tr>
+    <tr><td>Size</td><td>37 × 28.5 mm</td></tr>
+    <tr><td>Licence</td><td>CERN-OHL-1.2</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Board tour {#tour}
+
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/historical-breakoutterm/directory-board-render.png" alt="Annotated top view of the BreakoutTerm board">
+      <a class="xb-mk xb-pb xb-pr" href="#tour-1" style="left:88.9%;top:21.6%" aria-label="1: Screw terminals P2">1<span class="xb-pop"><b>Screw terminals P2</b> — Terminal 1 is ground; the order is reversed against the headers.</span></a>
+      <a class="xb-mk" href="#tour-2" style="left:34.2%;top:64.6%" aria-label="2: Header P1">2<span class="xb-pop"><b>Header P1</b> — Host connector.</span></a>
+      <a class="xb-mk" href="#tour-3" style="left:65.8%;top:64.6%" aria-label="3: Header P3">3<span class="xb-pop"><b>Header P3</b> — Straight-through copy of P1.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Screw terminals P2</b> — Terminal 1 is ground; the order is reversed against the headers.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Header P1</b> — Host connector.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Header P3</b> — Straight-through copy of P1.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
+
+## Pinout {#pinout}
+
+<span id="connect-and-try-it"></span>
+
+### Screw terminals P2
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>P2 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>GND</code></td></tr>
+    <tr><td>2</td><td><code>P9</code></td></tr>
+    <tr><td>3</td><td><code>P8</code></td></tr>
+    <tr><td>4</td><td><code>P7</code></td></tr>
+    <tr><td>5</td><td><code>P6</code></td></tr>
+    <tr><td>6</td><td><code>P5</code></td></tr>
+    <tr><td>7</td><td><code>P4</code></td></tr>
+    <tr><td>8</td><td><code>P3</code></td></tr>
+    <tr><td>9</td><td><code>+5V</code></td></tr>
+    <tr><td>10</td><td><code>+3V3</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Host headers P1 and P3
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>P1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+3V3</code></td></tr>
+    <tr><td>2</td><td><code>+5V</code></td></tr>
+    <tr><td>3</td><td><code>P3</code></td></tr>
+    <tr><td>4</td><td><code>P4</code></td></tr>
+    <tr><td>5</td><td><code>P5</code></td></tr>
+    <tr><td>6</td><td><code>P6</code></td></tr>
+    <tr><td>7</td><td><code>P7</code></td></tr>
+    <tr><td>8</td><td><code>P8</code></td></tr>
+    <tr><td>9</td><td><code>P9</code></td></tr>
+    <tr><td>10</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## What you need {#what-you-need}
+
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>BreakoutTerm board</b><span>Built from the design files</span></div>
+  <div class="xb-card"><b>Two host leads</b><span>Signal and ground</span></div>
+  <div class="xb-card"><b>Push button</b><span>Normally open, with two wires</span></div>
+</div>
+{:/nomarkdown}
+
+## Get started {#get-started}
+
+A button test on Smoothieboard V2 Prime, using four leads.
+
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Wire the host leads</h3>
+    <p>With power off, connect Prime J37 contact 3 (PB1) to P1 contact 3, and J37 contact 10 to P1 contact 10.</p>
+    <p class="xb-expect">P1.3 reaches P2.8 and P1.10 reaches P2.1.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Add the button</h3>
+    <p>Wire a normally-open button between terminals P2.8 and P2.1. Leave terminals 9 and 10 empty.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure and test</h3>
+    <p>Disable machine loads, add the entry from <a href="#configuration">Configuration</a>, restart and press the button.</p>
+    <p class="xb-expect">The machine halts when the button is pressed.</p>
+  </li>
+</ol>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+<span id="smoothieware-use"></span>
+
+A grounded push button on PB1 that requests a halt. Merge the entry into your existing `[button box]` section; do not reuse a pin or button name.
 
 ```ini
 [button box]
@@ -222,12 +181,100 @@ raw_button.pin = PB1!^
 raw_button.press = KILL
 ```
 
-The pull-up (`^`) holds the open contact high; inversion (`!`) makes pressing the grounded contact active. `KILL` runs on the inactive-to-active transition and requests a software halt. A contact held during startup can trigger the initial active sample; releasing it does not clear the halt. This is not an emergency power disconnect. PB1 must be free in the complete configuration; a retained external-driver example assigns it to a direction output.
+`^` pulls the open contact high and `!` makes the grounded (pressed) contact active. A button held at startup halts the machine, and releasing it does not clear the halt. See [button box](/button-box). Syntax checked against firmware commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`.
 
-The [button parser and KILL action](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/buttonbox/buttonbox.cpp#L49-L211) and [pin suffix parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Pin.cpp#L208-L270) were inspected in retained source exports. Source inspection does not identify your installed firmware or prove physical behavior.
+## How it works {#how-it-works}
 
-## Original files and attribution
+P1 and P3 are wired straight through. P2 carries the same nets in the opposite order. There are no jumpers, active parts or protection.
 
-The linked original source folder contains the retained CAD, images, fabrication output and any author notes. Keep existing source galleries alongside this guide. Historical project files retain their original attribution; an absent per-file license must not be interpreted as public-domain permission. The selected Smoothieboard2 snapshot also contains a repository-root [CERN Open Hardware Licence v1.2](https://github.com/Smoothieware/Smoothieboard2/blob/52ab340de33180a975b25f856c161993488e6ace/LICENSE); its [README](https://github.com/Smoothieware/Smoothieboard2/blob/52ab340de33180a975b25f856c161993488e6ace/README.md) explicitly describes hardware files for the board and extension boards. Preserve those license and attribution records. This repository-level evidence does not establish rights in separately sourced component images or artwork.
+## Chaining {#chaining}
 
-[All extension boards](/extension-boards)
+P3 repeats P1. Anything on P3 shares every signal with the terminals; only one device may drive each contact.
+
+## Troubleshooting {#troubleshooting}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Nothing responds</td><td>With power off, check continuity along each lead and board path against the pinout tables. Confirm which end of the connector is contact 1.</td></tr>
+    <tr><td>Halted at startup</td><td>The button is held, wired normally closed, or on the wrong contacts. Turn power off and recheck.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
+
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/Smoothieware/Smoothieboard2/tree/52ab340de33180a975b25f856c161993488e6ace/extensions/BreakoutTerm">retained original Smoothieboard2 source</a></td><td>Design source</td></tr>
+    <tr><td><a href="/images/extensions/historical-breakoutterm/guides/native-contact-reference/native-source-and-notices.zip">Matching native source, licence and notices</a></td><td>Download</td></tr>
+    <tr><td><a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/buttonbox/buttonbox.cpp#L49-L211">button parser and KILL action</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Pin.cpp#L208-L270">pin suffix parser</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Smoothieware/Smoothieboard2/blob/52ab340de33180a975b25f856c161993488e6ace/LICENSE">CERN Open Hardware Licence v1.2</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Smoothieware/Smoothieboard2/blob/52ab340de33180a975b25f856c161993488e6ace/README.md">README</a></td><td>Design source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+Outline and holes from the original board file. Millimetres, seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-breakoutterm-mount-t">
+  <title id="xb-breakoutterm-mount-t">Mounting drawing of the historical-breakoutterm, component side: outline 37 by 28.5 millimetres with 2 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="259.3" y="78.0" width="441.4" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M259.3 56H700.7"/><path d="M259.3 50V62"/><path d="M700.7 50V62"/><path d="M726.7 78.0V418.0"/><path d="M720.7 78.0h12"/><path d="M720.7 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">37</text>
+  <text x="738.7" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">28.5</text>
+  <circle cx="259.3" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="247.3" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M201.3 104.0h30" fill="none"/><path d="M235.3 104.0l-8 -4v8z"/><path d="M201.3 104.0v30" fill="none"/><path d="M201.3 138.0l-4 -8h8z"/></g>
+  <text x="239.3" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="197.3" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="301.1" cy="376.2" r="19.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M278.0 376.2h46.2M301.1 353.2v46.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="282.0" y="347.2" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  3.50, 25.00</text>
+  <circle cx="658.9" cy="376.2" r="19.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M635.9 376.2h46.2M658.9 353.2v46.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="678.0" y="347.2" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  33.50, 25.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 37 × 28.5&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>3.50</td><td>25.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>33.50</td><td>25.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Only what the design source states or the circuit fixes. Blank cells are not specified.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Voltage, current and temperature limits</td><td>Whole board</td><td>—</td><td>—</td><td>—</td><td>Not specified in the source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Design source {#origin}
+
+This board comes from the [original design files](https://github.com/Smoothieware/Smoothieboard2/tree/52ab340de33180a975b25f856c161993488e6ace/extensions/BreakoutTerm). It is licensed CERN-OHL-1.2. It was drawn for an earlier controller generation than Smoothieboard V2 Prime; match connections contact by contact.
+See all boards on the [extension boards](/extension-boards) page.

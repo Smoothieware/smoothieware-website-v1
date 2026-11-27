@@ -1,172 +1,262 @@
 ---
 layout: default
 title: "Multi-motor single-axis command splitter"
+description: "One STEP/DIR stream gated to four drivers with individual enables: pinout and limits."
 permalink: /extensions/historical-multi-motor-single-axis-splitter
 ---
 
-# Multi-motor single-axis command splitter
-
-This logic board gates one shared STEP stream separately to four motor-driver channels while sharing buffered DIR and ENABLE. It is intended for parallel screws or actuators that normally move together but may require individual adjustment. It splits command signals, not motor winding power and not four independent interpolated axes.
-
-## Design source and host
-
-This guide documents the **Ccecil design** used by Smoothieboard2. [The upstream source](https://github.com/Ccecil/MultiMotorSingleAxisSplitter/tree/78c84c17d5de61348682debc81ea5d1ebc0c7a5b) identifies the design. The design targets the Smoothieboard V2/Gadgeteer era. Check compatibility with your Prime board, cable and firmware build.
-
-## Interfaces, power and limitations
-
-J1/J7 contacts 3–9 are STEP,DIR,M1_EN,M2_EN,M3_EN,M4_EN,EN_Common. J2–J5 each use 1 5 V, 2 gated STEP, 3 buffered DIR, 4 buffered common ENABLE, 5 ground. The parts are 74LS132 and 74LS240; the README describes noninverting paths with open-drain5 V pull-ups. Check the fitted logic family, output topology and input thresholds before relying on that description; do not infer 3.3 V host compatibility from a 3–5 V README range alone.
-
-### TTL outputs need a matched receiver
-
-The logic uses NAND gates followed by inverting 74LS240 buffers; the gated STEP path depends on STEP and its channel enable. The README’s “open-drain” description does not match a 74LS240 output. Check the resistor-array loading and the fitted logic manufacturer.
-
-For a named comparison, the [TI SN74LS240 datasheet](https://www.ti.com/lit/ds/symlink/sn74ls240.pdf), electrical characteristics on page 5, guarantees output HIGH of only 2.4 V at the stated −3 mA load and minimum supply. The [Leadshine DM542E manual](https://www.leadshine.com/upfiles/downloads/d5375bf4c28b5c75b2d150c9762781c9_1651052967281.pdf) requires at least 4.5 V HIGH in 5 V input mode. Thus that pairing has no guaranteed direct HIGH margin from these specifications. This does not predict every sample’s voltage; it means no direct cable is guaranteed to work. Use a suitable interface for the driver input circuit in a powered installation.
-
-## Board-reference diagram
-
-The overview and contact sheets below show the board. Each numbered pill identifies a native source contact; dashed leaders locate the component, rather than an electrical wire. The four driver connectors carry command signals, not motor winding power. **Do not energize this board until you have checked the fitted logic, output topology, receiver margins and supply requirements.**
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-overview" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/overview.png" title="Multi-motor splitter" alt="Multi-motor splitter — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-<details markdown="1">
-<summary>Connector, logic, resistor-array and mounting references</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-c1-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/c1-pins-1.png" title="Capacitor C1 / 1" alt="Capacitor C1 / 1 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-c2-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/c2-pins-1.png" title="Capacitor C2 / 1" alt="Capacitor C2 / 1 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-c3-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/c3-pins-1.png" title="Capacitor C3 / 1" alt="Capacitor C3 / 1 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-h1-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/h1-pins-1.png" title="Mounting H1 / 1" alt="Mounting H1 / 1 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-h2-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/h2-pins-1.png" title="Mounting H2 / 1" alt="Mounting H2 / 1 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-h3-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/h3-pins-1.png" title="Mounting H3 / 1" alt="Mounting H3 / 1 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-h4-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/h4-pins-1.png" title="Mounting H4 / 1" alt="Mounting H4 / 1 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-h5-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/h5-pins-1.png" title="Mounting H5 / 1" alt="Mounting H5 / 1 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-j1-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/j1-pins-1.png" title="Host header J1 / 1" alt="Host header J1 / 1 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-j1-pins-2" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/j1-pins-2.png" title="Host header J1 / 2" alt="Host header J1 / 2 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-j2-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/j2-pins-1.png" title="Driver controls J2 / 1" alt="Driver controls J2 / 1 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-j3-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/j3-pins-1.png" title="Driver controls J3 / 1" alt="Driver controls J3 / 1 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-j4-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/j4-pins-1.png" title="Driver controls J4 / 1" alt="Driver controls J4 / 1 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-j5-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/j5-pins-1.png" title="Driver controls J5 / 1" alt="Driver controls J5 / 1 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-j7-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/j7-pins-1.png" title="Control row J7 / 1" alt="Control row J7 / 1 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-j7-pins-2" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/j7-pins-2.png" title="Control row J7 / 2" alt="Control row J7 / 2 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-rn1-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/rn1-pins-1.png" title="Resistor array RN1 / 1" alt="Resistor array RN1 / 1 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-rn1-pins-2" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/rn1-pins-2.png" title="Resistor array RN1 / 2" alt="Resistor array RN1 / 2 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-rn2-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/rn2-pins-1.png" title="Resistor array RN2 / 1" alt="Resistor array RN2 / 1 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-rn2-pins-2" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/rn2-pins-2.png" title="Resistor array RN2 / 2" alt="Resistor array RN2 / 2 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-rn3-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/rn3-pins-1.png" title="Resistor array RN3 / 1" alt="Resistor array RN3 / 1 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-rn3-pins-2" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/rn3-pins-2.png" title="Resistor array RN3 / 2" alt="Resistor array RN3 / 2 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-u1-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/u1-pins-1.png" title="Logic IC U1 / 1" alt="Logic IC U1 / 1 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-u1-pins-2" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/u1-pins-2.png" title="Logic IC U1 / 2" alt="Logic IC U1 / 2 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-u1-pins-3" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/u1-pins-3.png" title="Logic IC U1 / 3" alt="Logic IC U1 / 3 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-u2-pins-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/u2-pins-1.png" title="Logic IC U2 / 1" alt="Logic IC U2 / 1 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-u2-pins-2" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/u2-pins-2.png" title="Logic IC U2 / 2" alt="Logic IC U2 / 2 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-u2-pins-3" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/u2-pins-3.png" title="Logic IC U2 / 3" alt="Logic IC U2 / 3 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-splitter-reference-u2-pins-4" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/annotated-reference/u2-pins-4.png" title="Logic IC U2 / 4" alt="Logic IC U2 / 4 — board reference" caption="Logic and contact reference. The output-stage description conflicts with the named logic parts; check ratings, receiver margins and mating before use." width=420 %}
-
-</details>
-
-### Supplementary logical circuits
-
-These circuit sheets explain the connections. They show electrical relationships separately from the board references above. Use the contact inventory and all companion sheets together. Check physical cable orientation and ratings before use.
-
-Source: [original circuit](https://github.com/Ccecil/MultiMotorSingleAxisSplitter/blob/78c84c17d5de61348682debc81ea5d1ebc0c7a5b/MMSA.kicad_pcb).
-
-{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-motor-1-step" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/motor-1-step.png" title="Individual STEP gating path" alt="Individual STEP gating path — logical connections, not physical board layout" caption="These logical circuits supplement the board references." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-motor-2-step" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/motor-2-step.png" title="Individual STEP gating path" alt="Individual STEP gating path — logical connections, not physical board layout" caption="These logical circuits supplement the board references." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-motor-3-step" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/motor-3-step.png" title="Individual STEP gating path" alt="Individual STEP gating path — logical connections, not physical board layout" caption="These logical circuits supplement the board references." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-motor-4-step" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/motor-4-step.png" title="Individual STEP gating path" alt="Individual STEP gating path — logical connections, not physical board layout" caption="These logical circuits supplement the board references." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-dir" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/dir.png" title="DIR buffer path" alt="DIR buffer path — logical connections, not physical board layout" caption="These logical circuits supplement the board references." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-common-en" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/common-en.png" title="Common EN buffer path" alt="Common EN buffer path — logical connections, not physical board layout" caption="These logical circuits supplement the board references." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-j2" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/j2.png" title="J2 driver header" alt="J2 driver header — logical connections, not physical board layout" caption="These logical circuits supplement the board references." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-j3" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/j3.png" title="J3 driver header" alt="J3 driver header — logical connections, not physical board layout" caption="These logical circuits supplement the board references." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-j4" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/j4.png" title="J4 driver header" alt="J4 driver header — logical connections, not physical board layout" caption="These logical circuits supplement the board references." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-j5" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/j5.png" title="J5 driver header" alt="J5 driver header — logical connections, not physical board layout" caption="These logical circuits supplement the board references." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-host-1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/host-1.png" title="Host header paths" alt="Host header paths — logical connections, not physical board layout" caption="These logical circuits supplement the board references." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-host-5" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/host-5.png" title="Host header paths" alt="Host header paths — logical connections, not physical board layout" caption="These logical circuits supplement the board references." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-host-9" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/host-9.png" title="Host header paths" alt="Host header paths — logical connections, not physical board layout" caption="These logical circuits supplement the board references." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-power" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/power.png" title="Logic supply and enables" alt="Logic supply and enables — logical connections, not physical board layout" caption="These logical circuits supplement the board references." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-rn1" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/rn1.png" title="Resistor-array element pairs" alt="Resistor-array element pairs — logical connections, not physical board layout" caption="These logical circuits supplement the board references." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-rn2" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/rn2.png" title="Resistor-array element pairs" alt="Resistor-array element pairs — logical connections, not physical board layout" caption="These logical circuits supplement the board references." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-rn3" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/rn3.png" title="Resistor-array element pairs" alt="Resistor-array element pairs — logical connections, not physical board layout" caption="These logical circuits supplement the board references." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-multi-motor-single-axis-splitter-factual-boundaries" src="/images/extensions/historical-multi-motor-single-axis-splitter/guides/factual-circuits/boundaries.png" title="Multi-motor gating notes" alt="Multi-motor gating notes — logical connections, not physical board layout" caption="These logical circuits supplement the board references." width=420 %}
-
-### Numbered source contacts and controls
-
-These are design net memberships. Unassigned/unconnected pads must not receive invented connections. Auto-generated net names require schematic interpretation; they are not cable colours. Repeated footprints or pad numbers require geometric identity checks before wiring.
-
-| Source file | Connector/control | Label | Contact → net |
-|---|---|---|---|
-| MMSA.kicad_pcb | J5 | Conn_01x05_Pin | 1: +5V; 2: /M4_STP; 3: /DIR_Buf; 4: /EN_Common_Buf; 5: GND |
-| MMSA.kicad_pcb | J1 | Conn_02x05_Odd_Even | 1: +3V3; 2: +5V; 3: /STP; 4: /DIR; 5: /M1_EN; 6: /M2_EN; 7: /M3_EN; 8: /M4_EN; 9: /EN_Common; 10: GND |
-| MMSA.kicad_pcb | J2 | Conn_01x05_Pin | 1: +5V; 2: /M1_STP; 3: /DIR_Buf; 4: /EN_Common_Buf; 5: GND |
-| MMSA.kicad_pcb | J3 | Conn_01x05_Pin | 1: +5V; 2: /M2_STP; 3: /DIR_Buf; 4: /EN_Common_Buf; 5: GND |
-| MMSA.kicad_pcb | J7 | Conn_01x10_Pin | 1: +3V3; 2: +5V; 3: /STP; 4: /DIR; 5: /M1_EN; 6: /M2_EN; 7: /M3_EN; 8: /M4_EN; 9: /EN_Common; 10: GND |
-| MMSA.kicad_pcb | J4 | Conn_01x05_Pin | 1: +5V; 2: /M3_STP; 3: /DIR_Buf; 4: /EN_Common_Buf; 5: GND |
-
-## Practical use with Smoothieboard V2 Prime
-
-For a two-screw bench experiment, keep commercial drive power disabled and connect only their logic inputs after verifying the actual circuit polarities. Test each M_EN state while supplying pulses to shared STEP and confirm only the selected output pulses. A GF/J37 contact mapping is STEP PB1,DIR PJ4,M1_EN PA4,M2_EN PG0,M3_EN PJ3,M4_EN PG1,common enable PJ2. This pin mapping does not provide a squaring algorithm or enable sequence.
-
-On GF/J37, contacts 1/2/10 are limited 3.3 V/limited 5 V/ground; contacts 3–9 are PB1/PJ4/PA4/PG0/PJ3/PG1/PJ2. The host header is unshrouded. Verify physical numbering, polarity, per-rail current allowance and free-pin ownership before connection. This pin map does not establish hardware SPI, UART, CAN or PWM availability on an arbitrary contact.
-
-## Smoothieware support
-
-SmoothieV2 has motor slaving, but its implementation does not implement this board’s shared-step gate interface. `slaved_to` belongs to the TMC actuator setup; the external STEP/DIR branch reports that it cannot be slaved in software and does not perform the TMC slave setup. The `G28.7` alignment routine moves a separate slave actuator object, rather than sequencing this board’s four motor-gate inputs on one common step stream. This board therefore needs a matching shared-step/gate and endstop-control workflow before independent homing or squaring can be used. SmoothieV2 supplies no configuration for that workflow. Ordinary shared movement and independently squared homing are different requirements.
-
-This section refers to SmoothieV2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`.
-
-## Sources and attribution
-
-- [Ccecil upstream project](https://github.com/Ccecil/MultiMotorSingleAxisSplitter)
-- [Original source](https://github.com/Ccecil/MultiMotorSingleAxisSplitter/tree/78c84c17d5de61348682debc81ea5d1ebc0c7a5b)
-- [Original MMSA.kicad_pcb](https://github.com/Ccecil/MultiMotorSingleAxisSplitter/blob/78c84c17d5de61348682debc81ea5d1ebc0c7a5b/MMSA.kicad_pcb)
-- [Original MMSA.kicad_sch](https://github.com/Ccecil/MultiMotorSingleAxisSplitter/blob/78c84c17d5de61348682debc81ea5d1ebc0c7a5b/MMSA.kicad_sch)
-- [Original NAND_noninverting.kicad_sch](https://github.com/Ccecil/MultiMotorSingleAxisSplitter/blob/78c84c17d5de61348682debc81ea5d1ebc0c7a5b/NAND_noninverting.kicad_sch)
-- [Original README.md](https://github.com/Ccecil/MultiMotorSingleAxisSplitter/blob/78c84c17d5de61348682debc81ea5d1ebc0c7a5b/README.md)
-
-The project has no license file. Preserve attribution; the absence of a license file is not public-domain permission.
-
-[All extension boards](/extension-boards)
+{% include _includes/extension-board-page.html %}
+
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Motion</p>
+    <h1 id="historical-multi-motor-single-axis-splitter">Multi-motor single-axis command splitter</h1>
+    <p class="xb-lead">Shares one axis STEP stream across four external drivers, each gated by its own enable, with common direction and enable.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#downloads">Downloads</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/historical-multi-motor-single-axis-splitter/directory-board-render.png" alt="Top view of the Multi-motor single-axis command splitter board">
+    <figcaption>Top view drawn from the original board file. This is a drawing, not a photograph.</figcaption>
+  </figure>
+</div>
+
+<div class="xb-stats">
+  <div class="xb-stat"><b>4</b><span>driver outputs</span></div>
+  <div class="xb-stat"><b>1</b><span>shared STEP in</span></div>
+  <div class="xb-stat"><b>74LS132</b><span>gating</span></div>
+  <div class="xb-stat"><b>74LS240</b><span>buffer</span></div>
+  <div class="xb-stat"><b>40 × 45 mm</b><span>board size</span></div>
+  <div class="xb-stat"><b>5 V</b><span>logic supply</span></div>
+</div>
+
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting dimensions</a>
+  <a href="#electrical">Electrical specifications</a>
+</nav>
+{:/nomarkdown}
+
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <b>Check the logic levels before connecting drives.</b> The outputs are TTL gates whose guaranteed high level may be too low for a 5 V drive input. This splits signals only, never motor power. This is a design by Chris Cecil, not a current Smoothieware board.
+</sl-alert>
+
+## Tech specs {#specs}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Function</td><td>Gated STEP distribution</td></tr>
+    <tr><td>Inputs</td><td>J1, J7: STEP, DIR, M1–M4 enable, common enable</td></tr>
+    <tr><td>Outputs</td><td>J2–J5: 5 V, STEP, DIR, enable, ground</td></tr>
+    <tr><td>Logic</td><td>74LS132 and 74LS240</td></tr>
+    <tr><td>Size</td><td>40 × 45 mm</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Board tour {#tour}
+
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/historical-multi-motor-single-axis-splitter/directory-board-render.png" alt="Annotated top view of the Multi-motor single-axis command splitter board">
+      <a class="xb-mk" href="#tour-1" style="left:29.4%;top:51.5%" aria-label="1: Input J1">1<span class="xb-pop"><b>Input J1</b> — Host header.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-2" style="left:13.3%;top:28.4%" aria-label="2: Input row J7">2<span class="xb-pop"><b>Input row J7</b> — Same signals in one row.</span></a>
+      <a class="xb-mk" href="#tour-3" style="left:66.9%;top:86.1%" aria-label="3: Output 1">3<span class="xb-pop"><b>Output 1</b> — M1 channel.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-4" style="left:66.9%;top:34.1%" aria-label="4: Output 2">4<span class="xb-pop"><b>Output 2</b> — M2 channel.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-5" style="left:85.1%;top:74.5%" aria-label="5: Output 3">5<span class="xb-pop"><b>Output 3</b> — M3 channel.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-6" style="left:85.1%;top:46.2%" aria-label="6: Output 4">6<span class="xb-pop"><b>Output 4</b> — M4 channel.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-7" style="left:49.0%;top:40.9%" aria-label="7: 74LS132">7<span class="xb-pop"><b>74LS132</b> — Gates the STEP signal.</span></a>
+      <a class="xb-mk" href="#tour-8" style="left:48.9%;top:61.0%" aria-label="8: 74LS240">8<span class="xb-pop"><b>74LS240</b> — Buffers the outputs.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Input J1</b> — Host header.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Input row J7</b> — Same signals in one row.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Output 1</b> — M1 channel.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Output 2</b> — M2 channel.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Output 3</b> — M3 channel.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Output 4</b> — M4 channel.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>74LS132</b> — Gates the STEP signal.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>74LS240</b> — Buffers the outputs.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
+
+## Pinout {#pinout}
+
+<span id="connect-and-try-it"></span>
+
+### Input header J1
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+3V3</code></td></tr>
+    <tr><td>2</td><td><code>+5V</code></td></tr>
+    <tr><td>3</td><td><code>STP</code></td></tr>
+    <tr><td>4</td><td><code>DIR</code></td></tr>
+    <tr><td>5</td><td><code>M1_EN</code></td></tr>
+    <tr><td>6</td><td><code>M2_EN</code></td></tr>
+    <tr><td>7</td><td><code>M3_EN</code></td></tr>
+    <tr><td>8</td><td><code>M4_EN</code></td></tr>
+    <tr><td>9</td><td><code>EN_Common</code></td></tr>
+    <tr><td>10</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Output 1, J2
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J2 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+5V</code></td></tr>
+    <tr><td>2</td><td><code>M1_STP</code></td></tr>
+    <tr><td>3</td><td><code>DIR_Buf</code></td></tr>
+    <tr><td>4</td><td><code>EN_Common_Buf</code></td></tr>
+    <tr><td>5</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+J3, J4 and J5 follow J2 with M2, M3 and M4 STEP on contact 2.
+
+## What you need {#what-you-need}
+
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>Splitter board</b><span>Built from the design files</span></div>
+  <div class="xb-card"><b>External drives</b><span>Up to four</span></div>
+  <div class="xb-card"><b>Oscilloscope</b><span>To check levels and pulses</span></div>
+</div>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+<span id="smoothieware-use"></span>
+
+Smoothieware has no verified configuration for the channel enables of this board: not specified. The shared STEP, DIR and enable follow an ordinary external-driver actuator setup.
+
+## How it works {#how-it-works}
+
+Each output STEP is the shared STEP gated by that channel&rsquo;s enable; DIR and the common enable are buffered to all four. The [TI SN74LS240 datasheet](https://www.ti.com/lit/ds/symlink/sn74ls240.pdf) guarantees only 2.4 V output high at −3 mA.
+
+## Troubleshooting {#troubleshooting}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Nothing responds</td><td>With power off, check continuity along each lead and board path against the pinout tables. Confirm which end of the connector is contact 1.</td></tr>
+    <tr><td>One drive never steps</td><td>Check its channel enable level.</td></tr>
+    <tr><td>Drive ignores pulses</td><td>Compare the output high level with the drive requirement.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
+
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/Ccecil/MultiMotorSingleAxisSplitter/tree/78c84c17d5de61348682debc81ea5d1ebc0c7a5b">The upstream source</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/MultiMotorSingleAxisSplitter/blob/78c84c17d5de61348682debc81ea5d1ebc0c7a5b/MMSA.kicad_pcb">original circuit</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/MultiMotorSingleAxisSplitter">Ccecil upstream project</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/MultiMotorSingleAxisSplitter/blob/78c84c17d5de61348682debc81ea5d1ebc0c7a5b/MMSA.kicad_sch">Original MMSA.kicad_sch</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/MultiMotorSingleAxisSplitter/blob/78c84c17d5de61348682debc81ea5d1ebc0c7a5b/NAND_noninverting.kicad_sch">Original NAND_noninverting.kicad_sch</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/MultiMotorSingleAxisSplitter/blob/78c84c17d5de61348682debc81ea5d1ebc0c7a5b/README.md">Original README.md</a></td><td>Design source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+Outline and holes from the original board file. Millimetres, seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-xis-splitter-mount-t">
+  <title id="xb-xis-splitter-mount-t">Mounting drawing of the historical-multi-motor-single-axis-splitter, component side: outline 40 by 45 millimetres with 5 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="328.9" y="78.0" width="302.2" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M328.9 56H631.1"/><path d="M328.9 50V62"/><path d="M631.1 50V62"/><path d="M657.1 78.0V418.0"/><path d="M651.1 78.0h12"/><path d="M651.1 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">40</text>
+  <text x="669.1" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">45</text>
+  <circle cx="328.9" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="316.9" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M270.9 104.0h30" fill="none"/><path d="M304.9 104.0l-8 -4v8z"/><path d="M270.9 104.0v30" fill="none"/><path d="M270.9 138.0l-4 -8h8z"/></g>
+  <text x="308.9" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="266.9" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="366.7" cy="115.8" r="12.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M350.6 115.8h32.2M366.7 99.7v32.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="354.6" y="147.9" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 5.00</text>
+  <circle cx="593.3" cy="115.8" r="12.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M577.2 115.8h32.2M593.3 99.7v32.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="605.4" y="147.9" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  35.00, 5.00</text>
+  <circle cx="540.4" cy="248.0" r="9.4" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M527.0 248.0h26.9M540.4 234.6v26.9" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="549.9" y="228.6" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  28.00, 22.50</text>
+  <circle cx="366.7" cy="380.2" r="12.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M350.6 380.2h32.2M366.7 364.1v32.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="354.6" y="358.1" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  5.00, 40.00</text>
+  <circle cx="593.3" cy="380.2" r="12.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M577.2 380.2h32.2M593.3 364.1v32.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="605.4" y="358.1" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">5</tspan>  35.00, 40.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 40 × 45&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>5.00</td><td>5.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>35.00</td><td>5.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>3</td><td>28.00</td><td>22.50</td><td>2.5&nbsp;mm, not plated</td><td>Mounting</td></tr>
+    <tr><td>4</td><td>5.00</td><td>40.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>5</td><td>35.00</td><td>40.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Only what the design source states or the circuit fixes. Blank cells are not specified.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Voltage, current and temperature limits</td><td>Whole board</td><td>—</td><td>—</td><td>—</td><td>Not specified in the source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Design source {#origin}
+
+Designed by Chris Cecil: [original design files](https://github.com/Ccecil/MultiMotorSingleAxisSplitter/tree/78c84c17d5de61348682debc81ea5d1ebc0c7a5b). It was drawn for the Smoothieboard V2 Gadgeteer era; check every connection against your own controller.
+See all boards on the [extension boards](/extension-boards) page.

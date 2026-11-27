@@ -220,6 +220,8 @@ With <code>console = true</code> the UART starts after the controller has finish
 
 USB data goes to the FT231X, which produces a 3.3&nbsp;V UART from USB power. The <a href="/images/extensions/usb-serial-breakout/datasheets/txu0202.pdf">TXU0202</a> passes each direction between that supply and the controller&rsquo;s 3.3&nbsp;V, with a common ground. USB 5&nbsp;V is not connected to the controller&rsquo;s 5&nbsp;V.
 
+{% include _includes/serial-adapter-board-comparison.html %}
+
 ## Troubleshooting {#troubleshooting}
 
 {::nomarkdown}

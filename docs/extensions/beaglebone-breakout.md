@@ -20,7 +20,7 @@ permalink: /extensions/beaglebone-breakout
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/beaglebone-breakout/v14/beaglebone-breakout-diagram.png" alt="Top view of the BeagleBone breakout.">
+    <img src="/images/extensions/beaglebone-breakout/v14/beaglebone-breakout-diagram.webp" alt="Top view of the BeagleBone breakout.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -81,7 +81,7 @@ The numbers on the drawing match the list below it.
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/beaglebone-breakout/v14/beaglebone-breakout-diagram.png" alt="Top view of the BeagleBone breakout with numbered markers explained in the list below.">
+      <img src="/images/extensions/beaglebone-breakout/v14/beaglebone-breakout-diagram.webp" alt="Top view of the BeagleBone breakout with numbered markers explained in the list below.">
       <a class="xb-mk xb-pb" href="#tour-1" style="left:49.9%;top:16.7%" aria-label="1: Controller socket (J1)">1<span class="xb-pop"><b>Controller socket (J1)</b> — to the controller UART.</span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:55.4%;top:42.1%" aria-label="2: Controller-to-computer buffer (U1)">2<span class="xb-pop"><b>Controller-to-computer buffer (U1)</b> — drives BeagleBone receive.</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-3" style="left:81.9%;top:42.1%" aria-label="3: Computer-to-controller buffer (U2)">3<span class="xb-pop"><b>Computer-to-controller buffer (U2)</b> — drives controller receive.</span></a>
@@ -231,43 +231,14 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/beaglebone-breakout/v14/beaglebone-breakout-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/beaglebone-breakout/v14/beaglebone-breakout-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/beaglebone-breakout/v14/beaglebone-breakout-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/beaglebone-breakout/v14/beaglebone-breakout-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
 
 ## Appendix: mounting dimensions {#mounting}
 
-For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
-
-{::nomarkdown}
-<figure class="xb-fig">
-  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
-  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-bb-mount-t">
-  <title id="xb-bb-mount-t">Mounting drawing of the bb, component side: outline 22 by 24 millimetres with 0 mounting holes. Hole positions are listed in the table below.</title>
-  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
-  <rect x="324.2" y="78.0" width="311.7" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
-  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M324.2 56H635.8"/><path d="M324.2 50V62"/><path d="M635.8 50V62"/><path d="M661.8 78.0V418.0"/><path d="M655.8 78.0h12"/><path d="M655.8 418.0h12"/></g>
-  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">22</text>
-  <text x="673.8" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">24</text>
-  <circle cx="324.2" cy="78.0" r="4" fill="#ffcc33"/>
-  <text x="312.2" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
-  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M266.2 104.0h30" fill="none"/><path d="M300.2 104.0l-8 -4v8z"/><path d="M266.2 104.0v30" fill="none"/><path d="M266.2 138.0l-4 -8h8z"/></g>
-  <text x="304.2" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
-  <text x="262.2" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
-  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
-  </svg>
-  </div>
-  <figcaption>Board outline 22 × 24&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
-</figure>
-
-<div class="xb-tablewrap"><table>
-  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
-  <tbody>
-    
-  </tbody>
-</table></div>
-{:/nomarkdown}
+The board is 22 × 24 mm with square corners, 1.6 mm thick. It has no mounting holes.
 
 ## Appendix: electrical specifications {#electrical}
 

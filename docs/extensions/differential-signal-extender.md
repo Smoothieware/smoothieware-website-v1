@@ -21,7 +21,7 @@ permalink: /extensions/differential-signal-extender
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/differential-signal-extender/v15/differential-signal-extender-emitter-diagram.png" alt="Top view of the emitter board: a three-pin input header and a large cable jack.">
+    <img src="/images/extensions/differential-signal-extender/v15/differential-signal-extender-emitter-diagram.webp" alt="Top view of the emitter board: a three-pin input header and a large cable jack.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -86,7 +86,7 @@ The emitter is at the controller end, the receiver at the load end.
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/differential-signal-extender/v15/differential-signal-extender-emitter-diagram.png" alt="Top view of the emitter with numbered markers.">
+      <img src="/images/extensions/differential-signal-extender/v15/differential-signal-extender-emitter-diagram.webp" alt="Top view of the emitter with numbered markers.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:16.6%;top:48.4%" aria-label="1: Input header (J1)">1<span class="xb-pop"><b>Input header (J1)</b> — ground, 5&nbsp;V in, signal in.</span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:50.4%;top:30.0%" aria-label="2: Cable jack (J2)">2<span class="xb-pop"><b>Cable jack (J2)</b> — to the receiver.</span></a>
       <a class="xb-mk" href="#tour-3" style="left:72.6%;top:65.1%" aria-label="3: Driver (U1)">3<span class="xb-pop"><b>Driver (U1)</b> — a THVD1451.</span></a>
@@ -111,7 +111,7 @@ The emitter is at the controller end, the receiver at the load end.
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/differential-signal-extender/v15/differential-signal-extender-receiver-diagram.png" alt="Top view of the receiver with numbered markers.">
+      <img src="/images/extensions/differential-signal-extender/v15/differential-signal-extender-receiver-diagram.webp" alt="Top view of the receiver with numbered markers.">
       <a class="xb-mk xb-pb" href="#tour-6" style="left:58.6%;top:27.5%" aria-label="6: Cable jack (J2)">6<span class="xb-pop"><b>Cable jack (J2)</b> — from the emitter.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-7" style="left:13.8%;top:44.4%" aria-label="7: Output header (J1)">7<span class="xb-pop"><b>Output header (J1)</b> — ground, 5&nbsp;V out, signal out.</span></a>
       <a class="xb-mk" href="#tour-8" style="left:59.9%;top:66.3%" aria-label="8: Receiver (U1)">8<span class="xb-pop"><b>Receiver (U1)</b> — a THVD1451.</span></a>
@@ -192,7 +192,7 @@ The emitter is at the controller end, the receiver at the load end.
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>Both boards</b><span></span></div>
+  <div class="xb-card"><b>Both boards</b><span>One pair, built from the design files in Downloads</span></div>
   <div class="xb-card"><b>A straight-through cable</b><span>8P8C with all eight cores, used only for this link.</span></div>
   <div class="xb-card"><b>A 5 V supply</b><span>At the emitter, sharing ground with the controller.</span></div>
   <div class="xb-card"><b>A logic load</b><span>Draws, with the 5&nbsp;V pin, 140&nbsp;mA at most.</span></div>
@@ -259,6 +259,8 @@ The [switch module](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d
 
 The emitter drives the two wires in opposite directions. The receiver compares them, so noise picked up equally by both has little effect, and the output driver restores a 5&nbsp;V logic level. With the link idle or disconnected the output is meant to rest low.
 
+{% include _includes/extender-board-comparison.html %}
+
 ## Troubleshooting {#troubleshooting}
 
 {::nomarkdown}
@@ -282,10 +284,10 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/differential-signal-extender/v15/differential-signal-extender-emitter-schematic.pdf">Schematic (PDF, emitter)</a></td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/differential-signal-extender/v15/differential-signal-extender-emitter-bom.csv">Parts list (CSV, emitter)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/differential-signal-extender/v15/differential-signal-extender-emitter-diagram.png">Board drawing (PNG, emitter)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/differential-signal-extender/v15/differential-signal-extender-emitter-diagram.webp">Board drawing (PNG, emitter)</a></td><td>The top view used on this page</td></tr>
     <tr><td><a href="/images/extensions/differential-signal-extender/v15/differential-signal-extender-receiver-schematic.pdf">Schematic (PDF, receiver)</a></td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/differential-signal-extender/v15/differential-signal-extender-receiver-bom.csv">Parts list (CSV, receiver)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/differential-signal-extender/v15/differential-signal-extender-receiver-diagram.png">Board drawing (PNG, receiver)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/differential-signal-extender/v15/differential-signal-extender-receiver-diagram.webp">Board drawing (PNG, receiver)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

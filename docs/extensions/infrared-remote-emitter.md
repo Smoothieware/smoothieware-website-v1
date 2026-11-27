@@ -12,7 +12,7 @@ permalink: /extensions/infrared-remote-emitter
   <div>
     <p class="xb-eyebrow">Extension board · Outputs and power</p>
     <h1 id="infrared-remote-emitter">Infrared remote emitter</h1>
-    <p class="xb-lead">Two infrared LEDs for sending remote-control signals to a camera, fan or lamp. One controller pin switches both. The firmware can produce a 38&nbsp;kHz carrier on that pin, but it cannot yet send coded remote commands: that needs your own driver.</p>
+    <p class="xb-lead">Two infrared LEDs for sending remote-control signals to a camera, fan or lamp. One controller pin switches both. The firmware can produce a 38&nbsp;kHz carrier on that pin; sending coded remote commands needs your own driver.</p>
     <div class="xb-actions">
       <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
       <a class="xb-btn" href="#pinout">Pinout</a>

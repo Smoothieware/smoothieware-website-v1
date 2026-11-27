@@ -21,7 +21,7 @@ permalink: /extensions/cpld-adapter
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/cpld-adapter/v19/cpld-adapter-diagram.png" alt="Top view of the CPLD adapter: the CPLD in the middle, a JTAG header at the top left, controller and field connectors along the bottom and four lights at the right.">
+    <img src="/images/extensions/cpld-adapter/v19/cpld-adapter-diagram.webp" alt="Top view of the CPLD adapter: the CPLD in the middle, a JTAG header at the top left, controller and field connectors along the bottom and four lights at the right.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -84,7 +84,7 @@ The numbers on the drawing match the list below it.
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/cpld-adapter/v19/cpld-adapter-diagram.png" alt="Top view of the CPLD adapter with numbered markers explained in the list below.">
+      <img src="/images/extensions/cpld-adapter/v19/cpld-adapter-diagram.webp" alt="Top view of the CPLD adapter with numbered markers explained in the list below.">
       <a class="xb-mk" href="#tour-1" style="left:25.7%;top:88.2%" aria-label="1: Controller connector (J1)">1<span class="xb-pop"><b>Controller connector (J1)</b> — power and signals to and from the controller.</span></a>
       <a class="xb-mk" href="#tour-2" style="left:41.8%;top:87.7%" aria-label="2: Field connector (J2)">2<span class="xb-pop"><b>Field connector (J2)</b> — 5&nbsp;V logic to the receiver.</span></a>
       <a class="xb-mk xb-pb" href="#tour-3" style="left:31.6%;top:19.0%" aria-label="3: JTAG header (J3)">3<span class="xb-pop"><b>JTAG header (J3)</b> — programs the CPLD.</span></a>
@@ -187,7 +187,7 @@ The pin order follows the USB-Blaster connector. That says nothing about softwar
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span></span></div>
+  <div class="xb-card"><b>This board</b><span>Built from the design files in Downloads</span></div>
   <div class="xb-card"><b>A logic design</b><span>Your own <a href="/images/extensions/cpld-adapter/datasheets/machxo2.pdf">MachXO2</a> image; the board is delivered without one.</span></div>
   <div class="xb-card"><b>A JTAG programmer</b><span>Supporting Lattice devices.</span></div>
   <div class="xb-card"><b>A 5 V logic receiver</b><span>High-impedance inputs.</span></div>
@@ -265,7 +265,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/cpld-adapter/v19/cpld-adapter-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/cpld-adapter/v19/cpld-adapter-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/cpld-adapter/v19/cpld-adapter-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/cpld-adapter/v19/cpld-adapter-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

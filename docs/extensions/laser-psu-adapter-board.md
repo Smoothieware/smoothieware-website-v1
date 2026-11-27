@@ -330,7 +330,7 @@ These steps take you from an unconnected board to outputs you have checked with 
     <!-- PSU: drawing of a typical supply's signal block (smoothie-diagrams, data/external-equipment/co2-laser-power-supply-panel) -->
     <text x="890" y="222" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">CO2 laser supply</text>
     <text x="890" y="240" text-anchor="middle" font-size="11" fill="#a9b4c2">signal terminals of a typical unit</text>
-    <svg x="800" y="250" width="180" height="110.8" viewBox="84 8 52 32"><image href="/images/extensions/equipment/co2-laser-power-supply-panel.png" width="170" height="46"/></svg>
+    <svg x="800" y="250" width="180" height="110.8" viewBox="84 8 52 32"><image href="/images/extensions/equipment/co2-laser-power-supply-panel.webp" width="170" height="46"/></svg>
     <g fill="none" stroke-width="4" stroke-linejoin="round">
       <path d="M655 362V306H745V425H928.7V314.7" stroke="#5fb3ff"/>
       <path d="M565 362V318H775V380H849.5V314.7" stroke="#c9a6ff"/>
@@ -483,7 +483,7 @@ The pin is checked fifty times a second. The board blocks the laser by itself an
   <svg viewBox="0 0 900 525" role="img" aria-labelledby="xb-lpa-psu-t" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
     <title id="xb-lpa-psu-t">The connector panel of a typical CO2 laser supply above the top edge of the adapter board. Four wires: board PWM to supply IN, board TTL to supply L, board WP to supply P, board G to supply G. Supply terminals H and 5V and the board's 5V screw stay empty.</title>
     <text x="25" y="20" font-size="14" font-weight="700" fill="#e6ebf2">CO2 laser supply, connector panel</text><text x="345" y="20" font-size="13" fill="#a9b4c2">a typical unit, not a specific model</text>
-    <image href="/images/extensions/equipment/co2-laser-power-supply-panel.png" x="25" y="30" width="850" height="230"/>
+    <image href="/images/extensions/equipment/co2-laser-power-supply-panel.webp" x="25" y="30" width="850" height="230"/>
     <svg x="88.85" y="380" width="626.3" height="115" viewBox="-0.95 0.1683 82 15.057"><image href="/images/extensions/laser-psu-adapter-board/laser-psu-adapter-diagram.png" x="-0.95" y="0.1683" width="82" height="57.75"/></svg>
     <g fill="none" stroke-linejoin="round">
       <path d="M516.5 392V163.5" stroke="#c9a6ff" stroke-width="4"/>
@@ -692,8 +692,6 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   </tbody>
 </table></div>
 {:/nomarkdown}
-
-The KiCad design files will be linked here when the board's repository is published.
 
 ## Appendix: mounting dimensions {#mounting}
 

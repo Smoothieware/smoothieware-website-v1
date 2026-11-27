@@ -237,6 +237,8 @@ With <code>console = true</code> the UART starts after the controller has finish
 
 The controller&rsquo;s transmit line reaches J3 contact 5 through 100&nbsp;&Omega;. Data from the cable reaches the controller through 100&nbsp;&Omega; and a diode, with a pull-up holding the line high when nothing transmits. Neither path is inverted or level shifted.
 
+{% include _includes/serial-adapter-board-comparison.html %}
+
 ## Troubleshooting {#troubleshooting}
 
 {::nomarkdown}

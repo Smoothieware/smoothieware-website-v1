@@ -20,7 +20,7 @@ permalink: /extensions/endstop-inputs-basic
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/endstop-inputs-basic/endstop-inputs-basic-diagram.png" alt="Top view of the Endstop inputs (basic) board: seven three-pin connectors along the top edge, a ten-pin connector at each end, and seven rows of small parts between them.">
+    <img src="/images/extensions/endstop-inputs-basic/endstop-inputs-basic-diagram.webp" alt="Top view of the Endstop inputs (basic) board: seven three-pin connectors along the top edge, a ten-pin connector at each end, and seven rows of small parts between them.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -103,7 +103,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/endstop-inputs-basic/endstop-inputs-basic-diagram.png" alt="Top view of the Endstop inputs (basic) board with eleven numbered markers that are explained in the list below.">
+      <img src="/images/extensions/endstop-inputs-basic/endstop-inputs-basic-diagram.webp" alt="Top view of the Endstop inputs (basic) board with eleven numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pl" href="#tour-1" style="left:7.0%;top:50.0%" aria-label="1: controller connector (input y)">1<span class="xb-pop"><b>Controller connector (INPUT Y)</b> — a 2×5, 1.27 mm Gadgeteer Y shrouded header for the ribbon cable from the controller. <i>Pin 1 is the lower contact of its right-hand column.</i></span></a>
       <a class="xb-mk xb-pr" href="#tour-2" style="left:93.0%;top:50.0%" aria-label="2: chain connector (chain y)">2<span class="xb-pop"><b>Chain connector (CHAIN Y)</b> — a second header wired contact for contact to INPUT Y, for another board.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-3" style="left:15.8%;top:15.5%" aria-label="3: sensor connectors inp0 to inp6">3<span class="xb-pop"><b>Sensor connectors INP0 to INP6</b> — seven 3-pin 2.54 mm keyed headers, one per switch. <i>Printed pin order from left to right: + , − , S.</i></span></a>
@@ -112,8 +112,8 @@ The numbers on the drawing match the list below it. The board is shown from the 
       <a class="xb-mk xb-pl" href="#tour-6" style="left:20.6%;top:67.2%" aria-label="6: filter capacitors">6<span class="xb-pop"><b>Filter capacitors</b> — one 100 nF capacitor per input, which smooths contact bounce and short noise pulses.</span></a>
       <a class="xb-mk xb-pr" href="#tour-7" style="left:79.1%;top:62.0%" aria-label="7: signal links jp2 to jp8">7<span class="xb-pop"><b>Signal links JP2 to JP8</b> — one cuttable solder link per input, between the channel and its controller pin. <i>All are closed as delivered.</i></span></a>
       <a class="xb-mk" href="#tour-8" style="left:45.6%;top:82.8%" aria-label="8: supply selector jp1">8<span class="xb-pop"><b>Supply selector JP1</b> — a three-pin header whose jumper cap picks 3.3 V (left) or 5 V (right) for the + pins only. <i>The signals to the controller stay at 3.3 V.</i></span></a>
-      <a class="xb-mk" href="#tour-10" style="left:21.1%;top:43.4%" aria-label="10: protection diodes">10<span class="xb-pop"><b>Protection diodes</b> — one beside each channel, from the S pin to ground, plus one on the sensor supply. They divert static discharge.</span></a>
-      <a class="xb-mk xb-pr" href="#tour-11" style="left:64.5%;top:81.8%" aria-label="11: resettable fuse">11<span class="xb-pop"><b>Resettable fuse</b> — in the sensor supply, between the jumper and the + pins. It goes high-resistance on a lasting overload and recovers after the fault is removed and it cools.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-10" style="left:21.1%;top:43.4%" aria-label="10: protection diodes">10<span class="xb-pop"><b>Protection diodes</b> — one beside each channel, from the S pin to ground, plus one on the sensor supply. They divert static discharge.</span></a>
+      <a class="xb-mk" href="#tour-11" style="left:64.5%;top:81.8%" aria-label="11: resettable fuse">11<span class="xb-pop"><b>Resettable fuse</b> — in the sensor supply, between the jumper and the + pins. It goes high-resistance on a lasting overload and recovers after the fault is removed and it cools.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-9" style="left:5.7%;top:15.5%" aria-label="9: mounting holes">9<span class="xb-pop"><b>Mounting holes</b> — four 3.2 mm holes for M3 screws on a 70 × 20 mm rectangle, not connected to anything.</span></a>
     </div>
   </div>
@@ -482,7 +482,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/endstop-inputs-basic/endstop-inputs-basic-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/endstop-inputs-basic/endstop-inputs-basic-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number</td></tr>
-    <tr><td><a href="/images/extensions/endstop-inputs-basic/endstop-inputs-basic-diagram.png">Top view (PNG)</a></td><td>The drawing used on this page</td></tr>
+    <tr><td><a href="/images/extensions/endstop-inputs-basic/endstop-inputs-basic-diagram.webp">Top view (WebP)</a></td><td>The drawing used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

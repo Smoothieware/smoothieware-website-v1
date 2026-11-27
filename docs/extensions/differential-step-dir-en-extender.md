@@ -21,7 +21,7 @@ permalink: /extensions/differential-step-dir-en-extender
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/differential-step-dir-en-extender/v31/differential-step-dir-en-extender-host-diagram.png" alt="Top view of the host board: a ten-contact socket and a cable jack.">
+    <img src="/images/extensions/differential-step-dir-en-extender/v31/differential-step-dir-en-extender-host-diagram.webp" alt="Top view of the host board: a ten-contact socket and a cable jack.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -85,7 +85,7 @@ The host board sits by the controller, the remote board by the drive.
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/differential-step-dir-en-extender/v31/differential-step-dir-en-extender-host-diagram.png" alt="Top view of the host board with numbered markers.">
+      <img src="/images/extensions/differential-step-dir-en-extender/v31/differential-step-dir-en-extender-host-diagram.webp" alt="Top view of the host board with numbered markers.">
       <a class="xb-mk xb-pb" href="#tour-1" style="left:50.0%;top:11.2%" aria-label="1: Controller socket (J1)">1<span class="xb-pop"><b>Controller socket (J1)</b> — ENABLE, STEP and DIR.</span></a>
       <a class="xb-mk" href="#tour-2" style="left:50.0%;top:79.0%" aria-label="2: Link jack (J2)">2<span class="xb-pop"><b>Link jack (J2)</b> — to the remote board.</span></a>
       <a class="xb-mk" href="#tour-3" style="left:33.8%;top:51.9%" aria-label="3: Inverter (U4)">3<span class="xb-pop"><b>Inverter (U4)</b> — a 74LVC2G04.</span></a>
@@ -108,7 +108,7 @@ The host board sits by the controller, the remote board by the drive.
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/differential-step-dir-en-extender/v31/differential-step-dir-en-extender-remote-diagram.png" alt="Top view of the remote board with numbered markers.">
+      <img src="/images/extensions/differential-step-dir-en-extender/v31/differential-step-dir-en-extender-remote-diagram.webp" alt="Top view of the remote board with numbered markers.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-5" style="left:14.4%;top:48.5%" aria-label="5: Link jack (J1)">5<span class="xb-pop"><b>Link jack (J1)</b> — from the host.</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-6" style="left:88.0%;top:43.7%" aria-label="6: Drive connector (J2)">6<span class="xb-pop"><b>Drive connector (J2)</b> — to the DM556E.</span></a>
       <a class="xb-mk xb-pb" href="#tour-7" style="left:36.8%;top:22.7%" aria-label="7: Receivers">7<span class="xb-pop"><b>Receivers</b> — U1 to U3.</span></a>
@@ -193,7 +193,7 @@ ENABLE is on contact 3 and STEP on contact 4.
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>Both boards</b><span></span></div>
+  <div class="xb-card"><b>Both boards</b><span>One pair, built from the design files in Downloads</span></div>
   <div class="xb-card"><b>A straight-through cable</b><span>All eight cores, only for this link.</span></div>
   <div class="xb-card"><b>A DM556E</b><span>Hardware 2.0.</span></div>
   <div class="xb-card"><b>A controller</b><span>With three free outputs.</span></div>
@@ -257,6 +257,8 @@ The host sends each command as a differential pair. The remote receives it and s
 
 Three protection lights on the back of the remote board show fuse fault, overvoltage and reverse polarity.
 
+{% include _includes/extender-board-comparison.html %}
+
 ## Troubleshooting {#troubleshooting}
 
 {::nomarkdown}
@@ -279,10 +281,10 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/differential-step-dir-en-extender/v31/differential-step-dir-en-extender-host-schematic.pdf">Schematic (PDF, host)</a></td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/differential-step-dir-en-extender/v31/differential-step-dir-en-extender-host-bom.csv">Parts list (CSV, host)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/differential-step-dir-en-extender/v31/differential-step-dir-en-extender-host-diagram.png">Board drawing (PNG, host)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/differential-step-dir-en-extender/v31/differential-step-dir-en-extender-host-diagram.webp">Board drawing (PNG, host)</a></td><td>The top view used on this page</td></tr>
     <tr><td><a href="/images/extensions/differential-step-dir-en-extender/v31/differential-step-dir-en-extender-remote-schematic.pdf">Schematic (PDF, remote)</a></td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/differential-step-dir-en-extender/v31/differential-step-dir-en-extender-remote-bom.csv">Parts list (CSV, remote)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/differential-step-dir-en-extender/v31/differential-step-dir-en-extender-remote-diagram.png">Board drawing (PNG, remote)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/differential-step-dir-en-extender/v31/differential-step-dir-en-extender-remote-diagram.webp">Board drawing (PNG, remote)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

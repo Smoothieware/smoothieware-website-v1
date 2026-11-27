@@ -1,219 +1,198 @@
 ---
 layout: default
 title: "Raw pins breakout"
+description: "A passive board that brings the ten contacts of one Gadgeteer socket to a 2.54 mm pin header, with a chain socket and a link per pin."
 permalink: /extensions/raw-pins-breakout
 ---
 
-<style>
-/* Keep this guide's linked headings visible below the fixed desktop navigation. */
-@media (min-width: 769px) {
-  :is(#raw-pins-breakout, #how-it-works, #board-reference,
-      #connect-a-normally-open-button-to-smoothieboard-v2-prime,
-      #enlarged-installation-contact-numbers, #match-the-numbered-cable-contacts,
-      #smoothieware-configuration, #sources) {
-    scroll-margin-top: 6rem;
-  }
-}
-</style>
-
-# Raw pins breakout
-
-Use this passive adapter to bring a ten-contact Gadgeteer socket out to a straight 2.54 mm header. It makes low-voltage controller signals accessible for buttons and compatible sensor interfaces. It does not amplify signals, translate voltage, drive a motor or add a communications protocol.
-
-The historical Bob Cousins BreakoutPins design is its prior art; the historical board does not have this board’s protection or chain links.
-
-## How it works
-
-The input connector (J1) connects directly to the same-numbered pin on the straight header (J2). A second Gadgeteer connector (J3) carries the same contacts through nine normally bridged solder links. Ground remains continuous. Cutting a link isolates only that contact on the chain connector; it does not disconnect the corresponding straight-header contact from the input.
-
-Seven bidirectional transient shunts, D1–D7, connect signal contacts 3–9 to ground; they are LESD8D3.3CAT5G parts. These shunts add capacitance and leakage. They do not translate 5 V logic to 3.3 V or protect an unpowered controller. There are no LEDs, regulators or switches on this board.
-
-## Board reference
-
-<details markdown="1">
-<summary>Reading the connector callouts</summary>
-
-The dark end of each pill gives the contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
-
-- Red: 3.3 V supply.
-- Orange: 5 V supply.
-- Green: Signal — use the printed function label.
-- Near-black: Circuit ground.
-
-A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
-
-</details>
-
-Start with the component-side locator below. Its dotted leaders identify connectors and links; they are not electrical paths. The three connectors share contact functions: **1 is 3.3 V, 2 is 5 V, 3–9 are GPIO, and 10 is ground**. The host MCU names depend on the Prime socket you use. The six focused contact sheets below retain every individual contact number and source net.
-
-<a id="raw-pins-breakout-v15-reader-compact-overview"></a>
-
-{% include _includes/extension-instruction-diagram.html id="raw-pins-v15-reference" src="/images/extensions/raw-pins-breakout/guides/reader-board-reference.png" title="Raw Pins — connectors and contact roles" alt="Component-side Raw Pins board with locators for the host link, raw header, chain link and chain isolation links, plus supply, GPIO and ground contact ranges." caption="Component-side locator. Dotted leaders identify parts, not conductors. Contacts 1 and 2 carry host supplies; GPIO direction depends on host configuration. Cutting a chain link affects J3 only. Use the six focused sheets below for every numbered contact." width=420 %}
-
-<details markdown="1">
-<summary>Combined contact reference</summary>
-
-{% include _includes/extension-instruction-diagram.html id="raw-pins-v15-combined-contact-reference" src="/images/extensions/raw-pins-breakout/guides/raw-pins-breakout-reference.png" title="Combined contact reference — detailed comparison" alt="Annotated component-side Raw Pins drawing with contact numbers and functions for all three connectors, the ground test pad and four mounting holes." caption="Dense reference; use the six focused contact sheets for phone reading. Annotated reference for Raw Pins. Red pills identify 3.3 V, amber 5 V, teal GPIO and dark ground; the dark pill segment gives the module contact number. A double arrow marks bidirectional GPIO. Gray dotted leaders locate components, not wires." width=1440 %}
-
-</details>
-
-<details markdown="1">
-<summary>Chain links and protection detail</summary>
-
-The nine front-side links isolate contacts 1–9 on the chain connector. The seven signal shunts are projected in front coordinates.
-
-{% include _includes/extension-instruction-diagram.html id="raw-pins-v15-details" src="/images/extensions/raw-pins-breakout/guides/raw-pins-breakout-details.png" title="Raw Pins: chain links and protection parts" alt="Front-copper cut-link detail and front-coordinate projection of the seven underside transient shunts, with numbered function pills." caption="Links JP1–JP9 are on the front copper. The underside protection is projected in front coordinates, not shown as a mirrored rear assembly view." width=1440 %}
-
-</details>
-
-### Read every connector contact
-
-The six sheets below cover J1, J2 and J3, five contacts per sheet. Their crops retain pad positions. Dotted leaders identify pads; they are not circuit wires. Signal direction follows the host configuration.
+{% include _includes/extension-board-page.html %}
 
 
-{% include _includes/extension-instruction-diagram.html id="raw-pins-breakout-v15-reader-compact-host-1-5" src="/images/extensions/raw-pins-breakout/guides/reader-compact-host-1-5-central-pills.png" title="J1 · Host input — host 1 5" alt="J1 · Host input — host 1 5 on the Raw pins breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="raw-pins-breakout-v15-reader-compact-host-6-10" src="/images/extensions/raw-pins-breakout/guides/reader-compact-host-6-10-central-pills.png" title="J1 · Host input — host 6 10" alt="J1 · Host input — host 6 10 on the Raw pins breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="raw-pins-breakout-v15-reader-compact-raw-header-1-5" src="/images/extensions/raw-pins-breakout/guides/reader-compact-raw-header-1-5-central-pills.png" title="J2 · Raw pin header — raw header 1 5" alt="J2 · Raw pin header — raw header 1 5 on the Raw pins breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="raw-pins-breakout-v15-reader-compact-raw-header-6-10" src="/images/extensions/raw-pins-breakout/guides/reader-compact-raw-header-6-10-central-pills.png" title="J2 · Raw pin header — raw header 6 10" alt="J2 · Raw pin header — raw header 6 10 on the Raw pins breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="raw-pins-breakout-v15-reader-compact-chain-1-5" src="/images/extensions/raw-pins-breakout/guides/reader-compact-chain-1-5-central-pills.png" title="J3 · Chain output — chain 1 5" alt="J3 · Chain output — chain 1 5 on the Raw pins breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="raw-pins-breakout-v15-reader-compact-chain-6-10" src="/images/extensions/raw-pins-breakout/guides/reader-compact-chain-6-10-central-pills.png" title="J3 · Chain output — chain 6 10" alt="J3 · Chain output — chain 6 10 on the Raw pins breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-<details markdown="1">
-<summary>Focused chain-link, protection and mounting sheets</summary>
-
-{% include _includes/extension-instruction-diagram.html id="raw-pins-breakout-v15-reader-compact-chain-links-1-5" src="/images/extensions/raw-pins-breakout/guides/reader-compact-chain-links-1-5.png" title="Chain isolation links — chain links 1 5" alt="Chain isolation links — chain links 1 5 on the Raw pins breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="raw-pins-breakout-v15-reader-compact-chain-links-6-9" src="/images/extensions/raw-pins-breakout/guides/reader-compact-chain-links-6-9.png" title="Chain isolation links — chain links 6 9" alt="Chain isolation links — chain links 6 9 on the Raw pins breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="raw-pins-breakout-v15-reader-compact-protection-1-4" src="/images/extensions/raw-pins-breakout/guides/reader-compact-protection-1-4-front-projection-underside-caption.png" title="Signal protection — protection 1 4" alt="Signal protection — protection 1 4 on the Raw pins breakout" caption="Underside protection projected in front/component-side coordinates, not a mirrored rear view. Use the combined protection detail for viewing direction." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="raw-pins-breakout-v15-reader-compact-protection-5-7" src="/images/extensions/raw-pins-breakout/guides/reader-compact-protection-5-7-front-projection-underside-caption.png" title="Signal protection — protection 5 7" alt="Signal protection — protection 5 7 on the Raw pins breakout" caption="Underside protection projected in front/component-side coordinates, not a mirrored rear view. Use the combined protection detail for viewing direction." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="raw-pins-breakout-v15-reader-compact-ground-test" src="/images/extensions/raw-pins-breakout/guides/reader-compact-ground-test.png" title="Ground test pad — ground test" alt="Ground test pad — ground test on the Raw pins breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="raw-pins-breakout-v15-reader-compact-mounts" src="/images/extensions/raw-pins-breakout/guides/reader-compact-mounts.png" title="Mounting holes — mounts" alt="Mounting holes — mounts on the Raw pins breakout" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-</details>
-
-<div class="raw-pins-contact-table" role="region" aria-label="Raw Pins contact functions; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Contact | Input and straight header (J1/J2) | Chain connector (J3) | Direction |
-| ---: | --- | --- | --- |
-| 1 | Host 3.3 V rail (`+3V3`) | JP1 → `/CH_+3V3` | Host to compatible load |
-| 2 | Host 5 V rail (`+5V`) | JP2 → `/CH_+5V` | Host to compatible load |
-| 3 | Signal `/P3`; D1 shunt to ground | JP3 → `/CH_P3` | Depends on host configuration |
-| 4 | Signal `/P4`; D2 shunt to ground | JP4 → `/CH_P4` | Depends on host configuration |
-| 5 | Signal `/P5`; D3 shunt to ground | JP5 → `/CH_P5` | Depends on host configuration |
-| 6 | Signal `/P6`; D4 shunt to ground | JP6 → `/CH_P6` | Depends on host configuration |
-| 7 | Signal `/P7`; D5 shunt to ground | JP7 → `/CH_P7` | Depends on host configuration |
-| 8 | Signal `/P8`; D6 shunt to ground | JP8 → `/CH_P8` | Depends on host configuration |
-| 9 | Signal `/P9`; D7 shunt to ground | JP9 → `/CH_P9` | Depends on host configuration |
-| 10 | Ground (`GND`), also TP1 | Continuous; no cut link | Common reference and return |
-
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Breakouts</p>
+    <h1 id="raw-pins-breakout">Raw pins breakout</h1>
+    <p class="xb-lead">Reach every contact of one controller port on a straight 2.54&nbsp;mm header, ready for jumper wires, while a second socket passes the port on.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/raw-pins-breakout/v15/raw-pins-breakout-diagram.png" alt="Top view of the Raw pins breakout.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-The PCB outline is **28.4 × 32 mm**, with a **1.6 mm** board thickness. Its four non-plated mounting holes are **3.2 mm** in diameter on a **20 × 20 mm** square pattern. Allow additional mounting clearance for connector bodies and connected cables.
-
-The input and chain footprints specify Samtec SHF-105 headers on 1.27 mm pitch; the straight output specifies a Würth 61301011121 ten-pin header on 2.54 mm pitch. Pin numbering must be checked from the component-side illustration and against the actual cable. A connector that fits is not proof that pin 1 is wired correctly.
-
-Treat contacts 3–9 as 3.3 V signals. Do not apply the 5 V supply to a signal pin. The adapter has no independent power supply and needs no load supply for the dry-contact example below. Both supply rails are limited by the complete upstream path, connector, cable and PCB. Do not interpret the protection parts as permission to overload a rail.
-
-The table above gives the board net names, not firmware pin names. For example, `/P3` becomes PB1 only with the specific Prime socket used below. Links JP1–JP9 are bridged by default; inspect your board before relying on chain continuity. Cutting one leaves the corresponding J1-to-J2 connection and its signal shunt intact. Ground has no isolation link.
-
-A chained module shares the original controller pins; the chain does not create additional independently addressable inputs. Check every attached device's pin ownership and output type before sharing a signal, so two outputs cannot drive it against each other. The adapter adds no pull-up, filtering or termination. A powered sensor or other circuit needs its own supply, logic-level and firmware requirements; the dry-contact example below does not cover them.
-
-
-## Connect a normally-open button to Smoothieboard V2 Prime
-
-> **Check your parts before use.** These drawings show short outward leads from J2 contacts and a complete ten-core ribbon. They do not show connector mating, cable orientation or three-dimensional clearance. Verify the actual parts and continuity with power off before following the procedure.
-
-> **Keep the assembly unpowered while connecting.** This is a ten-core connection procedure for **Prime GF/J37 → Raw Pins J1**. Verify the mating parts, cavity orientation, all ten end-to-end contacts, supply rails and ownership of all seven GPIOs before energizing.
-
-The complete-board overview shows the cable and a normally-open dry button at J2. Its large labels identify the complete circuit; use the two numbered termination sheets for all ten electrical assignments and the J2 contact details for the button connections. Silkscreen and short contact entries are too fine to read at whole-board Fit; use the seven consecutive cable-path details. The red cable edge identifies core 1 only after continuity is established; it never proves connector orientation.
-
-{% include _includes/extension-instruction-diagram.html id="raw-pins-v15-ten-core-overview" src="/images/extensions/raw-pins-breakout/guides/ten-core-ribbon/overview-fit-readable.png" title="Ten-core ribbon and dry button — complete circuit" alt="Complete Prime and Raw Pins board artwork, ten-core J37 to J1 ribbon and two field leads from J2 to a normally-open dry button." caption="Connect with power off. All ten host contacts connect, including both rails and all seven GPIOs. The two numbered markers connect the overview to the cable-path details. Use the readable termination and cable-path details; check plug fit and orientation." width=1200 %}
-
-### Locate the two button contacts
-
-Use these enlarged views to follow **J2.3 (/P3, PB1)** to one button terminal and **J2.10 (ground)** to the other. These are component-side drawing details, not cable mating-face views.
-
-{% include _includes/extension-instruction-diagram.html id="raw-pins-v15-j2-signal-exit" src="/images/extensions/raw-pins-breakout/guides/ten-core-ribbon/j2-signal-finite-escape-headed.png" title="Raw J2.3 — PB1 signal to the button" alt="Raw Pins J2.3 contact with continuous PB1 lead to the switch-A continuation." caption="Follow the lead from J2.3 to switch A in the complete circuit. Check the mating contact and clearance on your parts." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="raw-pins-v15-j2-ground-exit" src="/images/extensions/raw-pins-breakout/guides/ten-core-ribbon/j2-return-finite-escape-headed.png" title="Raw J2.10 — ground return from the button" alt="Raw Pins J2.10 ground contact with continuous lead to the switch-B continuation." caption="Follow the lead from J2.10 to switch B in the complete circuit. Connect only an isolated dry contact; leave power rails off the switch." width=420 %}
-
-### Identify every ribbon contact
-
-Both keys show **board-side pad positions**, not views into cable cavities. Match contact numbers with power off, including a check for shorts to adjacent contacts. Core 1 is J37.1 ↔ J1.1; every remaining core connects the same numbered contact. The Prime board uses an unshrouded 1.27 mm header; the module uses a Samtec SHF-105 header. Do not assume that a cable assembly is keyed, reversible or available off the shelf.
-
-{% include _includes/extension-instruction-diagram.html id="raw-pins-v15-ten-core-host-termination" src="/images/extensions/raw-pins-breakout/guides/ten-core-ribbon/host-termination.png" title="Prime GF/J37 — all ten ribbon contacts" alt="Numbered component-side Prime J37 pad positions and all ten net-to-Raw-J1 bindings." caption="Component-side PCB positions. Red contact is pin 1. Match the same number at both cable ends; a stripe does not prove contact identity. This is not a cable cavity view. Actual mating, orientation, continuity, rails and GPIO ownership must be checked with power off." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="raw-pins-v15-ten-core-remote-termination" src="/images/extensions/raw-pins-breakout/guides/ten-core-ribbon/remote-termination.png" title="Raw Pins J1 — all ten ribbon contacts" alt="Numbered component-side Raw Pins J1 pad positions and all ten net-to-Prime-J37 bindings." caption="Component-side PCB positions. All ten cores connect. Verify actual contact identity, mating orientation and continuity with power off; PB1 and ground continue through the PCB to the dry button on J2. Host rail limits are not a cable current rating." width=420 %}
-
-<div class="table-wrapper" markdown="1">
-
-| Ribbon core / contact | Prime GF/J37 | Raw Pins J1 |
-| --- | --- | --- |
-| 1 | 3V3_LIMIT | +3V3 |
-| 2 | 5V_LIMIT | +5V |
-| 3 | PB1 | /P3 |
-| 4 | PJ4 | /P4 |
-| 5 | PA4 | /P5 |
-| 6 | PG0 | /P6 |
-| 7 | PJ3 | /P7 |
-| 8 | PG1 | /P8 |
-| 9 | PJ2 | /P9 |
-| 10 | Ground | Ground |
-
+<div class="xb-stats">
+  <div class="xb-stat"><b>10 pins</b><span>2.54 mm header</span></div>
+  <div class="xb-stat"><b>7</b><span>signals, P3 to P9</span></div>
+  <div class="xb-stat"><b>9 links</b><span>to the chain socket</span></div>
+  <div class="xb-stat"><b>0.32 A</b><span>rails, shared</span></div>
+  <div class="xb-stat"><b>150 mm</b><span>longest cable</span></div>
+  <div class="xb-stat"><b>28.4 × 32</b><span>millimetres</span></div>
 </div>
 
-### Follow the cable around each board
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#chaining">Chaining</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+</nav>
+{:/nomarkdown}
 
-These are consecutive close-ups of the same overview cable. Follow **H1 → H2 → H3 → H4** from the Prime plug to overview marker **1**, and **R1 → R2 → R3** from the Raw Pins plug to overview marker **2**. Blue and amber markers identify entry and continuation; they are not electrical joints. The overview joins markers 1 and 2 with the exterior cable path.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  3.3&nbsp;V signals only. Never short header pins 1 and 2 (3.3&nbsp;V and 5&nbsp;V), do not connect heaters or other loads, and switch off before you change wiring.
+</sl-alert>
 
+## Tech specs {#specs}
 
-{% include _includes/extension-instruction-diagram.html id="raw-pins-v15-ten-core-H1" src="/images/extensions/raw-pins-breakout/guides/ten-core-ribbon/H1.png" title="H1 — Prime plug to H-A" alt="Continuous cable close-up: Prime plug to H-A." caption="Follow matching continuation identifiers. Markers follow the jacket; no electrical joint. Keep unpowered until plug, continuity, rails and GPIO ownership are checked." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>Header access to one Y Gadgeteer port</td></tr>
+    <tr><td>Host socket</td><td>J1, 2 &times; 5 at 1.27&nbsp;mm</td></tr>
+    <tr><td>Header</td><td>J2, 1 &times; 10 at 2.54&nbsp;mm: 3.3&nbsp;V, 5&nbsp;V, P3 to P9, GND</td></tr>
+    <tr><td>Chain socket</td><td>J3, same contacts through links JP1 to JP9; ground joined directly</td></tr>
+    <tr><td>Protection</td><td>One LESD8D3.3CAT5G suppressor from each of P3 to P9 to ground (underside)</td></tr>
+    <tr><td>Use</td><td>Low-speed signals, cable up to 150&nbsp;mm (board printing)</td></tr>
+    <tr><td>Size</td><td>28.4 &times; 32&nbsp;mm, 1.6&nbsp;mm thick, four 3.2&nbsp;mm holes on a 20&nbsp;mm square</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="raw-pins-v15-ten-core-H2" src="/images/extensions/raw-pins-breakout/guides/ten-core-ribbon/H2.png" title="H2 — H-A to H-B" alt="Continuous cable close-up: H-A to H-B." caption="Follow matching continuation identifiers. Markers follow the jacket; no electrical joint. Keep unpowered until plug, continuity, rails and GPIO ownership are checked." width=420 %}
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
-{% include _includes/extension-instruction-diagram.html id="raw-pins-v15-ten-core-H3" src="/images/extensions/raw-pins-breakout/guides/ten-core-ribbon/H3.png" title="H3 — H-B to H-C" alt="Continuous cable close-up: H-B to H-C." caption="Follow matching continuation identifiers. Markers follow the jacket; no electrical joint. Keep unpowered until plug, continuity, rails and GPIO ownership are checked." width=420 %}
+## Board tour {#tour}
 
-{% include _includes/extension-instruction-diagram.html id="raw-pins-v15-ten-core-H4" src="/images/extensions/raw-pins-breakout/guides/ten-core-ribbon/H4.png" title="H4 — H-C to overview marker 1" alt="Continuous cable close-up: H-C to overview marker 1." caption="Follow matching continuation identifiers. Markers follow the jacket; no electrical joint. Keep unpowered until plug, continuity, rails and GPIO ownership are checked." width=420 %}
+The numbers on the drawing match the list below it.
 
-{% include _includes/extension-instruction-diagram.html id="raw-pins-v15-ten-core-R1" src="/images/extensions/raw-pins-breakout/guides/ten-core-ribbon/R1.png" title="R1 — Raw Pins plug to R-A" alt="Continuous cable close-up: Raw Pins plug to R-A." caption="Follow matching continuation identifiers. Markers follow the jacket; no electrical joint. Keep unpowered until plug, continuity, rails and GPIO ownership are checked." width=420 %}
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/raw-pins-breakout/v15/raw-pins-breakout-diagram.png" alt="Top view of the Raw pins breakout with numbered markers explained in the list below.">
+      <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:17.8%;top:42.7%" aria-label="1: Host socket (IN Y)">1<span class="xb-pop"><b>Host socket (IN Y)</b> — the ribbon cable from the controller.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-2" style="left:49.3%;top:9.1%" aria-label="2: Pin header (J2)">2<span class="xb-pop"><b>Pin header (J2)</b> — pin 1 (3.3&nbsp;V) at the top, pin 10 (GND) at the bottom.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-3" style="left:82.2%;top:42.7%" aria-label="3: Chain socket (CHAIN Y)">3<span class="xb-pop"><b>Chain socket (CHAIN Y)</b> — carries the contacts to a second board.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-4" style="left:60.8%;top:9.1%" aria-label="4: 3.3 V link (JP1)">4<span class="xb-pop"><b>3.3 V link (JP1)</b> — cut to stop 3.3&nbsp;V at this board.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-5" style="left:60.8%;top:16.5%" aria-label="5: 5 V link (JP2)">5<span class="xb-pop"><b>5 V link (JP2)</b> — cut to stop 5&nbsp;V at this board.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-6" style="left:60.8%;top:24.0%" aria-label="6: Chain link 3 (JP3)">6<span class="xb-pop"><b>Chain link 3 (JP3)</b> — pin P3.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-7" style="left:60.8%;top:38.9%" aria-label="7: Chain link 5 (JP5)">7<span class="xb-pop"><b>Chain link 5 (JP5)</b> — pin P5.</span></a>
+      <a class="xb-mk" href="#tour-8" style="left:60.8%;top:53.9%" aria-label="8: Chain link 7 (JP7)">8<span class="xb-pop"><b>Chain link 7 (JP7)</b> — pin P7.</span></a>
+      <a class="xb-mk" href="#tour-9" style="left:60.8%;top:68.8%" aria-label="9: Chain link 9 (JP9)">9<span class="xb-pop"><b>Chain link 9 (JP9)</b> — pin P9.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Host socket (IN Y)</b> — the ribbon cable from the controller.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Pin header (J2)</b> — pin 1 (3.3&nbsp;V) at the top, pin 10 (GND) at the bottom.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Chain socket (CHAIN Y)</b> — carries the contacts to a second board.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>3.3 V link (JP1)</b> — cut to stop 3.3&nbsp;V at this board.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>5 V link (JP2)</b> — cut to stop 5&nbsp;V at this board.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Chain link 3 (JP3)</b> — pin P3.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Chain link 5 (JP5)</b> — pin P5.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Chain link 7 (JP7)</b> — pin P7.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Chain link 9 (JP9)</b> — pin P9.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="raw-pins-v15-ten-core-R2" src="/images/extensions/raw-pins-breakout/guides/ten-core-ribbon/R2.png" title="R2 — R-A to R-B" alt="Continuous cable close-up: R-A to R-B." caption="Follow matching continuation identifiers. Markers follow the jacket; no electrical joint. Keep unpowered until plug, continuity, rails and GPIO ownership are checked." width=420 %}
+## Pinout {#pinout}
 
-{% include _includes/extension-instruction-diagram.html id="raw-pins-v15-ten-core-R3" src="/images/extensions/raw-pins-breakout/guides/ten-core-ribbon/R3.png" title="R3 — R-B to overview marker 2" alt="Continuous cable close-up: R-B to overview marker 2." caption="Follow matching continuation identifiers. Markers follow the jacket; no electrical joint. Keep unpowered until plug, continuity, rails and GPIO ownership are checked." width=420 %}
+Contacts keep their numbers from the controller to the board. The controller pin names below apply to header G_F (connector J37) of Smoothieboard V2 Prime; another header or controller has other pins. Treat every signal as 3.3&nbsp;V only: PB1, PA4 and PG1 are not 5&nbsp;V tolerant.
 
+Header pin n of J2 carries contact n.
 
-### Connect and check the button
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th><th>Pin on Smoothieboard V2 Prime, header G_F (J37)</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-3v3">3.3 V</span> (the controller&rsquo;s limited rail)</td><td>not a signal</td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-5v">5 V</span> (the controller&rsquo;s limited rail)</td><td>not a signal</td></tr>
+    <tr><td>3</td><td><span class="xb-pill xb-p-sig">P3</span></td><td><code>PB1</code></td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">P4</span></td><td><code>PJ4</code></td></tr>
+    <tr><td>5</td><td><span class="xb-pill xb-p-sig">P5</span></td><td><code>PA4</code></td></tr>
+    <tr><td>6</td><td><span class="xb-pill xb-p-sig">P6</span></td><td><code>PG0</code></td></tr>
+    <tr><td>7</td><td><span class="xb-pill xb-p-sig">P7</span></td><td><code>PJ3</code></td></tr>
+    <tr><td>8</td><td><span class="xb-pill xb-p-sig">P8</span></td><td><code>PG1</code></td></tr>
+    <tr><td>9</td><td><span class="xb-pill xb-p-sig">P9</span></td><td><code>PJ2</code></td></tr>
+    <tr><td>10</td><td><span class="xb-pill xb-p-gnd">GND</span></td><td>ground</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-1. Disconnect power and machine loads. Confirm that the host is a Prime2660 board. Reserve **PB1, PJ4, PA4, PG0, PJ3, PG1 and PJ2**: all seven are attached by this cable even though only PB1 is used by the example. Remove conflicting assignments and attached circuits before proceeding; PB1 may otherwise be configured as an external motor direction output.
-2. Obtain suitable mating parts for both 1.27 mm headers. Check pin 1, cavity orientation and physical fit against those parts. Wire and continuity-test **all ten numbered contacts** using the table and two termination keys. Ordinary 2.54 mm jumper sockets are unsuitable for these headers. A stripe or apparent fit is insufficient.
-3. Connect an electrically isolated normally-open button between **J2.3 (/P3, PB1)** and **J2.10 (ground)** using contacts suitable for J2's 2.54 mm header. J2 runs from contact 1 at the top to 10 at the bottom in the component-side artwork. Leave J2.1, J2.2 and the other signals without peripherals; the two supply contacts are still energized when the host is powered. Do not substitute a powered sensor output without checking its electrical interface.
-4. Leave J3 unused. No solder-link change is needed: JP1–JP9 are bridged by default. Inspect your board; these chain links do not isolate J2 from J1.
-5. Check for swapped rails and shorts with power off. Both host rails reach the adapter even though the dry button needs no supply. With loads disconnected, use the firmware example below and verify open/pressed state and halt behavior before operation.
+## What you need {#what-you-need}
 
-### Board-side contact positions
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>This board</b><span>Built from the design files in Downloads</span></div>
+  <div class="xb-card"><b>A ten-wire cable</b><span>Both ends 2 &times; 5 contacts at 1.27&nbsp;mm pitch, wired 1 to 1. A 2.54&nbsp;mm jumper plug does not fit. The Prime header has no keyed housing, so check contact 1 at both ends.</span></div>
+  <div class="xb-card"><b>Two jumper wires and a button</b><span>For the first test.</span></div>
+</div>
+{:/nomarkdown}
 
-With both boards oriented as shown in the complete circuit and viewed from the component side:
+## Get started {#get-started}
 
-- **Prime GF/J37:** contacts **1, 3, 5, 7, 9** run left to right along the lower row; **2, 4, 6, 8, 10** run left to right along the upper row. The PB1 contact is the second position of the lower row; ground is at the right end of the upper row.
-- **Raw Pins J1:** contacts **1, 3, 5, 7, 9** run top to bottom down the left column; **2, 4, 6, 8, 10** run down the right column. The polarization notch is on the odd-contact side. Contact 3 is the second contact down on the left, and contact 10 is at the bottom right.
-- **Raw Pins J2:** the single column runs from contact **1 at the top** to **10 at the bottom**.
+This test reads one button on PB1 of Smoothieboard V2 Prime.
 
-The J1 notch and numbering agree with the [Samtec SHF through-hole series drawing](https://suddendocs.samtec.com/prints/shf-1xx-01-x-d-xx-xx-xx-mkt.pdf), sheet 1. These are **board-side positions**; do not mirror the cable plug by eye. The Prime header is unshrouded and vertical, so check the mating parts and all-ten-contact continuity.
+{% include _includes/extension-instruction-diagram.html id="raw-pins-v15-ten-core-overview" src="/images/extensions/raw-pins-breakout/guides/ten-core-ribbon/overview-fit-readable.png" title="Ten-core ribbon and dry button — complete circuit" alt="Complete Prime and Raw Pins board artwork, ten-core J37 to J1 ribbon and two field leads from J2 to a normally-open dry button." caption="Wiring figure. Make connections with the power off." width=1200 %}
 
-{% include _includes/extension-instruction-diagram.html id="raw-pins-breakout-v15-orientation" src="/images/extensions/raw-pins-breakout/guides/raw-pins-breakout-connector-orientation.png" title="Component-side connector numbering and cable continuity" alt="PCB pad-centre layout of Prime GF J37 and the module input, with red pad 1 and all ten numbered conductor identities." caption="Component/front-side PCB views, uniformly enlarged eight times. Match pad numbers end to end; circles locate pad centres and do not depict connector cavities. No mating-face view or ribbon stripe is inferred." width=1200 %}
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Power off and reserve the pins</h3>
+    <p>Disconnect power and machine loads. Check that nothing else uses PB1.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Connect the cable</h3>
+    <p>Controller G_F (J37) contact n to board J1 contact n, for all ten. Check every contact with a meter.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Wire the button</h3>
+    <p>From header pin 3 (P3) to header pin 10 (GND).</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure</h3>
+    <p>Add the halt-button settings of example 1 below.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Test</h3>
+    <p>Power up and press the button.</p>
+    <p class="xb-expect">The controller halts. Releasing the button does not resume it.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
-## Smoothieware configuration
+## Configuration {#configuration}
 
-The adapter itself requires no driver. Smoothieware configures the host pin and the device connected to it. The following example uses the V2 firmware's existing `buttonbox` module. The firmware source is linked below.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>A halt button</td><td>Button box</td><td><a href="#config-kill">1</a></td></tr>
+    <tr><td>To read a contact</td><td>Switch, input</td><td><a href="#config-input">2</a></td></tr>
+    <tr><td>To drive a logic input</td><td>Switch, output</td><td><a href="#config-output">3</a></td></tr>
+    <tr><td>To check an endstop</td><td>Endstops</td><td><a href="#config-endstop">4</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### 1. Halt button (button box) {#config-kill}
+
+A normally-open button or switch between PB1 and ground. Pressing it halts the controller; releasing it does not resume.
 
 ```ini
 [button box]
@@ -222,47 +201,159 @@ raw_button.pin = PB1!^
 raw_button.press = KILL
 ```
 
-`^` enables the internal pull-up; `!` inverts the input. The open contact is therefore inactive and pressing the button pulls PB1 to ground and makes it active. The buttonbox parser runs the `press` action on the inactive-to-active transition. `KILL` invokes the firmware halt path. This example is a software halt button, not an emergency-stop circuit. It does not provide a safety-rated power disconnect. A button already held when the firmware starts can trigger the first active sample. Releasing it does not clear the halt; no release action is configured.
+<code>^</code> enables the internal pull-up and <code>!</code> inverts the input. A button already held at start-up can trigger at once. This is a software halt, not an emergency stop ([button box source](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/buttonbox/buttonbox.cpp)).
 
-Do not copy the sample's `PB1-` setting for this bare contact: `-` disables the pull-up and pull-down. Without external bias, an open contact could float. If the firmware reports that PB1 is already allocated, resolve the conflicting assignment instead of choosing an arbitrary pin number.
+### 2. Input that you can read (switch module) {#config-input}
 
-This passive adapter needs no board-specific driver.
+Reads a contact without doing anything else. This entry replaces example 1: one pin can be claimed by one entry only.
 
-## Check the configured input before using machine loads
+```ini
+[switch]
+raw_input.enable = true
+raw_input.input_pin = PB1!^
+raw_input.input_pin_behavior = momentary
+```
 
-Keep machine loads disabled while checking the example. These are the expected consequences of the pull-up, inversion and `KILL` action.
+Send <code>switch raw_input</code> in the console to read it ([switch source](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp)).
 
-<div class="table-wrapper" markdown="1">
+### 3. Output from G-code (switch module) {#config-output}
 
-<div class="extension-contact-table" role="region" aria-label="Configured input checks; scroll horizontally to read all columns" tabindex="0" markdown="1">
+PB1 drives a 3.3&nbsp;V logic input of another circuit. It does not power a load. Replaces examples 1 and 2.
 
-| Condition | Expected result | If it differs |
-| --- | --- | --- |
-| Button released | Input is inactive; no new press action | Check for a short to ground, a normally-closed switch or incorrect input inversion. |
-| Button pressed | Input becomes active and requests a software halt | Check the numbered signal and ground contacts, configured pin and pin-allocation errors. |
-| Button released after a halt | Halt remains set; release does not resume the machine | The example has no release action. Follow the controller's normal recovery procedure only after resolving the cause. |
-| Signal wire disconnected | The host pull-up normally leaves the input inactive | This arrangement does not detect a broken signal wire; do not use it as a fail-safe stop circuit. |
-| Button held during startup | The first active sample may request a halt | Release buttons before startup; do not assume a release-and-press cycle is required. |
+```ini
+[switch]
+raw_output.enable = true
+raw_output.output_pin = PB1
+raw_output.output_type = digital
+raw_output.input_on_command = M42
+raw_output.input_off_command = M43
+raw_output.subcode = 1
+raw_output.startup_state = false
+raw_output.halt_set_to = false
+```
 
-</div>
+<code>M42.1</code> or <code>switch raw_output on</code> sets the pin high; <code>M43.1</code> or <code>switch raw_output off</code> sets it low. The numbers are a choice: change them if another entry uses them. The level during reset and power-up is not set by this configuration.
 
-</div>
+### 4. Endstop input without limit action (endstops) {#config-endstop}
 
-## Sources
+Reports a switch in <code>M119</code> without using it for homing or as a travel limit. Add it to an existing <code>[endstops]</code> section of a machine that already has an X axis. Replaces examples 1 to 3.
 
-[Download the KiCad design files](/assets/downloads/extensions/raw-pins-breakout/raw-pins-cad-study.zip) (361 KiB). The archive includes the editable KiCad project, schematic and PCB, custom libraries, visualization models, schematic PDF, netlist, parts list, placement export, specification and license notices. Open the project with **KiCad 9** and its standard symbol, footprint and 3D-model libraries; keep the bundled directories together. The included notes explain dependencies and the manifest identifies the files.
+```ini
+[endstops]
+raw_check.enable = true
+raw_check.pin = PB1^
+raw_check.axis = X
+raw_check.homing_direction = none
+raw_check.limit_enable = false
+```
 
-- [Historical BreakoutPins source](https://github.com/Smoothieware/Smoothieboard2/tree/master/extensions/BreakoutPins)
-- [Prime2660 PCB and J37 pin nets](https://github.com/Smoothieware/Smoothieboard2/blob/487d57897a97a5ed57febf8cc5d7c3b89ed3a1f8/V2_P11_Prime2660/smoothiev2-prime-2660.kicad_pcb)
-- [V2 firmware button-box sample](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/ConfigSamples/button-box.ini)
-- [V2 button-box parser and halt action](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/buttonbox/buttonbox.cpp#L49-L211)
-- [V2 input suffix parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Pin.cpp#L208-L270)
-- [V2 host pin documentation](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/pins.md)
-- [All extension boards](/extension-boards)
+Set <code>homing_direction</code> and <code>limit_enable</code> only after the switch reads correctly ([endstops source](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp)).
 
-<details markdown="1">
-<summary>Additional board views</summary>
+The passive board needs no driver of its own. These four uses cover what it is normally wired for; any other module that takes a 3.3&nbsp;V pin works in the same way.
 
-{% include _includes/extension-board-visuals.html slug="raw-pins-breakout" %}
+## How it works {#how-it-works}
 
-</details>
+Contact n of the host socket goes directly to header pin n. Contacts 1 to 9 also reach the chain socket through solder links, closed as delivered. The suppressors on the underside shunt short spikes on P3 to P9 to ground; they add a little capacitance and leakage and do not translate 5&nbsp;V to 3.3&nbsp;V. There are no lights, regulators or switches.
+
+## Chaining {#chaining}
+
+{::nomarkdown}
+{% include _includes/extension-chain-figure.html id="xb-rp" board="raw pins breakout" in_label="IN Y" chain_label="CHAIN Y" lane1="pin 3" lane2="pin 4" lane3="pin 5" s1="closed" s2="closed" s3="closed" caption="As delivered every link is closed." %}
+{:/nomarkdown}
+
+The chain socket shares the original controller pins; it adds none. Check pin use and output type of everything attached, so that two outputs never drive one pin. Cutting a link stops that contact at this board; the header pin stays connected.
+
+## Troubleshooting {#troubleshooting}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Input never changes</td><td>Cable contact numbers, pin name and the button wiring.</td></tr>
+    <tr><td>Input always active</td><td>A short to ground or the wrong <code>!</code> inversion.</td></tr>
+    <tr><td>Second board on the chain sees nothing</td><td>The link for that pin is cut.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
+
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/raw-pins-breakout/v15/raw-pins-breakout-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/raw-pins-breakout/v15/raw-pins-breakout-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/raw-pins-breakout/v15/raw-pins-breakout-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-rp-mount-t">
+  <title id="xb-rp-mount-t">Mounting drawing of the rp, component side: outline 28.4 by 32 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="329.1" y="78.0" width="301.8" height="340.0" rx="10.6" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M329.1 56H630.9"/><path d="M329.1 50V62"/><path d="M630.9 50V62"/><path d="M656.9 78.0V418.0"/><path d="M650.9 78.0h12"/><path d="M650.9 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">28.4</text>
+  <text x="668.9" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">32</text>
+  <circle cx="329.1" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="317.1" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M271.1 104.0h30" fill="none"/><path d="M305.1 104.0l-8 -4v8z"/><path d="M271.1 104.0v30" fill="none"/><path d="M271.1 138.0l-4 -8h8z"/></g>
+  <text x="309.1" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="267.1" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="371.6" cy="120.5" r="17.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M350.6 120.5h42.0M371.6 99.5v42.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="354.6" y="157.5" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  4.00, 4.00</text>
+  <circle cx="584.1" cy="120.5" r="17.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M563.1 120.5h42.0M584.1 99.5v42.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="601.1" y="157.5" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  24.00, 4.00</text>
+  <circle cx="371.6" cy="333.0" r="17.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M350.6 333.0h42.0M371.6 312.0v42.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="354.6" y="306.0" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  4.00, 24.00</text>
+  <circle cx="584.1" cy="333.0" r="17.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M563.1 333.0h42.0M584.1 312.0v42.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="601.1" y="306.0" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  24.00, 24.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 28.4 × 32&nbsp;mm, corners rounded to a 1&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>4.00</td><td>4.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>24.00</td><td>4.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>3</td><td>4.00</td><td>24.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>4</td><td>24.00</td><td>24.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Values from the board printing and parts list.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Signal voltage</td><td>P3 to P9</td><td>0 V</td><td>3.3 V</td><td>3.3 V</td><td>Controller logic level</td></tr>
+    <tr><td>Rail current</td><td>3.3 V and 5 V together</td><td>—</td><td>—</td><td>0.32 A</td><td>Board silk, shared</td></tr>
+    <tr><td>Cable length</td><td>J1</td><td>—</td><td>—</td><td>150 mm</td><td>Board silk, low-speed signals</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Originally designed by Bob Cousins as <a href="/extensions/historical-breakoutpins">BreakoutPins</a>; the earlier board has neither the protection parts nor the chain links.
+
+See all boards on the [extension boards](/extension-boards) page.

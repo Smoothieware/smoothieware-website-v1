@@ -1,202 +1,397 @@
 ---
 layout: default
 title: "Breadboard board"
+description: "Seven protected controller pins and current-limited 3.3 V and 5 V rails on a header that plugs into a solderless breadboard."
 permalink: /extensions/breadboard-board
 ---
 
-# Breadboard board
+{% include _includes/extension-board-page.html %}
 
-This board exposes seven Gadgeteer GPIO contacts and protected supply rails on a breadboard-friendly eleven-contact header. Use it for low-voltage bench circuits and dry-contact experiments. It does not add GPIO or make breadboard wiring suitable for motor current.
 
-## How it works
-
-J1 signals pass through the source's interface/protection network to J2 contacts 5–11. In the selected source, R9 = 330 Ω joins HOST_GPIO1 to BB_GPIO1, so the example's J2.5 button reaches host contact 3 through that series resistor. Separate TPS2553 circuits feed the breadboard 5 V and 3.3 V rails. JP1/JP2 control the supply enables; green power and amber overcurrent LEDs are separately disableable with cut links. Signal contacts remain host GPIO whose mode is set in firmware.
-
-## Power, signals and limits
-
-J2.1 is breadboard 5 V, .2 ground, .3 breadboard 3.3 V, .4 ground; .5–.11 correspond to host contacts 3–9. Those two supply rows must never be bridged. The limiter component's presence does not establish the assembled board's output current or external-supply backfeed tolerance. Do not attach a second breadboard supply until source selection and reverse paths have been verified.
-
-## Board reference
-
-<details markdown="1">
-<summary>Reading the connector callouts</summary>
-
-The dark end of each pill gives the source contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
-
-- Red: 3.3 V supply.
-- Orange: 5 V supply.
-- Near-black: Circuit ground.
-- Dark grey: Other source-labelled contact — read its exact function.
-
-A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
-
-</details>
-
-{% include _includes/extension-instruction-diagram.html id="breadboard-board-v18-reader-compact-overview" src="/images/extensions/breadboard-board/guides/reader-compact-overview.png" title="Breadboard carrier — overview" alt="Breadboard carrier — overview for breadboard-board" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-<details markdown="1">
-<summary>Larger combined reference</summary>
-
-{% include _includes/extension-instruction-diagram.html id="breadboard-board-v18-reference" src="/images/extensions/breadboard-board/guides/reader-reference.png" title="Annotated board reference" alt="Annotated board reference for breadboard-board" caption="Component-side reference. Dotted leaders locate parts, not wires. Use all numbered detail views and check connector fitting, signal directions and link defaults." width=1440 %}
-
-</details>
-
-Start with the overview, then use all focused sheets for exact contacts, controls and links. Source footprint defaults do not prove assembled continuity.
-
-<details markdown="1">
-<summary>Focused contact and component sheets</summary>
-
-{% include _includes/extension-instruction-diagram.html id="breadboard-board-v18-reader-compact-host-input-1-5" src="/images/extensions/breadboard-board/guides/reader-compact-host-input-1-5-central-pills.png" title="J1 · Host input — host input 1 5" alt="J1 · Host input — host input 1 5 for breadboard-board" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="breadboard-board-v18-reader-compact-host-input-6-10" src="/images/extensions/breadboard-board/guides/reader-compact-host-input-6-10-central-pills.png" title="J1 · Host input — host input 6 10" alt="J1 · Host input — host input 6 10 for breadboard-board" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="breadboard-board-v18-reader-compact-breadboard-header-1-5" src="/images/extensions/breadboard-board/guides/reader-compact-breadboard-header-1-5-central-pills.png" title="J2 · Breadboard — breadboard header 1 5" alt="J2 · Breadboard — breadboard header 1 5 for breadboard-board" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="breadboard-board-v18-reader-compact-breadboard-header-6-10" src="/images/extensions/breadboard-board/guides/reader-compact-breadboard-header-6-10-central-pills.png" title="J2 · Breadboard — breadboard header 6 10" alt="J2 · Breadboard — breadboard header 6 10 for breadboard-board" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="breadboard-board-v18-reader-compact-breadboard-header-11-11" src="/images/extensions/breadboard-board/guides/reader-compact-breadboard-header-11-11-central-pills.png" title="J2 · Breadboard — breadboard header 11 11" alt="J2 · Breadboard — breadboard header 11 11 for breadboard-board" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="breadboard-board-v18-reader-compact-5v-switch" src="/images/extensions/breadboard-board/guides/reader-compact-5v-switch.png" title="5 V rail switch — 5v switch" alt="5 V rail switch — 5v switch for breadboard-board" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="breadboard-board-v18-reader-compact-3v3-switch" src="/images/extensions/breadboard-board/guides/reader-compact-3v3-switch.png" title="3.3 V rail switch — 3v3 switch" alt="3.3 V rail switch — 3v3 switch for breadboard-board" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="breadboard-board-v18-reader-compact-power-leds" src="/images/extensions/breadboard-board/guides/reader-compact-power-leds.png" title="Output power LEDs — power leds" alt="Output power LEDs — power leds for breadboard-board" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="breadboard-board-v18-reader-compact-fault-leds" src="/images/extensions/breadboard-board/guides/reader-compact-fault-leds.png" title="Rail fault LEDs — fault leds" alt="Rail fault LEDs — fault leds for breadboard-board" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="breadboard-board-v18-reader-compact-gpio-paths" src="/images/extensions/breadboard-board/guides/reader-compact-gpio-paths.png" title="GPIO signal paths — gpio paths" alt="GPIO signal paths — gpio paths for breadboard-board" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="breadboard-board-v18-reader-compact-output-test-pads" src="/images/extensions/breadboard-board/guides/reader-compact-output-test-pads.png" title="Output test pads — output test pads" alt="Output test pads — output test pads for breadboard-board" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="breadboard-board-v18-reader-compact-host-test-pads" src="/images/extensions/breadboard-board/guides/reader-compact-host-test-pads.png" title="Host supply test pads — host test pads" alt="Host supply test pads — host test pads for breadboard-board" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="breadboard-board-v18-reader-compact-mounts" src="/images/extensions/breadboard-board/guides/reader-compact-mounts.png" title="Mounting holes — mounts" alt="Mounting holes — mounts for breadboard-board" caption="Use the overview and focused sheets together; each drawing identifies its view or projection. Follow the wiring section before making connections." width=420 %}
-
-</details>
-
-### breadboard — saved connector contacts
-
-Contact numbering below is the selected PCB's pad numbering, viewed using the final board-reference drawing. Same-numbered duplicate lands are collapsed in this electrical table. Mechanical unnumbered pads are omitted here. `NC` means unconnected in this saved source, not a spare supported function. Named nets alone do not establish direction; use the signal-path explanation above.
-
-<details markdown="1">
-<summary>Selected-source contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Selected-source contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Connector | Contact(s) | Saved-source function/net |
-| --- | --- | --- |
-| J1 — GADGETEER Y IN | 1 | `/HOST_3V3` |
-| J1 — GADGETEER Y IN | 2 | `/HOST_5V` |
-| J1 — GADGETEER Y IN | 3 | `/HOST_GPIO1` |
-| J1 — GADGETEER Y IN | 4 | `/HOST_GPIO2` |
-| J1 — GADGETEER Y IN | 5 | `/HOST_GPIO3` |
-| J1 — GADGETEER Y IN | 6 | `/HOST_GPIO4` |
-| J1 — GADGETEER Y IN | 7 | `/HOST_GPIO5` |
-| J1 — GADGETEER Y IN | 8 | `/HOST_GPIO6` |
-| J1 — GADGETEER Y IN | 9 | `/HOST_GPIO7` |
-| J1 — GADGETEER Y IN | 10 | `GND` |
-| J2 — BREADBOARD 1x11 | 1 | `/BB_5V` |
-| J2 — BREADBOARD 1x11 | 2 | `GND` |
-| J2 — BREADBOARD 1x11 | 3 | `/BB_3V3` |
-| J2 — BREADBOARD 1x11 | 4 | `GND` |
-| J2 — BREADBOARD 1x11 | 5 | `/BB_GPIO1` |
-| J2 — BREADBOARD 1x11 | 6 | `/BB_GPIO2` |
-| J2 — BREADBOARD 1x11 | 7 | `/BB_GPIO3` |
-| J2 — BREADBOARD 1x11 | 8 | `/BB_GPIO4` |
-| J2 — BREADBOARD 1x11 | 9 | `/BB_GPIO5` |
-| J2 — BREADBOARD 1x11 | 10 | `/BB_GPIO6` |
-| J2 — BREADBOARD 1x11 | 11 | `/BB_GPIO7` |
-
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Prototyping</p>
+    <h1 id="breadboard-board">Breadboard board</h1>
+    <p class="xb-lead">Plug the board into a solderless breadboard and get seven controller pins, each through 330&nbsp;&Omega; with ESD protection, plus current-limited 5&nbsp;V and 3.3&nbsp;V rails with power and overcurrent lights.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/breadboard-board/v18/breadboard-board-diagram.png" alt="Top view of the Breadboard board.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-<details markdown="1">
-<summary>Combined connector and link details</summary>
+<div class="xb-stats">
+  <div class="xb-stat"><b>7 pins</b><span>330 Ω each</span></div>
+  <div class="xb-stat"><b>120 mA</b><span>5 V rail</span></div>
+  <div class="xb-stat"><b>80 mA</b><span>3.3 V rail</span></div>
+  <div class="xb-stat"><b>< 5 MHz</b><span>signals</span></div>
+  <div class="xb-stat"><b>4 lights</b><span>power and overcurrent</span></div>
+  <div class="xb-stat"><b>30 × 34</b><span>millimetres</span></div>
+</div>
 
-{% include _includes/extension-instruction-diagram.html id="breadboard-board-v18-connector-detail-01" src="/images/extensions/breadboard-board/guides/reader-connector-detail-01.png" title="Connector detail 01" alt="Connector detail 01 for breadboard-board" caption="Component-side reference. Dotted leaders locate parts, not wires. Use all numbered detail views and check connector fitting, signal directions and link defaults." width=1440 %}
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+  <a href="#datasheets">Datasheets</a>
+</nav>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="breadboard-board-v18-link-detail-01" src="/images/extensions/breadboard-board/guides/reader-link-detail-01.png" title="Link detail 01" alt="Link detail 01 for breadboard-board" caption="Component-side reference. Dotted leaders locate parts, not wires. Use all numbered detail views and check connector fitting, signal directions and link defaults." width=1440 %}
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  Never feed power into the board&rsquo;s rails and never join the 3.3&nbsp;V and 5&nbsp;V rows. The pins are 3.3&nbsp;V only, not 5&nbsp;V tolerant, and float while the controller is in reset. A dark light does not mean a rail is safe to touch. Do not hot-plug it.
+</sl-alert>
 
-</details>
+## Tech specs {#specs}
 
-### Links, controls and indicators
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>Controller pins and supplies on a breadboard</td></tr>
+    <tr><td>Host socket</td><td>J1, 2 &times; 5 at 1.27&nbsp;mm</td></tr>
+    <tr><td>Breadboard header</td><td>J2, 1 &times; 11, mounted underneath: 5&nbsp;V, GND, 3.3&nbsp;V, GND, GPIO1 to GPIO7</td></tr>
+    <tr><td>Signals</td><td>GPIO1 to GPIO7 are contacts 3 to 9, each through 330&nbsp;&Omega;, protected by two <a href="/images/extensions/breadboard-board/datasheets/tpd4e1u06.pdf">TPD4E1U06</a></td></tr>
+    <tr><td>Rails</td><td>5&nbsp;V 120&nbsp;mA and 3.3&nbsp;V 80&nbsp;mA, each switched by a <a href="/images/extensions/breadboard-board/datasheets/tps2553.pdf">TPS2553</a> limiter</td></tr>
+    <tr><td>Rail links</td><td>JP1 (5&nbsp;V) and JP2 (3.3&nbsp;V): bridged is on, cut is off</td></tr>
+    <tr><td>Lights</td><td>Green power and amber overcurrent per rail, each with a cut link</td></tr>
+    <tr><td>Size</td><td>30 &times; 34&nbsp;mm, two M3 mounting holes</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-A cut-to-disable LED link affects only the indication, not the protected circuit. Check each link before cutting or bridging it.
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
-<details markdown="1">
-<summary>Selected-source contact inventory</summary>
+## Board tour {#tour}
 
-| Item | Selected source label | Contact nets / observation |
-| --- | --- | --- |
-| JP3 | CUT TO DISABLE D3 | 1 = LED_D3_DISABLE; 2 = /LED_OC5 |
-| D3 | AMBER 5V OC | 1 = /FAULT_5V_N; 2 = LED_D3_DISABLE |
-| JP4 | CUT TO DISABLE D1 | 1 = LED_D1_DISABLE; 2 = /LED_PWR5 |
-| D4 | AMBER 3V3 OC | 1 = /FAULT_3V3_N; 2 = LED_D4_DISABLE |
-| JP5 | CUT TO DISABLE D4 | 1 = LED_D4_DISABLE; 2 = /LED_OC3 |
-| D1 | GREEN 5V PWR | 1 = GND; 2 = LED_D1_DISABLE |
-| JP6 | CUT TO DISABLE D2 | 1 = LED_D2_DISABLE; 2 = /LED_PWR3 |
-| D2 | GREEN 3V3 PWR | 1 = GND; 2 = LED_D2_DISABLE |
-| JP2 | 3V3_EN | 1 = /HOST_3V3; 2 = /EN_3V3 |
-| JP1 | 5V_EN | 1 = /HOST_5V; 2 = /EN_5V |
+The numbers on the drawing match the list below it.
 
-</details>
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/breadboard-board/v18/breadboard-board-diagram.png" alt="Top view of the Breadboard board with numbered markers explained in the list below.">
+      <a class="xb-mk xb-pb" href="#tour-1" style="left:49.9%;top:14.1%" aria-label="1: Controller socket (J1)">1<span class="xb-pop"><b>Controller socket (J1)</b> — the ribbon cable.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-2" style="left:20.1%;top:32.7%" aria-label="2: 5 V limiter (U1)">2<span class="xb-pop"><b>5 V limiter (U1)</b> — switches and limits the 5&nbsp;V rail.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-3" style="left:20.1%;top:51.9%" aria-label="3: 3.3 V limiter (U2)">3<span class="xb-pop"><b>3.3 V limiter (U2)</b> — switches and limits the 3.3&nbsp;V rail.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-4" style="left:9.3%;top:41.3%" aria-label="4: 5 V enable link (JP1)">4<span class="xb-pop"><b>5 V enable link (JP1)</b> — cut to switch the rail off.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-5" style="left:9.3%;top:60.5%" aria-label="5: 3.3 V enable link (JP2)">5<span class="xb-pop"><b>3.3 V enable link (JP2)</b> — cut to switch the rail off.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-6" style="left:66.8%;top:36.9%" aria-label="6: 5 V light (D1)">6<span class="xb-pop"><b>5 V light (D1)</b> — green, rail powered.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-7" style="left:81.8%;top:36.9%" aria-label="7: 3.3 V light (D2)">7<span class="xb-pop"><b>3.3 V light (D2)</b> — green, rail powered.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-8" style="left:74.3%;top:36.9%" aria-label="8: 5 V overcurrent light (D3)">8<span class="xb-pop"><b>5 V overcurrent light (D3)</b> — amber.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-9" style="left:89.3%;top:36.9%" aria-label="9: 3.3 V overcurrent light (D4)">9<span class="xb-pop"><b>3.3 V overcurrent light (D4)</b> — amber.</span></a>
+      <a class="xb-mk" href="#tour-10" style="left:54.0%;top:65.8%" aria-label="10: ESD arrays (U3, U4)">10<span class="xb-pop"><b>ESD arrays (U3, U4)</b> — protect the seven signals.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Controller socket (J1)</b> — the ribbon cable.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>5 V limiter (U1)</b> — switches and limits the 5&nbsp;V rail.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>3.3 V limiter (U2)</b> — switches and limits the 3.3&nbsp;V rail.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>5 V enable link (JP1)</b> — cut to switch the rail off.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>3.3 V enable link (JP2)</b> — cut to switch the rail off.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>5 V light (D1)</b> — green, rail powered.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>3.3 V light (D2)</b> — green, rail powered.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>5 V overcurrent light (D3)</b> — amber.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>3.3 V overcurrent light (D4)</b> — amber.</div></li>
+    <li id="tour-10"><span class="xb-n">10</span><div><b>ESD arrays (U3, U4)</b> — protect the seven signals.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-Selected active-component identities: `U1 TPS2553`; `U2 TPS2553`; `U3 TPD4E1U06`; `U4 TPD4E1U06`. These identities are not a substitute for matching datasheet limits.
+### Lights {#lights}
 
-</details>
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th>Lit means</th><th>Disable it</th></tr></thead>
+  <tbody>
+    <tr><td>D1, green</td><td>5&nbsp;V rail powered</td><td>JP4</td></tr>
+    <tr><td>D2, green</td><td>3.3&nbsp;V rail powered</td><td>JP6</td></tr>
+    <tr><td>D3, amber</td><td>5&nbsp;V overcurrent</td><td>JP3</td></tr>
+    <tr><td>D4, amber</td><td>3.3&nbsp;V overcurrent</td><td>JP5</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Practical use with Smoothieboard V2 Prime
+## Pinout {#pinout}
 
-The practical example is one normally-open dry-contact button between J2.5 and J2.2, without drawing either supply rail.
+The header is on the underside; plug it into an outer row of the breadboard.
 
-Read the complete native-contact circuit with all four contact keys. Four solid paths are external leads; three dashed paths explain existing PCB connections through the actual R9 330 Ω resistor pads and ground. They are not extra wires to install. J2 is rotated 180° in the route; its keys retain the source contact order. Dashed orange locators identify each crop on the whole-board abstracts. The Prime artwork is P11 with the selected P12 GF/J37 allocation. All supply inputs and switched outputs remain unused.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J2 pin</th><th>Signal</th><th>Controller side (Prime header G_F)</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-5v">5 V</span></td><td>limited rail output</td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-gnd">GND</span></td><td></td></tr>
+    <tr><td>3</td><td><span class="xb-pill xb-p-3v3">3.3 V</span></td><td>limited rail output</td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-gnd">GND</span></td><td></td></tr>
+    <tr><td>5</td><td><span class="xb-pill xb-p-sig">GPIO1</span></td><td>contact 3, <code>PB1</code></td></tr>
+    <tr><td>6</td><td><span class="xb-pill xb-p-sig">GPIO2</span></td><td>contact 4, <code>PJ4</code></td></tr>
+    <tr><td>7</td><td><span class="xb-pill xb-p-sig">GPIO3</span></td><td>contact 5, <code>PA4</code></td></tr>
+    <tr><td>8</td><td><span class="xb-pill xb-p-sig">GPIO4</span></td><td>contact 6, <code>PG0</code></td></tr>
+    <tr><td>9</td><td><span class="xb-pill xb-p-sig">GPIO5</span></td><td>contact 7, <code>PJ3</code></td></tr>
+    <tr><td>10</td><td><span class="xb-pill xb-p-sig">GPIO6</span></td><td>contact 8, <code>PG1</code></td></tr>
+    <tr><td>11</td><td><span class="xb-pill xb-p-sig">GPIO7</span></td><td>contact 9, <code>PJ2</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="breadboard-native-0" src="/images/extensions/breadboard-board/guides/native-contact/breadboard-native-reader.png" title="Prime and breadboard carrier — dry-button native-contact circuit" alt="Prime and breadboard carrier — dry-button native-contact circuit" caption="Four external leads; dashed PCB relationships include R9 330 Ω. PB1 pull-up: released HIGH, pressed LOW. All supply rails unused." width=900 %}
+### J1: controller socket
 
-{% include _includes/extension-instruction-diagram.html id="breadboard-native-1" src="/images/extensions/breadboard-board/guides/native-contact/reader-contact-keys/J37-numbered-pads.png" title="Prime GF/J37 — complete contact key" alt="Prime GF/J37 — complete contact key" caption="Four external leads; dashed PCB relationships include R9 330 Ω. PB1 pull-up: released HIGH, pressed LOW. All supply rails unused." width=420 %}
+Contacts keep their numbers from the controller to the board. The controller pin names below apply to header G_F (connector J37) of Smoothieboard V2 Prime; another header or controller has other pins. Treat every signal as 3.3&nbsp;V only: PB1, PA4 and PG1 are not 5&nbsp;V tolerant.
 
-{% include _includes/extension-instruction-diagram.html id="breadboard-native-2" src="/images/extensions/breadboard-board/guides/native-contact/reader-contact-keys/J1-numbered-pads.png" title="Carrier J1 — complete contact key" alt="Carrier J1 — complete contact key" caption="Four external leads; dashed PCB relationships include R9 330 Ω. PB1 pull-up: released HIGH, pressed LOW. All supply rails unused." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th><th>Pin on Smoothieboard V2 Prime, header G_F (J37)</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-3v3">3.3 V</span> (the controller&rsquo;s limited rail)</td><td>not a signal</td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-5v">5 V</span> (the controller&rsquo;s limited rail)</td><td>not a signal</td></tr>
+    <tr><td>3</td><td><span class="xb-pill xb-p-sig">P3</span></td><td><code>PB1</code></td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">P4</span></td><td><code>PJ4</code></td></tr>
+    <tr><td>5</td><td><span class="xb-pill xb-p-sig">P5</span></td><td><code>PA4</code></td></tr>
+    <tr><td>6</td><td><span class="xb-pill xb-p-sig">P6</span></td><td><code>PG0</code></td></tr>
+    <tr><td>7</td><td><span class="xb-pill xb-p-sig">P7</span></td><td><code>PJ3</code></td></tr>
+    <tr><td>8</td><td><span class="xb-pill xb-p-sig">P8</span></td><td><code>PG1</code></td></tr>
+    <tr><td>9</td><td><span class="xb-pill xb-p-sig">P9</span></td><td><code>PJ2</code></td></tr>
+    <tr><td>10</td><td><span class="xb-pill xb-p-gnd">GND</span></td><td>ground</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="breadboard-native-3" src="/images/extensions/breadboard-board/guides/native-contact/reader-contact-keys/J2-1-6-numbered-pads.png" title="Carrier J2 contacts 1–6" alt="Carrier J2 contacts 1–6" caption="Four external leads; dashed PCB relationships include R9 330 Ω. PB1 pull-up: released HIGH, pressed LOW. All supply rails unused." width=420 %}
+## What you need {#what-you-need}
 
-{% include _includes/extension-instruction-diagram.html id="breadboard-native-4" src="/images/extensions/breadboard-board/guides/native-contact/reader-contact-keys/J2-7-11-numbered-pads.png" title="Carrier J2 contacts 7–11" alt="Carrier J2 contacts 7–11" caption="Four external leads; dashed PCB relationships include R9 330 Ω. PB1 pull-up: released HIGH, pressed LOW. All supply rails unused." width=420 %}
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>This board</b><span>Built from the design files in Downloads</span></div>
+  <div class="xb-card"><b>A ten-wire cable</b><span>Both ends 2 &times; 5 contacts at 1.27&nbsp;mm pitch, wired 1 to 1. A 2.54&nbsp;mm jumper plug does not fit. The Prime header has no keyed housing, so check contact 1 at both ends.</span></div>
+  <div class="xb-card"><b>A breadboard and a button</b><span>For the first test.</span></div>
+</div>
+{:/nomarkdown}
+
+## Get started {#get-started}
+
+This reads one button on GPIO1 (PB1) of Smoothieboard V2 Prime.
 
 
-Connect only Prime GF/J37.3 PB1 → J1.3 and GF/J37.10 ground → J1.10, then J2.5 signal and J2.2 ground to the two contacts of a normally-open dry button. R9 remains the source 330 Ω series resistor between host and breadboard signal nets. Enable the Prime PB1 input pull-up: open at rest reads HIGH; pressing the button reads LOW. The carrier has no signal pull-up resistor. J2.1 switched 5 V and J2.3 switched 3.3 V remain unused. Verify physical header numbering and cable orientation before connecting hardware.
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Power off and plug in</h3>
+    <p>Fit J2 into the breadboard&rsquo;s outer row. Check how the breadboard rows are connected.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Connect the controller</h3>
+    <p>Controller G_F (J37) contact 3 to J1 contact 3, and contact 10 to contact 10. Add contacts 1 and 2 only if you want the rails powered.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Wire the button</h3>
+    <p>Between J2 pin 5 (GPIO1) and J2 pin 2 (GND).</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure</h3>
+    <p>Add the settings of example 1 and power up.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Press the button</h3>
+    <p></p>
+    <p class="xb-expect">The controller halts.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
-1. Power off and verify the eleven-contact header orientation against J2 numbering. Check the breadboard's actual row connectivity before inserting it.
-2. Use two individually verified leads from P12 Prime2590 GF/J37 to J1: contact 3 to 3, and contact 10 to 10. Leave host/J1 supply contacts 1 and 2 disconnected; all other contacts are unused.
-3. Connect the isolated button between J2.5 (BB_GPIO1) and J2.2 (GND). Leave all other signal rows and supply outputs unloaded for this example.
-4. Confirm PB1 is unused in the complete machine configuration; enable its internal pull-up and invert the grounded contact as shown below.
+## Configuration {#configuration}
 
-## Smoothieware use
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>A halt button</td><td>Button box</td><td><a href="#config-kill">1</a></td></tr>
+    <tr><td>To read a contact</td><td>Switch, input</td><td><a href="#config-input">2</a></td></tr>
+    <tr><td>To drive a logic input</td><td>Switch, output</td><td><a href="#config-output">3</a></td></tr>
+    <tr><td>To check an endstop</td><td>Endstops</td><td><a href="#config-endstop">4</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-This carrier needs no board-specific communications driver. The selected GPIO button example uses the V2 buttonbox parser and PB1 input syntax. Check the supply-limit settings before use.
+### 1. Halt button (button box) {#config-kill}
 
-Configuration field names in this example follow upstream V2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`.
+A normally-open button or switch between PB1 and ground. Pressing it halts the controller; releasing it does not resume.
 
 ```ini
 [button box]
-extension_button.enable = true
-extension_button.pin = PB1!^
-extension_button.press = KILL
+raw_button.enable = true
+raw_button.pin = PB1!^
+raw_button.press = KILL
 ```
 
-`^` selects the internal pull-up and `!` makes a grounded input active. `KILL` invokes a software halt; it is not a safety-rated emergency-stop circuit. Resolve the existing PB1 allocation first, including external-driver examples that already use PB1. Test inactive, pressed and disconnected states with machine loads disabled.
+<code>^</code> enables the internal pull-up and <code>!</code> inverts the input. A button already held at start-up can trigger at once. This is a software halt, not an emergency stop ([button box source](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/buttonbox/buttonbox.cpp)).
 
-An unresolved electrical interface is not evidence that firmware support exists.
+### 2. Input that you can read (switch module) {#config-input}
 
-## Sources
+Reads a contact without doing anything else. This entry replaces example 1: one pin can be claimed by one entry only.
 
-- [Source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/breadboard-board/attempt/versions/v18)
-- [Design specification](https://github.com/arthurwolf/extension-boards/blob/main/src/breadboard-board/specs.md)
-- [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/breadboard-board/design.md)
-- [All extension boards](/extension-boards)
+```ini
+[switch]
+raw_input.enable = true
+raw_input.input_pin = PB1!^
+raw_input.input_pin_behavior = momentary
+```
 
-Upstream source-link availability has **not** been verified for publication.
+Send <code>switch raw_input</code> in the console to read it ([switch source](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp)).
 
-<details markdown="1">
-<summary>Additional board views and engineering history</summary>
+### 3. Output from G-code (switch module) {#config-output}
 
-{% include _includes/extension-board-visuals.html slug="breadboard-board" %}
+PB1 drives a 3.3&nbsp;V logic input of another circuit. It does not power a load. Replaces examples 1 and 2.
 
-</details>
+```ini
+[switch]
+raw_output.enable = true
+raw_output.output_pin = PB1
+raw_output.output_type = digital
+raw_output.input_on_command = M42
+raw_output.input_off_command = M43
+raw_output.subcode = 1
+raw_output.startup_state = false
+raw_output.halt_set_to = false
+```
+
+<code>M42.1</code> or <code>switch raw_output on</code> sets the pin high; <code>M43.1</code> or <code>switch raw_output off</code> sets it low. The numbers are a choice: change them if another entry uses them. The level during reset and power-up is not set by this configuration.
+
+### 4. Endstop input without limit action (endstops) {#config-endstop}
+
+Reports a switch in <code>M119</code> without using it for homing or as a travel limit. Add it to an existing <code>[endstops]</code> section of a machine that already has an X axis. Replaces examples 1 to 3.
+
+```ini
+[endstops]
+raw_check.enable = true
+raw_check.pin = PB1^
+raw_check.axis = X
+raw_check.homing_direction = none
+raw_check.limit_enable = false
+```
+
+Set <code>homing_direction</code> and <code>limit_enable</code> only after the switch reads correctly ([endstops source](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp)).
+
+The passive board needs no driver of its own. These four uses cover what it is normally wired for; any other module that takes a 3.3&nbsp;V pin works in the same way.
+
+## How it works {#how-it-works}
+
+Each signal passes through a 330&nbsp;&Omega; resistor to the header and is clamped by an ESD array. Each rail goes through a current limiter that switches off or cycles when overloaded and lights its amber light. The board adds no pins and no pull-ups.
+
+## Troubleshooting {#troubleshooting}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Rail light off</td><td>Contacts 1 and 2 connected, link JP1 or JP2.</td></tr>
+    <tr><td>Amber light blinking or lit</td><td>Too much current or a short on that rail. Power off and find it.</td></tr>
+    <tr><td>Input never changes</td><td>Cable contacts, pin name, breadboard row.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
+
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/breadboard-board/v18/breadboard-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/breadboard-board/v18/breadboard-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/breadboard-board/v18/breadboard-board-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-br-mount-t">
+  <title id="xb-br-mount-t">Mounting drawing of the br, component side: outline 30 by 34 millimetres with 2 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="330.0" y="78.0" width="300.0" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M330.0 56H630.0"/><path d="M330.0 50V62"/><path d="M630.0 50V62"/><path d="M656.0 78.0V418.0"/><path d="M650.0 78.0h12"/><path d="M650.0 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">30</text>
+  <text x="668.0" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">34</text>
+  <circle cx="330.0" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="318.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M272.0 104.0h30" fill="none"/><path d="M306.0 104.0l-8 -4v8z"/><path d="M272.0 104.0v30" fill="none"/><path d="M272.0 138.0l-4 -8h8z"/></g>
+  <text x="310.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="268.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="380.0" cy="119.0" r="16.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M360.0 119.0h40.0M380.0 99.0v40.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="364.0" y="155.0" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 4.10</text>
+  <circle cx="580.0" cy="119.0" r="16.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M560.0 119.0h40.0M580.0 99.0v40.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="596.0" y="155.0" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  25.00, 4.10</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 30 × 34&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>5.00</td><td>4.10</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>25.00</td><td>4.10</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Values from the board printing and parts list.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>5 V rail output</td><td>J2 pin 1</td><td>—</td><td>—</td><td>120 mA</td><td>Board silk</td></tr>
+    <tr><td>3.3 V rail output</td><td>J2 pin 3</td><td>—</td><td>—</td><td>80 mA</td><td>Board silk</td></tr>
+    <tr><td>Voltage applied from outside</td><td>Rails</td><td>—</td><td>—</td><td>7 V</td><td>Board silk absolute maximum; never feed power in</td></tr>
+    <tr><td>Signal voltage</td><td>GPIO1 to GPIO7</td><td>0 V</td><td>3.3 V</td><td>3.3 V</td><td>Not 5 V tolerant</td></tr>
+    <tr><td>Signal frequency</td><td>GPIO1 to GPIO7</td><td>—</td><td>—</td><td>5 MHz</td><td>Board silk, below this</td></tr>
+    <tr><td>Series resistance</td><td>Each signal</td><td>—</td><td>330 Ω</td><td>—</td><td>Parts list</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: datasheets {#datasheets}
+
+The first page of each important chip&rsquo;s datasheet. Click a page to open the PDF.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <a href="/images/extensions/breadboard-board/datasheets/tps2553.pdf"><img src="/images/extensions/breadboard-board/datasheets/tps2553-page1.png" alt="First page of the TPS2553 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/breadboard-board/datasheets/tps2553.pdf">TPS2553 current-limited power-distribution switch</a> — Texas Instruments, 46 pages.</figcaption>
+</figure>
+<figure class="xb-fig">
+  <a href="/images/extensions/breadboard-board/datasheets/tpd4e1u06.pdf"><img src="/images/extensions/breadboard-board/datasheets/tpd4e1u06-page1.png" alt="First page of the TPD4E1U06 datasheet" style="display:block;width:100%;max-width:480px;height:auto;margin:0 auto"></a>
+  <figcaption><a href="/images/extensions/breadboard-board/datasheets/tpd4e1u06.pdf">TPD4E1U06 four-channel ESD protection array</a> — Texas Instruments, 27 pages.</figcaption>
+</figure>
+{:/nomarkdown}
+
+
+See all boards on the [extension boards](/extension-boards) page.

@@ -1,383 +1,260 @@
 ---
 layout: default
-title: "Flambegate \u2014 High-side heater shutoff"
+title: "Flambegate — high-side heater shutoff"
+description: "High-side FET board that disconnects a heater supply on an external trigger: pinout."
 permalink: /extensions/historical-flambegate
 ---
 
-# Flambegate
-
-This board adds a separately controlled high-side FET to a DC heater power path. The author intends it to disconnect a hotend when a separate hardware trigger detects a fault, including when the controller’s ordinary low-side output fails. It does not replace the normal heater controller and carries no safety certification.
-
-## Design source and compatibility
-
-This guide follows [HighSideFet.kicad_pcb](https://raw.githubusercontent.com/Ccecil/Flambegate/636f6ce4abb2750abbd326615f91eb67bd025ac0/HighSideFet.kicad_pcb). It is a separate related hardware design, not a Prime adapter. The source description uses failsafe terminology; do not rely on the board as a certified safety device.
-
-## Operation, power and connectors
-
-The original README calls this an attempt at an additional hardware failsafe, claims about 8 A at 28 V DC, and specifies an inline fuseholder and optional 5 V Recom regulator. Those are the author’s figures. U1 is R-78E5.0-1.0, Q2 WSD30L40DN and Q1 2N7002. J1.2 enters F1 before +24V reaches Q2; J4.2 is the switched output. J1.1 and J4.1 share Passthru, which is not named GND. Never silently join Passthru to logic ground: the intended machine topology may retain an existing switched heater return. J2 is signal/5 V/ground on contacts 1/2/3, unlike Flambehub’s input connector order. J3 is 5 V/ground on contacts 1/2.
-
-### Annotated connector and component reference
-
-These drawings show the board outline, footprints, pads and graphics with function callouts; they are not mating views. The Passthru net is distinct from ground. Check fuse, load current, thermal behaviour, supply and connector mating for your installation.
-
-### Board reference
-
-These function-labelled views show the board geometry. They are not mating views.
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-compact-function-reader-00-overview" src="/images/extensions/historical-flambegate/guides/source-derived-reader-compact/reader-00-overview.png" title="Board overview" alt="Board overview for FlambeGate" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-compact-function-reader-00-mandatory-limits" src="/images/extensions/historical-flambegate/guides/source-derived-reader-compact/reader-00-mandatory-limits.png" title="Mandatory connection limits" alt="Mandatory connection limits for FlambeGate" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-<details markdown="1">
-<summary>Connector and component functions</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-compact-function-reader-f1-1" src="/images/extensions/historical-flambegate/guides/source-derived-reader/reader-f1-1.png" title="F1 1" alt="F1 1 for FlambeGate" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-compact-function-reader-h1-1" src="/images/extensions/historical-flambegate/guides/source-derived-reader/reader-h1-1.png" title="H1 1" alt="H1 1 for FlambeGate" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-compact-function-reader-h2-1" src="/images/extensions/historical-flambegate/guides/source-derived-reader/reader-h2-1.png" title="H2 1" alt="H2 1 for FlambeGate" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-compact-function-reader-j1-1" src="/images/extensions/historical-flambegate/guides/source-derived-reader/reader-j1-1.png" title="J1 1" alt="J1 1 for FlambeGate" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-compact-function-reader-j1-2" src="/images/extensions/historical-flambegate/guides/source-derived-reader/reader-j1-2.png" title="J1 2" alt="J1 2 for FlambeGate" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-compact-function-reader-j2-1" src="/images/extensions/historical-flambegate/guides/source-derived-reader/reader-j2-1.png" title="J2 1" alt="J2 1 for FlambeGate" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-compact-function-reader-j3-1" src="/images/extensions/historical-flambegate/guides/source-derived-reader/reader-j3-1.png" title="J3 1" alt="J3 1 for FlambeGate" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-compact-function-reader-j4-1" src="/images/extensions/historical-flambegate/guides/source-derived-reader/reader-j4-1.png" title="J4 1" alt="J4 1 for FlambeGate" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-compact-function-reader-j4-2" src="/images/extensions/historical-flambegate/guides/source-derived-reader/reader-j4-2.png" title="J4 2" alt="J4 2 for FlambeGate" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-compact-function-reader-q1-1" src="/images/extensions/historical-flambegate/guides/source-derived-reader/reader-q1-1.png" title="Q1 1" alt="Q1 1 for FlambeGate" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-compact-function-reader-q2-1" src="/images/extensions/historical-flambegate/guides/source-derived-reader/reader-q2-1.png" title="Q2 1" alt="Q2 1 for FlambeGate" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-compact-function-reader-r1-1" src="/images/extensions/historical-flambegate/guides/source-derived-reader/reader-r1-1.png" title="R1 1" alt="R1 1 for FlambeGate" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-compact-function-reader-r2-1" src="/images/extensions/historical-flambegate/guides/source-derived-reader/reader-r2-1.png" title="R2 1" alt="R2 1 for FlambeGate" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-compact-function-reader-r3-1" src="/images/extensions/historical-flambegate/guides/source-derived-reader/reader-r3-1.png" title="R3 1" alt="R3 1 for FlambeGate" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-compact-function-reader-r4-1" src="/images/extensions/historical-flambegate/guides/source-derived-reader/reader-r4-1.png" title="R4 1" alt="R4 1 for FlambeGate" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-compact-function-reader-u1-1" src="/images/extensions/historical-flambegate/guides/source-derived-reader/reader-u1-1.png" title="U1 1" alt="U1 1 for FlambeGate" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-</details>
-
-<details markdown="1">
-<summary>Contact reference views</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-00-overview" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/00-overview.png" title="FlambeGate reference — 00 overview" alt="FlambeGate reference — 00 overview" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-art18-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/art18-1.png" title="FlambeGate reference — art18 1" alt="FlambeGate reference — art18 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-art19-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/art19-1.png" title="FlambeGate reference — art19 1" alt="FlambeGate reference — art19 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-c1-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/c1-1.png" title="FlambeGate reference — c1 1" alt="FlambeGate reference — c1 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-c2-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/c2-1.png" title="FlambeGate reference — c2 1" alt="FlambeGate reference — c2 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-f1-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/f1-1.png" title="FlambeGate reference — f1 1" alt="FlambeGate reference — f1 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-fid1-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/fid1-1.png" title="FlambeGate reference — fid1 1" alt="FlambeGate reference — fid1 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-fid2-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/fid2-1.png" title="FlambeGate reference — fid2 1" alt="FlambeGate reference — fid2 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-fid3-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/fid3-1.png" title="FlambeGate reference — fid3 1" alt="FlambeGate reference — fid3 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-fid4-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/fid4-1.png" title="FlambeGate reference — fid4 1" alt="FlambeGate reference — fid4 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-h1-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/h1-1.png" title="FlambeGate reference — h1 1" alt="FlambeGate reference — h1 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-h2-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/h2-1.png" title="FlambeGate reference — h2 1" alt="FlambeGate reference — h2 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-j1-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/j1-1.png" title="FlambeGate reference — j1 1" alt="FlambeGate reference — j1 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-j1-2" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/j1-2.png" title="FlambeGate reference — j1 2" alt="FlambeGate reference — j1 2" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-j2-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/j2-1.png" title="FlambeGate reference — j2 1" alt="FlambeGate reference — j2 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-j3-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/j3-1.png" title="FlambeGate reference — j3 1" alt="FlambeGate reference — j3 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-j4-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/j4-1.png" title="FlambeGate reference — j4 1" alt="FlambeGate reference — j4 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-j4-2" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/j4-2.png" title="FlambeGate reference — j4 2" alt="FlambeGate reference — j4 2" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-q1-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/q1-1.png" title="FlambeGate reference — q1 1" alt="FlambeGate reference — q1 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-q2-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/q2-1.png" title="FlambeGate reference — q2 1" alt="FlambeGate reference — q2 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-r1-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/r1-1.png" title="FlambeGate reference — r1 1" alt="FlambeGate reference — r1 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-r2-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/r2-1.png" title="FlambeGate reference — r2 1" alt="FlambeGate reference — r2 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-r3-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/r3-1.png" title="FlambeGate reference — r3 1" alt="FlambeGate reference — r3 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-r4-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/r4-1.png" title="FlambeGate reference — r4 1" alt="FlambeGate reference — r4 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-source-net-keys-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/source-net-keys-1.png" title="FlambeGate reference — source net keys 1" alt="FlambeGate reference — source net keys 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-source-net-keys-2" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/source-net-keys-2.png" title="FlambeGate reference — source net keys 2" alt="FlambeGate reference — source net keys 2" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-u1-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/u1-1.png" title="FlambeGate reference — u1 1" alt="FlambeGate reference — u1 1" caption="Front-side component reference." width=420 %}
-
-<details markdown="1">
-<summary>Individual native contact keys</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-c1-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-c1-0.png" title="FlambeGate reference — contact c1 0" alt="FlambeGate reference — contact c1 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-c1-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-c1-1.png" title="FlambeGate reference — contact c1 1" alt="FlambeGate reference — contact c1 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-c2-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-c2-0.png" title="FlambeGate reference — contact c2 0" alt="FlambeGate reference — contact c2 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-c2-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-c2-1.png" title="FlambeGate reference — contact c2 1" alt="FlambeGate reference — contact c2 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-f1-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-f1-0.png" title="FlambeGate reference — contact f1 0" alt="FlambeGate reference — contact f1 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-f1-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-f1-1.png" title="FlambeGate reference — contact f1 1" alt="FlambeGate reference — contact f1 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-f1-2" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-f1-2.png" title="FlambeGate reference — contact f1 2" alt="FlambeGate reference — contact f1 2" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-f1-3" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-f1-3.png" title="FlambeGate reference — contact f1 3" alt="FlambeGate reference — contact f1 3" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-fid1-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-fid1-0.png" title="FlambeGate reference — contact fid1 0" alt="FlambeGate reference — contact fid1 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-fid2-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-fid2-0.png" title="FlambeGate reference — contact fid2 0" alt="FlambeGate reference — contact fid2 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-fid3-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-fid3-0.png" title="FlambeGate reference — contact fid3 0" alt="FlambeGate reference — contact fid3 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-fid4-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-fid4-0.png" title="FlambeGate reference — contact fid4 0" alt="FlambeGate reference — contact fid4 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-h1-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-h1-0.png" title="FlambeGate reference — contact h1 0" alt="FlambeGate reference — contact h1 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-h2-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-h2-0.png" title="FlambeGate reference — contact h2 0" alt="FlambeGate reference — contact h2 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-j1-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-j1-0.png" title="FlambeGate reference — contact j1 0" alt="FlambeGate reference — contact j1 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-j1-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-j1-1.png" title="FlambeGate reference — contact j1 1" alt="FlambeGate reference — contact j1 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-j1-2" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-j1-2.png" title="FlambeGate reference — contact j1 2" alt="FlambeGate reference — contact j1 2" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-j1-3" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-j1-3.png" title="FlambeGate reference — contact j1 3" alt="FlambeGate reference — contact j1 3" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-j1-4" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-j1-4.png" title="FlambeGate reference — contact j1 4" alt="FlambeGate reference — contact j1 4" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-j1-5" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-j1-5.png" title="FlambeGate reference — contact j1 5" alt="FlambeGate reference — contact j1 5" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-j2-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-j2-0.png" title="FlambeGate reference — contact j2 0" alt="FlambeGate reference — contact j2 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-j2-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-j2-1.png" title="FlambeGate reference — contact j2 1" alt="FlambeGate reference — contact j2 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-j2-2" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-j2-2.png" title="FlambeGate reference — contact j2 2" alt="FlambeGate reference — contact j2 2" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-j3-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-j3-0.png" title="FlambeGate reference — contact j3 0" alt="FlambeGate reference — contact j3 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-j3-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-j3-1.png" title="FlambeGate reference — contact j3 1" alt="FlambeGate reference — contact j3 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-j4-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-j4-0.png" title="FlambeGate reference — contact j4 0" alt="FlambeGate reference — contact j4 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-j4-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-j4-1.png" title="FlambeGate reference — contact j4 1" alt="FlambeGate reference — contact j4 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-j4-2" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-j4-2.png" title="FlambeGate reference — contact j4 2" alt="FlambeGate reference — contact j4 2" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-j4-3" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-j4-3.png" title="FlambeGate reference — contact j4 3" alt="FlambeGate reference — contact j4 3" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-j4-4" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-j4-4.png" title="FlambeGate reference — contact j4 4" alt="FlambeGate reference — contact j4 4" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-j4-5" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-j4-5.png" title="FlambeGate reference — contact j4 5" alt="FlambeGate reference — contact j4 5" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-q1-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-q1-0.png" title="FlambeGate reference — contact q1 0" alt="FlambeGate reference — contact q1 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-q1-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-q1-1.png" title="FlambeGate reference — contact q1 1" alt="FlambeGate reference — contact q1 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-q1-2" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-q1-2.png" title="FlambeGate reference — contact q1 2" alt="FlambeGate reference — contact q1 2" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-q2-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-q2-0.png" title="FlambeGate reference — contact q2 0" alt="FlambeGate reference — contact q2 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-q2-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-q2-1.png" title="FlambeGate reference — contact q2 1" alt="FlambeGate reference — contact q2 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-q2-2" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-q2-2.png" title="FlambeGate reference — contact q2 2" alt="FlambeGate reference — contact q2 2" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-q2-3" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-q2-3.png" title="FlambeGate reference — contact q2 3" alt="FlambeGate reference — contact q2 3" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-q2-4" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-q2-4.png" title="FlambeGate reference — contact q2 4" alt="FlambeGate reference — contact q2 4" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-r1-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-r1-0.png" title="FlambeGate reference — contact r1 0" alt="FlambeGate reference — contact r1 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-r1-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-r1-1.png" title="FlambeGate reference — contact r1 1" alt="FlambeGate reference — contact r1 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-r2-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-r2-0.png" title="FlambeGate reference — contact r2 0" alt="FlambeGate reference — contact r2 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-r2-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-r2-1.png" title="FlambeGate reference — contact r2 1" alt="FlambeGate reference — contact r2 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-r3-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-r3-0.png" title="FlambeGate reference — contact r3 0" alt="FlambeGate reference — contact r3 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-r3-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-r3-1.png" title="FlambeGate reference — contact r3 1" alt="FlambeGate reference — contact r3 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-r4-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-r4-0.png" title="FlambeGate reference — contact r4 0" alt="FlambeGate reference — contact r4 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-r4-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-r4-1.png" title="FlambeGate reference — contact r4 1" alt="FlambeGate reference — contact r4 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-u1-0" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-u1-0.png" title="FlambeGate reference — contact u1 0" alt="FlambeGate reference — contact u1 0" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-u1-1" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-u1-1.png" title="FlambeGate reference — contact u1 1" alt="FlambeGate reference — contact u1 1" caption="Front-side component reference." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-source-derived-contact-u1-2" src="/images/extensions/historical-flambegate/guides/source-derived-annotated/contact-u1-2.png" title="FlambeGate reference — contact u1 2" alt="FlambeGate reference — contact u1 2" caption="Front-side component reference." width=420 %}
-
-
-</details>
-
-<details markdown="1">
-<summary>Functional references</summary>
-
-### Board functions and contact positions
-
-Start with the power and trigger connectors, fuse and switching components. The auxiliary control ground and power passthrough are separately labelled; do not infer a connection from their similar appearance. Contact markers do not show cable mating orientation.
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-j3-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/j3-functions-01.png" title="FlambeGate — Component side; back parts excluded" alt="FlambeGate — Component side; back parts excluded — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-j1-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/j1-functions-01.png" title="FlambeGate — Component side; back parts excluded" alt="FlambeGate — Component side; back parts excluded — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-j1-functions-02" src="/images/extensions/historical-flambegate/guides/functional-reference/j1-functions-02.png" title="FlambeGate — Component side; back parts excluded" alt="FlambeGate — Component side; back parts excluded — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-f1-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/f1-functions-01.png" title="FlambeGate — Component side; back parts excluded" alt="FlambeGate — Component side; back parts excluded — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-q1-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/q1-functions-01.png" title="FlambeGate — Component side; back parts excluded" alt="FlambeGate — Component side; back parts excluded — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-j4-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/j4-functions-01.png" title="FlambeGate — Component side; back parts excluded" alt="FlambeGate — Component side; back parts excluded — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-j4-functions-02" src="/images/extensions/historical-flambegate/guides/functional-reference/j4-functions-02.png" title="FlambeGate — Component side; back parts excluded" alt="FlambeGate — Component side; back parts excluded — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-j2-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/j2-functions-01.png" title="FlambeGate — Component side; back parts excluded" alt="FlambeGate — Component side; back parts excluded — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-u1-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/u1-functions-01.png" title="FlambeGate — Component side; back parts excluded" alt="FlambeGate — Component side; back parts excluded — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-q2-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/q2-functions-01.png" title="FlambeGate — Underside projected from front; not mirrored rear view" alt="FlambeGate — Underside projected from front; not mirrored rear view — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-<details>
-<summary>Circuit components, mounting and fiducial details</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-c2-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/c2-functions-01.png" title="FlambeGate — Component side; back parts excluded" alt="FlambeGate — Component side; back parts excluded — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-r3-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/r3-functions-01.png" title="FlambeGate — Component side; back parts excluded" alt="FlambeGate — Component side; back parts excluded — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-r2-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/r2-functions-01.png" title="FlambeGate — Component side; back parts excluded" alt="FlambeGate — Component side; back parts excluded — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-c1-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/c1-functions-01.png" title="FlambeGate — Component side; back parts excluded" alt="FlambeGate — Component side; back parts excluded — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-r4-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/r4-functions-01.png" title="FlambeGate — Component side; back parts excluded" alt="FlambeGate — Component side; back parts excluded — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-fid1-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/fid1-functions-01.png" title="FlambeGate — Component side; back parts excluded" alt="FlambeGate — Component side; back parts excluded — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-h2-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/h2-functions-01.png" title="FlambeGate — Component side; back parts excluded" alt="FlambeGate — Component side; back parts excluded — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-h1-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/h1-functions-01.png" title="FlambeGate — Component side; back parts excluded" alt="FlambeGate — Component side; back parts excluded — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-r1-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/r1-functions-01.png" title="FlambeGate — Component side; back parts excluded" alt="FlambeGate — Component side; back parts excluded — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-fid3-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/fid3-functions-01.png" title="FlambeGate — Component side; back parts excluded" alt="FlambeGate — Component side; back parts excluded — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-fid4-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/fid4-functions-01.png" title="FlambeGate — Underside projected from front; not mirrored rear view" alt="FlambeGate — Underside projected from front; not mirrored rear view — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-function-fid2-functions-01" src="/images/extensions/historical-flambegate/guides/functional-reference/fid2-functions-01.png" title="FlambeGate — Underside projected from front; not mirrored rear view" alt="FlambeGate — Underside projected from front; not mirrored rear view — function callouts and contact positions" caption="Component reference. Numbered markers locate contacts, not cable mating positions." width=420 %}
-
-</details>
-
-<details>
-<summary>Pad locators</summary>
-
-
-</details>
-
-### Contact reference
-
-These locators show the pad positions and board outline, without component artwork.
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-reader-compact-overview" src="/images/extensions/historical-flambegate/guides/native-contact-reference/reader-compact-overview.png" title="Legacy FlambeGate" alt="Legacy FlambeGate — contact locator" caption="Contact reference showing pads and board outline. Use it together with the companion sheets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-reader-compact-j1-1-2" src="/images/extensions/historical-flambegate/guides/native-contact-reference/reader-compact-j1-1-2.png" title="J1 · Power input" alt="J1 · Power input — contact locator" caption="Contact reference showing pads and board outline. Use it together with the companion sheets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-reader-compact-j4-1-2" src="/images/extensions/historical-flambegate/guides/native-contact-reference/reader-compact-j4-1-2.png" title="J4 · Power output" alt="J4 · Power output — contact locator" caption="Contact reference showing pads and board outline. Use it together with the companion sheets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-reader-compact-j2-1-3" src="/images/extensions/historical-flambegate/guides/native-contact-reference/reader-compact-j2-1-3.png" title="J2 · Trigger input" alt="J2 · Trigger input — contact locator" caption="Contact reference showing pads and board outline. Use it together with the companion sheets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-reader-compact-j3-1-2" src="/images/extensions/historical-flambegate/guides/native-contact-reference/reader-compact-j3-1-2.png" title="J3 · 5V rail" alt="J3 · 5V rail — contact locator" caption="Contact reference showing pads and board outline. Use it together with the companion sheets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-reader-compact-power" src="/images/extensions/historical-flambegate/guides/native-contact-reference/reader-compact-power.png" title="Fused power path" alt="Fused power path — contact locator" caption="Contact reference showing pads and board outline. Use it together with the companion sheets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-reader-compact-trigger" src="/images/extensions/historical-flambegate/guides/native-contact-reference/reader-compact-trigger.png" title="Trigger gate path" alt="Trigger gate path — contact locator" caption="Contact reference showing pads and board outline. Use it together with the companion sheets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-reader-compact-switch" src="/images/extensions/historical-flambegate/guides/native-contact-reference/reader-compact-switch.png" title="Power-switch control" alt="Power-switch control — contact locator" caption="Contact reference showing pads and board outline. Use it together with the companion sheets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-reader-compact-regulator" src="/images/extensions/historical-flambegate/guides/native-contact-reference/reader-compact-regulator.png" title="Local regulator" alt="Local regulator — contact locator" caption="Contact reference showing pads and board outline. Use it together with the companion sheets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-reader-compact-return" src="/images/extensions/historical-flambegate/guides/native-contact-reference/reader-compact-return.png" title="Return-path warning" alt="Return-path warning — contact locator" caption="Contact reference showing pads and board outline. Use it together with the companion sheets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-reader-compact-extra" src="/images/extensions/historical-flambegate/guides/native-contact-reference/reader-compact-extra.png" title="Power connector extra pads" alt="Power connector extra pads — contact locator" caption="Contact reference showing pads and board outline. Use it together with the companion sheets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-reader-compact-mounts" src="/images/extensions/historical-flambegate/guides/native-contact-reference/reader-compact-mounts.png" title="Mechanical mounting" alt="Mechanical mounting — contact locator" caption="Contact reference showing pads and board outline. Use it together with the companion sheets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambegate-reader-compact-fiducials" src="/images/extensions/historical-flambegate/guides/native-contact-reference/reader-compact-fiducials.png" title="Assembly fiducials" alt="Assembly fiducials — contact locator" caption="Contact reference showing pads and board outline. Use it together with the companion sheets." width=420 %}
-
-
-[Download the unmodified native source, upstream licence and drawing notice](/images/extensions/historical-flambegate/guides/native-contact-reference/native-source-and-notices.zip). Retain the included source licence and notices with derivatives.
-
-
-The following table lists the PCB footprint pad nets. It is an inventory of named pads, not proof of copper continuity.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| PCB reference | Value / control | Contact → net |
-|---|---|---|
-| J3 | Conn_01x02_Male | 1 → +5V; 2 → GND |
-| J1 | PowerIn | 1 → Passthru; 2 → Net-(J1-Pad2) |
-| F1 | Fuse_Small | 1 → Net-(J1-Pad2); 2 → +24V |
-| Q1 | 2N7002 | 1 → Net-(Q1-Pad1); 2 → GND; 3 → Net-(Q1-Pad3) |
-| J4 | PowerOut | 1 → Passthru; 2 → Net-(Q2-Pad5) |
-| R4 | 21.5k | 1 → Net-(Q2-Pad4); 2 → +24V |
-| J2 | TriggerIn | 1 → Net-(J2-Pad1); 2 → +5V; 3 → GND |
-| U1 | R-78E5.0-1.0 | 1 → +24V; 2 → GND; 3 → +5V |
-| Q2 | WSD30L40DN | 1 → +24V; 2 → +24V; 3 → +24V; 4 → Net-(Q2-Pad4); 5 → Net-(Q2-Pad5) |
-
+{% include _includes/extension-board-page.html %}
+
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Safety add-on</p>
+    <h1 id="historical-flambegate">Flambegate — high-side heater shutoff</h1>
+    <p class="xb-lead">A separately controlled high-side MOSFET in a DC heater supply, meant to cut the heater when an external trigger detects a fault.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#downloads">Downloads</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/historical-flambegate/directory-board-render.png" alt="Top view of the Flambegate — high-side heater shutoff board">
+    <figcaption>Top view drawn from the original board file. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-</details>
+<div class="xb-stats">
+  <div class="xb-stat"><b>1</b><span>high-side channel</span></div>
+  <div class="xb-stat"><b>28 V DC</b><span>author&rsquo;s figure</span></div>
+  <div class="xb-stat"><b>8 A</b><span>author&rsquo;s figure</span></div>
+  <div class="xb-stat"><b>inline</b><span>fuse</span></div>
+  <div class="xb-stat"><b>55 × 26 mm</b><span>board size</span></div>
+  <div class="xb-stat"><b>2</b><span>mounting holes</span></div>
+</div>
 
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting dimensions</a>
+  <a href="#electrical">Electrical specifications</a>
+</nav>
+{:/nomarkdown}
 
-</details>
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <b>This is not a certified safety device.</b> The author&rsquo;s figure of about 8 A at 28 V DC is not verified; check fusing, current and heat before relying on it. Third-party design by Chris Cecil, not a current Smoothieware board.
+</sl-alert>
 
+## Tech specs {#specs}
 
-</details>
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Function</td><td>High-side supply disconnect</td></tr>
+    <tr><td>Power in and out</td><td>J1 and J4; their contact 1 is the pass-through return, not ground</td></tr>
+    <tr><td>Control supply</td><td>J3: 5 V, ground</td></tr>
+    <tr><td>Trigger</td><td>J2</td></tr>
+    <tr><td>Switch</td><td>Q2 (WSD30L40DN), driven by Q1</td></tr>
+    <tr><td>Size</td><td>55 × 26 mm</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Practical use with Smoothieboard V2 Prime
+## Board tour {#tour}
 
-The intended practical example is an independent overtemperature comparator shutting off a heater’s high-side supply while Smoothie continues its ordinary temperature control. Before building that circuit, determine whether the trigger is an enable or trip, the output’s state for a broken trigger cable and loss of 5 V, the passthrough conductor’s role, fuse selection and the installed heater current. Do not wire a Prime GPIO to J2 until you know the trigger voltage, current and polarity.
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/historical-flambegate/directory-board-render.png" alt="Annotated top view of the Flambegate — high-side heater shutoff board">
+      <a class="xb-mk xb-pb" href="#tour-1" style="left:29.2%;top:26.6%" aria-label="1: Power input">1<span class="xb-pop"><b>Power input</b> — Supply and pass-through.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-2" style="left:70.9%;top:26.9%" aria-label="2: Power output">2<span class="xb-pop"><b>Power output</b> — To the heater circuit.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-3" style="left:38.8%;top:41.9%" aria-label="3: Fuse">3<span class="xb-pop"><b>Fuse</b> — In series with the input.</span></a>
+      <a class="xb-mk" href="#tour-4" style="left:63.2%;top:79.7%" aria-label="4: Trigger input">4<span class="xb-pop"><b>Trigger input</b> — From the detector.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-5" style="left:11.2%;top:63.2%" aria-label="5: Control supply">5<span class="xb-pop"><b>Control supply</b> — 5 V and ground.</span></a>
+      <a class="xb-mk" href="#tour-6" style="left:38.1%;top:65.7%" aria-label="6: Regulator">6<span class="xb-pop"><b>Regulator</b> — Makes 5 V.</span></a>
+      <a class="xb-mk" href="#tour-7" style="left:57.3%;top:66.4%" aria-label="7: Trigger transistor">7<span class="xb-pop"><b>Trigger transistor</b> — Drives the main switch on the underside.</span></a>
+      <a class="xb-mk" href="#tour-8" style="left:52.6%;top:67.1%" aria-label="8: Resistor R1">8<span class="xb-pop"><b>Resistor R1</b> — Resistor R1, marked <code>22r</code> in the board file.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Power input</b> — Supply and pass-through.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Power output</b> — To the heater circuit.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Fuse</b> — In series with the input.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Trigger input</b> — From the detector.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Control supply</b> — 5 V and ground.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Regulator</b> — Makes 5 V.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Trigger transistor</b> — Drives the main switch on the underside.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Resistor R1</b> — Resistor R1, marked <code>22r</code> in the board file.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-## Firmware and setup
+## Pinout {#pinout}
 
-### Standalone trigger versus optional Prime halt workflow
+<span id="connect-and-try-it"></span>
 
-J2 TriggerIn is 1 signal, 2 +5 V, 3 ground; power J1/J4 is a separate switching path.
-FlambeGate source J2 TriggerIn has1signal/2+5 V/3ground; power J1/J4 is a separate switching path.
+### Power input J1
 
-Standalone comparator/trigger operation needs no Smoothieware configuration or board driver. Optional Prime integration is a separate application: define its signal direction, polarity, threshold, loss-of-signal state and reset behavior before assigning a GPIO.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>Passthru</code></td></tr>
+    <tr><td>2</td><td>joined to F1 pad 1</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The ButtonBox KILL behavior broadcasts a software halt; Switch with `ignore_on_halt=false` applies its handled-halt state. Neither guarantees power disconnection or independent shutdown. Do not use M112, a guessed enable GPIO or a software command as fire protection. An integration must define which board terminal is observed or driven, its active and lost-signal states, whether acknowledgement or reset is needed, the physical independent shutdown path, and the exact powered equipment. The three-pin MCU header names alone do not define these.
+### Power output J4
 
-Reserve every listed pin and command in the complete configuration. Merge entries into existing sections rather than duplicating sections.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J4 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>Passthru</code></td></tr>
+    <tr><td>2</td><td>joined to Q2 pad 5</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Original files and attribution
+### Control supply J3
 
-Single-channel MOSFET pages describe ordinary low-side load switching. This separate high-side fused shutoff topology is not a duplicate.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J3 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+5V</code></td></tr>
+    <tr><td>2</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-- [HighSideFet.kicad_pcb](https://raw.githubusercontent.com/Ccecil/Flambegate/636f6ce4abb2750abbd326615f91eb67bd025ac0/HighSideFet.kicad_pcb) — original PCB source.
-- [HighSideFet.kicad_sch](https://raw.githubusercontent.com/Ccecil/Flambegate/636f6ce4abb2750abbd326615f91eb67bd025ac0/HighSideFet.kicad_sch) — original schematic source.
-- [README.md](https://raw.githubusercontent.com/Ccecil/Flambegate/636f6ce4abb2750abbd326615f91eb67bd025ac0/README.md) — original author notes.
+### Trigger J2
 
-The repository metadata identifies GPL-3.0; preserve and inspect the matching license and source notices before redistribution.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J2 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>joined to R1 pad 2</td></tr>
+    <tr><td>2</td><td><code>+5V</code></td></tr>
+    <tr><td>3</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-[All extension boards](/extension-boards)
+## What you need {#what-you-need}
+
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>Flambegate board</b><span>Built from the design files</span></div>
+  <div class="xb-card"><b>Fuse</b><span>Sized for the load</span></div>
+  <div class="xb-card"><b>Trigger device</b><span>External fault detector</span></div>
+</div>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+<span id="smoothieware-use"></span>
+
+Hardware only: no Smoothieware setting.
+
+## How it works {#how-it-works}
+
+The fused positive supply passes through Q2 to the output. The trigger input drives Q1, which controls Q2. U1 makes 5 V from the supply.
+
+## Troubleshooting {#troubleshooting}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Output stays off</td><td>Check the fuse, the trigger input and the 5 V rail.</td></tr>
+    <tr><td>Output cannot be switched off</td><td>Stop using the board and check Q2 for a short.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
+
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://raw.githubusercontent.com/Ccecil/Flambegate/636f6ce4abb2750abbd326615f91eb67bd025ac0/HighSideFet.kicad_pcb">HighSideFet.kicad_pcb</a></td><td>Design source</td></tr>
+    <tr><td><a href="/images/extensions/historical-flambegate/guides/native-contact-reference/native-source-and-notices.zip">Download the unmodified native source, upstream licence and drawing notice</a></td><td>Download</td></tr>
+    <tr><td><a href="https://raw.githubusercontent.com/Ccecil/Flambegate/636f6ce4abb2750abbd326615f91eb67bd025ac0/HighSideFet.kicad_sch">HighSideFet.kicad_sch</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://raw.githubusercontent.com/Ccecil/Flambegate/636f6ce4abb2750abbd326615f91eb67bd025ac0/README.md">README.md</a></td><td>Design source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+Outline and holes from the original board file. Millimetres, seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 424" role="img" aria-labelledby="xb-l-flambegate-mount-t">
+  <title id="xb-l-flambegate-mount-t">Mounting drawing of the historical-flambegate, component side: outline 55 by 26 millimetres with 2 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="180.0" y="78.0" width="600.0" height="283.6" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M180.0 56H780.0"/><path d="M180.0 50V62"/><path d="M780.0 50V62"/><path d="M806.0 78.0V361.6"/><path d="M800.0 78.0h12"/><path d="M800.0 361.6h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">55</text>
+  <text x="818.0" y="224.8" font-size="15" font-weight="700" fill="#e6ebf2">26</text>
+  <circle cx="180.0" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="168.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M122.0 104.0h30" fill="none"/><path d="M156.0 104.0l-8 -4v8z"/><path d="M122.0 104.0v30" fill="none"/><path d="M122.0 138.0l-4 -8h8z"/></g>
+  <text x="160.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="118.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="207.3" cy="334.4" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M189.6 334.4h35.3M207.3 316.7v35.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="193.6" y="310.7" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  2.50, 23.50</text>
+  <circle cx="752.7" cy="334.4" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M735.1 334.4h35.3M752.7 316.7v35.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="766.4" y="310.7" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  52.50, 23.50</text>
+  <text x="480.0" y="391.6" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 55 × 26&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>2.50</td><td>23.50</td><td>2.5&nbsp;mm, not plated</td><td>Mounting</td></tr>
+    <tr><td>2</td><td>52.50</td><td>23.50</td><td>2.5&nbsp;mm, not plated</td><td>Mounting</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Only what the design source states or the circuit fixes. Blank cells are not specified.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Voltage, current and temperature limits</td><td>Whole board</td><td>—</td><td>—</td><td>—</td><td>Not specified in the source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Design source {#origin}
+
+Third-party design by Chris Cecil: [original board file](https://raw.githubusercontent.com/Ccecil/Flambegate/636f6ce4abb2750abbd326615f91eb67bd025ac0/HighSideFet.kicad_pcb) (<code>HighSideFet.kicad_pcb</code>). It is a separate hardware design, not a current Smoothieware board.
+See all boards on the [extension boards](/extension-boards) page.

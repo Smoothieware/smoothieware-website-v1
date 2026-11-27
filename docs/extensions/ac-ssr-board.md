@@ -20,7 +20,7 @@ permalink: /extensions/ac-ssr-board
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/ac-ssr-board/ac-ssr-board-diagram.png" alt="Top view of the AC solid-state relay board: a Gadgeteer socket and a thermostat connector at the left, a triac and its parts in the middle, a two-screw mains terminal at the bottom right and a large fuse holder at the right.">
+    <img src="/images/extensions/ac-ssr-board/ac-ssr-board-diagram.webp" alt="Top view of the AC solid-state relay board: a Gadgeteer socket and a thermostat connector at the left, a triac and its parts in the middle, a two-screw mains terminal at the bottom right and a large fuse holder at the right.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -95,7 +95,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/ac-ssr-board/ac-ssr-board-diagram.png" alt="Top view of the relay board with sixteen numbered markers that are explained in the list below.">
+      <img src="/images/extensions/ac-ssr-board/ac-ssr-board-diagram.webp" alt="Top view of the relay board with sixteen numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pl" href="#tour-1" style="left:8.0%;top:51.7%" aria-label="1: control socket">1<span class="xb-pop"><b>Control socket</b> — the 10-contact Gadgeteer socket. Only three contacts are used: 5&nbsp;V on contact 2, the enable signal on contact 3 and ground on contact 10. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pl" href="#tour-2" style="left:8.9%;top:75.8%" aria-label="2: thermostat connector">2<span class="xb-pop"><b>Thermostat connector</b> — a two-pin connector for a normally-closed thermostat. It sits in the supply of the command circuit: when it opens, the board cannot switch on, whatever the firmware asks.</span></a>
       <a class="xb-mk xb-pl" href="#tour-3" style="left:18.8%;top:78.5%" aria-label="3: amber command light">3<span class="xb-pop"><b>Amber command light</b> — lit while the command circuit is carrying current. <i>It reports the low-voltage command only. It does not show whether the load is on or off.</i></span></a>
@@ -430,7 +430,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/ac-ssr-board/ac-ssr-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
     <tr><td><a href="/images/extensions/ac-ssr-board/ac-ssr-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/ac-ssr-board/ac-ssr-board-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/ac-ssr-board/ac-ssr-board-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

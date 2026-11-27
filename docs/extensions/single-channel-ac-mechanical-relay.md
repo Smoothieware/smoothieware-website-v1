@@ -431,8 +431,6 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 </table></div>
 {:/nomarkdown}
 
-The KiCad design files will be linked here when the board's repository is published.
-
 ## Appendix: mounting dimensions {#mounting}
 
 For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the corner marked 0, 0 with the board seen from the component side.

@@ -21,7 +21,7 @@ permalink: /extensions/differential-spi-signal-extender
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/differential-spi-signal-extender/v18/differential-spi-signal-extender-host-diagram.png" alt="Top view of the host board: a ten-contact socket, two green terminals and a cable jack.">
+    <img src="/images/extensions/differential-spi-signal-extender/v18/differential-spi-signal-extender-host-diagram.webp" alt="Top view of the host board: a ten-contact socket, two green terminals and a cable jack.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -86,7 +86,7 @@ The host board sits by the controller, the remote board by the peripheral.
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/differential-spi-signal-extender/v18/differential-spi-signal-extender-host-diagram.png" alt="Top view of the host board with numbered markers.">
+      <img src="/images/extensions/differential-spi-signal-extender/v18/differential-spi-signal-extender-host-diagram.webp" alt="Top view of the host board with numbered markers.">
       <a class="xb-mk xb-pb" href="#tour-1" style="left:50.0%;top:11.8%" aria-label="1: Controller socket (J1)">1<span class="xb-pop"><b>Controller socket (J1)</b> — SPI from the controller.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-2" style="left:12.2%;top:37.0%" aria-label="2: 12 V input (J3)">2<span class="xb-pop"><b>12 V input (J3)</b> — positive and ground.</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-3" style="left:87.7%;top:43.7%" aria-label="3: 12 V output (J4)">3<span class="xb-pop"><b>12 V output (J4)</b> — to the remote board.</span></a>
@@ -115,7 +115,7 @@ The host board sits by the controller, the remote board by the peripheral.
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/differential-spi-signal-extender/v18/differential-spi-signal-extender-remote-diagram.png" alt="Top view of the remote board with numbered markers.">
+      <img src="/images/extensions/differential-spi-signal-extender/v18/differential-spi-signal-extender-remote-diagram.webp" alt="Top view of the remote board with numbered markers.">
       <a class="xb-mk xb-pb" href="#tour-8" style="left:50.0%;top:11.8%" aria-label="8: Peripheral socket (J1)">8<span class="xb-pop"><b>Peripheral socket (J1)</b> — supplies and SPI.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-9" style="left:12.2%;top:37.0%" aria-label="9: 12 V input (J3)">9<span class="xb-pop"><b>12 V input (J3)</b> — from the host&rsquo;s J4.</span></a>
       <a class="xb-mk" href="#tour-10" style="left:43.1%;top:81.9%" aria-label="10: Link jack (J2)">10<span class="xb-pop"><b>Link jack (J2)</b> — data pairs.</span></a>
@@ -204,10 +204,10 @@ The cable carries no power or ground: the 12&nbsp;V lead and its return are need
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>Both boards</b><span></span></div>
+  <div class="xb-card"><b>Both boards</b><span>One pair, built from the design files in Downloads</span></div>
   <div class="xb-card"><b>A Cat5e cable</b><span>Straight-through, 25&nbsp;m at most.</span></div>
   <div class="xb-card"><b>A two-wire power lead</b><span>Host J4 to remote J3.</span></div>
-  <div class="xb-card"><b>A 12 V supply</b><span></span></div>
+  <div class="xb-card"><b>A 12 V supply</b><span>10.8 to 13.2&nbsp;V, into host J3.</span></div>
   <div class="xb-card"><b>An SPI peripheral</b><span>Works at 500&nbsp;kHz or below.</span></div>
 </div>
 {:/nomarkdown}
@@ -257,6 +257,8 @@ The pair needs no driver. Configure the peripheral&rsquo;s own driver on the SPI
 
 Each SPI line is converted to a differential pair and back. The clock is delayed on the way out and the reply is delayed on the way back, which is why the clock rate is limited. The host buffer drives MISO only while chip select is low; the remote board holds its return pair high while chip select is high.
 
+{% include _includes/extender-board-comparison.html %}
+
 ## Troubleshooting {#troubleshooting}
 
 {::nomarkdown}
@@ -280,10 +282,10 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/differential-spi-signal-extender/v18/differential-spi-signal-extender-host-schematic.pdf">Schematic (PDF, host)</a></td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/differential-spi-signal-extender/v18/differential-spi-signal-extender-host-bom.csv">Parts list (CSV, host)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/differential-spi-signal-extender/v18/differential-spi-signal-extender-host-diagram.png">Board drawing (PNG, host)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/differential-spi-signal-extender/v18/differential-spi-signal-extender-host-diagram.webp">Board drawing (PNG, host)</a></td><td>The top view used on this page</td></tr>
     <tr><td><a href="/images/extensions/differential-spi-signal-extender/v18/differential-spi-signal-extender-remote-schematic.pdf">Schematic (PDF, remote)</a></td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/differential-spi-signal-extender/v18/differential-spi-signal-extender-remote-bom.csv">Parts list (CSV, remote)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/differential-spi-signal-extender/v18/differential-spi-signal-extender-remote-diagram.png">Board drawing (PNG, remote)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/differential-spi-signal-extender/v18/differential-spi-signal-extender-remote-diagram.webp">Board drawing (PNG, remote)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

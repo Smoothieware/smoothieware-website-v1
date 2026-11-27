@@ -1,182 +1,289 @@
 ---
 layout: default
 title: "Five-port Gadgeteer header adapter"
+description: "Passive carrier turning five ten-contact ports into 2.54 mm socket rows: pinout."
 permalink: /extensions/historical-five-port-gadgeteer-header-adapter
 ---
 
-# Five-port Gadgeteer header adapter
+{% include _includes/extension-board-page.html %}
 
-This passive carrier converts five ten-contact Gadgeteer ports into seven-signal 2.54 mm socket rows and shared power breakouts. It does not create 35 new MCU signals; each row still depends on the host port attached to its corresponding input. The source states V2 use and possible compatibility with standard Gadgeteer hosts.
-
-## Origin and original host
-
-This guide documents Ccecil’s design; see the [original source](https://github.com/Ccecil/HeaderAdapter/tree/aa50fd44325f95268834b9adbace3fd9e585a2f7). The design targets the Smoothieboard V2/Gadgeteer era. That does not make it compatible with every V2 Prime board, cable or firmware build.
-
-## Interfaces, power and limitations
-
-J1–J5 each use 1 3.3 V, 2 5 V, 3–9 that port’s seven signals, 10 ground. J8/J9/J11/J12/J13 correspond to J1/J2/J3/J4/J5 signals3–9 in order. J6 is 3.3 V/ground; J7 is 5 V/ground. The PCB contains three physical footprints all named J10 with the same five-contact power map. This duplicate reference must be disambiguated by geometry before drawing. Rails are common across the inputs, so connecting independently powered hosts may parallel their regulators.
-
-## Board-reference diagram
-
-These reference sheets show every connector contact. The three footprints all named J10 are identified here as **J10A, J10B and J10C**, using their distinct physical locations; these suffixes disambiguate this reference and do not rename the original design. Connector locations and contact numbers are not a cable mating-face guarantee.
-
-**J6 and J7 use JST-XH footprints at 2.50 mm pitch, not 2.54 mm.** Do not infer a mating part or power-flow direction from the illustration. Shared rails can backfeed separately powered hosts; do not combine power sources.
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-overview" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/overview.png" title="Five-port Gadgeteer adapter overview" alt="Five-port Gadgeteer adapter overview" caption="Passive reference: five host ports route their own seven signal lines to output rows. It does not create additional GPIOs, isolation or a multi-host power system." width=420 %}
-
-### Five host headers
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j1-pins-1" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j1-pins-1.png" title="Host J1 · contact group 1" alt="Host J1 · contact group 1" caption="Contacts 1 and 2 carry separate 3.3 V and 5 V rails, 3–9 carry that port’s seven signals, and 10 is ground. Check the complete cable numbering and common-rail supply before connection." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j1-pins-2" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j1-pins-2.png" title="Host J1 · contact group 2" alt="Host J1 · contact group 2" caption="Contacts 1 and 2 carry separate 3.3 V and 5 V rails, 3–9 carry that port’s seven signals, and 10 is ground. Check the complete cable numbering and common-rail supply before connection." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j2-pins-1" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j2-pins-1.png" title="Host J2 · contact group 1" alt="Host J2 · contact group 1" caption="Contacts 1 and 2 carry separate 3.3 V and 5 V rails, 3–9 carry that port’s seven signals, and 10 is ground. Check the complete cable numbering and common-rail supply before connection." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j2-pins-2" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j2-pins-2.png" title="Host J2 · contact group 2" alt="Host J2 · contact group 2" caption="Contacts 1 and 2 carry separate 3.3 V and 5 V rails, 3–9 carry that port’s seven signals, and 10 is ground. Check the complete cable numbering and common-rail supply before connection." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j3-pins-1" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j3-pins-1.png" title="Host J3 · contact group 1" alt="Host J3 · contact group 1" caption="Contacts 1 and 2 carry separate 3.3 V and 5 V rails, 3–9 carry that port’s seven signals, and 10 is ground. Check the complete cable numbering and common-rail supply before connection." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j3-pins-2" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j3-pins-2.png" title="Host J3 · contact group 2" alt="Host J3 · contact group 2" caption="Contacts 1 and 2 carry separate 3.3 V and 5 V rails, 3–9 carry that port’s seven signals, and 10 is ground. Check the complete cable numbering and common-rail supply before connection." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j4-pins-1" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j4-pins-1.png" title="Host J4 · contact group 1" alt="Host J4 · contact group 1" caption="Contacts 1 and 2 carry separate 3.3 V and 5 V rails, 3–9 carry that port’s seven signals, and 10 is ground. Check the complete cable numbering and common-rail supply before connection." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j4-pins-2" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j4-pins-2.png" title="Host J4 · contact group 2" alt="Host J4 · contact group 2" caption="Contacts 1 and 2 carry separate 3.3 V and 5 V rails, 3–9 carry that port’s seven signals, and 10 is ground. Check the complete cable numbering and common-rail supply before connection." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j5-pins-1" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j5-pins-1.png" title="Host J5 · contact group 1" alt="Host J5 · contact group 1" caption="Contacts 1 and 2 carry separate 3.3 V and 5 V rails, 3–9 carry that port’s seven signals, and 10 is ground. Check the complete cable numbering and common-rail supply before connection." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j5-pins-2" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j5-pins-2.png" title="Host J5 · contact group 2" alt="Host J5 · contact group 2" caption="Contacts 1 and 2 carry separate 3.3 V and 5 V rails, 3–9 carry that port’s seven signals, and 10 is ground. Check the complete cable numbering and common-rail supply before connection." width=420 %}
-
-### Seven-signal output rows
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j8-pins-1" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j8-pins-1.png" title="Signal row J8 · contact group 1" alt="Signal row J8 · contact group 1" caption="J8 contacts 1–7 correspond in order to J1 contacts 3–9. These are passive paths from that host port; pin functions, bias and firmware ownership depend on the selected controller." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j8-pins-2" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j8-pins-2.png" title="Signal row J8 · contact group 2" alt="Signal row J8 · contact group 2" caption="J8 contacts 1–7 correspond in order to J1 contacts 3–9. These are passive paths from that host port; pin functions, bias and firmware ownership depend on the selected controller." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j9-pins-1" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j9-pins-1.png" title="Signal row J9 · contact group 1" alt="Signal row J9 · contact group 1" caption="J9 contacts 1–7 correspond in order to J2 contacts 3–9. These are passive paths from that host port; pin functions, bias and firmware ownership depend on the selected controller." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j9-pins-2" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j9-pins-2.png" title="Signal row J9 · contact group 2" alt="Signal row J9 · contact group 2" caption="J9 contacts 1–7 correspond in order to J2 contacts 3–9. These are passive paths from that host port; pin functions, bias and firmware ownership depend on the selected controller." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j11-pins-1" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j11-pins-1.png" title="Signal row J11 · contact group 1" alt="Signal row J11 · contact group 1" caption="J11 contacts 1–7 correspond in order to J3 contacts 3–9. These are passive paths from that host port; pin functions, bias and firmware ownership depend on the selected controller." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j11-pins-2" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j11-pins-2.png" title="Signal row J11 · contact group 2" alt="Signal row J11 · contact group 2" caption="J11 contacts 1–7 correspond in order to J3 contacts 3–9. These are passive paths from that host port; pin functions, bias and firmware ownership depend on the selected controller." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j12-pins-1" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j12-pins-1.png" title="Signal row J12 · contact group 1" alt="Signal row J12 · contact group 1" caption="J12 contacts 1–7 correspond in order to J4 contacts 3–9. These are passive paths from that host port; pin functions, bias and firmware ownership depend on the selected controller." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j12-pins-2" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j12-pins-2.png" title="Signal row J12 · contact group 2" alt="Signal row J12 · contact group 2" caption="J12 contacts 1–7 correspond in order to J4 contacts 3–9. These are passive paths from that host port; pin functions, bias and firmware ownership depend on the selected controller." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j13-pins-1" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j13-pins-1.png" title="Signal row J13 · contact group 1" alt="Signal row J13 · contact group 1" caption="J13 contacts 1–7 correspond in order to J5 contacts 3–9. These are passive paths from that host port; pin functions, bias and firmware ownership depend on the selected controller." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j13-pins-2" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j13-pins-2.png" title="Signal row J13 · contact group 2" alt="Signal row J13 · contact group 2" caption="J13 contacts 1–7 correspond in order to J5 contacts 3–9. These are passive paths from that host port; pin functions, bias and firmware ownership depend on the selected controller." width=420 %}
-
-### Shared power breakouts
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j6-pins-1" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j6-pins-1.png" title="J6 JST-XH power breakout" alt="J6 JST-XH power breakout" caption="JST-XH footprint: two contacts at 2.50 mm pitch. 3.3 V and ground nets do not specify current capacity, flow direction or mating hardware. Do not parallel supplies." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j7-pins-1" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j7-pins-1.png" title="J7 JST-XH power breakout" alt="J7 JST-XH power breakout" caption="JST-XH footprint: two contacts at 2.50 mm pitch. 5 V and ground nets do not specify current capacity, flow direction or mating hardware. Do not parallel supplies." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j10a-pins-1" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j10a-pins-1.png" title="Physical bank J10A" alt="Physical bank J10A" caption="One of three physically separate footprints all named J10. Follow this sheet’s highlighted location and numbered contacts; identical reference text or net membership does not make the banks physically interchangeable." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j10b-pins-1" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j10b-pins-1.png" title="Physical bank J10B" alt="Physical bank J10B" caption="One of three physically separate footprints all named J10. Follow this sheet’s highlighted location and numbered contacts; identical reference text or net membership does not make the banks physically interchangeable." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-j10c-pins-1" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/j10c-pins-1.png" title="Physical bank J10C" alt="Physical bank J10C" caption="One of three physically separate footprints all named J10. Follow this sheet’s highlighted location and numbered contacts; identical reference text or net membership does not make the banks physically interchangeable." width=420 %}
-
-### Mounting and rail limits
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-mounting-limits" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/mounting-limits.png" title="Mounting holes and mechanical limits" alt="Mounting holes and mechanical limits" caption="Unnumbered mounting holes have no assigned electrical nets. Fasteners, clearances, connector fit and cable orientation must be checked." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-reference-rail-limits" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/annotated-reference/rail-limits.png" title="Shared rails and use limits" alt="Shared rails and use limits" caption="Rails are common across host ports and power breakouts. Do not parallel independently powered hosts or assume a regulator or isolation." width=420 %}
-
-### Supplementary logical circuits
-
-These circuit sheets explain the board connectivity. They do not copy the original board artwork, placement or native files and supplement the board-reference sheets above. Use the contact inventory and all companion sheets together. Check physical cable orientation before wiring.
-
-Source: [original circuit](https://github.com/Ccecil/HeaderAdapter/blob/aa50fd44325f95268834b9adbace3fd9e585a2f7/HeaderAdapter.kicad_pcb).
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-gadgeteer-header-adapter-factual-j1-3" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/factual-circuits/j1-3-font-matched.png" title="J1 signal breakout" alt="J1 signal breakout — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-gadgeteer-header-adapter-factual-j1-7" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/factual-circuits/j1-7-font-matched.png" title="J1 signal breakout" alt="J1 signal breakout — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-gadgeteer-header-adapter-factual-j2-3" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/factual-circuits/j2-3-font-matched.png" title="J2 signal breakout" alt="J2 signal breakout — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-gadgeteer-header-adapter-factual-j2-7" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/factual-circuits/j2-7-font-matched.png" title="J2 signal breakout" alt="J2 signal breakout — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-gadgeteer-header-adapter-factual-j3-3" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/factual-circuits/j3-3-font-matched.png" title="J3 signal breakout" alt="J3 signal breakout — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-gadgeteer-header-adapter-factual-j3-7" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/factual-circuits/j3-7-font-matched.png" title="J3 signal breakout" alt="J3 signal breakout — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-gadgeteer-header-adapter-factual-j4-3" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/factual-circuits/j4-3-font-matched.png" title="J4 signal breakout" alt="J4 signal breakout — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-gadgeteer-header-adapter-factual-j4-7" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/factual-circuits/j4-7-font-matched.png" title="J4 signal breakout" alt="J4 signal breakout — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-gadgeteer-header-adapter-factual-j5-3" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/factual-circuits/j5-3-font-matched.png" title="J5 signal breakout" alt="J5 signal breakout — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-gadgeteer-header-adapter-factual-j5-7" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/factual-circuits/j5-7-font-matched.png" title="J5 signal breakout" alt="J5 signal breakout — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-gadgeteer-header-adapter-factual-common-1" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/factual-circuits/common-1-font-matched.png" title="3.3V shared contact groups" alt="3.3V shared contact groups — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-gadgeteer-header-adapter-factual-common-2" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/factual-circuits/common-2-font-matched.png" title="5V shared contact groups" alt="5V shared contact groups — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-gadgeteer-header-adapter-factual-common-10" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/factual-circuits/common-10-font-matched.png" title="Ground shared contact groups" alt="Ground shared contact groups — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-five-port-gadgeteer-header-adapter-factual-instance-identity" src="/images/extensions/historical-five-port-gadgeteer-header-adapter/guides/factual-circuits/instance-identity-font-matched.png" title="Repeated printed J10 references" alt="Repeated printed J10 references — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-### Numbered source contacts and controls
-
-These are net memberships from the design files. Unassigned/unconnected pads must not receive invented connections. Auto-generated net names require schematic interpretation; they are not cable colours. Repeated footprints or pad numbers require geometric identity checks before wiring.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Design file | Connector/control | Label | Contact → net |
-|---|---|---|---|
-| HeaderAdapter.kicad_pcb | J9 | Conn_01x07_Socket | 1: J2P3; 2: J2P4; 3: J2P5; 4: J2P6; 5: J2P7; 6: J2P8; 7: J2P9 |
-| HeaderAdapter.kicad_pcb | J7 | Conn_01x02_Socket | 1: +5V; 2: GND |
-| HeaderAdapter.kicad_pcb | J4 | Conn_02x05_Odd_Even | 1: +3.3V; 2: +5V; 3: J4P3; 4: J4P4; 5: J4P5; 6: J4P6; 7: J4P7; 8: J4P8; 9: J4P9; 10: GND |
-| HeaderAdapter.kicad_pcb | J12 | Conn_01x07_Socket | 1: J4P3; 2: J4P4; 3: J4P5; 4: J4P6; 5: J4P7; 6: J4P8; 7: J4P9 |
-| HeaderAdapter.kicad_pcb | J10 | Conn_01x05_Socket | 1: +3.3V; 2: +3.3V; 3: +5V; 4: GND; 5: GND |
-| HeaderAdapter.kicad_pcb | J3 | Conn_02x05_Odd_Even | 1: +3.3V; 2: +5V; 3: J3P3; 4: J3P4; 5: J3P5; 6: J3P6; 7: J3P7; 8: J3P8; 9: J3P9; 10: GND |
-| HeaderAdapter.kicad_pcb | J2 | Conn_02x05_Odd_Even | 1: +3.3V; 2: +5V; 3: J2P3; 4: J2P4; 5: J2P5; 6: J2P6; 7: J2P7; 8: J2P8; 9: J2P9; 10: GND |
-| HeaderAdapter.kicad_pcb | J5 | Conn_02x05_Odd_Even | 1: +3.3V; 2: +5V; 3: J5P3; 4: J5P4; 5: J5P5; 6: J5P6; 7: J5P7; 8: J5P8; 9: J5P9; 10: GND |
-| HeaderAdapter.kicad_pcb | J1 | Conn_02x05_Odd_Even | 1: +3.3V; 2: +5V; 3: J1P3; 4: J1P4; 5: J1P5; 6: J1P6; 7: J1P7; 8: J1P8; 9: J1P9; 10: GND |
-| HeaderAdapter.kicad_pcb | J11 | Conn_01x07_Socket | 1: J3P3; 2: J3P4; 3: J3P5; 4: J3P6; 5: J3P7; 6: J3P8; 7: J3P9 |
-| HeaderAdapter.kicad_pcb | J10 | Conn_01x05_Socket | 1: +3.3V; 2: +3.3V; 3: +5V; 4: GND; 5: GND |
-| HeaderAdapter.kicad_pcb | J6 | Conn_01x02_Socket | 1: +3.3V; 2: GND |
-| HeaderAdapter.kicad_pcb | J8 | Conn_01x07_Socket | 1: J1P3; 2: J1P4; 3: J1P5; 4: J1P6; 5: J1P7; 6: J1P8; 7: J1P9 |
-| HeaderAdapter.kicad_pcb | J10 | Conn_01x05_Socket | 1: +3.3V; 2: +3.3V; 3: +5V; 4: GND; 5: GND |
-| HeaderAdapter.kicad_pcb | J13 | Conn_01x07_Socket | 1: J5P3; 2: J5P4; 3: J5P5; 4: J5P6; 5: J5P7; 6: J5P8; 7: J5P9 |
-
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Wiring</p>
+    <h1 id="historical-five-port-gadgeteer-header-adapter">Five-port Gadgeteer header adapter</h1>
+    <p class="xb-lead">Brings the signals of five ten-contact ports out to socket rows, with shared power breakouts.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#downloads">Downloads</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/historical-five-port-gadgeteer-header-adapter/directory-board-render.png" alt="Top view of the Five-port Gadgeteer header adapter board">
+    <figcaption>Top view drawn from the original board file. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-</details>
+<div class="xb-stats">
+  <div class="xb-stat"><b>5</b><span>ports</span></div>
+  <div class="xb-stat"><b>35</b><span>signal sockets</span></div>
+  <div class="xb-stat"><b>2.54 mm</b><span>socket rows</span></div>
+  <div class="xb-stat"><b>2.50 mm</b><span>J6/J7 pitch</span></div>
+  <div class="xb-stat"><b>40 × 65 mm</b><span>board size</span></div>
+  <div class="xb-stat"><b>0</b><span>active parts</span></div>
+</div>
 
-## Practical use with Smoothieboard V2 Prime
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting dimensions</a>
+  <a href="#electrical">Electrical specifications</a>
+</nav>
+{:/nomarkdown}
 
-Do not route unknown conductors by guesswork.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <b>The supply rails of all five ports are joined.</b> Do not connect two separately powered hosts, or you will back-feed one from the other. This is a design by Chris Cecil, not a current Smoothieware board.
+</sl-alert>
 
-For a one-port dry-contact setup, leave four host inputs and unused power headers disconnected. Connect only Prime GF/J37 to adapter J1 after verifying all ten contacts. Adapter J8.1 corresponds to J1.3/PB1; a normally-open isolated contact may connect between J8.1 and the chosen ground breakout after bias and polarity are configured. Never use a 3.3/5 V socket as ground. Full five-port operation requires checking that all host rail feeds are the same source and their combined cable current is within limits.
+## Tech specs {#specs}
 
-GF/J37 examples refer to Prime: contacts 1/2/10 are limited 3.3 V/limited 5 V/ground; contacts 3–9 are PB1/PJ4/PA4/PG0/PJ3/PG1/PJ2. The host header is unshrouded. Verify physical numbering, polarity, per-rail current allowance and free-pin ownership before connection. This pin map does not establish hardware SPI, UART, CAN or PWM availability on an arbitrary contact.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Function</td><td>Passive port-to-socket carrier</td></tr>
+    <tr><td>Ports</td><td>J1–J5, ten contacts</td></tr>
+    <tr><td>Signal rows</td><td>J8, J9, J11, J12, J13</td></tr>
+    <tr><td>Power</td><td>J6 (3.3 V), J7 (5 V), and three five-contact footprints all marked J10</td></tr>
+    <tr><td>Pitch</td><td>J6 and J7 are JST XH, 2.50 mm</td></tr>
+    <tr><td>Size</td><td>40 × 65 mm</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Smoothieware support and example boundary
+## Board tour {#tour}
 
-No adapter driver is needed. A V2 buttonbox input suits a grounded dry contact, with a free pin and pull-up; this does not cover arbitrary peripheral protocols. No multi-port firmware reservation is automatic.
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/historical-five-port-gadgeteer-header-adapter/directory-board-render.png" alt="Annotated top view of the Five-port Gadgeteer header adapter board">
+      <a class="xb-mk xb-pb" href="#tour-1" style="left:31.7%;top:27.2%" aria-label="1: Port 1">1<span class="xb-pop"><b>Port 1</b> — Feeds row J8.</span></a>
+      <a class="xb-mk" href="#tour-2" style="left:31.6%;top:75.2%" aria-label="2: Port 5">2<span class="xb-pop"><b>Port 5</b> — Feeds row J13.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-3" style="left:83.9%;top:29.9%" aria-label="3: Row J8">3<span class="xb-pop"><b>Row J8</b> — Port 1 signals 3–9.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-4" style="left:18.2%;top:11.9%" aria-label="4: J6">4<span class="xb-pop"><b>J6</b> — 3.3 V and ground.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-5" style="left:18.1%;top:86.4%" aria-label="5: J7">5<span class="xb-pop"><b>J7</b> — 5 V and ground.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-6" style="left:87.5%;top:9.2%" aria-label="6: J10 power sockets">6<span class="xb-pop"><b>J10 power sockets</b> — Three footprints share this name.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-7" style="left:83.9%;top:41.0%" aria-label="7: Connector J9">7<span class="xb-pop"><b>Connector J9</b> — Connector J9. Connects to <code>J2P3</code>, <code>J2P4</code>, <code>J2P5</code>, <code>J2P6</code>, <code>J2P7</code> and more.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-8" style="left:31.8%;top:39.1%" aria-label="8: Resistor J2">8<span class="xb-pop"><b>Resistor J2</b> — Resistor J2. Connects to <code>+3.3V</code>, <code>+5V</code>, <code>J2P3</code>, <code>J2P4</code>, <code>J2P5</code> and more.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Port 1</b> — Feeds row J8.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Port 5</b> — Feeds row J13.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Row J8</b> — Port 1 signals 3–9.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>J6</b> — 3.3 V and ground.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>J7</b> — 5 V and ground.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>J10 power sockets</b> — Three footprints share this name.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Connector J9</b> — Connector J9. Connects to <code>J2P3</code>, <code>J2P4</code>, <code>J2P5</code>, <code>J2P6</code>, <code>J2P7</code> and more.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Resistor J2</b> — Resistor J2. Connects to <code>+3.3V</code>, <code>+5V</code>, <code>J2P3</code>, <code>J2P4</code>, <code>J2P5</code> and more.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-The Smoothieware details here follow SmoothieV2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`.
+## Pinout {#pinout}
 
-## Requirements
+<span id="connect-and-try-it"></span>
 
-The J10 banks are told apart by position in the reference sheets; check physical mating. Check shared-rail backfeed and current, cable orientation and the allocation of the five host ports before connecting.
+### Port J1
 
-## Sources and attribution
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+3.3V</code></td></tr>
+    <tr><td>2</td><td><code>+5V</code></td></tr>
+    <tr><td>3</td><td><code>J1P3</code></td></tr>
+    <tr><td>4</td><td><code>J1P4</code></td></tr>
+    <tr><td>5</td><td><code>J1P5</code></td></tr>
+    <tr><td>6</td><td><code>J1P6</code></td></tr>
+    <tr><td>7</td><td><code>J1P7</code></td></tr>
+    <tr><td>8</td><td><code>J1P8</code></td></tr>
+    <tr><td>9</td><td><code>J1P9</code></td></tr>
+    <tr><td>10</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-- [Ccecil upstream project](https://github.com/Ccecil/HeaderAdapter)
-- [Original source](https://github.com/Ccecil/HeaderAdapter/tree/aa50fd44325f95268834b9adbace3fd9e585a2f7)
-- [Original HeaderAdapter.kicad_pcb](https://github.com/Ccecil/HeaderAdapter/blob/aa50fd44325f95268834b9adbace3fd9e585a2f7/HeaderAdapter.kicad_pcb)
-- [Original HeaderAdapter.kicad_sch](https://github.com/Ccecil/HeaderAdapter/blob/aa50fd44325f95268834b9adbace3fd9e585a2f7/HeaderAdapter.kicad_sch)
-- [Original README.md](https://github.com/Ccecil/HeaderAdapter/blob/aa50fd44325f95268834b9adbace3fd9e585a2f7/README.md)
+### Signal row J8
 
-The upstream project includes no license file, which does not place it in the public domain. Source attribution is retained for these reference sheets. Modern counterpart guides are functional comparisons only and do not imply matching pinouts.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J8 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>J1P3</code></td></tr>
+    <tr><td>2</td><td><code>J1P4</code></td></tr>
+    <tr><td>3</td><td><code>J1P5</code></td></tr>
+    <tr><td>4</td><td><code>J1P6</code></td></tr>
+    <tr><td>5</td><td><code>J1P7</code></td></tr>
+    <tr><td>6</td><td><code>J1P8</code></td></tr>
+    <tr><td>7</td><td><code>J1P9</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-[All extension boards](/extension-boards)
+J2–J5 and J9, J11–J13 follow the same pattern.
+
+### Power J6
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J6 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+3.3V</code></td></tr>
+    <tr><td>2</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Power J7
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J7 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+5V</code></td></tr>
+    <tr><td>2</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Each J10 footprint
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J10 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+3.3V</code></td></tr>
+    <tr><td>2</td><td><code>+3.3V</code></td></tr>
+    <tr><td>3</td><td><code>+5V</code></td></tr>
+    <tr><td>4</td><td><code>GND</code></td></tr>
+    <tr><td>5</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## What you need {#what-you-need}
+
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>Adapter board</b><span>Built from the design files</span></div>
+  <div class="xb-card"><b>Ribbon cable or leads</b><span>Verified contact by contact</span></div>
+</div>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+<span id="smoothieware-use"></span>
+
+This passive board needs no setting of its own. Configure the pin each signal comes from as you would without the board.
+
+## How it works {#how-it-works}
+
+Contacts 3–9 of each port run straight to one seven-contact row: J1 to J8, J2 to J9, J3 to J11, J4 to J12 and J5 to J13. All 3.3 V, 5 V and ground contacts are common.
+
+## Troubleshooting {#troubleshooting}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Nothing responds</td><td>With power off, check continuity along each lead and board path against the pinout tables. Confirm which end of the connector is contact 1.</td></tr>
+    <tr><td>Signal appears on the wrong row</td><td>J10 is skipped in the row numbering: check the mapping above.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
+
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/Ccecil/HeaderAdapter/tree/aa50fd44325f95268834b9adbace3fd9e585a2f7">original source</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/HeaderAdapter/blob/aa50fd44325f95268834b9adbace3fd9e585a2f7/HeaderAdapter.kicad_pcb">original circuit</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/HeaderAdapter">Ccecil upstream project</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/HeaderAdapter/blob/aa50fd44325f95268834b9adbace3fd9e585a2f7/HeaderAdapter.kicad_sch">Original HeaderAdapter.kicad_sch</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/HeaderAdapter/blob/aa50fd44325f95268834b9adbace3fd9e585a2f7/README.md">Original README.md</a></td><td>Design source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+Outline and holes from the original board file. Millimetres, seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-ader-adapter-mount-t">
+  <title id="xb-ader-adapter-mount-t">Mounting drawing of the historical-five-port-gadgeteer-header-adapter, component side: outline 40 by 65 millimetres with 2 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="375.4" y="78.0" width="209.2" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M375.4 56H584.6"/><path d="M375.4 50V62"/><path d="M584.6 50V62"/><path d="M610.6 78.0V418.0"/><path d="M604.6 78.0h12"/><path d="M604.6 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">40</text>
+  <text x="622.6" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">65</text>
+  <circle cx="375.4" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="363.4" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M317.4 104.0h30" fill="none"/><path d="M351.4 104.0l-8 -4v8z"/><path d="M317.4 104.0v30" fill="none"/><path d="M317.4 138.0l-4 -8h8z"/></g>
+  <text x="355.4" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="313.4" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="473.7" cy="104.2" r="8.4" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M461.4 104.2h24.7M473.7 91.8v24.7" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="465.4" y="132.5" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  18.80, 5.00</text>
+  <circle cx="473.7" cy="391.8" r="8.4" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M461.4 391.8h24.7M473.7 379.5v24.7" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="465.4" y="373.5" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  18.80, 60.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 40 × 65&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>18.80</td><td>5.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>18.80</td><td>60.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Only what the design source states or the circuit fixes. Blank cells are not specified.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Voltage, current and temperature limits</td><td>Whole board</td><td>—</td><td>—</td><td>—</td><td>Not specified in the source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Design source {#origin}
+
+Designed by Chris Cecil: [original design files](https://github.com/Ccecil/HeaderAdapter/tree/aa50fd44325f95268834b9adbace3fd9e585a2f7). It was drawn for the Smoothieboard V2 Gadgeteer era; check every connection against your own controller.
+See all boards on the [extension boards](/extension-boards) page.

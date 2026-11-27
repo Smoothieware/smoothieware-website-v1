@@ -1,139 +1,265 @@
 ---
 layout: default
 title: "Extruder toolhead harness with motor provision"
+description: "Passive toolhead wiring board: pad names, connectors and the unconnected motor connector."
 permalink: /extensions/historical-extruder-toolhead-harness-with-motor
 ---
 
-# Extruder toolhead harness with motor provision
+{% include _includes/extension-board-page.html %}
 
-A passive toolhead wiring-distribution board consolidates heater, fans, thermistor, probe, servo and auxiliary5 V into one harness. Heater and fans share a common positive VBB conductor and retain individual switched returns. The README specifies 2 oz copper.
-
-## Original design and host
-
-This guide documents the [original Ccecil design](https://github.com/Ccecil/ExtruderBoardMotor-V0.1/tree/d8bdb5473508d71ce422fd9ebc1819611b4c32f7). It is a custom 3D-printer harness with no ten-contact Prime plug-and-play host interface.
-
-## Interfaces, power and limitations
-
-J1 has named rather than numbered harness pads: VBB,H−,F1,F2,T+,T−,P,S, 5V,GND. J3 is heater 1 H−, 2 VBB; J4 thermistor1 T+, 2 T−; J8/J9 fans1 VBB, 2 switched F1/F2; J5 probe1 P, 2 ground; J6 servo1 ground, 2 5 V, 3 signal; J10 auxiliary1 5 V, 2 ground. Critically, all numbered J2 motor pads are explicitly unconnected on the PCB. J2 provides no motor winding path.
-
-## Board-reference diagram
-
-These sheets show the board artwork and identify every pad. J1 and J2 custom connector bodies are not drawn; check connector body geometry, mating hardware and cable orientation on the physical parts.
-
-**All twelve numbered J2 pad instances are unconnected on the PCB.** Pad numbers 5–8 occur twice and are distinct physical pads; repeating a number does not create continuity. Never route motor current through J2.
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-motor-reference-overview" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/annotated-reference/overview.png" title="Toolhead harness with motor provision" alt="Toolhead harness with motor provision" caption="Passive harness board. Every J2 motor pad is unconnected; never route motor current through J2." width=420 %}
-
-### Main harness J1
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-motor-reference-j1-contacts-1" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/annotated-reference/j1-contacts-1.png" title="J1 named harness pads · group 1" alt="J1 named harness pads · group 1" caption="Named harness pads. Heater and fan switched returns are separate power paths, not GPIO. Check cable mating, current capacity and supply compatibility before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-motor-reference-j1-contacts-2" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/annotated-reference/j1-contacts-2.png" title="J1 named harness pads · group 2" alt="J1 named harness pads · group 2" caption="Named harness pads. Heater and fan switched returns are separate power paths, not GPIO. Check cable mating, current capacity and supply compatibility before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-motor-reference-j1-contacts-3" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/annotated-reference/j1-contacts-3.png" title="J1 named harness pads · group 3" alt="J1 named harness pads · group 3" caption="Named harness pads. Heater and fan switched returns are separate power paths, not GPIO. Check cable mating, current capacity and supply compatibility before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-motor-reference-j1-contacts-4" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/annotated-reference/j1-contacts-4.png" title="J1 named harness pads · group 4" alt="J1 named harness pads · group 4" caption="Named harness pads. Heater and fan switched returns are separate power paths, not GPIO. Check cable mating, current capacity and supply compatibility before wiring." width=420 %}
-
-### Unconnected motor-provision J2
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-motor-reference-j2-contacts-1" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/annotated-reference/j2-contacts-1.png" title="J2 unconnected pad instances · group 1" alt="J2 unconnected pad instances · group 1" caption="Every J2 numbered pad is unconnected. Duplicate numbers 5–8 are separate physical pads. Never route motor current through J2." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-motor-reference-j2-contacts-2" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/annotated-reference/j2-contacts-2.png" title="J2 unconnected pad instances · group 2" alt="J2 unconnected pad instances · group 2" caption="Every J2 numbered pad is unconnected. Duplicate numbers 5–8 are separate physical pads. Never route motor current through J2." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-motor-reference-j2-contacts-3" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/annotated-reference/j2-contacts-3.png" title="J2 unconnected pad instances · group 3" alt="J2 unconnected pad instances · group 3" caption="Every J2 numbered pad is unconnected. Duplicate numbers 5–8 are separate physical pads. Never route motor current through J2." width=420 %}
-
-### Toolhead connector details
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-motor-reference-j3-contacts-1" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/annotated-reference/j3-contacts-1.png" title="Heater J3" alt="Heater J3" caption="Numbered pad functions and nets. Check the connector, load voltage, signal interface, polarity, current capacity and heater protection before powering." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-motor-reference-j4-contacts-1" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/annotated-reference/j4-contacts-1.png" title="Thermistor J4" alt="Thermistor J4" caption="Numbered pad functions and nets. Check the connector, load voltage, signal interface, polarity, current capacity and heater protection before powering." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-motor-reference-j5-contacts-1" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/annotated-reference/j5-contacts-1.png" title="Probe J5" alt="Probe J5" caption="Numbered pad functions and nets. Check the connector, load voltage, signal interface, polarity, current capacity and heater protection before powering." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-motor-reference-j6-contacts-1" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/annotated-reference/j6-contacts-1.png" title="Servo J6" alt="Servo J6" caption="Numbered pad functions and nets. Check the connector, load voltage, signal interface, polarity, current capacity and heater protection before powering." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-motor-reference-j7-contacts-1" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/annotated-reference/j7-contacts-1.png" title="Connector J7" alt="Connector J7" caption="Numbered pad functions and nets. Check the connector, load voltage, signal interface, polarity, current capacity and heater protection before powering." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-motor-reference-j8-contacts-1" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/annotated-reference/j8-contacts-1.png" title="Fan J8" alt="Fan J8" caption="Numbered pad functions and nets. Check the connector, load voltage, signal interface, polarity, current capacity and heater protection before powering." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-motor-reference-j9-contacts-1" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/annotated-reference/j9-contacts-1.png" title="Fan J9" alt="Fan J9" caption="Numbered pad functions and nets. Check the connector, load voltage, signal interface, polarity, current capacity and heater protection before powering." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-motor-reference-j10-contacts-1" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/annotated-reference/j10-contacts-1.png" title="Auxiliary supply J10" alt="Auxiliary supply J10" caption="Numbered pad functions and nets. Check the connector, load voltage, signal interface, polarity, current capacity and heater protection before powering." width=420 %}
-
-### Harness limitations
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-motor-reference-limits" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/annotated-reference/limits.png" title="Unconnected motor and harness-use limits" alt="Unconnected motor and harness-use limits" caption="J2 carries no motor connections. Check copper and connector current limits, host mapping, thermal protection and physical mating before wiring." width=420 %}
-
-### Supplementary logical circuits
-
-These circuit sheets explain the board connectivity and supplement the annotated sheets above. Use the contact inventory and all companion sheets together.
-
-Source: [original circuit](https://github.com/Ccecil/ExtruderBoardMotor-V0.1/blob/d8bdb5473508d71ce422fd9ebc1819611b4c32f7/ExtruderBoard.kicad_pcb).
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-toolhead-harness-with-motor-factual-hotend" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/factual-circuits/hotend-font-matched.png" title="Hotend connector" alt="Hotend connector — logical connections, not physical board layout" caption="Logical connections only; this drawing does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-toolhead-harness-with-motor-factual-therm" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/factual-circuits/therm-font-matched.png" title="Thermistor connector" alt="Thermistor connector — logical connections, not physical board layout" caption="Logical connections only; this drawing does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-toolhead-harness-with-motor-factual-probe" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/factual-circuits/probe-font-matched.png" title="Probe connector" alt="Probe connector — logical connections, not physical board layout" caption="Logical connections only; this drawing does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-toolhead-harness-with-motor-factual-servo" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/factual-circuits/servo-font-matched.png" title="Servo connector" alt="Servo connector — logical connections, not physical board layout" caption="Logical connections only; this drawing does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-toolhead-harness-with-motor-factual-fan1" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/factual-circuits/fan1-font-matched.png" title="Fan 1 connector" alt="Fan 1 connector — logical connections, not physical board layout" caption="Logical connections only; this drawing does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-toolhead-harness-with-motor-factual-fan2" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/factual-circuits/fan2-font-matched.png" title="Fan 2 connector" alt="Fan 2 connector — logical connections, not physical board layout" caption="Logical connections only; this drawing does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-toolhead-harness-with-motor-factual-aux" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/factual-circuits/aux-font-matched.png" title="Auxiliary supply" alt="Auxiliary supply — logical connections, not physical board layout" caption="Logical connections only; this drawing does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-toolhead-harness-with-motor-factual-power" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/factual-circuits/power-font-matched.png" title="VBB / ground connector" alt="VBB / ground connector — logical connections, not physical board layout" caption="Logical connections only; this drawing does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-toolhead-harness-with-motor-factual-motor-open-1" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/factual-circuits/motor-open-1-font-matched.png" title="Motor nodes are disconnected" alt="Motor nodes are disconnected — logical connections, not physical board layout" caption="Logical connections only; this drawing does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-extruder-toolhead-harness-with-motor-factual-motor-open-5" src="/images/extensions/historical-extruder-toolhead-harness-with-motor/guides/factual-circuits/motor-open-5-font-matched.png" title="Motor nodes are disconnected" alt="Motor nodes are disconnected — logical connections, not physical board layout" caption="Logical connections only; this drawing does not show connector locations or mating." width=420 %}
-
-### Numbered contacts and controls
-
-These are schematic and PCB net memberships, not measured electrical behaviour. Leave unconnected pads unconnected. Auto-generated net names are not cable colours. Check repeated footprints or pad numbers on the physical board before wiring.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| File | Connector/control | Label | Contact → source net |
-|---|---|---|---|
-| ExtruderBoard.kicad_pcb | J6 | Conn_01x03 | 1: Net-(J1-PadGND); 2: Net-(J1-Pad5V); 3: Net-(J1-PadS) |
-| ExtruderBoard.kicad_pcb | J10 | Conn_01x02 | 1: Net-(J1-Pad5V); 2: Net-(J1-PadGND) |
-| ExtruderBoard.kicad_pcb | J9 | Conn_01x02_Male | 1: Net-(J1-PadVBB); 2: Net-(J1-PadF2) |
-| ExtruderBoard.kicad_pcb | J3 | Conn_01x02 | 1: Net-(J1-PadH-); 2: Net-(J1-PadVBB) |
-| ExtruderBoard.kicad_pcb | J1 | ExtruderHarnessMain | 5V: Net-(J1-Pad5V); F1: Net-(J1-PadF1); F2: Net-(J1-PadF2); GND: Net-(J1-PadGND); H-: Net-(J1-PadH-); P: Net-(J1-PadP); S: Net-(J1-PadS); T+: Net-(J1-PadT+); T-: Net-(J1-PadT-); VBB: Net-(J1-PadVBB) |
-| ExtruderBoard.kicad_pcb | J8 | Conn_01x02_Male | 1: Net-(J1-PadVBB); 2: Net-(J1-PadF1) |
-| ExtruderBoard.kicad_pcb | J4 | Conn_01x02 | 1: Net-(J1-PadT+); 2: Net-(J1-PadT-) |
-| ExtruderBoard.kicad_pcb | J5 | Conn_01x02 | 1: Net-(J1-PadP); 2: Net-(J1-PadGND) |
-| ExtruderBoard.kicad_pcb | J2 | ExtruderHarnessMotor | 1: unconnected-(J2-Pad1); 2: unconnected-(J2-Pad2); 3: unconnected-(J2-Pad3); 4: unconnected-(J2-Pad4); 5: unconnected-(J2-Pad5); 6: unconnected-(J2-Pad6); 7: unconnected-(J2-Pad7); 8: unconnected-(J2-Pad8) |
-| ExtruderBoard.kicad_pcb | J7 | Conn_01x01_Male | 1: Net-(J1-PadVBB); 2: Net-(J1-PadGND) |
-
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Wiring</p>
+    <h1 id="historical-extruder-toolhead-harness-with-motor">Extruder toolhead harness with motor provision</h1>
+    <p class="xb-lead">Gathers heater, fan, thermistor, probe, servo and 5 V wiring of a printer toolhead into one harness.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#downloads">Downloads</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/historical-extruder-toolhead-harness-with-motor/directory-board-render.png" alt="Top view of the Extruder toolhead harness with motor provision board">
+    <figcaption>Top view drawn from the original board file. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-</details>
+<div class="xb-stats">
+  <div class="xb-stat"><b>1</b><span>harness connector</span></div>
+  <div class="xb-stat"><b>2</b><span>fan outputs</span></div>
+  <div class="xb-stat"><b>1</b><span>heater</span></div>
+  <div class="xb-stat"><b>1</b><span>thermistor</span></div>
+  <div class="xb-stat"><b>50 × 50 mm</b><span>board size</span></div>
+  <div class="xb-stat"><b>0</b><span>active parts</span></div>
+</div>
 
-## Practical use with Smoothieboard V2 Prime
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#electrical">Electrical specifications</a>
+</nav>
+{:/nomarkdown}
 
-When replacing a harness, label every connector on the controller and check each conductor end-to-end before connecting the toolhead. Heater and fan positive supply must match the loads; their switched returns go to their own host output stages, never to GPIO. Thermistor, probe and servo require separate compatible host interfaces. Never route motor current through the unconnected J2 pads.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <b>J2, the motor connector, is not connected to anything.</b> Do not route motor current through it. Heater and fans share one positive supply conductor. This is a design by Chris Cecil, not a current Smoothieware board.
+</sl-alert>
 
-On the Smoothieboard V2 Prime GF/J37 header, contacts 1/2/10 are limited 3.3 V/limited 5 V/ground; contacts 3–9 are PB1/PJ4/PA4/PG0/PJ3/PG1/PJ2. The host header is unshrouded. Verify physical numbering, polarity, per-rail current draw and free-pin ownership before connection. This pin map does not establish hardware SPI, UART, CAN or PWM availability on an arbitrary contact.
+## Tech specs {#specs}
 
-## Smoothieware support
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Function</td><td>Passive toolhead distribution</td></tr>
+    <tr><td>Harness</td><td>J1: VBB, H−, F1, F2, T+, T−, P, S, 5V, GND</td></tr>
+    <tr><td>Heater</td><td>J3</td></tr>
+    <tr><td>Thermistor</td><td>J4</td></tr>
+    <tr><td>Fans</td><td>J8, J9</td></tr>
+    <tr><td>Probe and servo</td><td>J5, J6</td></tr>
+    <tr><td>Size</td><td>50 × 50 mm</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The passive harness itself has no firmware. Heater temperature control, fan switches, thermistor sensor type, probe and servo each need their own module and pin allocation. Sharing a positive wire does not combine firmware control channels or replace heater thermal protection.
+## Board tour {#tour}
 
-## Sources and attribution
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/historical-extruder-toolhead-harness-with-motor/directory-board-render.png" alt="Annotated top view of the Extruder toolhead harness with motor provision board">
+      <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:20.8%;top:15.2%" aria-label="1: Connector J4">1<span class="xb-pop"><b>Connector J4</b> — Connector J4.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-2" style="left:7.0%;top:19.5%" aria-label="2: Connector J6">2<span class="xb-pop"><b>Connector J6</b> — Connector J6.</span></a>
+      <a class="xb-mk" href="#tour-3" style="left:70.7%;top:64.5%" aria-label="3: Connector J7">3<span class="xb-pop"><b>Connector J7</b> — Connector J7.</span></a>
+      <a class="xb-mk" href="#tour-4" style="left:69.6%;top:82.1%" aria-label="4: Connector J8">4<span class="xb-pop"><b>Connector J8</b> — Connector J8.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-5" style="left:7.0%;top:7.0%" aria-label="5: Connector J5">5<span class="xb-pop"><b>Connector J5</b> — Connector J5.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-6" style="left:89.0%;top:81.9%" aria-label="6: Connector J9">6<span class="xb-pop"><b>Connector J9</b> — Connector J9.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-7" style="left:20.2%;top:29.6%" aria-label="7: Connector J10">7<span class="xb-pop"><b>Connector J10</b> — Connector J10.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Connector J4</b> — Connector J4.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Connector J6</b> — Connector J6.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Connector J7</b> — Connector J7.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Connector J8</b> — Connector J8.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Connector J5</b> — Connector J5.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Connector J9</b> — Connector J9.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Connector J10</b> — Connector J10.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-- [Ccecil upstream project](https://github.com/Ccecil/ExtruderBoardMotor-V0.1)
-- [Original source](https://github.com/Ccecil/ExtruderBoardMotor-V0.1/tree/d8bdb5473508d71ce422fd9ebc1819611b4c32f7)
-- [Original ExtruderBoard.kicad_pcb](https://github.com/Ccecil/ExtruderBoardMotor-V0.1/blob/d8bdb5473508d71ce422fd9ebc1819611b4c32f7/ExtruderBoard.kicad_pcb)
-- [Original ExtruderBoard.kicad_sch](https://github.com/Ccecil/ExtruderBoardMotor-V0.1/blob/d8bdb5473508d71ce422fd9ebc1819611b4c32f7/ExtruderBoard.kicad_sch)
-- [Original README.md](https://github.com/Ccecil/ExtruderBoardMotor-V0.1/blob/d8bdb5473508d71ce422fd9ebc1819611b4c32f7/README.md)
+## Pinout {#pinout}
 
-No project license file is included with the original source. Preserve attribution; the absence of a license file is not public-domain permission. Modern counterpart guides are functional comparisons only and do not establish matching pinouts.
+<span id="connect-and-try-it"></span>
 
-[All extension boards](/extension-boards)
+### Harness J1
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>5V</td><td>joined to J6 pad 2, J10 pad 1</td></tr>
+    <tr><td>F1</td><td>joined to J8 pad 2</td></tr>
+    <tr><td>F2</td><td>joined to J9 pad 2</td></tr>
+    <tr><td>GND</td><td>joined to J5 pad 2, J6 pad 1, J7 pad 2, J10 pad 2</td></tr>
+    <tr><td>H-</td><td>joined to J3 pad 1</td></tr>
+    <tr><td>P</td><td>joined to J5 pad 1</td></tr>
+    <tr><td>S</td><td>joined to J6 pad 3</td></tr>
+    <tr><td>T+</td><td>joined to J4 pad 1</td></tr>
+    <tr><td>T-</td><td>joined to J4 pad 2</td></tr>
+    <tr><td>VBB</td><td>joined to J3 pad 2, J7 pad 1, J8 pad 1, J9 pad 1</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Heater J3
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J3 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>joined to J1 pad H-</td></tr>
+    <tr><td>2</td><td>joined to J1 pad VBB, J7 pad 1, J8 pad 1, J9 pad 1</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Thermistor J4
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J4 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>joined to J1 pad T+</td></tr>
+    <tr><td>2</td><td>joined to J1 pad T-</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Probe J5
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J5 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>joined to J1 pad P</td></tr>
+    <tr><td>2</td><td>joined to J1 pad GND, J6 pad 1, J7 pad 2, J10 pad 2</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Servo J6
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J6 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>joined to J1 pad GND, J5 pad 2, J7 pad 2, J10 pad 2</td></tr>
+    <tr><td>2</td><td>joined to J1 pad 5V, J10 pad 1</td></tr>
+    <tr><td>3</td><td>joined to J1 pad S</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Fan 1, J8
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J8 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>joined to J1 pad VBB, J3 pad 2, J7 pad 1, J9 pad 1</td></tr>
+    <tr><td>2</td><td>joined to J1 pad F1</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Fan 2, J9
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J9 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>joined to J1 pad VBB, J3 pad 2, J7 pad 1, J8 pad 1</td></tr>
+    <tr><td>2</td><td>joined to J1 pad F2</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## What you need {#what-you-need}
+
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>Harness board</b><span>Built from the design files</span></div>
+  <div class="xb-card"><b>Toolhead wiring</b><span>Rated for heater current</span></div>
+  <div class="xb-card"><b>Mating parts</b><span>Checked against the board</span></div>
+</div>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+<span id="smoothieware-use"></span>
+
+This passive board needs no setting of its own. Configure the pin each signal comes from as you would without the board.
+
+## How it works {#how-it-works}
+
+Every connector is a copper path from a named J1 pad. The heater and both fans share VBB and return separately.
+
+## Troubleshooting {#troubleshooting}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Nothing responds</td><td>With power off, check continuity along each lead and board path against the pinout tables. Confirm which end of the connector is contact 1.</td></tr>
+    <tr><td>Motor does not run</td><td>J2 carries nothing.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
+
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/Ccecil/ExtruderBoardMotor-V0.1/tree/d8bdb5473508d71ce422fd9ebc1819611b4c32f7">original Ccecil design</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/ExtruderBoardMotor-V0.1/blob/d8bdb5473508d71ce422fd9ebc1819611b4c32f7/ExtruderBoard.kicad_pcb">original circuit</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/ExtruderBoardMotor-V0.1">Ccecil upstream project</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/ExtruderBoardMotor-V0.1/blob/d8bdb5473508d71ce422fd9ebc1819611b4c32f7/ExtruderBoard.kicad_sch">Original ExtruderBoard.kicad_sch</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/ExtruderBoardMotor-V0.1/blob/d8bdb5473508d71ce422fd9ebc1819611b4c32f7/README.md">Original README.md</a></td><td>Design source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Only what the design source states or the circuit fixes. Blank cells are not specified.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Voltage, current and temperature limits</td><td>Whole board</td><td>—</td><td>—</td><td>—</td><td>Not specified in the source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Related boards, each with its own pinout and limits: [Extruder toolhead harness without motor](/extensions/historical-extruder-toolhead-harness-without-motor).
+
+## Design source {#origin}
+
+Designed by Chris Cecil: [original design files](https://github.com/Ccecil/ExtruderBoardMotor-V0.1/tree/d8bdb5473508d71ce422fd9ebc1819611b4c32f7). It was drawn for the Smoothieboard V2 Gadgeteer era; check every connection against your own controller.
+See all boards on the [extension boards](/extension-boards) page.

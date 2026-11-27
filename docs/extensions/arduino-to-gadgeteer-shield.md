@@ -21,7 +21,7 @@ permalink: /extensions/arduino-to-gadgeteer-shield
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/arduino-to-gadgeteer-shield/v23/arduino-to-gadgeteer-shield-diagram.png" alt="Top view of the Arduino-to-Gadgeteer shield.">
+    <img src="/images/extensions/arduino-to-gadgeteer-shield/v23/arduino-to-gadgeteer-shield-diagram.webp" alt="Top view of the Arduino-to-Gadgeteer shield.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -84,7 +84,7 @@ The numbers on the drawing match the list below it.
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/arduino-to-gadgeteer-shield/v23/arduino-to-gadgeteer-shield-diagram.png" alt="Top view of the Arduino-to-Gadgeteer shield with numbered markers explained in the list below.">
+      <img src="/images/extensions/arduino-to-gadgeteer-shield/v23/arduino-to-gadgeteer-shield-diagram.webp" alt="Top view of the Arduino-to-Gadgeteer shield with numbered markers explained in the list below.">
       <a class="xb-mk xb-pb xb-pr" href="#tour-1" style="left:78.2%;top:14.6%" aria-label="1: Y socket (J1)">1<span class="xb-pop"><b>Y socket (J1)</b> — general inputs and outputs.</span></a>
       <a class="xb-mk" href="#tour-2" style="left:54.0%;top:79.6%" aria-label="2: A socket (J2)">2<span class="xb-pop"><b>A socket (J2)</b> — analog.</span></a>
       <a class="xb-mk xb-pb" href="#tour-3" style="left:54.0%;top:14.6%" aria-label="3: P socket (J3)">3<span class="xb-pop"><b>P socket (J3)</b> — PWM.</span></a>
@@ -226,7 +226,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/arduino-to-gadgeteer-shield/v23/arduino-to-gadgeteer-shield-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/arduino-to-gadgeteer-shield/v23/arduino-to-gadgeteer-shield-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/arduino-to-gadgeteer-shield/v23/arduino-to-gadgeteer-shield-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/arduino-to-gadgeteer-shield/v23/arduino-to-gadgeteer-shield-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

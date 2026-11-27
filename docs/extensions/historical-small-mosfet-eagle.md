@@ -1,213 +1,184 @@
 ---
 layout: default
-title: "Small MOSFET \u2014 original Eagle layout"
+title: "Small MOSFET — original Eagle layout"
+description: "Small MOSFET — original Eagle layout: single low-side DC switch, pinout, limits and configuration."
 permalink: /extensions/historical-small-mosfet-eagle
 ---
 
-# Small MOSFET — original Eagle layout
-
-This Eagle board switches a DC load’s negative return using an IRLR024-labelled MOSFET. The logic input has a 10 Ω gate resistor and 100 kΩ pulldown. It can serve a small DC lamp or another load within limits you have checked.
-
-## Origin and compatibility
-
-This guide describes the [original Smoothieboard2 files](https://github.com/Smoothieware/Smoothieboard2/tree/52ab340de33180a975b25f856c161993488e6ace/extensions/Small%20MOSFET), not a modern board with a similar purpose. The original host generation predates Smoothieboard V2 Prime. Check connector compatibility contact by contact.
-
-## Power, signals and controls
-
-JP2.1 is HEATERVIN and .2 ground. JP3.2 is load positive and .1 the switched return. JP1.1 is ground, .3 logic input; .2 VCC has no other contact on its net. LED7/resistor monitor the output and D11 connects across the load supply/return. Package U$13 has drain contact 4, not the large Eagle layout’s contact numbering. The 7 A figure given for the KiCad variant does not apply to this board.
-
-### Board functions and contact positions
-
-This Eagle variant has a distinct connector and transistor-pad assignment. The callouts identify gate 1, source 3 and drain tab 4 from its matching schematic/package. JP1.2 carries VCC; it is not the unconnected contact found on the KiCad variant. Contact keys are front-view positions, not cable mating views.
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-compact-function-reader-00-overview" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-reader-compact/reader-00-overview.png" title="Board overview" alt="Board overview" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-compact-function-reader-00-mandatory-limits" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-reader-compact/reader-00-mandatory-limits.png" title="Connection limits" alt="Connection limits" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-<details markdown="1">
-<summary>Connector and component functions</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-compact-function-reader-d11-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-reader-compact/reader-d11-1.png" title="D11 1" alt="D11 1" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-compact-function-reader-jp1-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-reader-compact/reader-jp1-1.png" title="Jp1 1" alt="Jp1 1" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-compact-function-reader-jp2-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-reader-compact/reader-jp2-1.png" title="Jp2 1" alt="Jp2 1" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-compact-function-reader-jp3-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-reader-compact/reader-jp3-1.png" title="Jp3 1" alt="Jp3 1" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-compact-function-reader-led7-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-reader-compact/reader-led7-1.png" title="Led7 1" alt="Led7 1" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-compact-function-reader-r35-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-reader-compact/reader-r35-1.png" title="R35 1" alt="R35 1" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-compact-function-reader-r36-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-reader-compact/reader-r36-1.png" title="R36 1" alt="R36 1" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-compact-function-reader-r37-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-reader-compact/reader-r37-1.png" title="R37 1" alt="R37 1" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-compact-function-reader-u$13-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-reader-compact/reader-u%2413-1.png" title="U$13 1" alt="U$13 1" caption="Dashed leaders locate parts and contacts; they are not installation wires. Read the connection limits before making connections." width=1200 %}
-
-</details>
-
-<details markdown="1">
-<summary>Contact keys and supplementary views</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-function-u-13-functions-01" src="/images/extensions/historical-small-mosfet-eagle/guides/functional-reference/u-13-functions-01.png" title="Small MOSFET (Eagle) — component side; back parts excluded" alt="Small MOSFET (Eagle) — component side; back parts excluded — function callouts and contact positions" caption="Eagle-layout reference. Pad 4 is the drain tab; JP1 contact 2 is VCC. Use this layout rather than the similarly named KiCad board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-function-led7-functions-01" src="/images/extensions/historical-small-mosfet-eagle/guides/functional-reference/led7-functions-01.png" title="Small MOSFET (Eagle) — component side; back parts excluded" alt="Small MOSFET (Eagle) — component side; back parts excluded — function callouts and contact positions" caption="Eagle-layout reference. Pad 4 is the drain tab; JP1 contact 2 is VCC. Use this layout rather than the similarly named KiCad board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-function-jp1-functions-01" src="/images/extensions/historical-small-mosfet-eagle/guides/functional-reference/jp1-functions-01.png" title="Small MOSFET (Eagle) — component side; back parts excluded" alt="Small MOSFET (Eagle) — component side; back parts excluded — function callouts and contact positions" caption="Eagle-layout reference. Pad 4 is the drain tab; JP1 contact 2 is VCC. Use this layout rather than the similarly named KiCad board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-function-jp2-functions-01" src="/images/extensions/historical-small-mosfet-eagle/guides/functional-reference/jp2-functions-01.png" title="Small MOSFET (Eagle) — component side; back parts excluded" alt="Small MOSFET (Eagle) — component side; back parts excluded — function callouts and contact positions" caption="Eagle-layout reference. Pad 4 is the drain tab; JP1 contact 2 is VCC. Use this layout rather than the similarly named KiCad board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-function-jp3-functions-01" src="/images/extensions/historical-small-mosfet-eagle/guides/functional-reference/jp3-functions-01.png" title="Small MOSFET (Eagle) — component side; back parts excluded" alt="Small MOSFET (Eagle) — component side; back parts excluded — function callouts and contact positions" caption="Eagle-layout reference. Pad 4 is the drain tab; JP1 contact 2 is VCC. Use this layout rather than the similarly named KiCad board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-function-d11-functions-01" src="/images/extensions/historical-small-mosfet-eagle/guides/functional-reference/d11-functions-01.png" title="Small MOSFET (Eagle) — component side; back parts excluded" alt="Small MOSFET (Eagle) — component side; back parts excluded — function callouts and contact positions" caption="Eagle-layout reference. Pad 4 is the drain tab; JP1 contact 2 is VCC. Use this layout rather than the similarly named KiCad board." width=420 %}
-
-<details>
-<summary>Resistor circuit details</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-function-r35-functions-01" src="/images/extensions/historical-small-mosfet-eagle/guides/functional-reference/r35-functions-01.png" title="Small MOSFET (Eagle) — component side; back parts excluded" alt="Small MOSFET (Eagle) — component side; back parts excluded — function callouts and contact positions" caption="Eagle-layout reference. Pad 4 is the drain tab; JP1 contact 2 is VCC. Use this layout rather than the similarly named KiCad board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-function-r36-functions-01" src="/images/extensions/historical-small-mosfet-eagle/guides/functional-reference/r36-functions-01.png" title="Small MOSFET (Eagle) — component side; back parts excluded" alt="Small MOSFET (Eagle) — component side; back parts excluded — function callouts and contact positions" caption="Eagle-layout reference. Pad 4 is the drain tab; JP1 contact 2 is VCC. Use this layout rather than the similarly named KiCad board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-function-r37-functions-01" src="/images/extensions/historical-small-mosfet-eagle/guides/functional-reference/r37-functions-01.png" title="Small MOSFET (Eagle) — component side; back parts excluded" alt="Small MOSFET (Eagle) — component side; back parts excluded — function callouts and contact positions" caption="Eagle-layout reference. Pad 4 is the drain tab; JP1 contact 2 is VCC. Use this layout rather than the similarly named KiCad board." width=420 %}
-
-</details>
-
-<details>
-<summary>Pad locators and comparison</summary>
-
-### Annotated board reference
-
-These annotated sheets show contact positions, connector and component functions, and net keys. Use the contact keys to distinguish net names from a host assignment. Check cable orientation, fitted parts and operating limits. JP1.2 VCC is isolated and unused. The voltage and current marked on the silk are not ratings for your assembly.
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-00-overview" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/00-overview.png" title="Small MOSFET reference" alt="Small MOSFET reference" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-<details markdown="1">
-<summary>Connector, jumper and component function views</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-d11-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/d11-1.png" title="D11: contacts" alt="D11: contacts" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-jp1-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/jp1-1.png" title="JP1: contacts" alt="JP1: contacts" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-jp2-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/jp2-1.png" title="JP2: contacts" alt="JP2: contacts" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-jp3-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/jp3-1.png" title="JP3: contacts" alt="JP3: contacts" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-led7-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/led7-1.png" title="LED7: contacts" alt="LED7: contacts" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-r35-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/r35-1.png" title="R35: contacts" alt="R35: contacts" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-r36-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/r36-1.png" title="R36: contacts" alt="R36: contacts" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-r37-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/r37-1.png" title="R37: contacts" alt="R37: contacts" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-source-net-keys-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/source-net-keys-1.png" title="Net keys" alt="Net keys" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-source-net-keys-2" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/source-net-keys-2.png" title="Net keys" alt="Net keys" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-u-13-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/u%2413-1.png" title="U$13: contacts" alt="U$13: contacts" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-</details>
-
-<details markdown="1">
-<summary>Individual contact keys</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-d11-0" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-d11-0.png" title="D11.C: pad" alt="D11.C: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-d11-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-d11-1.png" title="D11.A: pad" alt="D11.A: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-jp1-0" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-jp1-0.png" title="JP1.1: pad" alt="JP1.1: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-jp1-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-jp1-1.png" title="JP1.2: pad" alt="JP1.2: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-jp1-2" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-jp1-2.png" title="JP1.3: pad" alt="JP1.3: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-jp2-0" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-jp2-0.png" title="JP2.1: pad" alt="JP2.1: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-jp2-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-jp2-1.png" title="JP2.2: pad" alt="JP2.2: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-jp3-0" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-jp3-0.png" title="JP3.1: pad" alt="JP3.1: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-jp3-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-jp3-1.png" title="JP3.2: pad" alt="JP3.2: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-led7-0" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-led7-0.png" title="LED7.C: pad" alt="LED7.C: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-led7-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-led7-1.png" title="LED7.A: pad" alt="LED7.A: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-r35-0" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-r35-0.png" title="R35.1: pad" alt="R35.1: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-r35-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-r35-1.png" title="R35.2: pad" alt="R35.2: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-r36-0" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-r36-0.png" title="R36.1: pad" alt="R36.1: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-r36-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-r36-1.png" title="R36.2: pad" alt="R36.2: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-r37-0" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-r37-0.png" title="R37.1: pad" alt="R37.1: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-r37-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-r37-1.png" title="R37.2: pad" alt="R37.2: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-u-13-0" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-u%2413-0.png" title="U$13.4: pad" alt="U$13.4: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-u-13-1" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-u%2413-1.png" title="U$13.1: pad" alt="U$13.1: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-annotated-contact-u-13-2" src="/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/contact-u%2413-2.png" title="U$13.3: pad" alt="U$13.3: pad" caption="Board geometry and contact roles. Callout leaders are not wires; labels do not give ratings or mating orientation." width=1200 %}
-
-</details>
-
-[Drawing attribution and licence](/images/extensions/historical-small-mosfet-eagle/guides/source-derived-annotated/NOTICE.md).
-
-<details markdown="1">
-<summary>Functional references, contact inventory and source download</summary>
-
-### Contact locator reference
-
-These locators show pad positions and the board outline without component artwork. Use all focused sheets together with the drawing boundary notice.
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-reader-compact-overview" src="/images/extensions/historical-small-mosfet-eagle/guides/native-contact-reference/reader-compact-overview.png" title="Legacy Eagle MOSFET" alt="Legacy Eagle MOSFET — contact locator" caption="Pads and board outline only. Use all companion sheets; this is not a host wiring diagram." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-reader-compact-jp1-1-3" src="/images/extensions/historical-small-mosfet-eagle/guides/native-contact-reference/reader-compact-jp1-1-3.png" title="JP1 · Logic input" alt="JP1 · Logic input — contact locator" caption="Pads and board outline only. Use all companion sheets; this is not a host wiring diagram." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-reader-compact-jp2-1-2" src="/images/extensions/historical-small-mosfet-eagle/guides/native-contact-reference/reader-compact-jp2-1-2.png" title="JP2 · Load DC input" alt="JP2 · Load DC input — contact locator" caption="Pads and board outline only. Use all companion sheets; this is not a host wiring diagram." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-reader-compact-jp3-1-2" src="/images/extensions/historical-small-mosfet-eagle/guides/native-contact-reference/reader-compact-jp3-1-2.png" title="JP3 · Load output" alt="JP3 · Load output — contact locator" caption="Pads and board outline only. Use all companion sheets; this is not a host wiring diagram." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-reader-compact-boundary" src="/images/extensions/historical-small-mosfet-eagle/guides/native-contact-reference/reader-compact-boundary.png" title="Drawing boundary" alt="Drawing boundary — contact locator" caption="Pads and board outline only. Use all companion sheets; this is not a host wiring diagram." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-reader-compact-switch" src="/images/extensions/historical-small-mosfet-eagle/guides/native-contact-reference/reader-compact-switch.png" title="MOSFET gate and return" alt="MOSFET gate and return — contact locator" caption="Pads and board outline only. Use all companion sheets; this is not a host wiring diagram." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-reader-compact-vcc" src="/images/extensions/historical-small-mosfet-eagle/guides/native-contact-reference/reader-compact-vcc.png" title="VCC connector distinction" alt="VCC connector distinction — contact locator" caption="Pads and board outline only. Use all companion sheets; this is not a host wiring diagram." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-small-mosfet-eagle-reader-compact-indicator" src="/images/extensions/historical-small-mosfet-eagle/guides/native-contact-reference/reader-compact-indicator.png" title="Load indication and diode" alt="Load indication and diode — contact locator" caption="Pads and board outline only. Use all companion sheets; this is not a host wiring diagram." width=420 %}
-
-[Download the unmodified source files, upstream licence and drawing notice](/images/extensions/historical-small-mosfet-eagle/guides/native-contact-reference/native-source-and-notices.zip). Retain the included source licence and notices with derivatives.
-
-The contact inventory below records schematic connectivity; check physical cable orientation and board continuity.
-
-| Reference | Value / role | Contact → net |
-|---|---|---|
-| U$13 | IRLR024 | 1 → N$28; 3 → GND; 4 → E1-CONTROL |
-| JP1 |  | 1 → GND; 2 → VCC; 3 → FET-LOGIC-IN |
-| JP2 |  | 1 → HEATERVIN; 2 → GND |
-| JP3 |  | 1 → E1-CONTROL; 2 → HEATERVIN |
-| D11 | 1N4148 | A → E1-CONTROL; C → HEATERVIN |
-
-</details>
-
-</details>
-
-</details>
-
-## Connect and try it
-
-For a low-current lamp test, wire supply to JP2 and load to JP3, positive on contact 2. With power removed, connect Prime GF.10 ground to JP1.1 and GF.3 PB1 to JP1.3; omit JP1.2. Confirm the selected MOSFET’s operation at 3.3 V gate drive and check voltage and current before powering.
-
-Prime GF/J37 contacts: 1 limited 3.3 V, 2 limited 5 V, 3 PB1, 4 PJ4, 5 PA4, 6 PG0, 7 PJ3, 8 PG1, 9 PJ2, 10 ground. Pin numbers are connector contacts, not MCU package contacts. A supply label does not establish an available current budget.
-
-## Smoothieware use
-
-A generic digital switch output can drive the PB1 cable. No board-specific firmware module is necessary. The example below is a functional lamp test, not a power test.
-
-For the specific GF.3/PB1 cable, merge this into an otherwise non-conflicting configuration; do not duplicate an existing section or assign PB1 twice. The V2 digital-switch example in `ConfigSamples/config-3d.ini:163–205` supplies these settings.
+{% include _includes/extension-board-page.html %}
+
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Power output</p>
+    <h1 id="historical-small-mosfet-eagle">Small MOSFET — original Eagle layout</h1>
+    <p class="xb-lead">A single low-side switch: a logic input turns the negative side of a DC load on and off.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#downloads">Downloads</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/historical-small-mosfet-eagle/directory-board-render.png" alt="Top view of the Small MOSFET — original Eagle layout board">
+    <figcaption>Top view drawn from the original board file. This is a drawing, not a photograph.</figcaption>
+  </figure>
+</div>
+
+<div class="xb-stats">
+  <div class="xb-stat"><b>1</b><span>channel</span></div>
+  <div class="xb-stat"><b>low side</b><span>switching</span></div>
+  <div class="xb-stat"><b>10 Ω</b><span>gate resistor</span></div>
+  <div class="xb-stat"><b>100 kΩ</b><span>gate pull-down</span></div>
+  <div class="xb-stat"><b>26 × 26 mm</b><span>board size</span></div>
+  <div class="xb-stat"><b>4</b><span>mounting holes</span></div>
+</div>
+
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting dimensions</a>
+  <a href="#electrical">Electrical specifications</a>
+</nav>
+{:/nomarkdown}
+
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <b>The load&rsquo;s positive side is always live, and the transistor fitted decides the limits.</b> The part is labelled IRLR024; check it and its gate drive at your logic voltage. This is a historical Smoothieboard2 design, not a current board.
+</sl-alert>
+
+## Tech specs {#specs}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Function</td><td>Low-side DC load switch</td></tr>
+    <tr><td>Input</td><td>JP1: ground, spare VCC contact, logic input</td></tr>
+    <tr><td>Gate network</td><td>10 Ω series, 100 kΩ pull-down</td></tr>
+    <tr><td>Indicator</td><td>LED7 across the output side</td></tr>
+    <tr><td>Flyback diode</td><td>D11 between the switched return and supply positive</td></tr>
+    <tr><td>Size</td><td>26 × 26 mm</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Board tour {#tour}
+
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/historical-small-mosfet-eagle/directory-board-render.png" alt="Annotated top view of the Small MOSFET — original Eagle layout board">
+      <a class="xb-mk xb-pl" href="#tour-1" style="left:15.4%;top:53.5%" aria-label="1: Supply terminal">1<span class="xb-pop"><b>Supply terminal</b> — Supply positive and ground.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-2" style="left:84.6%;top:65.6%" aria-label="2: Load terminal">2<span class="xb-pop"><b>Load terminal</b> — Switched return and supply positive.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-3" style="left:32.7%;top:12.6%" aria-label="3: Input JP1">3<span class="xb-pop"><b>Input JP1</b> — Ground and logic input.</span></a>
+      <a class="xb-mk" href="#tour-4" style="left:50.2%;top:65.1%" aria-label="4: Transistor">4<span class="xb-pop"><b>Transistor</b> — Labelled IRLR024.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-5" style="left:62.7%;top:26.5%" aria-label="5: Indicator">5<span class="xb-pop"><b>Indicator</b> — Shows the output state.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-6" style="left:84.6%;top:43.1%" aria-label="6: Flyback diode">6<span class="xb-pop"><b>Flyback diode</b> — Clamps inductive spikes.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-7" style="left:51.0%;top:28.9%" aria-label="7: Resistor R35">7<span class="xb-pop"><b>Resistor R35</b> — Resistor R35, marked <code>10r</code> in the board file. Connects to <code>FET-LOGIC-IN</code>.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-8" style="left:42.4%;top:28.9%" aria-label="8: Resistor R36">8<span class="xb-pop"><b>Resistor R36</b> — Resistor R36, marked <code>100k</code> in the board file. Connects to <code>GND</code>, <code>FET-LOGIC-IN</code>.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Supply terminal</b> — Supply positive and ground.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Load terminal</b> — Switched return and supply positive.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Input JP1</b> — Ground and logic input.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Transistor</b> — Labelled IRLR024.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Indicator</b> — Shows the output state.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Flyback diode</b> — Clamps inductive spikes.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Resistor R35</b> — Resistor R35, marked <code>10r</code> in the board file. Connects to <code>FET-LOGIC-IN</code>.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Resistor R36</b> — Resistor R36, marked <code>100k</code> in the board file. Connects to <code>GND</code>, <code>FET-LOGIC-IN</code>.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
+
+## Pinout {#pinout}
+
+<span id="connect-and-try-it"></span>
+
+### Input JP1
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>JP1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>GND</code></td></tr>
+    <tr><td>2</td><td><code>VCC</code></td></tr>
+    <tr><td>3</td><td><code>FET-LOGIC-IN</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Supply terminal JP2
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>JP2 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>HEATERVIN</code></td></tr>
+    <tr><td>2</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Load terminal JP3
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>JP3 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>E1-CONTROL</code></td></tr>
+    <tr><td>2</td><td><code>HEATERVIN</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## What you need {#what-you-need}
+
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>MOSFET board</b><span>Built from the design files</span></div>
+  <div class="xb-card"><b>DC supply and load</b><span>Within checked limits</span></div>
+  <div class="xb-card"><b>Fuse</b><span>Sized for the wiring</span></div>
+</div>
+{:/nomarkdown}
+
+## Get started {#get-started}
+
+A first test on Smoothieboard V2 Prime with a small load or none, after identifying the fitted transistor.
+
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Identify the transistor</h3>
+    <p>Read the part fitted and compare its gate threshold with a 3.3 V logic signal.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Wire it</h3>
+    <p>With power off connect controller ground to JP1 contact 1 and PB1 (J37 contact 3) to JP1 contact 3, then the fused supply and a small load.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure and switch</h3>
+    <p>Add the entry from <a href="#configuration">Configuration</a>, restart, send <code>M106.9</code> then <code>M107.9</code>.</p>
+    <p class="xb-expect">The load and LED switch on, then off.</p>
+  </li>
+</ol>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+<span id="smoothieware-use"></span>
+
+See [switch](/switch). Syntax checked against firmware commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`.
 
 ```ini
 [switch]
@@ -221,18 +192,106 @@ board_test.startup_state = false
 board_test.halt_set_to = false
 ```
 
-With the machine stationary and a small test load, `M106.9` requests on and `M107.9` requests off. Confirm the off state before attaching the intended load.
+## How it works {#how-it-works}
 
-Configuration field names in this example follow the [V2 Switch parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp). Check the board's electrical limits and pin allocation for your installation.
+The input drives the transistor gate through 10 Ω, and 100 kΩ holds it off when nothing drives it. The load connects between supply positive and the switched terminal; D11 clamps the voltage spike of an inductive load when it is switched off.
 
-The [V2 digital-switch parser and command implementation](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp#L115-L438) defines this behaviour. Subcode 9 is an example allocation: reserve `M106.9`/`M107.9` in the complete configuration before use. Startup and halt settings are logical OFF; they do not establish the electrical state during reset, bootloader operation, lost power or a disconnected cable. The `!` suffix, where shown, inverts that logical output.
+## Troubleshooting {#troubleshooting}
 
-## Before powering
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Load never turns on</td><td>Check the supply, the common ground with the controller and that the input reaches the gate threshold.</td></tr>
+    <tr><td>Load always on</td><td>Check for a shorted transistor and for load wiring directly to ground.</td></tr>
+    <tr><td>Transistor runs hot</td><td>The gate voltage or the cooling is insufficient for the current. Stop and check.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-Check operation of the fitted IRLR024 at 3.3 V gate drive, supply and load limits, clamp capability and physical connector orientation.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
 
-## Original files and attribution
+## Downloads {#downloads}
 
-The linked original source folder contains the CAD, images, fabrication output and any author notes. Historical project files retain their original attribution; an absent per-file license must not be interpreted as public-domain permission. The Smoothieboard2 repository also contains a repository-root [CERN Open Hardware Licence v1.2](https://github.com/Smoothieware/Smoothieboard2/blob/52ab340de33180a975b25f856c161993488e6ace/LICENSE); its [README](https://github.com/Smoothieware/Smoothieboard2/blob/52ab340de33180a975b25f856c161993488e6ace/README.md) explicitly describes hardware files for the board and extension boards. Preserve those license and attribution records. This repository-level licence does not establish rights in separately sourced component images or artwork.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/Smoothieware/Smoothieboard2/tree/52ab340de33180a975b25f856c161993488e6ace/extensions/Small%20MOSFET">original Smoothieboard2 files</a></td><td>Design source</td></tr>
+    <tr><td><a href="/images/extensions/historical-small-mosfet-eagle/guides/native-contact-reference/native-source-and-notices.zip">Download the unmodified source files, upstream licence and drawing notice</a></td><td>Download</td></tr>
+    <tr><td><a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp">V2 Switch parser</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp#L115-L438">V2 digital-switch parser and command implementation</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Smoothieware/Smoothieboard2/blob/52ab340de33180a975b25f856c161993488e6ace/LICENSE">CERN Open Hardware Licence v1.2</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Smoothieware/Smoothieboard2/blob/52ab340de33180a975b25f856c161993488e6ace/README.md">README</a></td><td>Design source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-[All extension boards](/extension-boards)
+## Appendix: mounting dimensions {#mounting}
+
+Outline and holes from the original board file. Millimetres, seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-mosfet-eagle-mount-t">
+  <title id="xb-mosfet-eagle-mount-t">Mounting drawing of the historical-small-mosfet-eagle, component side: outline 26 by 26 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="310.0" y="78.0" width="340.0" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M310.0 56H650.0"/><path d="M310.0 50V62"/><path d="M650.0 50V62"/><path d="M676.0 78.0V418.0"/><path d="M670.0 78.0h12"/><path d="M670.0 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">26</text>
+  <text x="688.0" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">26</text>
+  <circle cx="310.0" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="298.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M252.0 104.0h30" fill="none"/><path d="M286.0 104.0l-8 -4v8z"/><path d="M252.0 104.0v30" fill="none"/><path d="M252.0 138.0l-4 -8h8z"/></g>
+  <text x="290.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="248.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="349.2" cy="117.2" r="20.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M324.3 117.2h49.8M349.2 92.3v49.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="328.3" y="158.2" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  3.00, 3.00</text>
+  <circle cx="610.8" cy="117.2" r="20.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M585.8 117.2h49.8M610.8 92.3v49.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="631.7" y="158.2" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  23.00, 3.00</text>
+  <circle cx="349.2" cy="378.8" r="20.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M324.3 378.8h49.8M349.2 353.8v49.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="328.3" y="347.8" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  3.00, 23.00</text>
+  <circle cx="610.8" cy="378.8" r="20.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M585.8 378.8h49.8M610.8 353.8v49.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="631.7" y="347.8" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  23.00, 23.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 26 × 26&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>3.00</td><td>3.00</td><td>3.2&nbsp;mm, plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>23.00</td><td>3.00</td><td>3.2&nbsp;mm, plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>3</td><td>3.00</td><td>23.00</td><td>3.2&nbsp;mm, plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>4</td><td>23.00</td><td>23.00</td><td>3.2&nbsp;mm, plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Only what the design source states or the circuit fixes. Blank cells are not specified.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Gate series resistor</td><td>Input</td><td>—</td><td>10 Ω</td><td>—</td><td>Design file value</td></tr>
+    <tr><td>Gate pull-down</td><td>Input</td><td>—</td><td>100 kΩ</td><td>—</td><td>Design file value</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Related boards, each with its own pinout and limits: [Small MOSFET — KiCad layout](/extensions/historical-small-mosfet-kicad), [Single-channel small MOSFET basic output](/extensions/single-channel-small-mosfet-basic-output).
+
+## Design source {#origin}
+
+This board comes from the [original design files](https://github.com/Smoothieware/Smoothieboard2/tree/52ab340de33180a975b25f856c161993488e6ace/extensions/Small%20MOSFET). It was drawn for an earlier controller generation than Smoothieboard V2 Prime; match connections contact by contact.
+See all boards on the [extension boards](/extension-boards) page.

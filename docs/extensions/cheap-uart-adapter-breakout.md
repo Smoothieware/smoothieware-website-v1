@@ -21,7 +21,7 @@ permalink: /extensions/cheap-uart-adapter-breakout
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/cheap-uart-adapter-breakout/v14/cheap-uart-adapter-breakout-diagram.png" alt="Top view of the adapter: a ten-contact host socket at the left and a six-pin module connector at the right.">
+    <img src="/images/extensions/cheap-uart-adapter-breakout/v14/cheap-uart-adapter-breakout-diagram.webp" alt="Top view of the adapter: a ten-contact host socket at the left and a six-pin module connector at the right.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -84,7 +84,7 @@ The numbers on the drawing match the list below it.
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/cheap-uart-adapter-breakout/v14/cheap-uart-adapter-breakout-diagram.png" alt="Top view of the adapter with numbered markers explained in the list below.">
+      <img src="/images/extensions/cheap-uart-adapter-breakout/v14/cheap-uart-adapter-breakout-diagram.webp" alt="Top view of the adapter with numbered markers explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:15.4%;top:40.4%" aria-label="1: Host socket (J1)">1<span class="xb-pop"><b>Host socket (J1)</b> — connects to a controller UART socket.</span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:55.7%;top:18.9%" aria-label="2: Module connector (J2)">2<span class="xb-pop"><b>Module connector (J2)</b> — the six module pins.</span></a>
       <a class="xb-mk" href="#tour-3" style="left:35.1%;top:60.1%" aria-label="3: Transmit translator (U2)">3<span class="xb-pop"><b>Transmit translator (U2)</b> — controller to module.</span></a>
@@ -146,7 +146,7 @@ The numbers on the drawing match the list below it.
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>This board</b><span></span></div>
+  <div class="xb-card"><b>This board</b><span>Built from the design files in Downloads</span></div>
   <div class="xb-card"><b>A USB serial module</b><span>Six pins in the order above, 3.3&nbsp;V logic. The example uses the SparkFun FTDI Basic 3.3 V (DEV-09873).</span></div>
   <div class="xb-card"><b>A ribbon and a USB cable</b><span>Ten-core ribbon to the controller.</span></div>
 </div>
@@ -208,6 +208,8 @@ With <code>console = true</code> the UART starts after the controller has finish
 
 Each <a href="/images/extensions/cheap-uart-adapter-breakout/datasheets/sn74lvc1t45.pdf">SN74LVC1T45</a> has one supply from the controller&rsquo;s 3.3&nbsp;V and the other from the module&rsquo;s VCC pin, so the two logic voltages stay separate. Grounds are common: the board gives no isolation.
 
+{% include _includes/serial-adapter-board-comparison.html %}
+
 ## Troubleshooting {#troubleshooting}
 
 {::nomarkdown}
@@ -231,7 +233,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/cheap-uart-adapter-breakout/v14/cheap-uart-adapter-breakout-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/cheap-uart-adapter-breakout/v14/cheap-uart-adapter-breakout-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/cheap-uart-adapter-breakout/v14/cheap-uart-adapter-breakout-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/cheap-uart-adapter-breakout/v14/cheap-uart-adapter-breakout-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

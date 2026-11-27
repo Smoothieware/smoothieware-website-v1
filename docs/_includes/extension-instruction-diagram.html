@@ -1,5 +1,5 @@
 {% comment %}
-Instructional PNG, separate from the supplementary board-render gallery.
+Instructional image, separate from the supplementary board-render gallery.
 Required: src, title, alt, caption. Optional: id, width (display width; default 1440).
 The expanded view keeps labels at their authored size and scrolls inside the
 figure, so a narrow screen does not have to shrink a complete wiring drawing.
@@ -13,7 +13,7 @@ figure, so a narrow screen does not have to shrink a complete wiring drawing.
   <button type="button" popovertarget="instruction-{{ instruction_id }}">Inspect diagram: fit, full size and zoom</button>
   <details class="extension-instruction-detail">
     <summary>Read labels at full size</summary>
-    <p>Scroll across and down within this view. You can also <a href="{{ include.src | relative_url }}">open the PNG separately</a> and use your browser’s zoom controls.</p>
+    <p>Scroll across and down within this view. You can also <a href="{{ include.src | relative_url }}">open the image separately</a> and use your browser’s zoom controls.</p>
     <div class="extension-instruction-scroll" role="region" aria-label="{{ include.title | escape }} — full-size scrollable diagram" tabindex="0">
       <img src="{{ include.src | relative_url }}" alt="{{ include.alt | escape }}" style="width: {{ include.width | default: 1440 }}px; max-width: none; height: auto;" loading="lazy">
     </div>

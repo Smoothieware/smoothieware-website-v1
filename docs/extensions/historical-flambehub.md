@@ -1,221 +1,326 @@
 ---
 layout: default
-title: "Flambehub \u2014 Hardware trigger and power-disconnect hub"
+title: "Flambehub — trigger and power-disconnect hub"
+description: "Eight-trigger hardware power disconnect hub with relays: connectors and limits."
 permalink: /extensions/historical-flambehub
 ---
 
-# Flambehub
-
-Flambehub combines eight hardware trigger inputs with an MCU input and a relay power-disconnect circuit. The author intends it to work without an MCU decision, accepting external devices such as overtemperature triggers or alarm contacts. Source intent is not proof of a safety-rated circuit.
-
-## How the circuit works
-
-The eight field inputs first enter the MAX6818 debounce device, whose OUT1–OUT8 signals feed all eight inputs of U3, the 4068 aggregate-logic device. Its Trig+ and Trig− outputs do not drive the power relay directly: C4 and C5 couple changes into the Set and Rst nodes. Those nodes drive Q2 and Q3, grounded-source 2N7002 transistors whose drains reach the two LC−/LC+ ends of the K2 relay-control circuit. The circuit thus includes transition/pulse paths and a relay latch rather than simply holding the power relay on whenever one input is high.
-
-K2’s contact network supplies the main relay coil node A1; K1’s other coil end is ground. K1 switches the fused positive feed Vf between NC_Out and NO_Out. K2 also switches auxiliary returns marked NC GND and NO GND, which must not be replaced with fixed ground connections. The source repeats U1 for the MAX6818 and the optional regulator; they are separate components. The exact input combination, transition polarity, pulse duration, power-up/reset state and resulting NC/NO state still require a complete logic/relay truth-table check. This source-derived operation outline is not a claim of fail-safe behavior or an accepted safety circuit.
-
-## About this board
-
-This guide follows [Flambehub_0.2.kicad_pcb](https://raw.githubusercontent.com/Ccecil/Flambehub/02f355e19b2fc8b0a7baaca4e1a2e3b2ae2ffc71/Flambehub_0.2.kicad_pcb). It is a separate hardware design, not a Prime adapter, and it carries no safety certification.
-
-## Operation, power and connectors
-
-The README claims eight buffered/debounced triggers, one MCU enable/disable input, an inline fuse, an optional 5 V Recom regulator and up to 30 A at 28 V DC. The source filename is Flambehub_0.2. The actual PCB has MAX6818EAP+T input debounce, a 4068 logic device, K1 RAYEX-L90S power relay and K2 5-1462037-4 latch relay. It is not the Flambegate FET layout. The PCB also repeats C1, and two footprints are both labelled U1: MAX6818 and R-78C5.0-1.0 regulator. Keep their source positions/values distinct; a reference-only BOM join would be wrong. J4–J11 inputs use contact 1 ground, 2 5 V, 3 signal. MCU J3 instead uses 1 signal, 2 5 V, 3 ground. J1/J2 expose ground/Vi; named NO/NC output and auxiliary headers must be distinguished from logic signals.
-
-**J12 and J13 are switched-return outputs, not ordinary 5 V supply headers.** Their contact 1 is +5 V, but J12.2 is `NC GND` at latch relay K2.10 and J13.2 is `NO GND` at K2.8. K2.9 is the separate fixed `GND` net. Grounding either switched-return terminal externally would bypass that contact's switching function. Keep these outputs distinct from J14's `NC_5v`/GND pair and from the main power relay's NO/NC outputs. The contact map does not establish the latch's startup state or fault behavior.
-
-### Annotated connector and circuit reference
-
-These source-derived functional sheets explain the selected historical connectors, jumpers and circuit components with numbered contact markers and pill callouts. They supplement the contact tables and retain the source geometry. Follow the power and wiring limitations in this guide.
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-j10-instance-1-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/j10-instance-1-functions-01.png" title="J10 · Field input7" alt="J10 · Field input7 — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-<details>
-<summary>All remaining connector, jumper and component-function sheets</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-rn2-instance-2-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/rn2-instance-2-functions-01.png" title="RN2 · OUT pull-ups / LED resistors" alt="RN2 · OUT pull-ups / LED resistors — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-rn2-instance-2-functions-02" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/rn2-instance-2-functions-02.png" title="RN2 · OUT pull-ups / LED resistors" alt="RN2 · OUT pull-ups / LED resistors — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-j8-instance-3-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/j8-instance-3-functions-01.png" title="J8 · Field input5" alt="J8 · Field input5 — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-j3-instance-4-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/j3-instance-4-functions-01.png" title="J3 · MCU control" alt="J3 · MCU control — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-r4-instance-5-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/r4-instance-5-functions-01.png" title="R4 · 10k circuit resistor" alt="R4 · 10k circuit resistor — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-d1-instance-6-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/d1-instance-6-functions-01.png" title="D1 · LOW output indicator1" alt="D1 · LOW output indicator1 — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-fid1-instance-7-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/fid1-instance-7-functions-01.png" title="FID1 · Assembly alignment fiducial" alt="FID1 · Assembly alignment fiducial — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-f1-instance-8-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/f1-instance-8-functions-01.png" title="F1 · Inline supply fuse" alt="F1 · Inline supply fuse — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-rn4-instance-9-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/rn4-instance-9-functions-01.png" title="RN4 · OUT pull-ups / LED resistors" alt="RN4 · OUT pull-ups / LED resistors — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-rn4-instance-9-functions-02" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/rn4-instance-9-functions-02.png" title="RN4 · OUT pull-ups / LED resistors" alt="RN4 · OUT pull-ups / LED resistors — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-j16-instance-10-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/j16-instance-10-functions-01.png" title="J16 · Relay contact output" alt="J16 · Relay contact output — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-j4-instance-11-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/j4-instance-11-functions-01.png" title="J4 · Field input1" alt="J4 · Field input1 — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-r13-instance-12-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/r13-instance-12-functions-01.png" title="R13 · 1k circuit resistor" alt="R13 · 1k circuit resistor — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-d9-instance-13-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/d9-instance-13-functions-01.png" title="D9 · Relay coil / contact indicator" alt="D9 · Relay coil / contact indicator — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-c4-instance-14-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/c4-instance-14-functions-01.png" title="C4 · 1uf circuit capacitor" alt="C4 · 1uf circuit capacitor — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-j14-instance-15-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/j14-instance-15-functions-01.png" title="J14 · Relay contact output" alt="J14 · Relay contact output — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-d4-instance-16-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/d4-instance-16-functions-01.png" title="D4 · LOW output indicator4" alt="D4 · LOW output indicator4 — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-j9-instance-17-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/j9-instance-17-functions-01.png" title="J9 · Field input6" alt="J9 · Field input6 — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-h1-instance-18-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/h1-instance-18-functions-01.png" title="H1 · Mount / assembly feature" alt="H1 · Mount / assembly feature — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-j17-instance-19-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/j17-instance-19-functions-01.png" title="J17 · Relay contact output" alt="J17 · Relay contact output — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-d3-instance-20-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/d3-instance-20-functions-01.png" title="D3 · LOW output indicator3" alt="D3 · LOW output indicator3 — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-c7-instance-21-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/c7-instance-21-functions-01.png" title="C7 · 1uf circuit capacitor" alt="C7 · 1uf circuit capacitor — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-r3-instance-22-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/r3-instance-22-functions-01.png" title="R3 · 10k circuit resistor" alt="R3 · 10k circuit resistor — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-c5-instance-23-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/c5-instance-23-functions-01.png" title="C5 · 1uf circuit capacitor" alt="C5 · 1uf circuit capacitor — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-h4-instance-24-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/h4-instance-24-functions-01.png" title="H4 · Mount / assembly feature" alt="H4 · Mount / assembly feature — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-c1-instance-25-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/c1-instance-25-functions-01.png" title="C1 · 1uf circuit capacitor" alt="C1 · 1uf circuit capacitor — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-d10-instance-26-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/d10-instance-26-functions-01.png" title="D10 · Relay coil / contact indicator" alt="D10 · Relay coil / contact indicator — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-r26-instance-27-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/r26-instance-27-functions-01.png" title="R26 · 60 circuit resistor" alt="R26 · 60 circuit resistor — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-h2-instance-28-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/h2-instance-28-functions-01.png" title="H2 · Mount / assembly feature" alt="H2 · Mount / assembly feature — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-rn1-instance-29-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/rn1-instance-29-functions-01.png" title="RN1 · OUT pull-ups / LED resistors" alt="RN1 · OUT pull-ups / LED resistors — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-rn1-instance-29-functions-02" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/rn1-instance-29-functions-02.png" title="RN1 · OUT pull-ups / LED resistors" alt="RN1 · OUT pull-ups / LED resistors — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-j2-instance-30-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/j2-instance-30-functions-01.png" title="J2 · Parallel input supply" alt="J2 · Parallel input supply — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-u1-instance-31-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/u1-instance-31-functions-01.png" title="U1 · MAX6818 input debouncer" alt="U1 · MAX6818 input debouncer — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-u1-instance-31-functions-02" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/u1-instance-31-functions-02.png" title="U1 · MAX6818 input debouncer" alt="U1 · MAX6818 input debouncer — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-u1-instance-31-functions-03" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/u1-instance-31-functions-03.png" title="U1 · MAX6818 input debouncer" alt="U1 · MAX6818 input debouncer — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-u1-instance-31-functions-04" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/u1-instance-31-functions-04.png" title="U1 · MAX6818 input debouncer" alt="U1 · MAX6818 input debouncer — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-q3-instance-32-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/q3-instance-32-functions-01.png" title="Q3 · Relay-control pulse sink" alt="Q3 · Relay-control pulse sink — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-j6-instance-33-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/j6-instance-33-functions-01.png" title="J6 · Field input3" alt="J6 · Field input3 — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-d2-instance-34-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/d2-instance-34-functions-01.png" title="D2 · LOW output indicator2" alt="D2 · LOW output indicator2 — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-j1-instance-35-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/j1-instance-35-functions-01.png" title="J1 · Parallel input supply" alt="J1 · Parallel input supply — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-r1-instance-36-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/r1-instance-36-functions-01.png" title="R1 · 33R circuit resistor" alt="R1 · 33R circuit resistor — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-d7-instance-37-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/d7-instance-37-functions-01.png" title="D7 · LOW output indicator7" alt="D7 · LOW output indicator7 — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-r2-instance-38-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/r2-instance-38-functions-01.png" title="R2 · 100k circuit resistor" alt="R2 · 100k circuit resistor — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-d6-instance-39-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/d6-instance-39-functions-01.png" title="D6 · LOW output indicator6" alt="D6 · LOW output indicator6 — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-j13-instance-40-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/j13-instance-40-functions-01.png" title="J13 · Switched auxiliary return" alt="J13 · Switched auxiliary return — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-d8-instance-41-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/d8-instance-41-functions-01.png" title="D8 · LOW output indicator8" alt="D8 · LOW output indicator8 — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-rn3-instance-42-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/rn3-instance-42-functions-01.png" title="RN3 · OUT pull-ups / LED resistors" alt="RN3 · OUT pull-ups / LED resistors — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-rn3-instance-42-functions-02" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/rn3-instance-42-functions-02.png" title="RN3 · OUT pull-ups / LED resistors" alt="RN3 · OUT pull-ups / LED resistors — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-fid2-instance-43-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/fid2-instance-43-functions-01.png" title="FID2 · Assembly alignment fiducial" alt="FID2 · Assembly alignment fiducial — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-h3-instance-44-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/h3-instance-44-functions-01.png" title="H3 · Mount / assembly feature" alt="H3 · Mount / assembly feature — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-c2-instance-45-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/c2-instance-45-functions-01.png" title="C2 · 10uf circuit capacitor" alt="C2 · 10uf circuit capacitor — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-h5-instance-46-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/h5-instance-46-functions-01.png" title="H5 · Mount / assembly feature" alt="H5 · Mount / assembly feature — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-j12-instance-47-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/j12-instance-47-functions-01.png" title="J12 · Switched auxiliary return" alt="J12 · Switched auxiliary return — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-u1-instance-48-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/u1-instance-48-functions-01.png" title="U1 · Distinct optional5V regulator" alt="U1 · Distinct optional5V regulator — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-r23-instance-49-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/r23-instance-49-functions-01.png" title="R23 · 10k circuit resistor" alt="R23 · 10k circuit resistor — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-c1-instance-50-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/c1-instance-50-functions-01.png" title="C1 · 1uf circuit capacitor" alt="C1 · 1uf circuit capacitor — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-j11-instance-51-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/j11-instance-51-functions-01.png" title="J11 · Field input8" alt="J11 · Field input8 — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-d5-instance-52-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/d5-instance-52-functions-01.png" title="D5 · LOW output indicator5" alt="D5 · LOW output indicator5 — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-r22-instance-53-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/r22-instance-53-functions-01.png" title="R22 · 100k circuit resistor" alt="R22 · 100k circuit resistor — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-r24-instance-54-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/r24-instance-54-functions-01.png" title="R24 · 10k circuit resistor" alt="R24 · 10k circuit resistor — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-q1-instance-55-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/q1-instance-55-functions-01.png" title="Q1 · MCU-controlled PMOS enable" alt="Q1 · MCU-controlled PMOS enable — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-j5-instance-56-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/j5-instance-56-functions-01.png" title="J5 · Field input2" alt="J5 · Field input2 — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-c6-instance-57-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/c6-instance-57-functions-01.png" title="C6 · 1uf circuit capacitor" alt="C6 · 1uf circuit capacitor — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-c3-instance-58-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/c3-instance-58-functions-01.png" title="C3 · 10uf circuit capacitor" alt="C3 · 10uf circuit capacitor — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-j7-instance-59-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/j7-instance-59-functions-01.png" title="J7 · Field input4" alt="J7 · Field input4 — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-q2-instance-60-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/q2-instance-60-functions-01.png" title="Q2 · Relay-control pulse sink" alt="Q2 · Relay-control pulse sink — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-k1-instance-61-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/k1-instance-61-functions-01.png" title="K1 · Main changeover power relay" alt="K1 · Main changeover power relay — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-k2-instance-62-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/k2-instance-62-functions-01.png" title="K2 · Latch / auxiliary relay" alt="K2 · Latch / auxiliary relay — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-k2-instance-62-functions-02" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/k2-instance-62-functions-02.png" title="K2 · Latch / auxiliary relay" alt="K2 · Latch / auxiliary relay — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-u3-instance-63-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/u3-instance-63-functions-01.png" title="U3 · 4068 aggregate input logic" alt="U3 · 4068 aggregate input logic — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-u3-instance-63-functions-02" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/u3-instance-63-functions-02.png" title="U3 · 4068 aggregate input logic" alt="U3 · 4068 aggregate input logic — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-u3-instance-63-functions-03" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/u3-instance-63-functions-03.png" title="U3 · 4068 aggregate input logic" alt="U3 · 4068 aggregate input logic — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-j15-instance-64-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/j15-instance-64-functions-01.png" title="J15 · Relay contact output" alt="J15 · Relay contact output — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-r25-instance-65-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/r25-instance-65-functions-01.png" title="R25 · 60 circuit resistor" alt="R25 · 60 circuit resistor — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-flambehub-reconstructed-fid3-instance-67-functions-01" src="/images/extensions/historical-flambehub/guides/reconstructed-reference/fid3-instance-67-functions-01.png" title="FID3 · Assembly alignment fiducial" alt="FID3 · Assembly alignment fiducial — source-derived functional reference" caption="Numbered native contact positions and functional callouts. Source-derived geometry; original canonical artwork, component fit and complete Prime wiring remain open." width=420 %}
-
-</details>
-
-[Drawing licence, attribution and modification notice](/images/extensions/historical-flambehub/guides/reconstructed-reference/NOTICE.md). The SVG files are editable drawing sources; the matching native design and original notices remain available below.
-
-## Practical use with Smoothieboard V2 Prime
-
-An illustrative use is aggregating a hardware overtemperature trigger and a manual stop before disconnecting a machine’s DC feed. First derive and test every normally-open/normally-closed contact path, trigger polarity and latch/reset state from the matching schematic. K1.11 is Vf, .12 NC_Out and .14 NO_Out; these are power relay contacts, not Prime GPIO outputs. The latch and coil paths require a complete review. Do not wire a Prime HALT pin or a safety peripheral solely by matching its connector’s pin count.
-
-## Firmware and setup
-
-### Standalone trigger versus optional Prime halt workflow
-FlambeHub source J3 MCU has1signal/2+5 V/3ground. Duplicate physical U1 instances are MAX6818EAP+T and R-78C5.0-1.0; do not collapse them into one part or conflate their domains.
-
-Standalone signal-processing operation has no Smoothieware configuration or board protocol driver. That is a complete software disposition for standalone use; it does not accept hardware operation. Optional Prime integration is a separate application whose signal direction, polarity, threshold, loss-state and reset behavior must be defined before assigning a GPIO.
-
-The ButtonBox KILL behaviour broadcasts a software halt; Switch with ignore_on_halt=false applies its handled-halt state. Neither guarantees power disconnection or an independent shutdown. Do not use a G-code command or a guessed enable GPIO as a fire-protection measure.
-
-No firmware setting calibrates the standalone protection hardware.
-
-These instructions identify source behavior at SmoothieV2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`; they do not identify the installed build or prove target execution. Reserve every listed pin and command in the complete configuration. Merge entries into existing sections rather than duplicating sections. These software instructions do not verify powered hardware or provide a complete wiring diagram.
-
-## Questions that remain before use
-
-Duplicate U1 and C1 references; relay contact/coil ratings and layout paths; fail-state truth table and reset behavior; MCU signal voltage and firmware behavior; input/output cable numbering.
-
-## Original files and attribution
-
-Modern mechanical relay boards and smoke-detector adapters are different functions/topologies. An eight-input debounced relay/latch safety hub is a separate source record.
-
-- [Flambehub_0.2.kicad_pcb](https://raw.githubusercontent.com/Ccecil/Flambehub/02f355e19b2fc8b0a7baaca4e1a2e3b2ae2ffc71/Flambehub_0.2.kicad_pcb) — original source at the selected commit.
-- [Flambehub_0.2.kicad_sch](https://raw.githubusercontent.com/Ccecil/Flambehub/02f355e19b2fc8b0a7baaca4e1a2e3b2ae2ffc71/Flambehub_0.2.kicad_sch) — original source at the selected commit.
-- [README.md](https://raw.githubusercontent.com/Ccecil/Flambehub/02f355e19b2fc8b0a7baaca4e1a2e3b2ae2ffc71/README.md) — original source at the selected commit.
-
-The repository metadata identifies GPL-3.0; preserve and inspect the matching license and source notices before redistribution.
-
-[All extension boards](/extension-boards)
+{% include _includes/extension-board-page.html %}
+
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Safety add-on</p>
+    <h1 id="historical-flambehub">Flambehub — trigger and power-disconnect hub</h1>
+    <p class="xb-lead">Collects eight hardware trigger inputs and an MCU input and drives a relay power disconnect without needing the controller to decide.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#downloads">Downloads</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/historical-flambehub/directory-board-render.png" alt="Top view of the Flambehub — trigger and power-disconnect hub board">
+    <figcaption>Top view drawn from the original board file. This is a drawing, not a photograph.</figcaption>
+  </figure>
+</div>
+
+<div class="xb-stats">
+  <div class="xb-stat"><b>8</b><span>trigger inputs</span></div>
+  <div class="xb-stat"><b>2</b><span>relays</span></div>
+  <div class="xb-stat"><b>MAX6818</b><span>debouncer</span></div>
+  <div class="xb-stat"><b>8</b><span>indicator LEDs</span></div>
+  <div class="xb-stat"><b>60 × 65 mm</b><span>board size</span></div>
+  <div class="xb-stat"><b>28 V DC</b><span>author&rsquo;s figure</span></div>
+</div>
+
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting dimensions</a>
+  <a href="#electrical">Electrical specifications</a>
+</nav>
+{:/nomarkdown}
+
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <b>This is not a certified safety device,</b> and the author&rsquo;s figure of up to 30 A at 28 V DC is not verified. J12 and J13 are switched-return outputs, not 5 V supply headers. Third-party design by Chris Cecil.
+</sl-alert>
+
+## Tech specs {#specs}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Function</td><td>Hardware trigger and disconnect hub</td></tr>
+    <tr><td>Triggers</td><td>J4–J11: ground, 5 V, input</td></tr>
+    <tr><td>MCU input</td><td>J3</td></tr>
+    <tr><td>Power input</td><td>J1, J2, fused by F1</td></tr>
+    <tr><td>Switched outputs</td><td>J15–J17, J12–J14</td></tr>
+    <tr><td>Logic</td><td>U1 MAX6818, U3 4068</td></tr>
+    <tr><td>Relays</td><td>K1 power, K2 latching</td></tr>
+    <tr><td>Size</td><td>60 × 65 mm</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Board tour {#tour}
+
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/historical-flambehub/directory-board-render.png" alt="Annotated top view of the Flambehub — trigger and power-disconnect hub board">
+      <a class="xb-mk xb-pr" href="#tour-1" style="left:78.3%;top:77.3%" aria-label="1: Trigger inputs">1<span class="xb-pop"><b>Trigger inputs</b> — J4–J11.</span></a>
+      <a class="xb-mk" href="#tour-2" style="left:62.1%;top:89.6%" aria-label="2: MCU input">2<span class="xb-pop"><b>MCU input</b> — Controller signal.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-3" style="left:15.5%;top:49.2%" aria-label="3: MAX6818">3<span class="xb-pop"><b>MAX6818</b> — Debouncer.</span></a>
+      <a class="xb-mk" href="#tour-4" style="left:54.4%;top:74.1%" aria-label="4: 4068">4<span class="xb-pop"><b>4068</b> — Combines the triggers.</span></a>
+      <a class="xb-mk" href="#tour-5" style="left:48.4%;top:63.0%" aria-label="5: Power relay">5<span class="xb-pop"><b>Power relay</b> — Switches the supply.</span></a>
+      <a class="xb-mk" href="#tour-6" style="left:25.5%;top:63.2%" aria-label="6: Latching relay">6<span class="xb-pop"><b>Latching relay</b> — Holds the state.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-7" style="left:46.0%;top:21.3%" aria-label="7: Fuse">7<span class="xb-pop"><b>Fuse</b> — On the supply.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-8" style="left:12.1%;top:33.0%" aria-label="8: Power input">8<span class="xb-pop"><b>Power input</b> — J2 is parallel.</span></a>
+      <a class="xb-mk" href="#tour-9" style="left:57.5%;top:89.1%" aria-label="9: Indicator LEDs">9<span class="xb-pop"><b>Indicator LEDs</b> — One per trigger.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Trigger inputs</b> — J4–J11.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>MCU input</b> — Controller signal.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>MAX6818</b> — Debouncer.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>4068</b> — Combines the triggers.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Power relay</b> — Switches the supply.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Latching relay</b> — Holds the state.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Fuse</b> — On the supply.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Power input</b> — J2 is parallel.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Indicator LEDs</b> — One per trigger.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
+
+## Pinout {#pinout}
+
+<span id="connect-and-try-it"></span>
+
+### Trigger input J4 (IN1)
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J4 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>GND</code></td></tr>
+    <tr><td>2</td><td><code>+5V</code></td></tr>
+    <tr><td>3</td><td><code>IN1</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+J5–J11 follow J4 for IN2–IN8.
+
+### MCU input J3
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J3 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>joined to R1 pad 1</td></tr>
+    <tr><td>2</td><td><code>+5V</code></td></tr>
+    <tr><td>3</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Power input J1
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>GND</code></td></tr>
+    <tr><td>2</td><td><code>Vi</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Output J15
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J15 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>GND</code></td></tr>
+    <tr><td>2</td><td><code>NC_Out</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Output J16
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J16 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>GND</code></td></tr>
+    <tr><td>2</td><td><code>NO_Out</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Switched return J12
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J12 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+5V</code></td></tr>
+    <tr><td>2</td><td><code>NC GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Switched return J13
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J13 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+5V</code></td></tr>
+    <tr><td>2</td><td><code>NO GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Output J14
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J14 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>NC_5v</code></td></tr>
+    <tr><td>2</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## What you need {#what-you-need}
+
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>Flambehub board</b><span>Built from the design files</span></div>
+  <div class="xb-card"><b>Fuse</b><span>Sized for the load</span></div>
+  <div class="xb-card"><b>Trigger devices</b><span>Compatible logic outputs</span></div>
+</div>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+<span id="smoothieware-use"></span>
+
+Hardware only: no Smoothieware setting is needed for the trigger and disconnect function.
+
+## How it works {#how-it-works}
+
+The MAX6818 debounces the eight inputs, a 4068 combines them, and the latching relay K2 controls the power relay K1, which switches the fused supply between its normally closed and normally open outputs.
+
+## Troubleshooting {#troubleshooting}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Relay does not change state</td><td>Check the supply, 5 V rail and trigger levels.</td></tr>
+    <tr><td>One trigger ignored</td><td>Check its connector and indicator LED.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
+
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://raw.githubusercontent.com/Ccecil/Flambehub/02f355e19b2fc8b0a7baaca4e1a2e3b2ae2ffc71/Flambehub_0.2.kicad_pcb">Flambehub_0.2.kicad_pcb</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://raw.githubusercontent.com/Ccecil/Flambehub/02f355e19b2fc8b0a7baaca4e1a2e3b2ae2ffc71/Flambehub_0.2.kicad_sch">Flambehub_0.2.kicad_sch</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://raw.githubusercontent.com/Ccecil/Flambehub/02f355e19b2fc8b0a7baaca4e1a2e3b2ae2ffc71/README.md">README.md</a></td><td>Design source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+Outline and holes from the original board file. Millimetres, seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-al-flambehub-mount-t">
+  <title id="xb-al-flambehub-mount-t">Mounting drawing of the historical-flambehub, component side: outline 60 by 65 millimetres with 5 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="323.1" y="78.0" width="313.8" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M323.1 56H636.9"/><path d="M323.1 50V62"/><path d="M636.9 50V62"/><path d="M662.9 78.0V418.0"/><path d="M656.9 78.0h12"/><path d="M656.9 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">60</text>
+  <text x="674.9" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">65</text>
+  <circle cx="323.1" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="311.1" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M265.1 104.0h30" fill="none"/><path d="M299.1 104.0l-8 -4v8z"/><path d="M265.1 104.0v30" fill="none"/><path d="M265.1 138.0l-4 -8h8z"/></g>
+  <text x="303.1" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="261.1" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="348.4" cy="119.8" r="8.4" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M336.1 119.8h24.7M348.4 107.5v24.7" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="340.1" y="148.2" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  4.85, 8.00</text>
+  <circle cx="610.0" cy="119.8" r="8.4" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M597.6 119.8h24.7M610.0 107.5v24.7" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="618.4" y="148.2" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  54.85, 8.00</text>
+  <circle cx="480.0" cy="234.7" r="6.5" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M469.5 234.7h21.1M480.0 224.1v21.1" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="486.5" y="261.2" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  30.00, 29.95</text>
+  <circle cx="348.4" cy="381.4" r="8.4" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M336.1 381.4h24.7M348.4 369.0v24.7" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="340.1" y="363.0" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  4.85, 58.00</text>
+  <circle cx="610.0" cy="381.4" r="8.4" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M597.6 381.4h24.7M610.0 369.0v24.7" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="618.4" y="363.0" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">5</tspan>  54.85, 58.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 60 × 65&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>4.85</td><td>8.00</td><td>3.2&nbsp;mm, plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>54.85</td><td>8.00</td><td>3.2&nbsp;mm, plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>3</td><td>30.00</td><td>29.95</td><td>2.5&nbsp;mm, not plated</td><td>Mounting</td></tr>
+    <tr><td>4</td><td>4.85</td><td>58.00</td><td>3.2&nbsp;mm, plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>5</td><td>54.85</td><td>58.00</td><td>3.2&nbsp;mm, plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Only what the design source states or the circuit fixes. Blank cells are not specified.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Voltage, current and temperature limits</td><td>Whole board</td><td>—</td><td>—</td><td>—</td><td>Not specified in the source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Design source {#origin}
+
+Third-party design by Chris Cecil: [original board file](https://raw.githubusercontent.com/Ccecil/Flambehub/02f355e19b2fc8b0a7baaca4e1a2e3b2ae2ffc71/Flambehub_0.2.kicad_pcb) (<code>Flambehub_0.2.kicad_pcb</code>). It is a separate hardware design, not a current Smoothieware board.
+See all boards on the [extension boards](/extension-boards) page.

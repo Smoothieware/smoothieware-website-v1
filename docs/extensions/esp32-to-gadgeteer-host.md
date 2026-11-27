@@ -21,7 +21,7 @@ permalink: /extensions/esp32-to-gadgeteer-host
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/esp32-to-gadgeteer-host/v03/esp32-to-gadgeteer-host-diagram.png" alt="Top view of the ESP32 DevKit to Gadgeteer host board.">
+    <img src="/images/extensions/esp32-to-gadgeteer-host/v03/esp32-to-gadgeteer-host-diagram.webp" alt="Top view of the ESP32 DevKit to Gadgeteer host board.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -85,7 +85,7 @@ The numbers on the drawing match the list below it.
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/esp32-to-gadgeteer-host/v03/esp32-to-gadgeteer-host-diagram.png" alt="Top view of the ESP32 DevKit to Gadgeteer host board with numbered markers explained in the list below.">
+      <img src="/images/extensions/esp32-to-gadgeteer-host/v03/esp32-to-gadgeteer-host-diagram.webp" alt="Top view of the ESP32 DevKit to Gadgeteer host board with numbered markers explained in the list below.">
       <a class="xb-mk xb-pb" href="#tour-1" style="left:26.6%;top:6.0%" aria-label="1: Left DevKit row (J7)">1<span class="xb-pop"><b>Left DevKit row (J7)</b> — pin 1 at the antenna end.</span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:73.3%;top:6.0%" aria-label="2: Right DevKit row (J8)">2<span class="xb-pop"><b>Right DevKit row (J8)</b> — pin 1 at the antenna end.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-3" style="left:9.0%;top:15.8%" aria-label="3: Analog socket (J1)">3<span class="xb-pop"><b>Analog socket (J1)</b> — inputs.</span></a>
@@ -229,7 +229,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/esp32-to-gadgeteer-host/v03/esp32-to-gadgeteer-host-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/esp32-to-gadgeteer-host/v03/esp32-to-gadgeteer-host-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/esp32-to-gadgeteer-host/v03/esp32-to-gadgeteer-host-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/esp32-to-gadgeteer-host/v03/esp32-to-gadgeteer-host-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

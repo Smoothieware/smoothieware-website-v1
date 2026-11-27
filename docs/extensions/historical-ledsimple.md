@@ -1,317 +1,177 @@
 ---
 layout: default
 title: "LedSimple"
+description: "Seven-LED signal indicator board: pinout, test wiring and configuration."
 permalink: /extensions/historical-ledsimple
 ---
 
-# LedSimple
-
-This is a seven-channel GPIO indicator board: each host signal lights its corresponding LED through a resistor. It is useful for observing digital outputs during a bench test, not for driving external power loads.
-
-Read the [two-lead connection checklist](#connect-and-try-it), then the [digital-output example](#smoothieware-use). The reference views below explain the board; the connection checklist leaves both supply contacts unused.
-
-## Documented source and compatibility
-
-This guide describes the [Smoothieboard2 design source](https://github.com/Smoothieware/Smoothieboard2/tree/52ab340de33180a975b25f856c161993488e6ace/extensions/LedSimple). Check connector compatibility contact by contact.
-
-## Power, signals and controls
-
-P1.3–.9 are P3–P9. D1–D7 have their contact 1 on ground and contact 2 toward the signal resistor, indicating active-high LED paths in the KiCad diode convention. The netlist labels P1.1/.2 as 3.3 V/5 V, but those two pads have no assigned nets on the PCB. Leave both contacts unused. Each indicator is driven through its 330 Ω series resistor from its GPIO signal, with the LED cathode connected to ground; it does not need a separate supply contact. There are no user jumpers or switches. The schematic and netlist specify D1 as Avago HSMH-C190 in an LED-0603 footprint (supplier reference 516-1420-6-ND). Check the fitted LED, operating current and host drive budget.
-
-### Annotated connector and component reference
-{: #annotated-connector-and-component-reference style="scroll-margin-top: 6rem;"}
-
-These drawings show the board outline, component footprints, pads and graphics with function callouts. Purple bottom-side graphics are projected into front-board coordinates, not a bottom mating view. P1.1 and P1.2 remain unused because the PCB has no assigned nets there despite the netlist rail names. Check output current before powering the seven 330 Ω LED paths.
-
-### Board reference
-
-These function-labelled views show the board geometry. They are not mating views.
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-00-overview" src="/images/extensions/historical-ledsimple/guides/source-derived-reader-compact/reader-00-overview.png" title="Board overview" alt="Board overview" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-00-mandatory-limits" src="/images/extensions/historical-ledsimple/guides/source-derived-reader-compact/reader-00-mandatory-limits.png" title="Mandatory connection limits" alt="Mandatory connection limits" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-<details markdown="1">
-<summary>Connector and component functions</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-d1-1" src="/images/extensions/historical-ledsimple/guides/source-derived-reader/reader-d1-1.png" title="D1 1" alt="D1 1" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-d2-1" src="/images/extensions/historical-ledsimple/guides/source-derived-reader/reader-d2-1.png" title="D2 1" alt="D2 1" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-d3-1" src="/images/extensions/historical-ledsimple/guides/source-derived-reader/reader-d3-1.png" title="D3 1" alt="D3 1" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-d4-1" src="/images/extensions/historical-ledsimple/guides/source-derived-reader/reader-d4-1.png" title="D4 1" alt="D4 1" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-d5-1" src="/images/extensions/historical-ledsimple/guides/source-derived-reader/reader-d5-1.png" title="D5 1" alt="D5 1" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-d6-1" src="/images/extensions/historical-ledsimple/guides/source-derived-reader/reader-d6-1.png" title="D6 1" alt="D6 1" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-d7-1" src="/images/extensions/historical-ledsimple/guides/source-derived-reader/reader-d7-1.png" title="D7 1" alt="D7 1" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-m1-1" src="/images/extensions/historical-ledsimple/guides/source-derived-reader/reader-m1-1.png" title="M1 1" alt="M1 1" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-m2-1" src="/images/extensions/historical-ledsimple/guides/source-derived-reader/reader-m2-1.png" title="M2 1" alt="M2 1" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-p1-1" src="/images/extensions/historical-ledsimple/guides/source-derived-reader/reader-p1-1.png" title="P1 1" alt="P1 1" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-p1-2" src="/images/extensions/historical-ledsimple/guides/source-derived-reader/reader-p1-2.png" title="P1 2" alt="P1 2" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-r1-1" src="/images/extensions/historical-ledsimple/guides/source-derived-reader/reader-r1-1.png" title="R1 1" alt="R1 1" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-r2-1" src="/images/extensions/historical-ledsimple/guides/source-derived-reader/reader-r2-1.png" title="R2 1" alt="R2 1" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-r3-1" src="/images/extensions/historical-ledsimple/guides/source-derived-reader/reader-r3-1.png" title="R3 1" alt="R3 1" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-r4-1" src="/images/extensions/historical-ledsimple/guides/source-derived-reader/reader-r4-1.png" title="R4 1" alt="R4 1" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-r5-1" src="/images/extensions/historical-ledsimple/guides/source-derived-reader/reader-r5-1.png" title="R5 1" alt="R5 1" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-r6-1" src="/images/extensions/historical-ledsimple/guides/source-derived-reader/reader-r6-1.png" title="R6 1" alt="R6 1" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-compact-function-reader-r7-1" src="/images/extensions/historical-ledsimple/guides/source-derived-reader/reader-r7-1.png" title="R7 1" alt="R7 1" caption=" Dashed leaders locate parts and contacts; they are not installation wires. Read the mandatory limits before making connections." width=1200 %}
-
-</details>
-
-<details markdown="1">
-<summary>Contact audits and supplementary views</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-00-overview" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/00-overview.png" title="LedSimple reference — 00 overview" alt="LedSimple reference — 00 overview" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-d1-1" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/d1-1.png" title="LedSimple reference — d1 1" alt="LedSimple reference — d1 1" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-d2-1" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/d2-1.png" title="LedSimple reference — d2 1" alt="LedSimple reference — d2 1" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-d3-1" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/d3-1.png" title="LedSimple reference — d3 1" alt="LedSimple reference — d3 1" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-d4-1" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/d4-1.png" title="LedSimple reference — d4 1" alt="LedSimple reference — d4 1" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-d5-1" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/d5-1.png" title="LedSimple reference — d5 1" alt="LedSimple reference — d5 1" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-d6-1" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/d6-1.png" title="LedSimple reference — d6 1" alt="LedSimple reference — d6 1" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-d7-1" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/d7-1.png" title="LedSimple reference — d7 1" alt="LedSimple reference — d7 1" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-mounting-and-controls" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/mounting-and-controls.png" title="LedSimple reference — mounting and controls" alt="LedSimple reference — mounting and controls" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-p1-1" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/p1-1.png" title="LedSimple reference — p1 1" alt="LedSimple reference — p1 1" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-p1-2" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/p1-2.png" title="LedSimple reference — p1 2" alt="LedSimple reference — p1 2" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-d1-01" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-d1-01.png" title="LedSimple reference — pin d1 01" alt="LedSimple reference — pin d1 01" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-d1-02" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-d1-02.png" title="LedSimple reference — pin d1 02" alt="LedSimple reference — pin d1 02" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-d2-01" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-d2-01.png" title="LedSimple reference — pin d2 01" alt="LedSimple reference — pin d2 01" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-d2-02" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-d2-02.png" title="LedSimple reference — pin d2 02" alt="LedSimple reference — pin d2 02" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-d3-01" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-d3-01.png" title="LedSimple reference — pin d3 01" alt="LedSimple reference — pin d3 01" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-d3-02" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-d3-02.png" title="LedSimple reference — pin d3 02" alt="LedSimple reference — pin d3 02" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-d4-01" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-d4-01.png" title="LedSimple reference — pin d4 01" alt="LedSimple reference — pin d4 01" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-d4-02" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-d4-02.png" title="LedSimple reference — pin d4 02" alt="LedSimple reference — pin d4 02" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-d5-01" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-d5-01.png" title="LedSimple reference — pin d5 01" alt="LedSimple reference — pin d5 01" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-d5-02" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-d5-02.png" title="LedSimple reference — pin d5 02" alt="LedSimple reference — pin d5 02" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-d6-01" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-d6-01.png" title="LedSimple reference — pin d6 01" alt="LedSimple reference — pin d6 01" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-d6-02" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-d6-02.png" title="LedSimple reference — pin d6 02" alt="LedSimple reference — pin d6 02" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-d7-01" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-d7-01.png" title="LedSimple reference — pin d7 01" alt="LedSimple reference — pin d7 01" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-d7-02" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-d7-02.png" title="LedSimple reference — pin d7 02" alt="LedSimple reference — pin d7 02" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-p1-01" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-p1-01.png" title="LedSimple reference — pin p1 01" alt="LedSimple reference — pin p1 01" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-p1-02" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-p1-02.png" title="LedSimple reference — pin p1 02" alt="LedSimple reference — pin p1 02" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-p1-03" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-p1-03.png" title="LedSimple reference — pin p1 03" alt="LedSimple reference — pin p1 03" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-p1-04" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-p1-04.png" title="LedSimple reference — pin p1 04" alt="LedSimple reference — pin p1 04" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-p1-05" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-p1-05.png" title="LedSimple reference — pin p1 05" alt="LedSimple reference — pin p1 05" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-p1-06" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-p1-06.png" title="LedSimple reference — pin p1 06" alt="LedSimple reference — pin p1 06" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-p1-07" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-p1-07.png" title="LedSimple reference — pin p1 07" alt="LedSimple reference — pin p1 07" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-p1-08" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-p1-08.png" title="LedSimple reference — pin p1 08" alt="LedSimple reference — pin p1 08" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-p1-09" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-p1-09.png" title="LedSimple reference — pin p1 09" alt="LedSimple reference — pin p1 09" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-p1-10" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-p1-10.png" title="LedSimple reference — pin p1 10" alt="LedSimple reference — pin p1 10" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-r1-01" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-r1-01.png" title="LedSimple reference — pin r1 01" alt="LedSimple reference — pin r1 01" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-r1-02" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-r1-02.png" title="LedSimple reference — pin r1 02" alt="LedSimple reference — pin r1 02" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-r2-01" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-r2-01.png" title="LedSimple reference — pin r2 01" alt="LedSimple reference — pin r2 01" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-r2-02" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-r2-02.png" title="LedSimple reference — pin r2 02" alt="LedSimple reference — pin r2 02" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-r3-01" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-r3-01.png" title="LedSimple reference — pin r3 01" alt="LedSimple reference — pin r3 01" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-r3-02" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-r3-02.png" title="LedSimple reference — pin r3 02" alt="LedSimple reference — pin r3 02" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-r4-01" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-r4-01.png" title="LedSimple reference — pin r4 01" alt="LedSimple reference — pin r4 01" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-r4-02" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-r4-02.png" title="LedSimple reference — pin r4 02" alt="LedSimple reference — pin r4 02" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-r5-01" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-r5-01.png" title="LedSimple reference — pin r5 01" alt="LedSimple reference — pin r5 01" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-r5-02" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-r5-02.png" title="LedSimple reference — pin r5 02" alt="LedSimple reference — pin r5 02" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-r6-01" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-r6-01.png" title="LedSimple reference — pin r6 01" alt="LedSimple reference — pin r6 01" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-r6-02" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-r6-02.png" title="LedSimple reference — pin r6 02" alt="LedSimple reference — pin r6 02" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-r7-01" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-r7-01.png" title="LedSimple reference — pin r7 01" alt="LedSimple reference — pin r7 01" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-pin-r7-02" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/pin-r7-02.png" title="LedSimple reference — pin r7 02" alt="LedSimple reference — pin r7 02" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-r1-1" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/r1-1.png" title="LedSimple reference — r1 1" alt="LedSimple reference — r1 1" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-r2-1" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/r2-1.png" title="LedSimple reference — r2 1" alt="LedSimple reference — r2 1" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-r3-1" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/r3-1.png" title="LedSimple reference — r3 1" alt="LedSimple reference — r3 1" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-r4-1" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/r4-1.png" title="LedSimple reference — r4 1" alt="LedSimple reference — r4 1" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-r5-1" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/r5-1.png" title="LedSimple reference — r5 1" alt="LedSimple reference — r5 1" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-r6-1" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/r6-1.png" title="LedSimple reference — r6 1" alt="LedSimple reference — r6 1" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-source-derived-r7-1" src="/images/extensions/historical-ledsimple/guides/source-derived-annotated/r7-1.png" title="LedSimple reference — r7 1" alt="LedSimple reference — r7 1" caption="Board reference. Front-coordinate projection, not a mating view. P1.1/.2 unused." width=420 %}
-
-<details markdown="1">
-<summary>Additional functional references</summary>
-
-### Annotated connector and component reference
-{: #focused-contact-function-sheets style="scroll-margin-top: 6rem;"}
-
-These focused sheets combine board artwork, numbered contact keys and function callouts. Use all sheets together. Coordinate keys locate source pads; they are not connector mating views.
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-functional-m2-functions-01" src="/images/extensions/historical-ledsimple/guides/functional-reference/m2-functions-01.png" title="M2 — contact functions" alt="M2 contacts and function pills" caption=" Front-coordinate projection; underside parts explicitly identified. Match numbers with function pills." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-functional-m1-functions-01" src="/images/extensions/historical-ledsimple/guides/functional-reference/m1-functions-01.png" title="M1 — contact functions" alt="M1 contacts and function pills" caption=" Front-coordinate projection; underside parts explicitly identified. Match numbers with function pills." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-functional-d1-functions-01" src="/images/extensions/historical-ledsimple/guides/functional-reference/d1-functions-01.png" title="D1 — contact functions" alt="D1 contacts and function pills" caption=" Front-coordinate projection; underside parts explicitly identified. Match numbers with function pills." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-functional-d2-functions-01" src="/images/extensions/historical-ledsimple/guides/functional-reference/d2-functions-01.png" title="D2 — contact functions" alt="D2 contacts and function pills" caption=" Front-coordinate projection; underside parts explicitly identified. Match numbers with function pills." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-functional-d3-functions-01" src="/images/extensions/historical-ledsimple/guides/functional-reference/d3-functions-01.png" title="D3 — contact functions" alt="D3 contacts and function pills" caption=" Front-coordinate projection; underside parts explicitly identified. Match numbers with function pills." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-functional-d4-functions-01" src="/images/extensions/historical-ledsimple/guides/functional-reference/d4-functions-01.png" title="D4 — contact functions" alt="D4 contacts and function pills" caption=" Front-coordinate projection; underside parts explicitly identified. Match numbers with function pills." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-functional-d5-functions-01" src="/images/extensions/historical-ledsimple/guides/functional-reference/d5-functions-01.png" title="D5 — contact functions" alt="D5 contacts and function pills" caption=" Front-coordinate projection; underside parts explicitly identified. Match numbers with function pills." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-functional-d6-functions-01" src="/images/extensions/historical-ledsimple/guides/functional-reference/d6-functions-01.png" title="D6 — contact functions" alt="D6 contacts and function pills" caption=" Front-coordinate projection; underside parts explicitly identified. Match numbers with function pills." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-functional-d7-functions-01" src="/images/extensions/historical-ledsimple/guides/functional-reference/d7-functions-01.png" title="D7 — contact functions" alt="D7 contacts and function pills" caption=" Front-coordinate projection; underside parts explicitly identified. Match numbers with function pills." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-functional-p1-functions-01" src="/images/extensions/historical-ledsimple/guides/functional-reference/p1-functions-01.png" title="P1 — contact functions" alt="P1 contacts and function pills" caption=" Front-coordinate projection; underside parts explicitly identified. Match numbers with function pills." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-functional-p1-functions-02" src="/images/extensions/historical-ledsimple/guides/functional-reference/p1-functions-02.png" title="P1 — contact functions" alt="P1 contacts and function pills" caption=" Front-coordinate projection; underside parts explicitly identified. Match numbers with function pills." width=420 %}
-
-[Matching design source, licence and drawing notice](/images/extensions/historical-ledsimple/guides/native-contact-reference/native-source-and-notices.zip). Retain the CERN-OHL-1.2 licence and source notices with derivatives.
-
-### Contact locator reference
-
-These locators show pad positions and the board outline. Read all focused sheets together.
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-reader-compact-overview" src="/images/extensions/historical-ledsimple/guides/native-contact-reference/reader-compact-overview.png" title="Seven-line LEDs" alt="Seven-line LEDs — contact locator" caption="" width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-reader-compact-p1-1-5" src="/images/extensions/historical-ledsimple/guides/native-contact-reference/reader-compact-p1-1-5.png" title="P1 · LED inputs" alt="P1 · LED inputs — contact locator" caption="" width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-reader-compact-p1-6-10" src="/images/extensions/historical-ledsimple/guides/native-contact-reference/reader-compact-p1-6-10.png" title="P1 · LED inputs" alt="P1 · LED inputs — contact locator" caption="" width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-reader-compact-boundary" src="/images/extensions/historical-ledsimple/guides/native-contact-reference/reader-compact-boundary.png" title="Drawing notes" alt="Drawing notes — contact locator" caption="" width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-reader-compact-led1" src="/images/extensions/historical-ledsimple/guides/native-contact-reference/reader-compact-led1.png" title="LED resistor paths" alt="LED resistor paths — contact locator" caption="" width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-reader-compact-led4" src="/images/extensions/historical-ledsimple/guides/native-contact-reference/reader-compact-led4.png" title="LED resistor paths" alt="LED resistor paths — contact locator" caption="" width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-reader-compact-led7" src="/images/extensions/historical-ledsimple/guides/native-contact-reference/reader-compact-led7.png" title="Seventh LED input" alt="Seventh LED input — contact locator" caption="" width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-reader-compact-mounts" src="/images/extensions/historical-ledsimple/guides/native-contact-reference/reader-compact-mounts.png" title="Mechanical mounting pads" alt="Mechanical mounting pads — contact locator" caption="" width=420 %}
-
-</details>
-
-The contact inventory below records circuit connectivity; check physical cable orientation before wiring. The PCB leaves host contacts 1 and 2 without named nets although the netlist labels them supply rails. Treat both as unused on this layout, not as extra rail outputs.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Reference | Value / role | Contact → net |
-|---|---|---|
-| P1 | XY | 1 → no assigned PCB net (netlist: +3V3), leave open; 2 → no assigned PCB net (netlist: +5V), leave open; 3 → /P3; 4 → /P4; 5 → /P5; 6 → /P6; 7 → /P7; 8 → /P8; 9 → /P9; 10 → GND |
-| D1 | P3 | 1 → GND; 2 → Net-(D1-Pad2) |
-| D2 | P4 | 1 → GND; 2 → Net-(D2-Pad2) |
-| D3 | P5 | 1 → GND; 2 → Net-(D3-Pad2) |
-| D4 | P6 | 1 → GND; 2 → Net-(D4-Pad2) |
-| D5 | P7 | 1 → GND; 2 → Net-(D5-Pad2) |
-| D6 | P8 | 1 → GND; 2 → Net-(D6-Pad2) |
-| D7 | P9 | 1 → GND; 2 → Net-(D7-Pad2) |
-| R1 | 330 | 1 → Net-(D1-Pad2); 2 → /P3 |
-| R2 | 330 | 1 → Net-(D2-Pad2); 2 → /P4 |
-| R3 | 330 | 1 → Net-(D3-Pad2); 2 → /P5 |
-| R4 | 330 | 1 → Net-(D4-Pad2); 2 → /P6 |
-| R5 | 330 | 1 → Net-(D5-Pad2); 2 → /P7 |
-| R6 | 330 | 1 → Net-(D6-Pad2); 2 → /P8 |
-| R7 | 330 | 1 → Net-(D7-Pad2); 2 → /P9 |
-
+{% include _includes/extension-board-page.html %}
+
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Indicators</p>
+    <h1 id="historical-ledsimple">LedSimple</h1>
+    <p class="xb-lead">Seven LEDs, one per header signal, to watch digital outputs during a bench test.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#downloads">Downloads</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/historical-ledsimple/directory-board-render.png" alt="Top view of the LedSimple board">
+    <figcaption>Top view drawn from the original board file. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-</details>
+<div class="xb-stats">
+  <div class="xb-stat"><b>7</b><span>LEDs</span></div>
+  <div class="xb-stat"><b>7</b><span>signals</span></div>
+  <div class="xb-stat"><b>330 Ω</b><span>per LED</span></div>
+  <div class="xb-stat"><b>active high</b><span>logic</span></div>
+  <div class="xb-stat"><b>37 × 10 mm</b><span>board size</span></div>
+  <div class="xb-stat"><b>2</b><span>mounting holes</span></div>
+</div>
 
-</details>
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting dimensions</a>
+  <a href="#electrical">Electrical specifications</a>
+</nav>
+{:/nomarkdown}
 
-## Connect and try it
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <b>Leave header contacts 1 and 2 unconnected.</b> The netlist names them as supply rails, but the board connects them to nothing. The LEDs are for observation only, not for driving loads. This is a historical Smoothieboard2 design, not a current board.
+</sl-alert>
 
-The one-channel connection uses exactly two individual leads: Prime J37.3/PB1 to LEDsimple P1.3, and Prime J37.10/GND to P1.10. Leave every other contact open, including P1.1/.2; do not attach a populated header cable from this example. Check the fitted resistor, LED polarity, GPIO drive and current budget and physical mating before powering. PB1 then controls D1 through R1 (330 Ω). A simple bench test toggles this one output with the digital switch example below while the other signals remain unassigned. Do not infer that a glowing LED proves a peripheral works.
+## Tech specs {#specs}
 
-### Check the two-lead example
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Function</td><td>Seven-channel logic indicator</td></tr>
+    <tr><td>Header</td><td>P1, ten contacts, on the underside</td></tr>
+    <tr><td>Signals</td><td>Contacts 3–9</td></tr>
+    <tr><td>Ground</td><td>Contact 10</td></tr>
+    <tr><td>Series resistor</td><td>330 Ω per LED</td></tr>
+    <tr><td>Size</td><td>37 × 10 mm</td></tr>
+    <tr><td>Licence</td><td>CERN-OHL-1.2</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-Keep power off while identifying and attaching the two leads. Match contact numbers against the board view, rather than using cable colours as pin numbers.
+## Board tour {#tour}
 
-| Lead | Prime end | LedSimple end | Purpose |
-|---|---|---|---|
-| Signal | J37.3 / PB1 | P1.3 | Drives D1 through R1, 330 Ω |
-| Return | J37.10 / ground | P1.10 | Completes D1's return path |
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/historical-ledsimple/directory-board-render.png" alt="Annotated top view of the LedSimple board">
+      <a class="xb-mk" href="#tour-1" style="left:28.1%;top:50.0%" aria-label="1: D1 (contact 3)">1<span class="xb-pop"><b>D1 (contact 3)</b> — Lights when P1 contact 3 is high.</span></a>
+      <a class="xb-mk" href="#tour-2" style="left:50.0%;top:50.0%" aria-label="2: D4 (contact 6)">2<span class="xb-pop"><b>D4 (contact 6)</b> — Middle of the row.</span></a>
+      <a class="xb-mk" href="#tour-3" style="left:71.9%;top:50.0%" aria-label="3: D7 (contact 9)">3<span class="xb-pop"><b>D7 (contact 9)</b> — Lights when P1 contact 9 is high.</span></a>
+      <a class="xb-mk" href="#tour-4" style="left:35.4%;top:50.0%" aria-label="4: LED D2">4<span class="xb-pop"><b>LED D2</b> — LED D2, marked <code>P4</code> in the board file. Connects to <code>GND</code>.</span></a>
+      <a class="xb-mk" href="#tour-5" style="left:42.7%;top:50.0%" aria-label="5: LED D3">5<span class="xb-pop"><b>LED D3</b> — LED D3, marked <code>P5</code> in the board file. Connects to <code>GND</code>.</span></a>
+      <a class="xb-mk" href="#tour-6" style="left:57.3%;top:50.0%" aria-label="6: LED D5">6<span class="xb-pop"><b>LED D5</b> — LED D5, marked <code>P7</code> in the board file. Connects to <code>GND</code>.</span></a>
+      <a class="xb-mk" href="#tour-7" style="left:64.6%;top:50.0%" aria-label="7: LED D6">7<span class="xb-pop"><b>LED D6</b> — LED D6, marked <code>P8</code> in the board file. Connects to <code>GND</code>.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>D1 (contact 3)</b> — Lights when P1 contact 3 is high.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>D4 (contact 6)</b> — Middle of the row.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>D7 (contact 9)</b> — Lights when P1 contact 9 is high.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>LED D2</b> — LED D2, marked <code>P4</code> in the board file. Connects to <code>GND</code>.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>LED D3</b> — LED D3, marked <code>P5</code> in the board file. Connects to <code>GND</code>.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>LED D5</b> — LED D5, marked <code>P7</code> in the board file. Connects to <code>GND</code>.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>LED D6</b> — LED D6, marked <code>P8</code> in the board file. Connects to <code>GND</code>.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-Leave P1.1, P1.2 and P1.4–P1.9 unconnected. The PCB does not assign supply nets to P1.1/.2; adding a supply wire does not repair that discrepancy. This example uses individual leads, not a populated ten-contact cable.
+### Lights {#lights}
 
-After completing the resistor, LED-polarity and GPIO-current checks, use the configuration below with PB1 reserved for this test. `M106.9` requests D1 on; `M107.9` requests D1 off. If the indication does not change, first check the configuration and command allocation, then turn power off and compare the signal/return contacts and D1/R1 population with the contact tables. Do not move the lead onto a supply contact to force the LED on.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th>Lit means</th><th>Disable it</th></tr></thead>
+  <tbody>
+    <tr><td>D1–D7</td><td>The signal on P1 contacts 3–9 (D1 = contact 3) is high</td><td>Disconnect that signal</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-### Practical Prime wiring
+## Pinout {#pinout}
 
-The complete board drawings below show the Prime and the LED board with two continuous leads. Read the connection limits and contact keys; zoom in for pad details.
+<span id="connect-and-try-it"></span>
 
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-wholeboard-wholeboard-wiring" src="/images/extensions/historical-ledsimple/guides/wholeboard-readable/wholeboard-wiring.png" title="Complete-board two-lead connection" alt="Complete-board two-lead connection for LedSimple and Smoothieboard V2 Prime" caption="Wiring reference. Exactly two individual leads; all other contacts open." width=1200 %}
+### Header P1
 
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-wholeboard-narrow-two-leads" src="/images/extensions/historical-ledsimple/guides/wholeboard-two-leads/narrow-two-leads.png" title="Two individual leads — compact reader key" alt="Two individual leads — compact reader key for LedSimple and Smoothieboard V2 Prime" caption="Wiring reference. Exactly two individual leads; all other contacts open." width=1200 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>P1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>not connected</td></tr>
+    <tr><td>2</td><td>not connected</td></tr>
+    <tr><td>3</td><td><code>P3</code></td></tr>
+    <tr><td>4</td><td><code>P4</code></td></tr>
+    <tr><td>5</td><td><code>P5</code></td></tr>
+    <tr><td>6</td><td><code>P6</code></td></tr>
+    <tr><td>7</td><td><code>P7</code></td></tr>
+    <tr><td>8</td><td><code>P8</code></td></tr>
+    <tr><td>9</td><td><code>P9</code></td></tr>
+    <tr><td>10</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-wholeboard-narrow-mandatory-limits" src="/images/extensions/historical-ledsimple/guides/wholeboard-two-leads/narrow-mandatory-limits.png" title="Mandatory limits — compact reader key" alt="Mandatory limits — compact reader key for LedSimple and Smoothieboard V2 Prime" caption="Wiring reference. Exactly two individual leads; all other contacts open." width=1200 %}
+## What you need {#what-you-need}
 
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-wholeboard-mandatory-limits" src="/images/extensions/historical-ledsimple/guides/wholeboard-two-leads/mandatory-limits.png" title="Mandatory connection limits" alt="Mandatory connection limits for LedSimple and Smoothieboard V2 Prime" caption="Wiring reference. Exactly two individual leads; all other contacts open." width=1200 %}
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>LedSimple board</b><span>Built from the design files</span></div>
+  <div class="xb-card"><b>Two leads</b><span>One signal and ground</span></div>
+</div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-wholeboard-contact-key" src="/images/extensions/historical-ledsimple/guides/wholeboard-two-leads/contact-key.png" title="Board contacts" alt="Board contacts for LedSimple and Smoothieboard V2 Prime" caption="Wiring reference. Exactly two individual leads; all other contacts open." width=1200 %}
+## Get started {#get-started}
 
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-wholeboard-pcb-relationships" src="/images/extensions/historical-ledsimple/guides/wholeboard-two-leads/pcb-relationships.png" title="Indicator path inside the PCB" alt="Indicator path inside the PCB for LedSimple and Smoothieboard V2 Prime" caption="Wiring reference. Exactly two individual leads; all other contacts open." width=1200 %}
+A one-channel test on Smoothieboard V2 Prime.
 
-{% include _includes/extension-instruction-diagram.html id="historical-ledsimple-wholeboard-firmware-and-sources" src="/images/extensions/historical-ledsimple/guides/wholeboard-two-leads/firmware-and-sources.png" title="Firmware example and limits" alt="Firmware example and limits for LedSimple and Smoothieboard V2 Prime" caption="Wiring reference. Exactly two individual leads; all other contacts open." width=1200 %}
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Wire two leads</h3>
+    <p>With power off, connect Prime J37 contact 3 (PB1) to P1 contact 3 and J37 contact 10 (ground) to P1 contact 10.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure</h3>
+    <p>Add the switch from <a href="#configuration">Configuration</a> and restart.</p>
+    <p class="xb-expect">D1 is dark.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Switch it</h3>
+    <p>Send <code>M106.9</code>, then <code>M107.9</code>.</p>
+    <p class="xb-expect">D1 lights, then goes out.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
-## Smoothieware use
+## Configuration {#configuration}
 
-The generic digital switch module is sufficient; this board has no dedicated protocol. For the individual signal lead use PB1 without !, so a high output lights D1. The example below assumes PB1 is free.
+<span id="smoothieware-use"></span>
 
-For the J37.3/PB1 two-lead bench test, merge this into an otherwise non-conflicting configuration; do not duplicate an existing section or assign PB1 twice. The V2 digital-switch example in `ConfigSamples/config-3d.ini:163–205` supplies these settings.
+A switch that drives PB1 from G-code. See [switch](/switch). Syntax checked against firmware commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`.
 
 ```ini
 [switch]
@@ -325,14 +185,94 @@ board_test.startup_state = false
 board_test.halt_set_to = false
 ```
 
-After checking the board’s resistor values, LED polarity and GPIO current budget, M106.9 requests PB1 HIGH and lights D1; M107.9 requests LOW and extinguishes it. This is an indicator test only. Do not attach an external lamp, heater or other power load to an indicator channel.
+## How it works {#how-it-works}
 
-Configuration field names in this example match the [V2 Switch parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp).
+Each signal contact drives one LED to ground through its own 330 Ω resistor, so a high level lights the LED. The current comes from the host pin: check that your host can supply it on every lit pin at once.
 
-See the [V2 digital-switch parser and command implementation](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp#L115-L438). Subcode 9 is an example allocation: reserve `M106.9`/`M107.9` in the complete configuration before use. Startup and halt settings are logical OFF; they do not establish the electrical state during reset, bootloader operation, lost power or a disconnected cable. The `!` suffix, where shown, inverts that logical output.
+## Troubleshooting {#troubleshooting}
 
-## Original files and attribution
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Nothing responds</td><td>With power off, check continuity along each lead and board path against the pinout tables. Confirm which end of the connector is contact 1.</td></tr>
+    <tr><td>One LED stays dark</td><td>Check that its signal is really high and that the LED is fitted the right way round.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The linked original source folder contains the CAD, images, fabrication output and any author notes. Project files retain their original attribution; an absent per-file license must not be interpreted as public-domain permission. The Smoothieboard2 repository also contains a repository-root [CERN Open Hardware Licence v1.2](https://github.com/Smoothieware/Smoothieboard2/blob/52ab340de33180a975b25f856c161993488e6ace/LICENSE); its [README](https://github.com/Smoothieware/Smoothieboard2/blob/52ab340de33180a975b25f856c161993488e6ace/README.md) explicitly describes hardware files for the board and extension boards. Preserve those license and attribution records. This repository-level licence does not cover separately sourced component images or artwork.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
 
-[All extension boards](/extension-boards)
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/Smoothieware/Smoothieboard2/tree/52ab340de33180a975b25f856c161993488e6ace/extensions/LedSimple">Smoothieboard2 design source</a></td><td>Design source</td></tr>
+    <tr><td><a href="/images/extensions/historical-ledsimple/guides/native-contact-reference/native-source-and-notices.zip">Matching design source, licence and drawing notice</a></td><td>Download</td></tr>
+    <tr><td><a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp">V2 Switch parser</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp#L115-L438">V2 digital-switch parser and command implementation</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Smoothieware/Smoothieboard2/blob/52ab340de33180a975b25f856c161993488e6ace/LICENSE">CERN Open Hardware Licence v1.2</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Smoothieware/Smoothieboard2/blob/52ab340de33180a975b25f856c161993488e6ace/README.md">README</a></td><td>Design source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+Outline and holes from the original board file. Millimetres, seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 302" role="img" aria-labelledby="xb-al-ledsimple-mount-t">
+  <title id="xb-al-ledsimple-mount-t">Mounting drawing of the historical-ledsimple, component side: outline 37 by 10 millimetres with 2 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="180.0" y="78.0" width="600.0" height="162.2" rx="56.8" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M180.0 56H780.0"/><path d="M180.0 50V62"/><path d="M780.0 50V62"/><path d="M806.0 78.0V240.2"/><path d="M800.0 78.0h12"/><path d="M800.0 240.2h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">37</text>
+  <text x="818.0" y="164.1" font-size="15" font-weight="700" fill="#e6ebf2">10</text>
+  <circle cx="180.0" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="168.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M122.0 104.0h30" fill="none"/><path d="M156.0 104.0l-8 -4v8z"/><path d="M122.0 104.0v30" fill="none"/><path d="M122.0 138.0l-4 -8h8z"/></g>
+  <text x="160.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="118.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="236.8" cy="159.1" r="25.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M206.8 159.1h59.9M236.8 129.1v59.9" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="210.8" y="123.1" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  3.50, 5.00</text>
+  <circle cx="723.2" cy="159.1" r="25.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M693.3 159.1h59.9M723.2 129.1v59.9" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="749.2" y="123.1" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  33.50, 5.00</text>
+  <text x="480.0" y="270.2" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 37 × 10&nbsp;mm, corners rounded to a 3.5&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>3.50</td><td>5.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>33.50</td><td>5.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Only what the design source states or the circuit fixes. Blank cells are not specified.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>LED series resistance</td><td>Each channel</td><td>—</td><td>330 Ω</td><td>—</td><td>Design file value</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Design source {#origin}
+
+This board comes from the [original design files](https://github.com/Smoothieware/Smoothieboard2/tree/52ab340de33180a975b25f856c161993488e6ace/extensions/LedSimple). It is licensed CERN-OHL-1.2. It was drawn for an earlier controller generation than Smoothieboard V2 Prime; match connections contact by contact.
+See all boards on the [extension boards](/extension-boards) page.

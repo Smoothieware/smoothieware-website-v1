@@ -1,341 +1,246 @@
 ---
 layout: default
 title: "SPI PT100 interface"
+description: "MAX31865 PT100 resistance-sensor board: probe terminals, link options and limits."
 permalink: /extensions/historical-spi-pt100
 ---
 
-# SPI PT100 interface
-
-The MAX31865_SSOP20 converts a platinum resistance sensor into a digital SPI measurement. A PT100 is a resistance sensor, not a thermocouple; a MAX31855 configuration cannot read it. This board is intended for accurate resistance-temperature measurement with an appropriately selected reference resistor.
-
-## Source and compatibility
-
-This guide describes the board in the [original Smoothieboard2 source](https://github.com/Smoothieware/Smoothieboard2/tree/52ab340de33180a975b25f856c161993488e6ace/extensions/SPI%20PT100). The original host generation predates Smoothieboard V2 Prime. Connector compatibility must be established contact by contact.
-
-## Power, signals and controls
-
-P1/P4 are parallel host connectors. Contact 1 supplies U1's VDD/DVDD; contact 10 is ground. The matching **SSOP20** symbol and netlist identify these SPI contacts:
-
-| P1 and P4 contact | Converter connection | Signal direction |
-|---|---|---|
-| 6 | U1.16, active-low chip select (`nCS`) | Host → converter |
-| 7 | U1.14, serial data input (`SDI` / host MOSI) | Host → converter |
-| 8 | U1.17, serial data output (`SDO` / host MISO) | Converter → host |
-| 9 | U1.15, serial clock (`SCLK`) | Host → converter |
-
-Contacts 2–5 have no assigned converter function. These are module contact numbers, not an allocation to the same-numbered Prime socket contacts.
-
-| Probe terminal | Converter connection |
-|---|---|
-| P3.1 | U1.8, FORCE+ |
-| P3.2 | U1.10, RTDIN+ |
-| P2.1 | U1.11, RTDIN− |
-| P2.2 | U1.12, FORCE− |
-
-R3 is specified as the **400 Ω reference resistor**. R4 joins FORCE+ and RTDIN+; R5 joins FORCE− and RTDIN− when those 0 Ω links are fitted. A four-wire probe therefore cannot be inferred from the four terminal contacts: the fitted link population and converter lead mode must agree. R2 is also specified as 0 Ω and R1 as NM (not mounted). Check the fitted parts and calibration on your board. The MAX31865 requires 3.0–3.6 V on VDD and DVDD; this is not a 5 V supply input.
-
-The specified population selects **two-wire operation**: R2 grounds FORCE2 while R1 is unpopulated; R4/R5 join each force/sense pair. For that population the two probe leads terminate at P3.2 (RTDIN+) and P2.1 (RTDIN−); P3.1 and P2.2 need no additional external leads. Verify the fitted links with power off. A four-wire conversion needs a population change, not simply four attached leads.
-
-The [MAX31865 datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf), July 2015, gives a typical 100 nF input filter for a 100 Ω RTD and 10 nF for a 1 kΩ RTD. The board specifies C3 as 10 nF. Check settling and noise with a PT100. Reference-resistor tolerance and temperature coefficient are also unspecified, which limits what its nominal 400 Ω value says about accuracy.
-
-### Annotated connector and component reference
-
-These drawings show the board outline, footprints and pads. Duplicate pad-11 instances on P1 and P4 are separate and unassigned. Check RTD lead mode, the fitted R1/R2/R4/R5 population, reference calibration, host allocation and supply suitability before powering the board.
-
-### Board reference
-
-These function-labelled views show the board geometry. Check cable orientation against the board.
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-00-overview" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader-compact/reader-00-overview.png" title="Board overview" alt="Board overview" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-<details markdown="1">
-<summary>Connector and component functions</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-m1-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-m1-1.png" title="M1 1" alt="M1 1" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-m2-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-m2-1.png" title="M2 1" alt="M2 1" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-m3-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-m3-1.png" title="M3 1" alt="M3 1" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-m4-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-m4-1.png" title="M4 1" alt="M4 1" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-p1-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-p1-1.png" title="P1 1" alt="P1 1" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-p1-2" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-p1-2.png" title="P1 2" alt="P1 2" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-p1-3" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-p1-3.png" title="P1 3" alt="P1 3" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-p2-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-p2-1.png" title="P2 1" alt="P2 1" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-p3-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-p3-1.png" title="P3 1" alt="P3 1" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-p4-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-p4-1.png" title="P4 1" alt="P4 1" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-p4-2" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-p4-2.png" title="P4 2" alt="P4 2" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-p4-3" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-p4-3.png" title="P4 3" alt="P4 3" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-r1-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-r1-1.png" title="R1 1" alt="R1 1" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-r2-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-r2-1.png" title="R2 1" alt="R2 1" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-r3-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-r3-1.png" title="R3 1" alt="R3 1" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-r4-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-r4-1.png" title="R4 1" alt="R4 1" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-r5-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-r5-1.png" title="R5 1" alt="R5 1" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-u1-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-u1-1.png" title="U1 1" alt="U1 1" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-u1-2" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-u1-2.png" title="U1 2" alt="U1 2" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-u1-3" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-u1-3.png" title="U1 3" alt="U1 3" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-compact-function-reader-u1-4" src="/images/extensions/historical-spi-pt100/guides/source-derived-reader/reader-u1-4.png" title="U1 4" alt="U1 4" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-</details>
-
-<details markdown="1">
-<summary>Contact views and source files</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-00-overview" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/00-overview.png" title="SPI PT100 reference — 00 overview" alt="SPI PT100 reference — 00 overview" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-c1-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/c1-1.png" title="SPI PT100 reference — c1 1" alt="SPI PT100 reference — c1 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-c2-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/c2-1.png" title="SPI PT100 reference — c2 1" alt="SPI PT100 reference — c2 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-c3-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/c3-1.png" title="SPI PT100 reference — c3 1" alt="SPI PT100 reference — c3 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-m1-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/m1-1.png" title="SPI PT100 reference — m1 1" alt="SPI PT100 reference — m1 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-m2-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/m2-1.png" title="SPI PT100 reference — m2 1" alt="SPI PT100 reference — m2 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-m3-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/m3-1.png" title="SPI PT100 reference — m3 1" alt="SPI PT100 reference — m3 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-m4-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/m4-1.png" title="SPI PT100 reference — m4 1" alt="SPI PT100 reference — m4 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-p1-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/p1-1.png" title="SPI PT100 reference — p1 1" alt="SPI PT100 reference — p1 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-p1-2" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/p1-2.png" title="SPI PT100 reference — p1 2" alt="SPI PT100 reference — p1 2" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-p1-3" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/p1-3.png" title="SPI PT100 reference — p1 3" alt="SPI PT100 reference — p1 3" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-p2-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/p2-1.png" title="SPI PT100 reference — p2 1" alt="SPI PT100 reference — p2 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-p3-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/p3-1.png" title="SPI PT100 reference — p3 1" alt="SPI PT100 reference — p3 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-p4-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/p4-1.png" title="SPI PT100 reference — p4 1" alt="SPI PT100 reference — p4 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-p4-2" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/p4-2.png" title="SPI PT100 reference — p4 2" alt="SPI PT100 reference — p4 2" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-p4-3" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/p4-3.png" title="SPI PT100 reference — p4 3" alt="SPI PT100 reference — p4 3" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-r1-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/r1-1.png" title="SPI PT100 reference — r1 1" alt="SPI PT100 reference — r1 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-r2-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/r2-1.png" title="SPI PT100 reference — r2 1" alt="SPI PT100 reference — r2 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-r3-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/r3-1.png" title="SPI PT100 reference — r3 1" alt="SPI PT100 reference — r3 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-r4-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/r4-1.png" title="SPI PT100 reference — r4 1" alt="SPI PT100 reference — r4 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-r5-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/r5-1.png" title="SPI PT100 reference — r5 1" alt="SPI PT100 reference — r5 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-source-net-keys-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/source-net-keys-1.png" title="SPI PT100 reference — net keys 1" alt="SPI PT100 reference — net keys 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-source-net-keys-2" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/source-net-keys-2.png" title="SPI PT100 reference — net keys 2" alt="SPI PT100 reference — net keys 2" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-source-net-keys-3" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/source-net-keys-3.png" title="SPI PT100 reference — net keys 3" alt="SPI PT100 reference — net keys 3" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-source-net-keys-4" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/source-net-keys-4.png" title="SPI PT100 reference — net keys 4" alt="SPI PT100 reference — net keys 4" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-u1-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/u1-1.png" title="SPI PT100 reference — u1 1" alt="SPI PT100 reference — u1 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-u1-2" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/u1-2.png" title="SPI PT100 reference — u1 2" alt="SPI PT100 reference — u1 2" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-u1-3" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/u1-3.png" title="SPI PT100 reference — u1 3" alt="SPI PT100 reference — u1 3" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-u1-4" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/u1-4.png" title="SPI PT100 reference — u1 4" alt="SPI PT100 reference — u1 4" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-<details markdown="1">
-<summary>Individual native contact keys</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-c1-0" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-c1-0.png" title="SPI PT100 reference — contact c1 0" alt="SPI PT100 reference — contact c1 0" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-c1-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-c1-1.png" title="SPI PT100 reference — contact c1 1" alt="SPI PT100 reference — contact c1 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-c2-0" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-c2-0.png" title="SPI PT100 reference — contact c2 0" alt="SPI PT100 reference — contact c2 0" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-c2-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-c2-1.png" title="SPI PT100 reference — contact c2 1" alt="SPI PT100 reference — contact c2 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-c3-0" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-c3-0.png" title="SPI PT100 reference — contact c3 0" alt="SPI PT100 reference — contact c3 0" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-c3-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-c3-1.png" title="SPI PT100 reference — contact c3 1" alt="SPI PT100 reference — contact c3 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-m1-0" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-m1-0.png" title="SPI PT100 reference — contact m1 0" alt="SPI PT100 reference — contact m1 0" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-m2-0" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-m2-0.png" title="SPI PT100 reference — contact m2 0" alt="SPI PT100 reference — contact m2 0" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-m3-0" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-m3-0.png" title="SPI PT100 reference — contact m3 0" alt="SPI PT100 reference — contact m3 0" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-m4-0" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-m4-0.png" title="SPI PT100 reference — contact m4 0" alt="SPI PT100 reference — contact m4 0" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p1-0" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p1-0.png" title="SPI PT100 reference — contact p1 0" alt="SPI PT100 reference — contact p1 0" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p1-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p1-1.png" title="SPI PT100 reference — contact p1 1" alt="SPI PT100 reference — contact p1 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p1-10" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p1-10.png" title="SPI PT100 reference — contact p1 10" alt="SPI PT100 reference — contact p1 10" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p1-11" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p1-11.png" title="SPI PT100 reference — contact p1 11" alt="SPI PT100 reference — contact p1 11" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p1-2" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p1-2.png" title="SPI PT100 reference — contact p1 2" alt="SPI PT100 reference — contact p1 2" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p1-3" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p1-3.png" title="SPI PT100 reference — contact p1 3" alt="SPI PT100 reference — contact p1 3" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p1-4" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p1-4.png" title="SPI PT100 reference — contact p1 4" alt="SPI PT100 reference — contact p1 4" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p1-5" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p1-5.png" title="SPI PT100 reference — contact p1 5" alt="SPI PT100 reference — contact p1 5" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p1-6" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p1-6.png" title="SPI PT100 reference — contact p1 6" alt="SPI PT100 reference — contact p1 6" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p1-7" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p1-7.png" title="SPI PT100 reference — contact p1 7" alt="SPI PT100 reference — contact p1 7" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p1-8" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p1-8.png" title="SPI PT100 reference — contact p1 8" alt="SPI PT100 reference — contact p1 8" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p1-9" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p1-9.png" title="SPI PT100 reference — contact p1 9" alt="SPI PT100 reference — contact p1 9" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p2-0" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p2-0.png" title="SPI PT100 reference — contact p2 0" alt="SPI PT100 reference — contact p2 0" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p2-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p2-1.png" title="SPI PT100 reference — contact p2 1" alt="SPI PT100 reference — contact p2 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p3-0" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p3-0.png" title="SPI PT100 reference — contact p3 0" alt="SPI PT100 reference — contact p3 0" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p3-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p3-1.png" title="SPI PT100 reference — contact p3 1" alt="SPI PT100 reference — contact p3 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p4-0" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p4-0.png" title="SPI PT100 reference — contact p4 0" alt="SPI PT100 reference — contact p4 0" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p4-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p4-1.png" title="SPI PT100 reference — contact p4 1" alt="SPI PT100 reference — contact p4 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p4-10" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p4-10.png" title="SPI PT100 reference — contact p4 10" alt="SPI PT100 reference — contact p4 10" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p4-11" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p4-11.png" title="SPI PT100 reference — contact p4 11" alt="SPI PT100 reference — contact p4 11" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p4-2" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p4-2.png" title="SPI PT100 reference — contact p4 2" alt="SPI PT100 reference — contact p4 2" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p4-3" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p4-3.png" title="SPI PT100 reference — contact p4 3" alt="SPI PT100 reference — contact p4 3" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p4-4" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p4-4.png" title="SPI PT100 reference — contact p4 4" alt="SPI PT100 reference — contact p4 4" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p4-5" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p4-5.png" title="SPI PT100 reference — contact p4 5" alt="SPI PT100 reference — contact p4 5" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p4-6" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p4-6.png" title="SPI PT100 reference — contact p4 6" alt="SPI PT100 reference — contact p4 6" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p4-7" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p4-7.png" title="SPI PT100 reference — contact p4 7" alt="SPI PT100 reference — contact p4 7" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p4-8" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p4-8.png" title="SPI PT100 reference — contact p4 8" alt="SPI PT100 reference — contact p4 8" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-p4-9" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-p4-9.png" title="SPI PT100 reference — contact p4 9" alt="SPI PT100 reference — contact p4 9" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-r1-0" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-r1-0.png" title="SPI PT100 reference — contact r1 0" alt="SPI PT100 reference — contact r1 0" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-r1-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-r1-1.png" title="SPI PT100 reference — contact r1 1" alt="SPI PT100 reference — contact r1 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-r2-0" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-r2-0.png" title="SPI PT100 reference — contact r2 0" alt="SPI PT100 reference — contact r2 0" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-r2-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-r2-1.png" title="SPI PT100 reference — contact r2 1" alt="SPI PT100 reference — contact r2 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-r3-0" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-r3-0.png" title="SPI PT100 reference — contact r3 0" alt="SPI PT100 reference — contact r3 0" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-r3-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-r3-1.png" title="SPI PT100 reference — contact r3 1" alt="SPI PT100 reference — contact r3 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-r4-0" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-r4-0.png" title="SPI PT100 reference — contact r4 0" alt="SPI PT100 reference — contact r4 0" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-r4-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-r4-1.png" title="SPI PT100 reference — contact r4 1" alt="SPI PT100 reference — contact r4 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-r5-0" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-r5-0.png" title="SPI PT100 reference — contact r5 0" alt="SPI PT100 reference — contact r5 0" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-r5-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-r5-1.png" title="SPI PT100 reference — contact r5 1" alt="SPI PT100 reference — contact r5 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-0" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-0.png" title="SPI PT100 reference — contact u1 0" alt="SPI PT100 reference — contact u1 0" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-1" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-1.png" title="SPI PT100 reference — contact u1 1" alt="SPI PT100 reference — contact u1 1" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-10" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-10.png" title="SPI PT100 reference — contact u1 10" alt="SPI PT100 reference — contact u1 10" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-11" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-11.png" title="SPI PT100 reference — contact u1 11" alt="SPI PT100 reference — contact u1 11" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-12" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-12.png" title="SPI PT100 reference — contact u1 12" alt="SPI PT100 reference — contact u1 12" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-13" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-13.png" title="SPI PT100 reference — contact u1 13" alt="SPI PT100 reference — contact u1 13" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-14" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-14.png" title="SPI PT100 reference — contact u1 14" alt="SPI PT100 reference — contact u1 14" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-15" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-15.png" title="SPI PT100 reference — contact u1 15" alt="SPI PT100 reference — contact u1 15" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-16" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-16.png" title="SPI PT100 reference — contact u1 16" alt="SPI PT100 reference — contact u1 16" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-17" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-17.png" title="SPI PT100 reference — contact u1 17" alt="SPI PT100 reference — contact u1 17" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-18" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-18.png" title="SPI PT100 reference — contact u1 18" alt="SPI PT100 reference — contact u1 18" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-19" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-19.png" title="SPI PT100 reference — contact u1 19" alt="SPI PT100 reference — contact u1 19" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-2" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-2.png" title="SPI PT100 reference — contact u1 2" alt="SPI PT100 reference — contact u1 2" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-3" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-3.png" title="SPI PT100 reference — contact u1 3" alt="SPI PT100 reference — contact u1 3" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-4" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-4.png" title="SPI PT100 reference — contact u1 4" alt="SPI PT100 reference — contact u1 4" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-5" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-5.png" title="SPI PT100 reference — contact u1 5" alt="SPI PT100 reference — contact u1 5" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-6" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-6.png" title="SPI PT100 reference — contact u1 6" alt="SPI PT100 reference — contact u1 6" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-7" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-7.png" title="SPI PT100 reference — contact u1 7" alt="SPI PT100 reference — contact u1 7" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-8" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-8.png" title="SPI PT100 reference — contact u1 8" alt="SPI PT100 reference — contact u1 8" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-pt100-source-derived-contact-u1-9" src="/images/extensions/historical-spi-pt100/guides/source-derived-annotated/contact-u1-9.png" title="SPI PT100 reference — contact u1 9" alt="SPI PT100 reference — contact u1 9" caption="Front-view contact reference. Check population, calibration, host allocation and mating before powering the board." width=420 %}
-
-</details>
-
-[Download the unmodified native source, upstream licence and drawing notice](/images/extensions/historical-spi-pt100/guides/native-contact-reference/native-source-and-notices.zip). Retain the included source licence and notices with derivatives.
-
-The contact inventory below records connectivity. Check cable orientation and continuity on the board.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Reference | Value / role | Contact → net |
-|---|---|---|
-| P2 | Conn_1x02 | 1 → Net-(C3-Pad2); 2 → Net-(P2-Pad2) |
-| P1 | Smoothie-teer-S | 1 → Net-(C1-Pad1); 2 → Net-(P1-Pad2); 3 → Net-(P1-Pad3); 4 → Net-(P1-Pad4); 5 → Net-(P1-Pad5); 6 → Net-(P1-Pad6); 7 → Net-(P1-Pad7); 8 → Net-(P1-Pad8); 9 → Net-(P1-Pad9); 10 → GND |
-| P3 | Conn_1x02 | 1 → Net-(P3-Pad1); 2 → Net-(C3-Pad1) |
-| P4 | Smoothie-teer-S | 1 → Net-(C1-Pad1); 2 → Net-(P1-Pad2); 3 → Net-(P1-Pad3); 4 → Net-(P1-Pad4); 5 → Net-(P1-Pad5); 6 → Net-(P1-Pad6); 7 → Net-(P1-Pad7); 8 → Net-(P1-Pad8); 9 → Net-(P1-Pad9); 10 → GND |
-| R1 | NM | 1 → Net-(P3-Pad1); 2 → Net-(R1-Pad2) |
-| R2 | 0 | 1 → GND; 2 → Net-(R1-Pad2) |
-| R3 | 400 | 1 → Net-(R3-Pad1); 2 → Net-(R3-Pad2) |
-| R4 | 0 | 1 → Net-(P3-Pad1); 2 → Net-(C3-Pad1) |
-| R5 | 0 | 1 → Net-(P2-Pad2); 2 → Net-(C3-Pad2) |
-
+{% include _includes/extension-board-page.html %}
+
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Temperature</p>
+    <h1 id="historical-spi-pt100">SPI PT100 interface</h1>
+    <p class="xb-lead">Reads a platinum resistance sensor over SPI with a MAX31865 converter.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#downloads">Downloads</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/historical-spi-pt100/directory-board-render.png" alt="Top view of the SPI PT100 interface board">
+    <figcaption>Top view drawn from the original board file. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-</details>
+<div class="xb-stats">
+  <div class="xb-stat"><b>MAX31865</b><span>converter</span></div>
+  <div class="xb-stat"><b>SPI</b><span>interface</span></div>
+  <div class="xb-stat"><b>400 Ω</b><span>reference</span></div>
+  <div class="xb-stat"><b>2-wire</b><span>as listed</span></div>
+  <div class="xb-stat"><b>50 × 30 mm</b><span>board size</span></div>
+  <div class="xb-stat"><b>4</b><span>mounting holes</span></div>
+</div>
 
-</details>
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting dimensions</a>
+  <a href="#electrical">Electrical specifications</a>
+</nav>
+{:/nomarkdown}
 
-## Connect and try it
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <b>Check the fitted links before wiring a probe.</b> The listed parts select two-wire mode. This reads a PT100 resistance sensor, not a thermocouple. This is a historical Smoothieboard2 design, not a current board.
+</sl-alert>
 
-The fitted population is intended for a two-wire resistance probe. Before powering a PT100, select the exact probe and check excitation current, duty cycle and self-heating against its datasheet, alongside the fitted links and filter. A nominal 3.3 V supply and 400 Ω reference alone do not establish a suitable probe current. Do not enable closed-loop heating from this sensor without MAX31865 firmware support.
+## Tech specs {#specs}
 
-## Smoothieware use
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Function</td><td>RTD to SPI converter</td></tr>
+    <tr><td>Host connectors</td><td>P1, P4: 6 select, 7 MOSI, 8 MISO, 9 SCK, 1 supply, 10 ground</td></tr>
+    <tr><td>Probe terminals</td><td>P3 and P2</td></tr>
+    <tr><td>Reference resistor</td><td>R3, 400 Ω</td></tr>
+    <tr><td>Input filter</td><td>C3, 10 nF</td></tr>
+    <tr><td>Links</td><td>R2 fitted (0 Ω), R1 not fitted, R4 and R5 select the wiring</td></tr>
+    <tr><td>Size</td><td>50 × 30 mm</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The V2 temperature-control sensor factory selects thermistor or max31855, not max31865, so it does not read this board through that temperature-control path. Do not substitute a MAX31855 setting.
+## Board tour {#tour}
 
-The [V2 temperature-control factory](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/temperaturecontrol/TemperatureControl.cpp#L177-L189) selects a dummy sensor for an unrecognized sensor name; `sensor = max31865` is not a working configuration. 
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/historical-spi-pt100/directory-board-render.png" alt="Annotated top view of the SPI PT100 interface board">
+      <a class="xb-mk xb-pl" href="#tour-1" style="left:23.0%;top:50.0%" aria-label="1: Host connector P1">1<span class="xb-pop"><b>Host connector P1</b> — Supply and SPI.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-2" style="left:77.0%;top:50.0%" aria-label="2: Host connector P4">2<span class="xb-pop"><b>Host connector P4</b> — Parallel copy.</span></a>
+      <a class="xb-mk" href="#tour-3" style="left:57.2%;top:75.3%" aria-label="3: Probe terminal P3">3<span class="xb-pop"><b>Probe terminal P3</b> — FORCE+ and RTDIN+.</span></a>
+      <a class="xb-mk" href="#tour-4" style="left:33.8%;top:75.3%" aria-label="4: Probe terminal P2">4<span class="xb-pop"><b>Probe terminal P2</b> — RTDIN− and FORCE−.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-5" style="left:46.0%;top:36.6%" aria-label="5: MAX31865">5<span class="xb-pop"><b>MAX31865</b> — Converter.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-6" style="left:58.5%;top:32.4%" aria-label="6: Resistor R1">6<span class="xb-pop"><b>Resistor R1</b> — Resistor R1, marked <code>NM</code> in the board file.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-7" style="left:58.5%;top:25.4%" aria-label="7: Resistor R2">7<span class="xb-pop"><b>Resistor R2</b> — Resistor R2, marked <code>0</code> in the board file. Connects to <code>GND</code>.</span></a>
+      <a class="xb-mk" href="#tour-8" style="left:46.4%;top:51.4%" aria-label="8: Capacitor C1">8<span class="xb-pop"><b>Capacitor C1</b> — Capacitor C1, marked <code>0.1u</code> in the board file. Connects to <code>GND</code>.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Host connector P1</b> — Supply and SPI.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Host connector P4</b> — Parallel copy.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Probe terminal P3</b> — FORCE+ and RTDIN+.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Probe terminal P2</b> — RTDIN− and FORCE−.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>MAX31865</b> — Converter.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Resistor R1</b> — Resistor R1, marked <code>NM</code> in the board file.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Resistor R2</b> — Resistor R2, marked <code>0</code> in the board file. Connects to <code>GND</code>.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Capacitor C1</b> — Capacitor C1, marked <code>0.1u</code> in the board file. Connects to <code>GND</code>.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-## Original files and attribution
+## Pinout {#pinout}
 
-The linked original source folder contains the CAD, images, fabrication output and any author notes. Project files retain their original attribution; an absent per-file license must not be interpreted as public-domain permission.
+<span id="connect-and-try-it"></span>
 
-[All extension boards](/extension-boards)
+### Host connector P1
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>P1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>supply</td></tr>
+    <tr><td>2</td><td>not used</td></tr>
+    <tr><td>3</td><td>not used</td></tr>
+    <tr><td>4</td><td>not used</td></tr>
+    <tr><td>5</td><td>not used</td></tr>
+    <tr><td>6</td><td>chip select</td></tr>
+    <tr><td>7</td><td>MOSI</td></tr>
+    <tr><td>8</td><td>MISO</td></tr>
+    <tr><td>9</td><td>SCK</td></tr>
+    <tr><td>10</td><td><code>GND</code></td></tr>
+    <tr><td>11</td><td>not connected</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+P4 is wired in parallel with P1. Probe terminals: P3.1 FORCE+, P3.2 RTDIN+, P2.1 RTDIN−, P2.2 FORCE−.
+
+## What you need {#what-you-need}
+
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>PT100 board</b><span>Built from the design files</span></div>
+  <div class="xb-card"><b>PT100 probe</b><span>Two-wire as listed</span></div>
+  <div class="xb-card"><b>SPI port</b><span>With its own select pin</span></div>
+</div>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+<span id="smoothieware-use"></span>
+
+Smoothieware V2 support for the MAX31865 on this board: not specified. A MAX31855 thermocouple setting cannot read it.
+
+## How it works {#how-it-works}
+
+The converter drives a current through the sensor and the reference resistor and reports their ratio. In the listed two-wire population the probe goes between P3 contact 2 and P2 contact 1; leave the other two terminals empty. See the [MAX31865 datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/MAX31865.pdf).
+
+## Troubleshooting {#troubleshooting}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Nothing responds</td><td>With power off, check continuity along each lead and board path against the pinout tables. Confirm which end of the connector is contact 1.</td></tr>
+    <tr><td>Fault or open reading</td><td>Check probe terminals and the R1, R2, R4, R5 population.</td></tr>
+    <tr><td>Offset</td><td>Check the reference resistor value and, in two-wire mode, the lead resistance.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
+
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/Smoothieware/Smoothieboard2/tree/52ab340de33180a975b25f856c161993488e6ace/extensions/SPI%20PT100">original Smoothieboard2 source</a></td><td>Design source</td></tr>
+    <tr><td><a href="/images/extensions/historical-spi-pt100/guides/native-contact-reference/native-source-and-notices.zip">Download the unmodified native source, upstream licence and drawing notice</a></td><td>Download</td></tr>
+    <tr><td><a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/temperaturecontrol/TemperatureControl.cpp#L177-L189">V2 temperature-control factory</a></td><td>Design source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+Outline and holes from the original board file. Millimetres, seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-al-spi-pt100-mount-t">
+  <title id="xb-al-spi-pt100-mount-t">Mounting drawing of the historical-spi-pt100, component side: outline 50 by 30 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="196.7" y="78.0" width="566.7" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M196.7 56H763.3"/><path d="M196.7 50V62"/><path d="M763.3 50V62"/><path d="M789.3 78.0V418.0"/><path d="M783.3 78.0h12"/><path d="M783.3 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">50</text>
+  <text x="801.3" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">30</text>
+  <circle cx="196.7" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="184.7" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M138.7 104.0h30" fill="none"/><path d="M172.7 104.0l-8 -4v8z"/><path d="M138.7 104.0v30" fill="none"/><path d="M138.7 138.0l-4 -8h8z"/></g>
+  <text x="176.7" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="134.7" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="253.3" cy="134.7" r="18.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M231.2 134.7h44.3M253.3 112.5v44.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="235.2" y="172.8" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 5.00</text>
+  <circle cx="706.7" cy="134.7" r="18.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M684.5 134.7h44.3M706.7 112.5v44.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="724.8" y="172.8" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  45.00, 5.00</text>
+  <circle cx="253.3" cy="361.3" r="18.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M231.2 361.3h44.3M253.3 339.2v44.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="235.2" y="333.2" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 25.00</text>
+  <circle cx="706.7" cy="361.3" r="18.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M684.5 361.3h44.3M706.7 339.2v44.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="724.8" y="333.2" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  45.00, 25.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 50 × 30&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>5.00</td><td>5.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>45.00</td><td>5.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>3</td><td>5.00</td><td>25.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>4</td><td>45.00</td><td>25.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Only what the design source states or the circuit fixes. Blank cells are not specified.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Reference resistor</td><td>R3</td><td>—</td><td>400 Ω</td><td>—</td><td>Design file value</td></tr>
+    <tr><td>Input filter</td><td>C3</td><td>—</td><td>10 nF</td><td>—</td><td>Design file value</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Related boards, each with its own pinout and limits: [SPI PT100 amplifier board](/extensions/spi-pt100-amplifier-board).
+
+## Design source {#origin}
+
+This board comes from the [original design files](https://github.com/Smoothieware/Smoothieboard2/tree/52ab340de33180a975b25f856c161993488e6ace/extensions/SPI%20PT100). It was drawn for an earlier controller generation than Smoothieboard V2 Prime; match connections contact by contact.
+See all boards on the [extension boards](/extension-boards) page.

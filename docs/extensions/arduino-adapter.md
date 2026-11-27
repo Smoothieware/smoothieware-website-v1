@@ -21,7 +21,7 @@ permalink: /extensions/arduino-adapter
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/arduino-adapter/v19/arduino-adapter-diagram.png" alt="Top view of the Arduino adapter.">
+    <img src="/images/extensions/arduino-adapter/v19/arduino-adapter-diagram.webp" alt="Top view of the Arduino adapter.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -83,7 +83,7 @@ The numbers on the drawing match the list below it.
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/arduino-adapter/v19/arduino-adapter-diagram.png" alt="Top view of the Arduino adapter with numbered markers explained in the list below.">
+      <img src="/images/extensions/arduino-adapter/v19/arduino-adapter-diagram.webp" alt="Top view of the Arduino adapter with numbered markers explained in the list below.">
       <a class="xb-mk xb-pb xb-pr" href="#tour-1" style="left:95.9%;top:25.8%" aria-label="1: Socket GB (J1)">1<span class="xb-pop"><b>Socket GB (J1)</b> — serial and I&sup2;C.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-2" style="left:4.0%;top:37.5%" aria-label="2: Socket GD (J2)">2<span class="xb-pop"><b>Socket GD (J2)</b> — serial and PWM.</span></a>
       <a class="xb-mk xb-pl" href="#tour-3" style="left:4.0%;top:63.3%" aria-label="3: Socket GE (J3)">3<span class="xb-pop"><b>Socket GE (J3)</b> — SPI.</span></a>
@@ -221,7 +221,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/arduino-adapter/v19/arduino-adapter-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/arduino-adapter/v19/arduino-adapter-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/arduino-adapter/v19/arduino-adapter-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/arduino-adapter/v19/arduino-adapter-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

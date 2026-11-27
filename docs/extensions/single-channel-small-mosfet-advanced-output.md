@@ -22,7 +22,7 @@ redirect_from:
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/single-channel-small-mosfet-advanced-output/small-mosfet-advanced-diagram.png" alt="Top view with the white control header and two keyed Gadgeteer connectors along the top, field supply on the left and load on the right">
+    <img src="/images/extensions/single-channel-small-mosfet-advanced-output/v29/single-channel-small-mosfet-advanced-output-diagram.png" alt="Top view with the white control header and two keyed Gadgeteer connectors along the top, field supply on the left and load on the right">
 <figcaption>Top view of the board.</figcaption>
   </figure>
 </div>
@@ -57,7 +57,58 @@ See [mounting dimensions](#mounting) and [electrical specifications](#electrical
 
 ## Board tour {#tour}
 
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/single-channel-small-mosfet-advanced-output/v29/single-channel-small-mosfet-advanced-output-diagram.png" alt="Annotated top view of the board">
+      <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:14.1%;top:5.6%" aria-label="1: Three-pin input (CTRL IN)">1<span class="xb-pop"><b>Three-pin input (CTRL IN)</b> — ground on pin 1, command on pin 3.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-2" style="left:37.5%;top:5.6%" aria-label="2: Controller socket (Y IN)">2<span class="xb-pop"><b>Controller socket (Y IN)</b> — the ribbon cable.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-3" style="left:73.6%;top:5.6%" aria-label="3: Chain socket (Y CHAIN)">3<span class="xb-pop"><b>Chain socket (Y CHAIN)</b> — the remaining commands for the next board.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-4" style="left:5.9%;top:11.2%" aria-label="4: Input selector (SJ14)">4<span class="xb-pop"><b>Input selector (SJ14)</b> — chooses ribbon or three-pin input.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-5" style="left:40.7%;top:12.3%" aria-label="5: Forwarding links (SJ8 to SJ13)">5<span class="xb-pop"><b>Forwarding links (SJ8 to SJ13)</b> — move each remaining command one position along.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-6" style="left:39.1%;top:20.2%" aria-label="6: Optocoupler (U101)">6<span class="xb-pop"><b>Optocoupler (U101)</b> — carries the command to the load side.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-7" style="left:6.4%;top:67.4%" aria-label="7: Supply input (J2)">7<span class="xb-pop"><b>Supply input (J2)</b> — external DC supply.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-8" style="left:90.6%;top:67.4%" aria-label="8: Load output (J3)">8<span class="xb-pop"><b>Load output (J3)</b> — both load wires.</span></a>
+      <a class="xb-mk" href="#tour-9" style="left:64.2%;top:76.4%" aria-label="9: Output transistor (Q3)">9<span class="xb-pop"><b>Output transistor (Q3)</b> — switches the load return.</span></a>
+      <a class="xb-mk" href="#tour-10" style="left:75.1%;top:74.1%" aria-label="10: Flyback diode (D3)">10<span class="xb-pop"><b>Flyback diode (D3)</b> — takes the current of an inductive load at turn-off.</span></a>
+      <a class="xb-mk" href="#tour-11" style="left:48.5%;top:60.6%" aria-label="11: Electronic fuse (U3)">11<span class="xb-pop"><b>Electronic fuse (U3)</b> — limits and protects the supply.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-12" style="left:89.2%;top:53.9%" aria-label="12: Output light (D6)">12<span class="xb-pop"><b>Output light (D6)</b> —</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Three-pin input (CTRL IN)</b> — ground on pin 1, command on pin 3.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Controller socket (Y IN)</b> — the ribbon cable.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Chain socket (Y CHAIN)</b> — the remaining commands for the next board.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Input selector (SJ14)</b> — chooses ribbon or three-pin input.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Forwarding links (SJ8 to SJ13)</b> — move each remaining command one position along.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Optocoupler (U101)</b> — carries the command to the load side.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Supply input (J2)</b> — external DC supply.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Load output (J3)</b> — both load wires.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Output transistor (Q3)</b> — switches the load return.</div></li>
+    <li id="tour-10"><span class="xb-n">10</span><div><b>Flyback diode (D3)</b> — takes the current of an inductive load at turn-off.</div></li>
+    <li id="tour-11"><span class="xb-n">11</span><div><b>Electronic fuse (U3)</b> — limits and protects the supply.</div></li>
+    <li id="tour-12"><span class="xb-n">12</span><div><b>Output light (D6)</b> — </div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
+
 Along the top edge, **CTRL IN (J1)** is the white three-pin connector. **Y IN (J4)** and **Y CHAIN (J5)** are the black keyed connectors. **INPUT SELECT (SJ14)** selects the local command. The six smaller links between the Gadgeteer connectors pass the remaining six commands. Field supply enters at **J2** on the left and the load plugs into **J3** on the right.
+
+### Lights {#lights}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th>Lit means</th><th>Disable it</th></tr></thead>
+  <tbody>
+    <tr><td>D6, green</td><td>Output driven</td><td>SJ2</td></tr>
+    <tr><td>D7, red</td><td>Electronic fuse reports a fault</td><td>SJ3</td></tr>
+    <tr><td>D13, red</td><td>Supply over-voltage warning</td><td>SJ6</td></tr>
+    <tr><td>D12, red</td><td>Supply connected backwards</td><td>SJ5</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
 ## Pinout {#pinout}
 
@@ -101,6 +152,17 @@ CHAIN pin 9 is unconnected. The passed-through rails and ground belong to the co
 4. Configure the chosen controller pin to start and halt low. Bring up the board with a current-limited supply and a small test load.
 
 ## Configuration {#configuration}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>To switch the load from G-code</td><td>Switch, output</td><td><a href="#config-load">1</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### 1. Load output (switch module) {#config-load}
 
 Example for the Smoothieware V2 [Switch module](/switch). Replace `PB1` with the controller pin that actually reaches the board's selected input. In a chain, configure a different output pin for each board.
 
@@ -150,9 +212,9 @@ Connect **Y CHAIN** on one board to **Y IN** on the next. With Gadgeteer selecte
 
 ## Downloads {#downloads}
 
-- [Top-view board drawing](/images/extensions/single-channel-small-mosfet-advanced-output/small-mosfet-advanced-diagram.png)
-- [Schematic PDF](/images/extensions/single-channel-small-mosfet-advanced-output/schematic.pdf)
-- [Parts list CSV](/images/extensions/single-channel-small-mosfet-advanced-output/bom.csv)
+- [Top-view board drawing](/images/extensions/single-channel-small-mosfet-advanced-output/v29/single-channel-small-mosfet-advanced-output-diagram.png)
+- [Schematic PDF](/images/extensions/single-channel-small-mosfet-advanced-output/v29/single-channel-small-mosfet-advanced-output-schematic.pdf)
+- [Parts list CSV](/images/extensions/single-channel-small-mosfet-advanced-output/v29/single-channel-small-mosfet-advanced-output-bom.csv)
 
 ## Appendix: mounting dimensions {#mounting}
 
@@ -160,11 +222,18 @@ The board is 60 × 87 mm. Four 3.2 mm holes form a 40 × 40 mm pattern. Hole cen
 
 ## Appendix: electrical specifications {#electrical}
 
-| Parameter | Value | Basis |
-| --- | --- | --- |
-| Field supply | 5–24 V DC | Supply range |
-| Continuous load | 4 A | Load rating |
-| Logic command | 3.3 V nominal | Both interfaces |
-| Minimum loaded high | 2.72 V at the selected input | Input threshold |
-| Maximum logic low | 0.4 V | Input threshold |
-| Isolation voltage rating | Not specified | Use with low-voltage DC. |
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Field supply</td><td>J2</td><td>5 V</td><td>—</td><td>24 V</td><td>Supply range</td></tr>
+    <tr><td>Continuous load</td><td>J3</td><td>—</td><td>—</td><td>4 A</td><td>Load rating</td></tr>
+    <tr><td>Logic command</td><td>J1, J4</td><td>—</td><td>3.3 V</td><td>—</td><td>Both interfaces</td></tr>
+    <tr><td>Logic high</td><td>Selected input</td><td>2.72 V</td><td>—</td><td>—</td><td>Input threshold, loaded</td></tr>
+    <tr><td>Logic low</td><td>Selected input</td><td>—</td><td>—</td><td>0.4 V</td><td>Input threshold</td></tr>
+    <tr><td>Isolation voltage</td><td>Optocoupler barrier</td><td>—</td><td>—</td><td>Not specified</td><td>Use with low-voltage DC</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+

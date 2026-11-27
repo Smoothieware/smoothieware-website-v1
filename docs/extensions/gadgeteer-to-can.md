@@ -21,7 +21,7 @@ permalink: /extensions/gadgeteer-to-can
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/gadgeteer-to-can/v21/gadgeteer-to-can-diagram.png" alt="Top view of the Gadgeteer to CAN adapter.">
+    <img src="/images/extensions/gadgeteer-to-can/v21/gadgeteer-to-can-diagram.webp" alt="Top view of the Gadgeteer to CAN adapter.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -84,7 +84,7 @@ The numbers on the drawing match the list below it.
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/gadgeteer-to-can/v21/gadgeteer-to-can-diagram.png" alt="Top view of the Gadgeteer to CAN adapter with numbered markers explained in the list below.">
+      <img src="/images/extensions/gadgeteer-to-can/v21/gadgeteer-to-can-diagram.webp" alt="Top view of the Gadgeteer to CAN adapter with numbered markers explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:12.1%;top:42.6%" aria-label="1: Host socket (J1)">1<span class="xb-pop"><b>Host socket (J1)</b> — supply and CAN logic signals.</span></a>
       <a class="xb-mk xb-pl" href="#tour-2" style="left:21.8%;top:74.5%" aria-label="2: Chain socket (J2)">2<span class="xb-pop"><b>Chain socket (J2)</b> — rails and unused contacts.</span></a>
       <a class="xb-mk xb-pb" href="#tour-3" style="left:51.0%;top:38.3%" aria-label="3: Isolated transceiver (U1)">3<span class="xb-pop"><b>Isolated transceiver (U1)</b> — the isolation barrier runs under it.</span></a>
@@ -225,7 +225,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/gadgeteer-to-can/v21/gadgeteer-to-can-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/gadgeteer-to-can/v21/gadgeteer-to-can-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/gadgeteer-to-can/v21/gadgeteer-to-can-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/gadgeteer-to-can/v21/gadgeteer-to-can-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

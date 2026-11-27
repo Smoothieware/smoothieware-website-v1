@@ -20,15 +20,15 @@ Historical entries appear alongside related modern boards. A similar name does n
 <tbody aria-labelledby="motor-and-motion-control">
   <tr class="extension-board-category"><th id="motor-and-motion-control" colspan="2" scope="rowgroup">Motor and motion control</th></tr>
   <tr>
-    <td><a href="/extensions/three-channel-a5984-stepper-driver" aria-label="Open the Three-channel A5984 stepper driver board guide"><img src="/images/extensions/three-channel-a5984-stepper-driver/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/three-channel-a5984-stepper-driver" aria-label="Open the Three-channel A5984 stepper driver board guide"><img src="/images/extensions/three-channel-a5984-stepper-driver/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/three-channel-a5984-stepper-driver">Three-channel A5984 stepper driver board</a></p><p>Drives three bipolar stepper motors from STEP and DIR, with 8 to 36 V motor power.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/advanced-h-bridge-encoder-board" aria-label="Open the Advanced H-bridge encoder board guide"><img src="/images/extensions/advanced-h-bridge-encoder-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/advanced-h-bridge-encoder-board" aria-label="Open the Advanced H-bridge encoder board guide"><img src="/images/extensions/advanced-h-bridge-encoder-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/advanced-h-bridge-encoder-board">Advanced H-bridge encoder board</a></p><p>A brushed DC motor controller combining a VNH5019A-E H-bridge, quadrature encoder inputs and current monitoring.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/bouni-analog-spindle-control" aria-label="Open the Bouni analog spindle control guide"><img src="/images/extensions/bouni-analog-spindle-control/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/bouni-analog-spindle-control" aria-label="Open the Bouni analog spindle control guide"><img src="/images/extensions/bouni-analog-spindle-control/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/bouni-analog-spindle-control">Bouni analog spindle control</a></p><p>Converts a controller PWM signal into an analog speed command and provides separate run control.</p></td>
   </tr>
   <tr>
@@ -71,19 +71,23 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><a href="/extensions/stepper-driver-breakout-trinamic" aria-label="Open the Stepper motor driver breakout board (Trinamic TMC2660) guide"><img src="/images/extensions/stepper-driver-breakout-trinamic/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/stepper-driver-breakout-trinamic">Stepper motor driver breakout board (Trinamic TMC2660)</a></p><p>Adds one bipolar TMC2660 stepper channel controlled by STEP/DIR and SPI.</p></td>
   </tr>
+  <tr>
+    <td><a href="/extensions/bouni-spindle-module-boards" aria-label="Open the Bouni spindle control guide"><img src="/images/extensions/bouni-analog-spindle-control/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/bouni-spindle-module-boards">Bouni spindle control</a></p><p>Starting page for choosing between the analog and the RS-485 spindle control boards.</p></td>
+  </tr>
 </tbody>
 <tbody aria-labelledby="sensors-and-inputs">
   <tr class="extension-board-category"><th id="sensors-and-inputs" colspan="2" scope="rowgroup">Sensors and inputs</th></tr>
   <tr>
-    <td><a href="/extensions/three-axis-accelerometer" aria-label="Open the 3-axis accelerometer guide"><img src="/images/extensions/three-axis-accelerometer/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/three-axis-accelerometer" aria-label="Open the 3-axis accelerometer guide"><img src="/images/extensions/three-axis-accelerometer/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/three-axis-accelerometer">3-axis accelerometer</a></p><p>Measures tilt, taps and vibration over I2C.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/nine-axis-imu" aria-label="Open the 9-axis IMU guide"><img src="/images/extensions/nine-axis-imu/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/nine-axis-imu" aria-label="Open the 9-axis IMU guide"><img src="/images/extensions/nine-axis-imu/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/nine-axis-imu">9-axis IMU</a></p><p>Reports orientation from an accelerometer, gyroscope and magnetometer over I2C.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/acs712-current-sensor" aria-label="Open the ACS712 current sensor guide"><img src="/images/extensions/acs712-current-sensor/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/acs712-current-sensor" aria-label="Open the ACS712 current sensor guide"><img src="/images/extensions/acs712-current-sensor/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/acs712-current-sensor">ACS712 current sensor</a></p><p>Measures current in a low-voltage DC wire, isolated from the controller.</p></td>
   </tr>
   <tr>
@@ -99,31 +103,31 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/carvera-wireless-probe-interface">Carvera wireless-probe interface</a></p><p>Interface between a Makera Carvera wireless Z probe receiver and Smoothieboard V2. Do not wire it to a machine.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/endstop-inputs-basic" aria-label="Open the Endstop inputs (basic) guide"><img src="/images/extensions/endstop-inputs-basic/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/endstop-inputs-basic" aria-label="Open the Endstop inputs (basic) guide"><img src="/images/extensions/endstop-inputs-basic/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/endstop-inputs-basic">Endstop inputs (basic)</a></p><p>Connects seven switches to one controller cable, each with its own light and filter.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/endstop-and-probe-inputs-advanced" aria-label="Open the Endstop and probe inputs (advanced) guide"><img src="/images/extensions/endstop-and-probe-inputs-advanced/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/endstop-and-probe-inputs-advanced" aria-label="Open the Endstop and probe inputs (advanced) guide"><img src="/images/extensions/endstop-and-probe-inputs-advanced/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/endstop-and-probe-inputs-advanced">Endstop and probe inputs (advanced)</a></p><p>This board brings six ordinary endstop inputs and a separate positive-voltage probe input to one Gadgeteer connector.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/filament-encoder-board" aria-label="Open the Filament encoder board guide"><img src="/images/extensions/filament-encoder-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/filament-encoder-board" aria-label="Open the Filament encoder board guide"><img src="/images/extensions/filament-encoder-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/filament-encoder-board">Filament encoder board</a></p><p>A magnetic-encoder interface for monitoring filament motion.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/filament-progress-sensor" aria-label="Open the Filament progress sensor guide"><img src="/images/extensions/filament-progress-sensor/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/filament-progress-sensor" aria-label="Open the Filament progress sensor guide"><img src="/images/extensions/filament-progress-sensor/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/filament-progress-sensor">Filament progress sensor</a></p><p>An optical filament-motion sensor observes the surface of moving filament without a contact encoder wheel.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/fsr-breakout-board" aria-label="Open the FSR breakout board guide"><img src="/images/extensions/fsr-breakout-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/fsr-breakout-board" aria-label="Open the FSR breakout board guide"><img src="/images/extensions/fsr-breakout-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/fsr-breakout-board">FSR breakout board</a></p><p>This board turns three force-sensitive resistors into one digital contact/probe indication.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/hall-effect-sensor-board" aria-label="Open the Hall effect sensor board guide"><img src="/images/extensions/hall-effect-sensor-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/hall-effect-sensor-board" aria-label="Open the Hall effect sensor board guide"><img src="/images/extensions/hall-effect-sensor-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/hall-effect-sensor-board">Hall effect sensor board</a></p><p>Turns the field of a nearby magnet into an analog voltage.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/hall-endstop-breakout" aria-label="Open the Hall endstop breakout guide"><img src="/images/extensions/hall-endstop-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/hall-endstop-breakout" aria-label="Open the Hall endstop breakout guide"><img src="/images/extensions/hall-endstop-breakout/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/hall-endstop-breakout">Hall endstop breakout</a></p><p>A magnetic endstop using a DRV5033AJ omnipolar Hall sensor and transistor interface for a host-biased digital output.</p></td>
   </tr>
   <tr>
@@ -139,7 +143,7 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/input-protector">Input protector</a></p><p>An isolated digital input for endstop-style signals: an ISO1211D receiver separates the sensor from the controller and gives an inverting open-collector output.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/infrared-remote-receiver" aria-label="Open the IR remote receiver guide"><img src="/images/extensions/infrared-remote-receiver/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/infrared-remote-receiver" aria-label="Open the IR remote receiver guide"><img src="/images/extensions/infrared-remote-receiver/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/infrared-remote-receiver">IR remote receiver</a></p><p>Receives signals from an infrared remote control.</p></td>
   </tr>
   <tr>
@@ -163,7 +167,7 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/pressure-sensor">Pressure sensor</a></p><p>Measures vacuum and pressure for pickup monitoring.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/rfid-reader" aria-label="Open the RFID reader guide"><img src="/images/extensions/rfid-reader/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/rfid-reader" aria-label="Open the RFID reader guide"><img src="/images/extensions/rfid-reader/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/rfid-reader">RFID reader</a></p><p>Reads 13.56 MHz tags with a plug-in RC522 module.</p></td>
   </tr>
   <tr>
@@ -199,11 +203,11 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/historical-thermocouple-interface">K-type thermocouple interface</a></p><p>A MAX31855KASA reads a K-type thermocouple and exposes temperature/fault data over a read-only SPI-style interface.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/ultrasonic-distance-sensor" aria-label="Open the Ultrasonic distance sensor guide"><img src="/images/extensions/ultrasonic-distance-sensor/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/ultrasonic-distance-sensor" aria-label="Open the Ultrasonic distance sensor guide"><img src="/images/extensions/ultrasonic-distance-sensor/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/ultrasonic-distance-sensor">Ultrasonic distance sensor</a></p><p>Connects an HC-SR04 distance module to a controller socket.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/vibration-sensor-board" aria-label="Open the Vibration sensor board guide"><img src="/images/extensions/vibration-sensor-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/vibration-sensor-board" aria-label="Open the Vibration sensor board guide"><img src="/images/extensions/vibration-sensor-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/vibration-sensor-board">Vibration sensor board</a></p><p>Signals knocks and vibration on a digital input.</p></td>
   </tr>
   <tr>
@@ -214,15 +218,15 @@ Historical entries appear alongside related modern boards. A similar name does n
 <tbody aria-labelledby="power-relays-and-outputs">
   <tr class="extension-board-category"><th id="power-relays-and-outputs" colspan="2" scope="rowgroup">Power, relays and outputs</th></tr>
   <tr>
-    <td><a href="/extensions/ac-ssr-board" aria-label="Open the AC SSR board guide"><img src="/images/extensions/ac-ssr-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/ac-ssr-board" aria-label="Open the AC SSR board guide"><img src="/images/extensions/ac-ssr-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/ac-ssr-board">AC SSR board</a></p><p>A solid-state relay for one AC mains load, enabled from a Gadgeteer output, with a thermostat input.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/atx-connector-board" aria-label="Open the ATX connector board guide"><img src="/images/extensions/atx-connector-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/atx-connector-board" aria-label="Open the ATX connector board guide"><img src="/images/extensions/atx-connector-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/atx-connector-board">ATX connector board</a></p><p>Starts and stops a standard 24-pin ATX supply from one controller pin and reports power good as a 3.3 V signal. It brings out 12 V (XT60), 5 V and 5 V standby on connectors, with no fuses on the board.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/dc-ssr-board" aria-label="Open the DC SSR board guide"><img src="/images/extensions/dc-ssr-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/dc-ssr-board" aria-label="Open the DC SSR board guide"><img src="/images/extensions/dc-ssr-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/dc-ssr-board">DC SSR board</a></p><p>A solid-state relay for one DC load, enabled from a Gadgeteer output, with two back-to-back MOSFETs.</p></td>
   </tr>
   <tr>
@@ -246,15 +250,15 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/historical-gadgeteer-pwm-io-board">Four-PWM/two-input/probe interface</a></p><p>A V2 PWM accessory combining four MOSFET-buffered PWM outputs, two passively debounced switch inputs and an LMV331 comparator probe input.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/gate-boards" aria-label="Open the Gate boards guide"><img src="/images/extensions/gate-boards/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/gate-boards" aria-label="Open the Gate boards guide"><img src="/images/extensions/gate-boards/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/gate-boards">Gate boards</a></p><p>A two-input AND logic board with a switched 5 V output (about 200 mA, printed on the board); an unconnected input counts as high. It is not a safety device.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/general-purpose-output-servo-board" aria-label="Open the Additional general purpose outputs breakout / Servo board guide"><img src="/images/extensions/general-purpose-output-servo-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/general-purpose-output-servo-board" aria-label="Open the Additional general purpose outputs breakout / Servo board guide"><img src="/images/extensions/general-purpose-output-servo-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/general-purpose-output-servo-board">Additional general purpose outputs breakout / Servo board</a></p><p>Seven UCC27524A-driven output channels present Ground/Power/Signal connectors for compatible external logic loads or servos.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/infrared-remote-emitter" aria-label="Open the IR remote emitter guide"><img src="/images/extensions/infrared-remote-emitter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/infrared-remote-emitter" aria-label="Open the IR remote emitter guide"><img src="/images/extensions/infrared-remote-emitter/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/infrared-remote-emitter">IR remote emitter</a></p><p>Sends infrared light from a modulated controller output.</p></td>
   </tr>
   <tr>
@@ -270,7 +274,7 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/laser-diode-driver-breakout">Laser diode driver breakout</a></p><p>A constant-current driver for one 445 nm laser diode with hardware permission logic. Use it with a dummy load only; do not connect a real laser diode.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/laser-emitter-board" aria-label="Open the Laser light emitter guide"><img src="/images/extensions/laser-emitter-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/laser-emitter-board" aria-label="Open the Laser light emitter guide"><img src="/images/extensions/laser-emitter-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/laser-emitter-board">Laser light emitter</a></p><p>Switches a small laser pointer module from one controller output.</p></td>
   </tr>
   <tr>
@@ -321,27 +325,31 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><a href="/extensions/historical-small-mosfet-kicad" aria-label="Open the Small MOSFET — KiCad layout guide"><img src="/images/extensions/historical-small-mosfet-kicad/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/historical-small-mosfet-kicad">Small MOSFET — KiCad layout</a></p><p>This is the KiCad small low-side DC power switch.</p></td>
   </tr>
+  <tr>
+    <td><a href="/extensions/single-channel-small-mosfet-basic-output" aria-label="Open the Single-channel small MOSFET basic output guide"><img src="/images/extensions/single-channel-small-mosfet-basic-output/small-mosfet-basic-diagram.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/single-channel-small-mosfet-basic-output">Single-channel small MOSFET basic output</a></p><p>A single low-side DC load switch with a small MOSFET, in its basic version.</p></td>
+  </tr>
 </tbody>
 <tbody aria-labelledby="communication-and-signal-interfaces">
   <tr class="extension-board-category"><th id="communication-and-signal-interfaces" colspan="2" scope="rowgroup">Communication and signal interfaces</th></tr>
   <tr>
-    <td><a href="/extensions/spi-io-expander" aria-label="Open the 64-pin SPI I/O expander guide"><img src="/images/extensions/spi-io-expander/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/spi-io-expander" aria-label="Open the 64-pin SPI I/O expander guide"><img src="/images/extensions/spi-io-expander/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/spi-io-expander">64-pin SPI I/O expander</a></p><p>Adds 64 inputs or outputs at 3.3 V on one SPI port.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/bidirectional-level-shifting-board" aria-label="Open the Bidirectional level shifting board guide"><img src="/images/extensions/bidirectional-level-shifting-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/bidirectional-level-shifting-board" aria-label="Open the Bidirectional level shifting board guide"><img src="/images/extensions/bidirectional-level-shifting-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/bidirectional-level-shifting-board">Bidirectional level shifting board</a></p><p>A seven-channel digital level interface between a 3.3 V host domain and a separate peripheral domain.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/bouni-rs485-spindle-control" aria-label="Open the Bouni RS-485 spindle control guide"><img src="/images/extensions/bouni-rs485-spindle-control/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/bouni-rs485-spindle-control" aria-label="Open the Bouni RS-485 spindle control guide"><img src="/images/extensions/bouni-rs485-spindle-control/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/bouni-rs485-spindle-control">Bouni RS-485 spindle control</a></p><p>Provides an isolated RS-485 connection between a controller and a compatible drive.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/cheap-uart-adapter-breakout" aria-label="Open the Cheap UART adapter breakout guide"><img src="/images/extensions/cheap-uart-adapter-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/cheap-uart-adapter-breakout" aria-label="Open the Cheap UART adapter breakout guide"><img src="/images/extensions/cheap-uart-adapter-breakout/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/cheap-uart-adapter-breakout">Cheap UART adapter breakout</a></p><p>Joins a low-cost six-pin USB serial module to a controller UART through two level translators.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/differential-signal-extender" aria-label="Open the Differential signal extender guide"><img src="/images/extensions/differential-signal-extender/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/differential-signal-extender" aria-label="Open the Differential signal extender guide"><img src="/images/extensions/differential-signal-extender/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/differential-signal-extender">Differential signal extender</a></p><p>An emitter and receiver carrying one logic signal and 5 V power over a dedicated cable.</p></td>
   </tr>
   <tr>
@@ -349,11 +357,11 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/historical-differential-spi-lvds-extender">Differential SPI LVDS extender</a></p><p>A paired circuit that translates SPI MOSI, clock and chip select into LVDS toward a peripheral and translates MISO in the reverse direction.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/differential-spi-signal-extender" aria-label="Open the Differential SPI signal extender guide"><img src="/images/extensions/differential-spi-signal-extender/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/differential-spi-signal-extender" aria-label="Open the Differential SPI signal extender guide"><img src="/images/extensions/differential-spi-signal-extender/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/differential-spi-signal-extender">Differential SPI signal extender</a></p><p>A host and remote board carrying SPI over differential pairs, up to 500 kHz and 25 m, with a separate 12 V feed.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/differential-step-dir-en-extender" aria-label="Open the Differential step/dir/en extender guide"><img src="/images/extensions/differential-step-dir-en-extender/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/differential-step-dir-en-extender" aria-label="Open the Differential step/dir/en extender guide"><img src="/images/extensions/differential-step-dir-en-extender/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/differential-step-dir-en-extender">Differential step/dir/en extender</a></p><p>A host and remote board carrying STEP, DIR and ENABLE to a Leadshine DM556E.</p></td>
   </tr>
   <tr>
@@ -369,7 +377,7 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/historical-gadgeteer-rs232-adapter">Gadgeteer RS-232 level adapter</a></p><p>A MAX3232 converts host UART/control signals into bipolar RS-232 electrical levels.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/gadgeteer-to-can" aria-label="Open the Gadgeteer-to-CAN adapter guide"><img src="/images/extensions/gadgeteer-to-can/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/gadgeteer-to-can" aria-label="Open the Gadgeteer-to-CAN adapter guide"><img src="/images/extensions/gadgeteer-to-can/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/gadgeteer-to-can">Gadgeteer-to-CAN adapter</a></p><p>An isolated CAN transceiver between a controller CAN transmit and receive pair and a three-way CAN bus terminal.</p></td>
   </tr>
   <tr>
@@ -428,31 +436,31 @@ Historical entries appear alongside related modern boards. A similar name does n
 <tbody aria-labelledby="displays-controls-and-accessories">
   <tr class="extension-board-category"><th id="displays-controls-and-accessories" colspan="2" scope="rowgroup">Displays, controls and accessories</th></tr>
   <tr>
-    <td><a href="/extensions/sixteen-key-keypad" aria-label="Open the 16-key keypad guide"><img src="/images/extensions/sixteen-key-keypad/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/sixteen-key-keypad" aria-label="Open the 16-key keypad guide"><img src="/images/extensions/sixteen-key-keypad/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/sixteen-key-keypad">16-key keypad</a></p><p>A four by four keypad read over I2C.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/led-matrix-8x8" aria-label="Open the 8x8 LED matrix guide"><img src="/images/extensions/led-matrix-8x8/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/led-matrix-8x8" aria-label="Open the 8x8 LED matrix guide"><img src="/images/extensions/led-matrix-8x8/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/led-matrix-8x8">8x8 LED matrix</a></p><p>Shows small pictures on 64 red LEDs.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/button-boards" aria-label="Open the Button boards guide"><img src="/images/extensions/button-boards/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/button-boards" aria-label="Open the Button boards guide"><img src="/images/extensions/button-boards/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/button-boards">Button boards</a></p><p>Presents seven mechanical momentary buttons to a Gadgeteer host socket.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/buzzer-module" aria-label="Open the Buzzer module guide"><img src="/images/extensions/buzzer-module/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/buzzer-module" aria-label="Open the Buzzer module guide"><img src="/images/extensions/buzzer-module/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/buzzer-module">Buzzer module</a></p><p>A 5 V active buzzer with a MOSFET driver, a Gadgeteer input and chain socket, and an alternative three-pin input.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/camera-trigger-board" aria-label="Open the Camera trigger board guide"><img src="/images/extensions/camera-trigger-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/camera-trigger-board" aria-label="Open the Camera trigger board guide"><img src="/images/extensions/camera-trigger-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/camera-trigger-board">Camera trigger board</a></p><p>Isolated focus and shutter contacts for a compatible camera remote input.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/character-lcd-display" aria-label="Open the Character LCD display guide"><img src="/images/extensions/character-lcd-display/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/character-lcd-display" aria-label="Open the Character LCD display guide"><img src="/images/extensions/character-lcd-display/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/character-lcd-display">Character LCD display</a></p><p>A two-line text display driven over I2C.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/debug-probe" aria-label="Open the Debug Probe (Black Magic Probe clone) guide"><img src="/images/extensions/debug-probe/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/debug-probe" aria-label="Open the Debug Probe (Black Magic Probe clone) guide"><img src="/images/extensions/debug-probe/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/debug-probe">Debug Probe (Black Magic Probe clone)</a></p><p>A USB debug probe that connects a development computer to the controller’s SWD/JTAG interface.</p></td>
   </tr>
   <tr>
@@ -460,7 +468,7 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/historical-gadgeteer-dip-switch-board">DIP-switch and debounced-input board</a></p><p>Four onboard DIP switches and three conditioned external inputs provide seven digital states for V2.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/rotary-encoder-handwheel-interface" aria-label="Open the Handwheel encoder interface guide"><img src="/images/extensions/rotary-encoder-handwheel-interface/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/rotary-encoder-handwheel-interface" aria-label="Open the Handwheel encoder interface guide"><img src="/images/extensions/rotary-encoder-handwheel-interface/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/rotary-encoder-handwheel-interface">Handwheel encoder interface</a></p><p>Connects a 5 V jogging handwheel or encoder to the controller.</p></td>
   </tr>
   <tr>
@@ -468,11 +476,11 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/historical-gadgeteer-led-breakout">Historical seven-LED GPIO board</a></p><p>Seven indicators connect host GPIOs through1 kΩ resistors to LED anodes, with cathodes at ground.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/glcd-breakout" aria-label="Open the GLCD breakout guide"><img src="/images/extensions/glcd-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/glcd-breakout" aria-label="Open the GLCD breakout guide"><img src="/images/extensions/glcd-breakout/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/glcd-breakout">GLCD breakout</a></p><p>This adapter interfaces a RepRapDiscount-style ST7920 graphic panel, encoder, buttons, buzzer and SD connection.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/led-bar-8" aria-label="Open the LED bar, 8 lamps guide"><img src="/images/extensions/led-bar-8/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/led-bar-8" aria-label="Open the LED bar, 8 lamps guide"><img src="/images/extensions/led-bar-8/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/led-bar-8">LED bar, 8 lamps</a></p><p>Eight indicator LEDs switched by controller pins.</p></td>
   </tr>
   <tr>
@@ -484,19 +492,19 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/historical-ledsimple">LedSimple</a></p><p>This is a seven-channel GPIO indicator board: each host signal lights its corresponding LED through a resistor.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/linear-potentiometer-board" aria-label="Open the Linear potentiometer board guide"><img src="/images/extensions/linear-potentiometer-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/linear-potentiometer-board" aria-label="Open the Linear potentiometer board guide"><img src="/images/extensions/linear-potentiometer-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/linear-potentiometer-board">Linear potentiometer board</a></p><p>A slider read on an analog input.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/rgb-led-board" aria-label="Open the RGB LED board guide"><img src="/images/extensions/rgb-led-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/rgb-led-board" aria-label="Open the RGB LED board guide"><img src="/images/extensions/rgb-led-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/rgb-led-board">RGB LED board</a></p><p>Four colour LEDs mixed by three PWM outputs.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/rotary-potentiometer-board" aria-label="Open the Rotary potentiometer board guide"><img src="/images/extensions/rotary-potentiometer-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/rotary-potentiometer-board" aria-label="Open the Rotary potentiometer board guide"><img src="/images/extensions/rotary-potentiometer-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/rotary-potentiometer-board">Rotary potentiometer board</a></p><p>A knob read on an analog input.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/sd-audio-player" aria-label="Open the SD audio player guide"><img src="/images/extensions/sd-audio-player/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/sd-audio-player" aria-label="Open the SD audio player guide"><img src="/images/extensions/sd-audio-player/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/sd-audio-player">SD audio player</a></p><p>Plays sound files from a microSD card.</p></td>
   </tr>
   <tr>
@@ -504,7 +512,7 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/sd-card-breakout">SD card breakout</a></p><p>A microSD socket on a Gadgeteer SPI connector, with card detect, an output buffer and a configurable chain socket.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/joystick-breakout" aria-label="Open the Thumb joystick breakout guide"><img src="/images/extensions/joystick-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/joystick-breakout" aria-label="Open the Thumb joystick breakout guide"><img src="/images/extensions/joystick-breakout/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/joystick-breakout">Thumb joystick breakout</a></p><p>A two-axis thumb stick with a push button.</p></td>
   </tr>
   <tr>
@@ -512,26 +520,26 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/universal-panel-adapter">Universal panel adapter</a></p><p>Connects legacy LCD and encoder panels through a local ATmega328P.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/wii-nunchuck-adapter" aria-label="Open the Wii Nunchuck adapter guide"><img src="/images/extensions/wii-nunchuck-adapter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/wii-nunchuck-adapter" aria-label="Open the Wii Nunchuck adapter guide"><img src="/images/extensions/wii-nunchuck-adapter/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/wii-nunchuck-adapter">Wii Nunchuck adapter</a></p><p>Plugs a Nunchuk controller into an I2C socket.</p></td>
   </tr>
 </tbody>
 <tbody aria-labelledby="host-adapters-and-prototyping">
   <tr class="extension-board-category"><th id="host-adapters-and-prototyping" colspan="2" scope="rowgroup">Host adapters and prototyping</th></tr>
   <tr>
-    <td><a href="/extensions/arduino-adapter" aria-label="Open the Arduino adapter guide"><img src="/images/extensions/arduino-adapter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/arduino-adapter" aria-label="Open the Arduino adapter guide"><img src="/images/extensions/arduino-adapter/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/arduino-adapter">Arduino adapter</a></p><p>A carrier that connects an Arduino Uno-format shield to five Gadgeteer sockets of a controller, with software-configured signal direction and two Qwiic ports.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/arduino-to-gadgeteer-shield" aria-label="Open the Arduino-to-Gadgeteer shield guide"><img src="/images/extensions/arduino-to-gadgeteer-shield/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/arduino-to-gadgeteer-shield" aria-label="Open the Arduino-to-Gadgeteer shield guide"><img src="/images/extensions/arduino-to-gadgeteer-shield/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/arduino-to-gadgeteer-shield">Arduino-to-Gadgeteer shield</a></p><p>A shield that gives an Arduino Due six Gadgeteer sockets and a Qwiic port, with switched signals and current-limited supply rails.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/beaglebone-breakout" aria-label="Open the BeagleBone breakout guide"><img src="/images/extensions/beaglebone-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/beaglebone-breakout" aria-label="Open the BeagleBone breakout guide"><img src="/images/extensions/beaglebone-breakout/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/beaglebone-breakout">BeagleBone breakout</a></p><p>A buffered 3.3 V UART interface between a Gadgeteer U socket and the BeagleBone Black P9 header.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/breadboard-board" aria-label="Open the Breadboard board guide"><img src="/images/extensions/breadboard-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/breadboard-board" aria-label="Open the Breadboard board guide"><img src="/images/extensions/breadboard-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/breadboard-board">Breadboard board</a></p><p>This board exposes seven Gadgeteer GPIO contacts and protected supply rails on a breadboard-friendly eleven-contact header.</p></td>
   </tr>
   <tr>
@@ -543,7 +551,7 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/historical-breakoutterm">BreakoutTerm</a></p><p>This passive breakout moves a ten-contact host interface to a screw-terminal row and repeats it on another host connector.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/chip-breakout-board" aria-label="Open the Chip Breakout Board (C.H.I.P) guide"><img src="/images/extensions/chip-breakout-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/chip-breakout-board" aria-label="Open the Chip Breakout Board (C.H.I.P) guide"><img src="/images/extensions/chip-breakout-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/chip-breakout-board">Chip Breakout Board (C.H.I.P)</a></p><p>Connects a C.H.I.P. single-board computer to Smoothieboard over UART and provides a power path.</p></td>
   </tr>
   <tr>
@@ -551,15 +559,15 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/historical-chip-dip-computer-carrier">C.H.I.P. DIP computer carrier</a></p><p>Companion-computer carrier for a C.H.I.P. Linux computer and the older Smoothieboard2 interface, with a regulator, serial indicators and two grounded pushbuttons.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/cpld-adapter" aria-label="Open the CPLD adapter guide"><img src="/images/extensions/cpld-adapter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/cpld-adapter" aria-label="Open the CPLD adapter guide"><img src="/images/extensions/cpld-adapter/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/cpld-adapter">CPLD adapter</a></p><p>A MachXO2 CPLD between controller STEP/DIR/ENABLE signals and a 5 V logic receiver.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/d-sub-to-gadgeteer-in" aria-label="Open the D-sub-to-Gadgeteer IN adapter guide"><img src="/images/extensions/d-sub-to-gadgeteer-in/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/d-sub-to-gadgeteer-in" aria-label="Open the D-sub-to-Gadgeteer IN adapter guide"><img src="/images/extensions/d-sub-to-gadgeteer-in/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/d-sub-to-gadgeteer-in">D-sub-to-Gadgeteer IN adapter</a></p><p>The controller end of a DE-9 extension for a Gadgeteer socket: seven signals, 5 V and ground onto a DE-9 cable.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/d-sub-to-gadgeteer-out" aria-label="Open the D-sub-to-Gadgeteer OUT adapter guide"><img src="/images/extensions/d-sub-to-gadgeteer-out/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/d-sub-to-gadgeteer-out" aria-label="Open the D-sub-to-Gadgeteer OUT adapter guide"><img src="/images/extensions/d-sub-to-gadgeteer-out/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/d-sub-to-gadgeteer-out">D-sub-to-Gadgeteer OUT adapter</a></p><p>The remote end of a DE-9 extension for a Gadgeteer socket: seven signals and 5 V in, a socket and a locally made 3.3 V out.</p></td>
   </tr>
   <tr>
@@ -567,7 +575,7 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/historical-dual-digital-potentiometer">Dual-device I2C digital potentiometer</a></p><p>Two MCP44X1-family devices expose four wiper outputs each.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/esp32-to-gadgeteer-host" aria-label="Open the ESP32 DevKit to Gadgeteer host board guide"><img src="/images/extensions/esp32-to-gadgeteer-host/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/esp32-to-gadgeteer-host" aria-label="Open the ESP32 DevKit to Gadgeteer host board guide"><img src="/images/extensions/esp32-to-gadgeteer-host/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/esp32-to-gadgeteer-host">ESP32 DevKit to Gadgeteer host board</a></p><p>A carrier that gives an ESP32-DevKitC-32E five Gadgeteer sockets and an I²C connector, with series resistors and ESD protection.</p></td>
   </tr>
   <tr>
@@ -587,7 +595,7 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/parallel-port-breakout">Parallel-port bench test jig</a></p><p>A bench fixture with digital isolators for exercising twelve parallel-port outputs and five inputs against a dummy DB25.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/perma-proto-gadgeteer" aria-label="Open the Gadgeteer perma-proto guide"><img src="/images/extensions/perma-proto-gadgeteer/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><a href="/extensions/perma-proto-gadgeteer" aria-label="Open the Gadgeteer perma-proto guide"><img src="/images/extensions/perma-proto-gadgeteer/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/perma-proto-gadgeteer">Gadgeteer perma-proto</a></p><p>Use this passive board to solder a low-voltage prototype on existing Smoothieboard pins, with power lamps and a second connector you wire yourself.</p></td>
   </tr>
   <tr>

@@ -1,130 +1,163 @@
 ---
 layout: default
 title: "Gadgeteer RS-232 level adapter"
+description: "MAX3232 RS-232 level adapter with a DE9 connector: pinout and voltage warning."
 permalink: /extensions/historical-gadgeteer-rs232-adapter
 ---
 
-# Gadgeteer RS-232 level adapter
+{% include _includes/extension-board-page.html %}
 
-A MAX3232 converts host UART/control signals into bipolar RS-232 electrical levels. It is for an actual RS-232 peripheral, not a TTL serial cable, RS-485 bus or CAN interface. The board includes TX/RX and two handshake signals, but interpretation depends on the endpoint and cable role.
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Serial</p>
+    <h1 id="historical-gadgeteer-rs232-adapter">Gadgeteer RS-232 level adapter</h1>
+    <p class="xb-lead">Converts host UART and handshake signals to RS-232 levels on a DE9 connector.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#downloads">Downloads</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/historical-gadgeteer-rs232-adapter/directory-board-render.png" alt="Top view of the Gadgeteer RS-232 level adapter board">
+    <figcaption>Top view drawn from the original board file. This is a drawing, not a photograph.</figcaption>
+  </figure>
+</div>
 
-## Original host
+<div class="xb-stats">
+  <div class="xb-stat"><b>MAX3232</b><span>transceiver</span></div>
+  <div class="xb-stat"><b>DE9</b><span>connector</span></div>
+  <div class="xb-stat"><b>4</b><span>signals</span></div>
+  <div class="xb-stat"><b>5 V</b><span>transceiver supply</span></div>
+  <div class="xb-stat"><b>40 × 40 mm</b><span>board size</span></div>
+  <div class="xb-stat"><b>4</b><span>holes, 2 for the D-sub</span></div>
+</div>
 
-This guide describes the Ccecil design for the Smoothieboard V2/Gadgeteer generation. Check compatibility with your Prime board, cable and firmware.
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting dimensions</a>
+  <a href="#electrical">Electrical specifications</a>
+</nav>
+{:/nomarkdown}
 
-## Interfaces, power and limitations
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <b>The MAX3232 runs from 5 V on this board,</b> so its receive and CTS outputs may exceed what a 3.3 V controller accepts. Do not connect them to a Smoothieboard V2 Prime input without level conversion. This is a design by Chris Cecil, not a current Smoothieware board.
+</sl-alert>
 
-J2/J3 host map is 1 3.3 V, 2 5 V, 3 CTS, 4 Tx, 5 Rx, 6 RTS, 7–9 spare, 10 ground. DE9 J1 uses 2 TxD_, 3 RxD_, 5 ground, 7 CTS_, 8 RTS_; 1/4/6/9 are unconnected. Do not infer standard DTE/DCE roles solely from names or connector gender. The matching schematic identifies U2.11/14 as T1IN/T1OUT: host Tx reaches DE9 contact 2. U2.13/12 are R1IN/R1OUT: DE9 contact 3 reaches host Rx. The second transmitter takes host RTS through U2.10/7 to DE9 contact 8; the second receiver takes DE9 contact 7 through U2.8/9 to host CTS. A straight or null-modem cable still depends on the named peripheral’s connector role and pinout.
+## Tech specs {#specs}
 
-U2 supply pin 16 is tied to 5 V in this source, while pin 15 is ground. The Rx and CTS logic outputs therefore come from a 5 V-powered transceiver; this source does not establish their compatibility with Prime inputs. Do not substitute the direct TTL wiring recipe for a different serial adapter. Prove the fitted-device output levels and host tolerance, or provide a verified level-conversion plan before connecting.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Function</td><td>UART to RS-232 level conversion</td></tr>
+    <tr><td>Headers</td><td>J2 (2 × 5), J3 (1 × 10)</td></tr>
+    <tr><td>Connector</td><td>J1 DE9: 2 transmit, 3 receive, 5 ground, 7 CTS, 8 RTS</td></tr>
+    <tr><td>Chip</td><td>U2 MAX3232</td></tr>
+    <tr><td>Size</td><td>40 × 40 mm</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Board-reference diagram
+## Board tour {#tour}
 
-The annotated reference below uses this board’s board artwork. It shows the populated board, the three connectors and all sixteen transceiver contacts. Start with the overview, then open the numbered connector and transceiver sheets. These are **PCB-side pad locations**, not a view into a mating plug; do not mirror them into a cable map.
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/historical-gadgeteer-rs232-adapter/directory-board-render.png" alt="Annotated top view of the Gadgeteer RS-232 level adapter board">
+      <a class="xb-mk xb-pb" href="#tour-1" style="left:68.8%;top:35.2%" aria-label="1: DE9 connector">1<span class="xb-pop"><b>DE9 connector</b> — RS-232 side.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-2" style="left:51.7%;top:49.6%" aria-label="2: MAX3232">2<span class="xb-pop"><b>MAX3232</b> — Level converter.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-3" style="left:15.4%;top:47.6%" aria-label="3: Header J2">3<span class="xb-pop"><b>Header J2</b> — Host side.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-4" style="left:30.7%;top:19.5%" aria-label="4: Row J3">4<span class="xb-pop"><b>Row J3</b> — Same signals in one row.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-5" style="left:41.8%;top:45.4%" aria-label="5: Capacitor C1">5<span class="xb-pop"><b>Capacitor C1</b> — Capacitor C1, marked <code>.47uf</code> in the board file.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-6" style="left:58.0%;top:41.3%" aria-label="6: Capacitor C5">6<span class="xb-pop"><b>Capacitor C5</b> — Capacitor C5, marked <code>.1uf</code> in the board file. Connects to <code>+5V</code>, <code>GND</code>.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-7" style="left:45.3%;top:41.3%" aria-label="7: Capacitor C2">7<span class="xb-pop"><b>Capacitor C2</b> — Capacitor C2, marked <code>.47uf</code> in the board file. Connects to <code>GND</code>.</span></a>
+      <a class="xb-mk" href="#tour-8" style="left:40.8%;top:53.7%" aria-label="8: Capacitor C3">8<span class="xb-pop"><b>Capacitor C3</b> — Capacitor C3, marked <code>.47uf</code> in the board file. Connects to <code>GND</code>.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>DE9 connector</b> — RS-232 side.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>MAX3232</b> — Level converter.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Header J2</b> — Host side.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Row J3</b> — Same signals in one row.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Capacitor C1</b> — Capacitor C1, marked <code>.47uf</code> in the board file.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Capacitor C5</b> — Capacitor C5, marked <code>.1uf</code> in the board file. Connects to <code>+5V</code>, <code>GND</code>.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Capacitor C2</b> — Capacitor C2, marked <code>.47uf</code> in the board file. Connects to <code>GND</code>.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Capacitor C3</b> — Capacitor C3, marked <code>.47uf</code> in the board file. Connects to <code>GND</code>.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-The host UART side and bipolar RS-232 side are different electrical interfaces. Keep the board disconnected while using these drawings to identify contacts.
+## Pinout {#pinout}
 
-{% include _includes/extension-instruction-diagram.html id="historical-rs232-reference-overview" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/annotated-reference/overview.png" title="Board overview and electrical domains" alt="Board overview and electrical domains — board reference" caption="PCB-side contact identity only. Check connector mating and host voltage tolerance before applying power." width=420 %}
+<span id="connect-and-try-it"></span>
 
-<details markdown="1">
-<summary>Connector and transceiver contact reference</summary>
+### Headers J2 and J3
 
-{% include _includes/extension-instruction-diagram.html id="historical-rs232-reference-J1-contacts" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/annotated-reference/J1-contacts.png" title="J1 — DE-9 contacts and unconnected positions" alt="J1 — DE-9 contacts and unconnected positions — board reference" caption="PCB-side contact identity only. Check connector mating and host voltage tolerance before applying power." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J2 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+3V3</code></td></tr>
+    <tr><td>2</td><td><code>+5V</code></td></tr>
+    <tr><td>3</td><td><code>CTS</code></td></tr>
+    <tr><td>4</td><td><code>Tx</code></td></tr>
+    <tr><td>5</td><td><code>Rx</code></td></tr>
+    <tr><td>6</td><td><code>RTS</code></td></tr>
+    <tr><td>7</td><td><code>P7</code></td></tr>
+    <tr><td>8</td><td><code>P8</code></td></tr>
+    <tr><td>9</td><td><code>P9</code></td></tr>
+    <tr><td>10</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="historical-rs232-reference-J2-contacts" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/annotated-reference/J2-contacts.png" title="J2 — two-row host header contacts" alt="J2 — two-row host header contacts — board reference" caption="PCB-side contact identity only. Check connector mating and host voltage tolerance before applying power." width=420 %}
+### DE9 connector J1
 
-{% include _includes/extension-instruction-diagram.html id="historical-rs232-reference-J3-contacts" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/annotated-reference/J3-contacts.png" title="J3 — single-row host header contacts" alt="J3 — single-row host header contacts — board reference" caption="PCB-side contact identity only. Check connector mating and host voltage tolerance before applying power." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>0</td><td>not connected</td></tr>
+    <tr><td>1</td><td>not connected</td></tr>
+    <tr><td>2</td><td><code>TxD_</code></td></tr>
+    <tr><td>3</td><td><code>RxD_</code></td></tr>
+    <tr><td>4</td><td>not connected</td></tr>
+    <tr><td>5</td><td><code>GND</code></td></tr>
+    <tr><td>6</td><td>not connected</td></tr>
+    <tr><td>7</td><td><code>CTS_</code></td></tr>
+    <tr><td>8</td><td><code>RTS_</code></td></tr>
+    <tr><td>9</td><td>not connected</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="historical-rs232-reference-U2-pins-1" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/annotated-reference/U2-pins-1.png" title="U2 contacts 1–4 — charge pump" alt="U2 contacts 1–4 — charge pump — board reference" caption="PCB-side contact identity only. Check connector mating and host voltage tolerance before applying power." width=420 %}
+## What you need {#what-you-need}
 
-{% include _includes/extension-instruction-diagram.html id="historical-rs232-reference-U2-pins-2" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/annotated-reference/U2-pins-2.png" title="U2 contacts 5–8 — charge pump and RS-232" alt="U2 contacts 5–8 — charge pump and RS-232 — board reference" caption="PCB-side contact identity only. Check connector mating and host voltage tolerance before applying power." width=420 %}
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>RS-232 adapter</b><span>Built from the design files</span></div>
+  <div class="xb-card"><b>RS-232 device</b><span>With known pinout</span></div>
+  <div class="xb-card"><b>Level conversion</b><span>For any 3.3 V input</span></div>
+</div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="historical-rs232-reference-U2-pins-3" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/annotated-reference/U2-pins-3.png" title="U2 contacts 9–12 — host logic" alt="U2 contacts 9–12 — host logic — board reference" caption="PCB-side contact identity only. Check connector mating and host voltage tolerance before applying power." width=420 %}
+## Configuration {#configuration}
 
-{% include _includes/extension-instruction-diagram.html id="historical-rs232-reference-U2-pins-4" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/annotated-reference/U2-pins-4.png" title="U2 contacts 13–16 — RS-232, ground and supply" alt="U2 contacts 13–16 — RS-232, ground and supply — board reference" caption="PCB-side contact identity only. Check connector mating and host voltage tolerance before applying power." width=420 %}
+<span id="smoothieware-use"></span>
 
-</details>
-
-<details markdown="1">
-<summary>Supplementary logical circuits</summary>
-
-These independently drawn circuit sheets explain the selected source connectivity. They complement the populated board reference above and do not show physical cable construction. Use the contact inventory and all companion sheets together. Check cable orientation and ratings before wiring.
-
-Source: [selected original circuit](https://github.com/Ccecil/GDGT_RS232/blob/00cfe55d207b54cdbec19a07337f7cd58e95e8ef/RS232_GDGT.kicad_pcb).
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-rs232-adapter-factual-tx" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/factual-circuits/tx-font-matched.png" title="Data toward DE-9" alt="Data toward DE-9 — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-rs232-adapter-factual-rx" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/factual-circuits/rx-font-matched.png" title="Data from DE-9" alt="Data from DE-9 — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-rs232-adapter-factual-rts" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/factual-circuits/rts-font-matched.png" title="Control toward DE-9" alt="Control toward DE-9 — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-rs232-adapter-factual-cts" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/factual-circuits/cts-font-matched.png" title="Control from DE-9" alt="Control from DE-9 — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-rs232-adapter-factual-host-1" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/factual-circuits/host-1-font-matched.png" title="Logic header paths" alt="Logic header paths — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-rs232-adapter-factual-host-5" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/factual-circuits/host-5-font-matched.png" title="Logic header paths" alt="Logic header paths — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-rs232-adapter-factual-host-9" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/factual-circuits/host-9-font-matched.png" title="Logic header paths" alt="Logic header paths — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-rs232-adapter-factual-supply" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/factual-circuits/supply-font-matched.png" title="Transceiver supply" alt="Transceiver supply — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-rs232-adapter-factual-decoupling" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/factual-circuits/decoupling-font-matched.png" title="Supply capacitor" alt="Supply capacitor — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-rs232-adapter-factual-c1" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/factual-circuits/c1-font-matched.png" title="Pump capacitor C1" alt="Pump capacitor C1 — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-rs232-adapter-factual-c4" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/factual-circuits/c4-font-matched.png" title="Pump capacitor C4" alt="Pump capacitor C4 — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-rs232-adapter-factual-c2" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/factual-circuits/c2-font-matched.png" title="Positive pump rail" alt="Positive pump rail — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-rs232-adapter-factual-c3" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/factual-circuits/c3-font-matched.png" title="Negative pump rail" alt="Negative pump rail — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-rs232-adapter-factual-boundaries" src="/images/extensions/historical-gadgeteer-rs232-adapter/guides/factual-circuits/boundaries-font-matched.png" title="Unconnected contacts and interface limits" alt="Unconnected contacts and interface limits — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-</details>
-
-### Numbered source contacts and controls
-
-These are intended source net memberships, not measured electrical behaviour. Unassigned/unconnected pads must not receive invented connections. Auto-generated net names require schematic interpretation; they are not cable colours. Repeated footprints or pad numbers require geometric identity checks before wiring.
-
-| Source member | Connector/control | Source label | Contact → source net |
-|---|---|---|---|
-| RS232_GDGT.kicad_pcb | J1 | DE9_Receptacle | 0: No assigned net; 1: unconnected-(J1-Pad1); 2: TxD_; 3: RxD_; 4: unconnected-(J1-Pad4); 5: GND; 6: unconnected-(J1-Pad6); 7: CTS_; 8: RTS_; 9: unconnected-(J1-Pad9) |
-| RS232_GDGT.kicad_pcb | J2 | Conn_02x05_Odd_Even | 1: +3V3; 2: +5V; 3: CTS; 4: Tx; 5: Rx; 6: RTS; 7: P7; 8: P8; 9: P9; 10: GND |
-| RS232_GDGT.kicad_pcb | J3 | Conn_01x10_Pin | 1: +3V3; 2: +5V; 3: CTS; 4: Tx; 5: Rx; 6: RTS; 7: P7; 8: P8; 9: P9; 10: GND |
-
-## Practical use with Smoothieboard V2 Prime
-
-Unknown conductors remain unresolved rather than routed by guesswork.
-
-For a serial-instrument experiment, identify its electrical standard, pinout, baud/framing and handshake requirements first. Connect no signal until host-side logic levels, charge-pump supply and DE9 transmit/receive directions are verified. Select a Prime UART-capable socket with actual TX/RX and compatible handshake pins; GF/J37 GPIO alone is not a UART route. Do not connect the DE9 bipolar signals to an MCU or USB-TTL adapter.
-
-Conditional GF/J37 examples refer only to retained **P12 Prime2590**: contacts 1/2/10 are limited 3.3 V/limited 5 V/ground; contacts 3–9 are PB1/PJ4/PA4/PG0/PJ3/PG1/PJ2. The host header is unshrouded. Verify physical numbering, polarity, per-rail current allowance and free-pin ownership before connection. This pin map does not establish hardware SPI, UART, CAN or PWM availability on an arbitrary contact.
-
-## Smoothieware support and example boundary
-
-### Interface and application limits
-
-The pinned UART driver explicitly disables hardware flow control. The existing three-wire console example must therefore leave RTS/CTS unused and use an endpoint configured without that handshake. The MAX3232’s 5 V-powered logic receive output still needs a verified Prime input interface. Neither baud-rate settings nor a read-only version command fixes that electrical boundary or supplies an arbitrary instrument protocol.
-
-The V2 firmware does provide a UART console on channel 1: Prime PB9 transmits and PH14 receives at the settings below. This supports a controller-console experiment, not an arbitrary instrument protocol. Do not connect the receive path until that electrical interface is verified or a specifically verified level-conversion circuit is supplied. Hardware RTS/CTS is not enabled by this UART driver. Leave handshake wires disconnected and configure the actual serial endpoint without hardware flow control.
-
-**Do not attach the Prime receive path without level conversion: the board&rsquo;s logic outputs work at 5 V.** The table lists signal relationships, not a complete cable.
-
-| Endpoint | Corresponding endpoint | Meaning / condition |
-| --- | --- | --- |
-| Prime GB/J33.2 limited 5 V | board J2.2 +5V | Check the supply current budget; no second supply |
-| Prime J33.4 PB9 TX via 100 R | board J2.4 Tx | Host transmit into U2.11/T1IN then U2.14/T1OUT to J1.2 |
-| Prime J33.5 PH14 RX via 100 R | board J2.5 Rx | U2.12/R1OUT from U2.13/R1IN and J1.3; leave open: 5 V logic output |
-| Prime J33.10 GND | board J2.10 GND | Common logic return |
-| board DE9 J1.2 TxD_ | verified endpoint contact2 RX | Only for an actual RS232 endpoint documented as RX2/TX3/GND5 |
-| board DE9 J1.3 RxD_ | verified endpoint contact3 TX | Verify endpoint role, do not infer from gender |
-| board DE9 J1.5 GND | verified endpoint contact5 GND | Signal ground |
-
-J2.1/3/6–9, all J3 contacts and DE9 J1.1/4/6/7/8/9 remain unconnected in this three-wire example. Unconnected shell pads are not invented signal-ground connections.
-
-### Conditional Prime console settings
-
-This standalone example reserves channel 1 and PB9/PH14 exclusively. Check the complete installed configuration and other UART consumers first. Merge the settings into the existing section; do not combine competing channel-1 examples. The HAL fixes the channel’s pins; arbitrary TX/RX pin settings are not supplied.
+A UART console setup. Connect the receive path only through level conversion that you have checked.
 
 ```ini
 [uart console]
@@ -137,22 +170,104 @@ stop_bits = 1
 parity = none
 ```
 
-Only after all electrical and endpoint prerequisites above pass, configure the serial client for 115200 baud, 8 data bits, no parity, one stop bit and no hardware flow control. Send `version` followed by LF (`\n`; CRLF also works, but CR alone is ignored) and check the controller response. This read-only shell command requests no motion.
+On Smoothieboard V2 Prime, channel 1 transmits on PB9 and receives on PH14. See [UART](/uart). Syntax checked against firmware commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`.
 
-These settings are grounded in [SmoothieV2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`](https://github.com/Smoothieware/SmoothieV2/tree/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src). The source-level fragment is not a complete boot configuration and does not identify the firmware installed on your controller.
+## How it works {#how-it-works}
 
-## Remaining requirements
+Host Tx reaches DE9 contact 2 through the transceiver, and DE9 contact 3 returns to host Rx. CTS and RTS are converted the same way. Check how your instrument or cable assigns transmit and receive. See the [MAX3232 datasheet](https://www.ti.com/lit/ds/symlink/max3232.pdf).
 
-MAX3232 exact supply/population, DTE/DCE direction, handshaking, host UART mux and endpoint protocol/configuration remain unresolved.
+## Troubleshooting {#troubleshooting}
 
-## Sources and attribution
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>No data</td><td>Swap check: confirm DE9 contacts 2 and 3 against the other device, and match baud rate and framing.</td></tr>
+    <tr><td>Handshake ignored</td><td>The Smoothieware UART driver does not use hardware flow control.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-- [Ccecil upstream project](https://github.com/Ccecil/GDGT_RS232)
-- [Pinned original source](https://github.com/Ccecil/GDGT_RS232/tree/00cfe55d207b54cdbec19a07337f7cd58e95e8ef)
-- [Original README.md](https://github.com/Ccecil/GDGT_RS232/blob/00cfe55d207b54cdbec19a07337f7cd58e95e8ef/README.md)
-- [Original RS232_GDGT.kicad_pcb](https://github.com/Ccecil/GDGT_RS232/blob/00cfe55d207b54cdbec19a07337f7cd58e95e8ef/RS232_GDGT.kicad_pcb)
-- [Original RS232_GDGT.kicad_sch](https://github.com/Ccecil/GDGT_RS232/blob/00cfe55d207b54cdbec19a07337f7cd58e95e8ef/RS232_GDGT.kicad_sch)
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
 
-The retained inventory did not identify a project license file. Preserve attribution and resolve redistribution rights before importing original artwork/layouts; absence of a license file is not public-domain permission. Modern counterpart guides are functional comparisons only and do not establish matching pinouts.
+## Downloads {#downloads}
 
-[All extension boards](/extension-boards)
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/Ccecil/GDGT_RS232/blob/00cfe55d207b54cdbec19a07337f7cd58e95e8ef/RS232_GDGT.kicad_pcb">selected original circuit</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Smoothieware/SmoothieV2/tree/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src">SmoothieV2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/GDGT_RS232">Ccecil upstream project</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/GDGT_RS232/tree/00cfe55d207b54cdbec19a07337f7cd58e95e8ef">Pinned original source</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/GDGT_RS232/blob/00cfe55d207b54cdbec19a07337f7cd58e95e8ef/README.md">Original README.md</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/GDGT_RS232/blob/00cfe55d207b54cdbec19a07337f7cd58e95e8ef/RS232_GDGT.kicad_sch">Original RS232_GDGT.kicad_sch</a></td><td>Design source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+Outline and holes from the original board file. Millimetres, seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-s232-adapter-mount-t">
+  <title id="xb-s232-adapter-mount-t">Mounting drawing of the historical-gadgeteer-rs232-adapter, component side: outline 40 by 40 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="310.0" y="78.0" width="340.0" height="340.0" rx="25.5" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M310.0 56H650.0"/><path d="M310.0 50V62"/><path d="M650.0 50V62"/><path d="M676.0 78.0V418.0"/><path d="M670.0 78.0h12"/><path d="M670.0 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">40</text>
+  <text x="688.0" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">40</text>
+  <circle cx="310.0" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="298.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M252.0 104.0h30" fill="none"/><path d="M286.0 104.0l-8 -4v8z"/><path d="M252.0 104.0v30" fill="none"/><path d="M252.0 138.0l-4 -8h8z"/></g>
+  <text x="290.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="248.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="480.0" cy="120.5" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M462.4 120.5h35.2M480.0 102.9v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="493.6" y="154.1" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  20.00, 5.00</text>
+  <circle cx="601.6" cy="138.3" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M584.0 138.3h35.2M601.6 120.8v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="615.2" y="171.9" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  34.31, 7.10</text>
+  <circle cx="601.6" cy="350.9" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M584.0 350.9h35.2M601.6 333.2v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="615.2" y="327.2" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  34.31, 32.10</text>
+  <circle cx="480.0" cy="375.5" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M462.4 375.5h35.2M480.0 357.9v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="493.6" y="351.9" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  20.00, 35.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 40 × 40&nbsp;mm, corners rounded to a 3&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>20.00</td><td>5.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>34.31</td><td>7.10</td><td>3.2&nbsp;mm, plated</td><td>D-sub connector fixing</td></tr>
+    <tr><td>3</td><td>34.31</td><td>32.10</td><td>3.2&nbsp;mm, plated</td><td>D-sub connector fixing</td></tr>
+    <tr><td>4</td><td>20.00</td><td>35.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Only what the design source states or the circuit fixes. Blank cells are not specified.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Transceiver supply</td><td>U2 pin 16</td><td>—</td><td>5 V</td><td>—</td><td>Design file connection</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Design source {#origin}
+
+Designed by Chris Cecil: [original design files](https://github.com/Ccecil/GDGT_RS232/tree/00cfe55d207b54cdbec19a07337f7cd58e95e8ef). It was drawn for the Smoothieboard V2 Gadgeteer era; check every connection against your own controller.
+See all boards on the [extension boards](/extension-boards) page.

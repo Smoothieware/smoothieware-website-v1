@@ -20,7 +20,7 @@ permalink: /extensions/general-purpose-output-servo-board
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/general-purpose-output-servo-board/general-purpose-output-servo-board-diagram.png" alt="Top view of the board: seven three-pin headers along the top edge with a numbered fuse below each, a ten-contact host socket at the left, a chain socket at the right, four driver chips in the middle and a green two-way terminal at the lower left.">
+    <img src="/images/extensions/general-purpose-output-servo-board/general-purpose-output-servo-board-diagram.webp" alt="Top view of the board: seven three-pin headers along the top edge with a numbered fuse below each, a ten-contact host socket at the left, a chain socket at the right, four driver chips in the middle and a green two-way terminal at the lower left.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -84,7 +84,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/general-purpose-output-servo-board/general-purpose-output-servo-board-diagram.png" alt="Top view of the general purpose outputs servo board with ten numbered markers that are explained in the list below.">
+      <img src="/images/extensions/general-purpose-output-servo-board/general-purpose-output-servo-board-diagram.webp" alt="Top view of the general purpose outputs servo board with ten numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:9%;top:32.7%" aria-label="1: host socket">1<span class="xb-pop"><b>Host socket (J1)</b> — a ten-contact socket (Gadgeteer): host 3.3&nbsp;V and 5&nbsp;V, seven requests (contacts 3 to 9) and ground. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-2" style="left:91.5%;top:32.7%" aria-label="2: chain socket">2<span class="xb-pop"><b>Chain socket (J2)</b> — a second ten-contact socket carrying the raw host requests and linked rails on to another board, not the seven buffered outputs. Its links JP11 to JP17 are open on the silk.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-3" style="left:20.8%;top:10%" aria-label="3: channel 1 output">3<span class="xb-pop"><b>Channel 1 output (J3)</b> — a three-pin header, silk 1:GND 2:VSRV1 3:OUT1. Pin 2 is the channel supply, pin 3 the driven signal.</span></a>
@@ -286,7 +286,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/general-purpose-output-servo-board/general-purpose-output-servo-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
     <tr><td><a href="/images/extensions/general-purpose-output-servo-board/general-purpose-output-servo-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/general-purpose-output-servo-board/general-purpose-output-servo-board-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/general-purpose-output-servo-board/general-purpose-output-servo-board-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

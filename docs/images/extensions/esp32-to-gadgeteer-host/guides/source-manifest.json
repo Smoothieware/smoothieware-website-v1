@@ -7624,180 +7624,180 @@
     "contact-atlas-j7-03.svg": "5da46c625dce798e3d9b5ea15d4c2832a11800ffac7ea44c215c89d37ddf4f0d",
     "contact-atlas-j7-02.svg": "353f51b91e1e672fae97078c89b0e45d4ef7a10fe7255067bf7bfb876686c99e"
   },
-  "website_png_exports": {
+  "website_webp_exports": {
     "board-reference.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/board-reference.svg",
       "archived_svg_sha256": "2b2beaec16fd0408acd11431cca10fc5ec1fdd798aab8178b0bb2758e5beac61",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/board-reference.png",
-      "sha256": "b593061774c855b45368bc58f68d76832c7a141d3c356dba59b726049a45341d"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/board-reference.webp",
+      "sha256": "b530de305d07dd4fa32572a150008053a08801b2e1b5f571348a7848f0d0353d"
     },
     "cable-contact-key.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/cable-contact-key.svg",
       "archived_svg_sha256": "6cba7abe45cd1d4962944240c0feab1a640d73b01688cadbbb05ba8e16037484",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/cable-contact-key.png",
-      "sha256": "9754e95f7f9241d27b166badee5640d93a89a0dc30413e6984be83d4db82dad2"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/cable-contact-key.webp",
+      "sha256": "6bf350bdcc4e2302696a7b7d9f3d9be737eded38c2db08450706cfeb2977d872"
     },
     "contact-atlas-controls-bottom-01.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-controls-bottom-01.svg",
       "archived_svg_sha256": "9ae1901ffd5cce41a8d2c3de5a0cf94dd1d8d0da7ee50e49834bccdce0b0d57f",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-controls-bottom-01.png",
-      "sha256": "7313d1a5bea1ffda88be1bdb9976709e0e52184077c5dfb58143d6ce9006aa3f"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-controls-bottom-01.webp",
+      "sha256": "5e8b65a46494dde0e2d10111a97de9140185418ae5224d2d7b6a728170b7a29d"
     },
     "contact-atlas-controls-bottom-02.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-controls-bottom-02.svg",
       "archived_svg_sha256": "9578a136d46b209b8ecae99e07c6eb7d21429ce7dbf1d146d8c67d0b5aa94f92",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-controls-bottom-02.png",
-      "sha256": "76bf4789e6466e971703f48ca91ef9680cf41576c06eebe9a622c261bf56ddd2"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-controls-bottom-02.webp",
+      "sha256": "822d9a1a7f9d53282cda973e08eb85c250bf36e472526720dd0067b6b40ba189"
     },
     "contact-atlas-controls-top-01.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-controls-top-01.svg",
       "archived_svg_sha256": "8e73604a2915cdd7be8612f13baae34d3a1c52e978d92c932a6eac5035dc5e11",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-controls-top-01.png",
-      "sha256": "63f80959120bd3d55b4e0b74c087aefb12dea830eb70a5e2c7aca3acf81adcdb"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-controls-top-01.webp",
+      "sha256": "8e56f994cf61a3083175960224d7c5ea278123a2352d1186a1433eb5a5c986ec"
     },
     "contact-atlas-controls-top-02.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-controls-top-02.svg",
       "archived_svg_sha256": "66b94f9c1d9ee451b2cd22c68bcaef75dda2ea20a02b59bec0b6f7bfb3c2a448",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-controls-top-02.png",
-      "sha256": "77fcbe52fa43812dd0d2b6707dfe063e345484fd68d086289fedf1f609587d44"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-controls-top-02.webp",
+      "sha256": "b8e1c4c26aed74ba737cb13e13a3506fe5de6f3aae7a7e46c3c38317d7ade326"
     },
     "contact-atlas-j1-01.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j1-01.svg",
       "archived_svg_sha256": "f2640cc741912e5f8a8bd0d8160e810fada03396687ba3466cd5751775d3d724",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j1-01.png",
-      "sha256": "cf8dfb2c42e290f5c9a9ee5c1691b35b1ea70dc0f8f0a90589f8f071a7a1978c"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j1-01.webp",
+      "sha256": "2c553b862025185b1026585c398a00b2f603b8365ed39fc1bc06dbe6eb5a5d52"
     },
     "contact-atlas-j1-02.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j1-02.svg",
       "archived_svg_sha256": "973e22a1f424e29b3930809a601ef3f6e553c0fce7f5d4c1e3b356481a9b986e",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j1-02.png",
-      "sha256": "20159089b4cec7935e0ed8fe3883fee3a835ffa895244327f8b528b9615412b9"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j1-02.webp",
+      "sha256": "c463cbb527dd7a26ab7a9745da4d89d329683ee5219b837465ad68c2bad994bd"
     },
     "contact-atlas-j2-01.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j2-01.svg",
       "archived_svg_sha256": "8b8fd171016c03c211f2977fe71f103799ed009d11692de5d8b696e222533402",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j2-01.png",
-      "sha256": "e0fbf6b966c7be333a61fe92c5a6908d84a263a645da27b2cc37c7adbcb7ed90"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j2-01.webp",
+      "sha256": "b9b418c0ece850afe08d8587489286f1de932675124d71bfd1a50d74d3db80a0"
     },
     "contact-atlas-j2-02.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j2-02.svg",
       "archived_svg_sha256": "4b9cd423ce20215a7cb07d14e0699b5de0b0fa4226a7f4a5dd3284ef34c852bf",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j2-02.png",
-      "sha256": "c49724dde63b6ad6b850122efd595a262713e58a41816bcc0668de921d94f8ef"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j2-02.webp",
+      "sha256": "fab6c1f0c621cc68036d21310e699a1b1f8de4863ec9bb8ee15559d14896dd7d"
     },
     "contact-atlas-j3-01.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j3-01.svg",
       "archived_svg_sha256": "001ed9bb75937ff0e3340cad508196177b265fcc642011b45fdc54cc77cfd4c4",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j3-01.png",
-      "sha256": "072cea902b64aafee2785fe808efbc9c867ed7451dbfe699ce9d3f091b1df8ea"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j3-01.webp",
+      "sha256": "fcce0d1033a02daeb9139420546fd2e7135b683034156673096a58ada0463ce2"
     },
     "contact-atlas-j3-02.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j3-02.svg",
       "archived_svg_sha256": "23b8d32a3211bbb6358e70763141c06bbe84a6bf6f960741a84cc66d11f0c9fd",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j3-02.png",
-      "sha256": "97302d7c6a57a6b972b05a965deceb17d5bdfa5bcb8ce24abe9fa3cbdaeca222"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j3-02.webp",
+      "sha256": "80d93644a27eb5ef30ec62e4e86028d50cbef4238df010ac1cf47b140bf20e68"
     },
     "contact-atlas-j4-01.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j4-01.svg",
       "archived_svg_sha256": "061414bcaec935fcdae7d0215a8d324f67bb67b6a2a1c7240cd582f29d4f302c",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j4-01.png",
-      "sha256": "f4bf436df2622c706d7374f52b178ca8d5f2d5b5c508387bd7e98a299bd69b18"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j4-01.webp",
+      "sha256": "ac1c807e66f2b3e2a3fe086465a2d5ae4d9052c828fee86fdfc583dd0d0908ec"
     },
     "contact-atlas-j4-02.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j4-02.svg",
       "archived_svg_sha256": "02d4f03684e1820f9b1698463e24504e53dac566d283305d5ffcacf252ae2719",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j4-02.png",
-      "sha256": "7d0e6f8f8405635e63d810bab810b0d94214d648e06ff6de1dc4bf2ba588b2f8"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j4-02.webp",
+      "sha256": "0d2c1b5f7426981f4c8695c6d227316a08f7243715f5fb82e6d0b8972bf62983"
     },
     "contact-atlas-j5-01.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j5-01.svg",
       "archived_svg_sha256": "b46781a586de9a6f56945bf07c6b6b3cc24fcd19c05bf6f5e5fc78a7104772f5",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j5-01.png",
-      "sha256": "0fda690612005c0b82c49ae6483c23e5d1ce1ad1ba8aa1405fa9c7d4b7dedaaf"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j5-01.webp",
+      "sha256": "78f580add7e8bd6985c406ce3acc28af55daef99a1324a57b3bab96fb524e51e"
     },
     "contact-atlas-j5-02.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j5-02.svg",
       "archived_svg_sha256": "09f46661a6b6619fb8c060687766b3994e0601e327ec38d8753eb22a8a6092c6",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j5-02.png",
-      "sha256": "9f25ea5f7ff55e00fcdb3f007a9a41e8569b84120d85fa46c9aa7fcf6b3f5283"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j5-02.webp",
+      "sha256": "8bb5d664838e1f640b97ec491ada0be779affe29b0fa4fb9ab22c9365da11282"
     },
     "contact-atlas-j6-01.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j6-01.svg",
       "archived_svg_sha256": "2b304a9b3f74f9acab17158876b439085cd564fb5bb5142d9476a189e27211e4",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j6-01.png",
-      "sha256": "1985f40ded2cf92e6277177d962dfc661eca492b3928351aab5febd19981dccb"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j6-01.webp",
+      "sha256": "c5dedf41172db5eea4425dfc0278b4033442dc2260fe7ad30bce8a520d814c32"
     },
     "contact-atlas-j6-alternative-01.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j6-alternative-01.svg",
       "archived_svg_sha256": "f6e8656e63f49ba7b6f54c49f814ba9efe41f62c3d3b5281248fea0c1f3089d2",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j6-alternative-01.png",
-      "sha256": "f02f3b35777f56bdcb0ecebb33b1c7001cbcc7847aa6801b9f57267ccd606828"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j6-alternative-01.webp",
+      "sha256": "83341e4b3c70d73a123892c18733a33e49cbb405fc35d69855bd782541c9956f"
     },
     "contact-atlas-j6-alternative-02.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j6-alternative-02.svg",
       "archived_svg_sha256": "61d4c76320a0faca8dcf44d5c8ef3ba5d8975656ded7ab1e68e1b8e37eac240b",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j6-alternative-02.png",
-      "sha256": "3b7e1c10b3016bf6bae5aa0617bec22642fb89f9c164d189f6f47e420ee7609d"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j6-alternative-02.webp",
+      "sha256": "512f7a67c726ddc44d7a81538c34b4b1fd9fd61315e02dd531ccea1166305e82"
     },
     "contact-atlas-j7-01.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j7-01.svg",
       "archived_svg_sha256": "0b71f75ba05ff293ed239ea1053927f709cfe7fc2bf253ffbd8497fbb2455740",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j7-01.png",
-      "sha256": "9924372780c541e3e1932d596022c241d61c0a768c3787971c040dfb5fbc616a"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j7-01.webp",
+      "sha256": "b8f9ebf11d98461271ade3845024faf26db1e691e6cce7d8206ec81bb3824a09"
     },
     "contact-atlas-j7-02.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j7-02.svg",
       "archived_svg_sha256": "4deaf1c1b27870ff17b75d0de2d44d3d67a510d639277884671cb1a4713909ba",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j7-02.png",
-      "sha256": "7257ccc0b542ace474cfff1f28fedf10a91a264fcf86fff34a36a1f6eb7be402"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j7-02.webp",
+      "sha256": "0e8671683df19c75ef296c43fff0d2412c2b4fd6d5ddad5e9322f838a6d87a7e"
     },
     "contact-atlas-j7-03.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j7-03.svg",
       "archived_svg_sha256": "03f5851db17c8408733aa9f4b5eb9d0db6ec2f78c3ee39e01f0f1355374638fd",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j7-03.png",
-      "sha256": "1acfade14047f6d5664ce2ac40bb7d7e3ad09a6056c9b648f114831944af602f"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j7-03.webp",
+      "sha256": "79e69c307a4c69ad5cf6b057567a154310cb4f492fe073ae382f2bc2f4a86c77"
     },
     "contact-atlas-j7-04.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j7-04.svg",
       "archived_svg_sha256": "0892b9defde7053da7704e1e465569bada18ec349b0fe2d0c27d96d992ed1651",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j7-04.png",
-      "sha256": "056deb0dae903f743de3e9b9e889741cabbc0e03c06c412899514dc77d0b6cb6"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j7-04.webp",
+      "sha256": "7fa4785d5a88e3f5efa7cf2e29617cde7775e83b31c5db214977558b331ef11c"
     },
     "contact-atlas-j8-01.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j8-01.svg",
       "archived_svg_sha256": "f2e9fc568e471e2f876cd4ce0a696391dfc198a119fa75a395c66e8027def568",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j8-01.png",
-      "sha256": "88668cd519846b4324b3d6baf0de15a61933e6fac30a2ff14cb503150d4df4eb"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j8-01.webp",
+      "sha256": "a4685b03c6ca7d4b0ef8f82f2391630f201c566e21d02624b777b5d5858b77cb"
     },
     "contact-atlas-j8-02.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j8-02.svg",
       "archived_svg_sha256": "2b398edadf6f1d8f2de9b3d666ddba2fe02051bd022c43a5ba0489aae5993d97",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j8-02.png",
-      "sha256": "cc167b2ccb738042498c4164145f8f59a263abbc9b726e24196a2e939eaab121"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j8-02.webp",
+      "sha256": "c2988cbe59115032cf5895fea675659ae6979e0a05c5737d8daee1989467f97a"
     },
     "contact-atlas-j8-03.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j8-03.svg",
       "archived_svg_sha256": "4c26d4e9af185265a9676475282be9db2052b67a740c6d4b8837d1402e3c84dc",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j8-03.png",
-      "sha256": "689249af0e200ebf35477d487665a0ac36ff7225a2d5dd8ac66387fda5ff663a"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j8-03.webp",
+      "sha256": "e9125bcdcef64a069c3e45ad4051c69a5dd274bdbfe59331c7feaf5ea807094d"
     },
     "contact-atlas-j8-04.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/contact-atlas-j8-04.svg",
       "archived_svg_sha256": "0f0fcb1a6e7cfacad52036c516f5ac59296e02fba4d77a006c98f8a341f97b2c",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j8-04.png",
-      "sha256": "c881aebf411c0b381de0a6bf5d3a7c27d77abc7b68a76d59bcab386cd6e4cc04"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/contact-atlas-j8-04.webp",
+      "sha256": "5dc6c59f7ecd72bcd995088ee723566172bd03a6d01116228f2a210585a44a5e"
     },
     "esp32-to-gadgeteer-host.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/esp32-to-gadgeteer-host.svg",
       "archived_svg_sha256": "08e2676198a989844b04723287ec247ddd211c9fec9fa4e9f3112a525364b3d4",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/esp32-to-gadgeteer-host.png",
-      "sha256": "30c24ea2e5ca00c916ddd5839863f628786fbce6701cd1f0eb4801cbe3b1474b"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/esp32-to-gadgeteer-host.webp",
+      "sha256": "a7f5308d9971fc9c527fd51fcdf74d4e6ba3de8635c80a46f8814cfb41d8b6a7"
     },
     "full-wiring.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/esp32-to-gadgeteer-host/guides/full-wiring.svg",
       "archived_svg_sha256": "36d258e8998a8aa69668736aa127bd384b15eabc9ca299114389deaba6045d3d",
-      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/full-wiring.png",
-      "sha256": "9b32a47671525526c3b0a6fb61c3b121b17923f57aa8c4e04da43135869b278b"
+      "url": "/images/extensions/esp32-to-gadgeteer-host/guides/full-wiring.webp",
+      "sha256": "c3bbd2ca61795f1e586a178277e8027942c10c84f144f4f10b4e8006147ea5cf"
     }
   }
 }

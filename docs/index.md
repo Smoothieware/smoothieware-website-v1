@@ -375,6 +375,8 @@ The [complete extension-board directory](/extension-boards) describes what each 
 - [Stepper motor driver breakout board (Allegro)](/extensions/stepper-driver-breakout-allegro)
 - [Stepper motor driver breakout board (Trinamic)](/extensions/stepper-driver-breakout-trinamic)
 - [Position feedback board](/extensions/position-feedback-board)
+- [Bouni spindle control](/extensions/bouni-spindle-module-boards)
+- [Three-channel A5984 stepper driver board](/extensions/three-channel-a5984-stepper-driver)
 
 {::nomarkdown}
 </section>
@@ -415,6 +417,11 @@ The [complete extension-board directory](/extension-boards) describes what each 
 - [Ultrasonic distance sensor](/extensions/ultrasonic-distance-sensor)
 - [Vibration sensor board](/extensions/vibration-sensor-board)
 - [Water-flow sensor adapter](/extensions/water-flow-sensor-adapter)
+- [Carvera wireless-probe interface](/extensions/carvera-wireless-probe-interface)
+- [Endstop inputs (basic)](/extensions/endstop-inputs-basic)
+- [Mechanical endstop](/extensions/historical-mechanical-endstop)¹
+- [SPI PT100 interface](/extensions/historical-spi-pt100)¹
+- [K-type thermocouple interface](/extensions/historical-thermocouple-interface)¹
 
 {::nomarkdown}
 </section>
@@ -450,6 +457,10 @@ The [complete extension-board directory](/extension-boards) describes what each 
 - [Single-Channel Small MOSFET advanced output](/extensions/single-channel-small-mosfet-advanced-output)
 - [Single-Channel Small MOSFET basic output](/extensions/single-channel-small-mosfet-basic-output)
 - [Single-channel solid state relay output](/extensions/single-channel-solid-state-relay-output)
+- [Large MOSFET — original Eagle layout](/extensions/historical-large-mosfet-eagle)¹
+- [Large MOSFET — KiCad layout](/extensions/historical-large-mosfet-kicad)¹
+- [Small MOSFET — original Eagle layout](/extensions/historical-small-mosfet-eagle)¹
+- [Small MOSFET — KiCad layout](/extensions/historical-small-mosfet-kicad)¹
 
 {::nomarkdown}
 </section>
@@ -483,6 +494,11 @@ The [complete extension-board directory](/extension-boards) describes what each 
 - [USB/Serial breakout](/extensions/usb-serial-breakout)
 - [Wireless Gadgeteer extender](/extensions/wireless-gadgeteer-extender)
 - [Wireless series Smoothieboard-side master](/extensions/wireless-series-master)
+- [BreakoutPins](/extensions/historical-breakoutpins)¹
+- [BreakoutTerm](/extensions/historical-breakoutterm)¹
+- [Legacy high-current level shifter](/extensions/historical-legacy-level-shifter-high-current)¹
+- [SPI hub, original design](/extensions/historical-spi-hub)¹
+- [SPI opto-isolator](/extensions/historical-spi-opto-isolator)¹
 
 {::nomarkdown}
 </section>
@@ -515,6 +531,7 @@ The [complete extension-board directory](/extension-boards) describes what each 
 - [Thumb joystick breakout](/extensions/joystick-breakout)
 - [Universal panel adapter](/extensions/universal-panel-adapter)
 - [Wii Nunchuck adapter](/extensions/wii-nunchuck-adapter)
+- [LedSimple](/extensions/historical-ledsimple)¹
 
 {::nomarkdown}
 </section>
@@ -546,6 +563,9 @@ The [complete extension-board directory](/extension-boards) describes what each 
 - [Raw pins breakout](/extensions/raw-pins-breakout)
 - [Raw pins screw terminal breakout](/extensions/raw-pins-screw-terminal-breakout)
 - [Teensy 4.1 to Gadgeteer host board](/extensions/teensy-to-gadgeteer-host)
+- [C.H.I.P. DIP computer carrier](/extensions/historical-chip-dip-computer-carrier)¹
+- [Raspberry Pi Zero carrier with Ethernet](/extensions/historical-raspberry-pi-zero-ethernet)¹
+- [Raspberry Pi Zero carrier interface](/extensions/historical-raspberry-pi-zero-interface)¹
 
 {::nomarkdown}
 </section>

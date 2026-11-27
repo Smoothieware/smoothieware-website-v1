@@ -20,7 +20,7 @@ permalink: /extensions/dc-ssr-board
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/dc-ssr-board/dc-ssr-board-diagram.png" alt="Top view of the DC solid-state relay board: a two-screw terminal at the top left, a fuse holder and a suppressor on the left, two power transistors in the middle, a driver chip at the right and a Gadgeteer socket at the bottom right.">
+    <img src="/images/extensions/dc-ssr-board/dc-ssr-board-diagram.webp" alt="Top view of the DC solid-state relay board: a two-screw terminal at the top left, a fuse holder and a suppressor on the left, two power transistors in the middle, a driver chip at the right and a Gadgeteer socket at the bottom right.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -94,7 +94,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/dc-ssr-board/dc-ssr-board-diagram.png" alt="Top view of the DC solid-state relay board with thirteen numbered markers that are explained in the list below.">
+      <img src="/images/extensions/dc-ssr-board/dc-ssr-board-diagram.webp" alt="Top view of the DC solid-state relay board with thirteen numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:11.8%;top:19%" aria-label="1: terminal A">1<span class="xb-pop"><b>Terminal SW A</b> — left screw of the two-screw terminal. One end of the switched DC path. The fuse is in this path. <i>Either end can be the supply or the load: the board has no polarity marking.</i></span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:26.8%;top:19%" aria-label="2: terminal B">2<span class="xb-pop"><b>Terminal SW B</b> — right screw. The other end of the switched DC path.</span></a>
       <a class="xb-mk xb-pl" href="#tour-3" style="left:7.3%;top:52.6%" aria-label="3: fuse holder">3<span class="xb-pop"><b>Fuse holder</b> — a mini blade-fuse holder in the SW A path. The design names a 30&nbsp;A, 32&nbsp;V automotive blade fuse.</span></a>
@@ -402,7 +402,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/dc-ssr-board/dc-ssr-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
     <tr><td><a href="/images/extensions/dc-ssr-board/dc-ssr-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/dc-ssr-board/dc-ssr-board-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/dc-ssr-board/dc-ssr-board-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

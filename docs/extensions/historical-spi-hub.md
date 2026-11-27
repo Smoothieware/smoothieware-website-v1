@@ -1,301 +1,260 @@
 ---
 layout: default
 title: "SPI hub"
+description: "Passive SPI hub with four chip selects: pinout and use."
 permalink: /extensions/historical-spi-hub
 ---
 
-# SPI hub
-
-This passive hub shares one SPI clock/data bus among four peripherals and gives each peripheral its own chip-select wire. It does not decode addresses or create extra independent SPI controllers. Typical use is several compatible SPI sensors on one bus.
-
-## Source and compatibility
-
-This guide describes the board in the [original Smoothieboard2 source](https://github.com/Smoothieware/Smoothieboard2/tree/52ab340de33180a975b25f856c161993488e6ace/extensions/SPIHub). The original host generation predates Smoothieboard V2 Prime. Connector compatibility must be established contact by contact.
-
-## Power, signals and controls
-
-P1 is upstream. Its contacts 7/8/9 are MOSI/MISO/SCK; contacts 3/4/5/6 are CS5/CS3/CS4/CS2. P2–P5 share bus and rails, with their own CS on contact 6. Contacts 3–5 on each downstream connector are separate unused nets. D1–D4 are status indicators. Do not connect two actively driven MISO outputs simultaneously.
-
-### Annotated connector and component reference
-
-These references show the board outline, footprints and pads. Read the connector sheets and net keys together: CS2–CS5 are separate nets, and downstream contacts 3–5 have individual unassigned nets. GPIO/GPIO! are generic symbol labels, not assigned firmware functions. Check peripheral compatibility, MISO arbitration, powered-off release behaviour, supply ratings and physical mating before connecting.
-
-### Board reference
-
-Use the overview to locate each connector, then open the function sheets for pin roles. Check cable orientation against the board before connecting.
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-compact-function-reader-00-overview" src="/images/extensions/historical-spi-hub/guides/source-derived-reader-compact/reader-00-overview.png" title="Board overview" alt="Board overview" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-compact-function-reader-01-selects" src="/images/extensions/historical-spi-hub/guides/source-derived-reader/reader-01-selects.png" title="01 Selects" alt="01 Selects" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-<details markdown="1">
-<summary>Connector and component functions</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-compact-function-reader-p1-1" src="/images/extensions/historical-spi-hub/guides/source-derived-reader/reader-p1-1.png" title="P1 1" alt="P1 1" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-compact-function-reader-p1-2" src="/images/extensions/historical-spi-hub/guides/source-derived-reader/reader-p1-2.png" title="P1 2" alt="P1 2" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-compact-function-reader-p2-1" src="/images/extensions/historical-spi-hub/guides/source-derived-reader/reader-p2-1.png" title="P2 1" alt="P2 1" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-compact-function-reader-p2-2" src="/images/extensions/historical-spi-hub/guides/source-derived-reader/reader-p2-2.png" title="P2 2" alt="P2 2" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-compact-function-reader-p3-1" src="/images/extensions/historical-spi-hub/guides/source-derived-reader/reader-p3-1.png" title="P3 1" alt="P3 1" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-compact-function-reader-p3-2" src="/images/extensions/historical-spi-hub/guides/source-derived-reader/reader-p3-2.png" title="P3 2" alt="P3 2" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-compact-function-reader-p4-1" src="/images/extensions/historical-spi-hub/guides/source-derived-reader/reader-p4-1.png" title="P4 1" alt="P4 1" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-compact-function-reader-p4-2" src="/images/extensions/historical-spi-hub/guides/source-derived-reader/reader-p4-2.png" title="P4 2" alt="P4 2" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-compact-function-reader-p5-1" src="/images/extensions/historical-spi-hub/guides/source-derived-reader/reader-p5-1.png" title="P5 1" alt="P5 1" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-compact-function-reader-p5-2" src="/images/extensions/historical-spi-hub/guides/source-derived-reader/reader-p5-2.png" title="P5 2" alt="P5 2" caption="Dashed leaders locate parts and contacts; they are not installation wires." width=1200 %}
-
-</details>
-
-<details markdown="1">
-<summary>Contact views and source files</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-00-overview" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/00-overview.png" title="SPI hub reference — 00 overview" alt="SPI hub reference — 00 overview" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-d1-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/d1-1.png" title="SPI hub reference — d1 1" alt="SPI hub reference — d1 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-d2-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/d2-1.png" title="SPI hub reference — d2 1" alt="SPI hub reference — d2 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-d3-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/d3-1.png" title="SPI hub reference — d3 1" alt="SPI hub reference — d3 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-d4-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/d4-1.png" title="SPI hub reference — d4 1" alt="SPI hub reference — d4 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-m1-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/m1-1.png" title="SPI hub reference — m1 1" alt="SPI hub reference — m1 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-m2-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/m2-1.png" title="SPI hub reference — m2 1" alt="SPI hub reference — m2 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-m3-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/m3-1.png" title="SPI hub reference — m3 1" alt="SPI hub reference — m3 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-m4-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/m4-1.png" title="SPI hub reference — m4 1" alt="SPI hub reference — m4 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-p1-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/p1-1.png" title="SPI hub reference — p1 1" alt="SPI hub reference — p1 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-p1-2" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/p1-2.png" title="SPI hub reference — p1 2" alt="SPI hub reference — p1 2" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-p2-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/p2-1.png" title="SPI hub reference — p2 1" alt="SPI hub reference — p2 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-p2-2" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/p2-2.png" title="SPI hub reference — p2 2" alt="SPI hub reference — p2 2" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-p3-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/p3-1.png" title="SPI hub reference — p3 1" alt="SPI hub reference — p3 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-p3-2" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/p3-2.png" title="SPI hub reference — p3 2" alt="SPI hub reference — p3 2" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-p4-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/p4-1.png" title="SPI hub reference — p4 1" alt="SPI hub reference — p4 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-p4-2" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/p4-2.png" title="SPI hub reference — p4 2" alt="SPI hub reference — p4 2" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-p5-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/p5-1.png" title="SPI hub reference — p5 1" alt="SPI hub reference — p5 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-p5-2" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/p5-2.png" title="SPI hub reference — p5 2" alt="SPI hub reference — p5 2" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-r1-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/r1-1.png" title="SPI hub reference — r1 1" alt="SPI hub reference — r1 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-r2-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/r2-1.png" title="SPI hub reference — r2 1" alt="SPI hub reference — r2 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-r3-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/r3-1.png" title="SPI hub reference — r3 1" alt="SPI hub reference — r3 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-r4-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/r4-1.png" title="SPI hub reference — r4 1" alt="SPI hub reference — r4 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-source-net-keys-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/source-net-keys-1.png" title="SPI hub reference — net keys 1" alt="SPI hub reference — net keys 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-source-net-keys-2" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/source-net-keys-2.png" title="SPI hub reference — net keys 2" alt="SPI hub reference — net keys 2" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-source-net-keys-3" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/source-net-keys-3.png" title="SPI hub reference — net keys 3" alt="SPI hub reference — net keys 3" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-source-net-keys-4" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/source-net-keys-4.png" title="SPI hub reference — net keys 4" alt="SPI hub reference — net keys 4" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-source-net-keys-5" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/source-net-keys-5.png" title="SPI hub reference — net keys 5" alt="SPI hub reference — net keys 5" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-source-net-keys-6" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/source-net-keys-6.png" title="SPI hub reference — net keys 6" alt="SPI hub reference — net keys 6" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-<details markdown="1">
-<summary>Individual native contact keys</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-d1-0" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-d1-0.png" title="SPI hub reference — contact d1 0" alt="SPI hub reference — contact d1 0" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-d1-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-d1-1.png" title="SPI hub reference — contact d1 1" alt="SPI hub reference — contact d1 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-d2-0" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-d2-0.png" title="SPI hub reference — contact d2 0" alt="SPI hub reference — contact d2 0" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-d2-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-d2-1.png" title="SPI hub reference — contact d2 1" alt="SPI hub reference — contact d2 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-d3-0" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-d3-0.png" title="SPI hub reference — contact d3 0" alt="SPI hub reference — contact d3 0" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-d3-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-d3-1.png" title="SPI hub reference — contact d3 1" alt="SPI hub reference — contact d3 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-d4-0" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-d4-0.png" title="SPI hub reference — contact d4 0" alt="SPI hub reference — contact d4 0" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-d4-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-d4-1.png" title="SPI hub reference — contact d4 1" alt="SPI hub reference — contact d4 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-m1-0" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-m1-0.png" title="SPI hub reference — contact m1 0" alt="SPI hub reference — contact m1 0" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-m2-0" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-m2-0.png" title="SPI hub reference — contact m2 0" alt="SPI hub reference — contact m2 0" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-m3-0" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-m3-0.png" title="SPI hub reference — contact m3 0" alt="SPI hub reference — contact m3 0" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-m4-0" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-m4-0.png" title="SPI hub reference — contact m4 0" alt="SPI hub reference — contact m4 0" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p1-0" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p1-0.png" title="SPI hub reference — contact p1 0" alt="SPI hub reference — contact p1 0" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p1-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p1-1.png" title="SPI hub reference — contact p1 1" alt="SPI hub reference — contact p1 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p1-2" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p1-2.png" title="SPI hub reference — contact p1 2" alt="SPI hub reference — contact p1 2" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p1-3" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p1-3.png" title="SPI hub reference — contact p1 3" alt="SPI hub reference — contact p1 3" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p1-4" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p1-4.png" title="SPI hub reference — contact p1 4" alt="SPI hub reference — contact p1 4" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p1-5" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p1-5.png" title="SPI hub reference — contact p1 5" alt="SPI hub reference — contact p1 5" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p1-6" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p1-6.png" title="SPI hub reference — contact p1 6" alt="SPI hub reference — contact p1 6" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p1-7" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p1-7.png" title="SPI hub reference — contact p1 7" alt="SPI hub reference — contact p1 7" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p1-8" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p1-8.png" title="SPI hub reference — contact p1 8" alt="SPI hub reference — contact p1 8" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p1-9" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p1-9.png" title="SPI hub reference — contact p1 9" alt="SPI hub reference — contact p1 9" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p2-0" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p2-0.png" title="SPI hub reference — contact p2 0" alt="SPI hub reference — contact p2 0" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p2-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p2-1.png" title="SPI hub reference — contact p2 1" alt="SPI hub reference — contact p2 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p2-2" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p2-2.png" title="SPI hub reference — contact p2 2" alt="SPI hub reference — contact p2 2" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p2-3" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p2-3.png" title="SPI hub reference — contact p2 3" alt="SPI hub reference — contact p2 3" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p2-4" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p2-4.png" title="SPI hub reference — contact p2 4" alt="SPI hub reference — contact p2 4" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p2-5" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p2-5.png" title="SPI hub reference — contact p2 5" alt="SPI hub reference — contact p2 5" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p2-6" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p2-6.png" title="SPI hub reference — contact p2 6" alt="SPI hub reference — contact p2 6" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p2-7" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p2-7.png" title="SPI hub reference — contact p2 7" alt="SPI hub reference — contact p2 7" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p2-8" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p2-8.png" title="SPI hub reference — contact p2 8" alt="SPI hub reference — contact p2 8" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p2-9" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p2-9.png" title="SPI hub reference — contact p2 9" alt="SPI hub reference — contact p2 9" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p3-0" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p3-0.png" title="SPI hub reference — contact p3 0" alt="SPI hub reference — contact p3 0" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p3-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p3-1.png" title="SPI hub reference — contact p3 1" alt="SPI hub reference — contact p3 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p3-2" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p3-2.png" title="SPI hub reference — contact p3 2" alt="SPI hub reference — contact p3 2" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p3-3" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p3-3.png" title="SPI hub reference — contact p3 3" alt="SPI hub reference — contact p3 3" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p3-4" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p3-4.png" title="SPI hub reference — contact p3 4" alt="SPI hub reference — contact p3 4" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p3-5" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p3-5.png" title="SPI hub reference — contact p3 5" alt="SPI hub reference — contact p3 5" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p3-6" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p3-6.png" title="SPI hub reference — contact p3 6" alt="SPI hub reference — contact p3 6" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p3-7" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p3-7.png" title="SPI hub reference — contact p3 7" alt="SPI hub reference — contact p3 7" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p3-8" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p3-8.png" title="SPI hub reference — contact p3 8" alt="SPI hub reference — contact p3 8" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p3-9" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p3-9.png" title="SPI hub reference — contact p3 9" alt="SPI hub reference — contact p3 9" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p4-0" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p4-0.png" title="SPI hub reference — contact p4 0" alt="SPI hub reference — contact p4 0" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p4-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p4-1.png" title="SPI hub reference — contact p4 1" alt="SPI hub reference — contact p4 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p4-2" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p4-2.png" title="SPI hub reference — contact p4 2" alt="SPI hub reference — contact p4 2" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p4-3" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p4-3.png" title="SPI hub reference — contact p4 3" alt="SPI hub reference — contact p4 3" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p4-4" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p4-4.png" title="SPI hub reference — contact p4 4" alt="SPI hub reference — contact p4 4" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p4-5" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p4-5.png" title="SPI hub reference — contact p4 5" alt="SPI hub reference — contact p4 5" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p4-6" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p4-6.png" title="SPI hub reference — contact p4 6" alt="SPI hub reference — contact p4 6" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p4-7" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p4-7.png" title="SPI hub reference — contact p4 7" alt="SPI hub reference — contact p4 7" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p4-8" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p4-8.png" title="SPI hub reference — contact p4 8" alt="SPI hub reference — contact p4 8" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p4-9" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p4-9.png" title="SPI hub reference — contact p4 9" alt="SPI hub reference — contact p4 9" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p5-0" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p5-0.png" title="SPI hub reference — contact p5 0" alt="SPI hub reference — contact p5 0" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p5-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p5-1.png" title="SPI hub reference — contact p5 1" alt="SPI hub reference — contact p5 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p5-2" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p5-2.png" title="SPI hub reference — contact p5 2" alt="SPI hub reference — contact p5 2" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p5-3" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p5-3.png" title="SPI hub reference — contact p5 3" alt="SPI hub reference — contact p5 3" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p5-4" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p5-4.png" title="SPI hub reference — contact p5 4" alt="SPI hub reference — contact p5 4" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p5-5" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p5-5.png" title="SPI hub reference — contact p5 5" alt="SPI hub reference — contact p5 5" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p5-6" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p5-6.png" title="SPI hub reference — contact p5 6" alt="SPI hub reference — contact p5 6" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p5-7" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p5-7.png" title="SPI hub reference — contact p5 7" alt="SPI hub reference — contact p5 7" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p5-8" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p5-8.png" title="SPI hub reference — contact p5 8" alt="SPI hub reference — contact p5 8" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-p5-9" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-p5-9.png" title="SPI hub reference — contact p5 9" alt="SPI hub reference — contact p5 9" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-r1-0" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-r1-0.png" title="SPI hub reference — contact r1 0" alt="SPI hub reference — contact r1 0" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-r1-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-r1-1.png" title="SPI hub reference — contact r1 1" alt="SPI hub reference — contact r1 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-r2-0" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-r2-0.png" title="SPI hub reference — contact r2 0" alt="SPI hub reference — contact r2 0" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-r2-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-r2-1.png" title="SPI hub reference — contact r2 1" alt="SPI hub reference — contact r2 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-r3-0" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-r3-0.png" title="SPI hub reference — contact r3 0" alt="SPI hub reference — contact r3 0" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-r3-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-r3-1.png" title="SPI hub reference — contact r3 1" alt="SPI hub reference — contact r3 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-r4-0" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-r4-0.png" title="SPI hub reference — contact r4 0" alt="SPI hub reference — contact r4 0" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-spi-hub-source-derived-contact-r4-1" src="/images/extensions/historical-spi-hub/guides/source-derived-annotated/contact-r4-1.png" title="SPI hub reference — contact r4 1" alt="SPI hub reference — contact r4 1" caption="Front-view contact reference. Check host allocation, bus arbitration, supply ratings and physical mating before connecting." width=420 %}
-
-</details>
-
-[Download the unmodified native source, upstream licence and drawing notice](/images/extensions/historical-spi-hub/guides/native-contact-reference/native-source-and-notices.zip). Retain the included source licence and notices with derivatives.
-
-The contact inventory below records connectivity. Check cable orientation and continuity on the board.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Reference | Value / role | Contact → net |
-|---|---|---|
-| P1 | Smoothie-teer-S | 1 → +3V3; 2 → +5V; 3 → /CS5; 4 → /CS3; 5 → /CS4; 6 → /CS2; 7 → /MOSI; 8 → /MISO; 9 → /SCK; 10 → GND |
-| D1 | LED | 1 → Net-(D1-Pad1); 2 → +3V3 |
-| D2 | LED | 1 → Net-(D2-Pad1); 2 → +3V3 |
-| D3 | LED | 1 → Net-(D3-Pad1); 2 → +3V3 |
-| D4 | LED | 1 → Net-(D4-Pad1); 2 → +3V3 |
-| P2 | Smoothie-teer-S | 1 → +3V3; 2 → +5V; 3 → Net-(P2-Pad3); 4 → Net-(P2-Pad4); 5 → Net-(P2-Pad5); 6 → /CS2; 7 → /MOSI; 8 → /MISO; 9 → /SCK; 10 → GND |
-| P3 | Smoothie-teer-S | 1 → +3V3; 2 → +5V; 3 → Net-(P3-Pad3); 4 → Net-(P3-Pad4); 5 → Net-(P3-Pad5); 6 → /CS3; 7 → /MOSI; 8 → /MISO; 9 → /SCK; 10 → GND |
-| P4 | Smoothie-teer-S | 1 → +3V3; 2 → +5V; 3 → Net-(P4-Pad3); 4 → Net-(P4-Pad4); 5 → Net-(P4-Pad5); 6 → /CS4; 7 → /MOSI; 8 → /MISO; 9 → /SCK; 10 → GND |
-| P5 | Smoothie-teer-S | 1 → +3V3; 2 → +5V; 3 → Net-(P5-Pad3); 4 → Net-(P5-Pad4); 5 → Net-(P5-Pad5); 6 → /CS5; 7 → /MOSI; 8 → /MISO; 9 → /SCK; 10 → GND |
-
+{% include _includes/extension-board-page.html %}
+
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Wiring</p>
+    <h1 id="historical-spi-hub">SPI hub</h1>
+    <p class="xb-lead">Shares one SPI bus among four peripherals, each with its own chip-select wire.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#downloads">Downloads</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/historical-spi-hub/directory-board-render.png" alt="Top view of the SPI hub board">
+    <figcaption>Top view drawn from the original board file. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-</details>
+<div class="xb-stats">
+  <div class="xb-stat"><b>4</b><span>peripheral ports</span></div>
+  <div class="xb-stat"><b>4</b><span>chip selects</span></div>
+  <div class="xb-stat"><b>4</b><span>LEDs</span></div>
+  <div class="xb-stat"><b>0</b><span>active parts</span></div>
+  <div class="xb-stat"><b>49 × 29 mm</b><span>board size</span></div>
+  <div class="xb-stat"><b>4</b><span>mounting holes</span></div>
+</div>
 
-</details>
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting dimensions</a>
+  <a href="#electrical">Electrical specifications</a>
+</nav>
+{:/nomarkdown}
 
-## Connect and try it
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <b>Only one peripheral may drive MISO at a time,</b> and the hub does not decode addresses. Its connector map is not the Prime GF header: wire it to a hardware SPI port. This is a historical Smoothieboard2 design, not a current board.
+</sl-alert>
 
-For two sensors, attach them to P2 and P3 and arrange independent CS2/CS3 control while sharing MOSI/MISO/SCK and ground. Match logic voltage, SPI mode, clock rate and inactive tri-state behavior. The hub’s older S-socket pinout must be mapped to a Prime hardware SPI port; GF’s GPIO map is not an SPI peripheral mapping.
+## Tech specs {#specs}
 
-## Smoothieware use
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Function</td><td>Passive SPI fan-out</td></tr>
+    <tr><td>Upstream</td><td>P1</td></tr>
+    <tr><td>Peripheral ports</td><td>P2–P5, chip select on contact 6</td></tr>
+    <tr><td>LEDs</td><td>D1–D4</td></tr>
+    <tr><td>Size</td><td>49 × 29 mm</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The hub itself needs no driver. Each sensor still requires a supported firmware driver and independent chip select. Choose the `spi_channel` value that matches the Prime SPI bus you wire it to.
+## Board tour {#tour}
 
-## Original files and attribution
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/historical-spi-hub/directory-board-render.png" alt="Annotated top view of the SPI hub board">
+      <a class="xb-mk xb-pl" href="#tour-1" style="left:20.3%;top:50.0%" aria-label="1: Upstream P1">1<span class="xb-pop"><b>Upstream P1</b> — From the controller.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-2" style="left:35.3%;top:23.8%" aria-label="2: Port P2">2<span class="xb-pop"><b>Port P2</b> — Chip select 2.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-3" style="left:64.7%;top:23.8%" aria-label="3: Port P3">3<span class="xb-pop"><b>Port P3</b> — Chip select 3.</span></a>
+      <a class="xb-mk" href="#tour-4" style="left:35.3%;top:76.2%" aria-label="4: Port P4">4<span class="xb-pop"><b>Port P4</b> — Chip select 4.</span></a>
+      <a class="xb-mk" href="#tour-5" style="left:64.7%;top:76.2%" aria-label="5: Port P5">5<span class="xb-pop"><b>Port P5</b> — Chip select 5.</span></a>
+      <a class="xb-mk" href="#tour-6" style="left:69.7%;top:54.9%" aria-label="6: LEDs D1–D4">6<span class="xb-pop"><b>LEDs D1–D4</b> — Status indicators.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-7" style="left:76.3%;top:54.9%" aria-label="7: LED D2">7<span class="xb-pop"><b>LED D2</b> — LED D2, marked <code>LED</code> in the board file. Connects to <code>+3V3</code>.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-8" style="left:68.4%;top:45.1%" aria-label="8: Resistor R1">8<span class="xb-pop"><b>Resistor R1</b> — Resistor R1, marked <code>200R</code> in the board file. Connects to <code>CS2</code>.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Upstream P1</b> — From the controller.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Port P2</b> — Chip select 2.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Port P3</b> — Chip select 3.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Port P4</b> — Chip select 4.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Port P5</b> — Chip select 5.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>LEDs D1–D4</b> — Status indicators.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>LED D2</b> — LED D2, marked <code>LED</code> in the board file. Connects to <code>+3V3</code>.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Resistor R1</b> — Resistor R1, marked <code>200R</code> in the board file. Connects to <code>CS2</code>.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-The linked original source folder contains the CAD, images, fabrication output and any author notes. Project files retain their original attribution; an absent per-file license must not be interpreted as public-domain permission.
+## Pinout {#pinout}
 
-[All extension boards](/extension-boards)
+<span id="connect-and-try-it"></span>
+
+### Upstream P1
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>P1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+3V3</code></td></tr>
+    <tr><td>2</td><td><code>+5V</code></td></tr>
+    <tr><td>3</td><td><code>CS5</code></td></tr>
+    <tr><td>4</td><td><code>CS3</code></td></tr>
+    <tr><td>5</td><td><code>CS4</code></td></tr>
+    <tr><td>6</td><td><code>CS2</code></td></tr>
+    <tr><td>7</td><td><code>MOSI</code></td></tr>
+    <tr><td>8</td><td><code>MISO</code></td></tr>
+    <tr><td>9</td><td><code>SCK</code></td></tr>
+    <tr><td>10</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Port P2
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>P2 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+3V3</code></td></tr>
+    <tr><td>2</td><td><code>+5V</code></td></tr>
+    <tr><td>3</td><td>not connected</td></tr>
+    <tr><td>4</td><td>not connected</td></tr>
+    <tr><td>5</td><td>not connected</td></tr>
+    <tr><td>6</td><td><code>CS2</code></td></tr>
+    <tr><td>7</td><td><code>MOSI</code></td></tr>
+    <tr><td>8</td><td><code>MISO</code></td></tr>
+    <tr><td>9</td><td><code>SCK</code></td></tr>
+    <tr><td>10</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+P3, P4 and P5 follow P2, with CS3, CS4 and CS5 on contact 6.
+
+## What you need {#what-you-need}
+
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>SPI hub</b><span>Built from the design files</span></div>
+  <div class="xb-card"><b>Peripherals</b><span>Same logic voltage</span></div>
+  <div class="xb-card"><b>Cables</b><span>Checked contact by contact</span></div>
+</div>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+<span id="smoothieware-use"></span>
+
+No setting for the hub. Each sensor needs its own Smoothieware driver entry with the <code>spi_channel</code> of the bus you wired and a distinct select pin.
+
+## How it works {#how-it-works}
+
+MOSI, MISO, SCK and supplies are common to all ports. The upstream contacts 3–6 carry CS5, CS3, CS4 and CS2, and each reaches contact 6 of its port. Contacts 3–5 of P2–P5 are not connected to each other.
+
+## Troubleshooting {#troubleshooting}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Nothing responds</td><td>With power off, check continuity along each lead and board path against the pinout tables. Confirm which end of the connector is contact 1.</td></tr>
+    <tr><td>Sensors read garbage</td><td>Check that each device releases MISO when unselected, and that every device has its own chip select.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
+
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/Smoothieware/Smoothieboard2/tree/52ab340de33180a975b25f856c161993488e6ace/extensions/SPIHub">original Smoothieboard2 source</a></td><td>Design source</td></tr>
+    <tr><td><a href="/images/extensions/historical-spi-hub/guides/native-contact-reference/native-source-and-notices.zip">Download the unmodified native source, upstream licence and drawing notice</a></td><td>Download</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+Outline and holes from the original board file. Millimetres, seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-ical-spi-hub-mount-t">
+  <title id="xb-ical-spi-hub-mount-t">Mounting drawing of the historical-spi-hub, component side: outline 49 by 29 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="192.8" y="78.0" width="574.5" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M192.8 56H767.2"/><path d="M192.8 50V62"/><path d="M767.2 50V62"/><path d="M793.2 78.0V418.0"/><path d="M787.2 78.0h12"/><path d="M787.2 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">49</text>
+  <text x="805.2" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">29</text>
+  <circle cx="192.8" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="180.8" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M134.8 104.0h30" fill="none"/><path d="M168.8 104.0l-8 -4v8z"/><path d="M134.8 104.0v30" fill="none"/><path d="M134.8 138.0l-4 -8h8z"/></g>
+  <text x="172.8" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="130.8" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="245.5" cy="130.8" r="18.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M222.8 130.8h45.5M245.5 108.0v45.5" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="226.8" y="169.5" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  4.50, 4.50</text>
+  <circle cx="714.5" cy="130.8" r="18.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M691.7 130.8h45.5M714.5 108.0v45.5" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="733.2" y="169.5" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  44.50, 4.50</text>
+  <circle cx="245.5" cy="365.2" r="18.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M222.8 365.2h45.5M245.5 342.5v45.5" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="226.8" y="336.5" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  4.50, 24.50</text>
+  <circle cx="714.5" cy="365.2" r="18.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M691.7 365.2h45.5M714.5 342.5v45.5" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="733.2" y="336.5" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  44.50, 24.50</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 49 × 29&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>4.50</td><td>4.50</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>44.50</td><td>4.50</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>3</td><td>4.50</td><td>24.50</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>4</td><td>44.50</td><td>24.50</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Only what the design source states or the circuit fixes. Blank cells are not specified.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Voltage, current and temperature limits</td><td>Whole board</td><td>—</td><td>—</td><td>—</td><td>Not specified in the source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Related boards, each with its own pinout and limits: [SPI Hub](/extensions/spi-hub).
+
+## Design source {#origin}
+
+This board comes from the [original design files](https://github.com/Smoothieware/Smoothieboard2/tree/52ab340de33180a975b25f856c161993488e6ace/extensions/SPIHub). It was drawn for an earlier controller generation than Smoothieboard V2 Prime; match connections contact by contact.
+See all boards on the [extension boards](/extension-boards) page.

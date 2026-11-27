@@ -21,7 +21,7 @@ permalink: /extensions/perma-proto-gadgeteer
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.png" alt="Top view of the perma-proto board: two fields of gold holes joined by gold copper links, four power rails, the host connector in the middle and the chain connector with its wiring holes at the left">
+    <img src="/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.webp" alt="Top view of the perma-proto board: two fields of gold holes joined by gold copper links, four power rails, the host connector in the middle and the chain connector with its wiring holes at the left">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -89,18 +89,18 @@ The numbers on the drawing match the list below it.
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.png" alt="Top view of the perma-proto board with numbered markers">
-      <a class="xb-mk" href="#tour-1" style="left:60.2%;top:49.6%" aria-label="1: Host connector J1">1<span class="xb-pop"><b>Host connector J1</b> — Ten pins to the controller. Check the notch before plugging in.</span></a>
-      <a class="xb-mk" href="#tour-2" style="left:10.5%;top:40.9%" aria-label="2: Chain connector J2">2<span class="xb-pop"><b>Chain connector J2</b> — A second connector, left of the prototype area, linked only to the wiring holes below it.</span></a>
+      <img src="/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.webp" alt="Top view of the perma-proto board with numbered markers">
+      <a class="xb-mk xb-pb" href="#tour-1" style="left:60.2%;top:49.6%" aria-label="1: Host connector J1">1<span class="xb-pop"><b>Host connector J1</b> — Ten pins to the controller. Check the notch before plugging in.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-2" style="left:10.5%;top:40.9%" aria-label="2: Chain connector J2">2<span class="xb-pop"><b>Chain connector J2</b> — A second connector, left of the prototype area, linked only to the wiring holes below it.</span></a>
       <a class="xb-mk xb-pl" href="#tour-3" style="left:10.5%;top:58.1%" aria-label="3: Chain wiring holes J3">3<span class="xb-pop"><b>Chain wiring holes J3</b> — Solder wires here to choose what the chain connector carries; each hole is labelled with its pin.</span></a>
-      <a class="xb-mk xb-pb" href="#tour-4" style="left:76.3%;top:12.7%" aria-label="4: +5 V rail">4<span class="xb-pop"><b>+5 V rail</b> — Thirty joined holes fed by connector pin 2.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-4" style="left:76.3%;top:12.7%" aria-label="4: +5 V rail">4<span class="xb-pop"><b>+5 V rail</b> — Thirty joined holes fed by connector pin 2.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-5" style="left:18.3%;top:12.7%" aria-label="5: 5 V lamp">5<span class="xb-pop"><b>5 V lamp</b> — Red; lit while the 5 V rail is powered.</span></a>
       <a class="xb-mk xb-pl" href="#tour-6" style="left:21.6%;top:86.5%" aria-label="6: 3.3 V rail jumper">6<span class="xb-pop"><b>3.3 V rail jumper</b> — Closed as made; cut it to separate the bottom rail from connector pin 1.</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-7" style="left:80.8%;top:33.5%" aria-label="7: Upper strips">7<span class="xb-pop"><b>Upper strips</b> — Each column of rows A to F is one connection, shown by the gold link.</span></a>
       <a class="xb-mk" href="#tour-8" style="left:53.6%;top:64.0%" aria-label="8: Column 14, GPIO 1">8<span class="xb-pop"><b>Column 14, GPIO 1</b> — The first signal arrives here. Columns 15 to 20 carry GPIO 2 to 7.</span></a>
       <a class="xb-mk xb-pb" href="#tour-9" style="left:56.9%;top:39.1%" aria-label="9: Dashed guide lines">9<span class="xb-pop"><b>Dashed guide lines</b> — Each line runs from a J1 pin to the strip or rail it feeds.</span></a>
       <a class="xb-mk xb-pr" href="#tour-10" style="left:80.8%;top:68.0%" aria-label="10: Lower strips">10<span class="xb-pop"><b>Lower strips</b> — Each column of rows G to L is one connection.</span></a>
-      <a class="xb-mk" href="#tour-11" style="left:76.3%;top:86.5%" aria-label="11: +3.3 V rail">11<span class="xb-pop"><b>+3.3 V rail</b> — Thirty joined holes fed by connector pin 1. Use it for signal pull-ups.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-11" style="left:76.3%;top:86.5%" aria-label="11: +3.3 V rail">11<span class="xb-pop"><b>+3.3 V rail</b> — Thirty joined holes fed by connector pin 1. Use it for signal pull-ups.</span></a>
       <a class="xb-mk xb-pl" href="#tour-12" style="left:18.3%;top:86.5%" aria-label="12: 3.3 V lamp">12<span class="xb-pop"><b>3.3 V lamp</b> — Orange; lit while the 3.3 V rail is powered.</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-13" style="left:94.4%;top:9.3%" aria-label="13: Mounting hole">13<span class="xb-pop"><b>Mounting hole</b> — One of four; see the dimensions appendix.</span></a>
     </div>
@@ -168,7 +168,7 @@ Start with the simplest circuit, one button between a signal and ground, to prov
 
 {::nomarkdown}
 <figure class="xb-fig">
-  <a href="/images/extensions/perma-proto-gadgeteer/projects/button.png"><img src="/images/extensions/perma-proto-gadgeteer/projects/button.png" alt="Perma-proto board with a push button connected through a two-pin screw terminal to column 14 and ground" style="display:block;width:100%;height:auto;margin:0 auto"></a>
+  <a href="/images/extensions/perma-proto-gadgeteer/projects/button.webp"><img src="/images/extensions/perma-proto-gadgeteer/projects/button.webp" alt="Perma-proto board with a push button connected through a two-pin screw terminal to column 14 and ground" style="display:block;width:100%;height:auto;margin:0 auto"></a>
   <figcaption>One normally-open button on screw terminal CN1: yellow is GPIO 1 (column 14, pin PB1), black is ground. Select the drawing to open it full size.</figcaption>
 </figure>
 {:/nomarkdown}
@@ -264,7 +264,7 @@ Touch a bare metal plate and an LED turns on; touch it again and it turns off. Y
 
 {::nomarkdown}
 <figure class="xb-fig">
-  <a href="/images/extensions/perma-proto-gadgeteer/projects/touch.png"><img src="/images/extensions/perma-proto-gadgeteer/projects/touch.png" alt="Perma-proto board populated with three transistors, resistors, a diode, a capacitor and an LED, with a screw terminal wired to a metal touch plate" style="display:block;width:100%;height:auto;margin:0 auto"></a>
+  <a href="/images/extensions/perma-proto-gadgeteer/projects/touch.webp"><img src="/images/extensions/perma-proto-gadgeteer/projects/touch.webp" alt="Perma-proto board populated with three transistors, resistors, a diode, a capacitor and an LED, with a screw terminal wired to a metal touch plate" style="display:block;width:100%;height:auto;margin:0 auto"></a>
   <figcaption>The touch switch. Yellow carries the signal to GPIO 1 (pin PB1); LED1 is driven by GPIO 3 (pin PA4). Select the drawing to open it full size.</figcaption>
 </figure>
 {:/nomarkdown}
@@ -338,7 +338,7 @@ The TLC555 straddles the gap in the middle of the board: pins 1 to 4 sit in row 
 
 {::nomarkdown}
 <figure class="xb-fig">
-  <a href="/images/extensions/perma-proto-gadgeteer/projects/tapper.png"><img src="/images/extensions/perma-proto-gadgeteer/projects/tapper.png" alt="Perma-proto board populated with a TLC555 timer, a MOSFET, a flyback diode, passives and two screw terminals for a solenoid and its supply" style="display:block;width:100%;height:auto;margin:0 auto"></a>
+  <a href="/images/extensions/perma-proto-gadgeteer/projects/tapper.webp"><img src="/images/extensions/perma-proto-gadgeteer/projects/tapper.webp" alt="Perma-proto board populated with a TLC555 timer, a MOSFET, a flyback diode, passives and two screw terminals for a solenoid and its supply" style="display:block;width:100%;height:auto;margin:0 auto"></a>
   <figcaption>The tapper. Yellow brings the on/off signal from GPIO 2 (pin PJ4). The solenoid has its own supply. Select the drawing to open it full size.</figcaption>
 </figure>
 {:/nomarkdown}
@@ -416,7 +416,7 @@ The LM393 straddles the gap in the middle of the board: pins 1 to 4 sit in row G
 
 {::nomarkdown}
 <figure class="xb-fig">
-  <a href="/images/extensions/perma-proto-gadgeteer/projects/wheel.png"><img src="/images/extensions/perma-proto-gadgeteer/projects/wheel.png" alt="Perma-proto board populated with an LM393 comparator, four diodes, passives and a four-pin screw terminal wired to a stepper motor" style="display:block;width:100%;height:auto;margin:0 auto;max-width:640px"></a>
+  <a href="/images/extensions/perma-proto-gadgeteer/projects/wheel.webp"><img src="/images/extensions/perma-proto-gadgeteer/projects/wheel.webp" alt="Perma-proto board populated with an LM393 comparator, four diodes, passives and a four-pin screw terminal wired to a stepper motor" style="display:block;width:100%;height:auto;margin:0 auto;max-width:640px"></a>
   <figcaption>The handwheel interface. Encoder A goes to GPIO 5 (pin PJ3) and B to GPIO 7 (pin PJ2). Select the drawing to open it full size.</figcaption>
 </figure>
 {:/nomarkdown}
@@ -521,12 +521,12 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/perma-proto-gadgeteer/v17/perma-proto-gadgeteer-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/perma-proto-gadgeteer/v17/perma-proto-gadgeteer-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page</td></tr>
     <tr><td><a href="/assets/downloads/extensions/perma-proto-gadgeteer/perma-cad-study.zip">CAD files (ZIP)</a></td><td>KiCad 9 board, schematic, footprints and licence texts (CERN-OHL-S-2.0)</td></tr>
-    <tr><td><a href="/images/extensions/perma-proto-gadgeteer/projects/button.png">Button drawing (PNG)</a></td><td>Populated board, full size</td></tr>
-    <tr><td><a href="/images/extensions/perma-proto-gadgeteer/projects/touch.png">Touch switch drawing (PNG)</a></td><td>Populated board, full size</td></tr>
-    <tr><td><a href="/images/extensions/perma-proto-gadgeteer/projects/tapper.png">Tapper drawing (PNG)</a></td><td>Populated board, full size</td></tr>
-    <tr><td><a href="/images/extensions/perma-proto-gadgeteer/projects/wheel.png">Handwheel drawing (PNG)</a></td><td>Populated board, full size</td></tr>
+    <tr><td><a href="/images/extensions/perma-proto-gadgeteer/projects/button.webp">Button drawing (WebP)</a></td><td>Populated board, full size</td></tr>
+    <tr><td><a href="/images/extensions/perma-proto-gadgeteer/projects/touch.webp">Touch switch drawing (WebP)</a></td><td>Populated board, full size</td></tr>
+    <tr><td><a href="/images/extensions/perma-proto-gadgeteer/projects/tapper.webp">Tapper drawing (WebP)</a></td><td>Populated board, full size</td></tr>
+    <tr><td><a href="/images/extensions/perma-proto-gadgeteer/projects/wheel.webp">Handwheel drawing (WebP)</a></td><td>Populated board, full size</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

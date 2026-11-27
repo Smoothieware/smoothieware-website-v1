@@ -1,617 +1,290 @@
 ---
 layout: default
 title: "Historical six-axis interface board"
+description: "Six-axis external-drive interface with endstops, PWM outputs, UART and E-stop input: pinout."
 permalink: /extensions/historical-six-axis-breakout
 ---
 
-# Historical six-axis interface board
-
-This large V2 interface combines six external STEP/DIR channels, shared enable, ABC min/max endstops, four small-FET PWM outputs, UART0, an ordinary E-stop input and a 40-contact harness connector. It requires four distinct Gadgeteer inputs. It does not add six power stages or guarantee a machine has six supported kinematic axes.
-
-## Original host
-
-This guide describes the Ccecil design for the Smoothieboard V2/Gadgeteer generation. Check compatibility with your Prime board, cable and firmware.
-
-## Interfaces, power and limitations
-
-J3 carries XYZ commands and J4 ABC commands; J2 carries ABC min/max states; J1 carries E_STOP,UART TX/RX and PWM1_1–4. J7–J12 are per-axis1 5 V, 2 STEP, 3 DIR, 4 shared ENABLE, 5 ground. J18–J23 are ABC endstop connectors. J13 is the complete40-contact harness whose exact map is listed below. JP19 selects default 5 V or an external source at J24 for VS; changing it can change PWM connector power. Several signals are level shifted/buffered; the 40-pin cable is not an ordinary parallel-port cable.
-
-### Raw and buffered endstop contacts are different nodes
-
-For A-min, J18.3 feeds U3.1 through R18 (1 kΩ). R9 (10 kΩ) pulls that raw input up through JP11 and JP5; the source-default JP5 bridge 1–2 selects **5 V**. J18.2 is ground. The same raw input appears at J13.11 (`A_MIN_IN`), so J13.11 must not be treated as a 3.3 V host input merely because it carries an endstop signal.
-
-The buffered output is **J2.7 (`Amin`)**, connected to U3.2. U3 is the source’s 3.3 V-powered 74LCX07 open-drain buffer; an appropriate output-side pull-up and receiver limits must be established separately. J2.7 and J13.11 are not interchangeable. Confirm the fitted part, bridge continuity and both sides’ voltage/current limits before allocating either to Prime. This distinction does not establish a complete endstop installation or motor-control recipe.
-
-## Board-reference diagram
-
-Pills identify native contacts, and dashed leaders locate components rather than electrical wires. Rear selectors are source-position projections, not a claim about visible or fitted solder bridges. **Do not connect a Prime cable until supply selection, raw versus buffered signals, receiver limits and physical mating are resolved.** These reference drawings do not establish a complete powered installation.
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-overview" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/overview.png" title="Six-axis breakout" alt="Six-axis breakout — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-<details markdown="1">
-<summary>Connectors and harness contacts</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j1-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j1-pins-1.png" title="Host header J1 / 1" alt="Host header J1 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j1-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j1-pins-2.png" title="Host header J1 / 2" alt="Host header J1 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j10-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j10-pins-1.png" title="Driver controls J10 / 1" alt="Driver controls J10 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j11-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j11-pins-1.png" title="Driver controls J11 / 1" alt="Driver controls J11 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j12-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j12-pins-1.png" title="Driver controls J12 / 1" alt="Driver controls J12 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j13-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j13-pins-1.png" title="Full header J13 / 1" alt="Full header J13 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j13-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j13-pins-2.png" title="Full header J13 / 2" alt="Full header J13 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j13-pins-3" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j13-pins-3.png" title="Full header J13 / 3" alt="Full header J13 / 3 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j13-pins-4" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j13-pins-4.png" title="Full header J13 / 4" alt="Full header J13 / 4 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j13-pins-5" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j13-pins-5.png" title="Full header J13 / 5" alt="Full header J13 / 5 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j13-pins-6" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j13-pins-6.png" title="Full header J13 / 6" alt="Full header J13 / 6 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j13-pins-7" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j13-pins-7.png" title="Full header J13 / 7" alt="Full header J13 / 7 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j13-pins-8" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j13-pins-8.png" title="Full header J13 / 8" alt="Full header J13 / 8 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j14-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j14-pins-1.png" title="FET output J14 / 1" alt="FET output J14 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j15-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j15-pins-1.png" title="FET output J15 / 1" alt="FET output J15 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j16-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j16-pins-1.png" title="FET output J16 / 1" alt="FET output J16 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j17-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j17-pins-1.png" title="FET output J17 / 1" alt="FET output J17 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j18-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j18-pins-1.png" title="Endstop input J18 / 1" alt="Endstop input J18 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j19-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j19-pins-1.png" title="Endstop input J19 / 1" alt="Endstop input J19 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j2-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j2-pins-1.png" title="Host header J2 / 1" alt="Host header J2 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j2-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j2-pins-2.png" title="Host header J2 / 2" alt="Host header J2 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j20-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j20-pins-1.png" title="Endstop input J20 / 1" alt="Endstop input J20 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j21-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j21-pins-1.png" title="Endstop input J21 / 1" alt="Endstop input J21 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j22-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j22-pins-1.png" title="Endstop input J22 / 1" alt="Endstop input J22 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j23-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j23-pins-1.png" title="Endstop input J23 / 1" alt="Endstop input J23 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j24-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j24-pins-1.png" title="VS access J24 / 1" alt="VS access J24 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j3-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j3-pins-1.png" title="Host header J3 / 1" alt="Host header J3 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j3-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j3-pins-2.png" title="Host header J3 / 2" alt="Host header J3 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j4-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j4-pins-1.png" title="Host header J4 / 1" alt="Host header J4 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j4-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j4-pins-2.png" title="Host header J4 / 2" alt="Host header J4 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j5-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j5-pins-1.png" title="UART0 row J5 / 1" alt="UART0 row J5 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j6-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j6-pins-1.png" title="E-stop row J6 / 1" alt="E-stop row J6 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j7-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j7-pins-1.png" title="Driver controls J7 / 1" alt="Driver controls J7 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j8-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j8-pins-1.png" title="Driver controls J8 / 1" alt="Driver controls J8 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-j9-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/j9-pins-1.png" title="Driver controls J9 / 1" alt="Driver controls J9 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-</details>
-
-<details markdown="1">
-<summary>Rear selector contacts</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-jp1-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/jp1-pins-1.png" title="Rear selector JP1 / 1" alt="Rear selector JP1 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-jp10-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/jp10-pins-1.png" title="Rear selector JP10 / 1" alt="Rear selector JP10 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-jp11-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/jp11-pins-1.png" title="Rear selector JP11 / 1" alt="Rear selector JP11 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-jp12-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/jp12-pins-1.png" title="Rear selector JP12 / 1" alt="Rear selector JP12 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-jp13-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/jp13-pins-1.png" title="Rear selector JP13 / 1" alt="Rear selector JP13 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-jp14-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/jp14-pins-1.png" title="Rear selector JP14 / 1" alt="Rear selector JP14 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-jp15-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/jp15-pins-1.png" title="Rear selector JP15 / 1" alt="Rear selector JP15 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-jp16-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/jp16-pins-1.png" title="Rear selector JP16 / 1" alt="Rear selector JP16 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-jp17-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/jp17-pins-1.png" title="Rear selector JP17 / 1" alt="Rear selector JP17 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-jp18-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/jp18-pins-1.png" title="Rear selector JP18 / 1" alt="Rear selector JP18 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-jp19-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/jp19-pins-1.png" title="Rear selector JP19 / 1" alt="Rear selector JP19 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-jp2-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/jp2-pins-1.png" title="Rear selector JP2 / 1" alt="Rear selector JP2 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-jp3-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/jp3-pins-1.png" title="Rear selector JP3 / 1" alt="Rear selector JP3 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-jp4-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/jp4-pins-1.png" title="Rear selector JP4 / 1" alt="Rear selector JP4 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-jp5-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/jp5-pins-1.png" title="Rear selector JP5 / 1" alt="Rear selector JP5 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-jp6-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/jp6-pins-1.png" title="Rear selector JP6 / 1" alt="Rear selector JP6 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-jp7-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/jp7-pins-1.png" title="Rear selector JP7 / 1" alt="Rear selector JP7 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-jp8-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/jp8-pins-1.png" title="Rear selector JP8 / 1" alt="Rear selector JP8 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-jp9-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/jp9-pins-1.png" title="Rear selector JP9 / 1" alt="Rear selector JP9 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-</details>
-
-<details markdown="1">
-<summary>Logic, transistor, resistor and mounting contacts</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-c1-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/c1-pins-1.png" title="Passive C1 / 1" alt="Passive C1 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-c2-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/c2-pins-1.png" title="Passive C2 / 1" alt="Passive C2 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-c3-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/c3-pins-1.png" title="Passive C3 / 1" alt="Passive C3 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-c4-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/c4-pins-1.png" title="Passive C4 / 1" alt="Passive C4 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-c5-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/c5-pins-1.png" title="Passive C5 / 1" alt="Passive C5 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-c6-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/c6-pins-1.png" title="Passive C6 / 1" alt="Passive C6 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-c7-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/c7-pins-1.png" title="Passive C7 / 1" alt="Passive C7 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-c8-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/c8-pins-1.png" title="Passive C8 / 1" alt="Passive C8 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-h1-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/h1-pins-1.png" title="Mounting H1 / 1" alt="Mounting H1 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-h2-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/h2-pins-1.png" title="Mounting H2 / 1" alt="Mounting H2 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-h3-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/h3-pins-1.png" title="Mounting H3 / 1" alt="Mounting H3 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-h4-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/h4-pins-1.png" title="Mounting H4 / 1" alt="Mounting H4 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q1-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q1-pins-1.png" title="MOSFET Q1 / 1" alt="MOSFET Q1 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q1-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q1-pins-2.png" title="MOSFET Q1 / 2" alt="MOSFET Q1 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q10-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q10-pins-1.png" title="MOSFET Q10 / 1" alt="MOSFET Q10 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q11-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q11-pins-1.png" title="MOSFET Q11 / 1" alt="MOSFET Q11 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q12-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q12-pins-1.png" title="MOSFET Q12 / 1" alt="MOSFET Q12 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q13-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q13-pins-1.png" title="MOSFET Q13 / 1" alt="MOSFET Q13 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q2-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q2-pins-1.png" title="MOSFET Q2 / 1" alt="MOSFET Q2 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q2-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q2-pins-2.png" title="MOSFET Q2 / 2" alt="MOSFET Q2 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q3-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q3-pins-1.png" title="MOSFET Q3 / 1" alt="MOSFET Q3 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q3-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q3-pins-2.png" title="MOSFET Q3 / 2" alt="MOSFET Q3 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q4-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q4-pins-1.png" title="MOSFET Q4 / 1" alt="MOSFET Q4 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q4-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q4-pins-2.png" title="MOSFET Q4 / 2" alt="MOSFET Q4 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q5-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q5-pins-1.png" title="MOSFET Q5 / 1" alt="MOSFET Q5 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q5-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q5-pins-2.png" title="MOSFET Q5 / 2" alt="MOSFET Q5 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q6-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q6-pins-1.png" title="MOSFET Q6 / 1" alt="MOSFET Q6 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q6-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q6-pins-2.png" title="MOSFET Q6 / 2" alt="MOSFET Q6 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q7-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q7-pins-1.png" title="MOSFET Q7 / 1" alt="MOSFET Q7 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q7-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q7-pins-2.png" title="MOSFET Q7 / 2" alt="MOSFET Q7 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q8-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q8-pins-1.png" title="MOSFET Q8 / 1" alt="MOSFET Q8 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q8-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q8-pins-2.png" title="MOSFET Q8 / 2" alt="MOSFET Q8 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q9-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q9-pins-1.png" title="MOSFET Q9 / 1" alt="MOSFET Q9 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-q9-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/q9-pins-2.png" title="MOSFET Q9 / 2" alt="MOSFET Q9 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r1-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r1-pins-1.png" title="Passive R1 / 1" alt="Passive R1 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r10-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r10-pins-1.png" title="Passive R10 / 1" alt="Passive R10 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r11-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r11-pins-1.png" title="Passive R11 / 1" alt="Passive R11 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r12-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r12-pins-1.png" title="Passive R12 / 1" alt="Passive R12 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r13-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r13-pins-1.png" title="Passive R13 / 1" alt="Passive R13 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r14-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r14-pins-1.png" title="Passive R14 / 1" alt="Passive R14 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r15-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r15-pins-1.png" title="Passive R15 / 1" alt="Passive R15 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r16-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r16-pins-1.png" title="Passive R16 / 1" alt="Passive R16 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r17-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r17-pins-1.png" title="Passive R17 / 1" alt="Passive R17 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r18-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r18-pins-1.png" title="Passive R18 / 1" alt="Passive R18 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r19-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r19-pins-1.png" title="Passive R19 / 1" alt="Passive R19 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r2-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r2-pins-1.png" title="Passive R2 / 1" alt="Passive R2 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r20-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r20-pins-1.png" title="Passive R20 / 1" alt="Passive R20 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r21-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r21-pins-1.png" title="Passive R21 / 1" alt="Passive R21 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r22-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r22-pins-1.png" title="Passive R22 / 1" alt="Passive R22 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r3-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r3-pins-1.png" title="Passive R3 / 1" alt="Passive R3 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r4-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r4-pins-1.png" title="Passive R4 / 1" alt="Passive R4 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r5-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r5-pins-1.png" title="Passive R5 / 1" alt="Passive R5 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r6-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r6-pins-1.png" title="Passive R6 / 1" alt="Passive R6 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r7-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r7-pins-1.png" title="Passive R7 / 1" alt="Passive R7 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r8-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r8-pins-1.png" title="Passive R8 / 1" alt="Passive R8 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-r9-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/r9-pins-1.png" title="Passive R9 / 1" alt="Passive R9 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-rn1-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/rn1-pins-1.png" title="Resistor array RN1 / 1" alt="Resistor array RN1 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-rn1-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/rn1-pins-2.png" title="Resistor array RN1 / 2" alt="Resistor array RN1 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-rn2-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/rn2-pins-1.png" title="Resistor array RN2 / 1" alt="Resistor array RN2 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-rn2-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/rn2-pins-2.png" title="Resistor array RN2 / 2" alt="Resistor array RN2 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-rn3-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/rn3-pins-1.png" title="Resistor array RN3 / 1" alt="Resistor array RN3 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-rn3-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/rn3-pins-2.png" title="Resistor array RN3 / 2" alt="Resistor array RN3 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-rn4-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/rn4-pins-1.png" title="Resistor array RN4 / 1" alt="Resistor array RN4 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-rn4-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/rn4-pins-2.png" title="Resistor array RN4 / 2" alt="Resistor array RN4 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-rn5-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/rn5-pins-1.png" title="Resistor array RN5 / 1" alt="Resistor array RN5 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-rn5-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/rn5-pins-2.png" title="Resistor array RN5 / 2" alt="Resistor array RN5 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-rn6-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/rn6-pins-1.png" title="Resistor array RN6 / 1" alt="Resistor array RN6 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-rn6-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/rn6-pins-2.png" title="Resistor array RN6 / 2" alt="Resistor array RN6 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-rn7-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/rn7-pins-1.png" title="Resistor array RN7 / 1" alt="Resistor array RN7 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-rn7-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/rn7-pins-2.png" title="Resistor array RN7 / 2" alt="Resistor array RN7 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-rn8-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/rn8-pins-1.png" title="Resistor array RN8 / 1" alt="Resistor array RN8 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-rn8-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/rn8-pins-2.png" title="Resistor array RN8 / 2" alt="Resistor array RN8 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-rn9-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/rn9-pins-1.png" title="Resistor array RN9 / 1" alt="Resistor array RN9 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-rn9-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/rn9-pins-2.png" title="Resistor array RN9 / 2" alt="Resistor array RN9 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-u1-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/u1-pins-1.png" title="Source IC U1 / 1" alt="Source IC U1 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-u1-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/u1-pins-2.png" title="Source IC U1 / 2" alt="Source IC U1 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-u2-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/u2-pins-1.png" title="Source IC U2 / 1" alt="Source IC U2 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-u2-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/u2-pins-2.png" title="Source IC U2 / 2" alt="Source IC U2 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-u3-pins-1" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/u3-pins-1.png" title="Source IC U3 / 1" alt="Source IC U3 / 1 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-u3-pins-2" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/u3-pins-2.png" title="Source IC U3 / 2" alt="Source IC U3 / 2 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-sixaxis-reference-u3-pins-3" src="/images/extensions/historical-six-axis-breakout/guides/annotated-reference/u3-pins-3.png" title="Source IC U3 / 3" alt="Source IC U3 / 3 — historical source reference" caption="Contact reference. Rear jumpers are shown at their projected locations; check fitted bridges, cable mating and receiver limits before wiring." width=420 %}
-
-</details>
-
-### Supplementary logical circuits
-
-These independently drawn circuit sheets explain the selected source connectivity. They do not copy the original board artwork, placement or native files and **supplement the populated board-reference diagrams above**. Use the contact inventory and all companion sheets together. Check cable orientation and ratings before wiring.
-
-Source: [selected original circuit](https://github.com/Ccecil/6-Axis-Breakout/blob/045d9f7f2947d37b2818cf35008f27b3130f0c2e/6AxisBreakout/6AxisBreakout.kicad_pcb).
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-use-limits" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/use-limits.png" title="Six-axis source and use boundaries" alt="Six-axis source and use boundaries — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j1-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j1-contacts-1.png" title="J1 exact source contacts" alt="J1 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j1-contacts-5" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j1-contacts-5.png" title="J1 exact source contacts" alt="J1 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j1-contacts-9" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j1-contacts-9.png" title="J1 exact source contacts" alt="J1 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j2-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j2-contacts-1.png" title="J2 exact source contacts" alt="J2 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j2-contacts-5" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j2-contacts-5.png" title="J2 exact source contacts" alt="J2 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j2-contacts-9" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j2-contacts-9.png" title="J2 exact source contacts" alt="J2 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j3-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j3-contacts-1.png" title="J3 exact source contacts" alt="J3 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j3-contacts-5" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j3-contacts-5.png" title="J3 exact source contacts" alt="J3 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j3-contacts-9" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j3-contacts-9.png" title="J3 exact source contacts" alt="J3 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j4-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j4-contacts-1.png" title="J4 exact source contacts" alt="J4 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j4-contacts-5" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j4-contacts-5.png" title="J4 exact source contacts" alt="J4 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j4-contacts-9" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j4-contacts-9.png" title="J4 exact source contacts" alt="J4 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j5-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j5-contacts-1.png" title="J5 exact source contacts" alt="J5 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j6-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j6-contacts-1.png" title="J6 exact source contacts" alt="J6 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j7-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j7-contacts-1.png" title="J7 exact source contacts" alt="J7 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j7-contacts-5" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j7-contacts-5.png" title="J7 exact source contacts" alt="J7 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j8-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j8-contacts-1.png" title="J8 exact source contacts" alt="J8 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j8-contacts-5" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j8-contacts-5.png" title="J8 exact source contacts" alt="J8 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j9-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j9-contacts-1.png" title="J9 exact source contacts" alt="J9 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j9-contacts-5" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j9-contacts-5.png" title="J9 exact source contacts" alt="J9 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j10-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j10-contacts-1.png" title="J10 exact source contacts" alt="J10 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j10-contacts-5" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j10-contacts-5.png" title="J10 exact source contacts" alt="J10 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j11-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j11-contacts-1.png" title="J11 exact source contacts" alt="J11 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j11-contacts-5" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j11-contacts-5.png" title="J11 exact source contacts" alt="J11 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j12-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j12-contacts-1.png" title="J12 exact source contacts" alt="J12 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j12-contacts-5" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j12-contacts-5.png" title="J12 exact source contacts" alt="J12 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j13-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j13-contacts-1.png" title="J13 exact source contacts" alt="J13 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j13-contacts-5" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j13-contacts-5.png" title="J13 exact source contacts" alt="J13 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j13-contacts-9" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j13-contacts-9.png" title="J13 exact source contacts" alt="J13 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j13-contacts-13" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j13-contacts-13.png" title="J13 exact source contacts" alt="J13 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j13-contacts-17" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j13-contacts-17.png" title="J13 exact source contacts" alt="J13 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j13-contacts-21" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j13-contacts-21.png" title="J13 exact source contacts" alt="J13 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j13-contacts-25" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j13-contacts-25.png" title="J13 exact source contacts" alt="J13 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j13-contacts-29" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j13-contacts-29.png" title="J13 exact source contacts" alt="J13 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j13-contacts-33" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j13-contacts-33.png" title="J13 exact source contacts" alt="J13 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j13-contacts-37" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j13-contacts-37.png" title="J13 exact source contacts" alt="J13 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j14-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j14-contacts-1.png" title="J14 exact source contacts" alt="J14 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j15-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j15-contacts-1.png" title="J15 exact source contacts" alt="J15 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j16-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j16-contacts-1.png" title="J16 exact source contacts" alt="J16 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j17-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j17-contacts-1.png" title="J17 exact source contacts" alt="J17 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j18-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j18-contacts-1.png" title="J18 exact source contacts" alt="J18 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j19-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j19-contacts-1.png" title="J19 exact source contacts" alt="J19 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j20-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j20-contacts-1.png" title="J20 exact source contacts" alt="J20 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j21-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j21-contacts-1.png" title="J21 exact source contacts" alt="J21 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j22-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j22-contacts-1.png" title="J22 exact source contacts" alt="J22 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j23-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j23-contacts-1.png" title="J23 exact source contacts" alt="J23 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j24-contacts-1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j24-contacts-1.png" title="J24 exact source contacts" alt="J24 exact source contacts — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-jp1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/jp1.png" title="JP1 conditional source selection" alt="JP1 conditional source selection — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-jp2" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/jp2.png" title="JP2 conditional source selection" alt="JP2 conditional source selection — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-jp3" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/jp3.png" title="JP3 conditional source selection" alt="JP3 conditional source selection — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-jp4" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/jp4.png" title="JP4 conditional source selection" alt="JP4 conditional source selection — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-jp5" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/jp5.png" title="JP5 conditional source selection" alt="JP5 conditional source selection — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-jp6" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/jp6.png" title="JP6 conditional source selection" alt="JP6 conditional source selection — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-jp7" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/jp7.png" title="JP7 conditional source selection" alt="JP7 conditional source selection — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-jp8" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/jp8.png" title="JP8 conditional source selection" alt="JP8 conditional source selection — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-jp9" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/jp9.png" title="JP9 conditional source selection" alt="JP9 conditional source selection — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-jp10" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/jp10.png" title="JP10 conditional source selection" alt="JP10 conditional source selection — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-jp11" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/jp11.png" title="JP11 conditional source selection" alt="JP11 conditional source selection — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-jp12" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/jp12.png" title="JP12 conditional source selection" alt="JP12 conditional source selection — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-jp13" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/jp13.png" title="JP13 conditional source selection" alt="JP13 conditional source selection — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-jp14" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/jp14.png" title="JP14 conditional source selection" alt="JP14 conditional source selection — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-jp15" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/jp15.png" title="JP15 conditional source selection" alt="JP15 conditional source selection — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-jp16" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/jp16.png" title="JP16 conditional source selection" alt="JP16 conditional source selection — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-jp17" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/jp17.png" title="JP17 conditional source selection" alt="JP17 conditional source selection — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-jp18" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/jp18.png" title="JP18 conditional source selection" alt="JP18 conditional source selection — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-jp19" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/jp19.png" title="JP19 conditional source selection" alt="JP19 conditional source selection — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-x-low" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/x-low.png" title="X low-side logic" alt="X low-side logic — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-x-driver" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/x-driver.png" title="X driver header" alt="X driver header — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-y-low" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/y-low.png" title="Y low-side logic" alt="Y low-side logic — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-y-driver" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/y-driver.png" title="Y driver header" alt="Y driver header — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-z-low" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/z-low.png" title="Z low-side logic" alt="Z low-side logic — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-z-driver" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/z-driver.png" title="Z driver header" alt="Z driver header — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-a-low" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/a-low.png" title="A low-side logic" alt="A low-side logic — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-a-driver" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/a-driver.png" title="A driver header" alt="A driver header — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-b-low" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/b-low.png" title="B low-side logic" alt="B low-side logic — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-b-driver" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/b-driver.png" title="B driver header" alt="B driver header — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-c-low" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/c-low.png" title="C low-side logic" alt="C low-side logic — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-c-driver" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/c-driver.png" title="C driver header" alt="C driver header — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-q7" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/q7.png" title="Q7 shared logic" alt="Q7 shared logic — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-q8" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/q8.png" title="Q8 shared logic" alt="Q8 shared logic — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-q9" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/q9.png" title="Q9 shared logic" alt="Q9 shared logic — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-rn1" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/rn1.png" title="RN1 exact four resistor branches" alt="RN1 exact four resistor branches — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-rn2" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/rn2.png" title="RN2 exact four resistor branches" alt="RN2 exact four resistor branches — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-rn3" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/rn3.png" title="RN3 exact four resistor branches" alt="RN3 exact four resistor branches — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-rn4" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/rn4.png" title="RN4 exact four resistor branches" alt="RN4 exact four resistor branches — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-rn5" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/rn5.png" title="RN5 exact four resistor branches" alt="RN5 exact four resistor branches — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-rn6" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/rn6.png" title="RN6 exact four resistor branches" alt="RN6 exact four resistor branches — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-rn7" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/rn7.png" title="RN7 exact four resistor branches" alt="RN7 exact four resistor branches — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-rn8" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/rn8.png" title="RN8 exact four resistor branches" alt="RN8 exact four resistor branches — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-rn9" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/rn9.png" title="RN9 exact four resistor branches" alt="RN9 exact four resistor branches — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j18-filter" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j18-filter.png" title="A min input filter" alt="A min input filter — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j18-buffer" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j18-buffer.png" title="A min buffer output" alt="A min buffer output — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j19-filter" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j19-filter.png" title="A max input filter" alt="A max input filter — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j19-buffer" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j19-buffer.png" title="A max buffer output" alt="A max buffer output — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j20-filter" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j20-filter.png" title="B min input filter" alt="B min input filter — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j20-buffer" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j20-buffer.png" title="B min buffer output" alt="B min buffer output — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j21-filter" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j21-filter.png" title="B max input filter" alt="B max input filter — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j21-buffer" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j21-buffer.png" title="B max buffer output" alt="B max buffer output — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j22-filter" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j22-filter.png" title="C min input filter" alt="C min input filter — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j22-buffer" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j22-buffer.png" title="C min buffer output" alt="C min buffer output — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j23-filter" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j23-filter.png" title="C max input filter" alt="C max input filter — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-j23-buffer" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/j23-buffer.png" title="C max buffer output" alt="C max buffer output — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-q11" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/q11.png" title="Q11 output switch" alt="Q11 output switch — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-q10" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/q10.png" title="Q10 output switch" alt="Q10 output switch — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-q12" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/q12.png" title="Q12 output switch" alt="Q12 output switch — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-q13" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/q13.png" title="Q13 output switch" alt="Q13 output switch — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-shared-enable-7" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/shared-enable-7.png" title="Shared driver enable" alt="Shared driver enable — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-shared-enable-10" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/shared-enable-10.png" title="Shared driver enable" alt="Shared driver enable — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-stop-low" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/stop-low.png" title="Stop low-side path" alt="Stop low-side path — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-six-axis-breakout-factual-uart-high" src="/images/extensions/historical-six-axis-breakout/guides/factual-circuits/uart-high.png" title="UART high-side header" alt="UART high-side header — logical connections, not physical board layout" caption="Logical connections, not the physical layout." width=420 %}
-
-### Numbered source contacts and controls
-
-These are intended source net memberships, not measured electrical behaviour. Unassigned/unconnected pads must not receive invented connections. Auto-generated net names require schematic interpretation; they are not cable colours. Repeated footprints or pad numbers require geometric identity checks before wiring.
-
-<details markdown="1">
-<summary>Selected-source contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Selected-source contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Source member | Connector/control | Source label | Contact → source net |
-|---|---|---|---|
-| 6AxisBreakout.kicad_pcb | J5 | Conn_01x03_Pin | 1: GND; 2: RX0_; 3: TX0_ |
-| 6AxisBreakout.kicad_pcb | J19 | Conn_01x03 | 1: Net-(J19-Pin_1); 2: GND; 3: A_MAX_IN |
-| 6AxisBreakout.kicad_pcb | J2 | Conn_02x05_Odd_Even | 1: +3V3; 2: +5V; 3: Cmin; 4: Cmax; 5: Bmin; 6: Bmax; 7: Amin; 8: Amax; 9: Spare1; 10: GND |
-| 6AxisBreakout.kicad_pcb | J21 | Conn_01x03 | 1: Net-(J21-Pin_1); 2: GND; 3: B_MAX_IN |
-| 6AxisBreakout.kicad_pcb | J6 | Conn_01x03_Pin | 1: Net-(J6-Pin_1); 2: GND; 3: Net-(J6-Pin_3) |
-| 6AxisBreakout.kicad_pcb | J13 | Conn_02x20_Odd_Even | 1: +3V3; 2: +5V; 3: +3V3; 4: +5V; 5: FET1_; 6: FET2_; 7: FET3_; 8: FET4_; 9: TX0_; 10: RX0_; 11: A_MIN_IN; 12: A_MAX_IN; 13: B_MIN_IN; 14: B_MAX_IN; 15: C_MIN_IN; 16: C_MAX_IN; 17: X_DIR_; 18: X_STP_; 19: Y_DIR_; 20: Y_STP_; 21: Z_DIR_; 22: Z_STP_; 23: A_DIR_; 24: A_STP_; 25: B_DIR_; 26: B_STP_; 27: C_DIR_; 28: C_STP_; 29: EN_; 30: E_STOP_; 31: Spare1_; 32: Spare2_; 33: GND; 34: GND; 35: GND; 36: GND; 37: GND; 38: GND; 39: GND; 40: GND |
-| 6AxisBreakout.kicad_pcb | J24 | Conn_01x02_Pin | 1: GND; 2: Net-(J24-Pin_2) |
-| 6AxisBreakout.kicad_pcb | J15 | Conn_01x03_Pin | 1: FET1_; 2: GND; 3: VS |
-| 6AxisBreakout.kicad_pcb | J10 | Conn_01x05_Pin | 1: +5V; 2: A_STP_; 3: A_DIR_; 4: EN_; 5: GND |
-| 6AxisBreakout.kicad_pcb | J7 | Conn_01x05_Pin | 1: +5V; 2: X_STP_; 3: X_DIR_; 4: EN_; 5: GND |
-| 6AxisBreakout.kicad_pcb | J3 | Conn_02x05_Odd_Even | 1: +3V3; 2: +5V; 3: Z_DIR; 4: Z_STP; 5: Y_STP; 6: X_STP; 7: Y_DIR; 8: X_DIR; 9: EN; 10: GND |
-| 6AxisBreakout.kicad_pcb | J20 | Conn_01x03 | 1: Net-(J20-Pin_1); 2: GND; 3: B_MIN_IN |
-| 6AxisBreakout.kicad_pcb | J4 | Conn_02x05_Odd_Even | 1: +3V3; 2: +5V; 3: C_DIR; 4: C_STP; 5: B_STP; 6: A_STP; 7: B_DIR; 8: A_DIR; 9: Spare2; 10: GND |
-| 6AxisBreakout.kicad_pcb | J9 | Conn_01x05_Pin | 1: +5V; 2: Z_STP_; 3: Z_DIR_; 4: EN_; 5: GND |
-| 6AxisBreakout.kicad_pcb | J23 | Conn_01x03 | 1: Net-(J23-Pin_1); 2: GND; 3: C_MAX_IN |
-| 6AxisBreakout.kicad_pcb | J14 | Conn_01x03_Pin | 1: FET2_; 2: GND; 3: VS |
-| 6AxisBreakout.kicad_pcb | J17 | Conn_01x03_Pin | 1: FET4_; 2: GND; 3: VS |
-| 6AxisBreakout.kicad_pcb | J18 | Conn_01x03 | 1: Net-(J18-Pin_1); 2: GND; 3: A_MIN_IN |
-| 6AxisBreakout.kicad_pcb | J16 | Conn_01x03_Pin | 1: FET3_; 2: GND; 3: VS |
-| 6AxisBreakout.kicad_pcb | J22 | Conn_01x03 | 1: Net-(J22-Pin_1); 2: GND; 3: C_MIN_IN |
-| 6AxisBreakout.kicad_pcb | J12 | Conn_01x05_Pin | 1: +5V; 2: C_STP_; 3: C_DIR_; 4: EN_; 5: GND |
-| 6AxisBreakout.kicad_pcb | J1 | Conn_02x05_Odd_Even | 1: +3V3; 2: +5V; 3: E_STOP; 4: TX0; 5: RX0; 6: PWM1_1; 7: PWM1_2; 8: PWM1_3; 9: PWM1_4; 10: GND |
-| 6AxisBreakout.kicad_pcb | J11 | Conn_01x05_Pin | 1: +5V; 2: B_STP_; 3: B_DIR_; 4: EN_; 5: GND |
-| 6AxisBreakout.kicad_pcb | J8 | Conn_01x05_Pin | 1: +5V; 2: Y_STP_; 3: Y_DIR_; 4: EN_; 5: GND |
-| 6AxisBreakout.kicad_pcb | JP15 | SolderJumper_2_Bridged | 1: Net-(J22-Pin_1); 2: Net-(JP15-B) |
-| 6AxisBreakout.kicad_pcb | JP17 | SolderJumper_3_Bridged12 | 1: +5V; 2: Net-(J6-Pin_1); 3: +3V3 |
-| 6AxisBreakout.kicad_pcb | JP14 | SolderJumper_2_Bridged | 1: Net-(J21-Pin_1); 2: Net-(JP14-B) |
-| 6AxisBreakout.kicad_pcb | JP1 | SolderJumper_3_Bridged12 | 1: +5V; 2: Net-(JP1-C); 3: +3V3 |
-| 6AxisBreakout.kicad_pcb | JP12 | SolderJumper_2_Bridged | 1: Net-(J19-Pin_1); 2: Net-(JP12-B) |
-| 6AxisBreakout.kicad_pcb | JP16 | SolderJumper_2_Bridged | 1: Net-(J23-Pin_1); 2: Net-(JP16-B) |
-| 6AxisBreakout.kicad_pcb | JP2 | SolderJumper_3_Bridged12 | 1: +5V; 2: Net-(JP2-C); 3: +3V3 |
-| 6AxisBreakout.kicad_pcb | JP10 | SolderJumper_3_Bridged12 | 1: +5V; 2: Net-(J23-Pin_1); 3: +3V3 |
-| 6AxisBreakout.kicad_pcb | JP19 | SolderJumper_3_Bridged12 | 1: +5V; 2: VS; 3: Net-(J24-Pin_2) |
-| 6AxisBreakout.kicad_pcb | JP5 | SolderJumper_3_Bridged12 | 1: +5V; 2: Net-(J18-Pin_1); 3: +3V3 |
-| 6AxisBreakout.kicad_pcb | JP13 | SolderJumper_2_Bridged | 1: Net-(J20-Pin_1); 2: Net-(JP13-B) |
-| 6AxisBreakout.kicad_pcb | JP7 | SolderJumper_3_Bridged12 | 1: +5V; 2: Net-(J20-Pin_1); 3: +3V3 |
-| 6AxisBreakout.kicad_pcb | JP11 | SolderJumper_2_Bridged | 1: Net-(J18-Pin_1); 2: Net-(JP11-B) |
-| 6AxisBreakout.kicad_pcb | JP3 | SolderJumper_3_Bridged12 | 1: +5V; 2: Net-(JP3-C); 3: +3V3 |
-| 6AxisBreakout.kicad_pcb | JP8 | SolderJumper_3_Bridged12 | 1: +5V; 2: Net-(J21-Pin_1); 3: +3V3 |
-| 6AxisBreakout.kicad_pcb | JP4 | SolderJumper_3_Bridged12 | 1: +5V; 2: Net-(JP4-C); 3: +3V3 |
-| 6AxisBreakout.kicad_pcb | JP9 | SolderJumper_3_Bridged12 | 1: +5V; 2: Net-(J22-Pin_1); 3: +3V3 |
-| 6AxisBreakout.kicad_pcb | JP18 | SolderJumper_2_Bridged | 1: Net-(J6-Pin_1); 2: Net-(JP18-B) |
-| 6AxisBreakout.kicad_pcb | JP6 | SolderJumper_3_Bridged12 | 1: +5V; 2: Net-(J19-Pin_1); 3: +3V3 |
-
+{% include _includes/extension-board-page.html %}
+
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Motion</p>
+    <h1 id="historical-six-axis-breakout">Historical six-axis interface board</h1>
+    <p class="xb-lead">Six STEP/DIR outputs, A, B and C min/max endstops, four small MOSFET outputs, a UART and a 40-contact harness connector.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#downloads">Downloads</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/historical-six-axis-breakout/directory-board-render.png" alt="Top view of the Historical six-axis interface board board">
+    <figcaption>Top view drawn from the original board file. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-</details>
+<div class="xb-stats">
+  <div class="xb-stat"><b>6</b><span>STEP/DIR outputs</span></div>
+  <div class="xb-stat"><b>6</b><span>ABC endstops</span></div>
+  <div class="xb-stat"><b>4</b><span>PWM outputs</span></div>
+  <div class="xb-stat"><b>40</b><span>harness contacts</span></div>
+  <div class="xb-stat"><b>80 × 80 mm</b><span>board size</span></div>
+  <div class="xb-stat"><b>4</b><span>host headers</span></div>
+</div>
 
-## Practical use with Smoothieboard V2 Prime
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting dimensions</a>
+  <a href="#electrical">Electrical specifications</a>
+</nav>
+{:/nomarkdown}
 
-Unknown conductors remain unresolved rather than routed by guesswork.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <b>Do not treat J13 contacts as 3.3 V signals.</b> The raw endstop inputs are pulled to 5 V by default and appear on the 40-way harness; the 3.3 V buffered copies are on J2. Check selectors and supply before connecting. This is a design by Chris Cecil, not a current Smoothieware board.
+</sl-alert>
 
-First choose the exact external drivers and endstop circuits, then create a full signal allocation for all four actual Prime sockets. Keep power stages disabled while verifying every STEP/DIR/enable and endstop return through the selected buffers. Match UART, PWM timers and all power domains separately. GF/J37 supplies only seven GPIOs and cannot stand in for all four interfaces. External VS must not be connected until JP19 and host-backfeed behaviour are checked.
+## Tech specs {#specs}
 
-Conditional GF/J37 examples refer only to retained **P12 Prime2590**: contacts 1/2/10 are limited 3.3 V/limited 5 V/ground; contacts 3–9 are PB1/PJ4/PA4/PG0/PJ3/PG1/PJ2. The host header is unshrouded. Verify physical numbering, polarity, per-rail current allowance and free-pin ownership before connection. This pin map does not establish hardware SPI, UART, CAN or PWM availability on an arbitrary contact.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Function</td><td>External-drive interface board</td></tr>
+    <tr><td>Host headers</td><td>J1–J4</td></tr>
+    <tr><td>Drive outputs</td><td>J7–J12: 5 V, STEP, DIR, enable, ground</td></tr>
+    <tr><td>Endstops</td><td>J18–J23</td></tr>
+    <tr><td>MOSFET outputs</td><td>J14–J17</td></tr>
+    <tr><td>UART</td><td>J5</td></tr>
+    <tr><td>Harness</td><td>J13, 40 contacts</td></tr>
+    <tr><td>Supply select</td><td>JP19: 5 V or external on J24</td></tr>
+    <tr><td>Size</td><td>80 × 80 mm</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Smoothieware support and example boundary
+## Board tour {#tour}
 
-### Buffered A-min non-motion monitor and six-axis ownership
-Distinguish raw A_MIN_IN at J18.3/J13.11 from buffered open-drain Amin at J2.7. JP5 source footprint Bridged12 selects raw pullup supply5 V; J18.3 is therefore not a direct Prime input. A buffered-output harness uses J2.7 to Prime GF/J37.3 PB1, J2.10 to GF.10 ground, after checking LCX07 input edge rate, output pullup and supply ordering. Use a separate 3.3 V output bias; the configuration below does not supply one.
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/historical-six-axis-breakout/directory-board-render.png" alt="Annotated top view of the Historical six-axis interface board board">
+      <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:18.5%;top:24.4%" aria-label="1: Header J1">1<span class="xb-pop"><b>Header J1</b> — E-stop, UART and PWM.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-2" style="left:18.5%;top:41.3%" aria-label="2: Header J2">2<span class="xb-pop"><b>Header J2</b> — Buffered endstops.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-3" style="left:18.5%;top:58.1%" aria-label="3: Header J3">3<span class="xb-pop"><b>Header J3</b> — XYZ commands.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-4" style="left:18.5%;top:75.6%" aria-label="4: Header J4">4<span class="xb-pop"><b>Header J4</b> — ABC commands.</span></a>
+      <a class="xb-mk" href="#tour-5" style="left:48.5%;top:57.9%" aria-label="5: Drive outputs">5<span class="xb-pop"><b>Drive outputs</b> — X to C.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-6" style="left:71.8%;top:42.7%" aria-label="6: Endstop connectors">6<span class="xb-pop"><b>Endstop connectors</b> — A, B and C.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-7" style="left:44.4%;top:17.2%" aria-label="7: MOSFET outputs">7<span class="xb-pop"><b>MOSFET outputs</b> — Four channels.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-8" style="left:83.7%;top:22.8%" aria-label="8: Harness connector">8<span class="xb-pop"><b>Harness connector</b> — 40 contacts.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-9" style="left:35.4%;top:24.7%" aria-label="9: UART connector">9<span class="xb-pop"><b>UART connector</b> — Ground, receive, transmit.</span></a>
+      <a class="xb-mk" href="#tour-10" style="left:34.0%;top:53.6%" aria-label="10: 74LCX07">10<span class="xb-pop"><b>74LCX07</b> — Endstop buffer.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Header J1</b> — E-stop, UART and PWM.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Header J2</b> — Buffered endstops.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Header J3</b> — XYZ commands.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Header J4</b> — ABC commands.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Drive outputs</b> — X to C.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Endstop connectors</b> — A, B and C.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>MOSFET outputs</b> — Four channels.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Harness connector</b> — 40 contacts.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>UART connector</b> — Ground, receive, transmit.</div></li>
+    <li id="tour-10"><span class="xb-n">10</span><div><b>74LCX07</b> — Endstop buffer.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
+
+## Pinout {#pinout}
+
+<span id="connect-and-try-it"></span>
+
+### Host header J1
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+3V3</code></td></tr>
+    <tr><td>2</td><td><code>+5V</code></td></tr>
+    <tr><td>3</td><td><code>E_STOP</code></td></tr>
+    <tr><td>4</td><td><code>TX0</code></td></tr>
+    <tr><td>5</td><td><code>RX0</code></td></tr>
+    <tr><td>6</td><td><code>PWM1_1</code></td></tr>
+    <tr><td>7</td><td><code>PWM1_2</code></td></tr>
+    <tr><td>8</td><td><code>PWM1_3</code></td></tr>
+    <tr><td>9</td><td><code>PWM1_4</code></td></tr>
+    <tr><td>10</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Host header J2 (buffered endstops)
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J2 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+3V3</code></td></tr>
+    <tr><td>2</td><td><code>+5V</code></td></tr>
+    <tr><td>3</td><td><code>Cmin</code></td></tr>
+    <tr><td>4</td><td><code>Cmax</code></td></tr>
+    <tr><td>5</td><td><code>Bmin</code></td></tr>
+    <tr><td>6</td><td><code>Bmax</code></td></tr>
+    <tr><td>7</td><td><code>Amin</code></td></tr>
+    <tr><td>8</td><td><code>Amax</code></td></tr>
+    <tr><td>9</td><td><code>Spare1</code></td></tr>
+    <tr><td>10</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Host header J3 (XYZ)
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J3 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+3V3</code></td></tr>
+    <tr><td>2</td><td><code>+5V</code></td></tr>
+    <tr><td>3</td><td><code>Z_DIR</code></td></tr>
+    <tr><td>4</td><td><code>Z_STP</code></td></tr>
+    <tr><td>5</td><td><code>Y_STP</code></td></tr>
+    <tr><td>6</td><td><code>X_STP</code></td></tr>
+    <tr><td>7</td><td><code>Y_DIR</code></td></tr>
+    <tr><td>8</td><td><code>X_DIR</code></td></tr>
+    <tr><td>9</td><td><code>EN</code></td></tr>
+    <tr><td>10</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Host header J4 (ABC)
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J4 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+3V3</code></td></tr>
+    <tr><td>2</td><td><code>+5V</code></td></tr>
+    <tr><td>3</td><td><code>C_DIR</code></td></tr>
+    <tr><td>4</td><td><code>C_STP</code></td></tr>
+    <tr><td>5</td><td><code>B_STP</code></td></tr>
+    <tr><td>6</td><td><code>A_STP</code></td></tr>
+    <tr><td>7</td><td><code>B_DIR</code></td></tr>
+    <tr><td>8</td><td><code>A_DIR</code></td></tr>
+    <tr><td>9</td><td><code>Spare2</code></td></tr>
+    <tr><td>10</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Harness J13
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J13 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+3V3</code></td></tr>
+    <tr><td>2</td><td><code>+5V</code></td></tr>
+    <tr><td>3</td><td><code>+3V3</code></td></tr>
+    <tr><td>4</td><td><code>+5V</code></td></tr>
+    <tr><td>5</td><td><code>FET1_</code></td></tr>
+    <tr><td>6</td><td><code>FET2_</code></td></tr>
+    <tr><td>7</td><td><code>FET3_</code></td></tr>
+    <tr><td>8</td><td><code>FET4_</code></td></tr>
+    <tr><td>9</td><td><code>TX0_</code></td></tr>
+    <tr><td>10</td><td><code>RX0_</code></td></tr>
+    <tr><td>11</td><td><code>A_MIN_IN</code></td></tr>
+    <tr><td>12</td><td><code>A_MAX_IN</code></td></tr>
+    <tr><td>13</td><td><code>B_MIN_IN</code></td></tr>
+    <tr><td>14</td><td><code>B_MAX_IN</code></td></tr>
+    <tr><td>15</td><td><code>C_MIN_IN</code></td></tr>
+    <tr><td>16</td><td><code>C_MAX_IN</code></td></tr>
+    <tr><td>17</td><td><code>X_DIR_</code></td></tr>
+    <tr><td>18</td><td><code>X_STP_</code></td></tr>
+    <tr><td>19</td><td><code>Y_DIR_</code></td></tr>
+    <tr><td>20</td><td><code>Y_STP_</code></td></tr>
+    <tr><td>21</td><td><code>Z_DIR_</code></td></tr>
+    <tr><td>22</td><td><code>Z_STP_</code></td></tr>
+    <tr><td>23</td><td><code>A_DIR_</code></td></tr>
+    <tr><td>24</td><td><code>A_STP_</code></td></tr>
+    <tr><td>25</td><td><code>B_DIR_</code></td></tr>
+    <tr><td>26</td><td><code>B_STP_</code></td></tr>
+    <tr><td>27</td><td><code>C_DIR_</code></td></tr>
+    <tr><td>28</td><td><code>C_STP_</code></td></tr>
+    <tr><td>29</td><td><code>EN_</code></td></tr>
+    <tr><td>30</td><td><code>E_STOP_</code></td></tr>
+    <tr><td>31</td><td><code>Spare1_</code></td></tr>
+    <tr><td>32</td><td><code>Spare2_</code></td></tr>
+    <tr><td>33</td><td><code>GND</code></td></tr>
+    <tr><td>34</td><td><code>GND</code></td></tr>
+    <tr><td>35</td><td><code>GND</code></td></tr>
+    <tr><td>36</td><td><code>GND</code></td></tr>
+    <tr><td>37</td><td><code>GND</code></td></tr>
+    <tr><td>38</td><td><code>GND</code></td></tr>
+    <tr><td>39</td><td><code>GND</code></td></tr>
+    <tr><td>40</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### UART J5
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J5 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>GND</code></td></tr>
+    <tr><td>2</td><td><code>RX0_</code></td></tr>
+    <tr><td>3</td><td><code>TX0_</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### External supply J24
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J24 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>GND</code></td></tr>
+    <tr><td>2</td><td>joined to JP19 pad 3</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+J7–J12 are the X, Y, Z, A, B and C drive connectors: 1 5 V, 2 STEP, 3 DIR, 4 enable, 5 ground. J18–J23 are the endstop connectors: contact 2 ground, contact 3 raw signal. J14–J17: contact 1 output, 2 ground, 3 VS.
+
+## What you need {#what-you-need}
+
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>Six-axis board</b><span>Built from the design files</span></div>
+  <div class="xb-card"><b>Host cables</b><span>Four ten-contact ports</span></div>
+  <div class="xb-card"><b>Meter</b><span>To check jumpers and levels</span></div>
+</div>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+<span id="smoothieware-use"></span>
+
+Reading the buffered A-min signal on PB1. The output side needs a pull-up suited to your controller.
+
+A mechanical contact read as an input that does not limit motion. See [endstops](/endstops). Syntax checked against firmware commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`.
 
 ```ini
 [endstops]
@@ -622,28 +295,106 @@ buffered_amin_observation.homing_direction = none
 buffered_amin_observation.limit_enable = false
 ```
 
-An existing valid X actuator and exclusive pins are required. `M119` reports the sampled logical state. The trailing minus disables internal pulls without inversion; supply a suitable external bias. No homing, limit or software-halt action is configured. Record both stable stimulus states and the disconnected/unpowered state with all machine motion disabled. This observation does not determine a safe fault polarity or provide debouncing/edge timing.
+## How it works {#how-it-works}
 
-This is a useful single-input diagnostic and leaves all motors disconnected. It is not a six-axis configuration. Robot supports contiguous actuator names alpha/beta/gamma/delta/epsilon/zeta where the actual build supports them; this board's J3/J4 channel order must be mapped independently. External drivers do not gain software slaving from a `slaved_to` label. Scaling, kinematics, shared enable and motor commands remain deliberately absent until the actual machine is named.
+Command signals pass through MOSFET translators to 5 V drive connectors. Each ABC endstop reaches a 74LCX07 open-drain buffer: the raw node (pulled up through jumpers, 5 V by default) goes to the harness, and the buffered 3.3 V-side node goes to J2. For A-min: J18.3 and J13.11 are raw, J2.7 is buffered.
 
-These instructions identify source behavior at SmoothieV2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`; they do not identify the installed build or prove target execution. Reserve every listed pin and command in the complete configuration. Merge entries into existing sections rather than duplicating sections. These software instructions do not verify powered hardware or provide a complete wiring diagram.
+## Troubleshooting {#troubleshooting}
 
-## Remaining requirements
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Nothing responds</td><td>With power off, check continuity along each lead and board path against the pinout tables. Confirm which end of the connector is contact 1.</td></tr>
+    <tr><td>Endstop reads wrong</td><td>Check you used the buffered J2 contact and the selector jumpers.</td></tr>
+    <tr><td>No drive output</td><td>Check the shared enable and JP19.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-Four-socket mapping, complete buffered direction/polarity, six-axis firmware/kinematics, shared enable, endstop thresholds, VS selection and harness current remain unresolved.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
 
-## Sources and attribution
+## Downloads {#downloads}
 
-- [Ccecil upstream project](https://github.com/Ccecil/6-Axis-Breakout)
-- [Pinned original source](https://github.com/Ccecil/6-Axis-Breakout/tree/045d9f7f2947d37b2818cf35008f27b3130f0c2e)
-- [Original 6AxisBreakout.kicad_pcb](https://github.com/Ccecil/6-Axis-Breakout/blob/045d9f7f2947d37b2818cf35008f27b3130f0c2e/6AxisBreakout/6AxisBreakout.kicad_pcb)
-- [Original 6AxisBreakout.kicad_sch](https://github.com/Ccecil/6-Axis-Breakout/blob/045d9f7f2947d37b2818cf35008f27b3130f0c2e/6AxisBreakout/6AxisBreakout.kicad_sch)
-- [Original LevelShifter.kicad_sch](https://github.com/Ccecil/6-Axis-Breakout/blob/045d9f7f2947d37b2818cf35008f27b3130f0c2e/6AxisBreakout/LevelShifter.kicad_sch)
-- [Original OutputFET.kicad_sch](https://github.com/Ccecil/6-Axis-Breakout/blob/045d9f7f2947d37b2818cf35008f27b3130f0c2e/6AxisBreakout/OutputFET.kicad_sch)
-- [Original Probe.kicad_sch](https://github.com/Ccecil/6-Axis-Breakout/blob/045d9f7f2947d37b2818cf35008f27b3130f0c2e/6AxisBreakout/Probe.kicad_sch)
-- [Original V2Endstops.kicad_sch](https://github.com/Ccecil/6-Axis-Breakout/blob/045d9f7f2947d37b2818cf35008f27b3130f0c2e/6AxisBreakout/V2Endstops.kicad_sch)
-- [Original README.md](https://github.com/Ccecil/6-Axis-Breakout/blob/045d9f7f2947d37b2818cf35008f27b3130f0c2e/README.md)
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/Ccecil/6-Axis-Breakout/blob/045d9f7f2947d37b2818cf35008f27b3130f0c2e/6AxisBreakout/6AxisBreakout.kicad_pcb">selected original circuit</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/6-Axis-Breakout">Ccecil upstream project</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/6-Axis-Breakout/tree/045d9f7f2947d37b2818cf35008f27b3130f0c2e">Pinned original source</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/6-Axis-Breakout/blob/045d9f7f2947d37b2818cf35008f27b3130f0c2e/6AxisBreakout/6AxisBreakout.kicad_sch">Original 6AxisBreakout.kicad_sch</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/6-Axis-Breakout/blob/045d9f7f2947d37b2818cf35008f27b3130f0c2e/6AxisBreakout/LevelShifter.kicad_sch">Original LevelShifter.kicad_sch</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/6-Axis-Breakout/blob/045d9f7f2947d37b2818cf35008f27b3130f0c2e/6AxisBreakout/OutputFET.kicad_sch">Original OutputFET.kicad_sch</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/6-Axis-Breakout/blob/045d9f7f2947d37b2818cf35008f27b3130f0c2e/6AxisBreakout/Probe.kicad_sch">Original Probe.kicad_sch</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/6-Axis-Breakout/blob/045d9f7f2947d37b2818cf35008f27b3130f0c2e/6AxisBreakout/V2Endstops.kicad_sch">Original V2Endstops.kicad_sch</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/6-Axis-Breakout/blob/045d9f7f2947d37b2818cf35008f27b3130f0c2e/README.md">Original README.md</a></td><td>Design source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The retained inventory did not identify a project license file. Preserve attribution and resolve redistribution rights before importing original artwork/layouts; absence of a license file is not public-domain permission. Modern counterpart guides are functional comparisons only and do not establish matching pinouts.
+## Appendix: mounting dimensions {#mounting}
 
-[All extension boards](/extension-boards)
+Outline and holes from the original board file. Millimetres, seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-xis-breakout-mount-t">
+  <title id="xb-xis-breakout-mount-t">Mounting drawing of the historical-six-axis-breakout, component side: outline 80 by 80 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="310.0" y="78.0" width="340.0" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M310.0 56H650.0"/><path d="M310.0 50V62"/><path d="M650.0 50V62"/><path d="M676.0 78.0V418.0"/><path d="M670.0 78.0h12"/><path d="M670.0 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">80</text>
+  <text x="688.0" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">80</text>
+  <circle cx="310.0" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="298.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M252.0 104.0h30" fill="none"/><path d="M286.0 104.0l-8 -4v8z"/><path d="M252.0 104.0v30" fill="none"/><path d="M252.0 138.0l-4 -8h8z"/></g>
+  <text x="290.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="248.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="331.2" cy="99.2" r="6.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M320.4 99.2h21.6M331.2 88.5v21.6" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="324.4" y="126.0" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 5.00</text>
+  <circle cx="628.8" cy="99.2" r="6.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M618.0 99.2h21.6M628.8 88.5v21.6" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="635.5" y="126.0" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  75.00, 5.00</text>
+  <circle cx="331.2" cy="396.8" r="6.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M320.4 396.8h21.6M331.2 385.9v21.6" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="324.4" y="379.9" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 75.00</text>
+  <circle cx="628.8" cy="396.8" r="6.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M618.0 396.8h21.6M628.8 385.9v21.6" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="635.5" y="379.9" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  75.00, 75.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 80 × 80&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>5.00</td><td>5.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>75.00</td><td>5.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>3</td><td>5.00</td><td>75.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>4</td><td>75.00</td><td>75.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Only what the design source states or the circuit fixes. Blank cells are not specified.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Voltage, current and temperature limits</td><td>Whole board</td><td>—</td><td>—</td><td>—</td><td>Not specified in the source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Design source {#origin}
+
+Designed by Chris Cecil: [original design files](https://github.com/Ccecil/6-Axis-Breakout/tree/045d9f7f2947d37b2818cf35008f27b3130f0c2e). It was drawn for the Smoothieboard V2 Gadgeteer era; check every connection against your own controller.
+See all boards on the [extension boards](/extension-boards) page.

@@ -20,7 +20,7 @@ permalink: /extensions/hall-endstop-breakout
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-diagram.png" alt="Top view of the Hall endstop breakout: a small black Hall sensor at the top, a transistor at the left and a three-contact connector at the bottom.">
+    <img src="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-diagram.webp" alt="Top view of the Hall endstop breakout: a small black Hall sensor at the top, a transistor at the left and a three-contact connector at the bottom.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -84,7 +84,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-diagram.png" alt="Top view of the Hall endstop breakout with nine numbered markers that are explained in the list below.">
+      <img src="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-diagram.webp" alt="Top view of the Hall endstop breakout with nine numbered markers that are explained in the list below.">
       <a class="xb-mk" href="#tour-1" style="left:49%;top:74%" aria-label="1: connector">1<span class="xb-pop"><b>Field connector (J1)</b> — a 3-contact connector marked S, G, 5V. Contact 1 (S, signal) is at the left, next to the white dot; 2 is ground; 3 is 5&nbsp;V. The drawing shows two sets of pads for the same three contacts. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:50%;top:20.5%" aria-label="2: Hall sensor">2<span class="xb-pop"><b>Hall sensor (U1)</b> — a DRV5033AJ continuous, omnipolar, open-drain Hall sensor. Either magnetic pole pulls its output low when the field is strong enough. The circle on the board marks where the magnet should be brought.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-3" style="left:17.7%;top:22.6%" aria-label="3: inverter">3<span class="xb-pop"><b>Inverter transistor (Q1)</b> — a BSS138BK MOSFET. The sensor output drives its gate; its drain, through a series resistor, is the board&rsquo;s signal output. It only pulls the signal low; it never drives it high.</span></a>
@@ -283,7 +283,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
     <tr><td><a href="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/hall-endstop-breakout/hall-endstop-breakout-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page, at full resolution</td></tr>
     <tr><td><a href="/assets/downloads/extensions/hall-endstop-breakout/hall-cad-study.zip">CAD files (ZIP, 70 KiB)</a></td><td>KiCad 9 project, schematic, local libraries and notes.</td></tr>
   </tbody>
 </table></div>

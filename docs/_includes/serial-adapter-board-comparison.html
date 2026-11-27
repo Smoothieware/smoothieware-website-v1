@@ -1,0 +1,34 @@
+{::nomarkdown}
+<style>
+.markdown-body .xb-cmp td, .markdown-body .xb-cmp thead th { text-align: center; }
+.markdown-body .xb-cmp tbody th { text-align: left; font-weight: 400; }
+.markdown-body .xb-cmp .xb-cmp-group th { text-align: left; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; opacity: .7; }
+.xb-cmp-yes sl-icon { color: #35c26b; font-size: 1.25rem; vertical-align: middle; }
+.xb-cmp-no sl-icon { color: #ff5d5d; font-size: 1.25rem; vertical-align: middle; }
+.xb-cmp-note { display: block; font-size: .8rem; opacity: .75; }
+</style>
+<h2 id="compare-serial-boards">Compare the serial adapter boards</h2>
+<p>Three boards bring out a controller serial port. Pick by what is at the other end.</p>
+<div class="xb-tablewrap" role="region" aria-labelledby="compare-serial-boards" tabindex="0">
+  <table class="xb-cmp">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col"><a href="{{ '/extensions/uart-breakout' | relative_url }}">UART breakout</a></th>
+        <th scope="col"><a href="{{ '/extensions/cheap-uart-adapter-breakout' | relative_url }}">Cheap UART adapter</a></th>
+        <th scope="col"><a href="{{ '/extensions/usb-serial-breakout' | relative_url }}">USB serial</a></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="xb-cmp-group"><th scope="rowgroup" colspan="4">Specifications</th></tr>
+      <tr><th scope="row">Other end</th><td>Six-contact serial cable header</td><td>Plug-in six-pin USB serial module</td><td>USB-B cable to a computer</td></tr>
+      <tr><th scope="row">Level handling</th><td>Resistor and diode on receive</td><td>Two SN74LVC1T45 translators</td><td>TXU0202 translator</td></tr>
+      <tr><th scope="row">Size</th><td>34.6 &times; 30&nbsp;mm</td><td>32 &times; 27.5&nbsp;mm</td><td>48 &times; 38&nbsp;mm</td></tr>
+      <tr class="xb-cmp-group"><th scope="rowgroup" colspan="4">Features</th></tr>
+      <tr><th scope="row">USB bridge on the board</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon><span class="xb-cmp-note">On the module</span></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon><span class="xb-cmp-note">FT231XS</span></td></tr>
+      <tr><th scope="row">Chain socket</th><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td></tr>
+      <tr><th scope="row">Activity lights</th><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td></tr>
+    </tbody>
+  </table>
+</div>
+{:/nomarkdown}

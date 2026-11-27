@@ -223,7 +223,7 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 <figure class="xb-fig">
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
   <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-pp-mount-t">
-  <title id="xb-pp-mount-t">Mounting drawing of the pp, component side: outline 120 by 140 millimetres with 31 mounting holes and 2 cable-tie holes. Hole positions are listed in the table below.</title>
+  <title id="xb-pp-mount-t">Mounting drawing of the parallel port breakout, component side: outline 120 by 140 millimetres with 6 mounting holes and 2 cable-tie holes. Hole positions are listed in the table below.</title>
   <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
   <rect x="334.3" y="78.0" width="291.4" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
   <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M334.3 56H625.7"/><path d="M334.3 50V62"/><path d="M625.7 50V62"/><path d="M651.7 78.0V418.0"/><path d="M645.7 78.0h12"/><path d="M645.7 418.0h12"/></g>
@@ -243,90 +243,15 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
   <circle cx="578.4" cy="228.7" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
   <path d="M570.4 228.7h16.0M578.4 220.7v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
   <text x="582.4" y="252.7" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  100.52, 62.07</text>
-  <circle cx="575.0" cy="245.6" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M567.0 245.6h16.0M575.0 237.6v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="579.0" y="269.6" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  99.10, 69.00</text>
-  <circle cx="581.9" cy="248.9" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M573.9 248.9h16.0M581.9 240.9v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="585.9" y="234.9" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">5</tspan>  101.94, 70.39</text>
-  <circle cx="575.0" cy="252.3" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M567.0 252.3h16.0M575.0 244.3v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="579.0" y="238.3" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">6</tspan>  99.10, 71.77</text>
-  <circle cx="581.9" cy="255.7" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M573.9 255.7h16.0M581.9 247.7v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="585.9" y="241.7" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">7</tspan>  101.94, 73.16</text>
-  <circle cx="575.0" cy="259.0" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M567.0 259.0h16.0M575.0 251.0v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="579.0" y="245.0" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">8</tspan>  99.10, 74.54</text>
-  <circle cx="581.9" cy="262.4" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M573.9 262.4h16.0M581.9 254.4v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="585.9" y="248.4" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">9</tspan>  101.94, 75.92</text>
-  <circle cx="575.0" cy="265.8" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M567.0 265.8h16.0M575.0 257.8v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="579.0" y="251.8" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">10</tspan>  99.10, 77.31</text>
-  <circle cx="581.9" cy="269.1" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M573.9 269.1h16.0M581.9 261.1v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="585.9" y="255.1" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">11</tspan>  101.94, 78.69</text>
-  <circle cx="575.0" cy="272.5" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M567.0 272.5h16.0M575.0 264.5v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="579.0" y="258.5" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">12</tspan>  99.10, 80.08</text>
-  <circle cx="581.9" cy="275.9" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M573.9 275.9h16.0M581.9 267.9v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="585.9" y="261.9" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">13</tspan>  101.94, 81.47</text>
-  <circle cx="575.0" cy="279.2" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M567.0 279.2h16.0M575.0 271.2v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="579.0" y="265.2" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">14</tspan>  99.10, 82.85</text>
-  <circle cx="581.9" cy="282.6" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M573.9 282.6h16.0M581.9 274.6v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="585.9" y="268.6" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">15</tspan>  101.94, 84.23</text>
-  <circle cx="575.0" cy="285.9" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M567.0 285.9h16.0M575.0 277.9v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="579.0" y="271.9" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">16</tspan>  99.10, 85.62</text>
-  <circle cx="581.9" cy="289.3" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M573.9 289.3h16.0M581.9 281.3v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="585.9" y="275.3" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">17</tspan>  101.94, 87.00</text>
-  <circle cx="575.0" cy="292.7" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M567.0 292.7h16.0M575.0 284.7v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="579.0" y="278.7" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">18</tspan>  99.10, 88.39</text>
-  <circle cx="581.9" cy="296.0" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M573.9 296.0h16.0M581.9 288.0v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="585.9" y="282.0" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">19</tspan>  101.94, 89.78</text>
-  <circle cx="575.0" cy="299.4" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M567.0 299.4h16.0M575.0 291.4v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="579.0" y="285.4" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">20</tspan>  99.10, 91.16</text>
-  <circle cx="581.9" cy="302.8" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M573.9 302.8h16.0M581.9 294.8v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="585.9" y="288.8" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">21</tspan>  101.94, 92.55</text>
-  <circle cx="575.0" cy="306.1" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M567.0 306.1h16.0M575.0 298.1v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="579.0" y="292.1" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">22</tspan>  99.10, 93.93</text>
-  <circle cx="581.9" cy="309.5" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M573.9 309.5h16.0M581.9 301.5v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="585.9" y="295.5" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">23</tspan>  101.94, 95.31</text>
-  <circle cx="575.0" cy="312.8" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M567.0 312.8h16.0M575.0 304.8v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="579.0" y="298.8" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">24</tspan>  99.10, 96.70</text>
-  <circle cx="581.9" cy="316.2" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M573.9 316.2h16.0M581.9 308.2v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="585.9" y="302.2" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">25</tspan>  101.94, 98.09</text>
-  <circle cx="575.0" cy="319.6" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M567.0 319.6h16.0M575.0 311.6v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="579.0" y="305.6" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">26</tspan>  99.10, 99.47</text>
-  <circle cx="581.9" cy="322.9" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M573.9 322.9h16.0M581.9 314.9v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="585.9" y="308.9" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">27</tspan>  101.94, 100.86</text>
-  <circle cx="575.0" cy="326.3" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M567.0 326.3h16.0M575.0 318.3v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="579.0" y="312.3" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">28</tspan>  99.10, 102.24</text>
   <circle cx="578.4" cy="343.1" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
   <path d="M570.4 343.1h16.0M578.4 335.1v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="582.4" y="329.1" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">29</tspan>  100.52, 109.17</text>
+  <text x="582.4" y="329.1" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  100.52, 109.17</text>
   <circle cx="358.6" cy="393.7" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
   <path d="M350.6 393.7h16.0M358.6 385.7v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="354.6" y="379.7" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">30</tspan>  10.00, 130.00</text>
+  <text x="354.6" y="379.7" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">5</tspan>  10.00, 130.00</text>
   <circle cx="601.4" cy="393.7" r="4.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
   <path d="M593.4 393.7h16.0M601.4 385.7v16.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="605.4" y="379.7" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">31</tspan>  110.00, 130.00</text>
+  <text x="605.4" y="379.7" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">6</tspan>  110.00, 130.00</text>
   <circle cx="341.6" cy="85.3" r="3.0" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
   <circle cx="353.7" cy="85.3" r="3.0" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
   <path d="M347.6 91.3V421.0" stroke="#a9b4c2" stroke-width="1" fill="none"/>
@@ -342,35 +267,10 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
   <tbody>
     <tr><td>1</td><td>10.00</td><td>10.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
     <tr><td>2</td><td>110.00</td><td>10.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
-    <tr><td>3</td><td>100.52</td><td>62.07</td><td>3.2&nbsp;mm, plated, connected to /field_gnd</td><td>Mounting, M3 screw</td></tr>
-    <tr><td>4</td><td>99.10</td><td>69.00</td><td>1&nbsp;mm, plated, connected to /f_db01</td><td>Mounting</td></tr>
-    <tr><td>5</td><td>101.94</td><td>70.39</td><td>1&nbsp;mm, plated, connected to /f_db14</td><td>Mounting</td></tr>
-    <tr><td>6</td><td>99.10</td><td>71.77</td><td>1&nbsp;mm, plated, connected to /f_db02</td><td>Mounting</td></tr>
-    <tr><td>7</td><td>101.94</td><td>73.16</td><td>1&nbsp;mm, plated, connected to /f_db15</td><td>Mounting</td></tr>
-    <tr><td>8</td><td>99.10</td><td>74.54</td><td>1&nbsp;mm, plated, connected to /f_db03</td><td>Mounting</td></tr>
-    <tr><td>9</td><td>101.94</td><td>75.92</td><td>1&nbsp;mm, plated, connected to /f_db16</td><td>Mounting</td></tr>
-    <tr><td>10</td><td>99.10</td><td>77.31</td><td>1&nbsp;mm, plated, connected to /f_db04</td><td>Mounting</td></tr>
-    <tr><td>11</td><td>101.94</td><td>78.69</td><td>1&nbsp;mm, plated, connected to /f_db17</td><td>Mounting</td></tr>
-    <tr><td>12</td><td>99.10</td><td>80.08</td><td>1&nbsp;mm, plated, connected to /f_db05</td><td>Mounting</td></tr>
-    <tr><td>13</td><td>101.94</td><td>81.47</td><td>1&nbsp;mm, plated, connected to /field_gnd</td><td>Mounting</td></tr>
-    <tr><td>14</td><td>99.10</td><td>82.85</td><td>1&nbsp;mm, plated, connected to /f_db06</td><td>Mounting</td></tr>
-    <tr><td>15</td><td>101.94</td><td>84.23</td><td>1&nbsp;mm, plated, connected to /field_gnd</td><td>Mounting</td></tr>
-    <tr><td>16</td><td>99.10</td><td>85.62</td><td>1&nbsp;mm, plated, connected to /f_db07</td><td>Mounting</td></tr>
-    <tr><td>17</td><td>101.94</td><td>87.00</td><td>1&nbsp;mm, plated, connected to /field_gnd</td><td>Mounting</td></tr>
-    <tr><td>18</td><td>99.10</td><td>88.39</td><td>1&nbsp;mm, plated, connected to /f_db08</td><td>Mounting</td></tr>
-    <tr><td>19</td><td>101.94</td><td>89.78</td><td>1&nbsp;mm, plated, connected to /field_gnd</td><td>Mounting</td></tr>
-    <tr><td>20</td><td>99.10</td><td>91.16</td><td>1&nbsp;mm, plated, connected to /f_db09</td><td>Mounting</td></tr>
-    <tr><td>21</td><td>101.94</td><td>92.55</td><td>1&nbsp;mm, plated, connected to /field_gnd</td><td>Mounting</td></tr>
-    <tr><td>22</td><td>99.10</td><td>93.93</td><td>1&nbsp;mm, plated, connected to /f_db10</td><td>Mounting</td></tr>
-    <tr><td>23</td><td>101.94</td><td>95.31</td><td>1&nbsp;mm, plated, connected to /field_gnd</td><td>Mounting</td></tr>
-    <tr><td>24</td><td>99.10</td><td>96.70</td><td>1&nbsp;mm, plated, connected to /f_db11</td><td>Mounting</td></tr>
-    <tr><td>25</td><td>101.94</td><td>98.09</td><td>1&nbsp;mm, plated, connected to /field_gnd</td><td>Mounting</td></tr>
-    <tr><td>26</td><td>99.10</td><td>99.47</td><td>1&nbsp;mm, plated, connected to /f_db12</td><td>Mounting</td></tr>
-    <tr><td>27</td><td>101.94</td><td>100.86</td><td>1&nbsp;mm, plated, connected to /field_gnd</td><td>Mounting</td></tr>
-    <tr><td>28</td><td>99.10</td><td>102.24</td><td>1&nbsp;mm, plated, connected to /f_db13</td><td>Mounting</td></tr>
-    <tr><td>29</td><td>100.52</td><td>109.17</td><td>3.2&nbsp;mm, plated, connected to /field_gnd</td><td>Mounting, M3 screw</td></tr>
-    <tr><td>30</td><td>10.00</td><td>130.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
-    <tr><td>31</td><td>110.00</td><td>130.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>3</td><td>100.52</td><td>62.07</td><td>3.2&nbsp;mm, plated, connected to /field_gnd</td><td>D-sub connector fixing</td></tr>
+    <tr><td>4</td><td>100.52</td><td>109.17</td><td>3.2&nbsp;mm, plated, connected to /field_gnd</td><td>D-sub connector fixing</td></tr>
+    <tr><td>5</td><td>10.00</td><td>130.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>6</td><td>110.00</td><td>130.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
     <tr><td>–</td><td>3.00</td><td>3.00</td><td>2.5&nbsp;mm, not plated</td><td>Cable tie</td></tr>
     <tr><td>–</td><td>8.00</td><td>3.00</td><td>2.5&nbsp;mm, not plated</td><td>Cable tie</td></tr>
   </tbody>

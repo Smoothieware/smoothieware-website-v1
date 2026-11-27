@@ -1,117 +1,279 @@
 ---
 layout: default
 title: "Historical seven-LED GPIO board"
+description: "Seven active-high LEDs on a ten-contact header: pinout, test wiring and configuration."
 permalink: /extensions/historical-gadgeteer-led-breakout
 ---
 
-# Historical seven-LED GPIO board
+{% include _includes/extension-board-page.html %}
 
-Seven indicators connect host GPIOs through 1 kΩ resistors to LED anodes, with cathodes at ground. Therefore these historical indicators light when the host output is HIGH. This is the opposite polarity from the modern active-low LED breakout and needs its own firmware example. It is useful for bench status indication and output debugging.
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Indicators</p>
+    <h1 id="historical-gadgeteer-led-breakout">Historical seven-LED GPIO board</h1>
+    <p class="xb-lead">Seven indicator LEDs, one per header signal, for watching outputs on the bench.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#downloads">Downloads</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/historical-gadgeteer-led-breakout/directory-board-render.png" alt="Top view of the Historical seven-LED GPIO board board">
+    <figcaption>Top view drawn from the original board file. This is a drawing, not a photograph.</figcaption>
+  </figure>
+</div>
 
-## Original host
+<div class="xb-stats">
+  <div class="xb-stat"><b>7</b><span>LEDs</span></div>
+  <div class="xb-stat"><b>1 kΩ</b><span>per LED</span></div>
+  <div class="xb-stat"><b>active high</b><span>logic</span></div>
+  <div class="xb-stat"><b>1</b><span>header</span></div>
+  <div class="xb-stat"><b>47.5 × 11.5 mm</b><span>board size</span></div>
+  <div class="xb-stat"><b>2</b><span>mounting holes</span></div>
+</div>
 
-This guide documents the **historical Ccecil board**, rather than a modern replacement. The [upstream project files](https://github.com/Ccecil/LED_Breakout/tree/df7d5676186f403ad84463e31fd7e4100565203f) define the design. It targets the Smoothieboard V2/Gadgeteer era; that does not prove compatibility with every V2 Prime board, cable or firmware build.
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting dimensions</a>
+  <a href="#electrical">Electrical specifications</a>
+</nav>
+{:/nomarkdown}
 
-## Interfaces, power and limitations
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <b>These LEDs light when the output is high,</b> the opposite of the current <a href="/extensions/led-breakout">LED breakout</a>. The host pin powers each LED, so check its current budget. This is a design by Chris Cecil, not a current Smoothieware board.
+</sl-alert>
 
-J1 uses 1 3.3 V, 2 5 V, 3–9 LED channels 1–7 and 10 ground. J1.3 connects through R1 1 kΩ→D1 anode, D1 cathode→ground; channel 2 similarly uses J1.4/R2/D2. The GPIO sources LED current; neither a 1 kΩ value nor a visible indicator establishes allowed cumulative MCU loading. There is no driver IC or added GPIO.
+## Tech specs {#specs}
 
-## Board-reference diagram
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Function</td><td>Seven-channel indicator</td></tr>
+    <tr><td>Header</td><td>J1 (underside)</td></tr>
+    <tr><td>Signals</td><td>Contacts 3–9</td></tr>
+    <tr><td>Ground</td><td>Contact 10</td></tr>
+    <tr><td>Size</td><td>47.55 × 11.55 mm</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-These sheets identify the board, its ten host contacts and all seven LED/resistor branches. The artwork does not establish physical cable mating. Each indicator is driven from its GPIO through a 1 kΩ resistor to an LED, returning to common ground; the 3.3 V and 5 V header rails are not the LED branches.
+## Board tour {#tour}
 
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-led-reference-overview" src="/images/extensions/historical-gadgeteer-led-breakout/guides/annotated-reference/overview.png" title="Historical seven-LED board overview" alt="Historical seven-LED board overview — historical board reference" caption="Seven active-HIGH indicator branches, with no driver IC or additional GPIO. Positions do not show a mating face." width=420 %}
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/historical-gadgeteer-led-breakout/directory-board-render.png" alt="Annotated top view of the Historical seven-LED GPIO board board">
+      <a class="xb-mk xb-pl" href="#tour-1" style="left:21.7%;top:50.4%" aria-label="1: D1 (contact 3)">1<span class="xb-pop"><b>D1 (contact 3)</b> — First channel.</span></a>
+      <a class="xb-mk" href="#tour-2" style="left:50.0%;top:50.4%" aria-label="2: D4 (contact 6)">2<span class="xb-pop"><b>D4 (contact 6)</b> — Middle channel.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-3" style="left:78.4%;top:50.4%" aria-label="3: D7 (contact 9)">3<span class="xb-pop"><b>D7 (contact 9)</b> — Last channel.</span></a>
+      <a class="xb-mk" href="#tour-4" style="left:31.1%;top:50.4%" aria-label="4: LED D2">4<span class="xb-pop"><b>LED D2</b> — LED D2, marked <code>LED</code> in the board file. Connects to <code>GND</code>.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-5" style="left:21.7%;top:35.8%" aria-label="5: Resistor R1">5<span class="xb-pop"><b>Resistor R1</b> — Resistor R1, marked <code>1k</code> in the board file.</span></a>
+      <a class="xb-mk" href="#tour-6" style="left:40.6%;top:50.4%" aria-label="6: LED D3">6<span class="xb-pop"><b>LED D3</b> — LED D3, marked <code>LED</code> in the board file. Connects to <code>GND</code>.</span></a>
+      <a class="xb-mk" href="#tour-7" style="left:59.5%;top:50.4%" aria-label="7: LED D5">7<span class="xb-pop"><b>LED D5</b> — LED D5, marked <code>LED</code> in the board file. Connects to <code>GND</code>.</span></a>
+      <a class="xb-mk" href="#tour-8" style="left:69.0%;top:50.4%" aria-label="8: LED D6">8<span class="xb-pop"><b>LED D6</b> — LED D6, marked <code>LED</code> in the board file. Connects to <code>GND</code>.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>D1 (contact 3)</b> — First channel.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>D4 (contact 6)</b> — Middle channel.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>D7 (contact 9)</b> — Last channel.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>LED D2</b> — LED D2, marked <code>LED</code> in the board file. Connects to <code>GND</code>.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Resistor R1</b> — Resistor R1, marked <code>1k</code> in the board file.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>LED D3</b> — LED D3, marked <code>LED</code> in the board file. Connects to <code>GND</code>.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>LED D5</b> — LED D5, marked <code>LED</code> in the board file. Connects to <code>GND</code>.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>LED D6</b> — LED D6, marked <code>LED</code> in the board file. Connects to <code>GND</code>.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-### Host connector
+### Lights {#lights}
 
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-led-reference-header-1" src="/images/extensions/historical-gadgeteer-led-breakout/guides/annotated-reference/header-1.png" title="Host J1 contacts 1–5" alt="Host J1 contacts 1–5 — historical board reference" caption="Rear-header view, not a plug-face diagram. Contacts 3–9 feed LED channels 1–7; contact 10 is their common ground. Contacts 1 and 2 are separate supply nodes, not LED feeds." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-leds">
+  <thead><tr><th>Light</th><th>Lit means</th><th>Disable it</th></tr></thead>
+  <tbody>
+    <tr><td>D1–D7</td><td>Header contacts 3–9 (D1 = contact 3) are high</td><td>Disconnect that signal</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-led-reference-header-2" src="/images/extensions/historical-gadgeteer-led-breakout/guides/annotated-reference/header-2.png" title="Host J1 contacts 6–10" alt="Host J1 contacts 6–10 — historical board reference" caption="Rear-header view, not a plug-face diagram. Contacts 3–9 feed LED channels 1–7; contact 10 is their common ground. Contacts 1 and 2 are separate supply nodes, not LED feeds." width=420 %}
+## Pinout {#pinout}
 
-### Individual LED and resistor branches
+<span id="connect-and-try-it"></span>
 
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-led-reference-led-1" src="/images/extensions/historical-gadgeteer-led-breakout/guides/annotated-reference/led-1.png" title="LED channel 1 · D1 and R1" alt="LED channel 1 · D1 and R1 — historical board reference" caption="J1.3 feeds R1 (1 kΩ), then D1 anode; the cathode returns to common ground. HIGH requests illumination. Check GPIO current loading." width=420 %}
+### Header J1
 
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-led-reference-led-2" src="/images/extensions/historical-gadgeteer-led-breakout/guides/annotated-reference/led-2.png" title="LED channel 2 · D2 and R2" alt="LED channel 2 · D2 and R2 — historical board reference" caption="J1.4 feeds R2 (1 kΩ), then D2 anode; the cathode returns to common ground. HIGH requests illumination. Check GPIO current loading." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+3V3</code></td></tr>
+    <tr><td>2</td><td><code>+5V</code></td></tr>
+    <tr><td>3</td><td>LED D1</td></tr>
+    <tr><td>4</td><td>LED D2</td></tr>
+    <tr><td>5</td><td>LED D3</td></tr>
+    <tr><td>6</td><td>LED D4</td></tr>
+    <tr><td>7</td><td>LED D5</td></tr>
+    <tr><td>8</td><td>LED D6</td></tr>
+    <tr><td>9</td><td>LED D7</td></tr>
+    <tr><td>10</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-led-reference-led-3" src="/images/extensions/historical-gadgeteer-led-breakout/guides/annotated-reference/led-3.png" title="LED channel 3 · D3 and R3" alt="LED channel 3 · D3 and R3 — historical board reference" caption="J1.5 feeds R3 (1 kΩ), then D3 anode; the cathode returns to common ground. HIGH requests illumination. Check GPIO current loading." width=420 %}
+## What you need {#what-you-need}
 
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-led-reference-led-4" src="/images/extensions/historical-gadgeteer-led-breakout/guides/annotated-reference/led-4.png" title="LED channel 4 · D4 and R4" alt="LED channel 4 · D4 and R4 — historical board reference" caption="J1.6 feeds R4 (1 kΩ), then D4 anode; the cathode returns to common ground. HIGH requests illumination. Check GPIO current loading." width=420 %}
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>LED board</b><span>Built from the design files</span></div>
+  <div class="xb-card"><b>Two leads</b><span>Signal and ground</span></div>
+</div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-led-reference-led-5" src="/images/extensions/historical-gadgeteer-led-breakout/guides/annotated-reference/led-5.png" title="LED channel 5 · D5 and R5" alt="LED channel 5 · D5 and R5 — historical board reference" caption="J1.7 feeds R5 (1 kΩ), then D5 anode; the cathode returns to common ground. HIGH requests illumination. Check GPIO current loading." width=420 %}
+## Get started {#get-started}
 
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-led-reference-led-6" src="/images/extensions/historical-gadgeteer-led-breakout/guides/annotated-reference/led-6.png" title="LED channel 6 · D6 and R6" alt="LED channel 6 · D6 and R6 — historical board reference" caption="J1.8 feeds R6 (1 kΩ), then D6 anode; the cathode returns to common ground. HIGH requests illumination. Check GPIO current loading." width=420 %}
+A one-channel test on Smoothieboard V2 Prime.
 
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-led-reference-led-7" src="/images/extensions/historical-gadgeteer-led-breakout/guides/annotated-reference/led-7.png" title="LED channel 7 · D7 and R7" alt="LED channel 7 · D7 and R7 — historical board reference" caption="J1.9 feeds R7 (1 kΩ), then D7 anode; the cathode returns to common ground. HIGH requests illumination. Check GPIO current loading." width=420 %}
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Wire two leads</h3>
+    <p>With power off connect J37 contact 3 (PB1) to J1.3 and J37 contact 10 to J1.10. Leave the other contacts open.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure</h3>
+    <p>Add the switch from <a href="#configuration">Configuration</a> and restart.</p>
+    <p class="xb-expect">D1 is dark.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Switch it</h3>
+    <p>Send <code>M106.9</code>, then <code>M107.9</code>.</p>
+    <p class="xb-expect">D1 lights, then goes out.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
-### Mounting and use limits
+## Configuration {#configuration}
 
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-led-reference-mounting-limits" src="/images/extensions/historical-gadgeteer-led-breakout/guides/annotated-reference/mounting-limits.png" title="Mounting holes" alt="Mounting holes — historical board reference" caption="The two mounting holes have no electrical net. Check fasteners, clearances, connector orientation and host loading." width=420 %}
+<span id="smoothieware-use"></span>
 
-### Supplementary logical circuits
-
-These circuit sheets explain the connectivity and supplement the board-reference sheets above. Use the contact inventory and all companion sheets together.
-
-Source: [original circuit](https://github.com/Ccecil/LED_Breakout/blob/df7d5676186f403ad84463e31fd7e4100565203f/LED_Breakout.kicad_pcb).
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-led-breakout-factual-led-paths-1" src="/images/extensions/historical-gadgeteer-led-breakout/guides/factual-circuits/led-paths-1-font-matched.png" title="LED resistor paths" alt="LED resistor paths — logical connections, not physical board layout" caption="Logical circuit. It does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-led-breakout-factual-led-paths-4" src="/images/extensions/historical-gadgeteer-led-breakout/guides/factual-circuits/led-paths-4-font-matched.png" title="LED resistor paths" alt="LED resistor paths — logical connections, not physical board layout" caption="Logical circuit. It does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-led-breakout-factual-led-paths-7" src="/images/extensions/historical-gadgeteer-led-breakout/guides/factual-circuits/led-paths-7-font-matched.png" title="LED resistor paths" alt="LED resistor paths — logical connections, not physical board layout" caption="Logical circuit. It does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-led-breakout-factual-supply-distinction" src="/images/extensions/historical-gadgeteer-led-breakout/guides/factual-circuits/supply-distinction-font-matched.png" title="Unused supply nodes" alt="Unused supply nodes — logical connections, not physical board layout" caption="Logical circuit. It does not show connector locations or mating." width=420 %}
-
-### Numbered contacts and controls
-
-These are net memberships from the design. Unconnected pads must stay unconnected. Net names are not cable colours. Check repeated footprints or pad numbers by position before wiring.
-
-| Board file | Connector/control | Label | Contact → net |
-|---|---|---|---|
-| LED_Breakout.kicad_pcb | D3 | LED | 1: GND; 2: Net-(D3-A) |
-| LED_Breakout.kicad_pcb | D2 | LED | 1: GND; 2: Net-(D2-A) |
-| LED_Breakout.kicad_pcb | D1 | LED | 1: GND; 2: Net-(D1-A) |
-| LED_Breakout.kicad_pcb | D4 | LED | 1: GND; 2: Net-(D4-A) |
-| LED_Breakout.kicad_pcb | D7 | LED | 1: GND; 2: Net-(D7-A) |
-| LED_Breakout.kicad_pcb | D6 | LED | 1: GND; 2: Net-(D6-A) |
-| LED_Breakout.kicad_pcb | D5 | LED | 1: GND; 2: Net-(D5-A) |
-| LED_Breakout.kicad_pcb | J1 | Conn_02x05_Odd_Even | 1: +3V3; 2: +5V; 3: Net-(J1-Pin_3); 4: Net-(J1-Pin_4); 5: Net-(J1-Pin_5); 6: Net-(J1-Pin_6); 7: Net-(J1-Pin_7); 8: Net-(J1-Pin_8); 9: Net-(J1-Pin_9); 10: GND |
-
-## Practical use with Smoothieboard V2 Prime
-
-For the single-indicator bench example, connect only two individual leads with power off: Prime GF/J37.3 (PB1) to board J1.3, and Prime GF/J37.10 (ground) to board J1.10. Leave J1.1, J1.2 and J1.4–J1.9 unconnected; this LED path draws its current from PB1 through R1, so neither supply contact is required. Reserve PB1 and keep all other outputs/peripherals disconnected initially. Use the non-inverted digital example below: M106.9 requests HIGH and illuminates channel 1, M107.9 requests LOW and extinguishes it. Existing fan commands and any PB1 user must be removed or remapped deliberately rather than sharing the example accidentally.
-
-Conditional GF/J37 examples refer only to the **Prime2590**: contacts 1/2/10 are limited 3.3 V/limited 5 V/ground; contacts 3–9 are PB1/PJ4/PA4/PG0/PJ3/PG1/PJ2. The host header is unshrouded. Verify physical numbering, polarity, per-rail current allowance and free-pin ownership before connection. This pin map does not establish hardware SPI, UART, CAN or PWM availability on an arbitrary contact.
-
-## Smoothieware configuration
-
-No board driver is required. This V2 digital-switch example drives channel 1:
+See [switch](/switch). Syntax checked against firmware commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`.
 
 ```ini
 [switch]
 historical_led.enable = true
-historical_led.output_pin = PB1
-historical_led.output_type = digital
 historical_led.input_on_command = M106
 historical_led.input_off_command = M107
 historical_led.subcode = 9
+historical_led.output_pin = PB1
+historical_led.output_type = digital
 historical_led.startup_state = false
 historical_led.halt_set_to = false
 ```
 
-This has no ! inversion suffix because the LEDs are active HIGH.
+## How it works {#how-it-works}
 
-## Sources and attribution
+Header contact 3 drives D1 through a 1 kΩ resistor to ground, and so on up to contact 9 and D7. The 3.3 V and 5 V contacts do not power the LEDs.
 
-- [Ccecil upstream project](https://github.com/Ccecil/LED_Breakout)
-- [Original source files](https://github.com/Ccecil/LED_Breakout/tree/df7d5676186f403ad84463e31fd7e4100565203f)
-- [Original LED_Breakout.kicad_pcb](https://github.com/Ccecil/LED_Breakout/blob/df7d5676186f403ad84463e31fd7e4100565203f/LED_Breakout.kicad_pcb)
-- [Original LED_Breakout.kicad_sch](https://github.com/Ccecil/LED_Breakout/blob/df7d5676186f403ad84463e31fd7e4100565203f/LED_Breakout.kicad_sch)
-- [Original README.md](https://github.com/Ccecil/LED_Breakout/blob/df7d5676186f403ad84463e31fd7e4100565203f/README.md)
+## Troubleshooting {#troubleshooting}
 
-The upstream project includes no licence file. Source attribution is retained for the locally prepared reference sheets; the absence of a licence file is not public-domain permission. Modern counterpart guides are functional comparisons only and do not establish matching pinouts.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Nothing responds</td><td>With power off, check continuity along each lead and board path against the pinout tables. Confirm which end of the connector is contact 1.</td></tr>
+    <tr><td>LED stays dark</td><td>Measure that the signal goes high and that the lead reaches the right contact.</td></tr>
+    <tr><td>LED is on when expected off</td><td>Do not use pin inversion with this board.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
 
-Subcode 9 in the [V2 digital-switch implementation](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp#L115-L438) is an example allocation: reserve `M106.9`/`M107.9` in the complete configuration before use. Startup and halt settings are logical OFF; they do not guarantee the electrical state during reset, bootloader operation, lost power or a disconnected cable. The `!` suffix, where shown, inverts that logical output.
+## Downloads {#downloads}
 
-[All extension boards](/extension-boards)
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/Ccecil/LED_Breakout/tree/df7d5676186f403ad84463e31fd7e4100565203f">upstream project files</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/LED_Breakout/blob/df7d5676186f403ad84463e31fd7e4100565203f/LED_Breakout.kicad_pcb">original circuit</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/LED_Breakout">Ccecil upstream project</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/LED_Breakout/blob/df7d5676186f403ad84463e31fd7e4100565203f/LED_Breakout.kicad_sch">Original LED_Breakout.kicad_sch</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/LED_Breakout/blob/df7d5676186f403ad84463e31fd7e4100565203f/README.md">Original README.md</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp#L115-L438">V2 digital-switch implementation</a></td><td>Design source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: mounting dimensions {#mounting}
+
+Outline and holes from the original board file. Millimetres, seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 286" role="img" aria-labelledby="xb-led-breakout-mount-t">
+  <title id="xb-led-breakout-mount-t">Mounting drawing of the historical-gadgeteer-led-breakout, component side: outline 47.55 by 11.55 millimetres with 2 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="180.0" y="78.0" width="600.0" height="145.7" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M180.0 56H780.0"/><path d="M180.0 50V62"/><path d="M780.0 50V62"/><path d="M806.0 78.0V223.7"/><path d="M800.0 78.0h12"/><path d="M800.0 223.7h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">47.55</text>
+  <text x="818.0" y="155.9" font-size="15" font-weight="700" fill="#e6ebf2">11.55</text>
+  <circle cx="180.0" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="168.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M122.0 104.0h30" fill="none"/><path d="M156.0 104.0l-8 -4v8z"/><path d="M122.0 104.0v30" fill="none"/><path d="M122.0 138.0l-4 -8h8z"/></g>
+  <text x="160.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="118.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="227.9" cy="149.3" r="20.2" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M203.8 149.3h48.4M227.9 125.1v48.4" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="207.8" y="189.5" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  3.80, 5.65</text>
+  <circle cx="732.7" cy="149.3" r="20.2" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M708.5 149.3h48.4M732.7 125.1v48.4" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="752.9" y="189.5" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  43.80, 5.65</text>
+  <text x="480.0" y="253.7" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 47.55 × 11.55&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>3.80</td><td>5.65</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>43.80</td><td>5.65</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Only what the design source states or the circuit fixes. Blank cells are not specified.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>LED series resistance</td><td>Each channel</td><td>—</td><td>1 kΩ</td><td>—</td><td>Design file value</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Design source {#origin}
+
+Designed by Chris Cecil: [original design files](https://github.com/Ccecil/LED_Breakout/tree/df7d5676186f403ad84463e31fd7e4100565203f). It was drawn for the Smoothieboard V2 Gadgeteer era; check every connection against your own controller.
+See all boards on the [extension boards](/extension-boards) page.

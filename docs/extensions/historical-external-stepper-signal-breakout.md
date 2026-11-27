@@ -1,112 +1,216 @@
 ---
 layout: default
 title: "External STEP/DIR signal breakout"
+description: "Passive three-axis STEP/DIR/ENABLE breakout for external stepper drives: pinout and wiring."
 permalink: /extensions/historical-external-stepper-signal-breakout
 ---
 
-# External STEP/DIR signal breakout
+{% include _includes/extension-board-page.html %}
 
-This passive board redistributes one V2 control header into three external-drive command connectors. It carries STEP, DIR and a shared ENABLE; it does not contain motor power stages and cannot drive motor windings directly. It is useful when connecting separately powered commercial drivers with compatible logic inputs.
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Motion</p>
+    <h1 id="historical-external-stepper-signal-breakout">External STEP/DIR signal breakout</h1>
+    <p class="xb-lead">Splits one control header into three STEP, DIR and ENABLE connectors for separately powered external drivers.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#downloads">Downloads</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/historical-external-stepper-signal-breakout/directory-board-render.png" alt="Top view of the External STEP/DIR signal breakout board">
+    <figcaption>Top view drawn from the original board file. This is a drawing, not a photograph.</figcaption>
+  </figure>
+</div>
 
-## Original host
+<div class="xb-stats">
+  <div class="xb-stat"><b>3</b><span>drive outputs</span></div>
+  <div class="xb-stat"><b>1</b><span>shared ENABLE</span></div>
+  <div class="xb-stat"><b>3.3/5 V</b><span>supply selector</span></div>
+  <div class="xb-stat"><b>0</b><span>active parts</span></div>
+  <div class="xb-stat"><b>40 × 15 mm</b><span>board size</span></div>
+  <div class="xb-stat"><b>5</b><span>contacts per output</span></div>
+</div>
 
-This guide documents the **historical Ccecil board**, rather than a modern replacement. The [upstream project files](https://github.com/Ccecil/StepXternal/tree/4f8760bac438c3a078ac421ea79f2562bbb123f2) define the design. It targets the Smoothieboard V2/Gadgeteer era; that does not prove compatibility with every V2 Prime board, cable or firmware build.
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting dimensions</a>
+  <a href="#electrical">Electrical specifications</a>
+</nav>
+{:/nomarkdown}
 
-## Interfaces, power and limitations
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <b>This board carries logic signals only.</b> It cannot drive motor windings, adds no isolation and does not shift levels: choosing 5 V on JP1 changes the supply contact, not the signals. This is a design by Chris Cecil, not a current Smoothieware board.
+</sl-alert>
 
-J1 contacts 3–9 are DIR1,STEP1,STEP2,STEP3,DIR2,DIR3,ENABLE. J2/J3/J4 each use 1 selected +V, 2 STEP, 3 DIR, 4 shared ENABLE, 5 ground. JP1 centre +V selects host 5 V or 3.3 V. The selected rail supplies the external logic interface, not the motors; its current budget and the drive input topology must be checked. No isolation or universal optocoupler compatibility is implied.
+## Tech specs {#specs}
 
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Function</td><td>Passive STEP/DIR/ENABLE distribution</td></tr>
+    <tr><td>Input</td><td>J1: ten contacts</td></tr>
+    <tr><td>Outputs</td><td>J2–J4: +V, STEP, DIR, ENABLE, ground</td></tr>
+    <tr><td>Selector</td><td>JP1 (underside): +V from host 5 V or 3.3 V</td></tr>
+    <tr><td>Size</td><td>40 × 15 mm</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-### Supply selection does not change signal voltage
+## Board tour {#tour}
 
-JP1 selects the voltage distributed to the output supply contacts. STEP, DIR and ENABLE remain passive signal connections: selecting 5 V does not turn a Prime 3.3 V GPIO output into a 5 V signal.
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/historical-external-stepper-signal-breakout/directory-board-render.png" alt="Annotated top view of the External STEP/DIR signal breakout board">
+      <a class="xb-mk" href="#tour-1" style="left:50.0%;top:67.0%" aria-label="1: Host header J1">1<span class="xb-pop"><b>Host header J1</b> — All signals arrive here.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-2" style="left:91.6%;top:27.3%" aria-label="2: Output 1">2<span class="xb-pop"><b>Output 1</b> — STEP1 and DIR1.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-3" style="left:61.4%;top:27.3%" aria-label="3: Output 2">3<span class="xb-pop"><b>Output 2</b> — STEP2 and DIR2.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-4" style="left:31.3%;top:27.3%" aria-label="4: Output 3">4<span class="xb-pop"><b>Output 3</b> — STEP3 and DIR3.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Host header J1</b> — All signals arrive here.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Output 1</b> — STEP1 and DIR1.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Output 2</b> — STEP2 and DIR2.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Output 3</b> — STEP3 and DIR3.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-For example, the [Leadshine DM542E manual](https://www.leadshine.com/upfiles/downloads/d5375bf4c28b5c75b2d150c9762781c9_1651052967281.pdf), printed page 3, specifies a 4.5–5 V logic HIGH in 5 V mode, a 0–0.5 V LOW, pulses of at least 2.5 µs and direction setup of at least 5 µs. Its factory 24 V input selection must be changed with S2 for 5 V operation. Direct 3.3 V GPIO drive does not meet that HIGH requirement. A complete example with this drive needs a specified buffer or sink circuit, including input-current, return-path and power-sequencing checks; JP1 alone cannot provide it. Other drives require their own interface review.
+## Pinout {#pinout}
 
-## Board-reference diagram
+<span id="connect-and-try-it"></span>
 
-These reference sheets show the board’s artwork, connector contacts and supply selector. The highlighted locations refer to PCB geometry, not a cable mating face. Read the numbered contact sheets before choosing any connection.
+### Host header J1
 
-{% include _includes/extension-instruction-diagram.html id="historical-external-stepper-reference-overview" src="/images/extensions/historical-external-stepper-signal-breakout/guides/annotated-reference/overview.png" title="Historical external STEP/DIR board overview" alt="Historical external STEP/DIR board overview — board geometry and numbered contacts" caption="Board reference. This passive board distributes command signals; it contains no motor power stage. Check signal voltage and mating before powering." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+3V3</code></td></tr>
+    <tr><td>2</td><td><code>+5V</code></td></tr>
+    <tr><td>3</td><td><code>DIR1</code></td></tr>
+    <tr><td>4</td><td><code>STP1</code></td></tr>
+    <tr><td>5</td><td><code>STP2</code></td></tr>
+    <tr><td>6</td><td><code>STP3</code></td></tr>
+    <tr><td>7</td><td><code>DIR2</code></td></tr>
+    <tr><td>8</td><td><code>DIR3</code></td></tr>
+    <tr><td>9</td><td><code>EN</code></td></tr>
+    <tr><td>10</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-### Host and drive contacts
+### Output 1, J2
 
-{% include _includes/extension-instruction-diagram.html id="historical-external-stepper-reference-J1-pins-1" src="/images/extensions/historical-external-stepper-signal-breakout/guides/annotated-reference/j1-pins-1.png" title="Host J1 contacts 1–5" alt="Host J1 contacts 1–5 — board geometry and numbered contacts" caption="Contact numbers and net names identify this PCB. Locations are not a mating-face or cable-orientation guarantee; STEP, DIR and shared ENABLE remain passive signals." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J2 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+V</code></td></tr>
+    <tr><td>2</td><td><code>STP1</code></td></tr>
+    <tr><td>3</td><td><code>DIR1</code></td></tr>
+    <tr><td>4</td><td><code>EN</code></td></tr>
+    <tr><td>5</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="historical-external-stepper-reference-J1-pins-2" src="/images/extensions/historical-external-stepper-signal-breakout/guides/annotated-reference/j1-pins-2.png" title="Host J1 contacts 6–10" alt="Host J1 contacts 6–10 — board geometry and numbered contacts" caption="Contact numbers and net names identify this PCB. Locations are not a mating-face or cable-orientation guarantee; STEP, DIR and shared ENABLE remain passive signals." width=420 %}
+### Output 2, J3
 
-{% include _includes/extension-instruction-diagram.html id="historical-external-stepper-reference-J2-pins-1" src="/images/extensions/historical-external-stepper-signal-breakout/guides/annotated-reference/j2-pins-1.png" title="Drive channel 1 · J2" alt="Drive channel 1 · J2 — board geometry and numbered contacts" caption="Contact numbers and net names identify this PCB. Locations are not a mating-face or cable-orientation guarantee; STEP, DIR and shared ENABLE remain passive signals." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J3 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+V</code></td></tr>
+    <tr><td>2</td><td><code>STP2</code></td></tr>
+    <tr><td>3</td><td><code>DIR2</code></td></tr>
+    <tr><td>4</td><td><code>EN</code></td></tr>
+    <tr><td>5</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="historical-external-stepper-reference-J3-pins-1" src="/images/extensions/historical-external-stepper-signal-breakout/guides/annotated-reference/j3-pins-1.png" title="Drive channel 2 · J3" alt="Drive channel 2 · J3 — board geometry and numbered contacts" caption="Contact numbers and net names identify this PCB. Locations are not a mating-face or cable-orientation guarantee; STEP, DIR and shared ENABLE remain passive signals." width=420 %}
+### Output 3, J4
 
-{% include _includes/extension-instruction-diagram.html id="historical-external-stepper-reference-J4-pins-1" src="/images/extensions/historical-external-stepper-signal-breakout/guides/annotated-reference/j4-pins-1.png" title="Drive channel 3 · J4" alt="Drive channel 3 · J4 — board geometry and numbered contacts" caption="Contact numbers and net names identify this PCB. Locations are not a mating-face or cable-orientation guarantee; STEP, DIR and shared ENABLE remain passive signals." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J4 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+V</code></td></tr>
+    <tr><td>2</td><td><code>STP3</code></td></tr>
+    <tr><td>3</td><td><code>DIR3</code></td></tr>
+    <tr><td>4</td><td><code>EN</code></td></tr>
+    <tr><td>5</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-### Supply selector and mounting
+### Supply selector JP1
 
-{% include _includes/extension-instruction-diagram.html id="historical-external-stepper-reference-JP1-pins-1" src="/images/extensions/historical-external-stepper-signal-breakout/guides/annotated-reference/jp1-pins-1.png" title="Supply selector JP1" alt="Supply selector JP1 — board geometry and numbered contacts" caption="JP1 centre contact is +V; the outer contacts are +5 V and +3V3. The footprint does not prove the fitted solder bridge. Supply selection does not translate signal levels." width=420 %}
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>JP1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+5V</code></td></tr>
+    <tr><td>2</td><td><code>+V</code></td></tr>
+    <tr><td>3</td><td><code>+3V3</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="historical-external-stepper-reference-H1-pins-1" src="/images/extensions/historical-external-stepper-signal-breakout/guides/annotated-reference/h1-pins-1.png" title="H1 mounting hole" alt="H1 mounting hole — board geometry and numbered contacts" caption="Unnumbered mechanical hole with no electrical net. Check fastener fit and clearances." width=420 %}
+## What you need {#what-you-need}
 
-{% include _includes/extension-instruction-diagram.html id="historical-external-stepper-reference-H2-pins-1" src="/images/extensions/historical-external-stepper-signal-breakout/guides/annotated-reference/h2-pins-1.png" title="H2 mounting hole" alt="H2 mounting hole — board geometry and numbered contacts" caption="Unnumbered mechanical hole with no electrical net. Check fastener fit and clearances." width=420 %}
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>Breakout board</b><span>Built from the design files</span></div>
+  <div class="xb-card"><b>External drive</b><span>With separate motor supply</span></div>
+  <div class="xb-card"><b>Leads</b><span>Checked contact by contact</span></div>
+</div>
+{:/nomarkdown}
 
-### Supplementary logical circuits
+## Get started {#get-started}
 
-These circuit sheets explain the connectivity and supplement the board-reference sheets above. Use the contact inventory and all companion sheets together.
+One external drive on output 1, wired to Smoothieboard V2 Prime J37. Keep motor power off until the signals are checked.
 
-Source: [original circuit](https://github.com/Ccecil/StepXternal/blob/4f8760bac438c3a078ac421ea79f2562bbb123f2/StepXternal.kicad_pcb).
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Wire the host leads</h3>
+    <p>With all power off connect J37 contact 3 to J1.3 (DIR1), 4 to J1.4 (STEP1), 9 to J1.9 (ENABLE) and 10 to J1.10 (ground).</p>
+  </li>
+  <li class="xb-step">
+    <h3>Wire the drive</h3>
+    <p>Connect J2.2 to STEP, J2.3 to DIR, J2.4 to ENABLE and J2.5 to logic ground, following the drive manual for its supply and polarity.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure and test</h3>
+    <p>Apply the settings from <a href="#configuration">Configuration</a>, restart, and with the motor unloaded enter <code>test pulse x 2</code> in the console, then <code>M18</code> to disable the motor.</p>
+    <p class="xb-expect">The drive receives pulses.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="historical-external-stepper-signal-breakout-factual-j2-signals" src="/images/extensions/historical-external-stepper-signal-breakout/guides/factual-circuits/j2-signals-font-matched.png" title="Driver J2 shared logic" alt="Driver J2 shared logic — logical connections, not physical board layout" caption="Logical circuit. It does not show connector locations or mating." width=420 %}
+## Configuration {#configuration}
 
-{% include _includes/extension-instruction-diagram.html id="historical-external-stepper-signal-breakout-factual-j3-signals" src="/images/extensions/historical-external-stepper-signal-breakout/guides/factual-circuits/j3-signals-font-matched.png" title="Driver J3 shared logic" alt="Driver J3 shared logic — logical connections, not physical board layout" caption="Logical circuit. It does not show connector locations or mating." width=420 %}
+<span id="smoothieware-use"></span>
 
-{% include _includes/extension-instruction-diagram.html id="historical-external-stepper-signal-breakout-factual-j4-signals" src="/images/extensions/historical-external-stepper-signal-breakout/guides/factual-circuits/j4-signals-font-matched.png" title="Driver J4 shared logic" alt="Driver J4 shared logic — logical connections, not physical board layout" caption="Logical circuit. It does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-external-stepper-signal-breakout-factual-supply-selector" src="/images/extensions/historical-external-stepper-signal-breakout/guides/factual-circuits/supply-selector-font-matched.png" title="Conditional supply selection" alt="Conditional supply selection — logical connections, not physical board layout" caption="Logical circuit. It does not show connector locations or mating." width=420 %}
-
-### Numbered contacts and controls
-
-These are net memberships from the design. Unconnected pads must stay unconnected. Net names are not cable colours. Check repeated footprints or pad numbers by position before wiring.
-
-| Board file | Connector/control | Label | Contact → net |
-|---|---|---|---|
-| StepXternal.kicad_pcb | J1 | Conn_02x05_Odd_Even | 1: +3V3; 2: +5V; 3: DIR1; 4: STP1; 5: STP2; 6: STP3; 7: DIR2; 8: DIR3; 9: EN; 10: GND |
-| StepXternal.kicad_pcb | J2 | Conn_01x05_Male | 1: +V; 2: STP1; 3: DIR1; 4: EN; 5: GND |
-| StepXternal.kicad_pcb | J4 | Conn_01x05_Male | 1: +V; 2: STP3; 3: DIR3; 4: EN; 5: GND |
-| StepXternal.kicad_pcb | J3 | Conn_01x05_Male | 1: +V; 2: STP2; 3: DIR2; 4: EN; 5: GND |
-| StepXternal.kicad_pcb | JP1 | SolderJumper_3_Bridged12 | 1: +5V; 2: +V; 3: +3V3 |
-
-## Practical use with Smoothieboard V2 Prime
-
-For one external stepper drive, select its exact logic interface and identify pulse/direction/enable polarities from its manual. Keep motor power disabled while mapping J2 to those inputs. A conditional GF/J37 allocation gives STEP1=J37.4 PJ4, DIR1=J37.3 PB1 and ENABLE=J37.9 PJ2, matching the board contact order rather than modern breakout assumptions. Select JP1 only after confirming rail compatibility and verify both enable states before any motor movement.
-
-Conditional GF/J37 examples refer only to the **Prime2590**: contacts 1/2/10 are limited 3.3 V/limited 5 V/ground; contacts 3–9 are PB1/PJ4/PA4/PG0/PJ3/PG1/PJ2. The host header is unshrouded. Verify physical numbering, polarity, per-rail current allowance and free-pin ownership before connection. This pin map does not establish hardware SPI, UART, CAN or PWM availability on an arbitrary contact.
-
-## Smoothieware: named single-motor bench example
-
-The passive breakout needs no device driver. This example uses channel 1 with a [Pololu #2128 A4988 Black Edition carrier](https://www.pololu.com/product/2128) and a secured, unloaded [17HS19-2004S1 motor](https://www.omc-stepperonline.com/nema-17-bipolar-59ncm-84oz-in-2a-42x48mm-4-wires-w-1m-cable-connector-17hs19-2004s1). It is a bench diagnostic procedure, **not a complete machine configuration**. Check connector mating before use.
-
-### Connect channel 1
-
-Use individually numbered leads; the breakout's five-pin header does not mechanically match the carrier. With every supply off:
-
-| Prime GF/J37 | Breakout input | Breakout output → carrier |
-|---|---|---|
-| 3 · PB1 | J1.3 DIR1 | J2.3 → DIR |
-| 4 · PJ4 | J1.4 STP1 | J2.2 → STEP |
-| 9 · PJ2 | J1.9 EN | J2.4 → EN |
-| 10 · GND | J1.10 GND | J2.5 → logic GND |
-
-Connect Prime GF/J37.1 limited 3.3 V **separately to carrier VDD**. Verify the host rail's available current and fitted carrier load; the A4988 IC's 8 mA maximum logic-supply characteristic is not a complete carrier or host power budget. Do not parallel another 3.3 V supply onto Prime. Leave GF/J37.2, breakout J1.1/.2, J2.1 and every J3/J4 output disconnected. JP1 defaults to 1–2, selecting +5 V for unused +V; this example does not change that bridge or use that output rail.
-
-On the carrier, connect RST and SLP to VDD, and MS1/MS2/MS3 to ground for full steps. Connect a separate 12 V motor supply only to VMOT and motor GND, with a common logic return. Follow Pololu's local decoupling instructions, including at least 47 µF electrolytic close to VMOT/GND; independently check capacitor voltage rating, polarity and supply transients. Never put motor voltage on the breakout or Prime logic headers.
-
-For an actual post-2017 carrier with verified 0.068 Ω sense resistors, an example 0.5 A trip limit requires **VREF = 8 × 0.5 × 0.068 = 0.272 V**. Set and measure it following the carrier instructions, with motor power off; older 0.050 Ω assemblies need a different calculation. Full-step winding current is approximately 70% of the trip setting. This reduced-current example does not promise rated torque or thermal performance. Supply current is not coil current.
-
-Connect carrier 1A/1B to the named motor's Black/Green winding and 2A/2B to Red/Blue. Verify the actual winding pairs with power removed; never connect or disconnect motor leads while powered. The named motor has 1.8° full steps and a 2 A phase rating. Keep the shaft free of belts, screws, tools and loads.
-
-### Configure and issue two slow pulses
-
-Use an otherwise valid Prime configuration with alpha registered as X. Reserve these pins, merge entries into existing sections and remove conflicting owners. Disconnect all other actuators: **M17 enables every configured motor**. Alpha alone owns the shared enable line.
+Alpha axis on an external drive. Match the ENABLE inversion to your drive. Syntax checked against firmware commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`.
 
 ```ini
 [actuator]
@@ -114,31 +218,99 @@ alpha.driver = external
 alpha.step_pin = PJ4
 alpha.dir_pin = PB1
 alpha.en_pin = PJ2!
-beta.en_pin = nc
-gamma.en_pin = nc
 ```
 
-These six settings do not program carrier current or microstep straps. The inverted enable drives physical LOW when enabled, as required by A4988. Host reset or loss of power does not guarantee a safe enable state. Keep motor power off during host startup and configuration; send `M18` and verify EN HIGH before enabling the motor supply. After checking rails, current reference, polarity and windings, send `M17`, wait at least five seconds, then:
+## How it works {#how-it-works}
 
-```text
-test pulse x 2
-M18
-```
+Every output contact is a straight track from J1. JP1 only chooses which host rail reaches the +V contact of J2–J4. Check the drive manual for its logic-high level and pulse timing; a 3.3 V host signal does not meet every 5 V input.
 
-This diagnostic asserts STEP for five seconds, then deasserts it for five seconds, twice. It neither changes direction nor enables the motor itself. Two full steps request nominally 3.6° total, apart from initial rotor alignment; this is not measured motion or steps-per-millimetre calibration. Turn motor power off after `M18`; keep the host/common return connected until other supplies are off. Do not hot-plug the connections.
+## Troubleshooting {#troubleshooting}
 
-The [A4988 datasheet](https://www.pololu.com/file/0J450/A4988.pdf) specifies 1 µs minimum STEP HIGH/LOW, 200 ns input setup/hold and logic thresholds of 0.7×VDD HIGH / 0.3×VDD LOW. Its input-current limits are ±20 µA under the stated tests. A common 3.3 V logic supply avoids the DM542E's incompatible 5 V-mode HIGH requirement, but check Prime output margins, carrier loading, cabling, resets and fault handling.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Nothing responds</td><td>With power off, check continuity along each lead and board path against the pinout tables. Confirm which end of the connector is contact 1.</td></tr>
+    <tr><td>Drive does not step</td><td>Check the drive input levels, minimum pulse width and the ENABLE polarity.</td></tr>
+    <tr><td>All axes disable together</td><td>ENABLE is one shared line.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-SmoothieV2 references: [pulse diagnostic](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/CommandShell.cpp#L1193), [motor enable commands](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/robot/Robot.cpp#L1148) and [stepper initialization](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/robot/StepperMotor.cpp#L8).
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
 
-## Sources and attribution
+## Downloads {#downloads}
 
-- [Ccecil upstream project](https://github.com/Ccecil/StepXternal)
-- [Original source files](https://github.com/Ccecil/StepXternal/tree/4f8760bac438c3a078ac421ea79f2562bbb123f2)
-- [Original README.md](https://github.com/Ccecil/StepXternal/blob/4f8760bac438c3a078ac421ea79f2562bbb123f2/README.md)
-- [Original StepXternal.kicad_pcb](https://github.com/Ccecil/StepXternal/blob/4f8760bac438c3a078ac421ea79f2562bbb123f2/StepXternal.kicad_pcb)
-- [Original StepXternal.kicad_sch](https://github.com/Ccecil/StepXternal/blob/4f8760bac438c3a078ac421ea79f2562bbb123f2/StepXternal.kicad_sch)
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/Ccecil/StepXternal/tree/4f8760bac438c3a078ac421ea79f2562bbb123f2">upstream project files</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/StepXternal/blob/4f8760bac438c3a078ac421ea79f2562bbb123f2/StepXternal.kicad_pcb">original circuit</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/CommandShell.cpp#L1193">pulse diagnostic</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/robot/Robot.cpp#L1148">motor enable commands</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/robot/StepperMotor.cpp#L8">stepper initialization</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/StepXternal">Ccecil upstream project</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/StepXternal/blob/4f8760bac438c3a078ac421ea79f2562bbb123f2/README.md">Original README.md</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/StepXternal/blob/4f8760bac438c3a078ac421ea79f2562bbb123f2/StepXternal.kicad_sch">Original StepXternal.kicad_sch</a></td><td>Design source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The upstream project includes no licence file. Source attribution is retained for the locally prepared reference sheets; the absence of a licence file is not public-domain permission. Modern counterpart guides are functional comparisons only and do not establish matching pinouts.
+## Appendix: mounting dimensions {#mounting}
 
-[All extension boards](/extension-boards)
+Outline and holes from the original board file. Millimetres, seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 365" role="img" aria-labelledby="xb-nal-breakout-mount-t">
+  <title id="xb-nal-breakout-mount-t">Mounting drawing of the historical-external-stepper-signal-breakout, component side: outline 40 by 15 millimetres with 2 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="180.0" y="78.0" width="600.0" height="225.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M180.0 56H780.0"/><path d="M180.0 50V62"/><path d="M780.0 50V62"/><path d="M806.0 78.0V303.0"/><path d="M800.0 78.0h12"/><path d="M800.0 303.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">40</text>
+  <text x="818.0" y="195.5" font-size="15" font-weight="700" fill="#e6ebf2">15</text>
+  <circle cx="180.0" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="168.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M122.0 104.0h30" fill="none"/><path d="M156.0 104.0l-8 -4v8z"/><path d="M122.0 104.0v30" fill="none"/><path d="M122.0 138.0l-4 -8h8z"/></g>
+  <text x="160.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="118.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="217.5" cy="243.0" r="18.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M194.8 243.0h45.5M217.5 220.2v45.5" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="198.8" y="214.2" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  2.50, 11.00</text>
+  <circle cx="742.5" cy="243.0" r="18.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M719.8 243.0h45.5M742.5 220.2v45.5" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="761.2" y="214.2" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  37.50, 11.00</text>
+  <text x="480.0" y="333.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 40 × 15&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>2.50</td><td>11.00</td><td>2.5&nbsp;mm, not plated</td><td>Mounting</td></tr>
+    <tr><td>2</td><td>37.50</td><td>11.00</td><td>2.5&nbsp;mm, not plated</td><td>Mounting</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Only what the design source states or the circuit fixes. Blank cells are not specified.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Voltage, current and temperature limits</td><td>Whole board</td><td>—</td><td>—</td><td>—</td><td>Not specified in the source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Design source {#origin}
+
+Designed by Chris Cecil: [original design files](https://github.com/Ccecil/StepXternal/tree/4f8760bac438c3a078ac421ea79f2562bbb123f2). It was drawn for the Smoothieboard V2 Gadgeteer era; check every connection against your own controller.
+See all boards on the [extension boards](/extension-boards) page.

@@ -1,374 +1,351 @@
 ---
 layout: default
-title: "Button boards"
+title: "Button board"
+description: "Seven push buttons with pull-ups and debounce filters on one Gadgeteer port."
 permalink: /extensions/button-boards
 ---
 
-# Button boards
-
-The board presents seven mechanical momentary buttons to a Gadgeteer host socket. Use it for ordinary machine controls such as a software halt, pause or a user action.
+{% include _includes/extension-board-page.html %}
 
 
-## How it works
-
-Each of the seven buttons has the same circuit: a normally-open switch to ground, a **1 kΩ series resistor** between that switch and the host input, a **10 kΩ pull-up** from the input to 3.3 V, and a **100 nF filter capacitor** from the input to ground. Releasing the button lets the pull-up raise its input; pressing it pulls the input low through the series resistor. Each button has its own host signal, so simultaneous presses are independent electrical inputs. The filter is not a guarantee of bounce-free operation.
-
-<div class="table-wrapper" markdown="1">
-
-<div class="extension-contact-table" role="region" aria-label="Seven button filter circuits; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Button | Host contact | Series 1 kΩ | Pull-up 10 kΩ | Filter 100 nF | Chain link |
-| --- | --- | --- | --- | --- | --- |
-| SW1 | J1.3 / BTN1_OUT | R1 | R8 | C1 | JP1 |
-| SW2 | J1.4 / BTN2_OUT | R2 | R9 | C2 | JP2 |
-| SW3 | J1.5 / BTN3_OUT | R3 | R10 | C3 | JP3 |
-| SW4 | J1.6 / BTN4_OUT | R4 | R11 | C4 | JP4 |
-| SW5 | J1.7 / BTN5_OUT | R5 | R12 | C5 | JP5 |
-| SW6 | J1.8 / BTN6_OUT | R6 | R13 | C6 | JP6 |
-| SW7 | J1.9 / BTN7_OUT | R7 | R14 | C7 | JP7 |
-
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Panels and inputs</p>
+    <h1 id="button-boards">Button board</h1>
+    <p class="xb-lead">Add seven push buttons to your controller with one ribbon cable. Each button has its own pin, a pull-up and a filter, so pressing it reads low.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#get-started">Get started</a>
+      <a class="xb-btn" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#configuration">Configuration</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/button-boards/v14/button-boards-diagram.png" alt="Top view of the Button board.">
+    <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
+<div class="xb-stats">
+  <div class="xb-stat"><b>7</b><span>buttons</span></div>
+  <div class="xb-stat"><b>Low</b><span>when pressed</span></div>
+  <div class="xb-stat"><b>10 kΩ</b><span>pull-ups</span></div>
+  <div class="xb-stat"><b>100 nF</b><span>filter per button</span></div>
+  <div class="xb-stat"><b>7 links</b><span>to chain, open</span></div>
+  <div class="xb-stat"><b>33 × 41.5</b><span>millimetres</span></div>
 </div>
 
-J2 repeats the supply rails and ground. Each signal reaches J2 through its own JP1–JP7 link; closing a link shares that existing button input with the corresponding chain contact. It does not create another button or an independent GPIO. Keep the chain socket unused for the example below.
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#chaining">Chaining</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting</a>
+  <a href="#electrical">Electrical</a>
+</nav>
+{:/nomarkdown}
 
-## Power, signals and limits
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  These buttons are not an emergency stop. Do not hot-plug the board.
+</sl-alert>
 
-J1.1 is 3.3 V, .2 is 5 V and .10 ground. Contacts 3–9 carry BTN1_OUT through BTN7_OUT. All seven button states require seven host inputs; never configure one as an output while the switch can ground it. Debounce, the exact assembled pull network, cable noise and power-loss behavior require verification. A software KILL button is not a safety-rated emergency stop or power disconnect.
+## Tech specs {#specs}
 
-## Connectors and cable choice
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Purpose</td><td>Seven push buttons on one Y Gadgeteer port</td></tr>
+    <tr><td>Switches</td><td>Omron B3FS-1000P, normally open</td></tr>
+    <tr><td>Per button</td><td>10&nbsp;k&Omega; pull-up to 3.3&nbsp;V, 1&nbsp;k&Omega; series resistor, 100&nbsp;nF filter</td></tr>
+    <tr><td>Pins</td><td>Button 1 on contact 3, up to button 7 on contact 9</td></tr>
+    <tr><td>Chain socket</td><td>J2; supplies and ground pass through, button signals only through links JP1 to JP7, open as delivered</td></tr>
+    <tr><td>Poll rate</td><td>The host should poll at 100&nbsp;Hz or faster (board printing)</td></tr>
+    <tr><td>Size</td><td>33 &times; 41.5&nbsp;mm, two M3 mounting holes</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-The design uses **Samtec SHF-105-01-L-D-TH-LC** for J1: a shrouded, two-row, ten-contact header on a **1.27 mm pitch**. [Samtec’s matching part documentation](https://www.samtec.com/products/shf-105-01-l-d-th-lc) lists FFSD ribbon and FFTP cable assemblies without strain relief as mating families. Check that your cable mates with it.
+Every figure with its basis is in the [electrical specifications](#electrical) appendix; hole positions are in the [mounting dimensions](#mounting) appendix.
 
-The retained Prime P11 source models J37 as a generic two-row, ten-contact, 1.27 mm surface-mount pin header. It does not declare the same keyed Samtec housing. Check the actual host header and both cable ends before selecting a cable; do not infer host-side key orientation from J1. Use the component-side contact keys below to establish **1→1 through 10→10**, and verify all ten connections with power removed. The red edge marks the intended contact-1 conductor; its colour alone does not prove continuity or orientation.
+## Board tour {#tour}
 
-## Board reference
+The numbers on the drawing match the list below it.
 
-<details markdown="1">
-<summary>Reading the connector callouts</summary>
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/button-boards/v14/button-boards-diagram.png" alt="Top view of the Button board with numbered markers explained in the list below.">
+      <a class="xb-mk xb-pb" href="#tour-1" style="left:26.4%;top:11.4%" aria-label="1: Host socket (IN)">1<span class="xb-pop"><b>Host socket (IN)</b> — the ribbon cable from the controller.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-2" style="left:72.7%;top:11.4%" aria-label="2: Chain socket (CHAIN)">2<span class="xb-pop"><b>Chain socket (CHAIN)</b> — passes the port on.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-3" style="left:25.5%;top:22.9%" aria-label="3: Chain links (JP1 to JP7)">3<span class="xb-pop"><b>Chain links (JP1 to JP7)</b> — open as delivered; bridge one to share that button with the next board.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-4" style="left:19.5%;top:42.2%" aria-label="4: Button 1">4<span class="xb-pop"><b>Button 1</b> — contact 3.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-5" style="left:49.5%;top:42.2%" aria-label="5: Button 2">5<span class="xb-pop"><b>Button 2</b> — contact 4.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-6" style="left:79.5%;top:42.2%" aria-label="6: Button 3">6<span class="xb-pop"><b>Button 3</b> — contact 5.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-7" style="left:19.5%;top:65.2%" aria-label="7: Button 4">7<span class="xb-pop"><b>Button 4</b> — contact 6.</span></a>
+      <a class="xb-mk" href="#tour-8" style="left:49.5%;top:65.2%" aria-label="8: Button 5">8<span class="xb-pop"><b>Button 5</b> — contact 7.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-9" style="left:79.5%;top:65.2%" aria-label="9: Button 6">9<span class="xb-pop"><b>Button 6</b> — contact 8.</span></a>
+      <a class="xb-mk" href="#tour-10" style="left:49.5%;top:88.2%" aria-label="10: Button 7">10<span class="xb-pop"><b>Button 7</b> — contact 9.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Host socket (IN)</b> — the ribbon cable from the controller.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Chain socket (CHAIN)</b> — passes the port on.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Chain links (JP1 to JP7)</b> — open as delivered; bridge one to share that button with the next board.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Button 1</b> — contact 3.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Button 2</b> — contact 4.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Button 3</b> — contact 5.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Button 4</b> — contact 6.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Button 5</b> — contact 7.</div></li>
+    <li id="tour-9"><span class="xb-n">9</span><div><b>Button 6</b> — contact 8.</div></li>
+    <li id="tour-10"><span class="xb-n">10</span><div><b>Button 7</b> — contact 9.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-The dark end of each pill gives the source contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
+## Pinout {#pinout}
 
-- Red: 3.3 V supply.
-- Orange: 5 V supply.
-- Near-black: Circuit ground.
-- Dark grey: Other source-labelled contact — read its exact function.
+Contacts keep their numbers from the controller to the board. The controller pin names below apply to header G_F (connector J37) of Smoothieboard V2 Prime; another header or controller has other pins. Treat every signal as 3.3&nbsp;V only: PB1, PA4 and PG1 are not 5&nbsp;V tolerant.
 
-A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
+Button 1 is on P3, button 2 on P4, and so on to button 7 on P9.
 
-</details>
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contact</th><th>Signal</th><th>Pin on Smoothieboard V2 Prime, header G_F (J37)</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><span class="xb-pill xb-p-3v3">3.3 V</span> (the controller&rsquo;s limited rail)</td><td>not a signal</td></tr>
+    <tr><td>2</td><td><span class="xb-pill xb-p-5v">5 V</span> (the controller&rsquo;s limited rail)</td><td>not a signal</td></tr>
+    <tr><td>3</td><td><span class="xb-pill xb-p-sig">P3</span></td><td><code>PB1</code></td></tr>
+    <tr><td>4</td><td><span class="xb-pill xb-p-sig">P4</span></td><td><code>PJ4</code></td></tr>
+    <tr><td>5</td><td><span class="xb-pill xb-p-sig">P5</span></td><td><code>PA4</code></td></tr>
+    <tr><td>6</td><td><span class="xb-pill xb-p-sig">P6</span></td><td><code>PG0</code></td></tr>
+    <tr><td>7</td><td><span class="xb-pill xb-p-sig">P7</span></td><td><code>PJ3</code></td></tr>
+    <tr><td>8</td><td><span class="xb-pill xb-p-sig">P8</span></td><td><code>PG1</code></td></tr>
+    <tr><td>9</td><td><span class="xb-pill xb-p-sig">P9</span></td><td><code>PJ2</code></td></tr>
+    <tr><td>10</td><td><span class="xb-pill xb-p-gnd">GND</span></td><td>ground</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-overview" src="/images/extensions/button-boards/guides/reader-compact-overview.png" title="Seven-button board — overview" alt="Seven-button board — overview for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
+## What you need {#what-you-need}
 
-<details markdown="1">
-<summary>Larger combined reference</summary>
-
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reference" src="/images/extensions/button-boards/guides/reader-reference.png" title="Annotated board reference" alt="button-boards annotated board reference, with source-numbered features." caption="Component-side reference. Dotted leaders locate parts and are not wires. Use the numbered detail views together and check mating orientation." width=1440 %}
-
-</details>
-
-Start with the overview, then use the focused sheets for exact contacts, controls and links. Source footprint defaults do not prove assembled continuity.
-
-<details markdown="1">
-<summary>Focused contact and component sheets</summary>
-
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-host-input-1-5" src="/images/extensions/button-boards/guides/reader-compact-host-input-1-5-central-pills.png" title="J1 · Host input — host input 1 5" alt="J1 · Host input — host input 1 5 for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-host-input-6-10" src="/images/extensions/button-boards/guides/reader-compact-host-input-6-10-central-pills.png" title="J1 · Host input — host input 6 10" alt="J1 · Host input — host input 6 10 for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-chain-output-1-5" src="/images/extensions/button-boards/guides/reader-compact-chain-output-1-5-central-pills.png" title="J2 · Chain output — chain output 1 5" alt="J2 · Chain output — chain output 1 5 for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-chain-output-6-10" src="/images/extensions/button-boards/guides/reader-compact-chain-output-6-10-central-pills.png" title="J2 · Chain output — chain output 6 10" alt="J2 · Chain output — chain output 6 10 for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-buttons-1-4" src="/images/extensions/button-boards/guides/reader-compact-buttons-1-4.png" title="Buttons 1–4 — buttons 1 4" alt="Buttons 1–4 — buttons 1 4 for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-chain-links-1-4" src="/images/extensions/button-boards/guides/reader-compact-chain-links-1-4.png" title="Chain links 1–4 — chain links 1 4" alt="Chain links 1–4 — chain links 1 4 for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-buttons-5-7" src="/images/extensions/button-boards/guides/reader-compact-buttons-5-7.png" title="Buttons 5–7 — buttons 5 7" alt="Buttons 5–7 — buttons 5 7 for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-chain-links-5-7" src="/images/extensions/button-boards/guides/reader-compact-chain-links-5-7.png" title="Chain links 5–7 — chain links 5 7" alt="Chain links 5–7 — chain links 5 7 for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-test-pads" src="/images/extensions/button-boards/guides/reader-compact-test-pads.png" title="Test pads — test pads" alt="Test pads — test pads for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-reader-compact-mounting-holes" src="/images/extensions/button-boards/guides/reader-compact-mounting-holes.png" title="Mounting holes — mounting holes" alt="Mounting holes — mounting holes for button-boards" caption="Component-side reference. Use the overview and all focused sheets together, and zoom for fine labels. Check cable mating and continuity before wiring." width=420 %}
-
-</details>
-
-**Reading the diagrams:** use the focused connector, button and link sheets on a narrow screen. Zoom the combined overview and larger detail sheets for fine labels.
-
-### buttons — saved connector contacts
-
-Contact numbering below is the selected PCB's pad numbering, viewed using the final board-reference drawing. Same-numbered duplicate lands are collapsed in this electrical table. Mechanical unnumbered pads are omitted here. `NC` means unconnected in this saved source, not a spare supported function. Named nets alone do not establish direction; use the signal-path explanation above.
-
-<details markdown="1">
-<summary>Selected-source contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Selected-source contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Connector | Contact(s) | Saved-source function/net |
-| --- | --- | --- |
-| J2 — GADGETEER Y CHAIN | 1 | `+3V3` |
-| J2 — GADGETEER Y CHAIN | 2 | `+5V` |
-| J2 — GADGETEER Y CHAIN | 3 | `/CHAIN_BTN1` |
-| J2 — GADGETEER Y CHAIN | 4 | `/CHAIN_BTN2` |
-| J2 — GADGETEER Y CHAIN | 5 | `/CHAIN_BTN3` |
-| J2 — GADGETEER Y CHAIN | 6 | `/CHAIN_BTN4` |
-| J2 — GADGETEER Y CHAIN | 7 | `/CHAIN_BTN5` |
-| J2 — GADGETEER Y CHAIN | 8 | `/CHAIN_BTN6` |
-| J2 — GADGETEER Y CHAIN | 9 | `/CHAIN_BTN7` |
-| J2 — GADGETEER Y CHAIN | 10 | `GND` |
-| J1 — GADGETEER Y IN | 1 | `+3V3` |
-| J1 — GADGETEER Y IN | 2 | `+5V` |
-| J1 — GADGETEER Y IN | 3 | `/BTN1_OUT` |
-| J1 — GADGETEER Y IN | 4 | `/BTN2_OUT` |
-| J1 — GADGETEER Y IN | 5 | `/BTN3_OUT` |
-| J1 — GADGETEER Y IN | 6 | `/BTN4_OUT` |
-| J1 — GADGETEER Y IN | 7 | `/BTN5_OUT` |
-| J1 — GADGETEER Y IN | 8 | `/BTN6_OUT` |
-| J1 — GADGETEER Y IN | 9 | `/BTN7_OUT` |
-| J1 — GADGETEER Y IN | 10 | `GND` |
-
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>This board</b><span>Built from the design files in Downloads</span></div>
+  <div class="xb-card"><b>A ten-wire cable</b><span>Both ends 2 &times; 5 contacts at 1.27&nbsp;mm pitch, wired 1 to 1. A 2.54&nbsp;mm jumper plug does not fit. The Prime header has no keyed housing, so check contact 1 at both ends.</span></div>
 </div>
+{:/nomarkdown}
 
-<details markdown="1">
-<summary>Combined connector and link details</summary>
+## Get started {#get-started}
 
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-connector-detail-01" src="/images/extensions/button-boards/guides/reader-connector-detail-01.png" title="Connector detail 01" alt="button-boards connector detail 01, with source-numbered features." caption="Component-side reference. Dotted leaders locate parts and are not wires. Use the numbered detail views together and check mating orientation." width=1440 %}
+This test reads button 1 on Smoothieboard V2 Prime.
 
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-link-detail-01" src="/images/extensions/button-boards/guides/reader-link-detail-01.png" title="Link detail 01" alt="button-boards link detail 01, with source-numbered features." caption="Component-side reference. Dotted leaders locate parts and are not wires. Use the numbered detail views together and check mating orientation." width=1440 %}
 
-</details>
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Power off and reserve the pins</h3>
+    <p>All seven pins are inputs from this board. Remove any other use of PB1, PJ4, PA4, PG0, PJ3, PG1 and PJ2.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Connect the cable</h3>
+    <p>Controller G_F (J37) contact n to J1 contact n, for all ten. Leave J2 empty.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure</h3>
+    <p>Add the settings of example 2 below and power up.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Press button 1</h3>
+    <p>Watch the console.</p>
+    <p class="xb-expect">The console prints <code>Button 1</code> on each press.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
-### Links, controls and indicators
+## Configuration {#configuration}
 
-JP1–JP7 can connect the seven local button-output nets to the corresponding chain nets. All seven selected source footprints are **open**, so button signals do not reach J2 through these links until deliberately bridged. Supply rails and ground continue separately. Inspect the actual board before relying on that source default. A chained board shares each bridged button net; a second push-pull source must not drive it. This selected board has no LED indication circuit.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>You want</th><th>Module</th><th>Example</th></tr></thead>
+  <tbody>
+    <tr><td>A halt button</td><td>Button box</td><td><a href="#config-kill">1</a></td></tr>
+    <tr><td>A command per button</td><td>Button box</td><td><a href="#config-all">2</a></td></tr>
+    <tr><td>To read a button</td><td>Switch, input</td><td><a href="#config-input">3</a></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-<details markdown="1">
-<summary>Selected-source contact inventory</summary>
+### 1. Halt button (button box) {#config-kill}
 
-| Item | Selected source label | Contact nets / observation |
-| --- | --- | --- |
-| SW6 | B3FS-1000P | 1 = /BTN6_SW; 2 = GND |
-| SW1 | B3FS-1000P | 1 = /BTN1_SW; 2 = GND |
-| SW4 | B3FS-1000P | 1 = /BTN4_SW; 2 = GND |
-| JP5 | CHAIN 5 | 1 = /BTN5_OUT; 2 = /CHAIN_BTN5 |
-| JP3 | CHAIN 3 | 1 = /BTN3_OUT; 2 = /CHAIN_BTN3 |
-| JP7 | CHAIN 7 | 1 = /BTN7_OUT; 2 = /CHAIN_BTN7 |
-| SW5 | B3FS-1000P | 1 = /BTN5_SW; 2 = GND |
-| JP4 | CHAIN 4 | 1 = /BTN4_OUT; 2 = /CHAIN_BTN4 |
-| SW3 | B3FS-1000P | 1 = /BTN3_SW; 2 = GND |
-| SW2 | B3FS-1000P | 1 = /BTN2_SW; 2 = GND |
-| JP6 | CHAIN 6 | 1 = /BTN6_OUT; 2 = /CHAIN_BTN6 |
-| JP2 | CHAIN 2 | 1 = /BTN2_OUT; 2 = /CHAIN_BTN2 |
-| JP1 | CHAIN 1 | 1 = /BTN1_OUT; 2 = /CHAIN_BTN1 |
-| SW7 | B3FS-1000P | 1 = /BTN7_SW; 2 = GND |
-
-</details>
-
-Selected active-component identities: no U-designated ICs in this saved PCB. These identities are not a substitute for matching datasheet limits.
-
-</details>
-
-## Practical use with Smoothieboard V2 Prime
-
-> **Keep the assembly unpowered while checking connections.** This complete ribbon attaches all seven GPIOs and both supply rails.
-
-Use the overview to locate the cable, the two contact keys to verify every position, and the numbered close-ups for the fine Prime escape. Fine board labels in the overview require these detail views.
-
-{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-button-v14-ten-core-overview" src="/images/extensions/button-boards/guides/ten-core-ribbon/button-ten-core-overview.png" title="Complete seven-button ten-core connection" alt="Complete seven-button ten-core connection; source-numbered Prime P11 and Button Boards contacts." caption="Prime P11 J37 to Button J1 IN. Grey is the ten-core jacket; red marks the contact-1 edge. Verify fit and all ten connections while unpowered; J2 stays unused and JP1–JP7 open." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-prime-j37-core-terminations" src="/images/extensions/button-boards/guides/ten-core-ribbon/prime-j37-core-terminations.png" title="Prime P11 J37 — ten separate terminations" alt="Prime P11 J37 — ten separate terminations; source-numbered Prime P11 and Button Boards contacts." caption="Pads connect separately to numbered logical plug positions. Front view, not a cable mating face." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-button-j1-ten-core-terminations" src="/images/extensions/button-boards/guides/ten-core-ribbon/button-j1-ten-core-terminations.png" title="Button J1 — ten separate terminations" alt="Button J1 — ten separate terminations; source-numbered Prime P11 and Button Boards contacts." caption="Each stub starts at its native J1 pad. The proposed connector projection does not establish manufactured fit or orientation." width=420 %}
-
-<details markdown="1">
-<summary>Follow the Prime cable path in five readable close-ups</summary>
-
-{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-01-prime-j37-to-one" src="/images/extensions/button-boards/guides/ten-core-ribbon/01-prime-j37-to-one.png" title="Prime cable path — view 1 of 5" alt="Prime cable path — view 1 of 5; source-numbered Prime P11 and Button Boards contacts." caption="Follow matching continuation numbers in order. Source artwork remains unchanged; the corrected path passes around the filled serial text." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-02-one-around-bank-to-two" src="/images/extensions/button-boards/guides/ten-core-ribbon/02-one-around-bank-to-two.png" title="Prime cable path — view 2 of 5" alt="Prime cable path — view 2 of 5; source-numbered Prime P11 and Button Boards contacts." caption="Follow matching continuation numbers in order. Source artwork remains unchanged; the corrected path passes around the filled serial text." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-03-two-right-descent-to-three" src="/images/extensions/button-boards/guides/ten-core-ribbon/03-two-right-descent-to-three.png" title="Prime cable path — view 3 of 5" alt="Prime cable path — view 3 of 5; source-numbered Prime P11 and Button Boards contacts." caption="Follow matching continuation numbers in order. Source artwork remains unchanged; the corrected path passes around the filled serial text." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-04-three-lower-turn-to-four" src="/images/extensions/button-boards/guides/ten-core-ribbon/04-three-lower-turn-to-four.png" title="Prime cable path — view 4 of 5" alt="Prime cable path — view 4 of 5; source-numbered Prime P11 and Button Boards contacts." caption="Follow matching continuation numbers in order. Source artwork remains unchanged; the corrected path passes around the filled serial text." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-05-four-to-ribbon-jacket" src="/images/extensions/button-boards/guides/ten-core-ribbon/05-four-to-ribbon-jacket.png" title="Prime cable path — view 5 of 5" alt="Prime cable path — view 5 of 5; source-numbered Prime P11 and Button Boards contacts." caption="Follow matching continuation numbers in order. Source artwork remains unchanged; the corrected path passes around the filled serial text." width=420 %}
-
-</details>
-
-{% include _includes/extension-instruction-diagram.html id="button-v14-ten-core-button-v14-seven-controls" src="/images/extensions/button-boards/guides/ten-core-ribbon/button-seven-controls.png" title="Seven button positions and unused chain connection" alt="Seven button positions and unused chain connection; source-numbered Prime P11 and Button Boards contacts." caption="SW1–SW3 top; SW4–SW6 middle; SW7 bottom. Leave J2 unused and JP1–JP7 open. J2 supply contacts remain connected despite open signal links." width=420 %}
-
-This example uses a ten-contact straight-through cable from the Prime P11 J37 connector to the button board’s J1. It connects **all seven button circuits**, even when you intend to press only SW1. Before connecting, remove conflicting assignments on PB1, PJ4, PA4, PG0, PJ3, PG1 and PJ2 and establish that all seven are GPIO inputs (the example enables pull-ups) in the selected firmware configuration. A different Prime model requires its own checked contact map.
-
-The connector drawings locate native PCB pads. Use a correctly mating assembly, identify contact 1 at both ends, and verify every numbered connection while unpowered; the red cable edge alone does not prove continuity.
-
-On a narrow screen, scroll the contact schedule horizontally to read all four columns. Longer descriptions wrap within their column.
-
-<div class="extension-contact-table" role="region" aria-label="Ten-core ribbon contact schedule; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Ribbon core | Prime J37 | Button-board J1 | Use in this example |
-| --- | --- | --- | --- |
-| 1 | Limited 3.3 V | +3V3 | Seven pull-up/filter networks |
-| 2 | Limited 5 V | +5V | Physically connected; forwarded to J2.2/TP3, no external load |
-| 3 | PB1 | BTN1_OUT | SW1 |
-| 4 | PJ4 | BTN2_OUT | SW2 |
-| 5 | PA4 | BTN3_OUT | SW3 |
-| 6 | PG0 | BTN4_OUT | SW4 |
-| 7 | PJ3 | BTN5_OUT | SW5 |
-| 8 | PG1 | BTN6_OUT | SW6 |
-| 9 | PJ2 | BTN7_OUT | SW7 |
-| 10 | Ground | Ground | Common return |
-{: style="table-layout: fixed !important; width: 640px;"}
-
-</div>
-
-1. Disconnect power from the controller and board. Leave J2 unused and check that JP1–JP7 are open. J2's supply contacts pass through directly; opening these seven signal links does not disconnect J2's rails.
-2. Verify all ten cable positions against the schedule and the matching native-contact details. Do not assume another board uses the same connector orientation.
-3. Resolve every existing assignment on all seven GPIOs. The example below creates seven input buttons; it does not arbitrate conflicts with other firmware modules. Check both supply rails and the selected controller's available rail budget before applying power.
-4. Test with machine loads disabled. Release all buttons before startup, then check each button individually and in combination. Pressing any of the seven invokes a software halt in this example; releasing a button does not clear that halt. Check disconnected-cable behavior separately. This board is a user interface, not a safety-rated emergency-stop system.
-
-## Configure all seven inputs
-
-The V2 button-box implementation creates a separate `Pin::AS_INPUT` for each enabled named entry and accepts `KILL` as the press action. Configure all seven physically connected signals deliberately.
+Button 1, on PB1. Pressing it halts the controller; releasing it does not resume.
 
 ```ini
 [button box]
-extension_button_1.enable = true
-extension_button_1.pin = PB1!^
-extension_button_1.press = KILL
-
-extension_button_2.enable = true
-extension_button_2.pin = PJ4!^
-extension_button_2.press = KILL
-
-extension_button_3.enable = true
-extension_button_3.pin = PA4!^
-extension_button_3.press = KILL
-
-extension_button_4.enable = true
-extension_button_4.pin = PG0!^
-extension_button_4.press = KILL
-
-extension_button_5.enable = true
-extension_button_5.pin = PJ3!^
-extension_button_5.press = KILL
-
-extension_button_6.enable = true
-extension_button_6.pin = PG1!^
-extension_button_6.press = KILL
-
-extension_button_7.enable = true
-extension_button_7.pin = PJ2!^
-extension_button_7.press = KILL
-
+raw_button.enable = true
+raw_button.pin = PB1!^
+raw_button.press = KILL
 ```
 
-`!` makes the grounded button active and `^` selects the host pull-up; the board also has its own 10 kΩ pull-ups. A button held at startup can invoke its first press action. This software halt is not an independent hardware stop.
+<code>^</code> enables the internal pull-up and <code>!</code> inverts the input. A button already held at start-up can trigger at once. This is a software halt, not an emergency stop ([button box source](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/buttonbox/buttonbox.cpp)).
 
-The seven-input parser, input-mode creation, pin suffixes and software halt follow the [V2 Button Box source](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/buttonbox/buttonbox.cpp) and the [pin parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Pin.cpp).
+### 2. A command on each button (button box) {#config-all}
 
-<details markdown="1">
-<summary>Alternative three-lead SW1 example and earlier cable studies</summary>
-
-This alternative connects only contacts 1, 3 and 10, leaving all other contacts physically disconnected. Its single-input configuration must not be used as the configuration for the complete ten-core ribbon above.
-
-## Alternative three-lead connection to Smoothieboard V2 Prime {#alternative-three-lead-connection-to-smoothieboard-v2-prime}
-
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-integral-installation" src="/images/extensions/button-boards/guides/native-contact/button-native-reader.png" title="Use onboard button SW1" alt="Three individual leads connect Prime J37 and Button Board J1 contacts 1, 3 and 10; onboard SW1 pulls PB1 LOW." caption="Three solid external leads attach to actual connector-art odd/even row details. All twenty contact instances are retained; whole-board locators identify their positions. Onboard SW1, R1, R8 and C1 remain the selected circuit. No 5 V or chain lead. P11 artwork uses checked P12 J37 allocation; contact keys are front-coordinate projections, not mating faces." width=2000 %}
-
-### Enlarged installation contact numbers
-
-Use these enlarged keys with the complete circuit above. Filled contacts are selected for this example; open contacts stay unused. Jumper keys identify the selected solder bridge. These sheets do not replace the circuit or establish cable mating-face orientation.
-
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-installation-key-j1" src="/images/extensions/button-boards/guides/native-contact/J1-numbered-pads.png" title="J1 contact numbers for this installation" alt="Enlarged component-side pad positions for J1; filled contacts are selected in the complete circuit." caption="Read with the complete wiring diagram above. This preserves native relative pad positions and numbering. It is a PCB front-coordinate projection, not a cable mating-face drawing; verify the actual connector orientation before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-installation-key-j37" src="/images/extensions/button-boards/guides/native-contact/J37-numbered-pads.png" title="J37 contact numbers for this installation" alt="Enlarged component-side pad positions for J37; filled contacts are selected in the complete circuit." caption="Read with the complete wiring diagram above. This preserves native relative pad positions and numbering. It is a PCB front-coordinate projection, not a cable mating-face drawing; verify the actual connector orientation before wiring." width=420 %}
-
-The example uses SW1 as a source-checked software halt input on P12 Prime2590 GF/J37 contact 3 (PB1). The remaining six inputs must stay unallocated or be deliberately configured.
-
-The P12 Prime2590 allocation below applies only to that board. Its rail contacts are 1 = limited 3.3 V, 2 = limited 5 V, 10 = ground; verify the actual unshrouded host header and cable orientation before applying power.
-
-1. Power off. Connect three individual leads: **GF/J37.1 → J1.1 (3.3 V)**, **GF/J37.3 → J1.3 (PB1)** and **GF/J37.10 → J1.10 (ground)**. Leave contact 2 (5 V) and contacts 4–9 unconnected. Verify each lead against the numbered component-side pad views before applying power.
-2. Leave J2 unused for the initial test; do not attach another device that drives any shared button line.
-3. Confirm PB1 is free. The selected SW1/R1/R8/C1 path supports the active-low button convention; physical assembled behavior still needs verification.
-4. With machine loads disabled, check that releasing SW1 is inactive and pressing it invokes the configured action; also check simultaneous presses and a disconnected cable.
-
-## Smoothieware use
-
-The V2 buttonbox module parses the real [button box] section, a named enable flag, pin and press action. The example below configures only SW1; it does not reserve or configure the other six contacts.
-
-The buttonbox and pin-parser behavior below follows upstream V2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`.
+Replaces example 1. Change each <code>press</code> line to the command that button should run.
 
 ```ini
 [button box]
-extension_button.enable = true
-extension_button.pin = PB1!^
-extension_button.press = KILL
+common.poll_frequency_hz = 100
+button_1.enable = true
+button_1.pin = PB1!^
+button_1.press = echo Button 1
+
+button_2.enable = true
+button_2.pin = PJ4!^
+button_2.press = echo Button 2
+
+button_3.enable = true
+button_3.pin = PA4!^
+button_3.press = echo Button 3
+
+button_4.enable = true
+button_4.pin = PG0!^
+button_4.press = echo Button 4
+
+button_5.enable = true
+button_5.pin = PJ3!^
+button_5.press = echo Button 5
+
+button_6.enable = true
+button_6.pin = PG1!^
+button_6.press = echo Button 6
+
+button_7.enable = true
+button_7.pin = PJ2!^
+button_7.press = echo Button 7
 ```
 
-`^` selects the internal pull-up and `!` makes a grounded input active. `KILL` invokes a software halt; it is not a safety-rated emergency-stop circuit. Resolve the existing PB1 allocation first, including external-driver examples that already use PB1. Test inactive, pressed and disconnected states with machine loads disabled.
+### 3. Input that you can read (switch module) {#config-input}
 
-The selected button syntax and press/release behavior also follow the [upstream V2 buttonbox source](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/buttonbox/buttonbox.cpp) and its [pin suffix parser](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/Hal/src/Pin.cpp). Startup with the button held can invoke the first press action; releasing it does not unhalt the machine.
+Reads button 1 without doing anything else. This entry replaces the button box entry for PB1: one pin can be claimed by one entry only.
 
-An unresolved electrical interface is not evidence that firmware support exists.
+```ini
+[switch]
+raw_input.enable = true
+raw_input.input_pin = PB1!^
+raw_input.input_pin_behavior = momentary
+```
 
-<details markdown="1">
-<summary>Earlier full-cable electrical layouts</summary>
+Send <code>switch raw_input</code> in the console to read it ([switch source](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/switch/Switch.cpp)).
 
-These older full-cable illustrations are retained for comparison. Use the complete seven-input ribbon procedure in the main guide, or use only the explicitly isolated three-lead SW1 alternative within this section. Do not combine the single-input configuration with a full ten-core cable.
+The board&rsquo;s own pull-ups hold the pins high, so the <code>^</code> internal pull-up is optional.
 
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-integral-installation-retained-alternative" src="/images/extensions/button-boards/guides/prime-source-located-installation.png" title="Earlier source comparison" alt="Source-numbered Prime, extension board and selected peripheral with continuous autorouted electrical paths." caption="Follow the three-lead connection procedure above." width=1950 %}
+## How it works {#how-it-works}
 
-{% include _includes/extension-instruction-diagram.html src="/images/extensions/button-boards/guides/button-boards-button1-wiring.png" id="button-boards-v14-wiring" title="Practical wiring" alt="Prime GF/J37 cable to button-board J1 and onboard SW1 through its series resistor, pull-up and filter capacitors." caption="Electrical schematic. Numbered banks show electrical identities rather than physical cavities. Verify cable continuity and pin 1." width="1950" %}
+A released button leaves its input pulled to 3.3&nbsp;V through 10&nbsp;k&Omega;. Pressing it connects the input to ground through 1&nbsp;k&Omega;, and the 100&nbsp;nF capacitor smooths contact bounce. Each button has its own pin, so several can be pressed together.
 
-</details>
+## Chaining {#chaining}
 
-### Match the numbered cable contacts
+{::nomarkdown}
+{% include _includes/extension-chain-figure.html id="xb-bb" board="button board" in_label="IN" chain_label="CHAIN" lane1="pin 3" lane2="pin 4" lane3="pin 5" s1="open" s2="open" s3="open" caption="As delivered every link is open: no button signal continues. Bridge a link to share that button." %}
+{:/nomarkdown}
 
-{% include _includes/extension-instruction-diagram.html id="button-boards-v14-orientation" src="/images/extensions/button-boards/guides/button-boards-connector-orientation.png" title="Component-side connector numbering and cable continuity" alt="Exact native PCB pad-centre layout of Prime GF J37 and the module input, with red pad 1 and all ten numbered conductor identities." caption="Component/front-side PCB views, uniformly enlarged eight times. Match pad numbers end to end; circles locate pad centres and do not depict connector cavities. No mating-face view or ribbon stripe is inferred." width=1200 %}
+Supply rails and ground pass to the chain socket directly. A bridged button signal is shared with the next board, so nothing there may drive it high. To free a pin completely for another board, remove that button&rsquo;s two resistors and capacitor, then bridge its link (printed on the board).
 
-</details>
+## Troubleshooting {#troubleshooting}
 
-## Check the configured input before using machine loads
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>A button does nothing</td><td>Cable contact numbers and the pin name.</td></tr>
+    <tr><td>Command runs at start-up</td><td>The button is held, or the pin lacks the <code>!</code> inversion.</td></tr>
+    <tr><td>Several commands from one press</td><td>Check for a short between neighbouring cable contacts.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-Keep machine loads disabled while checking the example. These are the expected consequences of the source-checked pull-up, inversion and `KILL` action, not recorded hardware test results.
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
 
-<div class="table-wrapper" markdown="1">
+## Downloads {#downloads}
 
-<div class="extension-contact-table" role="region" aria-label="Configured input checks; scroll horizontally to read all columns" tabindex="0" markdown="1">
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="/images/extensions/button-boards/v14/button-boards-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
+    <tr><td><a href="/images/extensions/button-boards/v14/button-boards-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
+    <tr><td><a href="/images/extensions/button-boards/v14/button-boards-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-| Condition | Expected result | If it differs |
-| --- | --- | --- |
-| Button released | Input is inactive; no new press action | Check for a short to ground, a normally-closed switch or incorrect input inversion. |
-| Button pressed | Input becomes active and requests a software halt | Check the numbered signal and ground contacts, configured pin and pin-allocation errors. |
-| Button released after a halt | Halt remains set; release does not resume the machine | The example has no release action. Follow the controller's normal recovery procedure only after resolving the cause. |
-| Signal wire disconnected | The host pull-up normally leaves the input inactive | This arrangement does not detect a broken signal wire; do not use it as a fail-safe stop circuit. |
-| Button held during startup | The first active sample may request a halt | Release buttons before startup; do not assume a release-and-press cycle is required. |
+## Appendix: mounting dimensions {#mounting}
 
-</div>
+For drilling a mounting plate or designing an enclosure. Positions are hole centres, in millimetres, measured from the top-left corner with the board seen from the component side.
 
-</div>
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-bb-mount-t">
+  <title id="xb-bb-mount-t">Mounting drawing of the bb, component side: outline 33 by 41.5 millimetres with 2 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="344.8" y="78.0" width="270.4" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M344.8 56H615.2"/><path d="M344.8 50V62"/><path d="M615.2 50V62"/><path d="M641.2 78.0V418.0"/><path d="M635.2 78.0h12"/><path d="M635.2 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">33</text>
+  <text x="653.2" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">41.5</text>
+  <circle cx="344.8" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="332.8" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M286.8 104.0h30" fill="none"/><path d="M320.8 104.0l-8 -4v8z"/><path d="M286.8 104.0v30" fill="none"/><path d="M286.8 138.0l-4 -8h8z"/></g>
+  <text x="324.8" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="282.8" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="398.1" cy="384.4" r="13.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M381.0 384.4h34.2M398.1 367.3v34.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="385.0" y="361.3" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  6.50, 37.40</text>
+  <circle cx="561.9" cy="384.4" r="13.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M544.8 384.4h34.2M561.9 367.3v34.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="575.0" y="361.3" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  26.50, 37.40</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 33 × 41.5&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
 
-Check each of SW1–SW7 separately against the contact schedule, then check simultaneous presses. All seven entries deliberately use the same halt action in this example; a halted controller alone cannot identify which button was pressed. Verify contact identity with the unpowered continuity checks before assigning different machine actions.
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>6.50</td><td>37.40</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>26.50</td><td>37.40</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Sources
+## Appendix: electrical specifications {#electrical}
 
-Open the complete extracted project hierarchy in KiCad 9 with its standard libraries installed; see `SOURCE-NOTES.txt` for dependencies, attribution and licence notices.
+Values from the parts list and board printing.
 
-The upstream engineering links below were unavailable to anonymous readers when checked and remain provenance links. Firmware sources are separate from this retained board download.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Supply</td><td>3.3 V rail</td><td>—</td><td>3.3 V</td><td>—</td><td>From the controller</td></tr>
+    <tr><td>Pull-up</td><td>Each input</td><td>—</td><td>10 kΩ</td><td>—</td><td>Parts list</td></tr>
+    <tr><td>Series resistor</td><td>Each button</td><td>—</td><td>1 kΩ</td><td>—</td><td>Parts list</td></tr>
+    <tr><td>Filter capacitor</td><td>Each input</td><td>—</td><td>100 nF</td><td>—</td><td>X7R, parts list</td></tr>
+    <tr><td>Poll rate</td><td>Host</td><td>100 Hz</td><td>—</td><td>—</td><td>Board silk</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-- [Source directory](https://github.com/arthurwolf/extension-boards/tree/main/src/button-boards/attempt/versions/v14)
-- [Design specification](https://github.com/arthurwolf/extension-boards/blob/main/src/button-boards/specs.md)
-- [Design discussion](https://github.com/arthurwolf/extension-boards/blob/main/src/button-boards/design.md)
-- [All extension boards](/extension-boards)
+Originally designed by Bob Cousins.
 
-The upstream specification and design-discussion links returned 404 when checked; the matching CAD download above is available locally.
-
-
-<details markdown="1">
-<summary>Additional board views and engineering history</summary>
-
-{% include _includes/extension-board-visuals.html slug="button-boards" %}
-
-</details>
+See all boards on the [extension boards](/extension-boards) page.

@@ -1,158 +1,210 @@
 ---
 layout: default
 title: "BounceStop hardware debounce"
+description: "MAX6818 eight-switch debouncer board by Chris Cecil: pinout, jumpers and limits."
 permalink: /extensions/historical-bounce-stop
 ---
 
-# BounceStop hardware debounce
+{% include _includes/extension-board-page.html %}
 
-A MAX6818EAP+ conditions eight noisy switch inputs in hardware. The board adds change/enable control so a change can be latched and reset, permitting use as an eight-input interrupt expander. It is intended for slow mechanical contacts rather than fast pulse measurement.
-
-## Origin and original host
-
-This guide documents Ccecil’s BounceStop design; see the [original source](https://github.com/Ccecil/BounceStop/tree/9e938a20531446382ea9933614efd57284226b78). The design targets the Smoothieboard V2/Gadgeteer era. That does not make it compatible with every V2 Prime board, cable or firmware build.
-
-## Interfaces, power and limitations
-
-The author states that the Gadgeteer pinouts are wrong. Do not connect this board directly to Prime. J1–J8 are field 1 input, 2 ground, 3 5 V; J9 is the 12-contact output/control header. J10 offers seven output positions, with JP1 selecting Out4 or _EN and JP2 selecting Out2 or _CH. Those alternate functions are not interchangeable ordinary outputs.
-
-## Board-reference diagram
-
-**The original README warns that the Gadgeteer pinouts are wrong. Do not connect this board directly to Prime.** These reference sheets show the original design and identify its numbered contacts; they do not correct the pinout or describe an adapter.
-
-The J9 schematic symbol is 2 × 6 while its PCB footprint is 1 × 12. J10’s CCW naming and odd/even source numbering must be checked against the physical connector. Neither header is a verified mating-face or cable map. The rear jumpers are shown using labelled projected CAD overlays, not a physical rear mating view.
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-overview" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/overview.png" title="Bounce Stop overview" alt="Bounce Stop overview" caption="MAX6818 debounce reference only. The original Gadgeteer pinout is wrong; do not connect to Prime or energize from this drawing." width=420 %}
-
-### Eight field-input connectors
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-j1-pins-1" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/j1-pins-1.png" title="Field input J1" alt="Field input J1" caption="Numbered contacts: 1 input, 2 ground, 3 the net named 5v. Net names do not specify a supply, current or sensor interface. Check physical mating before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-j2-pins-1" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/j2-pins-1.png" title="Field input J2" alt="Field input J2" caption="Numbered contacts: 1 input, 2 ground, 3 the net named 5v. Net names do not specify a supply, current or sensor interface. Check physical mating before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-j3-pins-1" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/j3-pins-1.png" title="Field input J3" alt="Field input J3" caption="Numbered contacts: 1 input, 2 ground, 3 the net named 5v. Net names do not specify a supply, current or sensor interface. Check physical mating before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-j4-pins-1" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/j4-pins-1.png" title="Field input J4" alt="Field input J4" caption="Numbered contacts: 1 input, 2 ground, 3 the net named 5v. Net names do not specify a supply, current or sensor interface. Check physical mating before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-j5-pins-1" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/j5-pins-1.png" title="Field input J5" alt="Field input J5" caption="Numbered contacts: 1 input, 2 ground, 3 the net named 5v. Net names do not specify a supply, current or sensor interface. Check physical mating before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-j6-pins-1" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/j6-pins-1.png" title="Field input J6" alt="Field input J6" caption="Numbered contacts: 1 input, 2 ground, 3 the net named 5v. Net names do not specify a supply, current or sensor interface. Check physical mating before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-j7-pins-1" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/j7-pins-1.png" title="Field input J7" alt="Field input J7" caption="Numbered contacts: 1 input, 2 ground, 3 the net named 5v. Net names do not specify a supply, current or sensor interface. Check physical mating before wiring." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-j8-pins-1" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/j8-pins-1.png" title="Field input J8" alt="Field input J8" caption="Numbered contacts: 1 input, 2 ground, 3 the net named 5v. Net names do not specify a supply, current or sensor interface. Check physical mating before wiring." width=420 %}
-
-### Output and control headers
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-j9-pins-1" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/j9-pins-1.png" title="J9 contacts · group 1" alt="J9 contacts · group 1" caption="The schematic symbol is 2 × 6 and the PCB footprint 1 × 12. Read numbered nets only; do not infer plug orientation or compatibility with Prime." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-j9-pins-2" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/j9-pins-2.png" title="J9 contacts · group 2" alt="J9 contacts · group 2" caption="The schematic symbol is 2 × 6 and the PCB footprint 1 × 12. Read numbered nets only; do not infer plug orientation or compatibility with Prime." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-j9-pins-3" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/j9-pins-3.png" title="J9 contacts · group 3" alt="J9 contacts · group 3" caption="The schematic symbol is 2 × 6 and the PCB footprint 1 × 12. Read numbered nets only; do not infer plug orientation or compatibility with Prime." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-j10-pins-1" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/j10-pins-1.png" title="J10 contacts · group 1" alt="J10 contacts · group 1" caption="README warns the Gadgeteer pinout is wrong. Check CCW naming and odd/even numbering against the physical connector. Separate rail names and alternate control functions are not a cable map." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-j10-pins-2" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/j10-pins-2.png" title="J10 contacts · group 2" alt="J10 contacts · group 2" caption="README warns the Gadgeteer pinout is wrong. Check CCW naming and odd/even numbering against the physical connector. Separate rail names and alternate control functions are not a cable map." width=420 %}
-
-### Rear solder-jumper selectors
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-jp1-pins-1" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/jp1-pins-1.png" title="Rear selector JP1" alt="Rear selector JP1" caption="Projected CAD pad overlay. This is not a physical rear mating view and does not show the fitted solder bridge. Follow the alternate-function nets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-jp2-pins-1" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/jp2-pins-1.png" title="Rear selector JP2" alt="Rear selector JP2" caption="Projected CAD pad overlay. This is not a physical rear mating view and does not show the fitted solder bridge. Follow the alternate-function nets." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-selector-limits" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/selector-limits.png" title="Alternate output and control limits" alt="Alternate output and control limits" caption="JP1 and JP2 select alternate output/control functions. _EN and _CH are not interchangeable ordinary outputs; check firmware service, signal levels and timing." width=420 %}
-
-### Debouncer and decoupling contacts
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-u1-pins-1" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/u1-pins-1.png" title="MAX6818 U1 contacts · group 1" alt="MAX6818 U1 contacts · group 1" caption="Numbered IC contacts and net names. See the datasheet for operating voltage, debounce timing and reset sequence." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-u1-pins-2" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/u1-pins-2.png" title="MAX6818 U1 contacts · group 2" alt="MAX6818 U1 contacts · group 2" caption="Numbered IC contacts and net names. See the datasheet for operating voltage, debounce timing and reset sequence." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-u1-pins-3" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/u1-pins-3.png" title="MAX6818 U1 contacts · group 3" alt="MAX6818 U1 contacts · group 3" caption="Numbered IC contacts and net names. See the datasheet for operating voltage, debounce timing and reset sequence." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-u1-pins-4" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/u1-pins-4.png" title="MAX6818 U1 contacts · group 4" alt="MAX6818 U1 contacts · group 4" caption="Numbered IC contacts and net names. See the datasheet for operating voltage, debounce timing and reset sequence." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-c1-pins-1" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/c1-pins-1.png" title="C1 decoupling contacts" alt="C1 decoupling contacts" caption="C1 spans nets 5v and ground. The net label does not specify a supply." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-reference-mounting-limits" src="/images/extensions/historical-bounce-stop/guides/annotated-reference/mounting-limits.png" title="Mounting and use limitations" alt="Mounting and use limitations" caption="Mounting geometry and unnumbered holes are reference only. Verify fasteners, clearances and connector orientation; do not connect the board directly to Prime." width=420 %}
-
-### Supplementary logical circuits
-
-These independently drawn circuit sheets explain the board connectivity. They do not copy the original board artwork, placement or native files and supplement the annotated reference sheets above. Use the contact inventory and all companion sheets together. Check physical cable orientation before wiring.
-
-Source: [original circuit](https://github.com/Ccecil/BounceStop/blob/9e938a20531446382ea9933614efd57284226b78/BounceStop0.2/Bouncestop_x1.kicad_pcb).
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-factual-channels-1" src="/images/extensions/historical-bounce-stop/guides/factual-circuits/channels-1-font-matched.png" title="Input and output nodes" alt="Input and output nodes — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-factual-channels-3" src="/images/extensions/historical-bounce-stop/guides/factual-circuits/channels-3-font-matched.png" title="Input and output nodes" alt="Input and output nodes — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-factual-channels-5" src="/images/extensions/historical-bounce-stop/guides/factual-circuits/channels-5-font-matched.png" title="Input and output nodes" alt="Input and output nodes — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-factual-channels-7" src="/images/extensions/historical-bounce-stop/guides/factual-circuits/channels-7-font-matched.png" title="Input and output nodes" alt="Input and output nodes — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-factual-common-2-1" src="/images/extensions/historical-bounce-stop/guides/factual-circuits/common-2-1-font-matched.png" title="Ground connector branches" alt="Ground connector branches — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-factual-common-2-5" src="/images/extensions/historical-bounce-stop/guides/factual-circuits/common-2-5-font-matched.png" title="Ground connector branches" alt="Ground connector branches — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-factual-common-3-1" src="/images/extensions/historical-bounce-stop/guides/factual-circuits/common-3-1-font-matched.png" title="5v net connector branches" alt="5v net connector branches — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-factual-common-3-5" src="/images/extensions/historical-bounce-stop/guides/factual-circuits/common-3-5-font-matched.png" title="5v net connector branches" alt="5v net connector branches — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-factual-jp1" src="/images/extensions/historical-bounce-stop/guides/factual-circuits/jp1-font-matched.png" title="Signal selection" alt="Signal selection — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-factual-jp2" src="/images/extensions/historical-bounce-stop/guides/factual-circuits/jp2-font-matched.png" title="Signal selection" alt="Signal selection — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-factual-host-1" src="/images/extensions/historical-bounce-stop/guides/factual-circuits/host-1-font-matched.png" title="Host direct paths and isolated supply" alt="Host direct paths and isolated supply — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-bounce-stop-factual-host-2" src="/images/extensions/historical-bounce-stop/guides/factual-circuits/host-2-font-matched.png" title="Host direct paths and isolated supply" alt="Host direct paths and isolated supply — logical connections, not physical board layout" caption="Logical circuit only; it does not show connector locations or mating." width=420 %}
-
-### Numbered source contacts and controls
-
-These are net memberships from the design files. Unassigned/unconnected pads must not receive invented connections. Auto-generated net names require schematic interpretation; they are not cable colours. Repeated footprints or pad numbers require geometric identity checks before wiring.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact inventory; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Design file | Connector/control | Label | Contact → net |
-|---|---|---|---|
-| Bouncestop_x1.kicad_pcb | J6 | Conn_01x03_Male | 1: In6; 2: GND; 3: 5v |
-| Bouncestop_x1.kicad_pcb | J4 | Conn_01x03_Male | 1: In4; 2: GND; 3: 5v |
-| Bouncestop_x1.kicad_pcb | J7 | Conn_01x03_Male | 1: In7; 2: GND; 3: 5v |
-| Bouncestop_x1.kicad_pcb | J1 | Conn_01x03_Male | 1: In1; 2: GND; 3: 5v |
-| Bouncestop_x1.kicad_pcb | J10 | Conn_02x05_Counter_Clockwise | 1: 3.3v; 2: 5v; 3: Out1; 4: OutJ2; 5: Out3; 6: OutJ4; 7: Out5; 8: Out6; 9: Out7; 10: GND |
-| Bouncestop_x1.kicad_pcb | J9 | Conn_02x06_Odd_Even | 1: 5v; 2: _EN; 3: Out1; 4: Out2; 5: Out3; 6: Out4; 7: Out5; 8: Out6; 9: Out7; 10: Out8; 11: _CH; 12: GND |
-| Bouncestop_x1.kicad_pcb | J2 | Conn_01x03_Male | 1: In2; 2: GND; 3: 5v |
-| Bouncestop_x1.kicad_pcb | J8 | Conn_01x03_Male | 1: In8; 2: GND; 3: 5v |
-| Bouncestop_x1.kicad_pcb | J5 | Conn_01x03_Male | 1: In5; 2: GND; 3: 5v |
-| Bouncestop_x1.kicad_pcb | J3 | Conn_01x03_Male | 1: In3; 2: GND; 3: 5v |
-| Bouncestop_x1.kicad_pcb | JP1 | Jumper_3_Bridged12 | 1: Out4; 2: OutJ4; 3: _EN |
-| Bouncestop_x1.kicad_pcb | JP2 | Jumper_3_Bridged12 | 1: Out2; 2: OutJ2; 3: _CH |
-
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Inputs</p>
+    <h1 id="historical-bounce-stop">BounceStop hardware debounce</h1>
+    <p class="xb-lead">Cleans up eight noisy switch inputs in hardware with a MAX6818, with an optional change flag so it can work as an eight-input interrupt expander.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#downloads">Downloads</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/historical-bounce-stop/directory-board-render.png" alt="Top view of the BounceStop hardware debounce board">
+    <figcaption>Top view drawn from the original board file. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-</details>
+<div class="xb-stats">
+  <div class="xb-stat"><b>8</b><span>debounced inputs</span></div>
+  <div class="xb-stat"><b>MAX6818</b><span>debouncer</span></div>
+  <div class="xb-stat"><b>3-pin</b><span>per input</span></div>
+  <div class="xb-stat"><b>2</b><span>solder jumpers</span></div>
+  <div class="xb-stat"><b>40 × 35 mm</b><span>board size</span></div>
+  <div class="xb-stat"><b>5 V</b><span>input connector supply</span></div>
+</div>
 
-## Practical use with Smoothieboard V2 Prime
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting dimensions</a>
+  <a href="#electrical">Electrical specifications</a>
+</nav>
+{:/nomarkdown}
 
-Do not route unknown conductors by guesswork.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <b>Do not plug this board straight into a Smoothieboard.</b> Its author states that its Gadgeteer header pinouts are wrong: wire it through an adapter or single leads that you have checked against the tables below. This is a design by Chris Cecil, not a current Smoothieware board.
+</sl-alert>
 
-For switch debouncing, first use the schematic to design and verify an adapter correcting the known header problem. Test a dry contact on one field input and observe its conditioned output and debounce delay on a bench. Do not attach any Prime socket without verified mating-face numbering and a corrected adapter. Interrupt mode additionally needs a deliberate _CH/_EN reset sequence.
+## Tech specs {#specs}
 
-GF/J37 examples refer to Prime: contacts 1/2/10 are limited 3.3 V/limited 5 V/ground; contacts 3–9 are PB1/PJ4/PA4/PG0/PJ3/PG1/PJ2. The host header is unshrouded. Verify physical numbering, polarity, per-rail current allowance and free-pin ownership before connection. This pin map does not establish hardware SPI, UART, CAN or PWM availability on an arbitrary contact.
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Function</td><td>Eight-channel switch debouncer</td></tr>
+    <tr><td>Chip</td><td>MAX6818EAP+</td></tr>
+    <tr><td>Inputs</td><td>J1–J8: signal, ground, 5 V</td></tr>
+    <tr><td>Outputs</td><td>J9 (12 contacts) and J10 (10 contacts)</td></tr>
+    <tr><td>Selectors</td><td>JP1: Out4 or _EN. JP2: Out2 or _CH</td></tr>
+    <tr><td>Size</td><td>40 × 35 mm</td></tr>
+    <tr><td>Meant for</td><td>Slow mechanical contacts, not fast pulse measurement</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Smoothieware support and example boundary
+## Board tour {#tour}
 
-V2’s ordinary button/endstop paths read logical inputs; they do not automatically service this MAX6818 board’s change-latch and enable sequence. An external ButtonBox callback is an extension point, not an installed MAX6818 driver. The original author also states that the Gadgeteer pinouts are wrong, so a corrected harness is required. Interrupt/change-latch mode additionally needs explicit CH/EN service; that service is not required when the outputs are continuously enabled as described below.
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/historical-bounce-stop/directory-board-render.png" alt="Annotated top view of the BounceStop hardware debounce board">
+      <a class="xb-mk xb-pb" href="#tour-1" style="left:72.8%;top:28.7%" aria-label="1: Input connectors J1–J8">1<span class="xb-pop"><b>Input connectors J1–J8</b> — Three contacts each: signal, ground, 5 V. J1 is shown; the others fill the same two rows.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-2" style="left:41.9%;top:28.7%" aria-label="2: Input J5">2<span class="xb-pop"><b>Input J5</b> — Positions are marked by input number in the pinout tables.</span></a>
+      <a class="xb-mk" href="#tour-3" style="left:49.7%;top:70.2%" aria-label="3: MAX6818">3<span class="xb-pop"><b>MAX6818</b> — The eight-channel debouncer.</span></a>
+      <a class="xb-mk" href="#tour-4" style="left:71.5%;top:70.3%" aria-label="4: J10">4<span class="xb-pop"><b>J10</b> — Ten-contact output header.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-5" style="left:81.2%;top:88.5%" aria-label="5: J9">5<span class="xb-pop"><b>J9</b> — Twelve-contact output and control header.</span></a>
+      <a class="xb-mk" href="#tour-6" style="left:72.7%;top:50.6%" aria-label="6: Connector J2">6<span class="xb-pop"><b>Connector J2</b> — Connector J2. Connects to <code>In2</code>, <code>GND</code>, <code>5v</code>.</span></a>
+      <a class="xb-mk" href="#tour-7" style="left:59.4%;top:78.9%" aria-label="7: Capacitor C1">7<span class="xb-pop"><b>Capacitor C1</b> — Capacitor C1, marked <code>C_Small</code> in the board file. Connects to <code>5v</code>, <code>GND</code>.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-8" style="left:57.4%;top:28.7%" aria-label="8: Connector J3">8<span class="xb-pop"><b>Connector J3</b> — Connector J3. Connects to <code>In3</code>, <code>GND</code>, <code>5v</code>.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Input connectors J1–J8</b> — Three contacts each: signal, ground, 5 V. J1 is shown; the others fill the same two rows.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Input J5</b> — Positions are marked by input number in the pinout tables.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>MAX6818</b> — The eight-channel debouncer.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>J10</b> — Ten-contact output header.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>J9</b> — Twelve-contact output and control header.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Connector J2</b> — Connector J2. Connects to <code>In2</code>, <code>GND</code>, <code>5v</code>.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Capacitor C1</b> — Capacitor C1, marked <code>C_Small</code> in the board file. Connects to <code>5v</code>, <code>GND</code>.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Connector J3</b> — Connector J3. Connects to <code>In3</code>, <code>GND</code>, <code>5v</code>.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
 
-### Parallel-output diagnostic, without interrupt service
+## Pinout {#pinout}
 
-The [MAX6818 datasheet](https://www.analog.com/media/en/technical-documentation/data-sheets/max6816-max6818.pdf), printed page 4, permits `_EN` tied to ground for continuously enabled outputs; `_CH` may then remain unused. This provides a discrete-input use without inventing a MAX6818-specific interrupt driver.
+<span id="connect-and-try-it"></span>
 
-A **3.3 V bench allocation**, rather than the incorrect original ten-way cable, uses Prime GF/J37.3 PB1 for board J10.3 Out1, a common return, a dry contact between J1.1 In1 and J1.2 ground, and local J9.2 `_EN` tied to J9.12 ground. Keep `_CH`, J10.4/.6, chain contacts and every 5 V source disconnected. In this evaluation mode the board net literally named `5v` would be supplied at 3.3 V: this is an intentional bench alternative, not the factory supply label or an instruction to join 3.3 V and 5 V rails. Check the rail current and output-level margins, actual fitted part, microload switch, corrected contact orientation and local 100 nF bypass before energizing.
+### Switch inputs
 
-After those checks, with machine loads disabled and an existing valid X actuator, merge this uniquely named diagnostic into the existing section:
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>input signal</td></tr>
+    <tr><td>2</td><td>ground</td></tr>
+    <tr><td>3</td><td>5 V</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+J2 to J8 follow J1: contact 1 is that input (In2 to In8), contact 2 ground, contact 3 5 V.
+
+### Output header J9
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J9 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>5v</code></td></tr>
+    <tr><td>2</td><td><code>_EN</code></td></tr>
+    <tr><td>3</td><td><code>Out1</code></td></tr>
+    <tr><td>4</td><td><code>Out2</code></td></tr>
+    <tr><td>5</td><td><code>Out3</code></td></tr>
+    <tr><td>6</td><td><code>Out4</code></td></tr>
+    <tr><td>7</td><td><code>Out5</code></td></tr>
+    <tr><td>8</td><td><code>Out6</code></td></tr>
+    <tr><td>9</td><td><code>Out7</code></td></tr>
+    <tr><td>10</td><td><code>Out8</code></td></tr>
+    <tr><td>11</td><td><code>_CH</code></td></tr>
+    <tr><td>12</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Output header J10
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J10 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>3.3v</code></td></tr>
+    <tr><td>2</td><td><code>5v</code></td></tr>
+    <tr><td>3</td><td><code>Out1</code></td></tr>
+    <tr><td>4</td><td><code>OutJ2</code></td></tr>
+    <tr><td>5</td><td><code>Out3</code></td></tr>
+    <tr><td>6</td><td><code>OutJ4</code></td></tr>
+    <tr><td>7</td><td><code>Out5</code></td></tr>
+    <tr><td>8</td><td><code>Out6</code></td></tr>
+    <tr><td>9</td><td><code>Out7</code></td></tr>
+    <tr><td>10</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Jumper JP1 (underside)
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>JP1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>Out4</code></td></tr>
+    <tr><td>2</td><td><code>OutJ4</code></td></tr>
+    <tr><td>3</td><td><code>_EN</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Jumper JP2 (underside)
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>JP2 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>Out2</code></td></tr>
+    <tr><td>2</td><td><code>OutJ2</code></td></tr>
+    <tr><td>3</td><td><code>_CH</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+The schematic draws J9 as a 2 × 6 connector while the board footprint is a single row of 12: follow the board.
+
+## What you need {#what-you-need}
+
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>BounceStop board</b><span>Built from the design files</span></div>
+  <div class="xb-card"><b>Switches</b><span>Up to eight mechanical contacts</span></div>
+  <div class="xb-card"><b>Adapter or single leads</b><span>To replace the wrong header pinout</span></div>
+</div>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+<span id="smoothieware-use"></span>
+
+For a bench test, one debounced output wired to a verified input can be read as an endstop that does not limit motion. The firmware has no driver for the change and enable sequence of the MAX6818.
 
 ```ini
 [endstops]
@@ -163,24 +215,96 @@ bounce_input1_diagnostic.homing_direction = none
 bounce_input1_diagnostic.limit_enable = false
 ```
 
-`PB1-` disables the controller’s internal pull resistor; the debouncer input bias is on the input side. Reserve PB1 exclusively. Send `M119` after each switch state settles, allowing at least 100 ms for the datasheet’s 20–80 ms debounce interval. Read the PB1 state in the `pins-` report. This observes a steady state; it does not measure debounce timing, enable homing, enable travel limits or establish a safety function.
+See [endstops](/endstops). Syntax checked against firmware commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`.
 
-The continuously enabled parallel-output diagnostic above uses the existing endstop input reader instead.
+## How it works {#how-it-works}
 
-The configuration above follows SmoothieV2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`.
+Each switch connects between a field input and ground. The MAX6818 ignores contact bounce and presents a stable level on the matching output. `_EN` enables the outputs and `_CH` flags that an input changed, until the outputs are read. The chip details are in the [MAX6816–MAX6818 datasheet](https://www.analog.com/en/products/max6816.html).
 
-## Requirements
+## Troubleshooting {#troubleshooting}
 
-The Gadgeteer pinout is wrong: use a corrected harness, and check supply and logic levels, debounce delay, the one-shot reset sequence and the Prime pin allocation before connecting.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Nothing responds</td><td>With power off, check continuity along each lead and board path against the pinout tables. Confirm which end of the connector is contact 1.</td></tr>
+    <tr><td>An output on J10 does not follow its input</td><td>JP1 and JP2 decide whether J10 contacts 4 and 6 carry outputs or the `_CH` and `_EN` control lines. Inspect both jumpers.</td></tr>
+    <tr><td>Outputs never change</td><td>`_EN` must be in its enabling state; see the datasheet.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Sources and attribution
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
 
-- [Ccecil upstream project](https://github.com/Ccecil/BounceStop)
-- [Original source](https://github.com/Ccecil/BounceStop/tree/9e938a20531446382ea9933614efd57284226b78)
-- [Original BounceStop_x1.kicad_sch](https://github.com/Ccecil/BounceStop/blob/9e938a20531446382ea9933614efd57284226b78/BounceStop0.2/BounceStop_x1.kicad_sch)
-- [Original Bouncestop_x1.kicad_pcb](https://github.com/Ccecil/BounceStop/blob/9e938a20531446382ea9933614efd57284226b78/BounceStop0.2/Bouncestop_x1.kicad_pcb)
-- [Original README.md](https://github.com/Ccecil/BounceStop/blob/9e938a20531446382ea9933614efd57284226b78/README.md)
+## Downloads {#downloads}
 
-The upstream project includes no license file, which does not place it in the public domain. Source attribution is retained for these reference sheets. Modern counterpart guides are functional comparisons only and do not imply matching pinouts.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/Ccecil/BounceStop/tree/9e938a20531446382ea9933614efd57284226b78">original source</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/BounceStop/blob/9e938a20531446382ea9933614efd57284226b78/BounceStop0.2/Bouncestop_x1.kicad_pcb">original circuit</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/BounceStop">Ccecil upstream project</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/BounceStop/blob/9e938a20531446382ea9933614efd57284226b78/BounceStop0.2/BounceStop_x1.kicad_sch">Original BounceStop_x1.kicad_sch</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/BounceStop/blob/9e938a20531446382ea9933614efd57284226b78/README.md">Original README.md</a></td><td>Design source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-[All extension boards](/extension-boards)
+## Appendix: mounting dimensions {#mounting}
+
+Outline and holes from the original board file. Millimetres, seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb--bounce-stop-mount-t">
+  <title id="xb--bounce-stop-mount-t">Mounting drawing of the historical-bounce-stop, component side: outline 40 by 35 millimetres with 2 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="285.7" y="78.0" width="388.6" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M285.7 56H674.3"/><path d="M285.7 50V62"/><path d="M674.3 50V62"/><path d="M700.3 78.0V418.0"/><path d="M694.3 78.0h12"/><path d="M694.3 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">40</text>
+  <text x="712.3" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">35</text>
+  <circle cx="285.7" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="273.7" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M227.7 104.0h30" fill="none"/><path d="M261.7 104.0l-8 -4v8z"/><path d="M227.7 104.0v30" fill="none"/><path d="M227.7 138.0l-4 -8h8z"/></g>
+  <text x="265.7" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="223.7" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="309.5" cy="231.0" r="12.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M293.4 231.0h32.3M309.5 214.9v32.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="297.4" y="263.1" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  2.45, 15.75</text>
+  <circle cx="649.5" cy="231.0" r="12.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M633.4 231.0h32.3M649.5 214.9v32.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="661.7" y="263.1" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  37.45, 15.75</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 40 × 35&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>2.45</td><td>15.75</td><td>2.5&nbsp;mm, not plated</td><td>Mounting</td></tr>
+    <tr><td>2</td><td>37.45</td><td>15.75</td><td>2.5&nbsp;mm, not plated</td><td>Mounting</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Only what the design source states or the circuit fixes. Blank cells are not specified.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Voltage, current and temperature limits</td><td>Whole board</td><td>—</td><td>—</td><td>—</td><td>Not specified in the source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Design source {#origin}
+
+This board comes from the [original design files](https://github.com/Ccecil/BounceStop/tree/9e938a20531446382ea9933614efd57284226b78). It was drawn for an earlier controller generation than Smoothieboard V2 Prime; match connections contact by contact.
+See all boards on the [extension boards](/extension-boards) page.

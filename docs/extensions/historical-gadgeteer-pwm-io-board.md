@@ -1,286 +1,160 @@
 ---
 layout: default
 title: "Four-PWM/two-input/probe interface"
+description: "Four MOSFET PWM outputs, two switch inputs and a comparator probe input: pinout and limits."
 permalink: /extensions/historical-gadgeteer-pwm-io-board
 ---
 
-# Four-PWM/two-input/probe interface
-
-This V2 PWM accessory combines four MOSFET-buffered PWM outputs, two passively debounced switch inputs and an LMV331 comparator probe input. Output pull-up voltage can be selected or removed for open-drain use. The input and output functions are fixed by the circuit; it is not a seven-servo board.
-
-## Original host
-
-This guide documents the **Ccecil design**. [The upstream source](https://github.com/Ccecil/PWMBoard/tree/81b679e5a76acc3218640c740d5348ecd5ce32ed) contains the design files. It targets the Smoothieboard V2/Gadgeteer era. That target does not mean compatibility with every later V2 Prime board, cable or firmware build.
-
-## Interfaces, power and limitations
-
-Each 2N7002 output transistor connects its output to ground when its PWM gate is high. When the gate is low, the transistor releases the output; a fitted pull-up then raises it toward the selected supply. This is an inverting, sinking interface: a high host request produces a low output voltage. With the pull-up removed, the output needs a suitable external pull-up and remains open-drain; it cannot source a high level by itself.
-
-J1.3/.4 are GPIO1/2 returns, .5 comparator return and .6–9 PWM1–4 requests. J6–J9 are output 1 signal, 2 ground, 3 selected VS; J2 is external1 VS, 2 ground. J3/J4 are switch interfaces and J5 the probe. JP2 normally joins host 5 V to VS and must be cut before substituting an external source. The README lists probe ranges2.9–5 V default, 5–24 V after JP5-2 cut, 6–45 V after JP5-2/3 cut; these are the author’s configuration notes, not board ratings. Never apply high voltage using this summary alone.
-
-## Board-reference diagram
-
-These sheets identify every connector contact, jumper and component. **REFERENCE ONLY — DO NOT ENERGIZE from these drawings.** They do not give the fitted jumper state, clamp behavior, load ratings or mating orientation. Rear jumper details are overlays, not solder bodies or fitted bridges.
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-overview" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/overview.png" title="Four-channel PWM and input board overview" alt="Four-channel PWM and input board overview" caption="Four low-side PWM stages, two switch inputs and a comparator probe input. The README voltage ranges are not operating ratings." width=420 %}
-
-### Host and external supply
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-j1-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/j1-pins-1.png" title="J1 contacts · group 1" alt="J1 contacts · group 1" caption="Numbered contacts; this is not a plug-face view. JP2 joins host 5V to VS; check external supply and backfeed behavior." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-j1-pins-2" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/j1-pins-2.png" title="J1 contacts · group 2" alt="J1 contacts · group 2" caption="Numbered contacts; this is not a plug-face view. JP2 joins host 5V to VS; check external supply and backfeed behavior." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-j2-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/j2-pins-1.png" title="J2 contacts" alt="J2 contacts" caption="Numbered contacts; this is not a plug-face view. JP2 joins host 5V to VS; check external supply and backfeed behavior." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-jp2-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/jp2-pins-1.png" title="JP2 contacts" alt="JP2 contacts" caption="Numbered contacts; this is not a plug-face view. JP2 joins host 5V to VS; check external supply and backfeed behavior." width=420 %}
-
-### PWM output contacts, stages and selectors
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-j6-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/j6-pins-1.png" title="J6 contacts" alt="J6 contacts" caption="Gate HIGH sinks the output LOW; gate LOW releases it. Pull-up selection, load current, timing and firmware polarity depend on your installation." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-j7-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/j7-pins-1.png" title="J7 contacts" alt="J7 contacts" caption="Gate HIGH sinks the output LOW; gate LOW releases it. Pull-up selection, load current, timing and firmware polarity depend on your installation." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-j8-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/j8-pins-1.png" title="J8 contacts" alt="J8 contacts" caption="Gate HIGH sinks the output LOW; gate LOW releases it. Pull-up selection, load current, timing and firmware polarity depend on your installation." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-j9-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/j9-pins-1.png" title="J9 contacts" alt="J9 contacts" caption="Gate HIGH sinks the output LOW; gate LOW releases it. Pull-up selection, load current, timing and firmware polarity depend on your installation." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-q3-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/q3-pins-1.png" title="Q3 contacts" alt="Q3 contacts" caption="Gate HIGH sinks the output LOW; gate LOW releases it. Pull-up selection, load current, timing and firmware polarity depend on your installation." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-q2-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/q2-pins-1.png" title="Q2 contacts" alt="Q2 contacts" caption="Gate HIGH sinks the output LOW; gate LOW releases it. Pull-up selection, load current, timing and firmware polarity depend on your installation." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-q4-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/q4-pins-1.png" title="Q4 contacts" alt="Q4 contacts" caption="Gate HIGH sinks the output LOW; gate LOW releases it. Pull-up selection, load current, timing and firmware polarity depend on your installation." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-q1-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/q1-pins-1.png" title="Q1 contacts" alt="Q1 contacts" caption="Gate HIGH sinks the output LOW; gate LOW releases it. Pull-up selection, load current, timing and firmware polarity depend on your installation." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-r3-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/r3-pins-1.png" title="R3 contacts" alt="R3 contacts" caption="Gate HIGH sinks the output LOW; gate LOW releases it. Pull-up selection, load current, timing and firmware polarity depend on your installation." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-r2-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/r2-pins-1.png" title="R2 contacts" alt="R2 contacts" caption="Gate HIGH sinks the output LOW; gate LOW releases it. Pull-up selection, load current, timing and firmware polarity depend on your installation." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-r4-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/r4-pins-1.png" title="R4 contacts" alt="R4 contacts" caption="Gate HIGH sinks the output LOW; gate LOW releases it. Pull-up selection, load current, timing and firmware polarity depend on your installation." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-r1-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/r1-pins-1.png" title="R1 contacts" alt="R1 contacts" caption="Gate HIGH sinks the output LOW; gate LOW releases it. Pull-up selection, load current, timing and firmware polarity depend on your installation." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-jp6-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/jp6-pins-1.png" title="JP6 contacts" alt="JP6 contacts" caption="Gate HIGH sinks the output LOW; gate LOW releases it. Pull-up selection, load current, timing and firmware polarity depend on your installation." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-jp7-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/jp7-pins-1.png" title="JP7 contacts" alt="JP7 contacts" caption="Gate HIGH sinks the output LOW; gate LOW releases it. Pull-up selection, load current, timing and firmware polarity depend on your installation." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-jp8-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/jp8-pins-1.png" title="JP8 contacts" alt="JP8 contacts" caption="Gate HIGH sinks the output LOW; gate LOW releases it. Pull-up selection, load current, timing and firmware polarity depend on your installation." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-jp9-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/jp9-pins-1.png" title="JP9 contacts" alt="JP9 contacts" caption="Gate HIGH sinks the output LOW; gate LOW releases it. Pull-up selection, load current, timing and firmware polarity depend on your installation." width=420 %}
-
-### Switch inputs and their conditioning
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-j3-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/j3-pins-1.png" title="J3 contacts" alt="J3 contacts" caption="Conditioning and jumper contacts. Check installed bridges and input voltage margins." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-j4-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/j4-pins-1.png" title="J4 contacts" alt="J4 contacts" caption="Conditioning and jumper contacts. Check installed bridges and input voltage margins." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-jp3-1-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/jp3-1-pins-1.png" title="JP3-1 contacts" alt="JP3-1 contacts" caption="Conditioning and jumper contacts. Check installed bridges and input voltage margins." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-jp3-2-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/jp3-2-pins-1.png" title="JP3-2 contacts" alt="JP3-2 contacts" caption="Conditioning and jumper contacts. Check installed bridges and input voltage margins." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-jp4-1-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/jp4-1-pins-1.png" title="JP4-1 contacts" alt="JP4-1 contacts" caption="Conditioning and jumper contacts. Check installed bridges and input voltage margins." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-jp4-2-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/jp4-2-pins-1.png" title="JP4-2 contacts" alt="JP4-2 contacts" caption="Conditioning and jumper contacts. Check installed bridges and input voltage margins." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-r5-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/r5-pins-1.png" title="R5 contacts" alt="R5 contacts" caption="Conditioning and jumper contacts. Check installed bridges and input voltage margins." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-r6-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/r6-pins-1.png" title="R6 contacts" alt="R6 contacts" caption="Conditioning and jumper contacts. Check installed bridges and input voltage margins." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-r7-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/r7-pins-1.png" title="R7 contacts" alt="R7 contacts" caption="Conditioning and jumper contacts. Check installed bridges and input voltage margins." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-r8-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/r8-pins-1.png" title="R8 contacts" alt="R8 contacts" caption="Conditioning and jumper contacts. Check installed bridges and input voltage margins." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-c1-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/c1-pins-1.png" title="C1 contacts" alt="C1 contacts" caption="Conditioning and jumper contacts. Check installed bridges and input voltage margins." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-c2-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/c2-pins-1.png" title="C2 contacts" alt="C2 contacts" caption="Conditioning and jumper contacts. Check installed bridges and input voltage margins." width=420 %}
-
-### Comparator probe input and clamp network
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-j5-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/j5-pins-1.png" title="J5 contacts" alt="J5 contacts" caption="Comparator and clamp connectivity. README voltage ranges do not guarantee thresholds or sensor compatibility." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-u1-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/u1-pins-1.png" title="U1 contacts" alt="U1 contacts" caption="Comparator and clamp connectivity. README voltage ranges do not guarantee thresholds or sensor compatibility." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-d1-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/d1-pins-1.png" title="D1 contacts" alt="D1 contacts" caption="Comparator and clamp connectivity. README voltage ranges do not guarantee thresholds or sensor compatibility." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-d2-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/d2-pins-1.png" title="D2 contacts" alt="D2 contacts" caption="Comparator and clamp connectivity. README voltage ranges do not guarantee thresholds or sensor compatibility." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-r9-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/r9-pins-1.png" title="R9 contacts" alt="R9 contacts" caption="Comparator and clamp connectivity. README voltage ranges do not guarantee thresholds or sensor compatibility." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-r10-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/r10-pins-1.png" title="R10 contacts" alt="R10 contacts" caption="Comparator and clamp connectivity. README voltage ranges do not guarantee thresholds or sensor compatibility." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-r11-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/r11-pins-1.png" title="R11 contacts" alt="R11 contacts" caption="Comparator and clamp connectivity. README voltage ranges do not guarantee thresholds or sensor compatibility." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-r12-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/r12-pins-1.png" title="R12 contacts" alt="R12 contacts" caption="Comparator and clamp connectivity. README voltage ranges do not guarantee thresholds or sensor compatibility." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-r13-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/r13-pins-1.png" title="R13 contacts" alt="R13 contacts" caption="Comparator and clamp connectivity. README voltage ranges do not guarantee thresholds or sensor compatibility." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-r14-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/r14-pins-1.png" title="R14 contacts" alt="R14 contacts" caption="Comparator and clamp connectivity. README voltage ranges do not guarantee thresholds or sensor compatibility." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-r15-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/r15-pins-1.png" title="R15 contacts" alt="R15 contacts" caption="Comparator and clamp connectivity. README voltage ranges do not guarantee thresholds or sensor compatibility." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-r16-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/r16-pins-1.png" title="R16 contacts" alt="R16 contacts" caption="Comparator and clamp connectivity. README voltage ranges do not guarantee thresholds or sensor compatibility." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-c3-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/c3-pins-1.png" title="C3 contacts" alt="C3 contacts" caption="Comparator and clamp connectivity. README voltage ranges do not guarantee thresholds or sensor compatibility." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-jp5-1-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/jp5-1-pins-1.png" title="JP5-1 contacts" alt="JP5-1 contacts" caption="Comparator and clamp connectivity. README voltage ranges do not guarantee thresholds or sensor compatibility." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-jp5-2-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/jp5-2-pins-1.png" title="JP5-2 contacts" alt="JP5-2 contacts" caption="Comparator and clamp connectivity. README voltage ranges do not guarantee thresholds or sensor compatibility." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-jp5-3-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/jp5-3-pins-1.png" title="JP5-3 contacts" alt="JP5-3 contacts" caption="Comparator and clamp connectivity. README voltage ranges do not guarantee thresholds or sensor compatibility." width=420 %}
-
-### Mechanical features
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-h1-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/h1-pins-1.png" title="H1 contacts" alt="H1 contacts" caption="Mechanical feature, not an electrical connection. Check mounting clearance and enclosure fit." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-h2-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/h2-pins-1.png" title="H2 contacts" alt="H2 contacts" caption="Mechanical feature, not an electrical connection. Check mounting clearance and enclosure fit." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-pwm-reference-h3-pins-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/annotated-reference/h3-pins-1.png" title="H3 contacts" alt="H3 contacts" caption="Mechanical feature, not an electrical connection. Check mounting clearance and enclosure fit." width=420 %}
-
-### Supplementary logical circuits
-
-These circuit sheets explain the connectivity. They do not copy the original board artwork or placement and supplement the board-reference sheets above. Use the contact list and all companion sheets together.
-
-Source: [original circuit](https://github.com/Ccecil/PWMBoard/blob/81b679e5a76acc3218640c740d5348ecd5ce32ed/PWMlaserBoard.kicad_pcb). No grant to redistribute the original artwork is stated.
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-j6" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/j6.png" title="J6 switched output" alt="J6 switched output — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-jp6" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/jp6.png" title="JP6 supply choice" alt="JP6 supply choice — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-r3" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/r3.png" title="J6 output pull-up" alt="J6 output pull-up — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-j7" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/j7.png" title="J7 switched output" alt="J7 switched output — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-jp7" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/jp7.png" title="JP7 supply choice" alt="JP7 supply choice — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-r2" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/r2.png" title="J7 output pull-up" alt="J7 output pull-up — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-j8" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/j8.png" title="J8 switched output" alt="J8 switched output — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-jp8" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/jp8.png" title="JP8 supply choice" alt="JP8 supply choice — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-r4" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/r4.png" title="J8 output pull-up" alt="J8 output pull-up — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-j9" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/j9.png" title="J9 switched output" alt="J9 switched output — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-jp9" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/jp9.png" title="JP9 supply choice" alt="JP9 supply choice — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-r1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/r1.png" title="J9 output pull-up" alt="J9 output pull-up — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-j3" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/j3.png" title="J3 GPIO input" alt="J3 GPIO input — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-jp3-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/jp3-1.png" title="JP3-1 supply choice" alt="JP3-1 supply choice — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-jp3-2" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/jp3-2.png" title="J3 pull-up enable" alt="J3 pull-up enable — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-j4" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/j4.png" title="J4 GPIO input" alt="J4 GPIO input — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-jp4-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/jp4-1.png" title="JP4-1 supply choice" alt="JP4-1 supply choice — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-jp4-2" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/jp4-2.png" title="J4 pull-up enable" alt="J4 pull-up enable — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-jp5-1" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/jp5-1.png" title="JP5-1 supply choice" alt="JP5-1 supply choice — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-comparator-input" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/comparator-input.png" title="Comparator input path" alt="Comparator input path — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-jp5-3" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/jp5-3.png" title="Divider bypass link" alt="Divider bypass link — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-input-shunts" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/input-shunts.png" title="Comparator input shunts" alt="Comparator input shunts — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-zener" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/zener.png" title="Zener connection" alt="Zener connection — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-jp5-2" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/jp5-2.png" title="Optional 5V diode feed" alt="Optional 5V diode feed — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-diode-feed" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/diode-feed.png" title="Diode-to-input branch" alt="Diode-to-input branch — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-threshold" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/threshold.png" title="Comparator reference" alt="Comparator reference — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-comparator-output" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/comparator-output.png" title="Comparator output" alt="Comparator output — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-comparator-power" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/comparator-power.png" title="Comparator supply" alt="Comparator supply — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-jp2" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/jp2.png" title="VS supply bridge" alt="VS supply bridge — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-gadgeteer-pwm-io-board-factual-boundaries" src="/images/extensions/historical-gadgeteer-pwm-io-board/guides/factual-circuits/boundaries.png" title="Supply bridge and limits" alt="Supply bridge and limits — logical connections, not physical board layout" caption="Logical circuit only: it does not show connector locations, mating or ratings." width=420 %}
-
-### Numbered contacts and controls
-
-The table lists net memberships. Leave unassigned and unconnected pads unconnected. Auto-generated net names require schematic interpretation; they are not cable colours. Repeated footprints or pad numbers require physical identity checks before wiring.
-
-<details markdown="1">
-<summary>Contact list</summary>
-
-<div class="extension-contact-table" role="region" aria-label="Contact list; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Source file | Connector/control | Label | Contact → net |
-|---|---|---|---|
-| PWMlaserBoard.kicad_pcb | J2 | Conn_01x02_Pin | 1: VS; 2: GND |
-| PWMlaserBoard.kicad_pcb | J3 | Conn_01x03_Pin | 1: Net-(J3-Pin_1); 2: GND; 3: Net-(J3-Pin_3) |
-| PWMlaserBoard.kicad_pcb | JP2 | SolderJumper_2_Bridged | 1: +5V; 2: VS |
-| PWMlaserBoard.kicad_pcb | J9 | Conn_01x03_Pin | 1: Net-(J9-Pin_1); 2: GND; 3: VS |
-| PWMlaserBoard.kicad_pcb | J6 | Conn_01x03_Pin | 1: Net-(J6-Pin_1); 2: GND; 3: VS |
-| PWMlaserBoard.kicad_pcb | J7 | Conn_01x03_Pin | 1: Net-(J7-Pin_1); 2: GND; 3: VS |
-| PWMlaserBoard.kicad_pcb | J8 | Conn_01x03_Pin | 1: Net-(J8-Pin_1); 2: GND; 3: VS |
-| PWMlaserBoard.kicad_pcb | J5 | Conn_01x03_Pin | 1: Net-(J5-Pin_1); 2: GND; 3: Net-(J5-Pin_3) |
-| PWMlaserBoard.kicad_pcb | J4 | Conn_01x03_Pin | 1: Net-(J4-Pin_1); 2: GND; 3: Net-(J4-Pin_3) |
-| PWMlaserBoard.kicad_pcb | J1 | Conn_02x05_Odd_Even | 1: +3.3V; 2: +5V; 3: GPIO1; 4: GPIO2; 5: Comparator; 6: PWM1; 7: PWM2; 8: PWM3; 9: PWM4; 10: GND |
-| PWMlaserBoard.kicad_pcb | JP9 | SolderJumper_3_Bridged12 | 1: +5V; 2: Net-(JP9-C); 3: +3.3V |
-| PWMlaserBoard.kicad_pcb | JP4-2 | SolderJumper_2_Bridged | 1: Net-(JP4-2-A); 2: Net-(J4-Pin_1) |
-| PWMlaserBoard.kicad_pcb | JP3-1 | SolderJumper_3_Bridged12 | 1: +5V; 2: Net-(J3-Pin_1); 3: +3.3V |
-| PWMlaserBoard.kicad_pcb | JP5-3 | SolderJumper_2_Bridged | 1: Net-(JP5-3-A); 2: Net-(D1-K) |
-| PWMlaserBoard.kicad_pcb | JP7 | SolderJumper_3_Bridged12 | 1: +5V; 2: Net-(JP7-C); 3: +3.3V |
-| PWMlaserBoard.kicad_pcb | JP4-1 | SolderJumper_3_Bridged12 | 1: +5V; 2: Net-(J4-Pin_1); 3: +3.3V |
-| PWMlaserBoard.kicad_pcb | JP3-2 | SolderJumper_2_Bridged | 1: Net-(JP3-2-A); 2: Net-(J3-Pin_1) |
-| PWMlaserBoard.kicad_pcb | JP6 | SolderJumper_3_Bridged12 | 1: +5V; 2: Net-(JP6-C); 3: +3.3V |
-| PWMlaserBoard.kicad_pcb | JP5-2 | SolderJumper_2_Bridged | 1: +5V; 2: Net-(D2-A) |
-| PWMlaserBoard.kicad_pcb | JP5-1 | SolderJumper_3_Bridged12 | 1: +5V; 2: Net-(J5-Pin_1); 3: +3.3V |
-| PWMlaserBoard.kicad_pcb | JP8 | SolderJumper_3_Bridged12 | 1: +5V; 2: Net-(JP8-C); 3: +3.3V |
-
+{% include _includes/extension-board-page.html %}
+
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Interface</p>
+    <h1 id="historical-gadgeteer-pwm-io-board">Four-PWM/two-input/probe interface</h1>
+    <p class="xb-lead">Four MOSFET-buffered PWM outputs, two filtered switch inputs and a comparator probe input on one header.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#downloads">Downloads</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/historical-gadgeteer-pwm-io-board/directory-board-render.png" alt="Top view of the Four-PWM/two-input/probe interface board">
+    <figcaption>Top view drawn from the original board file. This is a drawing, not a photograph.</figcaption>
+  </figure>
 </div>
 
-</details>
-
-## Practical use with Smoothieboard V2 Prime
-
-For a single low-voltage PWM-load test, identify its permitted signal and supply voltage, select output pull-up correctly and keep external VS disconnected unless JP2 isolation is verified. Allocate an actual Prime PWM socket whose contacts 6–9 have the required timers; GF/J37 arbitrary GPIO is not equivalent. Check each output’s inversion/open-drain rise time into a harmless fixture first. Leave the high-voltage probe input unused until you have checked its resistor/jumper paths and thresholds.
-
-GF/J37 examples refer only to the **P12 Prime2590**: contacts 1/2/10 are limited 3.3 V/limited 5 V/ground; contacts 3–9 are PB1/PJ4/PA4/PG0/PJ3/PG1/PJ2. The host header is unshrouded. Verify physical numbering, polarity, per-rail current allowance and free-pin ownership before connection. This pin map does not establish hardware SPI, UART, CAN or PWM availability on an arbitrary contact.
-
-## Smoothieware support and example boundary
-
-The output circuit is inverting: a HIGH host gate sinks the output LOW, and LOW releases it toward its selected pull-up. Generic V2 hardware-PWM support does not by itself set the requested peripheral waveform, safe pull-up voltage, hardware-timer pin assignment or startup state.
-
-### Input and digital sink diagnostic
-
-Before running this meter-only example, check numbered continuity, jumper population, the 3.3 V rail budget and input/output voltage margins. Leave peripherals and machine loads disconnected. It does not configure a PWM waveform.
-
-A slow digital bench diagnostic does not require a PWM timer or peripheral protocol. Use only GPIO1 as an input and PWM1 as a digital transistor gate, with no peripheral or machine load attached. Select only 3.3 V pull-ups as below and leave 5 V/VS disconnected. The input has a 10 kΩ pull-up, 100 nF filter and 1 kΩ series connection to host PB1. A dry normally-open contact grounds it when closed. Output gate PG0 HIGH turns Q3 on and sinks J6.1 LOW; PG0 LOW releases J6.1 toward its selected 3.3 V / 10 kΩ pull-up. Therefore the `M42.18` logical ON command means drain LOW in this example. No `!` inversion is used; startup/halt false means gate LOW and drain released, not a guaranteed safe peripheral output. The example does not set PWM frequency/duty or control a laser.
-
-With power removed, establish these jumper choices:
-
-- **JP3-1**: Remove the default 1–2 bridge and fit 2–3 only. J3.1 selects the 3.3 V input supply; never bridge both rails.
-- **JP3-2**: Bridge 1–2. Connect selected J3.1 to the R5 input pull-up (10 kΩ).
-- **JP6**: Remove the default 1–2 bridge and fit 2–3 only. Select 3.3 V for the R3 output pull-up (10 kΩ).
-- **JP2**: No external VS supply and no host 5 V lead; verify no backfeed. The default bridge joins +5 V to VS, so do not inject either rail. Other jumper defaults are not relied on.
-
-Use only this partial cable and bench load; never plug in a full ribbon by connector shape:
-
-<div class="extension-contact-table" role="region" aria-label="PWM diagnostic wiring; scroll horizontally to read all columns" tabindex="0" markdown="1">
-
-| Source | Destination | Condition |
-| --- | --- | --- |
-| Prime P12 GF/J37.1 limited 3.3 V | J1.1 +3.3V | Only after checking rail budget and continuity |
-| J37.10 GND | J1.10 GND | Return |
-| J37.3 PB1 input | J1.3 GPIO1 | Via R7 (1 kΩ) to input J3.3 |
-| J37.6 PG0 output | J1.6 PWM1 | Q3 gate; no PWM timer configured |
-| Dry normally-open contact | J3.3 signal ↔ J3.2 ground | J3.1 not used externally |
-| High-impedance DC meter positive | J6.1 Q3 drain | No peripheral/load, no external voltage |
-| Meter negative | J6.2 ground | J6.3 VS unused |
-
+<div class="xb-stats">
+  <div class="xb-stat"><b>4</b><span>PWM outputs</span></div>
+  <div class="xb-stat"><b>2</b><span>switch inputs</span></div>
+  <div class="xb-stat"><b>1</b><span>probe input</span></div>
+  <div class="xb-stat"><b>2N7002</b><span>output MOSFETs</span></div>
+  <div class="xb-stat"><b>LMV331</b><span>comparator</span></div>
+  <div class="xb-stat"><b>40 × 50 mm</b><span>board size</span></div>
 </div>
 
-J1.2/4/5/7/8/9 unused; J2 external VS and all J4/J5/J7/J8/J9 contacts unused. J3.1 and J6.3 externally unused. No other host input/output ownership is implied. Comparator output is not connected to Prime.
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#mounting">Mounting dimensions</a>
+  <a href="#electrical">Electrical specifications</a>
+</nav>
+{:/nomarkdown}
 
-Reserve PB1 and PG0 exclusively and reserve command subcode 18. An existing valid X actuator configuration is required. Merge these uniquely named entries into the existing sections; do not duplicate sections or pin allocations.
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <b>The outputs invert and the jumpers decide the voltages.</b> A high request pulls the output low. JP2 feeds host 5 V to the output supply and must be cut before you connect another supply. Check every jumper before powering. This is a design by Chris Cecil, not a current Smoothieware board.
+</sl-alert>
+
+## Tech specs {#specs}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Function</td><td>PWM, switch and probe interface</td></tr>
+    <tr><td>Outputs</td><td>J6–J9: signal, ground, selected supply</td></tr>
+    <tr><td>Switch inputs</td><td>J3, J4</td></tr>
+    <tr><td>Probe input</td><td>J5</td></tr>
+    <tr><td>External output supply</td><td>J2 (cut JP2 first)</td></tr>
+    <tr><td>Size</td><td>40 × 50 mm</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Board tour {#tour}
+
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/historical-gadgeteer-pwm-io-board/directory-board-render.png" alt="Annotated top view of the Four-PWM/two-input/probe interface board">
+      <a class="xb-mk xb-pb" href="#tour-1" style="left:49.6%;top:36.5%" aria-label="1: Host header J1">1<span class="xb-pop"><b>Host header J1</b> — All logic signals.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-2" style="left:84.0%;top:30.1%" aria-label="2: Output 1">2<span class="xb-pop"><b>Output 1</b> — J7–J9 follow below.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-3" style="left:70.9%;top:29.2%" aria-label="3: Output MOSFETs">3<span class="xb-pop"><b>Output MOSFETs</b> — One per output.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-4" style="left:14.9%;top:23.0%" aria-label="4: External supply">4<span class="xb-pop"><b>External supply</b> — For the outputs.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-5" style="left:14.9%;top:34.7%" aria-label="5: Switch input 1">5<span class="xb-pop"><b>Switch input 1</b> — J4 is the second.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-6" style="left:14.9%;top:67.0%" aria-label="6: Probe input">6<span class="xb-pop"><b>Probe input</b> — Three-contact connector.</span></a>
+      <a class="xb-mk" href="#tour-7" style="left:34.5%;top:68.5%" aria-label="7: LMV331 comparator">7<span class="xb-pop"><b>LMV331 comparator</b> — Conditions the probe.</span></a>
+      <a class="xb-mk" href="#tour-8" style="left:70.9%;top:77.9%" aria-label="8: Transistor Q1">8<span class="xb-pop"><b>Transistor Q1</b> — Transistor Q1, marked <code>2N7002</code> in the board file. Connects to <code>PWM4</code>, <code>GND</code>.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Host header J1</b> — All logic signals.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Output 1</b> — J7–J9 follow below.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Output MOSFETs</b> — One per output.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>External supply</b> — For the outputs.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Switch input 1</b> — J4 is the second.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Probe input</b> — Three-contact connector.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>LMV331 comparator</b> — Conditions the probe.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Transistor Q1</b> — Transistor Q1, marked <code>2N7002</code> in the board file. Connects to <code>PWM4</code>, <code>GND</code>.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
+
+## Pinout {#pinout}
+
+<span id="connect-and-try-it"></span>
+
+### Host header J1
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>+3.3V</code></td></tr>
+    <tr><td>2</td><td><code>+5V</code></td></tr>
+    <tr><td>3</td><td><code>GPIO1</code></td></tr>
+    <tr><td>4</td><td><code>GPIO2</code></td></tr>
+    <tr><td>5</td><td><code>Comparator</code></td></tr>
+    <tr><td>6</td><td><code>PWM1</code></td></tr>
+    <tr><td>7</td><td><code>PWM2</code></td></tr>
+    <tr><td>8</td><td><code>PWM3</code></td></tr>
+    <tr><td>9</td><td><code>PWM4</code></td></tr>
+    <tr><td>10</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### External supply J2
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J2 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>VS</code></td></tr>
+    <tr><td>2</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+J6–J9: contact 1 output (PWM1–PWM4), contact 2 ground, contact 3 selected supply.
+
+J3 and J4: contact 2 ground; contacts 1 and 3 are the switch supply and signal. J5: probe connector, same layout.
+
+## What you need {#what-you-need}
+
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>PWM board</b><span>Built from the design files</span></div>
+  <div class="xb-card"><b>Meter</b><span>To check jumpers and levels</span></div>
+  <div class="xb-card"><b>Leads</b><span>Verified contact by contact</span></div>
+</div>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+<span id="smoothieware-use"></span>
+
+A contact on switch input 1 (PB1) and a digital test of one output on PG0. See [switch](/switch) and [endstops](/endstops). Syntax checked against firmware commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`.
 
 ```ini
 [endstops]
@@ -292,35 +166,109 @@ pwmboard_contact_diagnostic.limit_enable = false
 
 [switch]
 pwmboard_sink_diagnostic.enable = true
-pwmboard_sink_diagnostic.output_pin = PG0
-pwmboard_sink_diagnostic.output_type = digital
 pwmboard_sink_diagnostic.input_on_command = M42
 pwmboard_sink_diagnostic.input_off_command = M43
 pwmboard_sink_diagnostic.subcode = 18
+pwmboard_sink_diagnostic.output_pin = PG0
+pwmboard_sink_diagnostic.output_type = digital
 pwmboard_sink_diagnostic.startup_state = false
 pwmboard_sink_diagnostic.halt_set_to = false
 pwmboard_sink_diagnostic.ignore_on_halt = false
 ```
 
-After the electrical prerequisites are satisfied, use these separate commands:
+## How it works {#how-it-works}
 
-- `M119`: Observe `pins-` PB1 logical input with button open/closed; expect open HIGH / closed LOW after settling.
-- `M43.18`: PG0 LOW, Q3 released; meter output approaches selected 3.3 V through 10 kΩ.
-- `M42.18`: PG0 HIGH, Q3 sinking; meter output approaches ground, not a sourced rail.
-- `M43.18`: Return gate LOW / drain released; not a peripheral safety-OFF guarantee.
+Each output is a 2N7002 that connects its output to ground when the PWM signal is high; a selectable pull-up raises it again. Without the pull-up the output is open drain. The probe input is compared by an LMV331 with a clamp network on J5. See the [LMV331 datasheet](https://www.ti.com/lit/ds/symlink/lmv331.pdf).
 
-Startup and halt values describe configured firmware behavior, not reset-time pin levels or a safe peripheral state. The example does not cover comparator/probe operation, other channels, external VS supply or real peripheral waveforms.
+## Troubleshooting {#troubleshooting}
 
-The V2 behavior described here refers to SmoothieV2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`. Your installed firmware may differ.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Nothing responds</td><td>With power off, check continuity along each lead and board path against the pinout tables. Confirm which end of the connector is contact 1.</td></tr>
+    <tr><td>Output is inverted</td><td>Expected: invert the pin in the configuration if your load needs it.</td></tr>
+    <tr><td>Output never rises</td><td>Its pull-up jumper is open or the supply is missing.</td></tr>
+    <tr><td>Probe input does nothing</td><td>Check the probe jumpers and voltage before connecting a sensor.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-## Sources and attribution
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
 
-- [Ccecil upstream project](https://github.com/Ccecil/PWMBoard)
-- [Original design source](https://github.com/Ccecil/PWMBoard/tree/81b679e5a76acc3218640c740d5348ecd5ce32ed)
-- [Original PWMlaserBoard.kicad_pcb](https://github.com/Ccecil/PWMBoard/blob/81b679e5a76acc3218640c740d5348ecd5ce32ed/PWMlaserBoard.kicad_pcb)
-- [Original PWMlaserBoard.kicad_sch](https://github.com/Ccecil/PWMBoard/blob/81b679e5a76acc3218640c740d5348ecd5ce32ed/PWMlaserBoard.kicad_sch)
-- [Original README.md](https://github.com/Ccecil/PWMBoard/blob/81b679e5a76acc3218640c740d5348ecd5ce32ed/README.md)
+## Downloads {#downloads}
 
-The project has no license file; that is not public-domain permission. Preserve attribution, and resolve redistribution rights before reusing original artwork or layouts.
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/Ccecil/PWMBoard/tree/81b679e5a76acc3218640c740d5348ecd5ce32ed">The upstream source</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/PWMBoard/blob/81b679e5a76acc3218640c740d5348ecd5ce32ed/PWMlaserBoard.kicad_pcb">original circuit</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/PWMBoard">Ccecil upstream project</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/PWMBoard/blob/81b679e5a76acc3218640c740d5348ecd5ce32ed/PWMlaserBoard.kicad_sch">Original PWMlaserBoard.kicad_sch</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/PWMBoard/blob/81b679e5a76acc3218640c740d5348ecd5ce32ed/README.md">Original README.md</a></td><td>Design source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
-[All extension boards](/extension-boards)
+## Appendix: mounting dimensions {#mounting}
+
+Outline and holes from the original board file. Millimetres, seen from the component side.
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
+  <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-pwm-io-board-mount-t">
+  <title id="xb-pwm-io-board-mount-t">Mounting drawing of the historical-gadgeteer-pwm-io-board, component side: outline 40 by 50 millimetres with 3 mounting holes. Hole positions are listed in the table below.</title>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
+  <rect x="344.0" y="78.0" width="272.0" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M344.0 56H616.0"/><path d="M344.0 50V62"/><path d="M616.0 50V62"/><path d="M642.0 78.0V418.0"/><path d="M636.0 78.0h12"/><path d="M636.0 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">40</text>
+  <text x="654.0" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">50</text>
+  <circle cx="344.0" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="332.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M286.0 104.0h30" fill="none"/><path d="M320.0 104.0l-8 -4v8z"/><path d="M286.0 104.0v30" fill="none"/><path d="M286.0 138.0l-4 -8h8z"/></g>
+  <text x="324.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="282.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="476.6" cy="112.0" r="10.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M461.7 112.0h29.8M476.6 97.1v29.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="465.7" y="142.9" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  19.50, 5.00</text>
+  <circle cx="480.0" cy="258.2" r="8.5" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M467.5 258.2h25.0M480.0 245.7v25.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="488.5" y="239.7" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  20.00, 26.50</text>
+  <circle cx="476.6" cy="384.0" r="10.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M461.7 384.0h29.8M476.6 369.1v29.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="465.7" y="363.1" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  19.50, 45.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  </svg>
+  </div>
+  <figcaption>Board outline 40 × 50&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+</figure>
+
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>19.50</td><td>5.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>20.00</td><td>26.50</td><td>2.5&nbsp;mm, not plated</td><td>Mounting</td></tr>
+    <tr><td>3</td><td>19.50</td><td>45.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Only what the design source states or the circuit fixes. Blank cells are not specified.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Voltage, current and temperature limits</td><td>Whole board</td><td>—</td><td>—</td><td>—</td><td>Not specified in the source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Design source {#origin}
+
+Designed by Chris Cecil: [original design files](https://github.com/Ccecil/PWMBoard/tree/81b679e5a76acc3218640c740d5348ecd5ce32ed). It was drawn for the Smoothieboard V2 Gadgeteer era; check every connection against your own controller.
+See all boards on the [extension boards](/extension-boards) page.

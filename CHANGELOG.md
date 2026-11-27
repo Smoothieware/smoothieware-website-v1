@@ -6,6 +6,12 @@ History: see CHANGELOG.archive.md.
 
 ## [Unreleased]
 
+### Changed
+- Endstop inputs (basic) board page: updated for the current hardware, with 3.3 V controller signals in both supply positions, a resettable sensor fuse, static-discharge protection, test pads, new voltage figures and `^` pin settings.
+- Gadgeteer perma-proto page updated to board v17: visible cuttable copper links, chain connector moved to the left margin with labelled wiring holes, all example projects wired to off-board parts through screw terminals.
+
+- Serve SVG-derived extension-board illustrations as lossless WebP where the verified export saves space.
+
 ### Added
 
 - A page for the Endstop inputs (basic) board: pinout, wiring, configuration, limits, mounting, electrical and simulation data, with a comparison against the Endstop and probe inputs (advanced) board on both pages.
@@ -22,9 +28,12 @@ History: see CHANGELOG.archive.md.
 - Extension board drawings on the board directory and board pages now show their mounting and cable-tie holes.
 
 ### Changed
-- Endstop inputs (basic) board page: updated for the current hardware, with 3.3 V controller signals in both supply positions, a resettable sensor fuse, static-discharge protection, test pads, new voltage figures and `^` pin settings.
-- Gadgeteer perma-proto page updated to board v17: visible cuttable copper links, chain connector moved to the left margin with labelled wiring holes, all example projects wired to off-board parts through screw terminals.
 
+- The two Bouni spindle control pages show their wiring figures and meter procedures again.
+- All older extension board pages (the historical designs, the Bouni spindle control pages and the Carvera probe interface) rebuilt in the current page layout, with tech specs, pinout, configuration, troubleshooting, downloads and, where a board file exists, a numbered board tour and mounting drawing.
+- Comparison tables added to the extender and serial adapter board pages.
+- The extension board directory and the homepage list include the board pages they were missing (original designs replaced by a newer board stay linked from that board only).
+- Mounting tables on the parallel port breakout page list only the board and D-sub fixing holes, not connector pads.
 - Perma-proto Gadgeteer page, drawings and downloads updated for the new board: second chain connector with 2.54 mm wiring holes, six-hole strips with a DIP-width centre gap, rail lamps and solder jumpers, printed pin guide lines, four mounting holes; example projects re-laid out with no track cutting. Old guide drawings and version 15 downloads removed.
 - The two endstop boards are now named "Endstop inputs (basic)" and "Endstop and probe inputs (advanced)" and listed together. The advanced board page moved to a new address, and the old one redirects.
 - Extension board pages: rebuilt 20 more pages (Qwiic, SD card, wireless, USB and serial Wi-Fi, CAN, the Arduino, BeagleBone, Edison, Papilio, Raspberry Pi, ESP32 and Teensy host adapters, the parallel-port jig, both D-sub adapters and the buzzer module) to the current page layout, and updated their directory descriptions.

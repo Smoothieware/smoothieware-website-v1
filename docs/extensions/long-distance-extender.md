@@ -204,7 +204,7 @@ The emitter sits by the signal source, the receiver by the destination.
 
 {::nomarkdown}
 <div class="xb-cards">
-  <div class="xb-card"><b>Both boards</b><span></span></div>
+  <div class="xb-card"><b>Both boards</b><span>One pair, built from the design files in Downloads</span></div>
   <div class="xb-card"><b>A straight-through cable</b><span>All eight cores, only for this link.</span></div>
   <div class="xb-card"><b>A source</b><span>Up to three logic outputs and 5&nbsp;V.</span></div>
 </div>
@@ -268,6 +268,8 @@ The [switch module](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d
 ## How it works {#how-it-works}
 
 Each input is cleaned by a Schmitt-trigger inverter and driven onto a pair. The receiver converts it back and a second inversion restores the original level. Power travels on contacts 7 and 8 through protection at both ends. There is no fixed distance figure: test your signal rate and cable at the length you need.
+
+{% include _includes/extender-board-comparison.html %}
 
 ## Troubleshooting {#troubleshooting}
 

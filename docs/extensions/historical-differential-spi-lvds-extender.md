@@ -1,223 +1,259 @@
 ---
 layout: default
 title: "Differential SPI LVDS extender"
+description: "Paired-board LVDS extender for SPI signals: connectors and power warning."
 permalink: /extensions/historical-differential-spi-lvds-extender
 ---
 
-# Differential SPI LVDS extender
-
-This historical paired-layout circuit translates SPI MOSI, clock and chip select into LVDS toward a peripheral and translates MISO in the reverse direction. DSLVDS1001 line drivers and DS90LT012 receivers are present. It extends one fixed-direction SPI link, not arbitrary seven-wire GPIO and not Ethernet.
-
-
-**Power warning: do not power this board from a 5 V supply, and do not connect a conventional host 5 V supply.** The Eagle board connects the VDD contacts of all eight listed LVDS devices to the net named `5V0`. The DSLVDS1001 and DS90LT012A parts have a 4 V absolute maximum supply; their recommended supply ranges are 3.0–3.6 V and 2.7–3.6 V respectively. See the [TI DSLVDS1001 datasheet](https://www.ti.com/lit/gpn/DSLVDS1001) and [TI DS90LT012A datasheet](https://www.ti.com/lit/ds/symlink/ds90lt012a.pdf).
-
-**Receiver loading:** U6–U9 are **DS90LT012ATMF**, whose integrated termination is nominally 102 Ω. R1–R4 each add 100 Ω directly across one receiver's input pair: R1 at U8/MOSI, R2 at U7/CS, R3 at U6/SCK and R4 at U9/MISO. Each nominal parallel load is therefore about **50.5 Ω**. The DSLVDS1001's guaranteed 250 mV minimum differential output is specified into 100 Ω; that guarantee does not apply to this roughly halved load.
-
-G1.1 is an isolated `N$19` contact. The separate `3V3` net reaches JP1.2/JP2.2/G2.1 but does not power the ICs on `5V0`. Applying 3.3 V to an assumed host contact 1 therefore does not power the ICs. Feeding 3.3 V into `5V0` would still leave the double termination in place. MAX31855 firmware support does not make this board compatible with that sensor.
-
-## Design source and original host
-
-This guide documents the **historical [Ccecil design source](https://github.com/Ccecil/LVDS_SPI/tree/da5f05c83be2a4cb1d0fb3b8869efeebea22bc6d)**. The source targets the Smoothieboard V2/Gadgeteer era. That does not make it compatible with every later V2 Prime board, cable or firmware build.
-
-## Interfaces, power and limitations
-
-The original Fusion archive contains both Eagle board and schematic XML. G1/G2 are Gadgeteer connectors; J1/J2 are RJ45 endpoints; JP1/JP2 are seven-contact local headers. J1/J2 pins 1/2 are MOSI+/−, 3/6 CS+/−, 4/5 SCK+/−, 7/8 MISO−/+. The board contains 100 Ω receiver resistors. JP1/JP2 use 1 5 V, 2 3.3 V, 3 ground, 4 SCK, 5 MISO, 6 MOSI, 7 CS, with endpoint suffixes distinguishing the sides. G1 contact 1 is the isolated auto-named net N$19, not the 3.3 V rail; do not assume it supplies the converter ICs. No cable length or data rate is specified.
-
-## Board-reference diagram
-
-**Do not energize the board from a 5 V supply.** All eight IC VDD contacts connect to the net named 5V0, while the transmitter and receiver operating ranges are 3.0–3.6 V and 2.7–3.6 V. The separate 3V3 rail does not feed that IC supply path. The receiver termination is also doubled, as described above; changing the supply alone does not correct it.
-
-These sheets show the board and numbered component contacts. JP3 is shown as a labelled contact overlay, without a connector body. The custom RJ45 interfaces are **not Ethernet or PoE**.
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-overview" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/overview.png" title="Historical differential-SPI reference overview" alt="Historical differential-SPI reference overview — historical board reference" caption="Fixed-direction LVDS paths are not arbitrary GPIO or network interfaces. Do not power the board from 5 V." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-power-limits" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/power-limits.png" title="Supply and receiver-loading conflicts" alt="Supply and receiver-loading conflicts — historical board reference" caption="Do not power from 5 V. The 5V0 net feeds all eight ICs; the separate 3V3 rail does not power them. Nominal 102 Ω integrated termination with an external 100 Ω path gives about 50.5 Ω, outside the 100 Ω driver guarantee." width=420 %}
-
-### Gadgeteer and local signal contacts
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-g1-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/g1-pins-1.png" title="G1 contacts · group 1" alt="G1 contacts · group 1 — historical board reference" caption="Numbered nets and pin functions. Keep the separate 5V0/3V3 supply paths, signal directions and isolated contacts distinct; this is not a conventional cable map." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-g1-pins-2" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/g1-pins-2.png" title="G1 contacts · group 2" alt="G1 contacts · group 2 — historical board reference" caption="Numbered nets and pin functions. Keep the separate 5V0/3V3 supply paths, signal directions and isolated contacts distinct; this is not a conventional cable map." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-g2-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/g2-pins-1.png" title="G2 contacts · group 1" alt="G2 contacts · group 1 — historical board reference" caption="Numbered nets and pin functions. Keep the separate 5V0/3V3 supply paths, signal directions and isolated contacts distinct; this is not a conventional cable map." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-g2-pins-2" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/g2-pins-2.png" title="G2 contacts · group 2" alt="G2 contacts · group 2 — historical board reference" caption="Numbered nets and pin functions. Keep the separate 5V0/3V3 supply paths, signal directions and isolated contacts distinct; this is not a conventional cable map." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-jp1-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/jp1-pins-1.png" title="JP1 contacts · group 1" alt="JP1 contacts · group 1 — historical board reference" caption="Numbered nets and pin functions. Keep the separate 5V0/3V3 supply paths, signal directions and isolated contacts distinct; this is not a conventional cable map." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-jp1-pins-2" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/jp1-pins-2.png" title="JP1 contacts · group 2" alt="JP1 contacts · group 2 — historical board reference" caption="Numbered nets and pin functions. Keep the separate 5V0/3V3 supply paths, signal directions and isolated contacts distinct; this is not a conventional cable map." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-jp2-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/jp2-pins-1.png" title="JP2 contacts · group 1" alt="JP2 contacts · group 1 — historical board reference" caption="Numbered nets and pin functions. Keep the separate 5V0/3V3 supply paths, signal directions and isolated contacts distinct; this is not a conventional cable map." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-jp2-pins-2" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/jp2-pins-2.png" title="JP2 contacts · group 2" alt="JP2 contacts · group 2 — historical board reference" caption="Numbered nets and pin functions. Keep the separate 5V0/3V3 supply paths, signal directions and isolated contacts distinct; this is not a conventional cable map." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-jp3-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/jp3-pins-1.png" title="JP3 contact overlay" alt="JP3 contact overlay — historical board reference" caption="The labelled overlay locates the JP3 contacts; it does not show a connector body or mating face." width=420 %}
-
-### Custom differential cable endpoints
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-j1-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/j1-pins-1.png" title="Custom RJ45 J1 · contact group 1" alt="Custom RJ45 J1 · contact group 1 — historical board reference" caption="Custom LVDS signal assignment, not Ethernet or PoE. Check pair polarity, cable orientation, common reference and end-to-end timing; do not connect network equipment." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-j1-pins-2" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/j1-pins-2.png" title="Custom RJ45 J1 · contact group 2" alt="Custom RJ45 J1 · contact group 2 — historical board reference" caption="Custom LVDS signal assignment, not Ethernet or PoE. Check pair polarity, cable orientation, common reference and end-to-end timing; do not connect network equipment." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-j2-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/j2-pins-1.png" title="Custom RJ45 J2 · contact group 1" alt="Custom RJ45 J2 · contact group 1 — historical board reference" caption="Custom LVDS signal assignment, not Ethernet or PoE. Check pair polarity, cable orientation, common reference and end-to-end timing; do not connect network equipment." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-j2-pins-2" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/j2-pins-2.png" title="Custom RJ45 J2 · contact group 2" alt="Custom RJ45 J2 · contact group 2 — historical board reference" caption="Custom LVDS signal assignment, not Ethernet or PoE. Check pair polarity, cable orientation, common reference and end-to-end timing; do not connect network equipment." width=420 %}
-
-### Transmitter and receiver contacts
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-u2-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/u2-pins-1.png" title="LVDS component U2" alt="LVDS component U2 — historical board reference" caption="Component contacts and fixed signal direction. All eight IC VDD contacts are on 5V0; do not power them from 5 V." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-u3-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/u3-pins-1.png" title="LVDS component U3" alt="LVDS component U3 — historical board reference" caption="Component contacts and fixed signal direction. All eight IC VDD contacts are on 5V0; do not power them from 5 V." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-u4-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/u4-pins-1.png" title="LVDS component U4" alt="LVDS component U4 — historical board reference" caption="Component contacts and fixed signal direction. All eight IC VDD contacts are on 5V0; do not power them from 5 V." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-u5-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/u5-pins-1.png" title="LVDS component U5" alt="LVDS component U5 — historical board reference" caption="Component contacts and fixed signal direction. All eight IC VDD contacts are on 5V0; do not power them from 5 V." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-u6-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/u6-pins-1.png" title="LVDS component U6" alt="LVDS component U6 — historical board reference" caption="Component contacts and fixed signal direction. All eight IC VDD contacts are on 5V0; do not power them from 5 V." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-u7-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/u7-pins-1.png" title="LVDS component U7" alt="LVDS component U7 — historical board reference" caption="Component contacts and fixed signal direction. All eight IC VDD contacts are on 5V0; do not power them from 5 V." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-u8-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/u8-pins-1.png" title="LVDS component U8" alt="LVDS component U8 — historical board reference" caption="Component contacts and fixed signal direction. All eight IC VDD contacts are on 5V0; do not power them from 5 V." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-u9-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/u9-pins-1.png" title="LVDS component U9" alt="LVDS component U9 — historical board reference" caption="Component contacts and fixed signal direction. All eight IC VDD contacts are on 5V0; do not power them from 5 V." width=420 %}
-
-### Termination and decoupling details
-
-<details markdown="1">
-<summary>Individual resistor and capacitor contacts</summary>
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-r1-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/r1-pins-1.png" title="Receiver termination R1" alt="Receiver termination R1 — historical board reference" caption="100 Ω receiver-input path. With the receiver’s nominal 102 Ω integrated termination, the parallel load is about 50.5 Ω, below the 100 Ω load of the driver guarantee." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-r2-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/r2-pins-1.png" title="Receiver termination R2" alt="Receiver termination R2 — historical board reference" caption="100 Ω receiver-input path. With the receiver’s nominal 102 Ω integrated termination, the parallel load is about 50.5 Ω, below the 100 Ω load of the driver guarantee." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-r3-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/r3-pins-1.png" title="Receiver termination R3" alt="Receiver termination R3 — historical board reference" caption="100 Ω receiver-input path. With the receiver’s nominal 102 Ω integrated termination, the parallel load is about 50.5 Ω, below the 100 Ω load of the driver guarantee." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-r4-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/r4-pins-1.png" title="Receiver termination R4" alt="Receiver termination R4 — historical board reference" caption="100 Ω receiver-input path. With the receiver’s nominal 102 Ω integrated termination, the parallel load is about 50.5 Ω, below the 100 Ω load of the driver guarantee." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-c1-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/c1-pins-1.png" title="Capacitor C1" alt="Capacitor C1 — historical board reference" caption="Numbered decoupling contacts. A capacitor or rail label does not indicate a safe supply voltage." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-c2-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/c2-pins-1.png" title="Capacitor C2" alt="Capacitor C2 — historical board reference" caption="Numbered decoupling contacts. A capacitor or rail label does not indicate a safe supply voltage." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-c3-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/c3-pins-1.png" title="Capacitor C3" alt="Capacitor C3 — historical board reference" caption="Numbered decoupling contacts. A capacitor or rail label does not indicate a safe supply voltage." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-c4-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/c4-pins-1.png" title="Capacitor C4" alt="Capacitor C4 — historical board reference" caption="Numbered decoupling contacts. A capacitor or rail label does not indicate a safe supply voltage." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-c5-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/c5-pins-1.png" title="Capacitor C5" alt="Capacitor C5 — historical board reference" caption="Numbered decoupling contacts. A capacitor or rail label does not indicate a safe supply voltage." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-c6-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/c6-pins-1.png" title="Capacitor C6" alt="Capacitor C6 — historical board reference" caption="Numbered decoupling contacts. A capacitor or rail label does not indicate a safe supply voltage." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-c7-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/c7-pins-1.png" title="Capacitor C7" alt="Capacitor C7 — historical board reference" caption="Numbered decoupling contacts. A capacitor or rail label does not indicate a safe supply voltage." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-c8-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/c8-pins-1.png" title="Capacitor C8" alt="Capacitor C8 — historical board reference" caption="Numbered decoupling contacts. A capacitor or rail label does not indicate a safe supply voltage." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-c9-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/c9-pins-1.png" title="Capacitor C9" alt="Capacitor C9 — historical board reference" caption="Numbered decoupling contacts. A capacitor or rail label does not indicate a safe supply voltage." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-reference-c10-pins-1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/annotated-reference/c10-pins-1.png" title="Capacitor C10" alt="Capacitor C10 — historical board reference" caption="Numbered decoupling contacts. A capacitor or rail label does not indicate a safe supply voltage." width=420 %}
-
-</details>
-
-### Supplementary logical circuits
-
-These circuit sheets explain the connectivity and supplement the board-reference sheets above. They are not copies of the original board artwork or placement. Use the contact inventory and all companion sheets together.
-
-Source: [original Fusion archive](https://github.com/Ccecil/LVDS_SPI/blob/da5f05c83be2a4cb1d0fb3b8869efeebea22bc6d/LVDS_SPI/LVDS_SPI%20v28.f3z), which contains the Eagle board data used here.
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-power-conflict" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/power-conflict.png" title="IC supply warning" alt="IC supply warning — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-u2" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/u2.png" title="Host MOSI driver" alt="Host MOSI driver — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-u3" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/u3.png" title="Host CS driver" alt="Host CS driver — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-u4" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/u4.png" title="Host SCK driver" alt="Host SCK driver — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-u5" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/u5.png" title="Remote MISO driver" alt="Remote MISO driver — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-u6" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/u6.png" title="Remote SCK receiver" alt="Remote SCK receiver — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-u7" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/u7.png" title="Remote CS receiver" alt="Remote CS receiver — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-u8" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/u8.png" title="Remote MOSI receiver" alt="Remote MOSI receiver — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-u9" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/u9.png" title="Host MISO receiver" alt="Host MISO receiver — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-g1-signals" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/g1-signals.png" title="G1 logic breakout" alt="G1 logic breakout — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-g1-power" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/g1-power.png" title="G1 supply nodes" alt="G1 supply nodes — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-g2-signals" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/g2-signals.png" title="G2 logic breakout" alt="G2 logic breakout — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-g2-power" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/g2-power.png" title="G2 supply nodes" alt="G2 supply nodes — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-3v3" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/3v3.png" title="3V3 nodes" alt="3V3 nodes — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-supply-input" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/supply-input.png" title="Auxiliary supply nodes" alt="Auxiliary supply nodes — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-ic-power-2" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/ic-power-2.png" title="IC supply nodes" alt="IC supply nodes — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-ic-power-6" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/ic-power-6.png" title="IC supply nodes" alt="IC supply nodes — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-r1" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/r1.png" title="R1 external termination" alt="R1 external termination — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-r2" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/r2.png" title="R2 external termination" alt="R2 external termination — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-r3" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/r3.png" title="R3 external termination" alt="R3 external termination — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-r4" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/r4.png" title="R4 external termination" alt="R4 external termination — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-g1-aux" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/g1-aux.png" title="Auxiliary header contacts" alt="Auxiliary header contacts — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="historical-differential-spi-lvds-extender-factual-g2-aux" src="/images/extensions/historical-differential-spi-lvds-extender/guides/factual-circuits/g2-aux.png" title="Auxiliary header contacts" alt="Auxiliary header contacts — logical connections, not physical board layout" caption="Circuit diagram only; it does not show connector locations or mating." width=420 %}
-
-
-### Numbered contacts and controls
-
-These are net memberships from the design files. Do not make connections to unassigned or unconnected pads. Auto-generated net names must be read against the schematic; they are not cable colours. Check repeated footprints or pad numbers by position before wiring.
-
-| Source file | Connector/control | Label | Contact → net |
-|---|---|---|---|
-| LVDS_SPI v28.f3z | G1 | SHF-105-01-X-D-SM | 1: N$19; 2: 5V0; 3: GPIO2; 4: GPIO3; 5: GPIO1; 6: CS; 7: MOSI; 8: MISO; 9: SCK; 10: GND |
-| LVDS_SPI v28.f3z | J1 | RJ45 | 8: MISO_M_P; 7: MISO_M_N; 6: CS_N; 4: SCK_P; 2: MOSI_N; 5: SCK_N; 3: CS_P; 1: MOSI_P |
-| LVDS_SPI v28.f3z | J2 | RJ45 | 8: MISO_P; 7: MISO_N; 6: CS_S_N; 4: SCK_S_P; 2: MOSI_S_N; 5: SCK_S_N; 3: CS_S_P; 1: MOSI_S_P |
-| LVDS_SPI v28.f3z | JP1 | 1X07 | 1: 5V0; 2: 3V3; 3: GND; 4: SCK_; 5: MISO_; 6: MOSI_; 7: CS_ |
-| LVDS_SPI v28.f3z | JP2 | 1X07 | 1: 5V0; 2: 3V3; 3: GND; 4: SCK; 5: MISO; 6: MOSI; 7: CS |
-| LVDS_SPI v28.f3z | G2 | SHF-105-01-X-D-SM | 1: 3V3; 2: 5V0; 3: N/C; 4: N$24; 5: N$20; 6: CS_; 7: MOSI_; 8: MISO_; 9: SCK_; 10: GND |
-| LVDS_SPI v28.f3z | JP3 | 1X02 | 1: GND; 2: 5V0 |
-
-## Practical use with Smoothieboard V2 Prime
-
-For a remote SPI sensor experiment, identify the master and slave halves from their driver/receiver direction rather than RJ45 appearance. Use a continuity-checked straight-through cable preserving the four twisted pairs and never connect to network equipment. Connect one supported SPI peripheral to the slave-side local signals. Check the Prime SPI socket, chip-select mux, both endpoint power sources and the delay budget; do not copy the modern differential-SPI board geometry or its cable-power scheme.
-
-On the GF/J37 connector of **Prime2590**, contacts 1/2/10 are limited 3.3 V/limited 5 V/ground; contacts 3–9 are PB1/PJ4/PA4/PG0/PJ3/PG1/PJ2. The host header is unshrouded. Verify physical numbering, polarity, per-rail current allowance and free-pin ownership before connection. This pin map does not establish hardware SPI, UART, CAN or PWM availability on an arbitrary contact.
-
-## Smoothieware support and example boundary
-
-### SPI transport and sensor example
-The 5V0 rail powers the DSLVDS1001/DS90LT012 parts despite their 3.3 V operating range and 4 V absolute maximum. Do not energize the board from 5 V. JP1/JP2 expose supply, ground and SCK/MISO/MOSI/CS, but the RJ45 differential pairs do not themselves carry a ground reference. Changing the board to 3.3 V is a hardware change, not a firmware setting.
-
-The transport has no register driver. For a mode 0, 1 MHz MAX31855 interface, the firmware settings are as follows. This is the sensor software configuration only; the board as designed is not a working setup for it.
-
-```ini
-[temperature control]
-transport_tc.enable = true
-transport_tc.sensor = max31855
-transport_tc.spi_channel = 0
-transport_tc.spi_select_pin = PD15
-transport_tc.readings_per_second = 20
-transport_tc.heater_pin = nc
-transport_tc.designator = XT
-transport_tc.tool_id = 251
-```
-
-Prime GE/J36 SPI1 COPI/CIPO/SCK are contacts 7/8/9 and PD15 is contact 6; that is the host bus allocation, not a cable for this board. With a working link and sensor, `M105` reports XT and plain `M305` reports sensor diagnostics. No heater is driven. The driver fixes mode 0 at 1 MHz and exposes neither a lower clock nor data/clock inversion or CS-delay configuration; readings_per_second is polling, not bus frequency. The invalid sentinel -100 is not a measured temperature.
-
-Reserve every listed pin and command in the complete configuration. Merge entries into existing sections rather than duplicating sections.
-
-## Sources and attribution
-
-- [Ccecil upstream project](https://github.com/Ccecil/LVDS_SPI)
-- [Original source repository](https://github.com/Ccecil/LVDS_SPI/tree/da5f05c83be2a4cb1d0fb3b8869efeebea22bc6d)
-- [Original LVDS_SPI v28.f3z](https://github.com/Ccecil/LVDS_SPI/blob/da5f05c83be2a4cb1d0fb3b8869efeebea22bc6d/LVDS_SPI/LVDS_SPI%20v28.f3z)
-
-No project license file accompanies the source. Source attribution is retained for these reference sheets. Absence of a license file is not public-domain permission. Modern counterpart guides are functional comparisons only and do not indicate matching pinouts.
-
-[All extension boards](/extension-boards)
+{% include _includes/extension-board-page.html %}
+
+{::nomarkdown}
+<div class="xb-hero">
+  <div>
+    <p class="xb-eyebrow">Extension board · Signals</p>
+    <h1 id="historical-differential-spi-lvds-extender">Differential SPI LVDS extender</h1>
+    <p class="xb-lead">Sends SPI clock, data and chip select over differential pairs to a distant peripheral and brings the reply back.</p>
+    <div class="xb-actions">
+      <a class="xb-btn xb-btn-primary" href="#pinout">Pinout</a>
+      <a class="xb-btn" href="#how-it-works">How it works</a>
+      <a class="xb-btn" href="#downloads">Downloads</a>
+    </div>
+  </div>
+  <figure>
+    <img src="/images/extensions/historical-differential-spi-lvds-extender/directory-board-render.png" alt="Top view of the Differential SPI LVDS extender board">
+    <figcaption>Top view drawn from the original board file. This is a drawing, not a photograph.</figcaption>
+  </figure>
+</div>
+
+<div class="xb-stats">
+  <div class="xb-stat"><b>4</b><span>signals</span></div>
+  <div class="xb-stat"><b>LVDS</b><span>differential pairs</span></div>
+  <div class="xb-stat"><b>RJ45</b><span>link connectors</span></div>
+  <div class="xb-stat"><b>3.3 V</b><span>part supply range</span></div>
+  <div class="xb-stat"><b>53 × 35 mm</b><span>board size</span></div>
+  <div class="xb-stat"><b>2</b><span>halves</span></div>
+</div>
+
+<nav class="xb-nav" aria-label="On this page">
+  <a href="#specs">Tech specs</a>
+  <a href="#tour">Board tour</a>
+  <a href="#pinout">Pinout</a>
+  <a href="#what-you-need">What you need</a>
+  <a href="#configuration">Configuration</a>
+  <a href="#how-it-works">How it works</a>
+  <a href="#troubleshooting">Troubleshooting</a>
+  <a href="#downloads">Downloads</a>
+  <a href="#electrical">Electrical specifications</a>
+</nav>
+{:/nomarkdown}
+
+<sl-alert variant="warning" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <b>Do not power this board from 5 V.</b> All line drivers and receivers take their supply from the net named <code>5V0</code>, but they are 3.3 V parts, and the separate 3V3 net does not power them. The receivers also have a second 100 Ω resistor across their built-in termination. This is a design by Chris Cecil, not a current Smoothieware board.
+</sl-alert>
+
+## Tech specs {#specs}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-spec">
+  
+  <tbody>
+    <tr><td>Function</td><td>LVDS extension of SPI</td></tr>
+    <tr><td>Host connectors</td><td>G1, G2</td></tr>
+    <tr><td>Link connectors</td><td>J1, J2 (RJ45, not Ethernet)</td></tr>
+    <tr><td>Local headers</td><td>JP1, JP2</td></tr>
+    <tr><td>Drivers and receivers</td><td>DSLVDS1001 and DS90LT012</td></tr>
+    <tr><td>Size</td><td>53 × 35 mm</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Board tour {#tour}
+
+{::nomarkdown}
+<figure class="xb-tour">
+  <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
+    <div class="xb-tour-stage">
+      <img src="/images/extensions/historical-differential-spi-lvds-extender/directory-board-render.png" alt="Annotated top view of the Differential SPI LVDS extender board">
+      <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:9.6%;top:47.0%" aria-label="1: Integrated circuit U2">1<span class="xb-pop"><b>Integrated circuit U2</b> — Integrated circuit U2, marked <code>DSLVDS1001DBVR</code> in the board file. Connects to <code>5V0</code>, <code>GND</code>, <code>MOSI_N</code>, <code>MOSI_P</code>, <code>MOSI</code>.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-2" style="left:72.4%;top:47.0%" aria-label="2: Integrated circuit U6">2<span class="xb-pop"><b>Integrated circuit U6</b> — Integrated circuit U6, marked <code>DS90LT012ATMF</code> in the board file. Connects to <code>5V0</code>, <code>GND</code>, <code>SCK_S_P</code>, <code>SCK_S_N</code>, <code>SCK_</code>.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-3" style="left:75.7%;top:7.8%" aria-label="3: Header or jumper JP1">3<span class="xb-pop"><b>Header or jumper JP1</b> — Header or jumper JP1. Connects to <code>5V0</code>, <code>3V3</code>, <code>GND</code>, <code>SCK_</code>, <code>MISO_</code> and more.</span></a>
+      <a class="xb-mk" href="#tour-4" style="left:62.8%;top:52.8%" aria-label="4: Resistor R1">4<span class="xb-pop"><b>Resistor R1</b> — Resistor R1, marked <code>100</code> in the board file. Connects to <code>MOSI_S_N</code>, <code>MOSI_S_P</code>.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-5" style="left:67.6%;top:45.6%" aria-label="5: Capacitor C1">5<span class="xb-pop"><b>Capacitor C1</b> — Capacitor C1. Connects to <code>5V0</code>, <code>GND</code>.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-6" style="left:29.2%;top:47.0%" aria-label="6: Integrated circuit U3">6<span class="xb-pop"><b>Integrated circuit U3</b> — Integrated circuit U3, marked <code>DSLVDS1001DBVR</code> in the board file. Connects to <code>5V0</code>, <code>GND</code>, <code>CS_N</code>, <code>CS_P</code>, <code>CS</code>.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-7" style="left:19.6%;top:47.0%" aria-label="7: Integrated circuit U4">7<span class="xb-pop"><b>Integrated circuit U4</b> — Integrated circuit U4, marked <code>DSLVDS1001DBVR</code> in the board file. Connects to <code>5V0</code>, <code>GND</code>, <code>SCK_N</code>, <code>SCK_P</code>, <code>SCK</code>.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-8" style="left:91.5%;top:47.0%" aria-label="8: Integrated circuit U5">8<span class="xb-pop"><b>Integrated circuit U5</b> — Integrated circuit U5, marked <code>DSLVDS1001DBVR</code> in the board file. Connects to <code>5V0</code>, <code>GND</code>, <code>MISO_N</code>, <code>MISO_P</code>, <code>MISO_</code>.</span></a>
+    </div>
+  </div>
+  <ol class="xb-tour-list" start="1">
+    <li id="tour-1"><span class="xb-n">1</span><div><b>Integrated circuit U2</b> — Integrated circuit U2, marked <code>DSLVDS1001DBVR</code> in the board file. Connects to <code>5V0</code>, <code>GND</code>, <code>MOSI_N</code>, <code>MOSI_P</code>, <code>MOSI</code>.</div></li>
+    <li id="tour-2"><span class="xb-n">2</span><div><b>Integrated circuit U6</b> — Integrated circuit U6, marked <code>DS90LT012ATMF</code> in the board file. Connects to <code>5V0</code>, <code>GND</code>, <code>SCK_S_P</code>, <code>SCK_S_N</code>, <code>SCK_</code>.</div></li>
+    <li id="tour-3"><span class="xb-n">3</span><div><b>Header or jumper JP1</b> — Header or jumper JP1. Connects to <code>5V0</code>, <code>3V3</code>, <code>GND</code>, <code>SCK_</code>, <code>MISO_</code> and more.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Resistor R1</b> — Resistor R1, marked <code>100</code> in the board file. Connects to <code>MOSI_S_N</code>, <code>MOSI_S_P</code>.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>Capacitor C1</b> — Capacitor C1. Connects to <code>5V0</code>, <code>GND</code>.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Integrated circuit U3</b> — Integrated circuit U3, marked <code>DSLVDS1001DBVR</code> in the board file. Connects to <code>5V0</code>, <code>GND</code>, <code>CS_N</code>, <code>CS_P</code>, <code>CS</code>.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Integrated circuit U4</b> — Integrated circuit U4, marked <code>DSLVDS1001DBVR</code> in the board file. Connects to <code>5V0</code>, <code>GND</code>, <code>SCK_N</code>, <code>SCK_P</code>, <code>SCK</code>.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Integrated circuit U5</b> — Integrated circuit U5, marked <code>DSLVDS1001DBVR</code> in the board file. Connects to <code>5V0</code>, <code>GND</code>, <code>MISO_N</code>, <code>MISO_P</code>, <code>MISO_</code>.</div></li>
+  </ol>
+  <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
+</figure>
+{:/nomarkdown}
+
+## Pinout {#pinout}
+
+<span id="connect-and-try-it"></span>
+
+### Host connector G1
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>G1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td>not connected</td></tr>
+    <tr><td>2</td><td><code>5V0</code></td></tr>
+    <tr><td>3</td><td><code>GPIO2</code></td></tr>
+    <tr><td>4</td><td><code>GPIO3</code></td></tr>
+    <tr><td>5</td><td><code>GPIO1</code></td></tr>
+    <tr><td>6</td><td><code>CS</code></td></tr>
+    <tr><td>7</td><td><code>MOSI</code></td></tr>
+    <tr><td>8</td><td><code>MISO</code></td></tr>
+    <tr><td>9</td><td><code>SCK</code></td></tr>
+    <tr><td>10</td><td><code>GND</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Link connector J1
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>MOSI_P</code></td></tr>
+    <tr><td>2</td><td><code>MOSI_N</code></td></tr>
+    <tr><td>3</td><td><code>CS_P</code></td></tr>
+    <tr><td>4</td><td><code>SCK_P</code></td></tr>
+    <tr><td>5</td><td><code>SCK_N</code></td></tr>
+    <tr><td>6</td><td><code>CS_N</code></td></tr>
+    <tr><td>7</td><td><code>MISO_M_N</code></td></tr>
+    <tr><td>8</td><td><code>MISO_M_P</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Link connector J2
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>J2 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>MOSI_S_P</code></td></tr>
+    <tr><td>2</td><td><code>MOSI_S_N</code></td></tr>
+    <tr><td>3</td><td><code>CS_S_P</code></td></tr>
+    <tr><td>4</td><td><code>SCK_S_P</code></td></tr>
+    <tr><td>5</td><td><code>SCK_S_N</code></td></tr>
+    <tr><td>6</td><td><code>CS_S_N</code></td></tr>
+    <tr><td>7</td><td><code>MISO_N</code></td></tr>
+    <tr><td>8</td><td><code>MISO_P</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Local header JP1
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>JP1 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>5V0</code></td></tr>
+    <tr><td>2</td><td><code>3V3</code></td></tr>
+    <tr><td>3</td><td><code>GND</code></td></tr>
+    <tr><td>4</td><td><code>SCK_</code></td></tr>
+    <tr><td>5</td><td><code>MISO_</code></td></tr>
+    <tr><td>6</td><td><code>MOSI_</code></td></tr>
+    <tr><td>7</td><td><code>CS_</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+### Local header JP2
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>JP2 contact</th><th>Connected to</th></tr></thead>
+  <tbody>
+    <tr><td>1</td><td><code>5V0</code></td></tr>
+    <tr><td>2</td><td><code>3V3</code></td></tr>
+    <tr><td>3</td><td><code>GND</code></td></tr>
+    <tr><td>4</td><td><code>SCK</code></td></tr>
+    <tr><td>5</td><td><code>MISO</code></td></tr>
+    <tr><td>6</td><td><code>MOSI</code></td></tr>
+    <tr><td>7</td><td><code>CS</code></td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## What you need {#what-you-need}
+
+{::nomarkdown}
+<div class="xb-cards">
+  <div class="xb-card"><b>Extender board</b><span>Built from the design files</span></div>
+  <div class="xb-card"><b>3.3 V supply</b><span>On the 5V0 net</span></div>
+  <div class="xb-card"><b>Link cable</b><span>Not an Ethernet link</span></div>
+</div>
+{:/nomarkdown}
+
+## Configuration {#configuration}
+
+<span id="smoothieware-use"></span>
+
+Smoothieware has no verified configuration for this board: not specified.
+
+## How it works {#how-it-works}
+
+Each signal has a driver at one end and a receiver at the other. MOSI, clock and chip select travel towards the peripheral; MISO travels back. See the [DS90LT012A datasheet](https://www.ti.com/lit/ds/symlink/ds90lt012a.pdf).
+
+## Troubleshooting {#troubleshooting}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Symptom</th><th>Check</th></tr></thead>
+  <tbody>
+    <tr><td>Nothing is received</td><td>Check the supply on the 5V0 net, pair polarity and that the cable joins J1 to the matching half.</td></tr>
+    <tr><td>Corrupt data</td><td>Lower the SPI rate and check the doubled termination.</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+Still stuck? Read [how to ask for help](/help-guidelines) or see the general [troubleshooting guide](/troubleshooting).
+
+## Downloads {#downloads}
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>File</th><th>What it is</th></tr></thead>
+  <tbody>
+    <tr><td><a href="https://github.com/Ccecil/LVDS_SPI/tree/da5f05c83be2a4cb1d0fb3b8869efeebea22bc6d">Ccecil design source</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/LVDS_SPI/blob/da5f05c83be2a4cb1d0fb3b8869efeebea22bc6d/LVDS_SPI/LVDS_SPI%20v28.f3z">original Fusion archive</a></td><td>Design source</td></tr>
+    <tr><td><a href="https://github.com/Ccecil/LVDS_SPI">Ccecil upstream project</a></td><td>Design source</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Appendix: electrical specifications {#electrical}
+
+Only what the design source states or the circuit fixes. Blank cells are not specified.
+
+{::nomarkdown}
+<div class="xb-tablewrap"><table class="xb-elec">
+  <thead><tr><th>Parameter</th><th>Applies to</th><th>Lower</th><th>Nominal</th><th>Upper</th><th>Basis and conditions</th></tr></thead>
+  <tbody>
+    <tr><td>Supply</td><td>Driver / receiver operating range</td><td>2.7–3.0 V</td><td>—</td><td>3.6 V</td><td>Manufacturer datasheets</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
+
+## Design source {#origin}
+
+Designed by Chris Cecil: [original design files](https://github.com/Ccecil/LVDS_SPI/tree/da5f05c83be2a4cb1d0fb3b8869efeebea22bc6d). It was drawn for the Smoothieboard V2 Gadgeteer era; check every connection against your own controller.
+See all boards on the [extension boards](/extension-boards) page.

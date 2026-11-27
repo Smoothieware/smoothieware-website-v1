@@ -21,7 +21,7 @@ permalink: /extensions/bidirectional-level-shifting-board
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/bidirectional-level-shifting-board/v17/bidirectional-level-shifting-board-diagram.png" alt="Top view of the level shifting board: a ten-contact socket at each side, a column of seven small translator chips in the middle with a direction label beside each, and a two-way supply connector at the lower right.">
+    <img src="/images/extensions/bidirectional-level-shifting-board/v17/bidirectional-level-shifting-board-diagram.webp" alt="Top view of the level shifting board: a ten-contact socket at each side, a column of seven small translator chips in the middle with a direction label beside each, and a two-way supply connector at the lower right.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -88,7 +88,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/bidirectional-level-shifting-board/v17/bidirectional-level-shifting-board-diagram.png" alt="Top view of the level shifting board with numbered markers that are explained in the list below.">
+      <img src="/images/extensions/bidirectional-level-shifting-board/v17/bidirectional-level-shifting-board-diagram.webp" alt="Top view of the level shifting board with numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:11.1%;top:43.6%" aria-label="1: Host socket (J1, Y-A)">1<span class="xb-pop"><b>Host socket (J1, Y-A)</b> — the 3.3&nbsp;V side: host rails, signals A1 to A7 and ground.</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-2" style="left:88.8%;top:43.6%" aria-label="2: Peripheral socket (J2, Y-B)">2<span class="xb-pop"><b>Peripheral socket (J2, Y-B)</b> — signals B1 to B7, the two forwarded rails and ground.</span></a>
       <a class="xb-mk" href="#tour-3" style="left:44.0%;top:74.9%" aria-label="3: Channel 1 translator (U1)">3<span class="xb-pop"><b>Channel 1 translator (U1)</b> — one SN74LVC1T45; U2 to U7 above it serve channels 2 to 7.</span></a>
@@ -272,7 +272,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/bidirectional-level-shifting-board/v17/bidirectional-level-shifting-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/bidirectional-level-shifting-board/v17/bidirectional-level-shifting-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/bidirectional-level-shifting-board/v17/bidirectional-level-shifting-board-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/bidirectional-level-shifting-board/v17/bidirectional-level-shifting-board-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

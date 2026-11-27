@@ -20,7 +20,7 @@ permalink: /extensions/atx-connector-board
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/atx-connector-board/atx-connector-board-diagram.png" alt="Top view of the ATX connector board: a 24-pin ATX socket along the bottom, a yellow XT60 connector at the top right, two screw terminals at the sides, two Gadgeteer sockets at the top left and four green lights.">
+    <img src="/images/extensions/atx-connector-board/atx-connector-board-diagram.webp" alt="Top view of the ATX connector board: a 24-pin ATX socket along the bottom, a yellow XT60 connector at the top right, two screw terminals at the sides, two Gadgeteer sockets at the top left and four green lights.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -85,7 +85,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/atx-connector-board/atx-connector-board-diagram.png" alt="Top view of the ATX connector board with thirteen numbered markers that are explained in the list below.">
+      <img src="/images/extensions/atx-connector-board/atx-connector-board-diagram.webp" alt="Top view of the ATX connector board with thirteen numbered markers that are explained in the list below.">
       <a class="xb-mk" href="#tour-1" style="left:50%;top:85%" aria-label="1: ATX plug">1<span class="xb-pop"><b>ATX 24-pin connector (J1)</b> — the Molex Mini-Fit Jr socket that the supply&rsquo;s 24-pin plug mates with. Along the top row, left to right, the board prints 3V3, 3V3, COM, 5V, COM, 5V, COM, OK, SB, 12V, 12V, 3V3. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:65.8%;top:18.5%" aria-label="2: 12 V output">2<span class="xb-pop"><b>12 V output (J3)</b> — an XT60 connector for the supply&rsquo;s 12&nbsp;V. The board prints + on the left and &minus; on the right of it. No fuse is fitted on the board.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-3" style="left:8.5%;top:43%" aria-label="3: 5 V output">3<span class="xb-pop"><b>5 V output (J4)</b> — a two-screw terminal: +5&nbsp;V on the top screw, ground below. The board prints &ldquo;+5V OUT 3.7A&rdquo; beside it.</span></a>
@@ -383,7 +383,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/atx-connector-board/atx-connector-board-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram. The board has no fuses, whatever a comment in the schematic says about fused outputs.</td></tr>
     <tr><td><a href="/images/extensions/atx-connector-board/atx-connector-board-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and position</td></tr>
-    <tr><td><a href="/images/extensions/atx-connector-board/atx-connector-board-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/atx-connector-board/atx-connector-board-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}
