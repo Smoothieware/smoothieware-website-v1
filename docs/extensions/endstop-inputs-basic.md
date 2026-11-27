@@ -272,7 +272,7 @@ The board needs no module of its own: each input is an ordinary controller pin, 
 </table></div>
 {:/nomarkdown}
 
-End each pin name with **`^`**, which turns the controller&rsquo;s pull-up on (the firmware also does so when the name has neither `^` nor `v`). A closed switch then still reads low (at most 0.94&nbsp;V simulated, below the 0.99&nbsp;V limit), and an unplugged cable reads as triggered. If a long or resistive cable makes a closed switch read open, `-` (no pull resistor) gives more margin, but an unplugged cable is then not detected. Each pin can be claimed by one entry only. Merge the lines into your configuration file, adding to a section that already exists.
+For plain switches, end each pin name with **`^`**, which turns the controller&rsquo;s pull-up on (the firmware also does so when the name has neither `^` nor `v`). A closed switch then still reads low (at most 0.94&nbsp;V simulated, below the 0.99&nbsp;V limit), and an unplugged cable reads as triggered. If a long or resistive cable makes a closed switch read open, `-` (no pull resistor) gives more margin, but an unplugged cable is then not detected. Each pin can be claimed by one entry only. Merge the lines into your configuration file, adding to a section that already exists.
 
 ### 1. Limit switches (Endstops module) {#config-limits}
 
@@ -393,7 +393,7 @@ This button acts through the firmware. It does not replace an emergency stop tha
 
 Use the normally closed contact for limits and homing: a broken switch wire then reads as triggered.
 
-**Electronic sensors need care.** The signal passes through a diode before it reaches the controller, so the sensor must pull S close to ground: below about 0.50&nbsp;V down to &minus;10&nbsp;&deg;C with a worst-case diode, or 0.61&nbsp;V with a typical one, while sinking about 5&nbsp;mA (simulated, `-` pin setting; the pull-up leaves less margin). Check the sensor&rsquo;s datasheet. A 5&nbsp;V sensor can be powered with the cap on **5V**, and its output may drive S up to 5&nbsp;V. For sensors that need more than 5&nbsp;V, use the [Endstop and probe inputs (advanced)](/extensions/endstop-and-probe-inputs-advanced) board within its stated range.
+**Electronic sensors need the `-` pin setting.** The signal passes through a diode before it reaches the controller, so the sensor must pull S close to ground while sinking about 5&nbsp;mA. With `-` (no pull resistor) it must get below about 0.50&nbsp;V down to &minus;10&nbsp;&deg;C with a worst-case diode, or 0.61&nbsp;V with a typical one. With the pull-up (`^`) the limit shrinks to about 0.06&nbsp;V worst case, or 0.17&nbsp;V typical, which most sensors cannot guarantee (all simulated). Check the sensor&rsquo;s datasheet. A 5&nbsp;V sensor can be powered with the cap on **5V**, and its output may drive S up to 5&nbsp;V. For sensors that need more than 5&nbsp;V, use the [Endstop and probe inputs (advanced)](/extensions/endstop-and-probe-inputs-advanced) board within its stated range.
 
 ## How it works {#how-it-works}
 
@@ -554,7 +554,9 @@ One channel; the seven channels are identical.
     <tr><td>Light current</td><td>Closed input</td><td>—</td><td>2.0&nbsp;mA</td><td>—</td><td>Simulated, assumed red light model</td></tr>
     <tr><td>Total current, all seven closed</td><td>Controller 3.3&nbsp;V</td><td>—</td><td>35&nbsp;mA</td><td>—</td><td>Calculated from the simulated channel, no sensor power</td></tr>
     <tr><td>Sensor low voltage still read low</td><td>S pin, no pull</td><td>—</td><td>—</td><td>0.50&nbsp;V</td><td>Simulated, &minus;10&nbsp;&deg;C, worst-case diode, 0.99&nbsp;V controller threshold</td></tr>
+    <tr><td>Sensor low voltage still read low</td><td>S pin, 30&nbsp;k&Omega; pull-up</td><td>—</td><td>0.28&nbsp;V</td><td>0.06&nbsp;V</td><td>Simulated: typical diode at 25&nbsp;&deg;C; limit with worst-case diode at &minus;10&nbsp;&deg;C</td></tr>
     <tr><td>Switch and cable resistance</td><td>S to − loop, no pull</td><td>—</td><td>—</td><td>215&nbsp;&Omega;</td><td>Simulated, 25&nbsp;&deg;C, typical diode; keep well below</td></tr>
+    <tr><td>Switch and cable resistance</td><td>S to − loop, 30&nbsp;k&Omega; pull-up</td><td>—</td><td>63&nbsp;&Omega;</td><td>13&nbsp;&Omega;</td><td>Simulated: typical diode at 25&nbsp;&deg;C; limit with worst-case diode at &minus;10&nbsp;&deg;C</td></tr>
     <tr><td>Delay, closing</td><td>To 0.99&nbsp;V</td><td>—</td><td>0.8&nbsp;ms</td><td>—</td><td>Simulated</td></tr>
     <tr><td>Delay, opening</td><td>To 2.31&nbsp;V</td><td>—</td><td>0.7&nbsp;ms</td><td>—</td><td>Simulated</td></tr>
     <tr><td>Operating temperature</td><td>Board</td><td><b>Open</b></td><td>—</td><td><b>Open</b></td><td>Not established</td></tr>

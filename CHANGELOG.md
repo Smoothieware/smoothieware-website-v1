@@ -22,6 +22,7 @@ History: see CHANGELOG.archive.md.
 - Extension board drawings on the board directory and board pages now show their mounting and cable-tie holes.
 
 ### Changed
+- Endstop inputs (basic) board page: updated for the current hardware, with 3.3 V controller signals in both supply positions, a resettable sensor fuse, static-discharge protection, test pads, new voltage figures and `^` pin settings.
 - Gadgeteer perma-proto page updated to board v17: visible cuttable copper links, chain connector moved to the left margin with labelled wiring holes, all example projects wired to off-board parts through screw terminals.
 
 - Perma-proto Gadgeteer page, drawings and downloads updated for the new board: second chain connector with 2.54 mm wiring holes, six-hole strips with a DIP-width centre gap, rail lamps and solder jumpers, printed pin guide lines, four mounting holes; example projects re-laid out with no track cutting. Old guide drawings and version 15 downloads removed.
@@ -130,7 +131,6 @@ History: see CHANGELOG.archive.md.
 
 ### Changed
 
-- Endstop inputs (basic) board page: updated for the current hardware, with 3.3 V controller signals in both supply positions, a resettable sensor fuse, static-discharge protection, test pads, new voltage figures and `^` pin settings.
 - The "Compare the MOSFET boards" table is now a three-board feature table with ticks and crosses, with a few specification rows at the top.
 - Removed the in-development Gadgeteer revision section and its angled rendering from the small MOSFET page.
 
