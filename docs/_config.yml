@@ -332,6 +332,10 @@ defaults:
     values:
       sitemap: false
   - scope:
+      path: "troubleshooting/led-patterns-for-include.md"
+    values:
+      sitemap: false
+  - scope:
       path: "troubleshooting/stopping-smoothie-for-include.md"
     values:
       sitemap: false
