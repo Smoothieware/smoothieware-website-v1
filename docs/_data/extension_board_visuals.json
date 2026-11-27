@@ -800,6 +800,42 @@
       ]
     }
   ],
+  "differential-i2c-signal-extender": [
+    {
+      "role": "host",
+      "version": "v01",
+      "cad_source_path": "extension-boards/src/differential-i2c-signal-extender/attempt/versions/v01/host/die-host.kicad_pcb",
+      "cad_sha256": "ff12c0e6b3cf76b4dc2236a72489b4a55f214d6ab83df9d903f927c8b433181d",
+      "diagram": {
+        "url": "/images/extensions/differential-i2c-signal-extender/v01/differential-i2c-signal-extender-host-diagram.png",
+        "sha256": "23a952b3aa3be6d79eef34f18f87474e618face04c7325e71a8842fd704f3705",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/differential-i2c-signal-extender/v01/die-host.svg",
+        "source_hash_matches": true,
+        "embedded_cad_sha256": "ff12c0e6b3cf76b4dc2236a72489b4a55f214d6ab83df9d903f927c8b433181d",
+        "caption": "v01; source hash matches this CAD revision.",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/differential-i2c-signal-extender/v01/differential-i2c-signal-extender-host-diagram.svg",
+        "archived_svg_sha256": "9b1a95a152fdde29bbeef6730702fe5695c4ed80f2e5d76c9002f4de18594353"
+      },
+      "renders": []
+    },
+    {
+      "role": "remote",
+      "version": "v01",
+      "cad_source_path": "extension-boards/src/differential-i2c-signal-extender/attempt/versions/v01/remote/die-remote.kicad_pcb",
+      "cad_sha256": "d63b16d1291dbf833933ece7d67cdd47f380719341461832b76eb438c2ec22c8",
+      "diagram": {
+        "url": "/images/extensions/differential-i2c-signal-extender/v01/differential-i2c-signal-extender-remote-diagram.png",
+        "sha256": "fe4623080d0dd089bd8eda12eb059bb78d904a4af393a5624949df1b21b44af5",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/differential-i2c-signal-extender/v01/die-remote.svg",
+        "source_hash_matches": true,
+        "embedded_cad_sha256": "d63b16d1291dbf833933ece7d67cdd47f380719341461832b76eb438c2ec22c8",
+        "caption": "v01; source hash matches this CAD revision.",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/differential-i2c-signal-extender/v01/differential-i2c-signal-extender-remote-diagram.svg",
+        "archived_svg_sha256": "6d81ca76366fbcba012963964b9960e5055941ee7e218350fb5f7f7db9c1f4b1"
+      },
+      "renders": []
+    }
+  ],
   "differential-signal-extender": [
     {
       "role": "dse rx",

@@ -2,32 +2,35 @@
 <style>
 .markdown-body .xb-cmp td, .markdown-body .xb-cmp thead th { text-align: center; }
 .markdown-body .xb-cmp tbody th { text-align: left; font-weight: 400; }
+.markdown-body .xb-cmp th, .markdown-body .xb-cmp td { padding: 6px !important; font-size: .82rem !important; white-space: normal !important; }
+.markdown-body .xb-cmp thead th { text-transform: none !important; }
 .markdown-body .xb-cmp .xb-cmp-group th { text-align: left; font-size: .78rem; letter-spacing: .06em; text-transform: uppercase; opacity: .7; }
 .xb-cmp-yes sl-icon { color: #35c26b; font-size: 1.25rem; vertical-align: middle; }
 .xb-cmp-no sl-icon { color: #ff5d5d; font-size: 1.25rem; vertical-align: middle; }
 .xb-cmp-note { display: block; font-size: .8rem; opacity: .75; }
 </style>
 <h2 id="compare-extender-boards">Compare the extender boards</h2>
-<p>Four board pairs carry signals over a distance. Pick by what you need to carry.</p>
+<p>Five board pairs carry signals over a distance. Pick by what you need to carry.</p>
 <div class="xb-tablewrap" role="region" aria-labelledby="compare-extender-boards" tabindex="0">
   <table class="xb-cmp">
     <thead>
       <tr>
         <th scope="col"></th>
         <th scope="col"><a href="{{ '/extensions/differential-signal-extender' | relative_url }}">Differential signal</a></th>
+        <th scope="col"><a href="{{ '/extensions/differential-i2c-signal-extender' | relative_url }}">Differential I2C</a></th>
         <th scope="col"><a href="{{ '/extensions/differential-spi-signal-extender' | relative_url }}">Differential SPI</a></th>
         <th scope="col"><a href="{{ '/extensions/differential-step-dir-en-extender' | relative_url }}">Differential STEP/DIR/EN</a></th>
         <th scope="col"><a href="{{ '/extensions/long-distance-extender' | relative_url }}">Long-distance</a></th>
       </tr>
     </thead>
     <tbody>
-      <tr class="xb-cmp-group"><th scope="rowgroup" colspan="5">Specifications</th></tr>
-      <tr><th scope="row">Carries</th><td>One logic signal</td><td>One SPI peripheral</td><td>STEP, DIR and ENABLE of one axis</td><td>Three one-way logic signals</td></tr>
-      <tr><th scope="row">Transceivers</th><td>THVD1451</td><td>THVD1451, four channels</td><td>THVD1451, three channels</td><td>THVD1451, three channels</td></tr>
-      <tr><th scope="row">Far-end power</th><td>5&nbsp;V on the same cable</td><td>Separate 12&nbsp;V lead</td><td>Not carried to a motor drive; see the board&rsquo;s supply warning</td><td>5&nbsp;V on the same cable</td></tr>
-      <tr class="xb-cmp-group"><th scope="rowgroup" colspan="5">Features</th></tr>
-      <tr><th scope="row">Signals return from the far end</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon><span class="xb-cmp-note">SPI data (MISO)</span></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td></tr>
-      <tr><th scope="row">Made for a common-anode stepper drive input</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon><span class="xb-cmp-note">Leadshine DM556E</span></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td></tr>
+      <tr class="xb-cmp-group"><th scope="rowgroup" colspan="6">Specifications</th></tr>
+      <tr><th scope="row">Carries</th><td>One logic signal</td><td>One I2C bus</td><td>One SPI peripheral</td><td>STEP, DIR and ENABLE of one axis</td><td>Three one-way logic signals</td></tr>
+      <tr><th scope="row">Transceivers</th><td>THVD1451</td><td>PCA9615 differential I2C buffer</td><td>THVD1451, four channels</td><td>THVD1451, three channels</td><td>THVD1451, three channels</td></tr>
+      <tr><th scope="row">Far-end power</th><td>5&nbsp;V on the same cable</td><td>Separate 12&nbsp;V lead</td><td>Separate 12&nbsp;V lead</td><td>Not carried to a motor drive; see the board&rsquo;s supply warning</td><td>5&nbsp;V on the same cable</td></tr>
+      <tr class="xb-cmp-group"><th scope="rowgroup" colspan="6">Features</th></tr>
+      <tr><th scope="row">Signals return from the far end</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon><span class="xb-cmp-note">Both I2C lines</span></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon><span class="xb-cmp-note">SPI data (MISO)</span></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td></tr>
+      <tr><th scope="row">Made for a common-anode stepper drive input</th><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td><td class="xb-cmp-yes"><sl-icon name="check-circle-fill" label="Yes"></sl-icon><span class="xb-cmp-note">Leadshine DM556E</span></td><td class="xb-cmp-no"><sl-icon name="x-circle-fill" label="No"></sl-icon></td></tr>
     </tbody>
   </table>
 </div>

@@ -349,6 +349,10 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/cheap-uart-adapter-breakout">Cheap UART adapter breakout</a></p><p>Joins a low-cost six-pin USB serial module to a controller UART through two level translators.</p></td>
   </tr>
   <tr>
+    <td><a href="/extensions/differential-i2c-signal-extender" aria-label="Open the Differential I2C signal extender guide"><img src="/images/extensions/differential-i2c-signal-extender/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/differential-i2c-signal-extender">Differential I2C signal extender</a></p><p>A host and remote board carrying an I2C bus over two differential pairs of a Cat5e cable, with a separate 12 V feed.</p></td>
+  </tr>
+  <tr>
     <td><a href="/extensions/differential-signal-extender" aria-label="Open the Differential signal extender guide"><img src="/images/extensions/differential-signal-extender/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/differential-signal-extender">Differential signal extender</a></p><p>An emitter and receiver carrying one logic signal and 5 V power over a dedicated cable.</p></td>
   </tr>
