@@ -220,10 +220,26 @@ The minimum wiring first, then the order to do it in. Facts about each contact a
 </figure>
 {:/nomarkdown}
 
-1. With all power off, find contact 1 on each connector and check every wire against the [pinout](#pinout).
-2. Use wiring rated for the heater.
-3. Check every harness contact for continuity with a meter.
-4. Check continuity and the rail voltages with a meter before connecting anything else.
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Check the contacts</h3>
+    <p>With all power off, find contact 1 on each connector and check every wire against the <a href="#pinout">pinout</a>.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Set up and check</h3>
+    <p>Use wiring rated for the heater.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Set up and check</h3>
+    <p>Check every harness contact for continuity with a meter.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Check with a meter</h3>
+    <p>Check continuity and the rail voltages with a meter before connecting anything else.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
 ## Configuration {#configuration}
 

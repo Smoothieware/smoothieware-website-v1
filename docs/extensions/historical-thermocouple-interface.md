@@ -151,15 +151,28 @@ The minimum wiring first, then the order to do it in. Facts about each contact a
 {::nomarkdown}
 <figure class="xb-fig">
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Wiring">
-  <svg viewBox="0 0 1000 472" role="img" aria-labelledby="xb-historical-thermocouple-interface-wire"><title id="xb-historical-thermocouple-interface-wire">Wiring: P1 contact 1 to thermocouple −; P1 contact 2 to thermocouple +.</title><image href="/images/extensions/historical-thermocouple-interface/directory-board-render.png" x="385" y="14" width="230" height="230"/><text x="130" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">P1 on this board</text><text x="870" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">K-type probe</text><rect x="700" y="304" width="270" height="150" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><path d="M820 387.0H900M820 371.0H900" fill="none" stroke="#c4cad3" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="916" cy="379" r="20" fill="#b5251e" stroke="#7d120d" stroke-width="3"/><rect x="30" y="304" width="200" height="150" rx="8" fill="#2b2f35" stroke="#9aa2ad" stroke-width="1.5"/><path d="M230 364.0H700" fill="none" stroke="#8b949e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="364" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><circle cx="700" cy="364" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><text x="216" y="369" text-anchor="end" font-size="14" fill="#e6ebf2">  1</text><text x="712" y="369" text-anchor="start" font-size="13" fill="#e6ebf2">thermocouple −</text><rect x="340" y="353" width="220" height="22" rx="11" fill="#8b949e" stroke="#8b949e" stroke-width="1.5"/><text x="450" y="369" text-anchor="middle" font-size="13" font-weight="700" fill="#111">1: thermocouple −</text><path d="M230 394.0H700" fill="none" stroke="#2f7fe0" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="394" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><circle cx="700" cy="394" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><text x="216" y="399" text-anchor="end" font-size="14" fill="#e6ebf2">  2</text><text x="712" y="399" text-anchor="start" font-size="13" fill="#e6ebf2">thermocouple +</text><rect x="340" y="383" width="220" height="22" rx="11" fill="#2f7fe0" stroke="#2f7fe0" stroke-width="1.5"/><text x="450" y="399" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">2: thermocouple +</text></svg>
+  <svg viewBox="0 0 1000 472" role="img" aria-labelledby="xb-historical-thermocouple-interface-wire"><title id="xb-historical-thermocouple-interface-wire">Wiring: P1 contact 1 to thermocouple −; P1 contact 2 to thermocouple +.</title><image href="/images/extensions/historical-thermocouple-interface/directory-board-render.png" x="385" y="14" width="230" height="230"/><text x="130" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">P1 on this board</text><text x="870" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">K-type probe</text><rect x="700" y="304" width="270" height="150" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><path d="M820 387.0H900M820 371.0H900" fill="none" stroke="#c4cad3" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="916" cy="379" r="20" fill="#b5251e" stroke="#7d120d" stroke-width="3"/><rect x="30" y="304" width="200" height="150" rx="8" fill="#2b2f35" stroke="#9aa2ad" stroke-width="1.5"/><path d="M230 364.0H700" fill="none" stroke="#2f7fe0" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="364" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><circle cx="700" cy="364" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><text x="216" y="369" text-anchor="end" font-size="14" fill="#e6ebf2">  1</text><text x="712" y="369" text-anchor="start" font-size="13" fill="#e6ebf2">thermocouple −</text><rect x="340" y="353" width="220" height="22" rx="11" fill="#2f7fe0" stroke="#2f7fe0" stroke-width="1.5"/><text x="450" y="369" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">1: thermocouple −</text><path d="M230 394.0H700" fill="none" stroke="#2f7fe0" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="394" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><circle cx="700" cy="394" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><text x="216" y="399" text-anchor="end" font-size="14" fill="#e6ebf2">  2</text><text x="712" y="399" text-anchor="start" font-size="13" fill="#e6ebf2">thermocouple +</text><rect x="340" y="383" width="220" height="22" rx="11" fill="#2f7fe0" stroke="#2f7fe0" stroke-width="1.5"/><text x="450" y="399" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">2: thermocouple +</text></svg>
   </div>
   <figcaption>Wiring drawn from the original design files. Make connections with all power off. Equipment is drawn as a typical unit, not a specific model.</figcaption>
 </figure>
 {:/nomarkdown}
 
-1. With all power off, find contact 1 on each connector and check every wire against the [pinout](#pinout).
-2. Observe the marked polarity and give the board its own chip-select pin.
-3. Apply the settings under [Configuration](#configuration), then power up.
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Check the contacts</h3>
+    <p>With all power off, find contact 1 on each connector and check every wire against the <a href="#pinout">pinout</a>.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Set up and check</h3>
+    <p>Observe the marked polarity and give the board its own chip-select pin.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure and power up</h3>
+    <p>Apply the settings under <a href="#configuration">Configuration</a>, then power up.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
 ## Configuration {#configuration}
 

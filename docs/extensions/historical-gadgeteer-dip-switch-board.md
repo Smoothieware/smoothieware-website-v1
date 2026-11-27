@@ -149,9 +149,22 @@ The minimum wiring first, then the order to do it in. Facts about each contact a
 </figure>
 {:/nomarkdown}
 
-1. With all power off, find contact 1 on each connector and check every wire against the [pinout](#pinout).
-2. Connect only contacts or 3.3 V-safe sensor outputs to J3 to J5.
-3. Apply the settings under [Configuration](#configuration), then power up.
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Check the contacts</h3>
+    <p>With all power off, find contact 1 on each connector and check every wire against the <a href="#pinout">pinout</a>.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Set up and check</h3>
+    <p>Connect only contacts or 3.3 V-safe sensor outputs to J3 to J5.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure and power up</h3>
+    <p>Apply the settings under <a href="#configuration">Configuration</a>, then power up.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
 ## Configuration {#configuration}
 

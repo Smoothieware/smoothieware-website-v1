@@ -156,9 +156,22 @@ The minimum wiring first, then the order to do it in. Facts about each contact a
 </figure>
 {:/nomarkdown}
 
-1. With all power off, find contact 1 on each connector and check every wire against the [pinout](#pinout).
-2. Use 3.3 V I2C devices with distinct addresses and a ten-contact host cable checked contact by contact.
-3. Check continuity and the rail voltages with a meter before connecting anything else.
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Check the contacts</h3>
+    <p>With all power off, find contact 1 on each connector and check every wire against the <a href="#pinout">pinout</a>.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Set up and check</h3>
+    <p>Use 3.3 V I2C devices with distinct addresses and a ten-contact host cable checked contact by contact.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Check with a meter</h3>
+    <p>Check continuity and the rail voltages with a meter before connecting anything else.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
 ## Configuration {#configuration}
 

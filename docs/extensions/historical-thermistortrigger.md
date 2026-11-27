@@ -202,10 +202,26 @@ The minimum wiring first, then the order to do it in. Facts about each contact a
 </figure>
 {:/nomarkdown}
 
-1. With all power off, find contact 1 on each connector and check every wire against the [pinout](#pinout).
-2. Match the thermistors to your thresholds.
-3. Never connect a 5 V trigger output to a 3.3 V input without level conversion.
-4. Apply the settings under [Configuration](#configuration), then power up.
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Check the contacts</h3>
+    <p>With all power off, find contact 1 on each connector and check every wire against the <a href="#pinout">pinout</a>.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Set up and check</h3>
+    <p>Match the thermistors to your thresholds.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Set up and check</h3>
+    <p>Never connect a 5 V trigger output to a 3.3 V input without level conversion.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure and power up</h3>
+    <p>Apply the settings under <a href="#configuration">Configuration</a>, then power up.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
 ## Configuration {#configuration}
 

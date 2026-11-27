@@ -163,10 +163,26 @@ The minimum wiring first, then the order to do it in. Facts about each contact a
 </figure>
 {:/nomarkdown}
 
-1. With all power off, find contact 1 on each connector and check every wire against the [pinout](#pinout).
-2. Set the voltage selector JP1 for your sensor before connecting it.
-3. Check continuity and the rail voltages with a meter before connecting anything else.
-4. Apply the settings under [Configuration](#configuration), then power up.
+{::nomarkdown}
+<ol class="xb-steps">
+  <li class="xb-step">
+    <h3>Check the contacts</h3>
+    <p>With all power off, find contact 1 on each connector and check every wire against the <a href="#pinout">pinout</a>.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Set up and check</h3>
+    <p>Set the voltage selector JP1 for your sensor before connecting it.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Check with a meter</h3>
+    <p>Check continuity and the rail voltages with a meter before connecting anything else.</p>
+  </li>
+  <li class="xb-step">
+    <h3>Configure and power up</h3>
+    <p>Apply the settings under <a href="#configuration">Configuration</a>, then power up.</p>
+  </li>
+</ol>
+{:/nomarkdown}
 
 ## Configuration {#configuration}
 
