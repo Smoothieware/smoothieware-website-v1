@@ -8,6 +8,7 @@ History: see CHANGELOG.archive.md.
 
 ### Fixed
 
+- Laser power-supply adapter page: simulation graphs redrawn in the site dark style (same data).
 - Three older breakout board pages now have eight board-tour points; the Bouni spindle chooser page shows both boards.
 - Extruder harness page: corrected board-tour popup placement.
 - Gate boards page: added the bench-test wiring diagram to Get started.
