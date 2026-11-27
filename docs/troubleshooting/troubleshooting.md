@@ -85,13 +85,33 @@ Open your configuration file.
 
 Copy its content.
 
-Now go on the [pastebin.com](http://pastebin.com/) website.
+Now put it on a paste website, either of these two is fine : 
 
-Paste your configuration file's content into the « New paste » box
+{::nomarkdown}
+<style>
+.paste-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 1.5rem;align-items:start}
+.paste-columns img{display:block;width:100% !important;max-width:100% !important;max-height:none !important;height:auto;margin:.5rem 0 1rem;border:1px solid #888}
+@media (max-width:640px){.paste-columns{grid-template-columns:1fr}}
+</style>
+<div class="paste-columns">
+<div>
+<h4 id="paste-with-pastebin">Pastebin</h4>
+<p>Go to <a href="https://pastebin.com/">pastebin.com</a>, paste your configuration file's content into the « New Paste » box, set « Paste Exposure » to « Unlisted », then click « Create New Paste ». You don't need an account.</p>
+<img src="/images/troubleshooting/pastebin-create.webp" alt="Pastebin form: paste the config in the large box, set the expiration, choose Unlisted, click Create New Paste" width="900" height="1003">
+<p>The website then shows your paste. Copy the address of that page.</p>
+<img src="/images/troubleshooting/pastebin-link.webp" alt="Finished Pastebin paste, with the address to send highlighted at the top" width="900" height="663">
+</div>
+<div>
+<h4 id="paste-with-github-gist">GitHub Gist</h4>
+<p>Go to <a href="https://gist.github.com/">gist.github.com</a> ( you need to be signed in to a GitHub account ), name the file <code>config</code>, paste your configuration file's content into the large box, then click « Create secret gist ».</p>
+<img src="/images/troubleshooting/gist-create.webp" alt="GitHub Gist form: name the file config, paste the config in the large box, click Create secret gist" width="1519" height="784">
+<p>GitHub then shows your gist. Copy the address of that page.</p>
+<img src="/images/troubleshooting/gist-link.webp" alt="Finished secret gist, with the address to send highlighted at the top" width="1568" height="594">
+</div>
+</div>
+{:/nomarkdown}
 
-Click on « Create new paste »
-
-The website will give you a link. You can now give this link to people on IRC or the forums, without having to copy/paste the entire file, and people will be able to see your config and help you.
+You can now give this link to people on IRC or the forums, without having to copy/paste the entire file, and people will be able to see your config and help you.
 
 ### 6. Isolate the problem as much as possible
 

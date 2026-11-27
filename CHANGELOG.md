@@ -31,6 +31,7 @@ History: see CHANGELOG.archive.md.
 
 ### Added
 
+- Troubleshooting page: the "Prepare your config" step now shows, in two columns with screenshots, how to share a config file with Pastebin or GitHub Gist.
 - Pictures are at most three quarters of the page width and half the screen height, keeping their proportions.
 - Full-screen image viewer for pictures and diagrams on every page: next and previous, wheel and pinch zoom, drag to pan, keyboard control.
 - Quick page search (Ctrl+K or /), "On this page" contents on wide screens, reading progress, back-to-top and copy buttons on code blocks.
