@@ -80,12 +80,22 @@ permalink: /extensions/historical-breakoutterm
       <a class="xb-mk xb-pb xb-pr" href="#tour-1" style="left:93.2%;top:17.5%" aria-label="1: Screw terminals P2">1<span class="xb-pop"><b>Screw terminals P2</b> — Terminal 1 is ground; the order is reversed against the headers.</span></a>
       <a class="xb-mk" href="#tour-2" style="left:32.4%;top:66.7%" aria-label="2: Header P1">2<span class="xb-pop"><b>Header P1</b> — Host connector.</span></a>
       <a class="xb-mk" href="#tour-3" style="left:67.6%;top:66.7%" aria-label="3: Header P3">3<span class="xb-pop"><b>Header P3</b> — Straight-through copy of P1.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-4" style="left:92.7%;top:40%" aria-label="4: Ground screw">4<span class="xb-pop"><b>Ground screw</b> — P2 contact 1, marked <code>GND</code>.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-5" style="left:18%;top:40%" aria-label="5: 5 V screw">5<span class="xb-pop"><b>5 V screw</b> — P2 contact 9, marked <code>+5V</code>.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-6" style="left:8.5%;top:40%" aria-label="6: 3.3 V screw">6<span class="xb-pop"><b>3.3 V screw</b> — P2 contact 10, marked <code>+3V3</code>.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-7" style="left:55%;top:40%" aria-label="7: Signal screws">7<span class="xb-pop"><b>Signal screws</b> — P2 contacts 2 to 8, marked <code>P9</code> down to <code>P3</code>.</span></a>
+      <a class="xb-mk" href="#tour-8" style="left:48.3%;top:66%" aria-label="8: Socket type mark">8<span class="xb-pop"><b>Socket type mark</b> — The * mark beside a host header.</span></a>
     </div>
   </div>
   <ol class="xb-tour-list" start="1">
     <li id="tour-1"><span class="xb-n">1</span><div><b>Screw terminals P2</b> — Terminal 1 is ground; the order is reversed against the headers.</div></li>
     <li id="tour-2"><span class="xb-n">2</span><div><b>Header P1</b> — Host connector.</div></li>
     <li id="tour-3"><span class="xb-n">3</span><div><b>Header P3</b> — Straight-through copy of P1.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>Ground screw</b> — P2 contact 1, marked <code>GND</code>.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>5 V screw</b> — P2 contact 9, marked <code>+5V</code>.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>3.3 V screw</b> — P2 contact 10, marked <code>+3V3</code>.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Signal screws</b> — P2 contacts 2 to 8, marked <code>P9</code> down to <code>P3</code>.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Socket type mark</b> — The * mark beside a host header.</div></li>
   </ol>
   <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
 </figure>

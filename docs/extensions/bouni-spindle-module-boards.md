@@ -31,6 +31,8 @@ permalink: /extensions/bouni-spindle-module-boards
 ## Boards {#boards}
 
 {::nomarkdown}
+<figure class="xb-fig"><a href="/extensions/bouni-analog-spindle-control"><img src="/images/extensions/bouni-analog-spindle-control/bouni-analog-spindle-control-diagram.webp" alt="Top view of the Bouni analog spindle control board" style="max-width:420px;width:100%"></a><figcaption>Bouni analog spindle control, top view.</figcaption></figure>
+<figure class="xb-fig"><a href="/extensions/bouni-rs485-spindle-control"><img src="/images/extensions/bouni-rs485-spindle-control/bouni-rs485-spindle-control-diagram.webp" alt="Top view of the Bouni RS-485 spindle control board" style="max-width:420px;width:100%"></a><figcaption>Bouni RS-485 spindle control, top view.</figcaption></figure>
 <div class="xb-table-scroll" tabindex="0">
 <table>
   <thead><tr><th>Board</th><th>Drive input</th><th>Smoothieware support</th></tr></thead>

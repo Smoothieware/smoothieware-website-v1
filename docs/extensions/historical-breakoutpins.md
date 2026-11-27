@@ -80,12 +80,22 @@ permalink: /extensions/historical-breakoutpins
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:20.2%;top:12.9%" aria-label="1: Pin row P2">1<span class="xb-pop"><b>Pin row P2</b> — Single-row access to all ten contacts.</span></a>
       <a class="xb-mk" href="#tour-2" style="left:31.1%;top:64.9%" aria-label="2: Host connector P1">2<span class="xb-pop"><b>Host connector P1</b> — Ten contacts, same numbering as P2.</span></a>
       <a class="xb-mk" href="#tour-3" style="left:68.9%;top:64.9%" aria-label="3: Daisy-chain connector P3">3<span class="xb-pop"><b>Daisy-chain connector P3</b> — Continues all ten contacts.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-4" style="left:20.8%;top:31%" aria-label="4: 3.3 V contact">4<span class="xb-pop"><b>3.3 V contact</b> — P2 contact 1, marked <code>+3.3V</code>.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-5" style="left:27.3%;top:31%" aria-label="5: 5 V contact">5<span class="xb-pop"><b>5 V contact</b> — P2 contact 2, marked <code>+5V</code>.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-6" style="left:55%;top:29%" aria-label="6: Signal contacts">6<span class="xb-pop"><b>Signal contacts</b> — P2 contacts 3 to 9, marked <code>P3</code> to <code>P9</code>; each is joined to the same host contact.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-7" style="left:81.9%;top:31%" aria-label="7: Ground contact">7<span class="xb-pop"><b>Ground contact</b> — P2 contact 10, marked <code>GND</code>.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-8" style="left:15.2%;top:63%" aria-label="8: Socket type mark">8<span class="xb-pop"><b>Socket type mark</b> — The * mark beside the host connectors.</span></a>
     </div>
   </div>
   <ol class="xb-tour-list" start="1">
     <li id="tour-1"><span class="xb-n">1</span><div><b>Pin row P2</b> — Single-row access to all ten contacts.</div></li>
     <li id="tour-2"><span class="xb-n">2</span><div><b>Host connector P1</b> — Ten contacts, same numbering as P2.</div></li>
     <li id="tour-3"><span class="xb-n">3</span><div><b>Daisy-chain connector P3</b> — Continues all ten contacts.</div></li>
+    <li id="tour-4"><span class="xb-n">4</span><div><b>3.3 V contact</b> — P2 contact 1, marked <code>+3.3V</code>.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>5 V contact</b> — P2 contact 2, marked <code>+5V</code>.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>Signal contacts</b> — P2 contacts 3 to 9, marked <code>P3</code> to <code>P9</code>; each is joined to the same host contact.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Ground contact</b> — P2 contact 10, marked <code>GND</code>.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Socket type mark</b> — The * mark beside the host connectors.</div></li>
   </ol>
   <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
 </figure>

@@ -8,6 +8,7 @@ History: see CHANGELOG.archive.md.
 
 ### Fixed
 
+- Three older breakout board pages now have eight board-tour points; the Bouni spindle chooser page shows both boards.
 - Extruder harness page: corrected board-tour popup placement.
 - Gate boards page: added the bench-test wiring diagram to Get started.
 - Extension board pages: more numbered board-tour points on six older boards, and mounting-dimension drawings on five older boards.

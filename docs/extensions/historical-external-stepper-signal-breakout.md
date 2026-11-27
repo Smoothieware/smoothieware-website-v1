@@ -80,6 +80,10 @@ permalink: /extensions/historical-external-stepper-signal-breakout
       <a class="xb-mk xb-pb xb-pr" href="#tour-2" style="left:96.2%;top:20.7%" aria-label="2: Output 1">2<span class="xb-pop"><b>Output 1</b> — STEP1 and DIR1.</span></a>
       <a class="xb-mk xb-pb" href="#tour-3" style="left:62.7%;top:20.7%" aria-label="3: Output 2">3<span class="xb-pop"><b>Output 2</b> — STEP2 and DIR2.</span></a>
       <a class="xb-mk xb-pb" href="#tour-4" style="left:29.2%;top:20.7%" aria-label="4: Output 3">4<span class="xb-pop"><b>Output 3</b> — STEP3 and DIR3.</span></a>
+      <a class="xb-mk" href="#tour-5" style="left:56.3%;top:57%" aria-label="5: 3.3 V input">5<span class="xb-pop"><b>3.3 V input</b> — J1 contact 1, <code>+3V3</code>.</span></a>
+      <a class="xb-mk" href="#tour-6" style="left:56.3%;top:86%" aria-label="6: 5 V input">6<span class="xb-pop"><b>5 V input</b> — J1 contact 2, <code>+5V</code>.</span></a>
+      <a class="xb-mk" href="#tour-7" style="left:43.5%;top:86%" aria-label="7: Ground input">7<span class="xb-pop"><b>Ground input</b> — J1 contact 10, <code>GND</code>.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-8" style="left:43.7%;top:20.7%" aria-label="8: Enable output">8<span class="xb-pop"><b>Enable output</b> — Contact 4 of output 2, <code>EN</code>; the same signal reaches contact 4 of all three outputs.</span></a>
     </div>
   </div>
   <ol class="xb-tour-list" start="1">
@@ -87,6 +91,10 @@ permalink: /extensions/historical-external-stepper-signal-breakout
     <li id="tour-2"><span class="xb-n">2</span><div><b>Output 1</b> — STEP1 and DIR1.</div></li>
     <li id="tour-3"><span class="xb-n">3</span><div><b>Output 2</b> — STEP2 and DIR2.</div></li>
     <li id="tour-4"><span class="xb-n">4</span><div><b>Output 3</b> — STEP3 and DIR3.</div></li>
+    <li id="tour-5"><span class="xb-n">5</span><div><b>3.3 V input</b> — J1 contact 1, <code>+3V3</code>.</div></li>
+    <li id="tour-6"><span class="xb-n">6</span><div><b>5 V input</b> — J1 contact 2, <code>+5V</code>.</div></li>
+    <li id="tour-7"><span class="xb-n">7</span><div><b>Ground input</b> — J1 contact 10, <code>GND</code>.</div></li>
+    <li id="tour-8"><span class="xb-n">8</span><div><b>Enable output</b> — Contact 4 of output 2, <code>EN</code>; the same signal reaches contact 4 of all three outputs.</div></li>
   </ol>
   <figcaption>Point at a number, or tap it, to read what the part is; the same text is in the list. On a small screen, scroll the drawing sideways.</figcaption>
 </figure>
