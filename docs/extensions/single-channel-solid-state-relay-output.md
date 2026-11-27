@@ -189,29 +189,29 @@ These steps check the control side first, with no mains connected. Mains wiring 
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Minimal wiring diagram">
   <svg viewBox="0 0 1000 400" role="img" aria-labelledby="xb-hookup-t">
     <title id="xb-hookup-t">Minimal wiring: a signal stage between the Smoothieboard and the J1 connector, mains live through the fuse and the board to a load, and neutral and earth straight to the load.</title>
-    <rect x="360" y="110" width="320" height="200" rx="8" fill="#1b2028" stroke="#59616e" stroke-width="1.5"/>
-    <text x="520" y="132" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">Solid-state relay board</text>
-    <text x="400" y="222" font-size="11" fill="#a9b4c2">MAINS IN</text>
-    <text x="640" y="222" text-anchor="end" font-size="11" fill="#a9b4c2">LOAD</text>
-    <rect x="410" y="262" width="60" height="28" rx="3" fill="#0d0f12" stroke="#8a94a3"/>
-    <text x="440" y="280" text-anchor="middle" font-size="11" fill="#e6ebf2">J1</text>
-    <rect x="30" y="230" width="150" height="80" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/>
-    <text x="105" y="266" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Smoothieboard</text>
-    <text x="105" y="286" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">V2 Prime</text>
-    <rect x="215" y="250" width="110" height="40" rx="6" fill="#212936" stroke="#ffcc33"/>
-    <text x="270" y="275" text-anchor="middle" font-size="12" fill="#e6ebf2">4.5–6 V stage</text>
+    <rect x="360" y="110" width="320" height="200" rx="8" fill="#202020" stroke="#606060" stroke-width="1.5"/>
+    <text x="520" y="132" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">Solid-state relay board</text>
+    <text x="400" y="222" font-size="11" fill="#b3b3b3">MAINS IN</text>
+    <text x="640" y="222" text-anchor="end" font-size="11" fill="#b3b3b3">LOAD</text>
+    <rect x="410" y="262" width="60" height="28" rx="3" fill="#0d0f12" stroke="#939393"/>
+    <text x="440" y="280" text-anchor="middle" font-size="11" fill="#eaeaea">J1</text>
+    <rect x="30" y="230" width="150" height="80" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/>
+    <text x="105" y="266" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">Smoothieboard</text>
+    <text x="105" y="286" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">V2 Prime</text>
+    <rect x="215" y="250" width="110" height="40" rx="6" fill="#292929" stroke="#ffcc33"/>
+    <text x="270" y="275" text-anchor="middle" font-size="12" fill="#eaeaea">4.5–6 V stage</text>
     <path d="M180 270H215" stroke="#5fb3ff" stroke-width="4" fill="none"/>
     <path d="M325 276H410" stroke="#5fb3ff" stroke-width="4" fill="none"/>
-    <text x="368" y="318" text-anchor="middle" font-size="11" fill="#a9b4c2">SIG and GND</text>
-    <rect x="30" y="20" width="160" height="70" rx="8" fill="#212936" stroke="#59616e"/>
-    <text x="110" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">Mains supply</text>
-    <rect x="810" y="20" width="160" height="70" rx="8" fill="#212936" stroke="#59616e"/>
-    <text x="890" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">Your load</text>
+    <text x="368" y="318" text-anchor="middle" font-size="11" fill="#b3b3b3">SIG and GND</text>
+    <rect x="30" y="20" width="160" height="70" rx="8" fill="#292929" stroke="#606060"/>
+    <text x="110" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">Mains supply</text>
+    <rect x="810" y="20" width="160" height="70" rx="8" fill="#292929" stroke="#606060"/>
+    <text x="890" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">Your load</text>
     <path d="M190 36H810" stroke="#7ccf4a" stroke-width="5"/><path d="M190 36H810" stroke="#ffe14d" stroke-width="5" stroke-dasharray="10 10"/>
     <path d="M190 54H810" stroke="#4f8dea" stroke-width="5"/>
     <path d="M190 72H400V200" fill="none" stroke="#b0703c" stroke-width="5"/>
     <path d="M640 200V72H810" fill="none" stroke="#b0703c" stroke-width="5"/>
-    <g font-size="12" fill="#e6ebf2">
+    <g font-size="12" fill="#eaeaea">
       <text x="500" y="30" text-anchor="middle">Earth: straight to the load</text>
       <text x="500" y="49" text-anchor="middle" fill="#9cc3ff">Neutral: straight to the load</text>
       <text x="300" y="66" text-anchor="middle" fill="#e0a877">Live: to MAINS IN, through the fuse</text>
@@ -354,18 +354,18 @@ Three things this board does not do:
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
   <svg viewBox="0 0 1000 250" role="img" aria-labelledby="xb-how-t">
     <title id="xb-how-t">The control signal lights the LED inside the optotriac; across the optical barrier the optotriac triggers the triac gate; the triac switches the live wire to the load.</title>
-    <g font-size="13" font-weight="700" text-anchor="middle" fill="#e6ebf2">
-      <rect x="20" y="85" width="170" height="80" rx="8" fill="#1f2226" stroke="#dfe4ee"/><text x="105" y="120">Signal on J1</text><text x="105" y="140" font-weight="400" fill="#a9b4c2">4.5–6 V, HIGH = on</text>
-      <rect x="260" y="85" width="190" height="80" rx="8" fill="#212936" stroke="#5fb3ff"/><text x="355" y="120">Optotriac</text><text x="355" y="140" font-weight="400" fill="#a9b4c2">MOC3063TVM, zero-cross</text>
-      <rect x="520" y="85" width="170" height="80" rx="8" fill="#212936" stroke="#f0b08a"/><text x="605" y="120">Triac</text><text x="605" y="140" font-weight="400" fill="#a9b4c2">BTA41-800BRG</text>
-      <rect x="760" y="85" width="220" height="80" rx="8" fill="#212936" stroke="#f0b08a"/><text x="870" y="120">Switched live</text><text x="870" y="140" font-weight="400" fill="#a9b4c2">to the LOAD terminal</text>
+    <g font-size="13" font-weight="700" text-anchor="middle" fill="#eaeaea">
+      <rect x="20" y="85" width="170" height="80" rx="8" fill="#1f2226" stroke="#e4e4e4"/><text x="105" y="120">Signal on J1</text><text x="105" y="140" font-weight="400" fill="#b3b3b3">4.5–6 V, HIGH = on</text>
+      <rect x="260" y="85" width="190" height="80" rx="8" fill="#292929" stroke="#5fb3ff"/><text x="355" y="120">Optotriac</text><text x="355" y="140" font-weight="400" fill="#b3b3b3">MOC3063TVM, zero-cross</text>
+      <rect x="520" y="85" width="170" height="80" rx="8" fill="#292929" stroke="#f0b08a"/><text x="605" y="120">Triac</text><text x="605" y="140" font-weight="400" fill="#b3b3b3">BTA41-800BRG</text>
+      <rect x="760" y="85" width="220" height="80" rx="8" fill="#292929" stroke="#f0b08a"/><text x="870" y="120">Switched live</text><text x="870" y="140" font-weight="400" fill="#b3b3b3">to the LOAD terminal</text>
     </g>
-    <g stroke-width="3" fill="none" stroke="#a9b4c2"><path d="M190 125H260"/><path d="M450 125H520"/><path d="M690 125H760"/></g>
-    <path d="M355 40V230" stroke="#59616e" stroke-width="2" stroke-dasharray="6 6"/>
-    <text x="355" y="30" text-anchor="middle" font-size="12" fill="#a9b4c2">optical barrier: light only</text>
-    <text x="105" y="60" text-anchor="middle" font-size="12" fill="#a9b4c2">CONTROL SIDE</text>
+    <g stroke-width="3" fill="none" stroke="#b3b3b3"><path d="M190 125H260"/><path d="M450 125H520"/><path d="M690 125H760"/></g>
+    <path d="M355 40V230" stroke="#606060" stroke-width="2" stroke-dasharray="6 6"/>
+    <text x="355" y="30" text-anchor="middle" font-size="12" fill="#b3b3b3">optical barrier: light only</text>
+    <text x="105" y="60" text-anchor="middle" font-size="12" fill="#b3b3b3">CONTROL SIDE</text>
     <text x="620" y="60" text-anchor="middle" font-size="12" fill="#f0b08a">MAINS SIDE</text>
-    <text x="605" y="205" text-anchor="middle" font-size="12" fill="#a9b4c2">fuse and thermal link in the live and trigger paths</text>
+    <text x="605" y="205" text-anchor="middle" font-size="12" fill="#b3b3b3">fuse and thermal link in the live and trigger paths</text>
   </svg>
   </div>
   <figcaption>The path of one on/off command.</figcaption>
@@ -421,32 +421,32 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
   <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-ssr1-mount-t">
   <title id="xb-ssr1-mount-t">Mounting drawing of the single-channel solid-state relay board, component side: outline 100 by 77 millimetres with 4 mounting holes and 2 cable-tie holes. Hole positions are listed in the table below.</title>
-  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
-  <rect x="259.2" y="78.0" width="441.6" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
-  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M259.2 56H700.8"/><path d="M259.2 50V62"/><path d="M700.8 50V62"/><path d="M726.8 78.0V418.0"/><path d="M720.8 78.0h12"/><path d="M720.8 418.0h12"/></g>
-  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">100</text>
-  <text x="738.8" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">77</text>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#b3b3b3">COMPONENT SIDE · millimetres</text>
+  <rect x="259.2" y="78.0" width="441.6" height="340.0" rx="0.0" fill="#1f2226" stroke="#eaeaea" stroke-width="1.5"/>
+  <g stroke="#b3b3b3" stroke-width="1.2" fill="none"><path d="M259.2 56H700.8"/><path d="M259.2 50V62"/><path d="M700.8 50V62"/><path d="M726.8 78.0V418.0"/><path d="M720.8 78.0h12"/><path d="M720.8 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">100</text>
+  <text x="738.8" y="253.0" font-size="15" font-weight="700" fill="#eaeaea">77</text>
   <circle cx="259.2" cy="78.0" r="4" fill="#ffcc33"/>
   <text x="247.2" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
   <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M201.2 104.0h30" fill="none"/><path d="M235.2 104.0l-8 -4v8z"/><path d="M201.2 104.0v30" fill="none"/><path d="M201.2 138.0l-4 -8h8z"/></g>
   <text x="239.2" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
   <text x="197.2" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
-  <circle cx="303.4" cy="95.7" r="7.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <circle cx="303.4" cy="95.7" r="7.1" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M292.3 95.7h22.1M303.4 84.6v22.1" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="296.3" y="122.7" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  10.00, 4.00</text>
-  <circle cx="656.6" cy="95.7" r="7.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="296.3" y="122.7" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">1</tspan>  10.00, 4.00</text>
+  <circle cx="656.6" cy="95.7" r="7.1" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M645.6 95.7h22.1M656.6 84.6v22.1" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="663.7" y="122.7" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  90.00, 4.00</text>
-  <circle cx="303.4" cy="360.6" r="7.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="663.7" y="122.7" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">2</tspan>  90.00, 4.00</text>
+  <circle cx="303.4" cy="360.6" r="7.1" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M292.3 360.6h22.1M303.4 349.5v22.1" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="296.3" y="343.5" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  10.00, 64.00</text>
-  <circle cx="656.6" cy="360.6" r="7.1" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="296.3" y="343.5" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">3</tspan>  10.00, 64.00</text>
+  <circle cx="656.6" cy="360.6" r="7.1" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M645.6 360.6h22.1M656.6 349.5v22.1" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="663.7" y="343.5" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  90.00, 64.00</text>
-  <circle cx="581.6" cy="91.2" r="5.5" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
-  <circle cx="603.6" cy="91.2" r="5.5" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
-  <text x="568.0" y="95.2" text-anchor="end" font-size="12" fill="#a9b4c2">cable tie</text>
-  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  <text x="663.7" y="343.5" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">4</tspan>  90.00, 64.00</text>
+  <circle cx="581.6" cy="91.2" r="5.5" fill="#191919" stroke="#b3b3b3" stroke-width="1.5"/>
+  <circle cx="603.6" cy="91.2" r="5.5" fill="#191919" stroke="#b3b3b3" stroke-width="1.5"/>
+  <text x="568.0" y="95.2" text-anchor="end" font-size="12" fill="#b3b3b3">cable tie</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#b3b3b3">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
   </svg>
   </div>
   <figcaption>Board outline 100 × 77&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>

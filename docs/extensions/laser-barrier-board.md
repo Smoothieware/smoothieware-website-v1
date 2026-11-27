@@ -218,16 +218,16 @@ Do these steps with the machine&rsquo;s motion disabled.
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Minimal wiring diagram">
   <svg viewBox="0 0 1000 300" role="img" aria-labelledby="xb-hookup-t">
     <title id="xb-hookup-t">Minimal wiring: five leads from the Smoothieboard header to the receiver socket, and three leads from the receiver link connector to the emitter, which faces the receiver across a gap.</title>
-    <rect x="370" y="60" width="200" height="180" rx="8" fill="#1b2028" stroke="#59616e" stroke-width="1.5"/>
-    <text x="470" y="90" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">Receiver</text>
-    <rect x="370" y="130" width="40" height="60" rx="3" fill="#0d0f12" stroke="#8a94a3"/><text x="390" y="165" text-anchor="middle" font-size="11" fill="#e6ebf2">J1</text>
-    <rect x="450" y="200" width="60" height="36" rx="3" fill="#0d0f12" stroke="#8a94a3"/><text x="480" y="223" text-anchor="middle" font-size="11" fill="#e6ebf2">J2</text>
-    <rect x="530" y="110" width="40" height="40" rx="3" fill="#212936" stroke="#e0a877"/><text x="550" y="135" text-anchor="middle" font-size="10" fill="#e6ebf2">RX</text>
-    <rect x="800" y="90" width="170" height="90" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="885" y="130" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Smoothieboard</text><text x="885" y="150" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">V2 Prime</text>
+    <rect x="370" y="60" width="200" height="180" rx="8" fill="#202020" stroke="#606060" stroke-width="1.5"/>
+    <text x="470" y="90" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">Receiver</text>
+    <rect x="370" y="130" width="40" height="60" rx="3" fill="#0d0f12" stroke="#939393"/><text x="390" y="165" text-anchor="middle" font-size="11" fill="#eaeaea">J1</text>
+    <rect x="450" y="200" width="60" height="36" rx="3" fill="#0d0f12" stroke="#939393"/><text x="480" y="223" text-anchor="middle" font-size="11" fill="#eaeaea">J2</text>
+    <rect x="530" y="110" width="40" height="40" rx="3" fill="#292929" stroke="#e0a877"/><text x="550" y="135" text-anchor="middle" font-size="10" fill="#eaeaea">RX</text>
+    <rect x="800" y="90" width="170" height="90" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="885" y="130" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">Smoothieboard</text><text x="885" y="150" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">V2 Prime</text>
     <path d="M570 130H800" stroke="#5fb3ff" stroke-width="4" stroke-dasharray="3 0"/>
-    <text x="685" y="120" text-anchor="middle" font-size="11" fill="#a9b4c2">H1 to H5, five leads</text>
-    <rect x="40" y="200" width="150" height="70" rx="8" fill="#1b2028" stroke="#59616e"/><text x="115" y="225" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">Emitter</text><rect x="40" y="235" width="30" height="25" fill="#212936" stroke="#e0a877"/><text x="130" y="250" text-anchor="middle" font-size="10" fill="#a9b4c2">LED faces right</text>
-    <path d="M190 220H450" stroke="#a9b4c2" stroke-width="4"/><text x="320" y="212" text-anchor="middle" font-size="11" fill="#a9b4c2">L1 to L3: GND, 5 V, gate</text>
+    <text x="685" y="120" text-anchor="middle" font-size="11" fill="#b3b3b3">H1 to H5, five leads</text>
+    <rect x="40" y="200" width="150" height="70" rx="8" fill="#202020" stroke="#606060"/><text x="115" y="225" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">Emitter</text><rect x="40" y="235" width="30" height="25" fill="#292929" stroke="#e0a877"/><text x="130" y="250" text-anchor="middle" font-size="10" fill="#b3b3b3">LED faces right</text>
+    <path d="M190 220H450" stroke="#b3b3b3" stroke-width="4"/><text x="320" y="212" text-anchor="middle" font-size="11" fill="#b3b3b3">L1 to L3: GND, 5 V, gate</text>
     <path d="M190 250H530" stroke="#e0a877" stroke-width="2" stroke-dasharray="8 6"/><text x="360" y="268" text-anchor="middle" font-size="11" fill="#e0a877">infrared beam</text>
   </svg>
   </div>
@@ -315,17 +315,17 @@ Use it like this:
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
   <svg viewBox="0 0 1000 260" role="img" aria-labelledby="xb-how-t">
     <title id="xb-how-t">The receiver gates the emitter on and off through the link; the emitter sends modulated infrared; the receiver module and logic check that the signal follows the gating and report beam state.</title>
-    <g font-size="13" font-weight="700" text-anchor="middle" fill="#e6ebf2">
-      <rect x="20" y="40" width="200" height="80" rx="8" fill="#212936" stroke="#5fb3ff"/><text x="120" y="75">Receiver clock</text><text x="120" y="95" font-weight="400" fill="#a9b4c2">tick, counter, phases</text>
-      <rect x="300" y="40" width="200" height="80" rx="8" fill="#212936" stroke="#e0a877"/><text x="400" y="75">Emitter</text><text x="400" y="95" font-weight="400" fill="#a9b4c2">38 kHz pulses when gated on</text>
-      <rect x="580" y="40" width="200" height="80" rx="8" fill="#212936" stroke="#e0a877"/><text x="680" y="75">Infrared receiver</text><text x="680" y="95" font-weight="400" fill="#a9b4c2">TSSP4038</text>
-      <rect x="580" y="150" width="200" height="80" rx="8" fill="#212936" stroke="#6fe08a"/><text x="680" y="185">Flip-flops and gates</text><text x="680" y="205" font-weight="400" fill="#a9b4c2">on-phase and off-phase samples</text>
-      <rect x="300" y="150" width="200" height="80" rx="8" fill="#1f2226" stroke="#dfe4ee"/><text x="400" y="185">Beam state, J1 contact 3</text><text x="400" y="205" font-weight="400" fill="#a9b4c2">to the controller</text>
+    <g font-size="13" font-weight="700" text-anchor="middle" fill="#eaeaea">
+      <rect x="20" y="40" width="200" height="80" rx="8" fill="#292929" stroke="#5fb3ff"/><text x="120" y="75">Receiver clock</text><text x="120" y="95" font-weight="400" fill="#b3b3b3">tick, counter, phases</text>
+      <rect x="300" y="40" width="200" height="80" rx="8" fill="#292929" stroke="#e0a877"/><text x="400" y="75">Emitter</text><text x="400" y="95" font-weight="400" fill="#b3b3b3">38 kHz pulses when gated on</text>
+      <rect x="580" y="40" width="200" height="80" rx="8" fill="#292929" stroke="#e0a877"/><text x="680" y="75">Infrared receiver</text><text x="680" y="95" font-weight="400" fill="#b3b3b3">TSSP4038</text>
+      <rect x="580" y="150" width="200" height="80" rx="8" fill="#292929" stroke="#6fe08a"/><text x="680" y="185">Flip-flops and gates</text><text x="680" y="205" font-weight="400" fill="#b3b3b3">on-phase and off-phase samples</text>
+      <rect x="300" y="150" width="200" height="80" rx="8" fill="#1f2226" stroke="#e4e4e4"/><text x="400" y="185">Beam state, J1 contact 3</text><text x="400" y="205" font-weight="400" fill="#b3b3b3">to the controller</text>
     </g>
-    <g stroke-width="3" fill="none" stroke="#a9b4c2"><path d="M220 80H300"/><path d="M680 120V150"/><path d="M580 190H500"/></g>
+    <g stroke-width="3" fill="none" stroke="#b3b3b3"><path d="M220 80H300"/><path d="M680 120V150"/><path d="M580 190H500"/></g>
     <path d="M500 80H580" stroke="#e0a877" stroke-width="3" stroke-dasharray="8 6"/>
     <text x="540" y="70" text-anchor="middle" font-size="12" fill="#e0a877">beam</text>
-    <text x="260" y="70" text-anchor="middle" font-size="12" fill="#a9b4c2">gate</text>
+    <text x="260" y="70" text-anchor="middle" font-size="12" fill="#b3b3b3">gate</text>
   </svg>
   </div>
   <figcaption>The path of the signals. The gate lead from the receiver switches the emitter.</figcaption>
@@ -394,23 +394,23 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
   <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-emitter-mount-t">
   <title id="xb-emitter-mount-t">Mounting drawing of the emitter board, component side: outline 34 by 20 millimetres with 2 mounting holes. Hole positions are listed in the table below.</title>
-  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
-  <rect x="191.0" y="78.0" width="578.0" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
-  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M191.0 56H769.0"/><path d="M191.0 50V62"/><path d="M769.0 50V62"/><path d="M795.0 78.0V418.0"/><path d="M789.0 78.0h12"/><path d="M789.0 418.0h12"/></g>
-  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">34</text>
-  <text x="807.0" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">20</text>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#b3b3b3">COMPONENT SIDE · millimetres</text>
+  <rect x="191.0" y="78.0" width="578.0" height="340.0" rx="0.0" fill="#1f2226" stroke="#eaeaea" stroke-width="1.5"/>
+  <g stroke="#b3b3b3" stroke-width="1.2" fill="none"><path d="M191.0 56H769.0"/><path d="M191.0 50V62"/><path d="M769.0 50V62"/><path d="M795.0 78.0V418.0"/><path d="M789.0 78.0h12"/><path d="M789.0 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">34</text>
+  <text x="807.0" y="253.0" font-size="15" font-weight="700" fill="#eaeaea">20</text>
   <circle cx="191.0" cy="78.0" r="4" fill="#ffcc33"/>
   <text x="179.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
   <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M133.0 104.0h30" fill="none"/><path d="M167.0 104.0l-8 -4v8z"/><path d="M133.0 104.0v30" fill="none"/><path d="M133.0 138.0l-4 -8h8z"/></g>
   <text x="171.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
   <text x="129.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
-  <circle cx="276.0" cy="146.0" r="27.2" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <circle cx="276.0" cy="146.0" r="27.2" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M244.8 146.0h62.4M276.0 114.8v62.4" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="248.8" y="193.2" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 4.00</text>
-  <circle cx="616.0" cy="146.0" r="27.2" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="248.8" y="193.2" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 4.00</text>
+  <circle cx="616.0" cy="146.0" r="27.2" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M584.8 146.0h62.4M616.0 114.8v62.4" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="643.2" y="193.2" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  25.00, 4.00</text>
-  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  <text x="643.2" y="193.2" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">2</tspan>  25.00, 4.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#b3b3b3">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
   </svg>
   </div>
   <figcaption>Board outline 34 × 20&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
@@ -433,23 +433,23 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
   <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-receiver-mount-t">
   <title id="xb-receiver-mount-t">Mounting drawing of the receiver board, component side: outline 44 by 34 millimetres with 2 mounting holes. Hole positions are listed in the table below.</title>
-  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
-  <rect x="260.0" y="78.0" width="440.0" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
-  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M260.0 56H700.0"/><path d="M260.0 50V62"/><path d="M700.0 50V62"/><path d="M726.0 78.0V418.0"/><path d="M720.0 78.0h12"/><path d="M720.0 418.0h12"/></g>
-  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">44</text>
-  <text x="738.0" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">34</text>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#b3b3b3">COMPONENT SIDE · millimetres</text>
+  <rect x="260.0" y="78.0" width="440.0" height="340.0" rx="0.0" fill="#1f2226" stroke="#eaeaea" stroke-width="1.5"/>
+  <g stroke="#b3b3b3" stroke-width="1.2" fill="none"><path d="M260.0 56H700.0"/><path d="M260.0 50V62"/><path d="M700.0 50V62"/><path d="M726.0 78.0V418.0"/><path d="M720.0 78.0h12"/><path d="M720.0 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">44</text>
+  <text x="738.0" y="253.0" font-size="15" font-weight="700" fill="#eaeaea">34</text>
   <circle cx="260.0" cy="78.0" r="4" fill="#ffcc33"/>
   <text x="248.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
   <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M202.0 104.0h30" fill="none"/><path d="M236.0 104.0l-8 -4v8z"/><path d="M202.0 104.0v30" fill="none"/><path d="M202.0 138.0l-4 -8h8z"/></g>
   <text x="240.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
   <text x="198.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
-  <circle cx="360.0" cy="138.0" r="16.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <circle cx="360.0" cy="138.0" r="16.0" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M340.0 138.0h40.0M360.0 118.0v40.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="344.0" y="174.0" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  10.00, 6.00</text>
-  <circle cx="560.0" cy="138.0" r="16.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="344.0" y="174.0" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">1</tspan>  10.00, 6.00</text>
+  <circle cx="560.0" cy="138.0" r="16.0" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M540.0 138.0h40.0M560.0 118.0v40.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="576.0" y="174.0" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  30.00, 6.00</text>
-  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  <text x="576.0" y="174.0" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">2</tspan>  30.00, 6.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#b3b3b3">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
   </svg>
   </div>
   <figcaption>Board outline 44 × 34&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>

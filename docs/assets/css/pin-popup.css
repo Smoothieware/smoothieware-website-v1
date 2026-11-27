@@ -28,7 +28,7 @@ pin.pin-tag {
 .pin-popup-panel {
     background:      #1a1a1a;
     border:          1px solid #333;
-    border-radius:   6px;
+    border-radius:   2px;
     padding:         0;
     min-width:       320px;
     max-width:       500px;
@@ -57,7 +57,7 @@ pin.pin-tag {
 }
 
 .pin-popup-number {
-    color:           #7ec8ed; /* Blue color for pin numbers */
+    color:           #bfbfbf; /* Blue color for pin numbers */
 }
 
 /* ARM pin reference (e.g., "P1.18") */
@@ -65,9 +65,9 @@ pin.pin-tag {
     font-family:     'Courier New', Courier, monospace !important;
     font-size:       14px;
     color:           #888;
-    background:      rgba(126, 200, 237, 0.1);
+    background:      rgba(191, 191, 191, 0.1);
     padding:         4px 8px;
-    border-radius:   3px;
+    border-radius:   2px;
 }
 
 /* Body section with all information */
@@ -87,7 +87,7 @@ pin.pin-tag {
 /* Section labels (Assignment, Description, etc.) */
 .pin-popup-label {
     font-weight:     600;
-    color:           #7ec8ed; /* Blue color */
+    color:           #bfbfbf; /* Blue color */
     margin-bottom:   6px;
     font-size:       13px;
     display:         flex;
@@ -133,7 +133,7 @@ pin.pin-tag {
 .pin-name-item {
     background:      rgba(255, 255, 255, 0.03);
     border:          1px solid #444;
-    border-radius:   4px;
+    border-radius:   2px;
     padding:         8px 12px;
 }
 
@@ -173,7 +173,7 @@ pin.pin-tag {
     background:      #000;
     color:           #fff;
     padding:         8px 12px;
-    border-radius:   3px;
+    border-radius:   2px;
     border:          1px solid #333;
     font-size:       13px;
     display:         block;
@@ -196,7 +196,7 @@ pin.pin-tag {
 
 .pin-popup-config-example::-webkit-scrollbar-thumb {
     background:      #444;
-    border-radius:   3px;
+    border-radius:   2px;
 }
 
 .pin-popup-config-example::-webkit-scrollbar-thumb:hover {
@@ -243,8 +243,8 @@ pin.pin-tag {
 }
 
 .pin-popup-loading .pin-popup-value sl-alert {
-    --sl-panel-background-color: rgba(33, 150, 243, 0.1);
-    --sl-panel-border-color: rgba(33, 150, 243, 0.3);
+    --sl-panel-background-color: rgba(146, 146, 146, 0.1);
+    --sl-panel-border-color: rgba(146, 146, 146, 0.3);
 }
 
 /* Responsive adjustments */

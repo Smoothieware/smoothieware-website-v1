@@ -191,19 +191,19 @@ The worked example reads a normally-open contact. Switch everything off before y
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Minimal wiring diagram">
   <svg viewBox="0 0 1000 300" role="img" aria-labelledby="xb-hookup-t">
     <title id="xb-hookup-t">Minimal wiring: three leads from the Smoothieboard header to the host connector J2, and an isolated supply through a normally-open contact to the field connector J1. The two grounds are not connected.</title>
-    <rect x="370" y="60" width="260" height="180" rx="8" fill="#1b2028" stroke="#59616e" stroke-width="1.5"/>
-    <text x="500" y="90" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">Input protector</text>
-    <text x="500" y="210" text-anchor="middle" font-size="11" fill="#a9b4c2">isolated receiver, grounds separate</text>
-    <rect x="370" y="130" width="50" height="50" rx="3" fill="#0d0f12" stroke="#8a94a3"/><text x="395" y="160" text-anchor="middle" font-size="12" fill="#e6ebf2">J1</text>
-    <rect x="580" y="130" width="50" height="50" rx="3" fill="#0d0f12" stroke="#8a94a3"/><text x="605" y="160" text-anchor="middle" font-size="12" fill="#e6ebf2">J2</text>
-    <rect x="30" y="20" width="150" height="70" rx="8" fill="#212936" stroke="#59616e"/><text x="105" y="50" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">Isolated supply</text><text x="105" y="70" text-anchor="middle" font-size="12" fill="#a9b4c2">24 V, own return</text>
-    <rect x="30" y="140" width="150" height="50" rx="8" fill="#212936" stroke="#59616e"/><text x="105" y="170" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">Contact (NO)</text>
+    <rect x="370" y="60" width="260" height="180" rx="8" fill="#202020" stroke="#606060" stroke-width="1.5"/>
+    <text x="500" y="90" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">Input protector</text>
+    <text x="500" y="210" text-anchor="middle" font-size="11" fill="#b3b3b3">isolated receiver, grounds separate</text>
+    <rect x="370" y="130" width="50" height="50" rx="3" fill="#0d0f12" stroke="#939393"/><text x="395" y="160" text-anchor="middle" font-size="12" fill="#eaeaea">J1</text>
+    <rect x="580" y="130" width="50" height="50" rx="3" fill="#0d0f12" stroke="#939393"/><text x="605" y="160" text-anchor="middle" font-size="12" fill="#eaeaea">J2</text>
+    <rect x="30" y="20" width="150" height="70" rx="8" fill="#292929" stroke="#606060"/><text x="105" y="50" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">Isolated supply</text><text x="105" y="70" text-anchor="middle" font-size="12" fill="#b3b3b3">24 V, own return</text>
+    <rect x="30" y="140" width="150" height="50" rx="8" fill="#292929" stroke="#606060"/><text x="105" y="170" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">Contact (NO)</text>
     <path d="M105 90V140" stroke="#e0a877" stroke-width="4"/><text x="150" y="120" font-size="11" fill="#e0a877">F1</text>
     <path d="M180 165H370" stroke="#6fe08a" stroke-width="4"/><text x="275" y="155" text-anchor="middle" font-size="11" fill="#6fe08a">F2 to J1 contact 1</text>
-    <path d="M180 40H300V190H370" stroke="#8a94a3" stroke-width="4" fill="none"/><text x="240" y="32" text-anchor="middle" font-size="11" fill="#a9b4c2">F3 to J1 contact 2</text>
-    <rect x="820" y="130" width="150" height="80" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="895" y="165" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Smoothieboard</text><text x="895" y="185" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">V2 Prime</text>
-    <path d="M630 155H820" stroke="#5fb3ff" stroke-width="4"/><path d="M630 170H820" stroke="#8a94a3" stroke-width="4"/><path d="M630 140H820" stroke="#ff9d4d" stroke-width="4"/>
-    <text x="725" y="125" text-anchor="middle" font-size="11" fill="#a9b4c2">H1 5 V, H2 PB1, H3 GND</text>
+    <path d="M180 40H300V190H370" stroke="#939393" stroke-width="4" fill="none"/><text x="240" y="32" text-anchor="middle" font-size="11" fill="#b3b3b3">F3 to J1 contact 2</text>
+    <rect x="820" y="130" width="150" height="80" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="895" y="165" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">Smoothieboard</text><text x="895" y="185" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">V2 Prime</text>
+    <path d="M630 155H820" stroke="#5fb3ff" stroke-width="4"/><path d="M630 170H820" stroke="#939393" stroke-width="4"/><path d="M630 140H820" stroke="#ff9d4d" stroke-width="4"/>
+    <text x="725" y="125" text-anchor="middle" font-size="11" fill="#b3b3b3">H1 5 V, H2 PB1, H3 GND</text>
   </svg>
   </div>
   <figcaption>Minimal wiring, schematic and not to scale. The field side and the host side share no ground.</figcaption>
@@ -308,15 +308,15 @@ Choose the distances and rates for your own machine. Home with `G28 X0` when `gr
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
   <svg viewBox="0 0 1000 250" role="img" aria-labelledby="xb-how-t">
     <title id="xb-how-t">The field signal passes the series resistors and clamp into the isolated receiver; across the barrier the receiver drives a transistor that pulls the host output low.</title>
-    <g font-size="13" font-weight="700" text-anchor="middle" fill="#e6ebf2">
-      <rect x="20" y="85" width="170" height="80" rx="8" fill="#1f2226" stroke="#dfe4ee"/><text x="105" y="120">Field signal J1</text><text x="105" y="140" font-weight="400" fill="#a9b4c2">from a contact or sensor</text>
-      <rect x="250" y="85" width="190" height="80" rx="8" fill="#212936" stroke="#e0a877"/><text x="345" y="120">Input network</text><text x="345" y="140" font-weight="400" fill="#a9b4c2">resistors, filter, surge diode</text>
-      <rect x="500" y="85" width="190" height="80" rx="8" fill="#212936" stroke="#5fb3ff"/><text x="595" y="120">Isolated receiver</text><text x="595" y="140" font-weight="400" fill="#a9b4c2">ISO1211D</text>
-      <rect x="750" y="85" width="230" height="80" rx="8" fill="#212936" stroke="#6fe08a"/><text x="865" y="120">Transistor and J2</text><text x="865" y="140" font-weight="400" fill="#a9b4c2">open collector, inverting</text>
+    <g font-size="13" font-weight="700" text-anchor="middle" fill="#eaeaea">
+      <rect x="20" y="85" width="170" height="80" rx="8" fill="#1f2226" stroke="#e4e4e4"/><text x="105" y="120">Field signal J1</text><text x="105" y="140" font-weight="400" fill="#b3b3b3">from a contact or sensor</text>
+      <rect x="250" y="85" width="190" height="80" rx="8" fill="#292929" stroke="#e0a877"/><text x="345" y="120">Input network</text><text x="345" y="140" font-weight="400" fill="#b3b3b3">resistors, filter, surge diode</text>
+      <rect x="500" y="85" width="190" height="80" rx="8" fill="#292929" stroke="#5fb3ff"/><text x="595" y="120">Isolated receiver</text><text x="595" y="140" font-weight="400" fill="#b3b3b3">ISO1211D</text>
+      <rect x="750" y="85" width="230" height="80" rx="8" fill="#292929" stroke="#6fe08a"/><text x="865" y="120">Transistor and J2</text><text x="865" y="140" font-weight="400" fill="#b3b3b3">open collector, inverting</text>
     </g>
-    <g stroke-width="3" fill="none" stroke="#a9b4c2"><path d="M190 125H250"/><path d="M440 125H500"/><path d="M690 125H750"/></g>
-    <path d="M595 40V230" stroke="#59616e" stroke-width="2" stroke-dasharray="6 6"/>
-    <text x="595" y="30" text-anchor="middle" font-size="12" fill="#a9b4c2">isolation barrier inside the chip</text>
+    <g stroke-width="3" fill="none" stroke="#b3b3b3"><path d="M190 125H250"/><path d="M440 125H500"/><path d="M690 125H750"/></g>
+    <path d="M595 40V230" stroke="#606060" stroke-width="2" stroke-dasharray="6 6"/>
+    <text x="595" y="30" text-anchor="middle" font-size="12" fill="#b3b3b3">isolation barrier inside the chip</text>
     <text x="250" y="60" text-anchor="middle" font-size="12" fill="#e0a877">FIELD SIDE</text>
     <text x="865" y="60" text-anchor="middle" font-size="12" fill="#6fe08a">HOST SIDE</text>
   </svg>
@@ -385,26 +385,26 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
   <svg viewBox="0 0 1000 473" role="img" aria-labelledby="xb-inpro-mount-t">
   <title id="xb-inpro-mount-t">Mounting drawing of the input protector, component side: outline 43.2 by 24 millimetres with 2 mounting holes and 2 cable-tie holes. Hole positions are listed in the table below.</title>
-  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
-  <rect x="180.0" y="78.0" width="600.0" height="333.3" rx="20.8" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
-  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M180.0 56H780.0"/><path d="M180.0 50V62"/><path d="M780.0 50V62"/><path d="M806.0 78.0V411.3"/><path d="M800.0 78.0h12"/><path d="M800.0 411.3h12"/></g>
-  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">43.2</text>
-  <text x="818.0" y="249.7" font-size="15" font-weight="700" fill="#e6ebf2">24</text>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#b3b3b3">COMPONENT SIDE · millimetres</text>
+  <rect x="180.0" y="78.0" width="600.0" height="333.3" rx="20.8" fill="#1f2226" stroke="#eaeaea" stroke-width="1.5"/>
+  <g stroke="#b3b3b3" stroke-width="1.2" fill="none"><path d="M180.0 56H780.0"/><path d="M180.0 50V62"/><path d="M780.0 50V62"/><path d="M806.0 78.0V411.3"/><path d="M800.0 78.0h12"/><path d="M800.0 411.3h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">43.2</text>
+  <text x="818.0" y="249.7" font-size="15" font-weight="700" fill="#eaeaea">24</text>
   <circle cx="180.0" cy="78.0" r="4" fill="#ffcc33"/>
   <text x="168.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
   <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M122.0 104.0h30" fill="none"/><path d="M156.0 104.0l-8 -4v8z"/><path d="M122.0 104.0v30" fill="none"/><path d="M122.0 138.0l-4 -8h8z"/></g>
   <text x="160.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
   <text x="118.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
-  <circle cx="318.9" cy="355.8" r="22.2" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <circle cx="318.9" cy="355.8" r="22.2" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M292.7 355.8h52.4M318.9 329.6v52.4" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="296.7" y="323.6" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  10.00, 20.00</text>
-  <circle cx="596.7" cy="355.8" r="22.2" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="296.7" y="323.6" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">1</tspan>  10.00, 20.00</text>
+  <circle cx="596.7" cy="355.8" r="22.2" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M570.4 355.8h52.4M596.7 329.6v52.4" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="618.9" y="313.5" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  30.00, 20.00</text>
-  <circle cx="443.9" cy="341.9" r="17.4" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
-  <circle cx="513.3" cy="341.9" r="17.4" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
-  <text x="478.6" y="377.2" text-anchor="middle" font-size="12" fill="#a9b4c2">cable tie</text>
-  <text x="480.0" y="441.3" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  <text x="618.9" y="313.5" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">2</tspan>  30.00, 20.00</text>
+  <circle cx="443.9" cy="341.9" r="17.4" fill="#191919" stroke="#b3b3b3" stroke-width="1.5"/>
+  <circle cx="513.3" cy="341.9" r="17.4" fill="#191919" stroke="#b3b3b3" stroke-width="1.5"/>
+  <text x="478.6" y="377.2" text-anchor="middle" font-size="12" fill="#b3b3b3">cable tie</text>
+  <text x="480.0" y="441.3" text-anchor="middle" font-size="13" fill="#b3b3b3">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
   </svg>
   </div>
   <figcaption>Board outline 43.2 × 24&nbsp;mm, corners rounded to a 1.5&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>

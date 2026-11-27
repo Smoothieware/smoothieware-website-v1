@@ -1,19 +1,19 @@
 .extension-instruction-diagram { margin: 1.5rem 0; min-width: 0; max-width: 100%; }
-.extension-instruction-diagram .extension-instruction-overview { display: block; width: 100%; height: auto; border: 1px solid #59616e; background: #171d25; }
-.extension-instruction-diagram figcaption { margin: .6rem 0; color: #d5dce6; line-height: 1.5; }
-.extension-instruction-detail { border: 1px solid #59616e; padding: .65rem; background: #171d25; color: #e5eaf2; }
+.extension-instruction-diagram .extension-instruction-overview { display: block; width: 100%; height: auto; border: 1px solid #606060; background: #1c1c1c; }
+.extension-instruction-diagram figcaption { margin: .6rem 0; color: #dbdbdb; line-height: 1.5; }
+.extension-instruction-detail { border: 1px solid #606060; padding: .65rem; background: #1c1c1c; color: #eaeaea; }
 .extension-instruction-detail summary { cursor: pointer; font-weight: 600; }
 .extension-instruction-detail p { margin: .65rem 0; }
 .extension-instruction-scroll { overflow: auto; max-height: min(75vh, 900px); max-width: 100%; overscroll-behavior: contain; }
 .extension-instruction-scroll img { display: block; }
-.extension-instruction-diagram :focus-visible { outline: 3px solid #8ac7ff; outline-offset: 3px; }
-.extension-instruction-diagram button { padding: .5rem .7rem; color: #e5eaf2; background: #253648; border: 1px solid #8ca3bb; border-radius: .25rem; cursor: pointer; }
+.extension-instruction-diagram :focus-visible { outline: 3px solid #c1c1c1; outline-offset: 3px; }
+.extension-instruction-diagram button { padding: .5rem .7rem; color: #eaeaea; background: #353535; border: 1px solid #a0a0a0; border-radius: 2px; cursor: pointer; }
 .extension-instruction-diagram > button { margin-bottom: .6rem; }
-.extension-instruction-viewer { box-sizing: border-box; inset: 1rem; margin: 0; width: calc(100% - 2rem); height: calc(100% - 2rem); max-width: none; max-height: none; padding: 1rem; background: #171d25; color: #e5eaf2; border: 2px solid #8ca3bb; }
+.extension-instruction-viewer { box-sizing: border-box; inset: 1rem; margin: 0; width: calc(100% - 2rem); height: calc(100% - 2rem); max-width: none; max-height: none; padding: 1rem; background: #1c1c1c; color: #eaeaea; border: 2px solid #a0a0a0; }
 .extension-instruction-viewer:popover-open { display: flex; flex-direction: column; gap: .6rem; }
 .extension-instruction-viewer::backdrop { background: rgb(0 0 0 / .8); }
 .extension-instruction-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
-.extension-instruction-sizes { display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin: 0; border: 1px solid #59616e; }
+.extension-instruction-sizes { display: flex; flex-wrap: wrap; gap: .5rem 1rem; margin: 0; border: 1px solid #606060; }
 .extension-instruction-sizes label { white-space: nowrap; }
 .extension-instruction-help { margin: 0; font-size: .95rem; }
 .extension-instruction-stage { flex: 1; min-height: 0; min-width: 0; overflow: auto; overscroll-behavior: contain; }

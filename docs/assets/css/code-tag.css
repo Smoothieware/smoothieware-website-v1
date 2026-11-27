@@ -23,7 +23,7 @@ gcode {
     padding:         0;
 
     /* Rounded corners */
-    border-radius:   3px;
+    border-radius:   2px;
     overflow:        hidden;
 
     /* Vertical alignment with surrounding text */
@@ -59,7 +59,7 @@ mcode {
     padding:         0;
 
     /* Rounded corners */
-    border-radius:   3px;
+    border-radius:   2px;
     overflow:        hidden;
 
     /* Vertical alignment with surrounding text */
@@ -91,7 +91,7 @@ mcode {
     font-family:     'Courier New', Courier, monospace !important;
 
     /* Match the border radius of the container */
-    border-radius:   3px;
+    border-radius:   2px;
 
     /* Ensure text is selectable */
     user-select:     text;
@@ -111,5 +111,5 @@ mcode:hover .code-content {
 
 .mcode-letter {
     /* Pastel blue from v2 label color */
-    color:           #7ec8ed;
+    color:           #bfbfbf;
 }

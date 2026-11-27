@@ -160,7 +160,7 @@ versioned[data-display-version="nc"] v1,
 versioned:not([data-display-version]) v1 {
     background:      #1a1a1a;
     border:          1px dotted #ffd966; /* 1px dotted orange */
-    border-radius:   6px;
+    border-radius:   2px;
     padding:         1em;
     /* South-east shadow - strong for dark mode */
     box-shadow:      8px 8px 16px rgba(0, 0, 0, 0.5),
@@ -172,8 +172,8 @@ versioned[data-display-version="both"] v2,
 versioned[data-display-version="nc"] v2,
 versioned:not([data-display-version]) v2 {
     background:      #1a1a1a;
-    border:          1px dotted #7ec8ed; /* 1px dotted blue */
-    border-radius:   6px;
+    border:          1px dotted #bfbfbf; /* 1px dotted blue */
+    border-radius:   2px;
     padding:         1em;
     /* South-east shadow - strong for dark mode */
     box-shadow:      8px 8px 16px rgba(0, 0, 0, 0.5),
@@ -205,7 +205,7 @@ v2::before {
     letter-spacing:  0.5px;
 
     /* Border radius */
-    border-radius:   3px;
+    border-radius:   2px;
 
     /* Z-index */
     z-index:         1;
@@ -227,8 +227,8 @@ v1::before {
 /* v2 label styling */
 v2::before {
     content:         "V2";
-    color:           #7ec8ed; /* Pastel blue */
-    border:          1px solid #7ec8ed;
+    color:           #bfbfbf; /* Pastel blue */
+    border:          1px solid #bfbfbf;
 }
 
 /* Label hover effect - brighten on hover */
@@ -239,7 +239,7 @@ v2::before:hover {
 }
 
 v2::before:hover {
-    box-shadow:      0 0 8px rgba(126, 200, 237, 0.5);
+    box-shadow:      0 0 8px rgba(191, 191, 191, 0.5);
 }
 
 /* Typography inside v1 and v2 - only when showing both versions */
@@ -467,7 +467,7 @@ body[data-display-version="v1"] .v2-only-list-item ul {
 versioned[data-display-version="v1"]:not([data-has-empty]) v1:hover {
     background:      #1a1a1a;
     border:          1px dotted #ffd966; /* 1px dotted orange */
-    border-radius:   6px;
+    border-radius:   2px;
     padding:         1em;
     transition:      all 0.2s ease;
     /* South-east shadow - strong for dark mode */
@@ -479,8 +479,8 @@ versioned[data-display-version="v1"]:not([data-has-empty]) v1:hover {
 /* Show border when hovering over v2 in v2-only mode (NOT in transparent mode) */
 versioned[data-display-version="v2"]:not([data-has-empty]) v2:hover {
     background:      #1a1a1a;
-    border:          1px dotted #7ec8ed; /* 1px dotted blue */
-    border-radius:   6px;
+    border:          1px dotted #bfbfbf; /* 1px dotted blue */
+    border-radius:   2px;
     padding:         1em;
     transition:      all 0.2s ease;
     /* South-east shadow - strong for dark mode */

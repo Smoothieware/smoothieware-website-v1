@@ -8,9 +8,9 @@
 }
 
 #version-selector-modal::part(panel) {
-    background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+    background: linear-gradient(145deg, #1c1c1c 0%, #222222 100%);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
+    border-radius: 2px;
     max-width: 720px;
     width: 90vw;
     box-shadow:
@@ -68,7 +68,7 @@
     padding: 28px 20px;
     background: rgba(255, 255, 255, 0.03);
     border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
+    border-radius: 2px;
     cursor: pointer;
     transition: all 0.25s ease;
     display: flex;
@@ -100,7 +100,7 @@
     font-size: 1.25rem;
     font-weight: 700;
     padding: 8px 16px;
-    border-radius: 8px;
+    border-radius: 2px;
     letter-spacing: 0.5px;
 }
 
@@ -110,12 +110,12 @@
 }
 
 .version-option-badge.v2-badge {
-    background: linear-gradient(135deg, #7ec8ed 0%, #5bb5e0 100%);
+    background: linear-gradient(135deg, #bfbfbf 0%, #ababab 100%);
     color: #1a1a1a;
 }
 
 .version-option-badge.both-badge {
-    background: linear-gradient(135deg, #ffd966 0%, #7ec8ed 100%);
+    background: linear-gradient(135deg, #ffd966 0%, #bfbfbf 100%);
     color: #1a1a1a;
     font-size: 1rem;
 }
@@ -155,7 +155,7 @@
     border: none;
     cursor: pointer;
     padding: 8px 16px;
-    border-radius: 8px;
+    border-radius: 2px;
     transition: all 0.2s ease;
 }
 
@@ -231,6 +231,6 @@
 
     #version-selector-modal::part(panel) {
         width: 95vw;
-        border-radius: 16px;
+        border-radius: 2px;
     }
 }

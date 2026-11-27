@@ -1,64 +1,13 @@
 /* File: docs/assets/css/config-tables.css */
 /* Configuration options table styling for Smoothieware documentation */
 
-/* Main table styling */
-.config-options-table {
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
-    margin: 2rem 0;
-    font-size: 0.9em;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.config-options-table thead tr {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: #ffffff;
-    text-align: left;
-    font-weight: bold;
-}
-
-.config-options-table th {
-    padding: 12px 15px;
-    font-size: 0.95em;
-}
+/* #config-standard: rules, spacing and header come from the site table style (site.css). */
+.markdown-body table.config-options-table { width: 100% !important; table-layout: fixed !important; }
 
 .config-options-table th:nth-child(1),
-.config-options-table th:nth-child(2) {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.config-options-table tbody tr {
-    border-bottom: 1px solid #2a2a2a;
-    background: #1a1a1a;
-}
-
-.config-options-table tbody tr:nth-of-type(even) {
-    background: #222222;
-}
-
-.config-options-table tbody tr:hover {
-    background: #2a2a2a;
-}
-
-.config-options-table td {
-    padding: 10px 15px;
-    vertical-align: top;
-}
-
+.config-options-table th:nth-child(2),
 .config-options-table td:nth-child(1),
-.config-options-table td:nth-child(2) {
-    width: 25%;
-    overflow: hidden;
-}
-
-.config-options-table td:nth-child(3) {
-    width: 50%;
-}
+.config-options-table td:nth-child(2) { width: 25%; overflow: hidden; }
 
 /* Empty cell styling (for v1-only or v2-only settings) */
 .config-options-table .empty-cell {
@@ -123,16 +72,11 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    background: linear-gradient(to left, #1a1a1a 60%, transparent);
+    background: linear-gradient(to left, var(--bg) 60%, transparent);
     padding: 0 8px 0 20px;
     cursor: pointer;
-    color: #667eea;
+    color: #868686;
     font-weight: bold;
-}
-
-/* Handle even row background for overflow indicator */
-.config-options-table tbody tr:nth-of-type(even) .description-cell.has-overflow::after {
-    background: linear-gradient(to left, #222222 60%, transparent);
 }
 
 /* Expanded state */
@@ -152,11 +96,9 @@
 
 /* Module header row styling (for grouped tables) */
 .config-options-table .module-header {
-    background: linear-gradient(135deg, #3a3a5c 0%, #4a4a6c 100%);
-    color: #fff;
+    color: var(--strong);
     font-weight: bold;
-    font-size: 1.1em;
-    padding: 12px 15px;
+    font-size: 1.05em;
     text-align: left;
 }
 

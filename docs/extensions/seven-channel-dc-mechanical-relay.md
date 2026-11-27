@@ -162,32 +162,32 @@ Connect HOST Y to the header labelled **G_F** on the Smoothieboard V2 Prime. All
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="HOST Y connector pin positions">
   <svg viewBox="0 0 1000 250" role="img" aria-labelledby="xb-hosty-t">
     <title id="xb-hosty-t">HOST Y seen from above: odd pins 1 to 9 in the row nearest the board edge, even pins 2 to 10 in the row behind, pin 1 at the left.</title>
-    <rect x="360" y="85" width="280" height="80" rx="6" fill="#0d0f12" stroke="#59616e" stroke-width="2"/>
+    <rect x="360" y="85" width="280" height="80" rx="6" fill="#0d0f12" stroke="#606060" stroke-width="2"/>
     <g fill="#e0b84a" stroke="#6b5310">
       <rect x="388" y="98" width="16" height="16"/><rect x="440" y="98" width="16" height="16"/><rect x="492" y="98" width="16" height="16"/><rect x="544" y="98" width="16" height="16"/><rect x="596" y="98" width="16" height="16"/>
       <rect x="388" y="136" width="16" height="16"/><rect x="440" y="136" width="16" height="16"/><rect x="492" y="136" width="16" height="16"/><rect x="544" y="136" width="16" height="16"/><rect x="596" y="136" width="16" height="16"/>
     </g>
     <g stroke-width="2" fill="none">
-      <path d="M396 98V62" stroke="#ff9f43"/><path d="M448 98V62" stroke="#5fb3ff"/><path d="M500 98V62" stroke="#5fb3ff"/><path d="M552 98V62" stroke="#5fb3ff"/><path d="M604 98V62" stroke="#8a94a3"/>
+      <path d="M396 98V62" stroke="#ff9f43"/><path d="M448 98V62" stroke="#5fb3ff"/><path d="M500 98V62" stroke="#5fb3ff"/><path d="M552 98V62" stroke="#5fb3ff"/><path d="M604 98V62" stroke="#939393"/>
       <path d="M396 152V188" stroke="#ff5d5d"/><path d="M448 152V188" stroke="#5fb3ff"/><path d="M500 152V188" stroke="#5fb3ff"/><path d="M552 152V188" stroke="#5fb3ff"/><path d="M604 152V188" stroke="#5fb3ff"/>
     </g>
     <g font-size="13" font-weight="700" text-anchor="middle">
       <rect x="372" y="36" width="48" height="26" rx="13" fill="#ff9f43"/><text x="396" y="54" fill="#201004">5 V</text>
-      <rect x="424" y="36" width="48" height="26" rx="13" fill="#5fb3ff"/><text x="448" y="54" fill="#04182b">IN 2</text>
-      <rect x="476" y="36" width="48" height="26" rx="13" fill="#5fb3ff"/><text x="500" y="54" fill="#04182b">IN 4</text>
-      <rect x="528" y="36" width="48" height="26" rx="13" fill="#5fb3ff"/><text x="552" y="54" fill="#04182b">IN 6</text>
-      <rect x="580" y="36" width="48" height="26" rx="13" fill="#0d0f12" stroke="#8a94a3"/><text x="604" y="54" fill="#fff">GND</text>
+      <rect x="424" y="36" width="48" height="26" rx="13" fill="#5fb3ff"/><text x="448" y="54" fill="#171717">IN 2</text>
+      <rect x="476" y="36" width="48" height="26" rx="13" fill="#5fb3ff"/><text x="500" y="54" fill="#171717">IN 4</text>
+      <rect x="528" y="36" width="48" height="26" rx="13" fill="#5fb3ff"/><text x="552" y="54" fill="#171717">IN 6</text>
+      <rect x="580" y="36" width="48" height="26" rx="13" fill="#0d0f12" stroke="#939393"/><text x="604" y="54" fill="#fff">GND</text>
       <rect x="372" y="188" width="48" height="26" rx="13" fill="#ff5d5d"/><text x="396" y="206" fill="#1c0606">3.3 V</text>
-      <rect x="424" y="188" width="48" height="26" rx="13" fill="#5fb3ff"/><text x="448" y="206" fill="#04182b">IN 1</text>
-      <rect x="476" y="188" width="48" height="26" rx="13" fill="#5fb3ff"/><text x="500" y="206" fill="#04182b">IN 3</text>
-      <rect x="528" y="188" width="48" height="26" rx="13" fill="#5fb3ff"/><text x="552" y="206" fill="#04182b">IN 5</text>
-      <rect x="580" y="188" width="48" height="26" rx="13" fill="#5fb3ff"/><text x="604" y="206" fill="#04182b">IN 7</text>
+      <rect x="424" y="188" width="48" height="26" rx="13" fill="#5fb3ff"/><text x="448" y="206" fill="#171717">IN 1</text>
+      <rect x="476" y="188" width="48" height="26" rx="13" fill="#5fb3ff"/><text x="500" y="206" fill="#171717">IN 3</text>
+      <rect x="528" y="188" width="48" height="26" rx="13" fill="#5fb3ff"/><text x="552" y="206" fill="#171717">IN 5</text>
+      <rect x="580" y="188" width="48" height="26" rx="13" fill="#5fb3ff"/><text x="604" y="206" fill="#171717">IN 7</text>
     </g>
-    <g font-size="12" fill="#a9b4c2" text-anchor="middle">
+    <g font-size="12" fill="#b3b3b3" text-anchor="middle">
       <text x="396" y="28">2</text><text x="448" y="28">4</text><text x="500" y="28">6</text><text x="552" y="28">8</text><text x="604" y="28">10</text>
       <text x="396" y="232">1</text><text x="448" y="232">3</text><text x="500" y="232">5</text><text x="552" y="232">7</text><text x="604" y="232">9</text>
     </g>
-    <g font-size="14" fill="#a9b4c2">
+    <g font-size="14" fill="#b3b3b3">
       <text x="340" y="130" text-anchor="end">Row towards the relays ▲</text>
       <text x="340" y="206" text-anchor="end">Pin 1, left, row towards the board edge</text>
       <text x="660" y="130">HOST Y, seen from above</text>
@@ -218,35 +218,35 @@ Every relay has the same three screws. They are not connected to anything else o
   <svg viewBox="0 0 1000 210" role="img" aria-labelledby="xb-contacts-t">
     <title id="xb-contacts-t">With the relay off, C is connected to NC. With the relay on, C is connected to NO.</title>
     <g font-size="15" font-weight="700">
-      <text x="250" y="34" text-anchor="middle" fill="#e6ebf2">Relay off (also with no power at all)</text>
-      <text x="750" y="34" text-anchor="middle" fill="#e6ebf2">Relay on</text>
+      <text x="250" y="34" text-anchor="middle" fill="#eaeaea">Relay off (also with no power at all)</text>
+      <text x="750" y="34" text-anchor="middle" fill="#eaeaea">Relay on</text>
     </g>
-    <path d="M500 20V195" stroke="#38424f" stroke-width="2" stroke-dasharray="6 6"/>
+    <path d="M500 20V195" stroke="#414141" stroke-width="2" stroke-dasharray="6 6"/>
     <g>
-      <path d="M90 120H190" stroke="#e6ebf2" stroke-width="5"/>
-      <path d="M190 120L318 82" stroke="#e6ebf2" stroke-width="5" stroke-linecap="round"/>
+      <path d="M90 120H190" stroke="#eaeaea" stroke-width="5"/>
+      <path d="M190 120L318 82" stroke="#eaeaea" stroke-width="5" stroke-linecap="round"/>
       <path d="M322 78H420" stroke="#ff8f8f" stroke-width="5"/>
       <path d="M322 162H420" stroke="#57d18c" stroke-width="5" opacity=".45"/>
-      <circle cx="190" cy="120" r="8" fill="#e6ebf2"/><circle cx="322" cy="78" r="8" fill="#ff8f8f"/><circle cx="322" cy="162" r="8" fill="#57d18c" opacity=".45"/>
+      <circle cx="190" cy="120" r="8" fill="#eaeaea"/><circle cx="322" cy="78" r="8" fill="#ff8f8f"/><circle cx="322" cy="162" r="8" fill="#57d18c" opacity=".45"/>
       <g font-size="14" font-weight="700" text-anchor="middle">
-        <rect x="40" y="106" width="50" height="28" rx="14" fill="#e6ebf2"/><text x="65" y="125" fill="#14181d">C</text>
+        <rect x="40" y="106" width="50" height="28" rx="14" fill="#eaeaea"/><text x="65" y="125" fill="#181818">C</text>
         <rect x="420" y="64" width="50" height="28" rx="14" fill="#ff8f8f"/><text x="445" y="83" fill="#2b0707">NC</text>
         <rect x="420" y="148" width="50" height="28" rx="14" fill="#57d18c" opacity=".45"/><text x="445" y="167" fill="#052413">NO</text>
       </g>
-      <text x="250" y="198" text-anchor="middle" font-size="13" fill="#a9b4c2">C to NC: connected · C to NO: open</text>
+      <text x="250" y="198" text-anchor="middle" font-size="13" fill="#b3b3b3">C to NC: connected · C to NO: open</text>
     </g>
     <g transform="translate(500 0)">
-      <path d="M90 120H190" stroke="#e6ebf2" stroke-width="5"/>
-      <path d="M190 120L318 158" stroke="#e6ebf2" stroke-width="5" stroke-linecap="round"/>
+      <path d="M90 120H190" stroke="#eaeaea" stroke-width="5"/>
+      <path d="M190 120L318 158" stroke="#eaeaea" stroke-width="5" stroke-linecap="round"/>
       <path d="M322 78H420" stroke="#ff8f8f" stroke-width="5" opacity=".45"/>
       <path d="M322 162H420" stroke="#57d18c" stroke-width="5"/>
-      <circle cx="190" cy="120" r="8" fill="#e6ebf2"/><circle cx="322" cy="78" r="8" fill="#ff8f8f" opacity=".45"/><circle cx="322" cy="162" r="8" fill="#57d18c"/>
+      <circle cx="190" cy="120" r="8" fill="#eaeaea"/><circle cx="322" cy="78" r="8" fill="#ff8f8f" opacity=".45"/><circle cx="322" cy="162" r="8" fill="#57d18c"/>
       <g font-size="14" font-weight="700" text-anchor="middle">
-        <rect x="40" y="106" width="50" height="28" rx="14" fill="#e6ebf2"/><text x="65" y="125" fill="#14181d">C</text>
+        <rect x="40" y="106" width="50" height="28" rx="14" fill="#eaeaea"/><text x="65" y="125" fill="#181818">C</text>
         <rect x="420" y="64" width="50" height="28" rx="14" fill="#ff8f8f" opacity=".45"/><text x="445" y="83" fill="#2b0707">NC</text>
         <rect x="420" y="148" width="50" height="28" rx="14" fill="#57d18c"/><text x="445" y="167" fill="#052413">NO</text>
       </g>
-      <text x="250" y="198" text-anchor="middle" font-size="13" fill="#a9b4c2">C to NO: connected · C to NC: open</text>
+      <text x="250" y="198" text-anchor="middle" font-size="13" fill="#b3b3b3">C to NO: connected · C to NC: open</text>
     </g>
   </svg>
   </div>
@@ -292,39 +292,39 @@ These steps take you from an unconnected board to a relay that clicks on command
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Minimal wiring diagram">
   <svg viewBox="0 0 1000 400" role="img" aria-labelledby="xb-hookup-t">
     <title id="xb-hookup-t">Minimal wiring: a ribbon cable from header G_F on the Smoothieboard to HOST Y, a 12 volt supply on TERM 12V, and one DC load wired through the C and NO screws of relay 1.</title>
-    <rect x="400" y="100" width="300" height="200" rx="8" fill="#1b2028" stroke="#59616e" stroke-width="1.5"/>
-    <text x="550" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">Relay board</text>
-    <g fill="#cfd6df" stroke="#5b6570"><circle cx="470" cy="140" r="6"/><circle cx="500" cy="140" r="6"/><circle cx="530" cy="140" r="6"/></g>
-    <g font-size="11" font-weight="700" text-anchor="middle"><text x="470" y="166" fill="#57d18c">NO</text><text x="500" y="166" fill="#ff8f8f">NC</text><text x="530" y="166" fill="#e6ebf2">C</text></g>
-    <text x="500" y="184" text-anchor="middle" font-size="12" fill="#a9b4c2">Relay 1 load terminal</text>
-    <rect x="410" y="214" width="56" height="28" rx="3" fill="#0d0f12" stroke="#8a94a3"/>
-    <text x="438" y="232" text-anchor="middle" font-size="11" fill="#e6ebf2">HOST Y</text>
-    <text x="620" y="264" text-anchor="middle" font-size="11" fill="#e6ebf2">TERM 12V</text>
-    <rect x="30" y="170" width="190" height="130" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/>
-    <text x="125" y="226" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Smoothieboard</text>
-    <text x="125" y="246" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">V2 Prime</text>
-    <rect x="186" y="216" width="26" height="46" rx="3" fill="#0d0f12" stroke="#8a94a3"/>
+    <rect x="400" y="100" width="300" height="200" rx="8" fill="#202020" stroke="#606060" stroke-width="1.5"/>
+    <text x="550" y="122" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">Relay board</text>
+    <g fill="#d5d5d5" stroke="#646464"><circle cx="470" cy="140" r="6"/><circle cx="500" cy="140" r="6"/><circle cx="530" cy="140" r="6"/></g>
+    <g font-size="11" font-weight="700" text-anchor="middle"><text x="470" y="166" fill="#57d18c">NO</text><text x="500" y="166" fill="#ff8f8f">NC</text><text x="530" y="166" fill="#eaeaea">C</text></g>
+    <text x="500" y="184" text-anchor="middle" font-size="12" fill="#b3b3b3">Relay 1 load terminal</text>
+    <rect x="410" y="214" width="56" height="28" rx="3" fill="#0d0f12" stroke="#939393"/>
+    <text x="438" y="232" text-anchor="middle" font-size="11" fill="#eaeaea">HOST Y</text>
+    <text x="620" y="264" text-anchor="middle" font-size="11" fill="#eaeaea">TERM 12V</text>
+    <rect x="30" y="170" width="190" height="130" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/>
+    <text x="125" y="226" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">Smoothieboard</text>
+    <text x="125" y="246" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">V2 Prime</text>
+    <rect x="186" y="216" width="26" height="46" rx="3" fill="#0d0f12" stroke="#939393"/>
     <text x="199" y="206" text-anchor="middle" font-size="12" font-weight="700" fill="#ffcc33">G_F</text>
-    <path d="M212 246C300 246 330 228 410 228" fill="none" stroke="#8a94a3" stroke-width="16"/>
+    <path d="M212 246C300 246 330 228 410 228" fill="none" stroke="#939393" stroke-width="16"/>
     <path d="M212 239C300 239 330 221 410 221" fill="none" stroke="#ff5d5d" stroke-width="2"/>
-    <text x="304" y="290" text-anchor="middle" font-size="12" fill="#a9b4c2">10-way ribbon cable,</text>
-    <text x="304" y="306" text-anchor="middle" font-size="12" fill="#a9b4c2">pin 1 to pin 1</text>
-    <rect x="560" y="336" width="150" height="54" rx="8" fill="#212936" stroke="#59616e"/>
-    <text x="635" y="368" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">12 V DC supply</text>
-    <path d="M598 270V336" stroke="#aeb7c2" stroke-width="7"/><path d="M598 270V336" stroke="#0d0f12" stroke-width="4.5"/>
+    <text x="304" y="290" text-anchor="middle" font-size="12" fill="#b3b3b3">10-way ribbon cable,</text>
+    <text x="304" y="306" text-anchor="middle" font-size="12" fill="#b3b3b3">pin 1 to pin 1</text>
+    <rect x="560" y="336" width="150" height="54" rx="8" fill="#292929" stroke="#606060"/>
+    <text x="635" y="368" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">12 V DC supply</text>
+    <path d="M598 270V336" stroke="#b6b6b6" stroke-width="7"/><path d="M598 270V336" stroke="#0d0f12" stroke-width="4.5"/>
     <path d="M642 270V336" stroke="#ffd84d" stroke-width="5"/>
-    <text x="588" y="312" text-anchor="end" font-size="12" fill="#e6ebf2">0 V</text><text x="652" y="312" font-size="12" fill="#ffd84d">+12 V</text>
-    <rect x="780" y="20" width="190" height="70" rx="8" fill="#212936" stroke="#59616e"/>
-    <text x="875" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">DC load supply</text>
-    <rect x="30" y="20" width="160" height="70" rx="8" fill="#212936" stroke="#59616e"/>
-    <text x="110" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">Your DC device</text>
-    <path d="M190 34H780" fill="none" stroke="#8a94a3" stroke-width="5"/>
+    <text x="588" y="312" text-anchor="end" font-size="12" fill="#eaeaea">0 V</text><text x="652" y="312" font-size="12" fill="#ffd84d">+12 V</text>
+    <rect x="780" y="20" width="190" height="70" rx="8" fill="#292929" stroke="#606060"/>
+    <text x="875" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">DC load supply</text>
+    <rect x="30" y="20" width="160" height="70" rx="8" fill="#292929" stroke="#606060"/>
+    <text x="110" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">Your DC device</text>
+    <path d="M190 34H780" fill="none" stroke="#939393" stroke-width="5"/>
     <path d="M780 70H530V140" fill="none" stroke="#b0703c" stroke-width="5"/>
-    <rect x="660" y="61" width="46" height="18" rx="4" fill="#141920" stroke="#b0703c" stroke-width="2"/>
-    <text x="683" y="74" text-anchor="middle" font-size="10" font-weight="700" fill="#e6ebf2">FUSE</text>
+    <rect x="660" y="61" width="46" height="18" rx="4" fill="#191919" stroke="#b0703c" stroke-width="2"/>
+    <text x="683" y="74" text-anchor="middle" font-size="10" font-weight="700" fill="#eaeaea">FUSE</text>
     <path d="M470 140V70H190" fill="none" stroke="#b0703c" stroke-width="5"/>
-    <g font-size="12" fill="#e6ebf2">
-      <text x="480" y="28" text-anchor="middle" fill="#c4ccd8">Return: straight from the device to the load supply</text>
+    <g font-size="12" fill="#eaeaea">
+      <text x="480" y="28" text-anchor="middle" fill="#cbcbcb">Return: straight from the device to the load supply</text>
       <text x="640" y="56" text-anchor="middle" fill="#e0a877">Positive: through a fuse to C</text>
       <text x="330" y="90" text-anchor="middle" fill="#e0a877">Switched positive: NO to the device</text>
     </g>
@@ -608,7 +608,7 @@ Three things this board does not do, and what to do about them:
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path of one channel">
   <svg viewBox="0 0 1000 270" role="img" aria-labelledby="xb-how-t">
     <title id="xb-how-t">One channel: the controller pin drives a transistor and an optocoupler; across the optical barrier the driver chip switches the 12 volt relay coil; the coil moves the contacts magnetically across a second barrier.</title>
-    <rect x="14" y="44" width="318" height="180" rx="10" fill="#17283b" stroke="#2f4c6b"/>
+    <rect x="14" y="44" width="318" height="180" rx="10" fill="#272727" stroke="#2f4c6b"/>
     <rect x="352" y="44" width="330" height="180" rx="10" fill="#33290d" stroke="#6b5310"/>
     <rect x="702" y="44" width="284" height="180" rx="10" fill="#3a2015" stroke="#7a4426"/>
     <g font-size="12" font-weight="700" letter-spacing="1.2">
@@ -618,30 +618,30 @@ Three things this board does not do, and what to do about them:
     </g>
     <path d="M342 30V240" stroke="#ffcc33" stroke-width="2" stroke-dasharray="7 6"/>
     <path d="M692 30V240" stroke="#ffcc33" stroke-width="2" stroke-dasharray="7 6"/>
-    <g fill="#212936" stroke="#59616e" stroke-width="1.5">
+    <g fill="#292929" stroke="#606060" stroke-width="1.5">
       <rect x="28" y="100" width="118" height="64" rx="8"/><rect x="170" y="100" width="118" height="64" rx="8"/>
       <rect x="300" y="100" width="84" height="64" rx="8" stroke="#ffcc33"/>
       <rect x="404" y="100" width="118" height="64" rx="8"/><rect x="546" y="100" width="118" height="64" rx="8"/>
       <rect x="738" y="100" width="212" height="64" rx="8"/>
     </g>
-    <g font-size="13" font-weight="700" fill="#e6ebf2" text-anchor="middle">
-      <text x="87" y="128">Controller pin</text><text x="87" y="146" font-weight="400" fill="#a9b4c2">HIGH = on</text>
-      <text x="229" y="128">Transistor</text><text x="229" y="146" font-weight="400" fill="#a9b4c2">draws ≈ 2 mA</text>
+    <g font-size="13" font-weight="700" fill="#eaeaea" text-anchor="middle">
+      <text x="87" y="128">Controller pin</text><text x="87" y="146" font-weight="400" fill="#b3b3b3">HIGH = on</text>
+      <text x="229" y="128">Transistor</text><text x="229" y="146" font-weight="400" fill="#b3b3b3">draws ≈ 2 mA</text>
       <text x="342" y="128">Opto-</text><text x="342" y="146">coupler</text>
-      <text x="463" y="128">Driver chip</text><text x="463" y="146" font-weight="400" fill="#a9b4c2">+ green LED</text>
-      <text x="605" y="128">Relay coil</text><text x="605" y="146" font-weight="400" fill="#a9b4c2">12 V, 33 mA</text>
-      <text x="844" y="128">Relay contacts</text><text x="844" y="146" font-weight="400" fill="#a9b4c2">C, NO, NC screws</text>
+      <text x="463" y="128">Driver chip</text><text x="463" y="146" font-weight="400" fill="#b3b3b3">+ green LED</text>
+      <text x="605" y="128">Relay coil</text><text x="605" y="146" font-weight="400" fill="#b3b3b3">12 V, 33 mA</text>
+      <text x="844" y="128">Relay contacts</text><text x="844" y="146" font-weight="400" fill="#b3b3b3">C, NO, NC screws</text>
     </g>
-    <g stroke="#e6ebf2" stroke-width="2.5" fill="none">
+    <g stroke="#eaeaea" stroke-width="2.5" fill="none">
       <path d="M146 132H164"/><path d="M288 132H296"/><path d="M384 132H398"/><path d="M522 132H540"/>
     </g>
-    <g fill="#e6ebf2"><path d="M170 132l-9-5v10z"/><path d="M300 132l-9-5v10z"/><path d="M404 132l-9-5v10z"/><path d="M546 132l-9-5v10z"/></g>
-    <path d="M664 132H730" stroke="#e6ebf2" stroke-width="2.5" stroke-dasharray="3 6"/><path d="M738 132l-9-5v10z" fill="#e6ebf2"/>
+    <g fill="#eaeaea"><path d="M170 132l-9-5v10z"/><path d="M300 132l-9-5v10z"/><path d="M404 132l-9-5v10z"/><path d="M546 132l-9-5v10z"/></g>
+    <path d="M664 132H730" stroke="#eaeaea" stroke-width="2.5" stroke-dasharray="3 6"/><path d="M738 132l-9-5v10z" fill="#eaeaea"/>
     <g font-size="12" fill="#ffcc33" text-anchor="middle">
       <text x="342" y="22">Barrier 1: light</text><text x="692" y="22">Barrier 2: magnetism</text>
       <text x="342" y="258">no wire crosses here</text><text x="692" y="258">no wire crosses here</text>
     </g>
-    <g font-size="12" fill="#a9b4c2">
+    <g font-size="12" fill="#b3b3b3">
       <text x="28" y="200">Powered by the ribbon cable</text>
       <text x="366" y="200">Powered by your 12 V supply</text>
       <text x="716" y="200">Powered by whatever you connect</text>
@@ -671,7 +671,7 @@ Change jumpers only with every supply unplugged.
     <svg viewBox="0 0 230 86" role="img" aria-label="Three pins: jumper on the left and middle pins selects TERM; on the middle and right pins selects XT30.">
       <rect x="20" y="14" width="120" height="36" rx="10" fill="#33290d" stroke="#ffcc33" stroke-width="2.5"/>
       <g fill="#e0b84a" stroke="#6b5310"><circle cx="45" cy="32" r="9"/><circle cx="115" cy="32" r="9"/><circle cx="185" cy="32" r="9"/></g>
-      <g font-size="12" fill="#e6ebf2" text-anchor="middle"><text x="45" y="74">TERM</text><text x="115" y="74" fill="#a9b4c2">common</text><text x="185" y="74">XT30</text></g>
+      <g font-size="12" fill="#eaeaea" text-anchor="middle"><text x="45" y="74">TERM</text><text x="115" y="74" fill="#b3b3b3">common</text><text x="185" y="74">XT30</text></g>
     </svg>
     <span>Jumper left: the TERM 12V screw terminal feeds the coils (shown). Jumper right: the XT30 does. No jumper, as delivered: neither does.</span>
   </div>
@@ -680,7 +680,7 @@ Change jumpers only with every supply unplugged.
     <svg viewBox="0 0 230 86" role="img" aria-label="Three pins: jumper on the left and middle pins selects external 12 volts; on the middle and right pins selects host power.">
       <rect x="20" y="14" width="120" height="36" rx="10" fill="#33290d" stroke="#ffcc33" stroke-width="2.5"/>
       <g fill="#e0b84a" stroke="#6b5310"><circle cx="45" cy="32" r="9"/><circle cx="115" cy="32" r="9"/><circle cx="185" cy="32" r="9"/></g>
-      <g font-size="12" fill="#e6ebf2" text-anchor="middle"><text x="45" y="74">EXT</text><text x="115" y="74" fill="#a9b4c2">common</text><text x="185" y="74">HOST</text></g>
+      <g font-size="12" fill="#eaeaea" text-anchor="middle"><text x="45" y="74">EXT</text><text x="115" y="74" fill="#b3b3b3">common</text><text x="185" y="74">HOST</text></g>
     </svg>
     <span>Jumper left, as delivered: coils run from your external 12&nbsp;V supply (shown). Jumper right: coils run from the on-board converter.</span>
   </div>
@@ -688,7 +688,7 @@ Change jumpers only with every supply unplugged.
     <b>Host power link</b>
     <svg viewBox="0 0 230 86" role="img" aria-label="Two pins with no jumper fitted.">
       <g fill="#e0b84a" stroke="#6b5310"><circle cx="45" cy="32" r="9"/><circle cx="115" cy="32" r="9"/></g>
-      <text x="80" y="74" font-size="12" fill="#e6ebf2" text-anchor="middle">open</text>
+      <text x="80" y="74" font-size="12" fill="#eaeaea" text-anchor="middle">open</text>
     </svg>
     <span>Open, as delivered: the converter is off (shown). Jumper fitted: the converter makes 12&nbsp;V from the controller's 5&nbsp;V.</span>
   </div>
@@ -771,32 +771,32 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
   <svg viewBox="0 0 1000 413" role="img" aria-labelledby="xb-sdc-mount-t">
   <title id="xb-sdc-mount-t">Mounting drawing of the seven-channel DC relay board, component side: outline 220 by 100 millimetres with 4 mounting holes and 2 cable-tie holes. Hole positions are listed in the table below.</title>
-  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
-  <rect x="180.0" y="78.0" width="600.0" height="272.7" rx="5.5" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
-  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M180.0 56H780.0"/><path d="M180.0 50V62"/><path d="M780.0 50V62"/><path d="M806.0 78.0V350.7"/><path d="M800.0 78.0h12"/><path d="M800.0 350.7h12"/></g>
-  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">220</text>
-  <text x="818.0" y="219.4" font-size="15" font-weight="700" fill="#e6ebf2">100</text>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#b3b3b3">COMPONENT SIDE · millimetres</text>
+  <rect x="180.0" y="78.0" width="600.0" height="272.7" rx="5.5" fill="#1f2226" stroke="#eaeaea" stroke-width="1.5"/>
+  <g stroke="#b3b3b3" stroke-width="1.2" fill="none"><path d="M180.0 56H780.0"/><path d="M180.0 50V62"/><path d="M780.0 50V62"/><path d="M806.0 78.0V350.7"/><path d="M800.0 78.0h12"/><path d="M800.0 350.7h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">220</text>
+  <text x="818.0" y="219.4" font-size="15" font-weight="700" fill="#eaeaea">100</text>
   <circle cx="180.0" cy="78.0" r="4" fill="#ffcc33"/>
   <text x="168.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
   <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M122.0 104.0h30" fill="none"/><path d="M156.0 104.0l-8 -4v8z"/><path d="M122.0 104.0v30" fill="none"/><path d="M122.0 138.0l-4 -8h8z"/></g>
   <text x="160.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
   <text x="118.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
-  <circle cx="193.6" cy="173.5" r="4.4" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <circle cx="193.6" cy="173.5" r="4.4" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M185.3 173.5h16.7M193.6 165.1v16.7" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="189.3" y="197.8" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 35.00</text>
-  <circle cx="766.4" cy="173.5" r="4.4" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="189.3" y="197.8" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 35.00</text>
+  <circle cx="766.4" cy="173.5" r="4.4" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M758.0 173.5h16.7M766.4 165.1v16.7" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="770.7" y="197.8" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  215.00, 35.00</text>
-  <circle cx="193.6" cy="337.1" r="4.4" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="770.7" y="197.8" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">2</tspan>  215.00, 35.00</text>
+  <circle cx="193.6" cy="337.1" r="4.4" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M185.3 337.1h16.7M193.6 328.7v16.7" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="189.3" y="322.7" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 95.00</text>
-  <circle cx="766.4" cy="337.1" r="4.4" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="189.3" y="322.7" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 95.00</text>
+  <circle cx="766.4" cy="337.1" r="4.4" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M758.0 337.1h16.7M766.4 328.7v16.7" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="770.7" y="322.7" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  215.00, 95.00</text>
-  <circle cx="493.6" cy="331.6" r="3.4" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
-  <circle cx="507.3" cy="331.6" r="3.4" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
-  <text x="500.5" y="319.2" text-anchor="middle" font-size="12" fill="#a9b4c2">cable tie</text>
-  <text x="480.0" y="380.7" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  <text x="770.7" y="322.7" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">4</tspan>  215.00, 95.00</text>
+  <circle cx="493.6" cy="331.6" r="3.4" fill="#191919" stroke="#b3b3b3" stroke-width="1.5"/>
+  <circle cx="507.3" cy="331.6" r="3.4" fill="#191919" stroke="#b3b3b3" stroke-width="1.5"/>
+  <text x="500.5" y="319.2" text-anchor="middle" font-size="12" fill="#b3b3b3">cable tie</text>
+  <text x="480.0" y="380.7" text-anchor="middle" font-size="13" fill="#b3b3b3">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
   </svg>
   </div>
   <figcaption>Board outline 220 × 100&nbsp;mm, corners rounded to a 2&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>

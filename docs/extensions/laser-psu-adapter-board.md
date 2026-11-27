@@ -152,7 +152,7 @@ For a Prime G_C connection, use a chain or harness that brings host pin 7 (its f
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Y IN connector pin positions">
   <svg viewBox="0 0 1000 250" role="img" aria-labelledby="xb-yin-t">
     <title id="xb-yin-t">Y IN seen from above: pin 1 at the top right. Odd pins 9, 7, 5, 3, 1 from left to right in the row towards the middle of the board; even pins 10, 8, 6, 4, 2 in the row towards the board edge.</title>
-    <rect x="345" y="85" width="310" height="80" rx="6" fill="#0d0f12" stroke="#59616e" stroke-width="2"/>
+    <rect x="345" y="85" width="310" height="80" rx="6" fill="#0d0f12" stroke="#606060" stroke-width="2"/>
     <g fill="#e0b84a" stroke="#6b5310">
       <rect x="372" y="98" width="16" height="16"/><rect x="432" y="98" width="16" height="16"/><rect x="492" y="98" width="16" height="16"/><rect x="552" y="98" width="16" height="16"/><rect x="612" y="98" width="16" height="16"/>
       <rect x="372" y="136" width="16" height="16"/><rect x="432" y="136" width="16" height="16"/><rect x="492" y="136" width="16" height="16"/><rect x="552" y="136" width="16" height="16"/><rect x="612" y="136" width="16" height="16"/>
@@ -160,25 +160,25 @@ For a Prime G_C connection, use a chain or harness that brings host pin 7 (its f
     <circle cx="640" cy="92" r="4" fill="#fff"/>
     <g stroke-width="2" fill="none">
       <path d="M380 98V62" stroke="#c9a6ff"/><path d="M440 98V62" stroke="#c9a6ff"/><path d="M500 98V62" stroke="#c9a6ff"/><path d="M560 98V62" stroke="#5fb3ff"/><path d="M620 98V62" stroke="#ff5d5d"/>
-      <path d="M380 152V188" stroke="#8a94a3"/><path d="M440 152V188" stroke="#c9a6ff"/><path d="M500 152V188" stroke="#c9a6ff"/><path d="M560 152V188" stroke="#5fb3ff"/><path d="M620 152V188" stroke="#ff9f43"/>
+      <path d="M380 152V188" stroke="#939393"/><path d="M440 152V188" stroke="#c9a6ff"/><path d="M500 152V188" stroke="#c9a6ff"/><path d="M560 152V188" stroke="#5fb3ff"/><path d="M620 152V188" stroke="#ff9f43"/>
     </g>
     <g font-size="12" font-weight="700" text-anchor="middle">
-      <rect x="352" y="36" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="380" y="53" fill="#1c0b33">FAULT 4</text>
-      <rect x="412" y="36" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="440" y="53" fill="#1c0b33">PERMIT</text>
-      <rect x="472" y="36" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="500" y="53" fill="#1c0b33">FAULT 1</text>
-      <rect x="532" y="36" width="56" height="26" rx="13" fill="#5fb3ff"/><text x="560" y="53" fill="#04182b">PWM</text>
+      <rect x="352" y="36" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="380" y="53" fill="#151515">FAULT 4</text>
+      <rect x="412" y="36" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="440" y="53" fill="#151515">PERMIT</text>
+      <rect x="472" y="36" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="500" y="53" fill="#151515">FAULT 1</text>
+      <rect x="532" y="36" width="56" height="26" rx="13" fill="#5fb3ff"/><text x="560" y="53" fill="#171717">PWM</text>
       <rect x="592" y="36" width="56" height="26" rx="13" fill="#ff5d5d"/><text x="620" y="53" fill="#1c0606">3.3 V</text>
-      <rect x="352" y="188" width="56" height="26" rx="13" fill="#0d0f12" stroke="#8a94a3"/><text x="380" y="205" fill="#fff">GND</text>
-      <rect x="412" y="188" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="440" y="205" fill="#1c0b33">FAULT 3</text>
-      <rect x="472" y="188" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="500" y="205" fill="#1c0b33">FAULT 2</text>
-      <rect x="532" y="188" width="56" height="26" rx="13" fill="#5fb3ff"/><text x="560" y="205" fill="#04182b">TTL</text>
+      <rect x="352" y="188" width="56" height="26" rx="13" fill="#0d0f12" stroke="#939393"/><text x="380" y="205" fill="#fff">GND</text>
+      <rect x="412" y="188" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="440" y="205" fill="#151515">FAULT 3</text>
+      <rect x="472" y="188" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="500" y="205" fill="#151515">FAULT 2</text>
+      <rect x="532" y="188" width="56" height="26" rx="13" fill="#5fb3ff"/><text x="560" y="205" fill="#171717">TTL</text>
       <rect x="592" y="188" width="56" height="26" rx="13" fill="#ff9f43"/><text x="620" y="205" fill="#201004">5 V</text>
     </g>
-    <g font-size="12" fill="#a9b4c2" text-anchor="middle">
+    <g font-size="12" fill="#b3b3b3" text-anchor="middle">
       <text x="380" y="28">9</text><text x="440" y="28">7</text><text x="500" y="28">5</text><text x="560" y="28">3</text><text x="620" y="28">1</text>
       <text x="380" y="232">10</text><text x="440" y="232">8</text><text x="500" y="232">6</text><text x="560" y="232">4</text><text x="620" y="232">2</text>
     </g>
-    <g font-size="14" fill="#a9b4c2">
+    <g font-size="14" fill="#b3b3b3">
       <text x="325" y="112" text-anchor="end">Row towards the middle of the board</text>
       <text x="325" y="150" text-anchor="end">Row towards the board edge</text>
       <text x="675" y="98">Pin 1, top right,</text>
@@ -241,21 +241,21 @@ Terminal names differ between laser supplies. The last column shows the labels m
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Loop terminals and laser supply connector">
   <svg viewBox="0 0 1000 300" role="img" aria-labelledby="xb-lpa-terms-t">
     <title id="xb-lpa-terms-t">Left: the two loop terminal blocks, screws from left to right G, S4, G, S3 and G, S2, G, S1. Right: the matching six-position laser supply connectors, from left to right H (unconnected), L, P, G, IN, 5V.</title>
-    <text x="250" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Loop terminals, top edge</text>
-    <text x="741" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">PSU connectors, same pin order</text>
-    <path d="M510 16V200" stroke="#38424f" stroke-width="2" stroke-dasharray="6 6"/>
-    <rect x="26" y="62" width="216" height="56" rx="5" fill="#35c26b" stroke="#145a30"/><circle cx="56" cy="90" r="11" fill="#0d0f12"/><path d="M56 118V140" stroke="#8a94a3" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="34.0" y="140" width="44" height="26" rx="13" fill="#0d0f12" stroke="#8a94a3"/><text x="56" y="158" fill="#fff" text-anchor="middle">G</text></g><circle cx="108" cy="90" r="11" fill="#0d0f12"/><path d="M108 118V140" stroke="#b8a1ff" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="86.0" y="140" width="44" height="26" rx="13" fill="#b8a1ff"/><text x="108" y="158" fill="#140a33" text-anchor="middle">S4</text></g><circle cx="160" cy="90" r="11" fill="#0d0f12"/><path d="M160 118V140" stroke="#8a94a3" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="138.0" y="140" width="44" height="26" rx="13" fill="#0d0f12" stroke="#8a94a3"/><text x="160" y="158" fill="#fff" text-anchor="middle">G</text></g><circle cx="212" cy="90" r="11" fill="#0d0f12"/><path d="M212 118V140" stroke="#b8a1ff" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="190.0" y="140" width="44" height="26" rx="13" fill="#b8a1ff"/><text x="212" y="158" fill="#140a33" text-anchor="middle">S3</text></g><rect x="262" y="62" width="216" height="56" rx="5" fill="#35c26b" stroke="#145a30"/><circle cx="292" cy="90" r="11" fill="#0d0f12"/><path d="M292 118V140" stroke="#8a94a3" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="270.0" y="140" width="44" height="26" rx="13" fill="#0d0f12" stroke="#8a94a3"/><text x="292" y="158" fill="#fff" text-anchor="middle">G</text></g><circle cx="344" cy="90" r="11" fill="#0d0f12"/><path d="M344 118V140" stroke="#b8a1ff" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="322.0" y="140" width="44" height="26" rx="13" fill="#b8a1ff"/><text x="344" y="158" fill="#140a33" text-anchor="middle">S2</text></g><circle cx="396" cy="90" r="11" fill="#0d0f12"/><path d="M396 118V140" stroke="#8a94a3" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="374.0" y="140" width="44" height="26" rx="13" fill="#0d0f12" stroke="#8a94a3"/><text x="396" y="158" fill="#fff" text-anchor="middle">G</text></g><circle cx="448" cy="90" r="11" fill="#0d0f12"/><path d="M448 118V140" stroke="#b8a1ff" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="426.0" y="140" width="44" height="26" rx="13" fill="#b8a1ff"/><text x="448" y="158" fill="#140a33" text-anchor="middle">S1</text></g>
+    <text x="250" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">Loop terminals, top edge</text>
+    <text x="741" y="34" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">PSU connectors, same pin order</text>
+    <path d="M510 16V200" stroke="#414141" stroke-width="2" stroke-dasharray="6 6"/>
+    <rect x="26" y="62" width="216" height="56" rx="5" fill="#35c26b" stroke="#145a30"/><circle cx="56" cy="90" r="11" fill="#0d0f12"/><path d="M56 118V140" stroke="#939393" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="34.0" y="140" width="44" height="26" rx="13" fill="#0d0f12" stroke="#939393"/><text x="56" y="158" fill="#fff" text-anchor="middle">G</text></g><circle cx="108" cy="90" r="11" fill="#0d0f12"/><path d="M108 118V140" stroke="#b8a1ff" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="86.0" y="140" width="44" height="26" rx="13" fill="#b8a1ff"/><text x="108" y="158" fill="#121212" text-anchor="middle">S4</text></g><circle cx="160" cy="90" r="11" fill="#0d0f12"/><path d="M160 118V140" stroke="#939393" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="138.0" y="140" width="44" height="26" rx="13" fill="#0d0f12" stroke="#939393"/><text x="160" y="158" fill="#fff" text-anchor="middle">G</text></g><circle cx="212" cy="90" r="11" fill="#0d0f12"/><path d="M212 118V140" stroke="#b8a1ff" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="190.0" y="140" width="44" height="26" rx="13" fill="#b8a1ff"/><text x="212" y="158" fill="#121212" text-anchor="middle">S3</text></g><rect x="262" y="62" width="216" height="56" rx="5" fill="#35c26b" stroke="#145a30"/><circle cx="292" cy="90" r="11" fill="#0d0f12"/><path d="M292 118V140" stroke="#939393" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="270.0" y="140" width="44" height="26" rx="13" fill="#0d0f12" stroke="#939393"/><text x="292" y="158" fill="#fff" text-anchor="middle">G</text></g><circle cx="344" cy="90" r="11" fill="#0d0f12"/><path d="M344 118V140" stroke="#b8a1ff" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="322.0" y="140" width="44" height="26" rx="13" fill="#b8a1ff"/><text x="344" y="158" fill="#121212" text-anchor="middle">S2</text></g><circle cx="396" cy="90" r="11" fill="#0d0f12"/><path d="M396 118V140" stroke="#939393" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="374.0" y="140" width="44" height="26" rx="13" fill="#0d0f12" stroke="#939393"/><text x="396" y="158" fill="#fff" text-anchor="middle">G</text></g><circle cx="448" cy="90" r="11" fill="#0d0f12"/><path d="M448 118V140" stroke="#b8a1ff" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="426.0" y="140" width="44" height="26" rx="13" fill="#b8a1ff"/><text x="448" y="158" fill="#121212" text-anchor="middle">S1</text></g>
     <rect x="548" y="62" width="386" height="56" rx="5" fill="#efe6cf" stroke="#b8a878"/>
-    <rect x="579" y="83" width="14" height="14" fill="#8a94a3"/><path d="M586 118V140" stroke="#8a94a3" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="559.0" y="140" width="54" height="26" rx="13" fill="#0d0f12" stroke="#8a94a3"/><text x="586" y="158" fill="#fff" text-anchor="middle">H NC</text></g><rect x="641" y="83" width="14" height="14" fill="#8a94a3"/><path d="M648 118V140" stroke="#ff9f43" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="621.0" y="140" width="54" height="26" rx="13" fill="#ff9f43"/><text x="648" y="158" fill="#201004" text-anchor="middle">L</text></g><rect x="703" y="83" width="14" height="14" fill="#8a94a3"/><path d="M710 118V140" stroke="#5fb3ff" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="683.0" y="140" width="54" height="26" rx="13" fill="#5fb3ff"/><text x="710" y="158" fill="#04182b" text-anchor="middle">P</text></g><rect x="765" y="83" width="14" height="14" fill="#8a94a3"/><path d="M772 118V140" stroke="#5fb3ff" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="745.0" y="140" width="54" height="26" rx="13" fill="#5fb3ff"/><text x="772" y="158" fill="#04182b" text-anchor="middle">G</text></g><rect x="827" y="83" width="14" height="14" fill="#8a94a3"/><path d="M834 118V140" stroke="#59616e" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="807.0" y="140" width="54" height="26" rx="13" fill="#212936" stroke="#59616e"/><text x="834" y="158" fill="#a9b4c2" text-anchor="middle">IN</text></g><rect x="889" y="83" width="14" height="14" fill="#8a94a3"/><path d="M896 118V140" stroke="#8a94a3" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="869.0" y="140" width="54" height="26" rx="13" fill="#0d0f12" stroke="#8a94a3"/><text x="896" y="158" fill="#fff" text-anchor="middle">5V</text></g>
-    <g font-size="12" fill="#a9b4c2" text-anchor="middle"><text x="78" y="194">loop 4</text><text x="182" y="194">loop 3</text><text x="314" y="194">loop 2</text><text x="418" y="194">loop 1</text><text x="741" y="194">2.54 mm keyed header · bottom right</text></g>
+    <rect x="579" y="83" width="14" height="14" fill="#939393"/><path d="M586 118V140" stroke="#939393" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="559.0" y="140" width="54" height="26" rx="13" fill="#0d0f12" stroke="#939393"/><text x="586" y="158" fill="#fff" text-anchor="middle">H NC</text></g><rect x="641" y="83" width="14" height="14" fill="#939393"/><path d="M648 118V140" stroke="#ff9f43" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="621.0" y="140" width="54" height="26" rx="13" fill="#ff9f43"/><text x="648" y="158" fill="#201004" text-anchor="middle">L</text></g><rect x="703" y="83" width="14" height="14" fill="#939393"/><path d="M710 118V140" stroke="#5fb3ff" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="683.0" y="140" width="54" height="26" rx="13" fill="#5fb3ff"/><text x="710" y="158" fill="#171717" text-anchor="middle">P</text></g><rect x="765" y="83" width="14" height="14" fill="#939393"/><path d="M772 118V140" stroke="#5fb3ff" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="745.0" y="140" width="54" height="26" rx="13" fill="#5fb3ff"/><text x="772" y="158" fill="#171717" text-anchor="middle">G</text></g><rect x="827" y="83" width="14" height="14" fill="#939393"/><path d="M834 118V140" stroke="#606060" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="807.0" y="140" width="54" height="26" rx="13" fill="#292929" stroke="#606060"/><text x="834" y="158" fill="#b3b3b3" text-anchor="middle">IN</text></g><rect x="889" y="83" width="14" height="14" fill="#939393"/><path d="M896 118V140" stroke="#939393" stroke-width="2"/><g font-size="13" font-weight="700"><rect x="869.0" y="140" width="54" height="26" rx="13" fill="#0d0f12" stroke="#939393"/><text x="896" y="158" fill="#fff" text-anchor="middle">5V</text></g>
+    <g font-size="12" fill="#b3b3b3" text-anchor="middle"><text x="78" y="194">loop 4</text><text x="182" y="194">loop 3</text><text x="314" y="194">loop 2</text><text x="418" y="194">loop 1</text><text x="741" y="194">2.54 mm keyed header · bottom right</text></g>
       <rect x="548" y="210" width="386" height="50" rx="5" fill="#2f9e4f" stroke="#124d24"/>
-    <circle cx="586" cy="235" r="10" fill="#cfd6df" stroke="#48514c"/><path d="M580 235h12" stroke="#48514c" stroke-width="2"/>
-    <circle cx="648" cy="235" r="10" fill="#cfd6df" stroke="#48514c"/><path d="M642 235h12" stroke="#48514c" stroke-width="2"/>
-    <circle cx="710" cy="235" r="10" fill="#cfd6df" stroke="#48514c"/><path d="M704 235h12" stroke="#48514c" stroke-width="2"/>
-    <circle cx="772" cy="235" r="10" fill="#cfd6df" stroke="#48514c"/><path d="M766 235h12" stroke="#48514c" stroke-width="2"/>
-    <circle cx="834" cy="235" r="10" fill="#cfd6df" stroke="#48514c"/><path d="M828 235h12" stroke="#48514c" stroke-width="2"/>
-    <circle cx="896" cy="235" r="10" fill="#cfd6df" stroke="#48514c"/><path d="M890 235h12" stroke="#48514c" stroke-width="2"/>
-    <text x="741" y="285" font-size="12" fill="#a9b4c2" text-anchor="middle">5.00 mm screw terminal · top right</text>
+    <circle cx="586" cy="235" r="10" fill="#d5d5d5" stroke="#48514c"/><path d="M580 235h12" stroke="#48514c" stroke-width="2"/>
+    <circle cx="648" cy="235" r="10" fill="#d5d5d5" stroke="#48514c"/><path d="M642 235h12" stroke="#48514c" stroke-width="2"/>
+    <circle cx="710" cy="235" r="10" fill="#d5d5d5" stroke="#48514c"/><path d="M704 235h12" stroke="#48514c" stroke-width="2"/>
+    <circle cx="772" cy="235" r="10" fill="#d5d5d5" stroke="#48514c"/><path d="M766 235h12" stroke="#48514c" stroke-width="2"/>
+    <circle cx="834" cy="235" r="10" fill="#d5d5d5" stroke="#48514c"/><path d="M828 235h12" stroke="#48514c" stroke-width="2"/>
+    <circle cx="896" cy="235" r="10" fill="#d5d5d5" stroke="#48514c"/><path d="M890 235h12" stroke="#48514c" stroke-width="2"/>
+    <text x="741" y="285" font-size="12" fill="#b3b3b3" text-anchor="middle">5.00 mm screw terminal · top right</text>
   </svg>
   </div>
   <figcaption>The screws and connector positions from left to right, with the board held as in the tour above. Each loop is one G screw and the S screw to its right. The two PSU connectors share the coloured pin labels. The drawing is enlarged for readability.</figcaption>
@@ -285,15 +285,15 @@ These steps take you from an unconnected board to outputs you have checked with 
   <svg viewBox="0 0 1000 470" role="img" aria-labelledby="xb-lpa-hookup-t">
     <title id="xb-lpa-hookup-t">Wiring overview: a remapped harness or chain from the host to Y IN; a lid switch on loop 1 and a water-flow switch on loop 2, each between an S screw and the G screw beside it; loops 3 and 4 bypassed; four wires from the laser supply connector to the terminals G, IN, L and P of the supply's six-way signal block.</title>
     <!-- adapter board -->
-    <rect x="330" y="150" width="380" height="250" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/>
-    <text x="440" y="278" text-anchor="middle" font-size="17" font-weight="700" fill="#e6ebf2">Adapter board</text>
+    <rect x="330" y="150" width="380" height="250" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/>
+    <text x="440" y="278" text-anchor="middle" font-size="17" font-weight="700" fill="#eaeaea">Adapter board</text>
     <rect x="360" y="156" width="150" height="28" rx="3" fill="#2f9e4f" stroke="#124d24"/>
     <rect x="530" y="156" width="150" height="28" rx="3" fill="#2f9e4f" stroke="#124d24"/>
-    <g fill="#cfd6df" stroke="#5b6570">
+    <g fill="#d5d5d5" stroke="#646464">
       <circle cx="379" cy="170" r="6"/><circle cx="416" cy="170" r="6"/><circle cx="454" cy="170" r="6"/><circle cx="491" cy="170" r="6"/>
       <circle cx="549" cy="170" r="6"/><circle cx="586" cy="170" r="6"/><circle cx="624" cy="170" r="6"/><circle cx="661" cy="170" r="6"/>
     </g>
-    <g font-size="11" font-weight="700" fill="#e6ebf2" text-anchor="middle">
+    <g font-size="11" font-weight="700" fill="#eaeaea" text-anchor="middle">
       <text x="379" y="200">G</text><text x="416" y="200">S4</text><text x="454" y="200">G</text><text x="491" y="200">S3</text>
       <text x="549" y="200">G</text><text x="586" y="200">S2</text><text x="624" y="200">G</text><text x="661" y="200">S1</text>
     </g>
@@ -307,29 +307,29 @@ These steps take you from an unconnected board to outputs you have checked with 
     <path d="M690 70L728 58" stroke="#5fb3ff" stroke-width="4" stroke-linecap="round"/><circle cx="690" cy="70" r="5" fill="#5fb3ff"/><circle cx="730" cy="70" r="5" fill="#5fb3ff"/>
     <path d="M500 100L462 88" stroke="#57d18c" stroke-width="4" stroke-linecap="round"/><circle cx="500" cy="100" r="5" fill="#57d18c"/><circle cx="460" cy="100" r="5" fill="#57d18c"/>
     <text x="772" y="62" font-size="13" font-weight="700" fill="#9cc3ff">Lid switch (loop 1)</text>
-    <text x="772" y="80" font-size="12" fill="#a9b4c2">closed while the lid is shut</text>
+    <text x="772" y="80" font-size="12" fill="#b3b3b3">closed while the lid is shut</text>
     <text x="418" y="84" text-anchor="end" font-size="13" font-weight="700" fill="#8fe0b0">Water-flow switch (loop 2)</text>
-    <text x="418" y="102" text-anchor="end" font-size="12" fill="#a9b4c2">closed while water flows</text>
+    <text x="418" y="102" text-anchor="end" font-size="12" fill="#b3b3b3">closed while water flows</text>
     <!-- Y IN -->
-    <rect x="380" y="352" width="58" height="30" rx="3" fill="#0d0f12" stroke="#8a94a3"/>
-    <text x="409" y="342" text-anchor="middle" font-size="11" fill="#e6ebf2">Y IN</text>
+    <rect x="380" y="352" width="58" height="30" rx="3" fill="#0d0f12" stroke="#939393"/>
+    <text x="409" y="342" text-anchor="middle" font-size="11" fill="#eaeaea">Y IN</text>
     <!-- Smoothieboard -->
-    <rect x="30" y="290" width="190" height="130" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/>
-    <text x="112" y="346" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Smoothieboard</text>
-    <text x="112" y="366" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">V2 Prime</text>
-    <rect x="186" y="336" width="26" height="46" rx="3" fill="#0d0f12" stroke="#8a94a3"/>
+    <rect x="30" y="290" width="190" height="130" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/>
+    <text x="112" y="346" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">Smoothieboard</text>
+    <text x="112" y="366" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">V2 Prime</text>
+    <rect x="186" y="336" width="26" height="46" rx="3" fill="#0d0f12" stroke="#939393"/>
     <text x="199" y="326" text-anchor="middle" font-size="12" font-weight="700" fill="#ffcc33">HOST</text>
-    <path d="M212 360C300 360 300 367 380 367" fill="none" stroke="#8a94a3" stroke-width="16"/>
+    <path d="M212 360C300 360 300 367 380 367" fill="none" stroke="#939393" stroke-width="16"/>
     <path d="M212 353C300 353 300 360 380 360" fill="none" stroke="#ff5d5d" stroke-width="2"/>
-    <text x="270" y="444" text-anchor="middle" font-size="12" fill="#a9b4c2">Remapped harness or chain</text>
-    <text x="270" y="460" text-anchor="middle" font-size="12" fill="#a9b4c2">PWM to pin 3, TTL to pin 4</text>
+    <text x="270" y="444" text-anchor="middle" font-size="12" fill="#b3b3b3">Remapped harness or chain</text>
+    <text x="270" y="460" text-anchor="middle" font-size="12" fill="#b3b3b3">PWM to pin 3, TTL to pin 4</text>
     <!-- PSU connector -->
     <rect x="518" y="352" width="184" height="30" rx="3" fill="#efe6cf" stroke="#b8a878"/>
-    <g fill="#8a94a3"><rect x="530" y="362" width="10" height="10"/><rect x="560" y="362" width="10" height="10"/><rect x="590" y="362" width="10" height="10"/><rect x="620" y="362" width="10" height="10"/><rect x="650" y="362" width="10" height="10"/><rect x="680" y="362" width="10" height="10"/></g>
-    <g font-size="10" font-weight="700" fill="#e6ebf2" text-anchor="middle"><text x="535" y="396">H NC</text><text x="565" y="396">L</text><text x="595" y="396">P</text><text x="625" y="396">G</text><text x="655" y="396">IN</text><text x="685" y="396">5V</text></g>
+    <g fill="#939393"><rect x="530" y="362" width="10" height="10"/><rect x="560" y="362" width="10" height="10"/><rect x="590" y="362" width="10" height="10"/><rect x="620" y="362" width="10" height="10"/><rect x="650" y="362" width="10" height="10"/><rect x="680" y="362" width="10" height="10"/></g>
+    <g font-size="10" font-weight="700" fill="#eaeaea" text-anchor="middle"><text x="535" y="396">H NC</text><text x="565" y="396">L</text><text x="595" y="396">P</text><text x="625" y="396">G</text><text x="655" y="396">IN</text><text x="685" y="396">5V</text></g>
     <!-- PSU: drawing of a typical supply's signal block (smoothie-diagrams, data/external-equipment/co2-laser-power-supply-panel) -->
-    <text x="890" y="222" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">CO2 laser supply</text>
-    <text x="890" y="240" text-anchor="middle" font-size="11" fill="#a9b4c2">signal terminals of a typical unit</text>
+    <text x="890" y="222" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">CO2 laser supply</text>
+    <text x="890" y="240" text-anchor="middle" font-size="11" fill="#b3b3b3">signal terminals of a typical unit</text>
     <svg x="800" y="250" width="180" height="110.8" viewBox="84 8 52 32"><image href="/images/extensions/equipment/co2-laser-power-supply-panel.webp" width="170" height="46"/></svg>
     <g fill="none" stroke-width="4" stroke-linejoin="round">
       <path d="M655 362V306H745V425H928.7V314.7" stroke="#5fb3ff"/>
@@ -482,7 +482,7 @@ The pin is checked fifty times a second. The board blocks the laser by itself an
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="The four wires between the board and the laser supply">
   <svg viewBox="0 0 900 525" role="img" aria-labelledby="xb-lpa-psu-t" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, sans-serif">
     <title id="xb-lpa-psu-t">The connector panel of a typical CO2 laser supply above the top edge of the adapter board. Four wires: board PWM to supply IN, board TTL to supply L, board WP to supply P, board G to supply G. Supply terminals H and 5V and the board's 5V screw stay empty.</title>
-    <text x="25" y="20" font-size="14" font-weight="700" fill="#e6ebf2">CO2 laser supply, connector panel</text><text x="345" y="20" font-size="13" fill="#a9b4c2">a typical unit, not a specific model</text>
+    <text x="25" y="20" font-size="14" font-weight="700" fill="#eaeaea">CO2 laser supply, connector panel</text><text x="345" y="20" font-size="13" fill="#b3b3b3">a typical unit, not a specific model</text>
     <image href="/images/extensions/equipment/co2-laser-power-supply-panel.webp" x="25" y="30" width="850" height="230"/>
     <svg x="88.85" y="380" width="626.3" height="115" viewBox="-0.95 0.1683 82 15.057"><image href="/images/extensions/laser-psu-adapter-board/laser-psu-adapter-diagram.png" x="-0.95" y="0.1683" width="82" height="57.75"/></svg>
     <g fill="none" stroke-linejoin="round">
@@ -552,7 +552,7 @@ Three things this board does not do, and what to do about them:
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
   <svg viewBox="0 0 1000 330" role="img" aria-labelledby="xb-lpa-how-t">
     <title id="xb-lpa-how-t">Four loop inputs are filtered and combined into one PERMIT signal. PERMIT gates the PWM and TTL commands from the controller and switches the WP output. PERMIT and the four fault signals also go back to the controller.</title>
-    <g fill="#212936" stroke="#59616e" stroke-width="1.5">
+    <g fill="#292929" stroke="#606060" stroke-width="1.5">
       <rect x="20" y="30" width="150" height="150" rx="8"/>
       <rect x="220" y="30" width="150" height="150" rx="8"/>
       <rect x="420" y="60" width="150" height="90" rx="8" stroke="#ffcc33"/>
@@ -561,26 +561,26 @@ Three things this board does not do, and what to do about them:
       <rect x="690" y="190" width="130" height="56" rx="8"/>
       <rect x="20" y="230" width="150" height="76" rx="8"/>
     </g>
-    <g font-size="13" font-weight="700" fill="#e6ebf2" text-anchor="middle">
+    <g font-size="13" font-weight="700" fill="#eaeaea" text-anchor="middle">
       <text x="95" y="56">4 loop inputs</text>
       <text x="295" y="56">Filter</text>
       <text x="495" y="98">All four closed?</text><text x="495" y="122" fill="#ffcc33">PERMIT</text>
       <text x="755" y="54">PWM gate</text><text x="755" y="134">TTL gate</text><text x="755" y="214">WP switch</text>
       <text x="95" y="256">Controller</text>
     </g>
-    <g font-size="12" fill="#a9b4c2" text-anchor="middle">
+    <g font-size="12" fill="#b3b3b3" text-anchor="middle">
       <text x="95" y="84">S1 · S2 · S3 · S4</text><text x="95" y="108">switch closed</text><text x="95" y="124">= healthy</text><text x="95" y="156">protected inputs</text>
       <text x="295" y="84">open: at once</text><text x="295" y="108">closed again:</text><text x="295" y="124">after ≈ 0.2 s</text><text x="295" y="156">red LED per loop</text>
       <text x="495" y="140">green LED</text>
       <text x="755" y="72">pass only if PERMIT</text><text x="755" y="152">pass only if PERMIT</text><text x="755" y="232">on only if PERMIT</text>
       <text x="95" y="278">PWM and TTL</text><text x="95" y="294">commands</text>
     </g>
-    <g stroke="#e6ebf2" stroke-width="2.5" fill="none">
+    <g stroke="#eaeaea" stroke-width="2.5" fill="none">
       <path d="M170 105H212"/><path d="M370 105H412"/>
       <path d="M570 105H630V58H682"/><path d="M630 105V218H682"/><path d="M630 138H682"/>
       <path d="M820 58H900"/><path d="M820 138H900"/><path d="M820 218H900"/>
     </g>
-    <g fill="#e6ebf2"><path d="M220 105l-9-5v10z"/><path d="M420 105l-9-5v10z"/><path d="M690 58l-9-5v10z"/><path d="M690 138l-9-5v10z"/><path d="M690 218l-9-5v10z"/><path d="M908 58l-9-5v10z"/><path d="M908 138l-9-5v10z"/><path d="M908 218l-9-5v10z"/></g>
+    <g fill="#eaeaea"><path d="M220 105l-9-5v10z"/><path d="M420 105l-9-5v10z"/><path d="M690 58l-9-5v10z"/><path d="M690 138l-9-5v10z"/><path d="M690 218l-9-5v10z"/><path d="M908 58l-9-5v10z"/><path d="M908 138l-9-5v10z"/><path d="M908 218l-9-5v10z"/></g>
     <g stroke="#5fb3ff" stroke-width="2.5" fill="none">
       <path d="M170 256H655V74H682"/><path d="M170 282H668V154H682"/>
     </g>
@@ -589,8 +589,8 @@ Three things this board does not do, and what to do about them:
       <path d="M495 150V206H295V180"/><path d="M295 206H200V240H178"/>
     </g>
     <path d="M170 240l9-5v10z" fill="#c9a6ff"/>
-    <g font-size="13" font-weight="700"><text x="916" y="63" fill="#5fb3ff">PWM</text><text x="916" y="143" fill="#5fb3ff">TTL</text><text x="916" y="223" fill="#e6ebf2">WP</text></g>
-    <text x="916" y="250" font-size="12" fill="#a9b4c2">to the laser</text><text x="916" y="266" font-size="12" fill="#a9b4c2">supply</text>
+    <g font-size="13" font-weight="700"><text x="916" y="63" fill="#5fb3ff">PWM</text><text x="916" y="143" fill="#5fb3ff">TTL</text><text x="916" y="223" fill="#eaeaea">WP</text></g>
+    <text x="916" y="250" font-size="12" fill="#b3b3b3">to the laser</text><text x="916" y="266" font-size="12" fill="#b3b3b3">supply</text>
     <text x="385" y="224" font-size="12" fill="#c9a6ff" text-anchor="middle">status: PERMIT and 4 fault signals</text>
   </svg>
   </div>
@@ -619,7 +619,7 @@ The three options are solder links on the top side, each with three pads: the mi
     <svg viewBox="0 0 230 86" role="img" aria-label="Three pads: left and middle joined means active high; middle and right joined means active low.">
       <rect x="20" y="14" width="120" height="36" rx="10" fill="#33290d" stroke="#ffcc33" stroke-width="2.5"/>
       <g fill="#e0b84a" stroke="#6b5310"><rect x="33" y="20" width="24" height="24" rx="5"/><rect x="103" y="20" width="24" height="24" rx="5"/><rect x="173" y="20" width="24" height="24" rx="5"/></g>
-      <g font-size="12" fill="#e6ebf2" text-anchor="middle"><text x="45" y="74">high</text><text x="115" y="74" fill="#a9b4c2">common</text><text x="185" y="74">low</text></g>
+      <g font-size="12" fill="#eaeaea" text-anchor="middle"><text x="45" y="74">high</text><text x="115" y="74" fill="#b3b3b3">common</text><text x="185" y="74">low</text></g>
     </svg>
     <span>Left, as delivered: more power means wider 5&nbsp;V pulses; blocked means 0&nbsp;V (shown). Right: reversed, blocked means 5&nbsp;V.</span>
   </div>
@@ -628,7 +628,7 @@ The three options are solder links on the top side, each with three pads: the mi
     <svg viewBox="0 0 230 86" role="img" aria-label="Three pads: left and middle joined means fire when low; middle and right joined means fire when high.">
       <rect x="20" y="14" width="120" height="36" rx="10" fill="#33290d" stroke="#ffcc33" stroke-width="2.5"/>
       <g fill="#e0b84a" stroke="#6b5310"><rect x="33" y="20" width="24" height="24" rx="5"/><rect x="103" y="20" width="24" height="24" rx="5"/><rect x="173" y="20" width="24" height="24" rx="5"/></g>
-      <g font-size="12" fill="#e6ebf2" text-anchor="middle"><text x="45" y="74">low</text><text x="115" y="74" fill="#a9b4c2">common</text><text x="185" y="74">high</text></g>
+      <g font-size="12" fill="#eaeaea" text-anchor="middle"><text x="45" y="74">low</text><text x="115" y="74" fill="#b3b3b3">common</text><text x="185" y="74">high</text></g>
     </svg>
     <span>Left, as delivered: 0&nbsp;V fires, for an L terminal (shown). Right: 5&nbsp;V fires, for an H terminal.</span>
   </div>
@@ -637,7 +637,7 @@ The three options are solder links on the top side, each with three pads: the mi
     <svg viewBox="0 0 230 86" role="img" aria-label="Three pads: left and middle joined takes 5 volts from the controller; middle and right joined takes 5 volts from the laser supply.">
       <rect x="20" y="14" width="120" height="36" rx="10" fill="#33290d" stroke="#ffcc33" stroke-width="2.5"/>
       <g fill="#e0b84a" stroke="#6b5310"><rect x="33" y="20" width="24" height="24" rx="5"/><rect x="103" y="20" width="24" height="24" rx="5"/><rect x="173" y="20" width="24" height="24" rx="5"/></g>
-      <g font-size="12" fill="#e6ebf2" text-anchor="middle"><text x="45" y="74">HOST</text><text x="115" y="74" fill="#a9b4c2">common</text><text x="185" y="74">PSU</text></g>
+      <g font-size="12" fill="#eaeaea" text-anchor="middle"><text x="45" y="74">HOST</text><text x="115" y="74" fill="#b3b3b3">common</text><text x="185" y="74">PSU</text></g>
     </svg>
     <span>Left, as delivered: the output stage runs from the controller's 5&nbsp;V (shown). Right: it runs from the laser supply's 5&nbsp;V terminal.</span>
   </div>
@@ -702,32 +702,32 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
   <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-lpa-mount-t">
   <title id="xb-lpa-mount-t">Mounting drawing of the laser PSU adapter board, component side: outline 80 by 55.75 millimetres with 4 mounting holes and 2 cable-tie holes. Hole positions are listed in the table below.</title>
-  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
-  <rect x="236.1" y="78.0" width="487.9" height="340.0" rx="9.1" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
-  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M236.1 56H723.9"/><path d="M236.1 50V62"/><path d="M723.9 50V62"/><path d="M749.9 78.0V418.0"/><path d="M743.9 78.0h12"/><path d="M743.9 418.0h12"/></g>
-  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">80</text>
-  <text x="761.9" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">55.75</text>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#b3b3b3">COMPONENT SIDE · millimetres</text>
+  <rect x="236.1" y="78.0" width="487.9" height="340.0" rx="9.1" fill="#1f2226" stroke="#eaeaea" stroke-width="1.5"/>
+  <g stroke="#b3b3b3" stroke-width="1.2" fill="none"><path d="M236.1 56H723.9"/><path d="M236.1 50V62"/><path d="M723.9 50V62"/><path d="M749.9 78.0V418.0"/><path d="M743.9 78.0h12"/><path d="M743.9 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">80</text>
+  <text x="761.9" y="253.0" font-size="15" font-weight="700" fill="#eaeaea">55.75</text>
   <circle cx="236.1" cy="78.0" r="4" fill="#ffcc33"/>
   <text x="224.1" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
   <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M178.1 104.0h30" fill="none"/><path d="M212.1 104.0l-8 -4v8z"/><path d="M178.1 104.0v30" fill="none"/><path d="M178.1 138.0l-4 -8h8z"/></g>
   <text x="216.1" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
   <text x="174.1" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
-  <circle cx="284.8" cy="171.0" r="9.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <circle cx="284.8" cy="171.0" r="9.8" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M271.1 171.0h27.5M284.8 157.2v27.5" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="275.1" y="200.8" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  8.00, 15.25</text>
-  <circle cx="528.8" cy="171.0" r="9.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="275.1" y="200.8" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">1</tspan>  8.00, 15.25</text>
+  <circle cx="528.8" cy="171.0" r="9.8" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M515.0 171.0h27.5M528.8 157.2v27.5" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="538.5" y="200.8" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  48.00, 15.25</text>
-  <circle cx="284.8" cy="293.0" r="9.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="538.5" y="200.8" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">2</tspan>  48.00, 15.25</text>
+  <circle cx="284.8" cy="293.0" r="9.8" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M271.1 293.0h27.5M284.8 279.2v27.5" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="275.1" y="273.2" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  8.00, 35.25</text>
-  <circle cx="528.8" cy="293.0" r="9.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="275.1" y="273.2" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">3</tspan>  8.00, 35.25</text>
+  <circle cx="528.8" cy="293.0" r="9.8" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M515.0 293.0h27.5M528.8 279.2v27.5" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="538.5" y="273.2" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  48.00, 35.25</text>
-  <circle cx="687.4" cy="201.5" r="7.6" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
-  <circle cx="687.4" cy="232.0" r="7.6" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
-  <text x="687.4" y="184.9" text-anchor="middle" font-size="12" fill="#a9b4c2">cable tie</text>
-  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  <text x="538.5" y="273.2" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">4</tspan>  48.00, 35.25</text>
+  <circle cx="687.4" cy="201.5" r="7.6" fill="#191919" stroke="#b3b3b3" stroke-width="1.5"/>
+  <circle cx="687.4" cy="232.0" r="7.6" fill="#191919" stroke="#b3b3b3" stroke-width="1.5"/>
+  <text x="687.4" y="184.9" text-anchor="middle" font-size="12" fill="#b3b3b3">cable tie</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#b3b3b3">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
   </svg>
   </div>
   <figcaption>Board outline 80 × 55.75&nbsp;mm, corners rounded to a 1.5&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>

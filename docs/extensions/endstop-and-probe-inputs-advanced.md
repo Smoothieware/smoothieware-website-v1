@@ -153,33 +153,33 @@ Connect J8 to the header labelled **G_F** on the Smoothieboard V2 Prime. All sev
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Controller connector pin positions">
   <svg viewBox="0 0 1000 250" role="img" aria-labelledby="xb-es-j8-t">
     <title id="xb-es-j8-t">J8 seen from above: pin 1 at the bottom left. Even pins 2, 4, 6, 8, 10 from left to right in the row towards the board edge; odd pins 1, 3, 5, 7, 9 in the row towards the middle of the board.</title>
-    <rect x="345" y="85" width="310" height="80" rx="6" fill="#0d0f12" stroke="#59616e" stroke-width="2"/>
+    <rect x="345" y="85" width="310" height="80" rx="6" fill="#0d0f12" stroke="#606060" stroke-width="2"/>
     <g fill="#e0b84a" stroke="#6b5310">
       <rect x="372" y="98" width="16" height="16"/><rect x="432" y="98" width="16" height="16"/><rect x="492" y="98" width="16" height="16"/><rect x="552" y="98" width="16" height="16"/><rect x="612" y="98" width="16" height="16"/>
       <rect x="372" y="136" width="16" height="16"/><rect x="432" y="136" width="16" height="16"/><rect x="492" y="136" width="16" height="16"/><rect x="552" y="136" width="16" height="16"/><rect x="612" y="136" width="16" height="16"/>
     </g>
     <text x="352" y="150" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">1</text>
     <g stroke-width="2" fill="none">
-      <path d="M380 98V62" stroke="#ff9f43"/><path d="M440 98V62" stroke="#c9a6ff"/><path d="M500 98V62" stroke="#c9a6ff"/><path d="M560 98V62" stroke="#c9a6ff"/><path d="M620 98V62" stroke="#8a94a3"/>
+      <path d="M380 98V62" stroke="#ff9f43"/><path d="M440 98V62" stroke="#c9a6ff"/><path d="M500 98V62" stroke="#c9a6ff"/><path d="M560 98V62" stroke="#c9a6ff"/><path d="M620 98V62" stroke="#939393"/>
       <path d="M380 152V188" stroke="#ff5d5d"/><path d="M440 152V188" stroke="#c9a6ff"/><path d="M500 152V188" stroke="#c9a6ff"/><path d="M560 152V188" stroke="#c9a6ff"/><path d="M620 152V188" stroke="#c9a6ff"/>
     </g>
     <g font-size="12" font-weight="700" text-anchor="middle">
       <rect x="352" y="36" width="56" height="26" rx="13" fill="#ff9f43"/><text x="380" y="53" fill="#201004">5 V</text>
-      <rect x="412" y="36" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="440" y="53" fill="#1c0b33">IN 2</text>
-      <rect x="472" y="36" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="500" y="53" fill="#1c0b33">IN 4</text>
-      <rect x="532" y="36" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="560" y="53" fill="#1c0b33">IN 6</text>
-      <rect x="592" y="36" width="56" height="26" rx="13" fill="#0d0f12" stroke="#8a94a3"/><text x="620" y="53" fill="#fff">GND</text>
+      <rect x="412" y="36" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="440" y="53" fill="#151515">IN 2</text>
+      <rect x="472" y="36" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="500" y="53" fill="#151515">IN 4</text>
+      <rect x="532" y="36" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="560" y="53" fill="#151515">IN 6</text>
+      <rect x="592" y="36" width="56" height="26" rx="13" fill="#0d0f12" stroke="#939393"/><text x="620" y="53" fill="#fff">GND</text>
       <rect x="352" y="188" width="56" height="26" rx="13" fill="#ff5d5d"/><text x="380" y="205" fill="#1c0606">3.3 V</text>
-      <rect x="412" y="188" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="440" y="205" fill="#1c0b33">IN 1</text>
-      <rect x="472" y="188" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="500" y="205" fill="#1c0b33">IN 3</text>
-      <rect x="532" y="188" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="560" y="205" fill="#1c0b33">IN 5</text>
-      <rect x="592" y="188" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="620" y="205" fill="#1c0b33">IN 7</text>
+      <rect x="412" y="188" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="440" y="205" fill="#151515">IN 1</text>
+      <rect x="472" y="188" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="500" y="205" fill="#151515">IN 3</text>
+      <rect x="532" y="188" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="560" y="205" fill="#151515">IN 5</text>
+      <rect x="592" y="188" width="56" height="26" rx="13" fill="#c9a6ff"/><text x="620" y="205" fill="#151515">IN 7</text>
     </g>
-    <g font-size="12" fill="#a9b4c2" text-anchor="middle">
+    <g font-size="12" fill="#b3b3b3" text-anchor="middle">
       <text x="380" y="28">2</text><text x="440" y="28">4</text><text x="500" y="28">6</text><text x="560" y="28">8</text><text x="620" y="28">10</text>
       <text x="380" y="232">1</text><text x="440" y="232">3</text><text x="500" y="232">5</text><text x="560" y="232">7</text><text x="620" y="232">9</text>
     </g>
-    <g font-size="14" fill="#a9b4c2">
+    <g font-size="14" fill="#b3b3b3">
       <text x="325" y="112" text-anchor="end">Row towards the board edge</text>
       <text x="325" y="150" text-anchor="end">Row towards the middle of the board</text>
       <text x="675" y="112">J8, seen from above</text>
@@ -271,36 +271,36 @@ These steps connect one limit switch to input 1 and show its state on the consol
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Minimal wiring">
   <svg viewBox="0 0 1000 400" role="img" aria-labelledby="xb-es-hookup-t">
     <title id="xb-es-hookup-t">Minimal wiring: a ribbon cable from header G_F on the Smoothieboard to connector J8, and a normally closed limit switch wired between the S and G contacts of input 1. The 5V contact stays unconnected.</title>
-    <rect x="30" y="40" width="190" height="130" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/>
-    <text x="112" y="96" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Smoothieboard</text>
-    <text x="112" y="116" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">V2 Prime</text>
-    <rect x="186" y="86" width="26" height="46" rx="3" fill="#0d0f12" stroke="#8a94a3"/>
+    <rect x="30" y="40" width="190" height="130" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/>
+    <text x="112" y="96" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">Smoothieboard</text>
+    <text x="112" y="116" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">V2 Prime</text>
+    <rect x="186" y="86" width="26" height="46" rx="3" fill="#0d0f12" stroke="#939393"/>
     <text x="199" y="76" text-anchor="middle" font-size="12" font-weight="700" fill="#ffcc33">G_F</text>
-    <rect x="380" y="60" width="440" height="270" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/>
-    <text x="640" y="190" text-anchor="middle" font-size="17" font-weight="700" fill="#e6ebf2">Endstop inputs board</text>
-    <rect x="430" y="76" width="70" height="30" rx="3" fill="#0d0f12" stroke="#8a94a3"/>
-    <text x="465" y="124" text-anchor="middle" font-size="12" fill="#e6ebf2">J8</text>
-    <path d="M212 109C300 109 330 91 430 91" fill="none" stroke="#8a94a3" stroke-width="16"/>
+    <rect x="380" y="60" width="440" height="270" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/>
+    <text x="640" y="190" text-anchor="middle" font-size="17" font-weight="700" fill="#eaeaea">Endstop inputs board</text>
+    <rect x="430" y="76" width="70" height="30" rx="3" fill="#0d0f12" stroke="#939393"/>
+    <text x="465" y="124" text-anchor="middle" font-size="12" fill="#eaeaea">J8</text>
+    <path d="M212 109C300 109 330 91 430 91" fill="none" stroke="#939393" stroke-width="16"/>
     <path d="M212 102C300 102 330 84 430 84" fill="none" stroke="#ff5d5d" stroke-width="2"/>
-    <text x="300" y="140" text-anchor="middle" font-size="12" fill="#a9b4c2">10-way ribbon cable,</text>
-    <text x="300" y="156" text-anchor="middle" font-size="12" fill="#a9b4c2">pin 1 to pin 1</text>
+    <text x="300" y="140" text-anchor="middle" font-size="12" fill="#b3b3b3">10-way ribbon cable,</text>
+    <text x="300" y="156" text-anchor="middle" font-size="12" fill="#b3b3b3">pin 1 to pin 1</text>
     <g>
       <rect x="400" y="276" width="84" height="40" rx="3" fill="#efe6cf" stroke="#b8a878"/>
-      <g fill="#8a94a3"><rect x="412" y="290" width="10" height="12"/><rect x="437" y="290" width="10" height="12"/><rect x="462" y="290" width="10" height="12"/></g>
-      <g font-size="11" font-weight="700" fill="#e6ebf2" text-anchor="middle"><text x="417" y="268">S</text><text x="442" y="268">G</text><text x="467" y="268">5V</text></g>
-      <text x="500" y="302" font-size="13" font-weight="700" fill="#e6ebf2">1</text>
+      <g fill="#939393"><rect x="412" y="290" width="10" height="12"/><rect x="437" y="290" width="10" height="12"/><rect x="462" y="290" width="10" height="12"/></g>
+      <g font-size="11" font-weight="700" fill="#eaeaea" text-anchor="middle"><text x="417" y="268">S</text><text x="442" y="268">G</text><text x="467" y="268">5V</text></g>
+      <text x="500" y="302" font-size="13" font-weight="700" fill="#eaeaea">1</text>
     </g>
     <g fill="#efe6cf" stroke="#b8a878" opacity="0.45"><rect x="530" y="276" width="40" height="40" rx="3"/><rect x="585" y="276" width="40" height="40" rx="3"/><rect x="640" y="276" width="40" height="40" rx="3"/><rect x="695" y="276" width="40" height="40" rx="3"/><rect x="750" y="276" width="40" height="40" rx="3"/></g>
-    <text x="660" y="262" text-anchor="middle" font-size="12" fill="#a9b4c2">inputs 2 to 6 and the probe input: unused</text>
+    <text x="660" y="262" text-anchor="middle" font-size="12" fill="#b3b3b3">inputs 2 to 6 and the probe input: unused</text>
     <g fill="none" stroke-width="4">
       <path d="M417 302V344H190V350" stroke="#5fb3ff"/>
-      <path d="M442 302V374H150V350" stroke="#aeb7c2"/>
+      <path d="M442 302V374H150V350" stroke="#b6b6b6"/>
     </g>
-    <path d="M150 350L188 338" stroke="#aeb7c2" stroke-width="4" stroke-linecap="round"/>
-    <circle cx="150" cy="350" r="5" fill="#aeb7c2"/><circle cx="190" cy="350" r="5" fill="#5fb3ff"/>
+    <path d="M150 350L188 338" stroke="#b6b6b6" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="150" cy="350" r="5" fill="#b6b6b6"/><circle cx="190" cy="350" r="5" fill="#5fb3ff"/>
     <text x="170" y="316" text-anchor="middle" font-size="13" font-weight="700" fill="#9cc3ff">Limit switch</text>
-    <text x="170" y="332" text-anchor="middle" font-size="12" fill="#a9b4c2">normally closed contact</text>
-    <text x="320" y="336" text-anchor="middle" font-size="11" fill="#a9b4c2">signal</text><text x="320" y="392" text-anchor="middle" font-size="11" fill="#a9b4c2">ground</text>
+    <text x="170" y="332" text-anchor="middle" font-size="12" fill="#b3b3b3">normally closed contact</text>
+    <text x="320" y="336" text-anchor="middle" font-size="11" fill="#b3b3b3">signal</text><text x="320" y="392" text-anchor="middle" font-size="11" fill="#b3b3b3">ground</text>
   </svg>
   </div>
   <figcaption>The smallest working setup: one ribbon cable and one two-wire switch. The contact order shown is that of the 2.54&nbsp;mm header version.</figcaption>
@@ -475,38 +475,38 @@ The firmware has one kill button only. It is polled five times a second and acts
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Three ways to wire an input">
   <svg viewBox="0 0 1000 300" role="img" aria-labelledby="xb-es-wire-t">
     <title id="xb-es-wire-t">Three wirings. A switch uses S and G. A 5 volt sensor uses all three contacts: its output on S, its ground on G and its supply on 5V. A probe powered from an external 12 to 24 volt supply connects its output to S of input 7 and the supply's negative to G.</title>
-    <g fill="#212936" stroke="#59616e" stroke-width="1.5"><rect x="20" y="20" width="300" height="260" rx="8"/><rect x="350" y="20" width="300" height="260" rx="8"/><rect x="680" y="20" width="300" height="260" rx="8"/></g>
-    <g font-size="14" font-weight="700" fill="#e6ebf2" text-anchor="middle"><text x="170" y="48">Switch · inputs 1 to 6</text><text x="500" y="48">5 V sensor · inputs 1 to 6</text><text x="830" y="48">12 to 24 V probe · input 7</text></g>
+    <g fill="#292929" stroke="#606060" stroke-width="1.5"><rect x="20" y="20" width="300" height="260" rx="8"/><rect x="350" y="20" width="300" height="260" rx="8"/><rect x="680" y="20" width="300" height="260" rx="8"/></g>
+    <g font-size="14" font-weight="700" fill="#eaeaea" text-anchor="middle"><text x="170" y="48">Switch · inputs 1 to 6</text><text x="500" y="48">5 V sensor · inputs 1 to 6</text><text x="830" y="48">12 to 24 V probe · input 7</text></g>
     <!-- terminals -->
     <g font-size="12" font-weight="700" text-anchor="middle">
       <g fill="#5fb3ff"><rect x="40" y="90" width="44" height="24" rx="12"/><rect x="370" y="90" width="44" height="24" rx="12"/><rect x="700" y="90" width="44" height="24" rx="12"/></g>
-      <g fill="#04182b"><text x="62" y="106">S</text><text x="392" y="106">S</text><text x="722" y="106">S</text></g>
-      <g fill="#0d0f12" stroke="#8a94a3"><rect x="40" y="150" width="44" height="24" rx="12"/><rect x="370" y="150" width="44" height="24" rx="12"/><rect x="700" y="150" width="44" height="24" rx="12"/></g>
+      <g fill="#171717"><text x="62" y="106">S</text><text x="392" y="106">S</text><text x="722" y="106">S</text></g>
+      <g fill="#0d0f12" stroke="#939393"><rect x="40" y="150" width="44" height="24" rx="12"/><rect x="370" y="150" width="44" height="24" rx="12"/><rect x="700" y="150" width="44" height="24" rx="12"/></g>
       <g fill="#fff"><text x="62" y="166">G</text><text x="392" y="166">G</text><text x="722" y="166">G</text></g>
       <g fill="#ff9f43"><rect x="40" y="210" width="44" height="24" rx="12"/><rect x="370" y="210" width="44" height="24" rx="12"/><rect x="700" y="210" width="44" height="24" rx="12"/></g>
       <g fill="#201004"><text x="62" y="226">5V</text><text x="392" y="226">5V</text><text x="722" y="226">5V</text></g>
     </g>
     <!-- switch -->
-    <g fill="none" stroke-width="3.5"><path d="M84 102H200" stroke="#5fb3ff"/><path d="M84 162H250V102H240" stroke="#aeb7c2"/></g>
-    <path d="M200 102L238 90" stroke="#5fb3ff" stroke-width="3.5" stroke-linecap="round"/><circle cx="200" cy="102" r="4.5" fill="#5fb3ff"/><circle cx="240" cy="102" r="4.5" fill="#aeb7c2"/>
-    <text x="150" y="226" font-size="12" fill="#a9b4c2">not connected</text>
-    <text x="170" y="262" font-size="12" fill="#a9b4c2" text-anchor="middle">normally closed contact</text>
+    <g fill="none" stroke-width="3.5"><path d="M84 102H200" stroke="#5fb3ff"/><path d="M84 162H250V102H240" stroke="#b6b6b6"/></g>
+    <path d="M200 102L238 90" stroke="#5fb3ff" stroke-width="3.5" stroke-linecap="round"/><circle cx="200" cy="102" r="4.5" fill="#5fb3ff"/><circle cx="240" cy="102" r="4.5" fill="#b6b6b6"/>
+    <text x="150" y="226" font-size="12" fill="#b3b3b3">not connected</text>
+    <text x="170" y="262" font-size="12" fill="#b3b3b3" text-anchor="middle">normally closed contact</text>
     <!-- 5V sensor -->
-    <rect x="530" y="84" width="100" height="156" rx="6" fill="#1f2226" stroke="#dfe4ee"/>
-    <text x="580" y="130" font-size="13" font-weight="700" fill="#e6ebf2" text-anchor="middle">Sensor</text>
-    <g font-size="11" fill="#a9b4c2"><text x="538" y="106">output</text><text x="538" y="166">0 V</text><text x="538" y="226">+5 V</text></g>
-    <g fill="none" stroke-width="3.5"><path d="M414 102H530" stroke="#5fb3ff"/><path d="M414 162H530" stroke="#aeb7c2"/><path d="M414 222H530" stroke="#ff9f43"/></g>
-    <text x="500" y="262" font-size="12" fill="#a9b4c2" text-anchor="middle">output must stay between 0 and 5 V</text>
+    <rect x="530" y="84" width="100" height="156" rx="6" fill="#1f2226" stroke="#e4e4e4"/>
+    <text x="580" y="130" font-size="13" font-weight="700" fill="#eaeaea" text-anchor="middle">Sensor</text>
+    <g font-size="11" fill="#b3b3b3"><text x="538" y="106">output</text><text x="538" y="166">0 V</text><text x="538" y="226">+5 V</text></g>
+    <g fill="none" stroke-width="3.5"><path d="M414 102H530" stroke="#5fb3ff"/><path d="M414 162H530" stroke="#b6b6b6"/><path d="M414 222H530" stroke="#ff9f43"/></g>
+    <text x="500" y="262" font-size="12" fill="#b3b3b3" text-anchor="middle">output must stay between 0 and 5 V</text>
     <!-- probe -->
-    <rect x="860" y="70" width="100" height="70" rx="6" fill="#1f2226" stroke="#dfe4ee"/>
-    <text x="910" y="100" font-size="13" font-weight="700" fill="#e6ebf2" text-anchor="middle">Probe</text>
+    <rect x="860" y="70" width="100" height="70" rx="6" fill="#1f2226" stroke="#e4e4e4"/>
+    <text x="910" y="100" font-size="13" font-weight="700" fill="#eaeaea" text-anchor="middle">Probe</text>
     <rect x="860" y="170" width="100" height="70" rx="6" fill="#1f2226" stroke="#ffcc33"/>
     <text x="910" y="200" font-size="12" font-weight="700" fill="#ffcc33" text-anchor="middle">12 to 24 V</text><text x="910" y="218" font-size="12" fill="#ffcc33" text-anchor="middle">supply</text>
-    <g fill="none" stroke-width="3.5"><path d="M744 102H860" stroke="#5fb3ff"/><path d="M744 162H830" stroke="#aeb7c2"/><path d="M860 126H830V226H860" stroke="#aeb7c2"/><path d="M960 190H975V110H960" stroke="#ffcc33"/></g>
-    <circle cx="830" cy="162" r="4.5" fill="#aeb7c2"/>
-    <g font-size="11" fill="#a9b4c2"><text x="868" y="88">out</text><text x="868" y="132">0 V</text><text x="922" y="132">+V</text><text x="868" y="234">−</text><text x="944" y="188">+</text></g>
-    <text x="760" y="226" font-size="12" fill="#a9b4c2">unused</text>
-    <text x="830" y="262" font-size="12" fill="#a9b4c2" text-anchor="middle">the two grounds must be joined</text>
+    <g fill="none" stroke-width="3.5"><path d="M744 102H860" stroke="#5fb3ff"/><path d="M744 162H830" stroke="#b6b6b6"/><path d="M860 126H830V226H860" stroke="#b6b6b6"/><path d="M960 190H975V110H960" stroke="#ffcc33"/></g>
+    <circle cx="830" cy="162" r="4.5" fill="#b6b6b6"/>
+    <g font-size="11" fill="#b3b3b3"><text x="868" y="88">out</text><text x="868" y="132">0 V</text><text x="922" y="132">+V</text><text x="868" y="234">−</text><text x="944" y="188">+</text></g>
+    <text x="760" y="226" font-size="12" fill="#b3b3b3">unused</text>
+    <text x="830" y="262" font-size="12" fill="#b3b3b3" text-anchor="middle">the two grounds must be joined</text>
   </svg>
   </div>
   <figcaption>Blue: signal. Grey: ground. Orange: the board's 5&nbsp;V sensor power. Yellow: a separate supply for a probe that needs more than 5&nbsp;V.</figcaption>
@@ -535,29 +535,29 @@ The firmware has one kill button only. It is polled five times a second and acts
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
   <svg viewBox="0 0 1000 300" role="img" aria-labelledby="xb-es-how-t">
     <title id="xb-es-how-t">Each of inputs 1 to 6 passes through a pull-up and filter, a buffer and a link to the controller connector. Input 7 passes through a divider and a comparator. The controller's 5 volts passes through a limiter to the 5V contact of every input.</title>
-    <g fill="#212936" stroke="#59616e" stroke-width="1.5">
+    <g fill="#292929" stroke="#606060" stroke-width="1.5">
       <rect x="20" y="24" width="150" height="70" rx="8"/><rect x="230" y="24" width="150" height="70" rx="8"/><rect x="440" y="24" width="150" height="70" rx="8"/><rect x="650" y="24" width="120" height="70" rx="8"/>
       <rect x="20" y="118" width="150" height="70" rx="8"/><rect x="230" y="118" width="150" height="70" rx="8"/><rect x="440" y="118" width="150" height="70" rx="8"/><rect x="650" y="118" width="120" height="70" rx="8"/>
       <rect x="840" y="24" width="140" height="164" rx="8"/>
       <rect x="440" y="214" width="150" height="66" rx="8" stroke="#ff9f43"/>
     </g>
-    <g font-size="13" font-weight="700" fill="#e6ebf2" text-anchor="middle">
+    <g font-size="13" font-weight="700" fill="#eaeaea" text-anchor="middle">
       <text x="95" y="54">Inputs 1 to 6</text><text x="305" y="54">Pull-up and filter</text><text x="515" y="54">Buffer</text><text x="710" y="54">Link</text>
       <text x="95" y="148">Input 7</text><text x="305" y="148">Divider</text><text x="515" y="148">Comparator</text><text x="710" y="148">Link</text>
       <text x="910" y="100">Controller</text>
       <text x="515" y="242">Limiter</text>
     </g>
-    <g font-size="12" fill="#a9b4c2" text-anchor="middle">
+    <g font-size="12" fill="#b3b3b3" text-anchor="middle">
       <text x="95" y="76">switch or 5 V sensor</text><text x="305" y="76">10 kΩ, about 1 ms</text><text x="515" y="76">clean 3.3 V edge</text><text x="710" y="76">JP1 to JP6</text>
       <text x="95" y="170">probe, up to 45 V</text><text x="305" y="170">scales the signal down</text><text x="515" y="170">high above ≈ 2.2 V</text><text x="710" y="170">JP7</text>
       <text x="910" y="120">header G_F</text>
       <text x="515" y="262">about 0.2 A, fault LED</text>
     </g>
-    <g stroke="#e6ebf2" stroke-width="2.5" fill="none">
+    <g stroke="#eaeaea" stroke-width="2.5" fill="none">
       <path d="M170 59H222"/><path d="M380 59H432"/><path d="M590 59H642"/><path d="M770 59H832"/>
       <path d="M170 153H222"/><path d="M380 153H432"/><path d="M590 153H642"/><path d="M770 153H832"/>
     </g>
-    <g fill="#e6ebf2"><path d="M230 59l-9-5v10z"/><path d="M440 59l-9-5v10z"/><path d="M650 59l-9-5v10z"/><path d="M840 59l-9-5v10z"/><path d="M230 153l-9-5v10z"/><path d="M440 153l-9-5v10z"/><path d="M650 153l-9-5v10z"/><path d="M840 153l-9-5v10z"/></g>
+    <g fill="#eaeaea"><path d="M230 59l-9-5v10z"/><path d="M440 59l-9-5v10z"/><path d="M650 59l-9-5v10z"/><path d="M840 59l-9-5v10z"/><path d="M230 153l-9-5v10z"/><path d="M440 153l-9-5v10z"/><path d="M650 153l-9-5v10z"/><path d="M840 153l-9-5v10z"/></g>
     <g stroke="#ff9f43" stroke-width="2.5" fill="none"><path d="M910 188V247H598"/><path d="M440 247H95V196"/></g>
     <g fill="#ff9f43"><path d="M590 247l9-5v10z"/><path d="M95 188l-5 9h10z"/></g>
     <text x="760" y="238" font-size="12" fill="#ff9f43" text-anchor="middle">5 V from the controller</text>
@@ -662,32 +662,32 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
   <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-es-mount-t">
   <title id="xb-es-mount-t">Mounting drawing of the endstop inputs board, component side: outline 96 by 70.5 millimetres with 4 mounting holes and 2 cable-tie holes. Hole positions are listed in the table below.</title>
-  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
-  <rect x="248.5" y="78.0" width="463.0" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
-  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M248.5 56H711.5"/><path d="M248.5 50V62"/><path d="M711.5 50V62"/><path d="M737.5 78.0V418.0"/><path d="M731.5 78.0h12"/><path d="M731.5 418.0h12"/></g>
-  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">96</text>
-  <text x="749.5" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">70.5</text>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#b3b3b3">COMPONENT SIDE · millimetres</text>
+  <rect x="248.5" y="78.0" width="463.0" height="340.0" rx="0.0" fill="#1f2226" stroke="#eaeaea" stroke-width="1.5"/>
+  <g stroke="#b3b3b3" stroke-width="1.2" fill="none"><path d="M248.5 56H711.5"/><path d="M248.5 50V62"/><path d="M711.5 50V62"/><path d="M737.5 78.0V418.0"/><path d="M731.5 78.0h12"/><path d="M731.5 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">96</text>
+  <text x="749.5" y="253.0" font-size="15" font-weight="700" fill="#eaeaea">70.5</text>
   <circle cx="248.5" cy="78.0" r="4" fill="#ffcc33"/>
   <text x="236.5" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
   <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M190.5 104.0h30" fill="none"/><path d="M224.5 104.0l-8 -4v8z"/><path d="M190.5 104.0v30" fill="none"/><path d="M190.5 138.0l-4 -8h8z"/></g>
   <text x="228.5" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
   <text x="186.5" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
-  <circle cx="287.1" cy="126.2" r="7.7" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <circle cx="287.1" cy="126.2" r="7.7" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M275.4 126.2h23.4M287.1 114.5v23.4" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="279.4" y="153.9" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  8.00, 10.00</text>
-  <circle cx="672.9" cy="126.2" r="7.7" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="279.4" y="153.9" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">1</tspan>  8.00, 10.00</text>
+  <circle cx="672.9" cy="126.2" r="7.7" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M661.2 126.2h23.4M672.9 114.5v23.4" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="680.6" y="153.9" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  88.00, 10.00</text>
-  <circle cx="287.1" cy="319.1" r="7.7" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="680.6" y="153.9" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">2</tspan>  88.00, 10.00</text>
+  <circle cx="287.1" cy="319.1" r="7.7" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M275.4 319.1h23.4M287.1 307.4v23.4" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="279.4" y="301.4" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  8.00, 50.00</text>
-  <circle cx="672.9" cy="319.1" r="7.7" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="279.4" y="301.4" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">3</tspan>  8.00, 50.00</text>
+  <circle cx="672.9" cy="319.1" r="7.7" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M661.2 319.1h23.4M672.9 307.4v23.4" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="680.6" y="301.4" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  88.00, 50.00</text>
-  <circle cx="697.0" cy="246.8" r="7.7" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
-  <circle cx="697.0" cy="280.6" r="7.7" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
-  <text x="681.3" y="267.7" text-anchor="end" font-size="12" fill="#a9b4c2">cable tie</text>
-  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  <text x="680.6" y="301.4" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">4</tspan>  88.00, 50.00</text>
+  <circle cx="697.0" cy="246.8" r="7.7" fill="#191919" stroke="#b3b3b3" stroke-width="1.5"/>
+  <circle cx="697.0" cy="280.6" r="7.7" fill="#191919" stroke="#b3b3b3" stroke-width="1.5"/>
+  <text x="681.3" y="267.7" text-anchor="end" font-size="12" fill="#b3b3b3">cable tie</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#b3b3b3">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
   </svg>
   </div>
   <figcaption>Board outline 96 × 70.5&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>

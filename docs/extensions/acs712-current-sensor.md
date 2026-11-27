@@ -166,12 +166,12 @@ The terminal side and the socket side must never be connected to each other.
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Minimum wiring">
 <svg viewBox="0 0 1000 166" role="img" aria-labelledby="xb-amps-wire-t">
 <title id="xb-amps-wire-t">Minimum wiring: supply +, after fuse to IN, current in; to load + to OUT, current out.</title>
-<rect x="20" y="20" width="280" height="126" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="160.0" y="88.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2"></text>
-<rect x="700" y="20" width="280" height="126" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="840.0" y="88.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2"></text>
-<text x="160" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Measured circuit</text>
-<text x="840" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Terminal J3</text>
-<path d="M300 84H700" stroke="#ff9f43" stroke-width="3" fill="none"/><circle cx="300" cy="84" r="5" fill="#ff9f43"/><circle cx="700" cy="84" r="5" fill="#ff9f43"/><text x="286" y="89" text-anchor="end" font-size="13" fill="#e6ebf2">supply +, after fuse</text><text x="714" y="89" font-size="13" fill="#e6ebf2">IN</text><text x="500" y="77" text-anchor="middle" font-size="12" fill="#a9b4c2">current in</text>
-<path d="M300 122H700" stroke="#ff9f43" stroke-width="3" fill="none"/><circle cx="300" cy="122" r="5" fill="#ff9f43"/><circle cx="700" cy="122" r="5" fill="#ff9f43"/><text x="286" y="127" text-anchor="end" font-size="13" fill="#e6ebf2">to load +</text><text x="714" y="127" font-size="13" fill="#e6ebf2">OUT</text><text x="500" y="115" text-anchor="middle" font-size="12" fill="#a9b4c2">current out</text>
+<rect x="20" y="20" width="280" height="126" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="160.0" y="88.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea"></text>
+<rect x="700" y="20" width="280" height="126" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="840.0" y="88.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea"></text>
+<text x="160" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">Measured circuit</text>
+<text x="840" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">Terminal J3</text>
+<path d="M300 84H700" stroke="#ff9f43" stroke-width="3" fill="none"/><circle cx="300" cy="84" r="5" fill="#ff9f43"/><circle cx="700" cy="84" r="5" fill="#ff9f43"/><text x="286" y="89" text-anchor="end" font-size="13" fill="#eaeaea">supply +, after fuse</text><text x="714" y="89" font-size="13" fill="#eaeaea">IN</text><text x="500" y="77" text-anchor="middle" font-size="12" fill="#b3b3b3">current in</text>
+<path d="M300 122H700" stroke="#ff9f43" stroke-width="3" fill="none"/><circle cx="300" cy="122" r="5" fill="#ff9f43"/><circle cx="700" cy="122" r="5" fill="#ff9f43"/><text x="286" y="127" text-anchor="end" font-size="13" fill="#eaeaea">to load +</text><text x="714" y="127" font-size="13" fill="#eaeaea">OUT</text><text x="500" y="115" text-anchor="middle" font-size="12" fill="#b3b3b3">current out</text>
 </svg>
   </div>
   <figcaption>Only one conductor passes through the board. Never connect both supply poles to J3.</figcaption>
@@ -225,16 +225,16 @@ There is nothing to add to `config.ini`. Your own software computes the current 
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
 <svg viewBox="0 0 1000 200" role="img" aria-labelledby="xb-amps-how-t">
 <title id="xb-amps-how-t">Current through the sensor makes a magnetic field that is turned into a scaled voltage.</title>
-<rect x="20.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="120.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J3 IN</text><text x="120.0" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">measured current</text>
-<path d="M220.0 51H400.0" stroke="#a9b4c2" stroke-width="3"/><path d="M400.0 51l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="400.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="500.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">U1 path</text><text x="500.0" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">1.2 milliohm</text>
-<path d="M600.0 51H780.0" stroke="#a9b4c2" stroke-width="3"/><path d="M780.0 51l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="780.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="880.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J3 OUT</text><text x="880.0" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">to load</text>
-<rect x="20.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="120.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">U1 Hall</text><text x="120.0" y="157.0" text-anchor="middle" font-size="12" fill="#a9b4c2">isolated</text>
-<path d="M220.0 141H400.0" stroke="#a9b4c2" stroke-width="3"/><path d="M400.0 141l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="400.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="500.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">10 k / 18 k</text><text x="500.0" y="157.0" text-anchor="middle" font-size="12" fill="#a9b4c2">scale</text>
-<path d="M600.0 141H780.0" stroke="#a9b4c2" stroke-width="3"/><path d="M780.0 141l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="780.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="880.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J1.3</text><text x="880.0" y="157.0" text-anchor="middle" font-size="12" fill="#a9b4c2">to ADC</text>
+<rect x="20.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="120.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">J3 IN</text><text x="120.0" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">measured current</text>
+<path d="M220.0 51H400.0" stroke="#b3b3b3" stroke-width="3"/><path d="M400.0 51l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="400.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="500.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">U1 path</text><text x="500.0" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">1.2 milliohm</text>
+<path d="M600.0 51H780.0" stroke="#b3b3b3" stroke-width="3"/><path d="M780.0 51l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="780.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="880.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">J3 OUT</text><text x="880.0" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">to load</text>
+<rect x="20.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="120.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">U1 Hall</text><text x="120.0" y="157.0" text-anchor="middle" font-size="12" fill="#b3b3b3">isolated</text>
+<path d="M220.0 141H400.0" stroke="#b3b3b3" stroke-width="3"/><path d="M400.0 141l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="400.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="500.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">10 k / 18 k</text><text x="500.0" y="157.0" text-anchor="middle" font-size="12" fill="#b3b3b3">scale</text>
+<path d="M600.0 141H780.0" stroke="#b3b3b3" stroke-width="3"/><path d="M780.0 141l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="780.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="880.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">J1.3</text><text x="880.0" y="157.0" text-anchor="middle" font-size="12" fill="#b3b3b3">to ADC</text>
 </svg>
   </div>
   <figcaption>Power path above, signal path below.</figcaption>
@@ -252,10 +252,10 @@ Leave both links open unless another board is meant to read the same signals.
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Solder links">
 <svg viewBox="0 0 1000 114" role="img" aria-labelledby="xb-amps-jp-t">
 <title id="xb-amps-jp-t">Solder links as delivered: JP3 open; JP4 open.</title>
-<rect x="20" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="72" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="114" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
-<text x="108" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP3 · open</text><text x="108" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">chain contact 3</text>
-<rect x="216" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="268" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="310" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
-<text x="304" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP4 · open</text><text x="304" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">chain contact 4</text>
+<rect x="20" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="72" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="114" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<text x="108" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP3 · open</text><text x="108" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">chain contact 3</text>
+<rect x="216" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="268" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="310" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<text x="304" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP4 · open</text><text x="304" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">chain contact 4</text>
 </svg>
   </div>
   <figcaption>The links as delivered. Close one with a small blob of solder across both pads; open it by removing the solder or cutting the copper between the pads.</figcaption>
@@ -326,29 +326,29 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
   <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-amps-mount-t">
   <title id="xb-amps-mount-t">Mounting drawing of the current sensor board, component side: outline 60 by 40 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
-  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
-  <rect x="225.0" y="78.0" width="510.0" height="340.0" rx="8.5" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
-  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M225.0 56H735.0"/><path d="M225.0 50V62"/><path d="M735.0 50V62"/><path d="M761.0 78.0V418.0"/><path d="M755.0 78.0h12"/><path d="M755.0 418.0h12"/></g>
-  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">60</text>
-  <text x="773.0" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">40</text>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#b3b3b3">COMPONENT SIDE · millimetres</text>
+  <rect x="225.0" y="78.0" width="510.0" height="340.0" rx="8.5" fill="#1f2226" stroke="#eaeaea" stroke-width="1.5"/>
+  <g stroke="#b3b3b3" stroke-width="1.2" fill="none"><path d="M225.0 56H735.0"/><path d="M225.0 50V62"/><path d="M735.0 50V62"/><path d="M761.0 78.0V418.0"/><path d="M755.0 78.0h12"/><path d="M755.0 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">60</text>
+  <text x="773.0" y="253.0" font-size="15" font-weight="700" fill="#eaeaea">40</text>
   <circle cx="225.0" cy="78.0" r="4" fill="#ffcc33"/>
   <text x="213.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
   <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M167.0 104.0h30" fill="none"/><path d="M201.0 104.0l-8 -4v8z"/><path d="M167.0 104.0v30" fill="none"/><path d="M167.0 138.0l-4 -8h8z"/></g>
   <text x="205.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
   <text x="163.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
-  <circle cx="267.5" cy="120.5" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <circle cx="267.5" cy="120.5" r="13.6" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M249.9 120.5h35.2M267.5 102.9v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="253.9" y="154.1" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 5.00</text>
-  <circle cx="692.5" cy="120.5" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="253.9" y="154.1" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 5.00</text>
+  <circle cx="692.5" cy="120.5" r="13.6" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M674.9 120.5h35.2M692.5 102.9v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="706.1" y="154.1" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  55.00, 5.00</text>
-  <circle cx="267.5" cy="375.5" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="706.1" y="154.1" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">2</tspan>  55.00, 5.00</text>
+  <circle cx="267.5" cy="375.5" r="13.6" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M249.9 375.5h35.2M267.5 357.9v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="253.9" y="351.9" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 35.00</text>
-  <circle cx="692.5" cy="375.5" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="253.9" y="351.9" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 35.00</text>
+  <circle cx="692.5" cy="375.5" r="13.6" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M674.9 375.5h35.2M692.5 357.9v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="706.1" y="351.9" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  55.00, 35.00</text>
-  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  <text x="706.1" y="351.9" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">4</tspan>  55.00, 35.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#b3b3b3">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
   </svg>
   </div>
   <figcaption>Board outline 60 × 40&nbsp;mm, corners rounded to a 1&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
@@ -406,16 +406,16 @@ The output dividers and filter were simulated with ngspice.
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Simulated results against limits">
 <svg viewBox="0 0 1000 290" role="img" aria-labelledby="xb-amps-sim-t">
 <title id="xb-amps-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
-<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Output at zero current</text>
-<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M656.5 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">1.61&nbsp;V</text>
-<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Output with VIOUT at 4.5 V (+20 A)</text>
-<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 88H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M643.2 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">2.89&nbsp;V</text>
-<text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Divider gain</text>
-<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 140H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M621.2 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">0.643&nbsp;V/V</text>
-<text x="385" y="197" text-anchor="end" font-size="13" fill="#e6ebf2">90 % step response of the output filter</text>
-<path d="M400 192H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 192H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M602.0 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">0.15&nbsp;ms</text>
-<text x="385" y="249" text-anchor="end" font-size="13" fill="#e6ebf2">Highest output with VIOUT at the 5 V rail</text>
-<path d="M400 244H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 244H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M800.0 231v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="249" font-size="13" font-weight="700" fill="#ffcc33">3.21&nbsp;V</text>
+<text x="385" y="41" text-anchor="end" font-size="13" fill="#eaeaea">Output at zero current</text>
+<path d="M400 36H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M656.5 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">1.61&nbsp;V</text>
+<text x="385" y="93" text-anchor="end" font-size="13" fill="#eaeaea">Output with VIOUT at 4.5 V (+20 A)</text>
+<path d="M400 88H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M444.5 88H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M643.2 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">2.89&nbsp;V</text>
+<text x="385" y="145" text-anchor="end" font-size="13" fill="#eaeaea">Divider gain</text>
+<path d="M400 140H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M444.5 140H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M621.2 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">0.643&nbsp;V/V</text>
+<text x="385" y="197" text-anchor="end" font-size="13" fill="#eaeaea">90 % step response of the output filter</text>
+<path d="M400 192H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M400.0 192H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M602.0 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">0.15&nbsp;ms</text>
+<text x="385" y="249" text-anchor="end" font-size="13" fill="#eaeaea">Highest output with VIOUT at the 5 V rail</text>
+<path d="M400 244H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M400.0 244H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M800.0 231v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="249" font-size="13" font-weight="700" fill="#ffcc33">3.21&nbsp;V</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>

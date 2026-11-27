@@ -143,13 +143,13 @@ Check contact numbering with the power removed before wiring by hand.
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Minimum wiring">
 <svg viewBox="0 0 1000 204" role="img" aria-labelledby="xb-spot-wire-t">
 <title id="xb-spot-wire-t">Minimum wiring: contact 1 to contact 1, 3.3 V; PC3, contact 3 to contact 3, slider voltage; contact 10 to contact 10, ground.</title>
-<rect x="20" y="20" width="280" height="164" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="160.0" y="107.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2"></text>
-<rect x="700" y="20" width="280" height="164" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="840.0" y="107.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2"></text>
-<text x="160" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Prime header GH (J39)</text>
-<text x="840" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Slider J1</text>
-<path d="M300 84H700" stroke="#ff9f43" stroke-width="3" fill="none"/><circle cx="300" cy="84" r="5" fill="#ff9f43"/><circle cx="700" cy="84" r="5" fill="#ff9f43"/><text x="286" y="89" text-anchor="end" font-size="13" fill="#e6ebf2">contact 1</text><text x="714" y="89" font-size="13" fill="#e6ebf2">contact 1</text><text x="500" y="77" text-anchor="middle" font-size="12" fill="#a9b4c2">3.3 V</text>
-<path d="M300 122H700" stroke="#5fb3ff" stroke-width="3" fill="none"/><circle cx="300" cy="122" r="5" fill="#5fb3ff"/><circle cx="700" cy="122" r="5" fill="#5fb3ff"/><text x="286" y="127" text-anchor="end" font-size="13" fill="#e6ebf2">PC3, contact 3</text><text x="714" y="127" font-size="13" fill="#e6ebf2">contact 3</text><text x="500" y="115" text-anchor="middle" font-size="12" fill="#a9b4c2">slider voltage</text>
-<path d="M300 160H700" stroke="#a9b4c2" stroke-width="3" fill="none"/><circle cx="300" cy="160" r="5" fill="#a9b4c2"/><circle cx="700" cy="160" r="5" fill="#a9b4c2"/><text x="286" y="165" text-anchor="end" font-size="13" fill="#e6ebf2">contact 10</text><text x="714" y="165" font-size="13" fill="#e6ebf2">contact 10</text><text x="500" y="153" text-anchor="middle" font-size="12" fill="#a9b4c2">ground</text>
+<rect x="20" y="20" width="280" height="164" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="160.0" y="107.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea"></text>
+<rect x="700" y="20" width="280" height="164" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="840.0" y="107.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea"></text>
+<text x="160" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">Prime header GH (J39)</text>
+<text x="840" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">Slider J1</text>
+<path d="M300 84H700" stroke="#ff9f43" stroke-width="3" fill="none"/><circle cx="300" cy="84" r="5" fill="#ff9f43"/><circle cx="700" cy="84" r="5" fill="#ff9f43"/><text x="286" y="89" text-anchor="end" font-size="13" fill="#eaeaea">contact 1</text><text x="714" y="89" font-size="13" fill="#eaeaea">contact 1</text><text x="500" y="77" text-anchor="middle" font-size="12" fill="#b3b3b3">3.3 V</text>
+<path d="M300 122H700" stroke="#5fb3ff" stroke-width="3" fill="none"/><circle cx="300" cy="122" r="5" fill="#5fb3ff"/><circle cx="700" cy="122" r="5" fill="#5fb3ff"/><text x="286" y="127" text-anchor="end" font-size="13" fill="#eaeaea">PC3, contact 3</text><text x="714" y="127" font-size="13" fill="#eaeaea">contact 3</text><text x="500" y="115" text-anchor="middle" font-size="12" fill="#b3b3b3">slider voltage</text>
+<path d="M300 160H700" stroke="#b3b3b3" stroke-width="3" fill="none"/><circle cx="300" cy="160" r="5" fill="#b3b3b3"/><circle cx="700" cy="160" r="5" fill="#b3b3b3"/><text x="286" y="165" text-anchor="end" font-size="13" fill="#eaeaea">contact 10</text><text x="714" y="165" font-size="13" fill="#eaeaea">contact 10</text><text x="500" y="153" text-anchor="middle" font-size="12" fill="#b3b3b3">ground</text>
 </svg>
   </div>
   <figcaption>Three connections as delivered.</figcaption>
@@ -195,13 +195,13 @@ There is nothing to add to `config.ini`. The analogue contacts of header GH are 
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
 <svg viewBox="0 0 1000 110" role="img" aria-labelledby="xb-spot-how-t">
 <title id="xb-spot-how-t">The potentiometer divides the 3.3 V supply; a resistor and capacitor filter the wiper before the selector link.</title>
-<rect x="20.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="120.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">3.3 V</text><text x="120.0" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">across the element</text>
-<path d="M220.0 51H273.3" stroke="#a9b4c2" stroke-width="3"/><path d="M273.3 51l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="273.3" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="373.3" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">RV1</text><text x="373.3" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">position sets ratio</text>
-<path d="M473.3 51H526.6" stroke="#a9b4c2" stroke-width="3"/><path d="M526.6 51l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="526.7" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="626.7" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">1 k + 100 nF</text><text x="626.7" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">filter</text>
-<path d="M726.7 51H780.0" stroke="#a9b4c2" stroke-width="3"/><path d="M780.0 51l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="780.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="880.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">JP23 to JP25</text><text x="880.0" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">contact 3, 4 or 5</text>
+<rect x="20.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="120.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">3.3 V</text><text x="120.0" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">across the element</text>
+<path d="M220.0 51H273.3" stroke="#b3b3b3" stroke-width="3"/><path d="M273.3 51l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="273.3" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="373.3" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">RV1</text><text x="373.3" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">position sets ratio</text>
+<path d="M473.3 51H526.6" stroke="#b3b3b3" stroke-width="3"/><path d="M526.6 51l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="526.7" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="626.7" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">1 k + 100 nF</text><text x="626.7" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">filter</text>
+<path d="M726.7 51H780.0" stroke="#b3b3b3" stroke-width="3"/><path d="M780.0 51l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="780.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="880.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">JP23 to JP25</text><text x="880.0" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">contact 3, 4 or 5</text>
 </svg>
   </div>
   <figcaption>One signal path, no active parts.</figcaption>
@@ -219,21 +219,21 @@ To move the slider to contact 4: open JP23, close JP24, close JP3 so contact 3 p
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Solder links">
 <svg viewBox="0 0 1000 218" role="img" aria-labelledby="xb-spot-jp-t">
 <title id="xb-spot-jp-t">Solder links as delivered: JP3 open; JP4 closed; JP5 closed; JP23 closed; JP24 open; JP25 open.</title>
-<rect x="20" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="72" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="114" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
-<text x="108" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP3 · open</text><text x="108" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">chain contact 3</text>
-<rect x="216" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="268" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="310" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<rect x="20" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="72" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="114" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<text x="108" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP3 · open</text><text x="108" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">chain contact 3</text>
+<rect x="216" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="268" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="310" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
 <rect x="294" y="34" width="20" height="10" fill="#e0b84a"/>
-<text x="304" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP4 · closed</text><text x="304" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">chain contact 4</text>
-<rect x="412" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="464" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="506" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<text x="304" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP4 · closed</text><text x="304" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">chain contact 4</text>
+<rect x="412" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="464" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="506" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
 <rect x="490" y="34" width="20" height="10" fill="#e0b84a"/>
-<text x="500" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP5 · closed</text><text x="500" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">chain contact 5</text>
-<rect x="608" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="660" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="702" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<text x="500" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP5 · closed</text><text x="500" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">chain contact 5</text>
+<rect x="608" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="660" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="702" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
 <rect x="686" y="34" width="20" height="10" fill="#e0b84a"/>
-<text x="696" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP23 · closed</text><text x="696" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">slider to contact 3</text>
-<rect x="804" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="856" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="898" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
-<text x="892" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP24 · open</text><text x="892" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">slider to contact 4</text>
-<rect x="20" y="114" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="72" y="128" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="114" y="128" width="30" height="30" rx="6" fill="#e0b84a"/>
-<text x="108" y="176" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP25 · open</text><text x="108" y="194" text-anchor="middle" font-size="11" fill="#a9b4c2">slider to contact 5</text>
+<text x="696" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP23 · closed</text><text x="696" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">slider to contact 3</text>
+<rect x="804" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="856" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="898" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<text x="892" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP24 · open</text><text x="892" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">slider to contact 4</text>
+<rect x="20" y="114" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="72" y="128" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="114" y="128" width="30" height="30" rx="6" fill="#e0b84a"/>
+<text x="108" y="176" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP25 · open</text><text x="108" y="194" text-anchor="middle" font-size="11" fill="#b3b3b3">slider to contact 5</text>
 </svg>
   </div>
   <figcaption>The links as delivered. Close one with a small blob of solder across both pads; open it by removing the solder or cutting the copper between the pads.</figcaption>
@@ -308,29 +308,29 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
   <svg viewBox="0 0 1000 407" role="img" aria-labelledby="xb-spot-mount-t">
   <title id="xb-spot-mount-t">Mounting drawing of the slide potentiometer board, component side: outline 90 by 40 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
-  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
-  <rect x="180.0" y="78.0" width="600.0" height="266.7" rx="6.7" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
-  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M180.0 56H780.0"/><path d="M180.0 50V62"/><path d="M780.0 50V62"/><path d="M806.0 78.0V344.7"/><path d="M800.0 78.0h12"/><path d="M800.0 344.7h12"/></g>
-  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">90</text>
-  <text x="818.0" y="216.3" font-size="15" font-weight="700" fill="#e6ebf2">40</text>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#b3b3b3">COMPONENT SIDE · millimetres</text>
+  <rect x="180.0" y="78.0" width="600.0" height="266.7" rx="6.7" fill="#1f2226" stroke="#eaeaea" stroke-width="1.5"/>
+  <g stroke="#b3b3b3" stroke-width="1.2" fill="none"><path d="M180.0 56H780.0"/><path d="M180.0 50V62"/><path d="M780.0 50V62"/><path d="M806.0 78.0V344.7"/><path d="M800.0 78.0h12"/><path d="M800.0 344.7h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">90</text>
+  <text x="818.0" y="216.3" font-size="15" font-weight="700" fill="#eaeaea">40</text>
   <circle cx="180.0" cy="78.0" r="4" fill="#ffcc33"/>
   <text x="168.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
   <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M122.0 104.0h30" fill="none"/><path d="M156.0 104.0l-8 -4v8z"/><path d="M122.0 104.0v30" fill="none"/><path d="M122.0 138.0l-4 -8h8z"/></g>
   <text x="160.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
   <text x="118.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
-  <circle cx="213.3" cy="111.3" r="10.7" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <circle cx="213.3" cy="111.3" r="10.7" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M198.7 111.3h29.3M213.3 96.7v29.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="202.7" y="142.0" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 5.00</text>
-  <circle cx="746.7" cy="111.3" r="10.7" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="202.7" y="142.0" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 5.00</text>
+  <circle cx="746.7" cy="111.3" r="10.7" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M732.0 111.3h29.3M746.7 96.7v29.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="757.3" y="142.0" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  85.00, 5.00</text>
-  <circle cx="213.3" cy="311.3" r="10.7" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="757.3" y="142.0" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">2</tspan>  85.00, 5.00</text>
+  <circle cx="213.3" cy="311.3" r="10.7" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M198.7 311.3h29.3M213.3 296.7v29.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="202.7" y="290.7" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 35.00</text>
-  <circle cx="746.7" cy="311.3" r="10.7" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="202.7" y="290.7" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 35.00</text>
+  <circle cx="746.7" cy="311.3" r="10.7" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M732.0 311.3h29.3M746.7 296.7v29.3" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="757.3" y="290.7" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  85.00, 35.00</text>
-  <text x="480.0" y="374.7" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  <text x="757.3" y="290.7" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">4</tspan>  85.00, 35.00</text>
+  <text x="480.0" y="374.7" text-anchor="middle" font-size="13" fill="#b3b3b3">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
   </svg>
   </div>
   <figcaption>Board outline 90 × 40&nbsp;mm, corners rounded to a 1&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
@@ -390,10 +390,10 @@ The wiper filter was simulated with ngspice at mid travel, where the potentiomet
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Simulated results against limits">
 <svg viewBox="0 0 1000 134" role="img" aria-labelledby="xb-spot-sim-t">
 <title id="xb-spot-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
-<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Settling to within 1.4 % after a step</text>
-<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M531.4 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">1.6&nbsp;ms</text>
-<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Loading error with a 1 Mohm input, percent of range</text>
-<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M543.3 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">0.17&nbsp;%</text>
+<text x="385" y="41" text-anchor="end" font-size="13" fill="#eaeaea">Settling to within 1.4 % after a step</text>
+<path d="M400 36H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M531.4 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">1.6&nbsp;ms</text>
+<text x="385" y="93" text-anchor="end" font-size="13" fill="#eaeaea">Loading error with a 1 Mohm input, percent of range</text>
+<path d="M400 88H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M543.3 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">0.17&nbsp;%</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>

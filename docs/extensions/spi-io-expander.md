@@ -170,16 +170,16 @@ Check pin 1 of each header against the board printing before wiring.
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Minimum wiring">
 <svg viewBox="0 0 1000 318" role="img" aria-labelledby="xb-io-wire-t">
 <title id="xb-io-wire-t">Minimum wiring: contact 1 to contact 1, 3.3 V; PD15, contact 6 to contact 6, chip select; PB5, contact 7 to contact 7, MOSI; PA6, contact 8 to contact 8, MISO; PA5, contact 9 to contact 9, clock; contact 10 to contact 10, ground.</title>
-<rect x="20" y="20" width="280" height="278" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="160.0" y="164.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2"></text>
-<rect x="700" y="20" width="280" height="278" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="840.0" y="164.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2"></text>
-<text x="160" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Prime header GE (J36)</text>
-<text x="840" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Expander J1</text>
-<path d="M300 84H700" stroke="#ff9f43" stroke-width="3" fill="none"/><circle cx="300" cy="84" r="5" fill="#ff9f43"/><circle cx="700" cy="84" r="5" fill="#ff9f43"/><text x="286" y="89" text-anchor="end" font-size="13" fill="#e6ebf2">contact 1</text><text x="714" y="89" font-size="13" fill="#e6ebf2">contact 1</text><text x="500" y="77" text-anchor="middle" font-size="12" fill="#a9b4c2">3.3 V</text>
-<path d="M300 122H700" stroke="#ffd75f" stroke-width="3" fill="none"/><circle cx="300" cy="122" r="5" fill="#ffd75f"/><circle cx="700" cy="122" r="5" fill="#ffd75f"/><text x="286" y="127" text-anchor="end" font-size="13" fill="#e6ebf2">PD15, contact 6</text><text x="714" y="127" font-size="13" fill="#e6ebf2">contact 6</text><text x="500" y="115" text-anchor="middle" font-size="12" fill="#a9b4c2">chip select</text>
-<path d="M300 160H700" stroke="#5fb3ff" stroke-width="3" fill="none"/><circle cx="300" cy="160" r="5" fill="#5fb3ff"/><circle cx="700" cy="160" r="5" fill="#5fb3ff"/><text x="286" y="165" text-anchor="end" font-size="13" fill="#e6ebf2">PB5, contact 7</text><text x="714" y="165" font-size="13" fill="#e6ebf2">contact 7</text><text x="500" y="153" text-anchor="middle" font-size="12" fill="#a9b4c2">MOSI</text>
-<path d="M300 198H700" stroke="#6fe08a" stroke-width="3" fill="none"/><circle cx="300" cy="198" r="5" fill="#6fe08a"/><circle cx="700" cy="198" r="5" fill="#6fe08a"/><text x="286" y="203" text-anchor="end" font-size="13" fill="#e6ebf2">PA6, contact 8</text><text x="714" y="203" font-size="13" fill="#e6ebf2">contact 8</text><text x="500" y="191" text-anchor="middle" font-size="12" fill="#a9b4c2">MISO</text>
-<path d="M300 236H700" stroke="#c792ea" stroke-width="3" fill="none"/><circle cx="300" cy="236" r="5" fill="#c792ea"/><circle cx="700" cy="236" r="5" fill="#c792ea"/><text x="286" y="241" text-anchor="end" font-size="13" fill="#e6ebf2">PA5, contact 9</text><text x="714" y="241" font-size="13" fill="#e6ebf2">contact 9</text><text x="500" y="229" text-anchor="middle" font-size="12" fill="#a9b4c2">clock</text>
-<path d="M300 274H700" stroke="#a9b4c2" stroke-width="3" fill="none"/><circle cx="300" cy="274" r="5" fill="#a9b4c2"/><circle cx="700" cy="274" r="5" fill="#a9b4c2"/><text x="286" y="279" text-anchor="end" font-size="13" fill="#e6ebf2">contact 10</text><text x="714" y="279" font-size="13" fill="#e6ebf2">contact 10</text><text x="500" y="267" text-anchor="middle" font-size="12" fill="#a9b4c2">ground</text>
+<rect x="20" y="20" width="280" height="278" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="160.0" y="164.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea"></text>
+<rect x="700" y="20" width="280" height="278" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="840.0" y="164.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea"></text>
+<text x="160" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">Prime header GE (J36)</text>
+<text x="840" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">Expander J1</text>
+<path d="M300 84H700" stroke="#ff9f43" stroke-width="3" fill="none"/><circle cx="300" cy="84" r="5" fill="#ff9f43"/><circle cx="700" cy="84" r="5" fill="#ff9f43"/><text x="286" y="89" text-anchor="end" font-size="13" fill="#eaeaea">contact 1</text><text x="714" y="89" font-size="13" fill="#eaeaea">contact 1</text><text x="500" y="77" text-anchor="middle" font-size="12" fill="#b3b3b3">3.3 V</text>
+<path d="M300 122H700" stroke="#ffd75f" stroke-width="3" fill="none"/><circle cx="300" cy="122" r="5" fill="#ffd75f"/><circle cx="700" cy="122" r="5" fill="#ffd75f"/><text x="286" y="127" text-anchor="end" font-size="13" fill="#eaeaea">PD15, contact 6</text><text x="714" y="127" font-size="13" fill="#eaeaea">contact 6</text><text x="500" y="115" text-anchor="middle" font-size="12" fill="#b3b3b3">chip select</text>
+<path d="M300 160H700" stroke="#5fb3ff" stroke-width="3" fill="none"/><circle cx="300" cy="160" r="5" fill="#5fb3ff"/><circle cx="700" cy="160" r="5" fill="#5fb3ff"/><text x="286" y="165" text-anchor="end" font-size="13" fill="#eaeaea">PB5, contact 7</text><text x="714" y="165" font-size="13" fill="#eaeaea">contact 7</text><text x="500" y="153" text-anchor="middle" font-size="12" fill="#b3b3b3">MOSI</text>
+<path d="M300 198H700" stroke="#6fe08a" stroke-width="3" fill="none"/><circle cx="300" cy="198" r="5" fill="#6fe08a"/><circle cx="700" cy="198" r="5" fill="#6fe08a"/><text x="286" y="203" text-anchor="end" font-size="13" fill="#eaeaea">PA6, contact 8</text><text x="714" y="203" font-size="13" fill="#eaeaea">contact 8</text><text x="500" y="191" text-anchor="middle" font-size="12" fill="#b3b3b3">MISO</text>
+<path d="M300 236H700" stroke="#c792ea" stroke-width="3" fill="none"/><circle cx="300" cy="236" r="5" fill="#c792ea"/><circle cx="700" cy="236" r="5" fill="#c792ea"/><text x="286" y="241" text-anchor="end" font-size="13" fill="#eaeaea">PA5, contact 9</text><text x="714" y="241" font-size="13" fill="#eaeaea">contact 9</text><text x="500" y="229" text-anchor="middle" font-size="12" fill="#b3b3b3">clock</text>
+<path d="M300 274H700" stroke="#b3b3b3" stroke-width="3" fill="none"/><circle cx="300" cy="274" r="5" fill="#b3b3b3"/><circle cx="700" cy="274" r="5" fill="#b3b3b3"/><text x="286" y="279" text-anchor="end" font-size="13" fill="#eaeaea">contact 10</text><text x="714" y="279" font-size="13" fill="#eaeaea">contact 10</text><text x="500" y="267" text-anchor="middle" font-size="12" fill="#b3b3b3">ground</text>
 </svg>
   </div>
   <figcaption>Minimum connections. Interrupt and reset are optional.</figcaption>
@@ -229,20 +229,20 @@ There is nothing to add to `config.ini`.
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
 <svg viewBox="0 0 1000 200" role="img" aria-labelledby="xb-io-how-t">
 <title id="xb-io-how-t">One SPI bus and chip select serve four addressed expanders.</title>
-<rect x="20.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="120.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J1 SPI</text><text x="120.0" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">one chip select</text>
-<path d="M220.0 51H273.3" stroke="#a9b4c2" stroke-width="3"/><path d="M273.3 51l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="273.3" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="373.3" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">U1 to U4</text><text x="373.3" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">addresses 0 to 3</text>
-<path d="M473.3 51H526.6" stroke="#a9b4c2" stroke-width="3"/><path d="M526.6 51l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="526.7" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="626.7" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">220 ohm</text><text x="626.7" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">per line</text>
-<path d="M726.7 51H780.0" stroke="#a9b4c2" stroke-width="3"/><path d="M780.0 51l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="780.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="880.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J3 to J6</text><text x="880.0" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">64 lines</text>
-<rect x="20.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="120.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">4 interrupts</text><text x="120.0" y="157.0" text-anchor="middle" font-size="12" fill="#a9b4c2">open drain</text>
-<path d="M220.0 141H273.3" stroke="#a9b4c2" stroke-width="3"/><path d="M273.3 141l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="273.3" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="373.3" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">1 k each</text><text x="373.3" y="157.0" text-anchor="middle" font-size="12" fill="#a9b4c2">isolate</text>
-<path d="M473.3 141H526.6" stroke="#a9b4c2" stroke-width="3"/><path d="M526.6 141l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="526.7" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="626.7" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">10 k pull-up</text><text x="626.7" y="157.0" text-anchor="middle" font-size="12" fill="#a9b4c2">shared</text>
-<path d="M726.7 141H780.0" stroke="#a9b4c2" stroke-width="3"/><path d="M780.0 141l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="780.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="880.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J1.3</text><text x="880.0" y="157.0" text-anchor="middle" font-size="12" fill="#a9b4c2">to controller</text>
+<rect x="20.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="120.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">J1 SPI</text><text x="120.0" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">one chip select</text>
+<path d="M220.0 51H273.3" stroke="#b3b3b3" stroke-width="3"/><path d="M273.3 51l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="273.3" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="373.3" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">U1 to U4</text><text x="373.3" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">addresses 0 to 3</text>
+<path d="M473.3 51H526.6" stroke="#b3b3b3" stroke-width="3"/><path d="M526.6 51l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="526.7" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="626.7" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">220 ohm</text><text x="626.7" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">per line</text>
+<path d="M726.7 51H780.0" stroke="#b3b3b3" stroke-width="3"/><path d="M780.0 51l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="780.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="880.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">J3 to J6</text><text x="880.0" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">64 lines</text>
+<rect x="20.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="120.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">4 interrupts</text><text x="120.0" y="157.0" text-anchor="middle" font-size="12" fill="#b3b3b3">open drain</text>
+<path d="M220.0 141H273.3" stroke="#b3b3b3" stroke-width="3"/><path d="M273.3 141l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="273.3" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="373.3" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">1 k each</text><text x="373.3" y="157.0" text-anchor="middle" font-size="12" fill="#b3b3b3">isolate</text>
+<path d="M473.3 141H526.6" stroke="#b3b3b3" stroke-width="3"/><path d="M526.6 141l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="526.7" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="626.7" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">10 k pull-up</text><text x="626.7" y="157.0" text-anchor="middle" font-size="12" fill="#b3b3b3">shared</text>
+<path d="M726.7 141H780.0" stroke="#b3b3b3" stroke-width="3"/><path d="M780.0 141l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="780.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="880.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">J1.3</text><text x="880.0" y="157.0" text-anchor="middle" font-size="12" fill="#b3b3b3">to controller</text>
 </svg>
   </div>
   <figcaption>Data path above, interrupt below.</figcaption>
@@ -260,21 +260,21 @@ A further SPI device on the chain needs its own chip select; leave JP6 open unle
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Solder links">
 <svg viewBox="0 0 1000 218" role="img" aria-labelledby="xb-io-jp-t">
 <title id="xb-io-jp-t">Solder links as delivered: JP3 open; JP4 open; JP6 open; JP7 closed; JP8 closed; JP9 closed.</title>
-<rect x="20" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="72" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="114" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
-<text x="108" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP3 · open</text><text x="108" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">chain interrupt</text>
-<rect x="216" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="268" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="310" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
-<text x="304" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP4 · open</text><text x="304" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">chain reset</text>
-<rect x="412" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="464" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="506" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
-<text x="500" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP6 · open</text><text x="500" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">chain chip select</text>
-<rect x="608" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="660" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="702" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<rect x="20" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="72" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="114" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<text x="108" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP3 · open</text><text x="108" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">chain interrupt</text>
+<rect x="216" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="268" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="310" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<text x="304" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP4 · open</text><text x="304" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">chain reset</text>
+<rect x="412" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="464" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="506" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<text x="500" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP6 · open</text><text x="500" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">chain chip select</text>
+<rect x="608" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="660" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="702" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
 <rect x="686" y="34" width="20" height="10" fill="#e0b84a"/>
-<text x="696" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP7 · closed</text><text x="696" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">chain MOSI</text>
-<rect x="804" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="856" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="898" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<text x="696" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP7 · closed</text><text x="696" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">chain MOSI</text>
+<rect x="804" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="856" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="898" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
 <rect x="882" y="34" width="20" height="10" fill="#e0b84a"/>
-<text x="892" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP8 · closed</text><text x="892" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">chain MISO</text>
-<rect x="20" y="114" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="72" y="128" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="114" y="128" width="30" height="30" rx="6" fill="#e0b84a"/>
+<text x="892" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP8 · closed</text><text x="892" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">chain MISO</text>
+<rect x="20" y="114" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="72" y="128" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="114" y="128" width="30" height="30" rx="6" fill="#e0b84a"/>
 <rect x="98" y="138" width="20" height="10" fill="#e0b84a"/>
-<text x="108" y="176" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP9 · closed</text><text x="108" y="194" text-anchor="middle" font-size="11" fill="#a9b4c2">chain clock</text>
+<text x="108" y="176" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP9 · closed</text><text x="108" y="194" text-anchor="middle" font-size="11" fill="#b3b3b3">chain clock</text>
 </svg>
   </div>
   <figcaption>The links as delivered. Close one with a small blob of solder across both pads; open it by removing the solder or cutting the copper between the pads.</figcaption>
@@ -350,29 +350,29 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
   <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-io-mount-t">
   <title id="xb-io-mount-t">Mounting drawing of the I/O expander board, component side: outline 110 by 80 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
-  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
-  <rect x="246.2" y="78.0" width="467.5" height="340.0" rx="4.2" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
-  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M246.2 56H713.8"/><path d="M246.2 50V62"/><path d="M713.8 50V62"/><path d="M739.8 78.0V418.0"/><path d="M733.8 78.0h12"/><path d="M733.8 418.0h12"/></g>
-  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">110</text>
-  <text x="751.8" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">80</text>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#b3b3b3">COMPONENT SIDE · millimetres</text>
+  <rect x="246.2" y="78.0" width="467.5" height="340.0" rx="4.2" fill="#1f2226" stroke="#eaeaea" stroke-width="1.5"/>
+  <g stroke="#b3b3b3" stroke-width="1.2" fill="none"><path d="M246.2 56H713.8"/><path d="M246.2 50V62"/><path d="M713.8 50V62"/><path d="M739.8 78.0V418.0"/><path d="M733.8 78.0h12"/><path d="M733.8 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">110</text>
+  <text x="751.8" y="253.0" font-size="15" font-weight="700" fill="#eaeaea">80</text>
   <circle cx="246.2" cy="78.0" r="4" fill="#ffcc33"/>
   <text x="234.2" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
   <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M188.2 104.0h30" fill="none"/><path d="M222.2 104.0l-8 -4v8z"/><path d="M188.2 104.0v30" fill="none"/><path d="M188.2 138.0l-4 -8h8z"/></g>
   <text x="226.2" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
   <text x="184.2" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
-  <circle cx="267.5" cy="99.2" r="6.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <circle cx="267.5" cy="99.2" r="6.8" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M256.7 99.2h21.6M267.5 88.5v21.6" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="260.7" y="126.0" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 5.00</text>
-  <circle cx="692.5" cy="99.2" r="6.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="260.7" y="126.0" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 5.00</text>
+  <circle cx="692.5" cy="99.2" r="6.8" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M681.7 99.2h21.6M692.5 88.5v21.6" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="699.3" y="126.0" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  105.00, 5.00</text>
-  <circle cx="267.5" cy="396.8" r="6.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="699.3" y="126.0" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">2</tspan>  105.00, 5.00</text>
+  <circle cx="267.5" cy="396.8" r="6.8" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M256.7 396.8h21.6M267.5 385.9v21.6" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="260.7" y="379.9" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 75.00</text>
-  <circle cx="692.5" cy="396.8" r="6.8" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="260.7" y="379.9" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 75.00</text>
+  <circle cx="692.5" cy="396.8" r="6.8" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M681.7 396.8h21.6M692.5 385.9v21.6" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="699.3" y="379.9" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  105.00, 75.00</text>
-  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  <text x="699.3" y="379.9" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">4</tspan>  105.00, 75.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#b3b3b3">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
   </svg>
   </div>
   <figcaption>Board outline 110 × 80&nbsp;mm, corners rounded to a 1&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
@@ -429,15 +429,15 @@ Fault and interrupt cases were simulated with ngspice.
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Simulated results against limits">
 <svg viewBox="0 0 1000 238" role="img" aria-labelledby="xb-io-sim-t">
 <title id="xb-io-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
-<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Shared interrupt low level</text>
-<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M648.2 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">0.40&nbsp;V</text>
-<text x="385" y="85" text-anchor="end" font-size="13" fill="#e6ebf2">Current into the low INT output during</text>
-<text x="385" y="101" text-anchor="end" font-size="13" fill="#e6ebf2">misconfiguration</text>
-<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M430.6 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">1.86&nbsp;mA</text>
-<text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Output shorted to ground</text>
-<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M519.7 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">7.3&nbsp;mA</text>
-<text x="385" y="197" text-anchor="end" font-size="13" fill="#e6ebf2">External 5 V on one line (generic clamp diode)</text>
-<path d="M400 192H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 192H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M475.4 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">4.6&nbsp;mA</text>
+<text x="385" y="41" text-anchor="end" font-size="13" fill="#eaeaea">Shared interrupt low level</text>
+<path d="M400 36H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M648.2 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">0.40&nbsp;V</text>
+<text x="385" y="85" text-anchor="end" font-size="13" fill="#eaeaea">Current into the low INT output during</text>
+<text x="385" y="101" text-anchor="end" font-size="13" fill="#eaeaea">misconfiguration</text>
+<path d="M400 88H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M430.6 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">1.86&nbsp;mA</text>
+<text x="385" y="145" text-anchor="end" font-size="13" fill="#eaeaea">Output shorted to ground</text>
+<path d="M400 140H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M519.7 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">7.3&nbsp;mA</text>
+<text x="385" y="197" text-anchor="end" font-size="13" fill="#eaeaea">External 5 V on one line (generic clamp diode)</text>
+<path d="M400 192H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M400.0 192H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M475.4 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">4.6&nbsp;mA</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>

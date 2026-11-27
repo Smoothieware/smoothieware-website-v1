@@ -165,14 +165,14 @@ Check contact numbering with the power removed before wiring by hand.
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Minimum wiring">
 <svg viewBox="0 0 1000 242" role="img" aria-labelledby="xb-nunchuk-wire-t">
 <title id="xb-nunchuk-wire-t">Minimum wiring: contact 1 to contact 1, 3.3 V; PF0, contact 8 to contact 8, SDA; PF1, contact 9 to contact 9, SCL; contact 10 to contact 10, ground.</title>
-<rect x="20" y="20" width="280" height="202" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="160.0" y="126.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2"></text>
-<rect x="700" y="20" width="280" height="202" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="840.0" y="126.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2"></text>
-<text x="160" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Prime header GG (J38)</text>
-<text x="840" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Adapter J1</text>
-<path d="M300 84H700" stroke="#ff9f43" stroke-width="3" fill="none"/><circle cx="300" cy="84" r="5" fill="#ff9f43"/><circle cx="700" cy="84" r="5" fill="#ff9f43"/><text x="286" y="89" text-anchor="end" font-size="13" fill="#e6ebf2">contact 1</text><text x="714" y="89" font-size="13" fill="#e6ebf2">contact 1</text><text x="500" y="77" text-anchor="middle" font-size="12" fill="#a9b4c2">3.3 V</text>
-<path d="M300 122H700" stroke="#5fb3ff" stroke-width="3" fill="none"/><circle cx="300" cy="122" r="5" fill="#5fb3ff"/><circle cx="700" cy="122" r="5" fill="#5fb3ff"/><text x="286" y="127" text-anchor="end" font-size="13" fill="#e6ebf2">PF0, contact 8</text><text x="714" y="127" font-size="13" fill="#e6ebf2">contact 8</text><text x="500" y="115" text-anchor="middle" font-size="12" fill="#a9b4c2">SDA</text>
-<path d="M300 160H700" stroke="#6fe08a" stroke-width="3" fill="none"/><circle cx="300" cy="160" r="5" fill="#6fe08a"/><circle cx="700" cy="160" r="5" fill="#6fe08a"/><text x="286" y="165" text-anchor="end" font-size="13" fill="#e6ebf2">PF1, contact 9</text><text x="714" y="165" font-size="13" fill="#e6ebf2">contact 9</text><text x="500" y="153" text-anchor="middle" font-size="12" fill="#a9b4c2">SCL</text>
-<path d="M300 198H700" stroke="#a9b4c2" stroke-width="3" fill="none"/><circle cx="300" cy="198" r="5" fill="#a9b4c2"/><circle cx="700" cy="198" r="5" fill="#a9b4c2"/><text x="286" y="203" text-anchor="end" font-size="13" fill="#e6ebf2">contact 10</text><text x="714" y="203" font-size="13" fill="#e6ebf2">contact 10</text><text x="500" y="191" text-anchor="middle" font-size="12" fill="#a9b4c2">ground</text>
+<rect x="20" y="20" width="280" height="202" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="160.0" y="126.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea"></text>
+<rect x="700" y="20" width="280" height="202" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="840.0" y="126.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea"></text>
+<text x="160" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">Prime header GG (J38)</text>
+<text x="840" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">Adapter J1</text>
+<path d="M300 84H700" stroke="#ff9f43" stroke-width="3" fill="none"/><circle cx="300" cy="84" r="5" fill="#ff9f43"/><circle cx="700" cy="84" r="5" fill="#ff9f43"/><text x="286" y="89" text-anchor="end" font-size="13" fill="#eaeaea">contact 1</text><text x="714" y="89" font-size="13" fill="#eaeaea">contact 1</text><text x="500" y="77" text-anchor="middle" font-size="12" fill="#b3b3b3">3.3 V</text>
+<path d="M300 122H700" stroke="#5fb3ff" stroke-width="3" fill="none"/><circle cx="300" cy="122" r="5" fill="#5fb3ff"/><circle cx="700" cy="122" r="5" fill="#5fb3ff"/><text x="286" y="127" text-anchor="end" font-size="13" fill="#eaeaea">PF0, contact 8</text><text x="714" y="127" font-size="13" fill="#eaeaea">contact 8</text><text x="500" y="115" text-anchor="middle" font-size="12" fill="#b3b3b3">SDA</text>
+<path d="M300 160H700" stroke="#6fe08a" stroke-width="3" fill="none"/><circle cx="300" cy="160" r="5" fill="#6fe08a"/><circle cx="700" cy="160" r="5" fill="#6fe08a"/><text x="286" y="165" text-anchor="end" font-size="13" fill="#eaeaea">PF1, contact 9</text><text x="714" y="165" font-size="13" fill="#eaeaea">contact 9</text><text x="500" y="153" text-anchor="middle" font-size="12" fill="#b3b3b3">SCL</text>
+<path d="M300 198H700" stroke="#b3b3b3" stroke-width="3" fill="none"/><circle cx="300" cy="198" r="5" fill="#b3b3b3"/><circle cx="700" cy="198" r="5" fill="#b3b3b3"/><text x="286" y="203" text-anchor="end" font-size="13" fill="#eaeaea">contact 10</text><text x="714" y="203" font-size="13" fill="#eaeaea">contact 10</text><text x="500" y="191" text-anchor="middle" font-size="12" fill="#b3b3b3">ground</text>
 </svg>
   </div>
   <figcaption>Four connections.</figcaption>
@@ -221,13 +221,13 @@ There is nothing to add to `config.ini`.
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
 <svg viewBox="0 0 1000 110" role="img" aria-labelledby="xb-nunchuk-how-t">
 <title id="xb-nunchuk-how-t">The adapter simply connects the controller to the I2C bus and 3.3 V.</title>
-<rect x="20.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="120.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Nunchuk</text><text x="120.0" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">stick, buttons</text>
-<path d="M220.0 51H273.3" stroke="#a9b4c2" stroke-width="3"/><path d="M273.3 51l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="273.3" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="373.3" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J4 tongue</text><text x="373.3" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">four contacts</text>
-<path d="M473.3 51H526.6" stroke="#a9b4c2" stroke-width="3"/><path d="M526.6 51l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="526.7" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="626.7" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">I2C bus</text><text x="626.7" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">with pull-ups</text>
-<path d="M726.7 51H780.0" stroke="#a9b4c2" stroke-width="3"/><path d="M780.0 51l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="780.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="880.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Your driver</text><text x="880.0" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">read data</text>
+<rect x="20.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="120.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">Nunchuk</text><text x="120.0" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">stick, buttons</text>
+<path d="M220.0 51H273.3" stroke="#b3b3b3" stroke-width="3"/><path d="M273.3 51l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="273.3" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="373.3" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">J4 tongue</text><text x="373.3" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">four contacts</text>
+<path d="M473.3 51H526.6" stroke="#b3b3b3" stroke-width="3"/><path d="M526.6 51l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="526.7" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="626.7" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">I2C bus</text><text x="626.7" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">with pull-ups</text>
+<path d="M726.7 51H780.0" stroke="#b3b3b3" stroke-width="3"/><path d="M780.0 51l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="780.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="880.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">Your driver</text><text x="880.0" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">read data</text>
 </svg>
   </div>
   <figcaption>One digital path.</figcaption>
@@ -245,18 +245,18 @@ Open JP1 and JP2 when another board on the bus already provides pull-ups.
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Solder links">
 <svg viewBox="0 0 1000 114" role="img" aria-labelledby="xb-nunchuk-jp-t">
 <title id="xb-nunchuk-jp-t">Solder links as delivered: JP1 closed; JP2 closed; JP8 closed; JP9 closed.</title>
-<rect x="20" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="72" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="114" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<rect x="20" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="72" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="114" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
 <rect x="98" y="34" width="20" height="10" fill="#e0b84a"/>
-<text x="108" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP1 · closed</text><text x="108" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">SDA pull-up</text>
-<rect x="216" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="268" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="310" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<text x="108" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP1 · closed</text><text x="108" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">SDA pull-up</text>
+<rect x="216" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="268" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="310" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
 <rect x="294" y="34" width="20" height="10" fill="#e0b84a"/>
-<text x="304" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP2 · closed</text><text x="304" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">SCL pull-up</text>
-<rect x="412" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="464" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="506" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<text x="304" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP2 · closed</text><text x="304" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">SCL pull-up</text>
+<rect x="412" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="464" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="506" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
 <rect x="490" y="34" width="20" height="10" fill="#e0b84a"/>
-<text x="500" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP8 · closed</text><text x="500" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">chain SDA</text>
-<rect x="608" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="660" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="702" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<text x="500" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP8 · closed</text><text x="500" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">chain SDA</text>
+<rect x="608" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="660" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="702" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
 <rect x="686" y="34" width="20" height="10" fill="#e0b84a"/>
-<text x="696" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP9 · closed</text><text x="696" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">chain SCL</text>
+<text x="696" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP9 · closed</text><text x="696" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">chain SCL</text>
 </svg>
   </div>
   <figcaption>The links as delivered. Close one with a small blob of solder across both pads; open it by removing the solder or cutting the copper between the pads.</figcaption>
@@ -328,29 +328,29 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
   <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-nunchuk-mount-t">
   <title id="xb-nunchuk-mount-t">Mounting drawing of the Nunchuck adapter, component side: outline 40 by 50 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
-  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
-  <rect x="344.0" y="78.0" width="272.0" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
-  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M344.0 56H616.0"/><path d="M344.0 50V62"/><path d="M616.0 50V62"/><path d="M642.0 78.0V418.0"/><path d="M636.0 78.0h12"/><path d="M636.0 418.0h12"/></g>
-  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">40</text>
-  <text x="654.0" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">50</text>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#b3b3b3">COMPONENT SIDE · millimetres</text>
+  <rect x="344.0" y="78.0" width="272.0" height="340.0" rx="0.0" fill="#1f2226" stroke="#eaeaea" stroke-width="1.5"/>
+  <g stroke="#b3b3b3" stroke-width="1.2" fill="none"><path d="M344.0 56H616.0"/><path d="M344.0 50V62"/><path d="M616.0 50V62"/><path d="M642.0 78.0V418.0"/><path d="M636.0 78.0h12"/><path d="M636.0 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">40</text>
+  <text x="654.0" y="253.0" font-size="15" font-weight="700" fill="#eaeaea">50</text>
   <circle cx="344.0" cy="78.0" r="4" fill="#ffcc33"/>
   <text x="332.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
   <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M286.0 104.0h30" fill="none"/><path d="M320.0 104.0l-8 -4v8z"/><path d="M286.0 104.0v30" fill="none"/><path d="M286.0 138.0l-4 -8h8z"/></g>
   <text x="324.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
   <text x="282.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
-  <circle cx="378.0" cy="112.0" r="10.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <circle cx="378.0" cy="112.0" r="10.9" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M363.1 112.0h29.8M378.0 97.1v29.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="367.1" y="142.9" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 5.00</text>
-  <circle cx="582.0" cy="112.0" r="10.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="367.1" y="142.9" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 5.00</text>
+  <circle cx="582.0" cy="112.0" r="10.9" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M567.1 112.0h29.8M582.0 97.1v29.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="592.9" y="142.9" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  35.00, 5.00</text>
-  <circle cx="378.0" cy="384.0" r="10.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="592.9" y="142.9" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">2</tspan>  35.00, 5.00</text>
+  <circle cx="378.0" cy="384.0" r="10.9" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M363.1 384.0h29.8M378.0 369.1v29.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="367.1" y="363.1" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 45.00</text>
-  <circle cx="582.0" cy="384.0" r="10.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="367.1" y="363.1" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 45.00</text>
+  <circle cx="582.0" cy="384.0" r="10.9" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M567.1 384.0h29.8M582.0 369.1v29.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="592.9" y="363.1" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  35.00, 45.00</text>
-  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  <text x="592.9" y="363.1" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">4</tspan>  35.00, 45.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#b3b3b3">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
   </svg>
   </div>
   <figcaption>Board outline 40 × 50&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
@@ -403,8 +403,8 @@ The I2C bus rise time with a long controller cable was simulated with ngspice.
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Simulated results against limits">
 <svg viewBox="0 0 1000 82" role="img" aria-labelledby="xb-nunchuk-sim-t">
 <title id="xb-nunchuk-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
-<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">I2C rise time 30 to 70 % at an assumed 250 pF</text>
-<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M687.1 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">0.70&nbsp;&micro;s</text>
+<text x="385" y="41" text-anchor="end" font-size="13" fill="#eaeaea">I2C rise time 30 to 70 % at an assumed 250 pF</text>
+<path d="M400 36H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M400.0 36H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M687.1 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">0.70&nbsp;&micro;s</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>

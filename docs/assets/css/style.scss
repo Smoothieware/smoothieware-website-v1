@@ -81,7 +81,7 @@
   font-size: 14px;
   font-weight: 500;
   padding: 8px 12px;
-  border-radius: 6px;
+  border-radius: 2px;
   transition: all 0.3s ease;
   white-space: nowrap;
   cursor: pointer;
@@ -208,7 +208,7 @@ sl-menu-item::part(base):hover {
   padding: 10px 12px;
   background-color: #1e1e1e;
   border: 1px solid #444;
-  border-radius: 4px;
+  border-radius: 2px;
   color: #e0e0e0;
   font-size: 14px;
   font-family: inherit;
@@ -228,7 +228,7 @@ sl-menu-item::part(base):hover {
   padding: 10px 12px;
   background-color: #ffcc00;
   border: none;
-  border-radius: 4px;
+  border-radius: 2px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: flex;
@@ -278,7 +278,7 @@ sl-alert + div {
 sl-alert::part(base) {
   border-top: none !important;
   border-left: 10px solid var(--sl-color-primary-600) !important;
-  border-radius: 0 4px 4px 0 !important; /* Keep rounded corners on right side only */
+  border-radius: 0 2px 2px 0 !important; /* Keep rounded corners on right side only */
 }
 
 /* Apply variant-specific colors to left border */
@@ -337,7 +337,7 @@ sl-alert[variant="danger"]::part(base) {
 /* Base styling for all callouts */
 .callout {
   padding: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 2px;
   margin: 1rem 0;
   display: block;
 }
@@ -524,7 +524,7 @@ section {
 
 .markdown-body pre {
   padding: 16px !important;
-  border-radius: 6px !important;
+  border-radius: 2px !important;
   overflow-x: auto !important;
   margin: 1.2em 0 !important;
 }
@@ -540,7 +540,7 @@ section {
   font-family: 'Courier New', Courier, monospace !important;
   background-color: #1a1a1a !important;
   padding: 3px 6px !important;
-  border-radius: 3px !important;
+  border-radius: 2px !important;
   font-size: 0.9em !important;
 }
 
@@ -618,7 +618,7 @@ section {
 .draft-addition {
   background-color: #4a1515 !important;
   padding: 10px 15px !important;
-  border-radius: 4px !important;
+  border-radius: 2px !important;
   display: block !important;
   margin: 1rem 0 !important;
   border-left: 4px solid #ff4444 !important;
@@ -628,7 +628,7 @@ section {
 .draft-image {
   filter: sepia(100%) hue-rotate(330deg) saturate(200%) brightness(95%) !important;
   border: 2px solid #ffcccc !important;
-  border-radius: 4px !important;
+  border-radius: 2px !important;
 }
 
 /* Normalize list spacing - remove extra space only for nested lists */

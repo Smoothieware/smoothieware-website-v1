@@ -179,13 +179,13 @@ Check header numbering and lead colours before applying power.
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Minimum wiring">
 <svg viewBox="0 0 1000 204" role="img" aria-labelledby="xb-laser-wire-t">
 <title id="xb-laser-wire-t">Minimum wiring: contact 2 to contact 2, 5 V; PB1, contact 3 to contact 3, on / off; contact 10 to contact 10, ground.</title>
-<rect x="20" y="20" width="280" height="164" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="160.0" y="107.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2"></text>
-<rect x="700" y="20" width="280" height="164" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="840.0" y="107.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2"></text>
-<text x="160" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Prime header GF (J37)</text>
-<text x="840" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Laser board J1</text>
-<path d="M300 84H700" stroke="#ff9f43" stroke-width="3" fill="none"/><circle cx="300" cy="84" r="5" fill="#ff9f43"/><circle cx="700" cy="84" r="5" fill="#ff9f43"/><text x="286" y="89" text-anchor="end" font-size="13" fill="#e6ebf2">contact 2</text><text x="714" y="89" font-size="13" fill="#e6ebf2">contact 2</text><text x="500" y="77" text-anchor="middle" font-size="12" fill="#a9b4c2">5 V</text>
-<path d="M300 122H700" stroke="#5fb3ff" stroke-width="3" fill="none"/><circle cx="300" cy="122" r="5" fill="#5fb3ff"/><circle cx="700" cy="122" r="5" fill="#5fb3ff"/><text x="286" y="127" text-anchor="end" font-size="13" fill="#e6ebf2">PB1, contact 3</text><text x="714" y="127" font-size="13" fill="#e6ebf2">contact 3</text><text x="500" y="115" text-anchor="middle" font-size="12" fill="#a9b4c2">on / off</text>
-<path d="M300 160H700" stroke="#a9b4c2" stroke-width="3" fill="none"/><circle cx="300" cy="160" r="5" fill="#a9b4c2"/><circle cx="700" cy="160" r="5" fill="#a9b4c2"/><text x="286" y="165" text-anchor="end" font-size="13" fill="#e6ebf2">contact 10</text><text x="714" y="165" font-size="13" fill="#e6ebf2">contact 10</text><text x="500" y="153" text-anchor="middle" font-size="12" fill="#a9b4c2">ground</text>
+<rect x="20" y="20" width="280" height="164" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="160.0" y="107.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea"></text>
+<rect x="700" y="20" width="280" height="164" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="840.0" y="107.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea"></text>
+<text x="160" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">Prime header GF (J37)</text>
+<text x="840" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">Laser board J1</text>
+<path d="M300 84H700" stroke="#ff9f43" stroke-width="3" fill="none"/><circle cx="300" cy="84" r="5" fill="#ff9f43"/><circle cx="700" cy="84" r="5" fill="#ff9f43"/><text x="286" y="89" text-anchor="end" font-size="13" fill="#eaeaea">contact 2</text><text x="714" y="89" font-size="13" fill="#eaeaea">contact 2</text><text x="500" y="77" text-anchor="middle" font-size="12" fill="#b3b3b3">5 V</text>
+<path d="M300 122H700" stroke="#5fb3ff" stroke-width="3" fill="none"/><circle cx="300" cy="122" r="5" fill="#5fb3ff"/><circle cx="700" cy="122" r="5" fill="#5fb3ff"/><text x="286" y="127" text-anchor="end" font-size="13" fill="#eaeaea">PB1, contact 3</text><text x="714" y="127" font-size="13" fill="#eaeaea">contact 3</text><text x="500" y="115" text-anchor="middle" font-size="12" fill="#b3b3b3">on / off</text>
+<path d="M300 160H700" stroke="#b3b3b3" stroke-width="3" fill="none"/><circle cx="300" cy="160" r="5" fill="#b3b3b3"/><circle cx="700" cy="160" r="5" fill="#b3b3b3"/><text x="286" y="165" text-anchor="end" font-size="13" fill="#eaeaea">contact 10</text><text x="714" y="165" font-size="13" fill="#eaeaea">contact 10</text><text x="500" y="153" text-anchor="middle" font-size="12" fill="#b3b3b3">ground</text>
 </svg>
   </div>
   <figcaption>Three connections to the controller; the interlock and module go on J3 and J4.</figcaption>
@@ -249,20 +249,20 @@ pointer.halt_set_to = false
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
 <svg viewBox="0 0 1000 200" role="img" aria-labelledby="xb-laser-how-t">
 <title id="xb-laser-how-t">The 5 V supply passes through a fuse and the interlock to the module; a transistor switches its return.</title>
-<rect x="20.0" y="20" width="155.2" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="97.6" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">5 V</text><text x="97.6" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">from socket</text>
-<path d="M175.2 51H221.2" stroke="#a9b4c2" stroke-width="3"/><path d="M221.2 51l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="221.2" y="20" width="155.2" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="298.79999999999995" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">F1</text><text x="298.79999999999995" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">resettable fuse</text>
-<path d="M376.4 51H422.4" stroke="#a9b4c2" stroke-width="3"/><path d="M422.4 51l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="422.4" y="20" width="155.2" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="500.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J3</text><text x="500.0" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">interlock</text>
-<path d="M577.6 51H623.6" stroke="#a9b4c2" stroke-width="3"/><path d="M623.6 51l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="623.6" y="20" width="155.2" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="701.2" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J4</text><text x="701.2" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">laser module</text>
-<path d="M778.8 51H824.8" stroke="#a9b4c2" stroke-width="3"/><path d="M824.8 51l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="824.8" y="20" width="155.2" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="902.4" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Q1</text><text x="902.4" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">to ground</text>
-<rect x="20.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="120.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J1 contact 3</text><text x="120.0" y="157.0" text-anchor="middle" font-size="12" fill="#a9b4c2">control</text>
-<path d="M220.0 141H400.0" stroke="#a9b4c2" stroke-width="3"/><path d="M400.0 141l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="400.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="500.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">R1, R2</text><text x="500.0" y="157.0" text-anchor="middle" font-size="12" fill="#a9b4c2">gate network</text>
-<path d="M600.0 141H780.0" stroke="#a9b4c2" stroke-width="3"/><path d="M780.0 141l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="780.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="880.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Q1</text><text x="880.0" y="157.0" text-anchor="middle" font-size="12" fill="#a9b4c2">switch</text>
+<rect x="20.0" y="20" width="155.2" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="97.6" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">5 V</text><text x="97.6" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">from socket</text>
+<path d="M175.2 51H221.2" stroke="#b3b3b3" stroke-width="3"/><path d="M221.2 51l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="221.2" y="20" width="155.2" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="298.79999999999995" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">F1</text><text x="298.79999999999995" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">resettable fuse</text>
+<path d="M376.4 51H422.4" stroke="#b3b3b3" stroke-width="3"/><path d="M422.4 51l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="422.4" y="20" width="155.2" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="500.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">J3</text><text x="500.0" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">interlock</text>
+<path d="M577.6 51H623.6" stroke="#b3b3b3" stroke-width="3"/><path d="M623.6 51l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="623.6" y="20" width="155.2" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="701.2" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">J4</text><text x="701.2" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">laser module</text>
+<path d="M778.8 51H824.8" stroke="#b3b3b3" stroke-width="3"/><path d="M824.8 51l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="824.8" y="20" width="155.2" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="902.4" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">Q1</text><text x="902.4" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">to ground</text>
+<rect x="20.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="120.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">J1 contact 3</text><text x="120.0" y="157.0" text-anchor="middle" font-size="12" fill="#b3b3b3">control</text>
+<path d="M220.0 141H400.0" stroke="#b3b3b3" stroke-width="3"/><path d="M400.0 141l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="400.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="500.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">R1, R2</text><text x="500.0" y="157.0" text-anchor="middle" font-size="12" fill="#b3b3b3">gate network</text>
+<path d="M600.0 141H780.0" stroke="#b3b3b3" stroke-width="3"/><path d="M780.0 141l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="780.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="880.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">Q1</text><text x="880.0" y="157.0" text-anchor="middle" font-size="12" fill="#b3b3b3">switch</text>
 </svg>
   </div>
   <figcaption>Supply path above, control path below.</figcaption>
@@ -280,11 +280,11 @@ Keep JP3 open: another board must not be able to switch the laser. Open JP20 if 
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Solder links">
 <svg viewBox="0 0 1000 114" role="img" aria-labelledby="xb-laser-jp-t">
 <title id="xb-laser-jp-t">Solder links as delivered: JP3 open; JP20 closed.</title>
-<rect x="20" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="72" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="114" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
-<text x="108" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP3 · open</text><text x="108" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">chain contact 3</text>
-<rect x="216" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="268" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="310" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<rect x="20" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="72" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="114" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<text x="108" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP3 · open</text><text x="108" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">chain contact 3</text>
+<rect x="216" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="268" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="310" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
 <rect x="294" y="34" width="20" height="10" fill="#e0b84a"/>
-<text x="304" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP20 · closed</text><text x="304" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">indicator LED</text>
+<text x="304" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP20 · closed</text><text x="304" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">indicator LED</text>
 </svg>
   </div>
   <figcaption>The links as delivered. Close one with a small blob of solder across both pads; open it by removing the solder or cutting the copper between the pads.</figcaption>
@@ -361,29 +361,29 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
   <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-laser-mount-t">
   <title id="xb-laser-mount-t">Mounting drawing of the laser emitter board, component side: outline 60 by 55 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
-  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
-  <rect x="294.5" y="78.0" width="370.9" height="340.0" rx="6.2" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
-  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M294.5 56H665.5"/><path d="M294.5 50V62"/><path d="M665.5 50V62"/><path d="M691.5 78.0V418.0"/><path d="M685.5 78.0h12"/><path d="M685.5 418.0h12"/></g>
-  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">60</text>
-  <text x="703.5" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">55</text>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#b3b3b3">COMPONENT SIDE · millimetres</text>
+  <rect x="294.5" y="78.0" width="370.9" height="340.0" rx="6.2" fill="#1f2226" stroke="#eaeaea" stroke-width="1.5"/>
+  <g stroke="#b3b3b3" stroke-width="1.2" fill="none"><path d="M294.5 56H665.5"/><path d="M294.5 50V62"/><path d="M665.5 50V62"/><path d="M691.5 78.0V418.0"/><path d="M685.5 78.0h12"/><path d="M685.5 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">60</text>
+  <text x="703.5" y="253.0" font-size="15" font-weight="700" fill="#eaeaea">55</text>
   <circle cx="294.5" cy="78.0" r="4" fill="#ffcc33"/>
   <text x="282.5" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
   <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M236.5 104.0h30" fill="none"/><path d="M270.5 104.0l-8 -4v8z"/><path d="M236.5 104.0v30" fill="none"/><path d="M236.5 138.0l-4 -8h8z"/></g>
   <text x="274.5" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
   <text x="232.5" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
-  <circle cx="325.5" cy="108.9" r="9.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <circle cx="325.5" cy="108.9" r="9.9" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M311.6 108.9h27.8M325.5 95.0v27.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="315.6" y="138.8" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 5.00</text>
-  <circle cx="634.5" cy="108.9" r="9.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="315.6" y="138.8" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 5.00</text>
+  <circle cx="634.5" cy="108.9" r="9.9" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M620.7 108.9h27.8M634.5 95.0v27.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="644.4" y="138.8" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  55.00, 5.00</text>
-  <circle cx="325.5" cy="356.2" r="9.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="644.4" y="138.8" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">2</tspan>  55.00, 5.00</text>
+  <circle cx="325.5" cy="356.2" r="9.9" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M311.6 356.2h27.8M325.5 342.3v27.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="315.6" y="336.3" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 45.00</text>
-  <circle cx="634.5" cy="356.2" r="9.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="315.6" y="336.3" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 45.00</text>
+  <circle cx="634.5" cy="356.2" r="9.9" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M620.7 356.2h27.8M634.5 342.3v27.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="644.4" y="336.3" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  55.00, 45.00</text>
-  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  <text x="644.4" y="336.3" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">4</tspan>  55.00, 45.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#b3b3b3">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
   </svg>
   </div>
   <figcaption>Board outline 60 × 55&nbsp;mm, corners rounded to a 1&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
@@ -442,14 +442,14 @@ The switch and gate network were simulated with ngspice with the module represen
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Simulated results against limits">
 <svg viewBox="0 0 1000 238" role="img" aria-labelledby="xb-laser-sim-t">
 <title id="xb-laser-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
-<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Gate voltage when driven from 3.3 V</text>
-<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M775.1 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">3.27&nbsp;V</text>
-<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Voltage lost in the switch</text>
-<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M468.9 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">1.7&nbsp;mV</text>
-<text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Module current assumed</text>
-<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M810.2 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">35&nbsp;mA</text>
-<text x="385" y="197" text-anchor="end" font-size="13" fill="#e6ebf2">Gate voltage with the signal low</text>
-<path d="M400 192H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 192H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M400.0 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">0&nbsp;V</text>
+<text x="385" y="41" text-anchor="end" font-size="13" fill="#eaeaea">Gate voltage when driven from 3.3 V</text>
+<path d="M400 36H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M775.1 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">3.27&nbsp;V</text>
+<text x="385" y="93" text-anchor="end" font-size="13" fill="#eaeaea">Voltage lost in the switch</text>
+<path d="M400 88H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M468.9 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">1.7&nbsp;mV</text>
+<text x="385" y="145" text-anchor="end" font-size="13" fill="#eaeaea">Module current assumed</text>
+<path d="M400 140H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M810.2 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">35&nbsp;mA</text>
+<text x="385" y="197" text-anchor="end" font-size="13" fill="#eaeaea">Gate voltage with the signal low</text>
+<path d="M400 192H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M400.0 192H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M400.0 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">0&nbsp;V</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>

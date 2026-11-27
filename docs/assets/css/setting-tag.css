@@ -35,7 +35,7 @@ setting {
     background:      #000;
 
     /* Rounded corners */
-    border-radius:   3px;
+    border-radius:   2px;
     overflow:        hidden;
 
     /* Smooth transitions for hover effects */
@@ -90,7 +90,7 @@ setting:hover {
     align-items:     center;
     padding:         0 5px;
     background:      #000;
-    color:           #7ec8ed; /* Pastel blue - lighter and more muted */
+    color:           #bfbfbf; /* Pastel blue - lighter and more muted */
     font-weight:     900; /* Much bolder */
     user-select:     none; /* Hide from selection - visual decorator only */
 }
@@ -252,7 +252,7 @@ setting[no-version] .setting-dot {
     background:      #1e1e1e;
     color:           #ecf0f1;
     padding:         0;
-    border-radius:   8px;
+    border-radius:   2px;
     box-shadow:      0 8px 24px rgba(0, 0, 0, 0.6);
     border:          1px solid #333;
 
@@ -391,7 +391,7 @@ setting[no-version] .setting-dot {
 
 .setting-bullets li sl-icon {
     flex-shrink:     0;
-    color:           #7ec8ed;
+    color:           #bfbfbf;
     font-size:       1em;
 }
 
@@ -399,7 +399,7 @@ setting[no-version] .setting-dot {
 .setting-metadata {
     background:      #2a2a2a;
     padding:         8px;
-    border-radius:   4px;
+    border-radius:   2px;
     margin:          8px 0;
     display:         flex;
     flex-wrap:       wrap;
@@ -418,15 +418,15 @@ setting[no-version] .setting-dot {
 }
 
 .setting-meta-item sl-icon {
-    color:           #7ec8ed;
+    color:           #bfbfbf;
     flex-shrink:     0;
 }
 
 .setting-meta-item code {
     background:      #1e1e1e;
     padding:         2px 4px;
-    border-radius:   3px;
-    color:           #7ec8ed;
+    border-radius:   2px;
+    color:           #bfbfbf;
 }
 
 .setting-meta-item .meta-value {
@@ -471,7 +471,7 @@ setting[no-version] .setting-dot {
     display:         inline-flex;
     align-items:     center;
     gap:             4px;
-    color:           #7ec8ed !important;
+    color:           #bfbfbf !important;
     text-decoration: none;
     transition:      color 0.2s ease;
 }
@@ -502,8 +502,8 @@ setting[no-version] .setting-dot {
 .setting-value-card code {
     background:      rgba(0, 0, 0, 0.3);
     padding:         2px 4px;
-    border-radius:   3px;
-    color:           #7ec8ed;
+    border-radius:   2px;
+    color:           #bfbfbf;
     font-family:     'Courier New', Courier, monospace;
 }
 
@@ -511,7 +511,7 @@ setting[no-version] .setting-dot {
 .setting-bullets li a,
 .setting-meta-item a,
 .setting-value-card a {
-    color:           #7ec8ed;
+    color:           #bfbfbf;
     text-decoration: underline;
 }
 
@@ -543,7 +543,7 @@ setting[no-version] .setting-dot {
 .setting-related strong sl-icon,
 .setting-related-mcodes strong sl-icon,
 .setting-pages strong sl-icon {
-    color:           #7ec8ed;
+    color:           #bfbfbf;
 }
 
 .setting-related sl-tag,
@@ -638,7 +638,7 @@ setting[no-version] .setting-dot {
 .setting-corresponding code {
     background:      rgba(0, 0, 0, 0.3);
     padding:         2px 4px;
-    border-radius:   3px;
+    border-radius:   2px;
     color:           #ffd966;
     font-weight:     600;
 }
@@ -676,7 +676,7 @@ sl-details::part(content) {
 }
 
 .setting-tooltip-loading sl-spinner {
-    --indicator-color: #7ec8ed;
+    --indicator-color: #bfbfbf;
     --track-color:     #2a2a2a;
     margin-bottom:     12px;
 }
@@ -721,13 +721,13 @@ sl-details::part(content) {
 
 /* Pin configuration link in alert */
 .pin-config-link {
-    color:           #7ec8ed;
+    color:           #bfbfbf;
     text-decoration: underline;
     font-weight:     600;
 }
 
 .pin-config-link:hover {
-    color:           #a8d9f0;
+    color:           #d2d2d2;
 }
 
 /* ============================================================================
@@ -761,7 +761,7 @@ sl-details::part(content) {
     font-size:       0.95em;
     font-weight:     500;
     height:          24px;
-    border-radius:   3px;
+    border-radius:   2px;
     overflow:        hidden;
     white-space:     nowrap;
     line-height:     1;
@@ -965,7 +965,7 @@ sl-tooltip[content] .value-badge {
 /* Active tab - more prominent */
 .setting-tooltip-tabs::part(active-tab-indicator) {
     height:          3px;
-    background:      linear-gradient(90deg, #7ec8ed 0%, #ffd966 100%);
+    background:      linear-gradient(90deg, #bfbfbf 0%, #ffd966 100%);
 }
 
 /* Panel content - consistent padding */
@@ -1015,7 +1015,7 @@ sl-divider {
     align-items:     center;
     gap:             8px;
     background:      #000000; /* Pure black background for terminal style */
-    border-radius:   4px;
+    border-radius:   2px;
     padding:         10px 14px;
     border:          1px solid #333;
 }
@@ -1069,7 +1069,7 @@ sl-alert {
 }
 
 sl-alert::part(base) {
-    border-radius:   6px;
+    border-radius:   2px;
 }
 
 /* Notes section - distinct styling */
@@ -1177,7 +1177,7 @@ sl-alert::part(base) {
 .config-excerpt-container {
     background-color: #0a0a0a;
     border: 1px solid #2a2a2a;
-    border-radius: 4px;
+    border-radius: 2px;
     overflow: hidden;
 }
 
@@ -1217,15 +1217,15 @@ sl-alert::part(base) {
 }
 
 .copy-line-button::part(base) {
-    color: rgba(88, 166, 255, 0.9);
+    color: rgba(163, 163, 163, 0.9);
 }
 
 .config-line-target .copy-line-button::part(base) {
-    color: rgba(59, 130, 246, 0.9);
+    color: rgba(133, 133, 133, 0.9);
 }
 
 .config-line-section .copy-line-button::part(base) {
-    color: rgba(139, 92, 246, 0.9);
+    color: rgba(123, 123, 123, 0.9);
 }
 
 .line-number {
@@ -1247,48 +1247,48 @@ sl-alert::part(base) {
 
 /* Target line (the setting being shown) - bold with text glow effect */
 .config-line-target {
-    border-left: 3px solid rgba(59, 130, 246, 0.6);
+    border-left: 3px solid rgba(133, 133, 133, 0.6);
 }
 
 .config-line-target .line-content {
     font-weight: bold;
     color: #ffffff;
     text-shadow:
-        0 0 20px rgba(59, 130, 246, 0.6),
-        0 0 12px rgba(59, 130, 246, 0.5),
-        0 0 8px rgba(59, 130, 246, 0.4),
-        0 0 4px rgba(59, 130, 246, 0.3);
+        0 0 20px rgba(133, 133, 133, 0.6),
+        0 0 12px rgba(133, 133, 133, 0.5),
+        0 0 8px rgba(133, 133, 133, 0.4),
+        0 0 4px rgba(133, 133, 133, 0.3);
 }
 
 .config-line-target .line-number {
-    color: rgba(59, 130, 246, 0.9);
+    color: rgba(133, 133, 133, 0.9);
     font-weight: 600;
     text-shadow:
-        0 0 10px rgba(59, 130, 246, 0.5),
-        0 0 5px rgba(59, 130, 246, 0.4);
+        0 0 10px rgba(133, 133, 133, 0.5),
+        0 0 5px rgba(133, 133, 133, 0.4);
 }
 
 /* Section header line (v2 INI sections) - bold with text glow effect */
 .config-line-section {
-    border-left: 3px solid rgba(139, 92, 246, 0.6);
+    border-left: 3px solid rgba(123, 123, 123, 0.6);
 }
 
 .config-line-section .line-content {
     font-weight: bold;
     color: #ffffff;
     text-shadow:
-        0 0 20px rgba(139, 92, 246, 0.6),
-        0 0 12px rgba(139, 92, 246, 0.5),
-        0 0 8px rgba(139, 92, 246, 0.4),
-        0 0 4px rgba(139, 92, 246, 0.3);
+        0 0 20px rgba(123, 123, 123, 0.6),
+        0 0 12px rgba(123, 123, 123, 0.5),
+        0 0 8px rgba(123, 123, 123, 0.4),
+        0 0 4px rgba(123, 123, 123, 0.3);
 }
 
 .config-line-section .line-number {
-    color: rgba(139, 92, 246, 0.9);
+    color: rgba(123, 123, 123, 0.9);
     font-weight: 600;
     text-shadow:
-        0 0 10px rgba(139, 92, 246, 0.5),
-        0 0 5px rgba(139, 92, 246, 0.4);
+        0 0 10px rgba(123, 123, 123, 0.5),
+        0 0 5px rgba(123, 123, 123, 0.4);
 }
 
 /* File breadcrumb (GitHub-style) */
@@ -1332,7 +1332,7 @@ sl-alert::part(base) {
 }
 
 .config-line[data-github-url]:hover {
-    background-color: rgba(88, 166, 255, 0.15);
+    background-color: rgba(163, 163, 163, 0.15);
 }
 
 /* GitHub-style syntax highlighting for config files */
@@ -1340,12 +1340,12 @@ sl-alert::part(base) {
 
 /* Comments (lines starting with #) */
 .config-syntax-comment {
-    color: #959da5;
+    color: #9c9c9c;
 }
 
 /* Section headers (V2: [section_name]) */
 .config-syntax-section {
-    color: #b392f0;
+    color: #a3a3a3;
     font-weight: bold;
 }
 
@@ -1356,17 +1356,17 @@ sl-alert::part(base) {
 
 /* Values/strings */
 .config-syntax-value {
-    color: #79b8ff;
+    color: #b4b4b4;
 }
 
 /* Equal signs and separators */
 .config-syntax-separator {
-    color: #c8e1ff;
+    color: #dedede;
 }
 
 /* Default text color for config lines */
 .line-content {
-    color: #c9d1d9;
+    color: #d0d0d0;
     font-family: 'Courier New', Consolas, monospace;
 }
 
@@ -1382,7 +1382,7 @@ sl-alert::part(base) {
     padding: 0.75rem;
     background-color: #1a1a1a;
     border: 1px solid #2a2a2a;
-    border-radius: 4px;
+    border-radius: 2px;
     color: #999;
 }
 

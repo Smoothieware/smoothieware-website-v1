@@ -191,26 +191,26 @@ These steps check the control side first, with no load connected.
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Minimal wiring diagram">
   <svg viewBox="0 0 1000 340" role="img" aria-labelledby="xb-hookup-t">
     <title id="xb-hookup-t">Minimal wiring: the Smoothieboard connected to the control socket, and a DC supply, the board and a load in series through the two screws.</title>
-    <rect x="360" y="110" width="320" height="200" rx="8" fill="#1b2028" stroke="#59616e" stroke-width="1.5"/>
-    <text x="520" y="132" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">DC solid-state relay board</text>
-    <text x="420" y="222" text-anchor="middle" font-size="11" fill="#a9b4c2">SW A</text>
-    <text x="620" y="222" text-anchor="middle" font-size="11" fill="#a9b4c2">SW B</text>
-    <rect x="365" y="262" width="60" height="28" rx="3" fill="#0d0f12" stroke="#8a94a3"/>
-    <text x="395" y="280" text-anchor="middle" font-size="11" fill="#e6ebf2">J1</text>
-    <rect x="30" y="230" width="150" height="80" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/>
-    <text x="105" y="266" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Smoothieboard</text>
-    <text x="105" y="286" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">V2 Prime</text>
+    <rect x="360" y="110" width="320" height="200" rx="8" fill="#202020" stroke="#606060" stroke-width="1.5"/>
+    <text x="520" y="132" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">DC solid-state relay board</text>
+    <text x="420" y="222" text-anchor="middle" font-size="11" fill="#b3b3b3">SW A</text>
+    <text x="620" y="222" text-anchor="middle" font-size="11" fill="#b3b3b3">SW B</text>
+    <rect x="365" y="262" width="60" height="28" rx="3" fill="#0d0f12" stroke="#939393"/>
+    <text x="395" y="280" text-anchor="middle" font-size="11" fill="#eaeaea">J1</text>
+    <rect x="30" y="230" width="150" height="80" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/>
+    <text x="105" y="266" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">Smoothieboard</text>
+    <text x="105" y="286" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">V2 Prime</text>
     <path d="M180 276H365" stroke="#5fb3ff" stroke-width="4" fill="none"/>
-    <text x="272" y="318" text-anchor="middle" font-size="11" fill="#a9b4c2">3.3 V, EN, GND</text>
-    <rect x="30" y="20" width="160" height="70" rx="8" fill="#212936" stroke="#59616e"/>
-    <text x="110" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">DC supply</text>
-    <text x="110" y="72" text-anchor="middle" font-size="12" fill="#a9b4c2">0–30 V (design)</text>
-    <rect x="810" y="20" width="160" height="70" rx="8" fill="#212936" stroke="#59616e"/>
-    <text x="890" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">Your load</text>
+    <text x="272" y="318" text-anchor="middle" font-size="11" fill="#b3b3b3">3.3 V, EN, GND</text>
+    <rect x="30" y="20" width="160" height="70" rx="8" fill="#292929" stroke="#606060"/>
+    <text x="110" y="52" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">DC supply</text>
+    <text x="110" y="72" text-anchor="middle" font-size="12" fill="#b3b3b3">0–30 V (design)</text>
+    <rect x="810" y="20" width="160" height="70" rx="8" fill="#292929" stroke="#606060"/>
+    <text x="890" y="60" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">Your load</text>
     <path d="M190 40H420V200" fill="none" stroke="#e0a877" stroke-width="5"/>
     <path d="M620 200V40H810" fill="none" stroke="#e0a877" stroke-width="5"/>
     <path d="M190 70H810" stroke="#9cc3ff" stroke-width="5"/>
-    <g font-size="12" fill="#e6ebf2">
+    <g font-size="12" fill="#eaeaea">
       <text x="300" y="34" text-anchor="middle" fill="#e0a877">One supply wire, to SW A</text>
       <text x="720" y="34" text-anchor="middle" fill="#e0a877">From SW B to the load</text>
       <text x="500" y="88" text-anchor="middle" fill="#9cc3ff">The other supply wire goes straight to the load</text>
@@ -350,18 +350,18 @@ Three things this board does not do:
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
   <svg viewBox="0 0 1000 250" role="img" aria-labelledby="xb-how-t">
     <title id="xb-how-t">The enable signal enters the isolated driver; across the isolation barrier the driver makes a floating gate supply and drives two back-to-back MOSFETs that switch the DC path between SW A and SW B.</title>
-    <g font-size="13" font-weight="700" text-anchor="middle" fill="#e6ebf2">
-      <rect x="20" y="85" width="170" height="80" rx="8" fill="#1f2226" stroke="#dfe4ee"/><text x="105" y="120">Enable on J1</text><text x="105" y="140" font-weight="400" fill="#a9b4c2">3.3 V logic, HIGH = on</text>
-      <rect x="260" y="85" width="190" height="80" rx="8" fill="#212936" stroke="#5fb3ff"/><text x="355" y="120">Isolated driver</text><text x="355" y="140" font-weight="400" fill="#a9b4c2">TPSI3050</text>
-      <rect x="520" y="85" width="210" height="80" rx="8" fill="#212936" stroke="#f0b08a"/><text x="625" y="120">Two MOSFETs, back to back</text><text x="625" y="140" font-weight="400" fill="#a9b4c2">CSD18536KTT</text>
-      <rect x="790" y="85" width="190" height="80" rx="8" fill="#212936" stroke="#f0b08a"/><text x="885" y="120">Switched DC path</text><text x="885" y="140" font-weight="400" fill="#a9b4c2">SW A to SW B</text>
+    <g font-size="13" font-weight="700" text-anchor="middle" fill="#eaeaea">
+      <rect x="20" y="85" width="170" height="80" rx="8" fill="#1f2226" stroke="#e4e4e4"/><text x="105" y="120">Enable on J1</text><text x="105" y="140" font-weight="400" fill="#b3b3b3">3.3 V logic, HIGH = on</text>
+      <rect x="260" y="85" width="190" height="80" rx="8" fill="#292929" stroke="#5fb3ff"/><text x="355" y="120">Isolated driver</text><text x="355" y="140" font-weight="400" fill="#b3b3b3">TPSI3050</text>
+      <rect x="520" y="85" width="210" height="80" rx="8" fill="#292929" stroke="#f0b08a"/><text x="625" y="120">Two MOSFETs, back to back</text><text x="625" y="140" font-weight="400" fill="#b3b3b3">CSD18536KTT</text>
+      <rect x="790" y="85" width="190" height="80" rx="8" fill="#292929" stroke="#f0b08a"/><text x="885" y="120">Switched DC path</text><text x="885" y="140" font-weight="400" fill="#b3b3b3">SW A to SW B</text>
     </g>
-    <g stroke-width="3" fill="none" stroke="#a9b4c2"><path d="M190 125H260"/><path d="M450 125H520"/><path d="M730 125H790"/></g>
-    <path d="M355 40V230" stroke="#59616e" stroke-width="2" stroke-dasharray="6 6"/>
-    <text x="355" y="30" text-anchor="middle" font-size="12" fill="#a9b4c2">isolation barrier inside the chip</text>
-    <text x="105" y="60" text-anchor="middle" font-size="12" fill="#a9b4c2">CONTROL SIDE</text>
+    <g stroke-width="3" fill="none" stroke="#b3b3b3"><path d="M190 125H260"/><path d="M450 125H520"/><path d="M730 125H790"/></g>
+    <path d="M355 40V230" stroke="#606060" stroke-width="2" stroke-dasharray="6 6"/>
+    <text x="355" y="30" text-anchor="middle" font-size="12" fill="#b3b3b3">isolation barrier inside the chip</text>
+    <text x="105" y="60" text-anchor="middle" font-size="12" fill="#b3b3b3">CONTROL SIDE</text>
     <text x="640" y="60" text-anchor="middle" font-size="12" fill="#f0b08a">FLOATING SIDE</text>
-    <text x="625" y="205" text-anchor="middle" font-size="12" fill="#a9b4c2">fuse and transient suppressor on the switched path</text>
+    <text x="625" y="205" text-anchor="middle" font-size="12" fill="#b3b3b3">fuse and transient suppressor on the switched path</text>
   </svg>
   </div>
   <figcaption>The path of one on/off command.</figcaption>
@@ -416,32 +416,32 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
   <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-dcssr-mount-t">
   <title id="xb-dcssr-mount-t">Mounting drawing of the DC solid-state relay board, component side: outline 65 by 50 millimetres with 4 mounting holes and 2 cable-tie holes. Hole positions are listed in the table below.</title>
-  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
-  <rect x="259.0" y="78.0" width="442.0" height="340.0" rx="0.0" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
-  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M259.0 56H701.0"/><path d="M259.0 50V62"/><path d="M701.0 50V62"/><path d="M727.0 78.0V418.0"/><path d="M721.0 78.0h12"/><path d="M721.0 418.0h12"/></g>
-  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">65</text>
-  <text x="739.0" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">50</text>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#b3b3b3">COMPONENT SIDE · millimetres</text>
+  <rect x="259.0" y="78.0" width="442.0" height="340.0" rx="0.0" fill="#1f2226" stroke="#eaeaea" stroke-width="1.5"/>
+  <g stroke="#b3b3b3" stroke-width="1.2" fill="none"><path d="M259.0 56H701.0"/><path d="M259.0 50V62"/><path d="M701.0 50V62"/><path d="M727.0 78.0V418.0"/><path d="M721.0 78.0h12"/><path d="M721.0 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">65</text>
+  <text x="739.0" y="253.0" font-size="15" font-weight="700" fill="#eaeaea">50</text>
   <circle cx="259.0" cy="78.0" r="4" fill="#ffcc33"/>
   <text x="247.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
   <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M201.0 104.0h30" fill="none"/><path d="M235.0 104.0l-8 -4v8z"/><path d="M201.0 104.0v30" fill="none"/><path d="M201.0 138.0l-4 -8h8z"/></g>
   <text x="239.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
   <text x="197.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
-  <circle cx="456.2" cy="117.1" r="10.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <circle cx="456.2" cy="117.1" r="10.9" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M441.3 117.1h29.8M456.2 102.2v29.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="445.3" y="148.0" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  29.00, 5.75</text>
-  <circle cx="592.2" cy="117.1" r="10.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="445.3" y="148.0" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">1</tspan>  29.00, 5.75</text>
+  <circle cx="592.2" cy="117.1" r="10.9" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M577.3 117.1h29.8M592.2 102.2v29.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="603.1" y="148.0" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  49.00, 5.75</text>
-  <circle cx="456.2" cy="389.1" r="10.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="603.1" y="148.0" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">2</tspan>  49.00, 5.75</text>
+  <circle cx="456.2" cy="389.1" r="10.9" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M441.3 389.1h29.8M456.2 374.2v29.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="445.3" y="368.2" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  29.00, 45.75</text>
-  <circle cx="592.2" cy="389.1" r="10.9" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="445.3" y="368.2" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">3</tspan>  29.00, 45.75</text>
+  <circle cx="592.2" cy="389.1" r="10.9" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M577.3 389.1h29.8M592.2 374.2v29.8" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="603.1" y="368.2" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  49.00, 45.75</text>
-  <circle cx="497.0" cy="98.4" r="8.5" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
-  <circle cx="531.0" cy="98.4" r="8.5" fill="#141920" stroke="#a9b4c2" stroke-width="1.5"/>
-  <text x="514.0" y="124.9" text-anchor="middle" font-size="12" fill="#a9b4c2">cable tie</text>
-  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  <text x="603.1" y="368.2" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">4</tspan>  49.00, 45.75</text>
+  <circle cx="497.0" cy="98.4" r="8.5" fill="#191919" stroke="#b3b3b3" stroke-width="1.5"/>
+  <circle cx="531.0" cy="98.4" r="8.5" fill="#191919" stroke="#b3b3b3" stroke-width="1.5"/>
+  <text x="514.0" y="124.9" text-anchor="middle" font-size="12" fill="#b3b3b3">cable tie</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#b3b3b3">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
   </svg>
   </div>
   <figcaption>Board outline 65 × 50&nbsp;mm, square corners, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>

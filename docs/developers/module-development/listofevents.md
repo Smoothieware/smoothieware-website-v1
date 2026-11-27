@@ -45,56 +45,6 @@ Smoothieware V2 does not use the event-based module system. Instead, V2 uses Fre
 {:/nomarkdown}
 
 {::nomarkdown}
-<style>
-.events-table-wrapper {
-  width: 100%;
-  overflow-x: auto;
-}
-
-.events-table-wrapper table {
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
-}
-
-.events-table-wrapper th,
-.events-table-wrapper td {
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  vertical-align: top;
-}
-
-.events-table-wrapper th {
-  background-color: #f5f5f5;
-  font-weight: bold;
-}
-
-.events-table-wrapper th:nth-child(1),
-.events-table-wrapper td:nth-child(1) {
-  width: 18%;
-}
-
-.events-table-wrapper th:nth-child(2),
-.events-table-wrapper td:nth-child(2) {
-  width: 20%;
-}
-
-.events-table-wrapper th:nth-child(3),
-.events-table-wrapper td:nth-child(3) {
-  width: 40%;
-}
-
-.events-table-wrapper th:nth-child(4),
-.events-table-wrapper td:nth-child(4) {
-  width: 22%;
-}
-
-.events-table-wrapper code {
-  word-break: break-all;
-}
-</style>
 
 <div class="events-table-wrapper">
 {:/nomarkdown}

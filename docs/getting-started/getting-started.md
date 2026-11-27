@@ -56,7 +56,7 @@ Different machines need different setup instructions. Pick yours:
 
 {::nomarkdown}
 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0;">
-  <div style="border: 2px solid #ddd; border-radius: 8px; padding: 1.5rem; text-align: center;">
+  <div style="border: 2px solid #ddd; border-radius: 2px; padding: 1.5rem; text-align: center;">
     <a href="3d-printer-guide">
       <img src="/images/guide-3d-printer.png" alt="3D Printer" style="width: 80px; height: 80px;"/>
       <h3 style="margin: 1rem 0 0.5rem 0;">3D Printer</h3>
@@ -67,7 +67,7 @@ Different machines need different setup instructions. Pick yours:
     </a>
   </div>
 
-  <div style="border: 2px solid #ddd; border-radius: 8px; padding: 1.5rem; text-align: center;">
+  <div style="border: 2px solid #ddd; border-radius: 2px; padding: 1.5rem; text-align: center;">
     <a href="laser-cutter-guide">
       <img src="/images/guide-laser.png" alt="Laser" style="width: 80px; height: 80px;"/>
       <h3 style="margin: 1rem 0 0.5rem 0;">Laser Cutter</h3>
@@ -78,7 +78,7 @@ Different machines need different setup instructions. Pick yours:
     </a>
   </div>
 
-  <div style="border: 2px solid #ddd; border-radius: 8px; padding: 1.5rem; text-align: center;">
+  <div style="border: 2px solid #ddd; border-radius: 2px; padding: 1.5rem; text-align: center;">
     <a href="cnc-mill-guide">
       <img src="/images/guide-cnc-mill.png" alt="CNC Mill" style="width: 80px; height: 80px;"/>
       <h3 style="margin: 1rem 0 0.5rem 0;">CNC Mill</h3>
@@ -89,7 +89,7 @@ Different machines need different setup instructions. Pick yours:
     </a>
   </div>
 
-  <div style="border: 2px solid #ddd; border-radius: 8px; padding: 1.5rem; text-align: center;">
+  <div style="border: 2px solid #ddd; border-radius: 2px; padding: 1.5rem; text-align: center;">
     <a href="pick-and-place-guide">
       <img src="/images/guide-pnp.png" alt="Pick and Place" style="width: 80px; height: 80px;"/>
       <h3 style="margin: 1rem 0 0.5rem 0;">Pick and Place</h3>

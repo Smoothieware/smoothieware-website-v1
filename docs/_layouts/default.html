@@ -23,7 +23,7 @@
     <!--[if lt IE 8]>
     <link rel="stylesheet" href="{{ '/assets/css/ie.css' | relative_url }}">
     <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% include head-custom.html %}
 
     <!-- Google Fonts - Montserrat -->
@@ -56,6 +56,9 @@
     </script>
     <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"></script>
 
+    <!-- Site-wide design system: last, so it governs the theme and the widgets -->
+    <link rel="stylesheet" href="{{ '/assets/css/site.css?v=' | append: site.github.build_revision | relative_url }}">
+
     <!-- AUTO-GENERATED TYPESCRIPT SCRIPTS START -->
     <script type="module" src="{{ '/assets/js/config-tables.js' | relative_url }}"></script>
     <script type="module" src="{{ '/assets/js/load-assets.js' | relative_url }}"></script>
@@ -72,6 +75,8 @@
     <script type="module" src="{{ '/assets/js/page-specific/homepage.js' | relative_url }}"></script>
     <script type="module" src="{{ '/assets/js/page-specific/help-guidelines.js' | relative_url }}"></script>
     <script type="module" src="{{ '/assets/js/page-specific/debug-review.js' | relative_url }}"></script>
+    <script type="module" src="{{ '/assets/js/lightbox.js' | relative_url }}"></script>
+    <script type="module" src="{{ '/assets/js/page-tools.js' | relative_url }}"></script>
     <!-- AUTO-GENERATED TYPESCRIPT SCRIPTS END -->
     {% if content contains 'class="extension-instruction-diagram"' %}
     <link rel="stylesheet" href="{{ '/assets/css/extension-instruction-diagram.css' | relative_url }}">
@@ -201,25 +206,11 @@
             </sl-menu>
           </sl-dropdown>
 
-          <!-- Search Dropdown -->
-          <sl-dropdown class="nav-dropdown">
-            <button slot="trigger" class="nav-item nav-dropdown-trigger">
-              <img src="{{ '/images/search.png' | relative_url }}" alt="Search" class="nav-item-icon">
-              <span class="nav-item-text">SEARCH</span>
-            </button>
-
-            <sl-menu class="search-menu">
-              <div class="search-form-container">
-                <form action="https://www.google.com/search" method="get" target="_blank" class="search-form">
-                  <input type="hidden" name="sitesearch" value="smoothieware.org">
-                  <input type="text" name="q" placeholder="Search documentation..." class="search-input" autofocus>
-                  <button type="submit" class="search-button">
-                    <img src="{{ '/images/search.png' | relative_url }}" alt="Search" class="search-icon">
-                  </button>
-                </form>
-              </div>
-            </sl-menu>
-          </sl-dropdown>
+          <!-- Search: opens the quick page search (also Ctrl+K or /) -->
+          <button type="button" class="nav-item nav-dropdown-trigger" data-search-open title="Search (Ctrl+K or /)">
+            <img src="{{ '/images/search.png' | relative_url }}" alt="" class="nav-item-icon">
+            <span class="nav-item-text">SEARCH</span>
+          </button>
 
           <!-- Version Selector Dropdown -->
           <sl-dropdown id="version-selector-dropdown" class="nav-dropdown version-selector-dropdown">

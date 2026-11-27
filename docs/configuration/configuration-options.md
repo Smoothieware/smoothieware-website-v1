@@ -7,7 +7,6 @@ permalink: /configuration-options
 
 {::nomarkdown}
 <link rel="stylesheet" href="/assets/css/config-tables.css">
-<script src="/assets/js/config-tables.js"></script>
 <a href="/images/board.png">
   <img src="/images/board.png" alt="Configuration" width="150" height="150" style="float: right; margin-left: 1rem;"/>
 </a>

@@ -23,7 +23,7 @@ pin {
     padding:         0;
 
     /* Pill shape - full half circles on ends */
-    border-radius:   999px;
+    border-radius:   2px;
     overflow:        visible;
 
     /* Vertical alignment with surrounding text */
@@ -57,7 +57,7 @@ pin {
     font-family:     'Courier New', Courier, monospace !important;
 
     /* Pill shape - full half circles on ends */
-    border-radius:   999px;
+    border-radius:   2px;
 
     /* Ensure text is selectable */
     user-select:     text;

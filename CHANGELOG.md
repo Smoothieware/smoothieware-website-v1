@@ -17,6 +17,7 @@ History: see CHANGELOG.archive.md.
 - Extension board pages: the board drawings now show lights in their real colours, solder links, test pads and the holes of parts soldered underneath; page text that called these "not drawn" is corrected.
 
 ### Changed
+- One greyscale design for the whole site: 2 px corners, quieter callouts and buttons, and a single table style without vertical lines. Diagrams take half the page width; board tours show the drawing beside its numbered list.
 - Laser PSU adapter board: redrawn schematic PDF, one A2 page with a titled box for each function; the circuit is unchanged.
 - Troubleshooting page: the comic is half as large and floats to the right of the text, the empty table of contents is gone, and the title, sections and problems use heading levels 1, 2 and 3.
 - Troubleshooting page: the long config override article inside the steps is now a short warning box linking to the override pages, as its own numbered step.
@@ -30,6 +31,8 @@ History: see CHANGELOG.archive.md.
 
 ### Added
 
+- Full-screen image viewer for pictures and diagrams on every page: next and previous, wheel and pinch zoom, drag to pan, keyboard control.
+- Quick page search (Ctrl+K or /), "On this page" contents on wide screens, reading progress, back-to-top and copy buttons on code blocks.
 - New page: Differential I2C signal extender, a host and remote board pair, with drawings, wiring examples, limits, schematics and parts lists.
 - Gadgeteer perma-proto page: new example project that delays STEP and DIR signals by about 1, 10 or 20 µs, with a DIP switch to choose which signal, fixed-capacitor and trimmer-capacitor drawings, a capacitor table, a timing graph and two chip datasheets.
 - A page for the Endstop inputs (basic) board: pinout, wiring, configuration, limits, mounting, electrical and simulation data, with a comparison against the Endstop and probe inputs (advanced) board on both pages.

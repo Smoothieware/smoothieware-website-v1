@@ -220,15 +220,15 @@ These steps check the control side with no load connected. The controller must n
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Minimal wiring diagram">
   <svg viewBox="0 0 1000 320" role="img" aria-labelledby="xb-hookup-t">
     <title id="xb-hookup-t">Minimal wiring: the supply&rsquo;s 24-pin plug into J1, and four leads from the Smoothieboard header to the Gadgeteer socket X IN.</title>
-    <rect x="330" y="60" width="340" height="200" rx="8" fill="#1b2028" stroke="#59616e" stroke-width="1.5"/>
-    <text x="500" y="90" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">ATX connector board</text>
-    <rect x="360" y="190" width="280" height="40" rx="3" fill="#0d0f12" stroke="#8a94a3"/><text x="500" y="215" text-anchor="middle" font-size="12" fill="#e6ebf2">J1, 24-pin ATX</text>
-    <rect x="360" y="110" width="80" height="40" rx="3" fill="#0d0f12" stroke="#8a94a3"/><text x="400" y="135" text-anchor="middle" font-size="12" fill="#e6ebf2">X IN</text>
-    <rect x="30" y="190" width="170" height="70" rx="8" fill="#212936" stroke="#59616e"/><text x="115" y="220" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">ATX supply</text><text x="115" y="240" text-anchor="middle" font-size="12" fill="#a9b4c2">mains unplugged</text>
+    <rect x="330" y="60" width="340" height="200" rx="8" fill="#202020" stroke="#606060" stroke-width="1.5"/>
+    <text x="500" y="90" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">ATX connector board</text>
+    <rect x="360" y="190" width="280" height="40" rx="3" fill="#0d0f12" stroke="#939393"/><text x="500" y="215" text-anchor="middle" font-size="12" fill="#eaeaea">J1, 24-pin ATX</text>
+    <rect x="360" y="110" width="80" height="40" rx="3" fill="#0d0f12" stroke="#939393"/><text x="400" y="135" text-anchor="middle" font-size="12" fill="#eaeaea">X IN</text>
+    <rect x="30" y="190" width="170" height="70" rx="8" fill="#292929" stroke="#606060"/><text x="115" y="220" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">ATX supply</text><text x="115" y="240" text-anchor="middle" font-size="12" fill="#b3b3b3">mains unplugged</text>
     <path d="M200 225H360" stroke="#e0a877" stroke-width="6"/><text x="280" y="215" text-anchor="middle" font-size="11" fill="#e0a877">24-pin plug</text>
-    <rect x="800" y="90" width="170" height="90" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="885" y="130" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Smoothieboard</text><text x="885" y="150" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">V2 Prime</text>
+    <rect x="800" y="90" width="170" height="90" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="885" y="130" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">Smoothieboard</text><text x="885" y="150" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">V2 Prime</text>
     <path d="M440 130H800" stroke="#5fb3ff" stroke-width="4"/>
-    <text x="620" y="120" text-anchor="middle" font-size="11" fill="#a9b4c2">3.3 V, request PB1, power good PJ4, GND</text>
+    <text x="620" y="120" text-anchor="middle" font-size="11" fill="#b3b3b3">3.3 V, request PB1, power good PJ4, GND</text>
   </svg>
   </div>
   <figcaption>Minimal wiring, schematic and not to scale. The controller is powered separately.</figcaption>
@@ -319,18 +319,18 @@ atx_power_good_observation.limit_enable     = false
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
   <svg viewBox="0 0 1000 270" role="img" aria-labelledby="xb-how-t">
     <title id="xb-how-t">The controller&rsquo;s request drives a MOSFET that pulls the supply&rsquo;s start line low; the supply&rsquo;s power-good signal goes through a buffer back to the controller.</title>
-    <g font-size="13" font-weight="700" text-anchor="middle" fill="#e6ebf2">
-      <rect x="20" y="40" width="170" height="70" rx="8" fill="#1f2226" stroke="#dfe4ee"/><text x="105" y="70">Request, J_X 3</text><text x="105" y="90" font-weight="400" fill="#a9b4c2">high = on</text>
-      <rect x="260" y="40" width="190" height="70" rx="8" fill="#212936" stroke="#5fb3ff"/><text x="355" y="70">MOSFET Q1</text><text x="355" y="90" font-weight="400" fill="#a9b4c2">pulls PS_ON# low</text>
-      <rect x="520" y="40" width="200" height="70" rx="8" fill="#212936" stroke="#e0a877"/><text x="620" y="70">ATX supply</text><text x="620" y="90" font-weight="400" fill="#a9b4c2">via J1</text>
-      <rect x="520" y="160" width="200" height="70" rx="8" fill="#212936" stroke="#6fe08a"/><text x="620" y="190">PWR_OK, J1 pin 8</text><text x="620" y="210" font-weight="400" fill="#a9b4c2">5 V logic</text>
-      <rect x="260" y="160" width="190" height="70" rx="8" fill="#212936" stroke="#5fb3ff"/><text x="355" y="190">Buffer U1</text><text x="355" y="210" font-weight="400" fill="#a9b4c2">to 3.3 V</text>
-      <rect x="20" y="160" width="170" height="70" rx="8" fill="#1f2226" stroke="#dfe4ee"/><text x="105" y="190">Power good, J_X 4</text><text x="105" y="210" font-weight="400" fill="#a9b4c2">high = good</text>
+    <g font-size="13" font-weight="700" text-anchor="middle" fill="#eaeaea">
+      <rect x="20" y="40" width="170" height="70" rx="8" fill="#1f2226" stroke="#e4e4e4"/><text x="105" y="70">Request, J_X 3</text><text x="105" y="90" font-weight="400" fill="#b3b3b3">high = on</text>
+      <rect x="260" y="40" width="190" height="70" rx="8" fill="#292929" stroke="#5fb3ff"/><text x="355" y="70">MOSFET Q1</text><text x="355" y="90" font-weight="400" fill="#b3b3b3">pulls PS_ON# low</text>
+      <rect x="520" y="40" width="200" height="70" rx="8" fill="#292929" stroke="#e0a877"/><text x="620" y="70">ATX supply</text><text x="620" y="90" font-weight="400" fill="#b3b3b3">via J1</text>
+      <rect x="520" y="160" width="200" height="70" rx="8" fill="#292929" stroke="#6fe08a"/><text x="620" y="190">PWR_OK, J1 pin 8</text><text x="620" y="210" font-weight="400" fill="#b3b3b3">5 V logic</text>
+      <rect x="260" y="160" width="190" height="70" rx="8" fill="#292929" stroke="#5fb3ff"/><text x="355" y="190">Buffer U1</text><text x="355" y="210" font-weight="400" fill="#b3b3b3">to 3.3 V</text>
+      <rect x="20" y="160" width="170" height="70" rx="8" fill="#1f2226" stroke="#e4e4e4"/><text x="105" y="190">Power good, J_X 4</text><text x="105" y="210" font-weight="400" fill="#b3b3b3">high = good</text>
     </g>
-    <g stroke-width="3" fill="none" stroke="#a9b4c2"><path d="M190 75H260"/><path d="M450 75H520"/><path d="M520 195H450"/><path d="M260 195H190"/></g>
-    <path d="M620 110V160" stroke="#a9b4c2" stroke-width="3" fill="none"/>
-    <text x="800" y="75" font-size="12" fill="#a9b4c2">5 V standby keeps PS_ON# high</text>
-    <text x="800" y="195" font-size="12" fill="#a9b4c2">buffer powered from 3.3 V</text>
+    <g stroke-width="3" fill="none" stroke="#b3b3b3"><path d="M190 75H260"/><path d="M450 75H520"/><path d="M520 195H450"/><path d="M260 195H190"/></g>
+    <path d="M620 110V160" stroke="#b3b3b3" stroke-width="3" fill="none"/>
+    <text x="800" y="75" font-size="12" fill="#b3b3b3">5 V standby keeps PS_ON# high</text>
+    <text x="800" y="195" font-size="12" fill="#b3b3b3">buffer powered from 3.3 V</text>
   </svg>
   </div>
   <figcaption>The two signal paths between the controller and the supply.</figcaption>
@@ -397,29 +397,29 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
   <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-atx-mount-t">
   <title id="xb-atx-mount-t">Mounting drawing of the ATX connector board, component side: outline 74 by 49.5 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
-  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
-  <rect x="225.9" y="78.0" width="508.3" height="340.0" rx="13.7" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
-  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M225.9 56H734.1"/><path d="M225.9 50V62"/><path d="M734.1 50V62"/><path d="M760.1 78.0V418.0"/><path d="M754.1 78.0h12"/><path d="M754.1 418.0h12"/></g>
-  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">74</text>
-  <text x="772.1" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">49.5</text>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#b3b3b3">COMPONENT SIDE · millimetres</text>
+  <rect x="225.9" y="78.0" width="508.3" height="340.0" rx="13.7" fill="#1f2226" stroke="#eaeaea" stroke-width="1.5"/>
+  <g stroke="#b3b3b3" stroke-width="1.2" fill="none"><path d="M225.9 56H734.1"/><path d="M225.9 50V62"/><path d="M734.1 50V62"/><path d="M760.1 78.0V418.0"/><path d="M754.1 78.0h12"/><path d="M754.1 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">74</text>
+  <text x="772.1" y="253.0" font-size="15" font-weight="700" fill="#eaeaea">49.5</text>
   <circle cx="225.9" cy="78.0" r="4" fill="#ffcc33"/>
   <text x="213.9" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
   <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M167.9 104.0h30" fill="none"/><path d="M201.9 104.0l-8 -4v8z"/><path d="M167.9 104.0v30" fill="none"/><path d="M167.9 138.0l-4 -8h8z"/></g>
   <text x="205.9" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
   <text x="163.9" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
-  <circle cx="273.9" cy="146.7" r="11.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <circle cx="273.9" cy="146.7" r="11.0" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M258.9 146.7h30.0M273.9 131.7v30.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="262.9" y="177.7" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  7.00, 10.00</text>
-  <circle cx="686.1" cy="146.7" r="11.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="262.9" y="177.7" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">1</tspan>  7.00, 10.00</text>
+  <circle cx="686.1" cy="146.7" r="11.0" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M671.1 146.7h30.0M686.1 131.7v30.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="697.1" y="177.7" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  67.00, 10.00</text>
-  <circle cx="273.9" cy="284.1" r="11.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="697.1" y="177.7" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">2</tspan>  67.00, 10.00</text>
+  <circle cx="273.9" cy="284.1" r="11.0" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M258.9 284.1h30.0M273.9 269.1v30.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="262.9" y="263.1" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  7.00, 30.00</text>
-  <circle cx="686.1" cy="284.1" r="11.0" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="262.9" y="263.1" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">3</tspan>  7.00, 30.00</text>
+  <circle cx="686.1" cy="284.1" r="11.0" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M671.1 284.1h30.0M686.1 269.1v30.0" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="697.1" y="263.1" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  67.00, 30.00</text>
-  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  <text x="697.1" y="263.1" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">4</tspan>  67.00, 30.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#b3b3b3">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
   </svg>
   </div>
   <figcaption>Board outline 74 × 49.5&nbsp;mm, corners rounded to a 2&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>

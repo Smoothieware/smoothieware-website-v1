@@ -162,15 +162,15 @@ Contacts keep their numbers. Contacts 1, 2, 5, 7, 8, 9 and 10 are joined straigh
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Minimum wiring">
 <svg viewBox="0 0 1000 280" role="img" aria-labelledby="xb-joy-wire-t">
 <title id="xb-joy-wire-t">Minimum wiring: contact 1 to contact 1, 3.3 V; PC3, contact 3 to contact 3, X axis; PA3, contact 4 to contact 4, Y axis; PF2, contact 6 to contact 6, switch; contact 10 to contact 10, ground.</title>
-<rect x="20" y="20" width="280" height="240" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="160.0" y="145.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2"></text>
-<rect x="700" y="20" width="280" height="240" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="840.0" y="145.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2"></text>
-<text x="160" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Prime header GH (J39)</text>
-<text x="840" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">Joystick J1 (A IN)</text>
-<path d="M300 84H700" stroke="#ff9f43" stroke-width="3" fill="none"/><circle cx="300" cy="84" r="5" fill="#ff9f43"/><circle cx="700" cy="84" r="5" fill="#ff9f43"/><text x="286" y="89" text-anchor="end" font-size="13" fill="#e6ebf2">contact 1</text><text x="714" y="89" font-size="13" fill="#e6ebf2">contact 1</text><text x="500" y="77" text-anchor="middle" font-size="12" fill="#a9b4c2">3.3 V</text>
-<path d="M300 122H700" stroke="#5fb3ff" stroke-width="3" fill="none"/><circle cx="300" cy="122" r="5" fill="#5fb3ff"/><circle cx="700" cy="122" r="5" fill="#5fb3ff"/><text x="286" y="127" text-anchor="end" font-size="13" fill="#e6ebf2">PC3, contact 3</text><text x="714" y="127" font-size="13" fill="#e6ebf2">contact 3</text><text x="500" y="115" text-anchor="middle" font-size="12" fill="#a9b4c2">X axis</text>
-<path d="M300 160H700" stroke="#5fb3ff" stroke-width="3" fill="none"/><circle cx="300" cy="160" r="5" fill="#5fb3ff"/><circle cx="700" cy="160" r="5" fill="#5fb3ff"/><text x="286" y="165" text-anchor="end" font-size="13" fill="#e6ebf2">PA3, contact 4</text><text x="714" y="165" font-size="13" fill="#e6ebf2">contact 4</text><text x="500" y="153" text-anchor="middle" font-size="12" fill="#a9b4c2">Y axis</text>
-<path d="M300 198H700" stroke="#6fe08a" stroke-width="3" fill="none"/><circle cx="300" cy="198" r="5" fill="#6fe08a"/><circle cx="700" cy="198" r="5" fill="#6fe08a"/><text x="286" y="203" text-anchor="end" font-size="13" fill="#e6ebf2">PF2, contact 6</text><text x="714" y="203" font-size="13" fill="#e6ebf2">contact 6</text><text x="500" y="191" text-anchor="middle" font-size="12" fill="#a9b4c2">switch</text>
-<path d="M300 236H700" stroke="#a9b4c2" stroke-width="3" fill="none"/><circle cx="300" cy="236" r="5" fill="#a9b4c2"/><circle cx="700" cy="236" r="5" fill="#a9b4c2"/><text x="286" y="241" text-anchor="end" font-size="13" fill="#e6ebf2">contact 10</text><text x="714" y="241" font-size="13" fill="#e6ebf2">contact 10</text><text x="500" y="229" text-anchor="middle" font-size="12" fill="#a9b4c2">ground</text>
+<rect x="20" y="20" width="280" height="240" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="160.0" y="145.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea"></text>
+<rect x="700" y="20" width="280" height="240" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="840.0" y="145.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea"></text>
+<text x="160" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">Prime header GH (J39)</text>
+<text x="840" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">Joystick J1 (A IN)</text>
+<path d="M300 84H700" stroke="#ff9f43" stroke-width="3" fill="none"/><circle cx="300" cy="84" r="5" fill="#ff9f43"/><circle cx="700" cy="84" r="5" fill="#ff9f43"/><text x="286" y="89" text-anchor="end" font-size="13" fill="#eaeaea">contact 1</text><text x="714" y="89" font-size="13" fill="#eaeaea">contact 1</text><text x="500" y="77" text-anchor="middle" font-size="12" fill="#b3b3b3">3.3 V</text>
+<path d="M300 122H700" stroke="#5fb3ff" stroke-width="3" fill="none"/><circle cx="300" cy="122" r="5" fill="#5fb3ff"/><circle cx="700" cy="122" r="5" fill="#5fb3ff"/><text x="286" y="127" text-anchor="end" font-size="13" fill="#eaeaea">PC3, contact 3</text><text x="714" y="127" font-size="13" fill="#eaeaea">contact 3</text><text x="500" y="115" text-anchor="middle" font-size="12" fill="#b3b3b3">X axis</text>
+<path d="M300 160H700" stroke="#5fb3ff" stroke-width="3" fill="none"/><circle cx="300" cy="160" r="5" fill="#5fb3ff"/><circle cx="700" cy="160" r="5" fill="#5fb3ff"/><text x="286" y="165" text-anchor="end" font-size="13" fill="#eaeaea">PA3, contact 4</text><text x="714" y="165" font-size="13" fill="#eaeaea">contact 4</text><text x="500" y="153" text-anchor="middle" font-size="12" fill="#b3b3b3">Y axis</text>
+<path d="M300 198H700" stroke="#6fe08a" stroke-width="3" fill="none"/><circle cx="300" cy="198" r="5" fill="#6fe08a"/><circle cx="700" cy="198" r="5" fill="#6fe08a"/><text x="286" y="203" text-anchor="end" font-size="13" fill="#eaeaea">PF2, contact 6</text><text x="714" y="203" font-size="13" fill="#eaeaea">contact 6</text><text x="500" y="191" text-anchor="middle" font-size="12" fill="#b3b3b3">switch</text>
+<path d="M300 236H700" stroke="#b3b3b3" stroke-width="3" fill="none"/><circle cx="300" cy="236" r="5" fill="#b3b3b3"/><circle cx="700" cy="236" r="5" fill="#b3b3b3"/><text x="286" y="241" text-anchor="end" font-size="13" fill="#eaeaea">contact 10</text><text x="714" y="241" font-size="13" fill="#eaeaea">contact 10</text><text x="500" y="229" text-anchor="middle" font-size="12" fill="#b3b3b3">ground</text>
 </svg>
   </div>
   <figcaption>The five connections the board needs. A straight ten-way cable makes all of them.</figcaption>
@@ -231,21 +231,21 @@ The syntax follows the [SmoothieV2 button box module](https://github.com/Smoothi
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Signal path">
 <svg viewBox="0 0 1000 290" role="img" aria-labelledby="xb-joy-how-t">
 <title id="xb-joy-how-t">Each potentiometer wiper passes through a resistor and capacitor filter to an analogue contact; the switch pulls a resistor-held line low.</title>
-<rect x="20.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="120.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Stick X</text><text x="120.0" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">10 k element</text>
-<path d="M220.0 51H400.0" stroke="#a9b4c2" stroke-width="3"/><path d="M400.0 51l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="400.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="500.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">1 k + 10 nF</text><text x="500.0" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">filter</text>
-<path d="M600.0 51H780.0" stroke="#a9b4c2" stroke-width="3"/><path d="M780.0 51l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="780.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="880.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J1 contact 3</text><text x="880.0" y="67.0" text-anchor="middle" font-size="12" fill="#a9b4c2">ADC1_5</text>
-<rect x="20.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="120.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Stick Y</text><text x="120.0" y="157.0" text-anchor="middle" font-size="12" fill="#a9b4c2">10 k element</text>
-<path d="M220.0 141H400.0" stroke="#a9b4c2" stroke-width="3"/><path d="M400.0 141l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="400.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="500.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">1 k + 10 nF</text><text x="500.0" y="157.0" text-anchor="middle" font-size="12" fill="#a9b4c2">filter</text>
-<path d="M600.0 141H780.0" stroke="#a9b4c2" stroke-width="3"/><path d="M780.0 141l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="780.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="880.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J1 contact 4</text><text x="880.0" y="157.0" text-anchor="middle" font-size="12" fill="#a9b4c2">ADC1_6</text>
-<rect x="20.0" y="200" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="120.0" y="227.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Push switch</text><text x="120.0" y="247.0" text-anchor="middle" font-size="12" fill="#a9b4c2">closes to ground</text>
-<path d="M220.0 231H400.0" stroke="#a9b4c2" stroke-width="3"/><path d="M400.0 231l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="400.0" y="200" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="500.0" y="227.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">1 k, 10 k, 100 nF</text><text x="500.0" y="247.0" text-anchor="middle" font-size="12" fill="#a9b4c2">debounce</text>
-<path d="M600.0 231H780.0" stroke="#a9b4c2" stroke-width="3"/><path d="M780.0 231l-9 -5v10z" fill="#a9b4c2"/>
-<rect x="780.0" y="200" width="200" height="62" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="880.0" y="227.0" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J1 contact 6</text><text x="880.0" y="247.0" text-anchor="middle" font-size="12" fill="#a9b4c2">PF2</text>
+<rect x="20.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="120.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">Stick X</text><text x="120.0" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">10 k element</text>
+<path d="M220.0 51H400.0" stroke="#b3b3b3" stroke-width="3"/><path d="M400.0 51l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="400.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="500.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">1 k + 10 nF</text><text x="500.0" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">filter</text>
+<path d="M600.0 51H780.0" stroke="#b3b3b3" stroke-width="3"/><path d="M780.0 51l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="780.0" y="20" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="880.0" y="47.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">J1 contact 3</text><text x="880.0" y="67.0" text-anchor="middle" font-size="12" fill="#b3b3b3">ADC1_5</text>
+<rect x="20.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="120.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">Stick Y</text><text x="120.0" y="157.0" text-anchor="middle" font-size="12" fill="#b3b3b3">10 k element</text>
+<path d="M220.0 141H400.0" stroke="#b3b3b3" stroke-width="3"/><path d="M400.0 141l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="400.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="500.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">1 k + 10 nF</text><text x="500.0" y="157.0" text-anchor="middle" font-size="12" fill="#b3b3b3">filter</text>
+<path d="M600.0 141H780.0" stroke="#b3b3b3" stroke-width="3"/><path d="M780.0 141l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="780.0" y="110" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="880.0" y="137.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">J1 contact 4</text><text x="880.0" y="157.0" text-anchor="middle" font-size="12" fill="#b3b3b3">ADC1_6</text>
+<rect x="20.0" y="200" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="120.0" y="227.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">Push switch</text><text x="120.0" y="247.0" text-anchor="middle" font-size="12" fill="#b3b3b3">closes to ground</text>
+<path d="M220.0 231H400.0" stroke="#b3b3b3" stroke-width="3"/><path d="M400.0 231l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="400.0" y="200" width="200" height="62" rx="8" fill="#1f2226" stroke="#5fb3ff" stroke-width="1.5"/><text x="500.0" y="227.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">1 k, 10 k, 100 nF</text><text x="500.0" y="247.0" text-anchor="middle" font-size="12" fill="#b3b3b3">debounce</text>
+<path d="M600.0 231H780.0" stroke="#b3b3b3" stroke-width="3"/><path d="M780.0 231l-9 -5v10z" fill="#b3b3b3"/>
+<rect x="780.0" y="200" width="200" height="62" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="880.0" y="227.0" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">J1 contact 6</text><text x="880.0" y="247.0" text-anchor="middle" font-size="12" fill="#b3b3b3">PF2</text>
 </svg>
   </div>
   <figcaption>Three independent paths; there is no active electronics on the board.</figcaption>
@@ -265,12 +265,12 @@ Three links keep the joystick&rsquo;s own signals off the chain. Leave them open
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Solder links">
 <svg viewBox="0 0 1000 114" role="img" aria-labelledby="xb-joy-jp-t">
 <title id="xb-joy-jp-t">Solder links as delivered: JP3 open; JP4 open; JP6 open.</title>
-<rect x="20" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="72" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="114" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
-<text x="108" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP3 · open</text><text x="108" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">chain contact 3</text>
-<rect x="216" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="268" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="310" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
-<text x="304" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP4 · open</text><text x="304" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">chain contact 4</text>
-<rect x="412" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#59616e"/><rect x="464" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="506" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
-<text x="500" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#e6ebf2">JP6 · open</text><text x="500" y="90" text-anchor="middle" font-size="11" fill="#a9b4c2">chain contact 6</text>
+<rect x="20" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="72" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="114" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<text x="108" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP3 · open</text><text x="108" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">chain contact 3</text>
+<rect x="216" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="268" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="310" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<text x="304" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP4 · open</text><text x="304" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">chain contact 4</text>
+<rect x="412" y="10" width="176" height="90" rx="8" fill="#1f2226" stroke="#606060"/><rect x="464" y="24" width="30" height="30" rx="6" fill="#e0b84a"/><rect x="506" y="24" width="30" height="30" rx="6" fill="#e0b84a"/>
+<text x="500" y="72" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">JP6 · open</text><text x="500" y="90" text-anchor="middle" font-size="11" fill="#b3b3b3">chain contact 6</text>
 </svg>
   </div>
   <figcaption>The links as delivered. Close one with a small blob of solder across both pads; open it by removing the solder or cutting the copper between the pads.</figcaption>
@@ -346,29 +346,29 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
   <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-joy-mount-t">
   <title id="xb-joy-mount-t">Mounting drawing of the thumb joystick board, component side: outline 50 by 40 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
-  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
-  <rect x="267.5" y="78.0" width="425.0" height="340.0" rx="8.5" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
-  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M267.5 56H692.5"/><path d="M267.5 50V62"/><path d="M692.5 50V62"/><path d="M718.5 78.0V418.0"/><path d="M712.5 78.0h12"/><path d="M712.5 418.0h12"/></g>
-  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">50</text>
-  <text x="730.5" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">40</text>
+  <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#b3b3b3">COMPONENT SIDE · millimetres</text>
+  <rect x="267.5" y="78.0" width="425.0" height="340.0" rx="8.5" fill="#1f2226" stroke="#eaeaea" stroke-width="1.5"/>
+  <g stroke="#b3b3b3" stroke-width="1.2" fill="none"><path d="M267.5 56H692.5"/><path d="M267.5 50V62"/><path d="M692.5 50V62"/><path d="M718.5 78.0V418.0"/><path d="M712.5 78.0h12"/><path d="M712.5 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#eaeaea">50</text>
+  <text x="730.5" y="253.0" font-size="15" font-weight="700" fill="#eaeaea">40</text>
   <circle cx="267.5" cy="78.0" r="4" fill="#ffcc33"/>
   <text x="255.5" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
   <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M209.5 104.0h30" fill="none"/><path d="M243.5 104.0l-8 -4v8z"/><path d="M209.5 104.0v30" fill="none"/><path d="M209.5 138.0l-4 -8h8z"/></g>
   <text x="247.5" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
   <text x="205.5" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
-  <circle cx="310.0" cy="120.5" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <circle cx="310.0" cy="120.5" r="13.6" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M292.4 120.5h35.2M310.0 102.9v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="296.4" y="154.1" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 5.00</text>
-  <circle cx="650.0" cy="120.5" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="296.4" y="154.1" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 5.00</text>
+  <circle cx="650.0" cy="120.5" r="13.6" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M632.4 120.5h35.2M650.0 102.9v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="663.6" y="154.1" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  45.00, 5.00</text>
-  <circle cx="310.0" cy="375.5" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="663.6" y="154.1" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">2</tspan>  45.00, 5.00</text>
+  <circle cx="310.0" cy="375.5" r="13.6" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M292.4 375.5h35.2M310.0 357.9v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="296.4" y="351.9" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 35.00</text>
-  <circle cx="650.0" cy="375.5" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <text x="296.4" y="351.9" text-anchor="start" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 35.00</text>
+  <circle cx="650.0" cy="375.5" r="13.6" fill="#191919" stroke="#ffcc33" stroke-width="2"/>
   <path d="M632.4 375.5h35.2M650.0 357.9v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="663.6" y="351.9" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  45.00, 35.00</text>
-  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
+  <text x="663.6" y="351.9" text-anchor="end" font-size="13" fill="#eaeaea"><tspan font-weight="700" fill="#ffcc33">4</tspan>  45.00, 35.00</text>
+  <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#b3b3b3">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
   </svg>
   </div>
   <figcaption>Board outline 50 × 40&nbsp;mm, corners rounded to a 1&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
@@ -429,14 +429,14 @@ The wiper filter and the switch network were simulated with ngspice. The wiper c
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Simulated results against limits">
 <svg viewBox="0 0 1000 238" role="img" aria-labelledby="xb-joy-sim-t">
 <title id="xb-joy-sim-t">Each simulated value (yellow mark) against its allowed range (green band).</title>
-<text x="385" y="41" text-anchor="end" font-size="13" fill="#e6ebf2">Centre output at 3.3 V, 10 k element, no load</text>
-<path d="M400 36H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M629.6 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">1.65&nbsp;V</text>
-<text x="385" y="93" text-anchor="end" font-size="13" fill="#e6ebf2">Settling to 0.1 % after a step</text>
-<path d="M400 88H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M499.3 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">0.24&nbsp;ms</text>
-<text x="385" y="145" text-anchor="end" font-size="13" fill="#e6ebf2">Switch output when pressed</text>
-<path d="M400 140H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M646.5 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">0.30&nbsp;V</text>
-<text x="385" y="197" text-anchor="end" font-size="13" fill="#e6ebf2">Switch output 5.9 ms after release</text>
-<path d="M400 192H860" stroke="#3a414c" stroke-width="10" stroke-linecap="round"/><path d="M444.5 192H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M752.9 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">3.3&nbsp;V</text>
+<text x="385" y="41" text-anchor="end" font-size="13" fill="#eaeaea">Centre output at 3.3 V, 10 k element, no load</text>
+<path d="M400 36H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M444.5 36H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M629.6 23v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="41" font-size="13" font-weight="700" fill="#ffcc33">1.65&nbsp;V</text>
+<text x="385" y="93" text-anchor="end" font-size="13" fill="#eaeaea">Settling to 0.1 % after a step</text>
+<path d="M400 88H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M400.0 88H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M499.3 75v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="93" font-size="13" font-weight="700" fill="#ffcc33">0.24&nbsp;ms</text>
+<text x="385" y="145" text-anchor="end" font-size="13" fill="#eaeaea">Switch output when pressed</text>
+<path d="M400 140H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M400.0 140H810.7" stroke="#2f8f5b" stroke-width="10"/><path d="M646.5 127v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="145" font-size="13" font-weight="700" fill="#ffcc33">0.30&nbsp;V</text>
+<text x="385" y="197" text-anchor="end" font-size="13" fill="#eaeaea">Switch output 5.9 ms after release</text>
+<path d="M400 192H860" stroke="#404040" stroke-width="10" stroke-linecap="round"/><path d="M444.5 192H815.5" stroke="#2f8f5b" stroke-width="10"/><path d="M752.9 179v26" stroke="#ffcc33" stroke-width="4"/><text x="880" y="197" font-size="13" font-weight="700" fill="#ffcc33">3.3&nbsp;V</text>
 </svg>
   </div>
   <figcaption>Simulated value (yellow) against the limit used for it (green). Each bar has its own scale.</figcaption>

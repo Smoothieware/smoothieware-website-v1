@@ -7,10 +7,10 @@
 /* CSS Custom Properties for easy customization */
 :root {
     /* Default state colors (no status) */
-    --review-proposal-default-bg: #2a3444;
-    --review-proposal-default-border: #4a70a0;
-    --review-original-default-bg: #3a2d44;
-    --review-original-default-border: #7050a0;
+    --review-proposal-default-bg: #333333;
+    --review-proposal-default-border: #6e6e6e;
+    --review-original-default-bg: #323232;
+    --review-original-default-border: #606060;
 
     /* Accepted state colors */
     --review-accepted-bg: #2c3a2c;
@@ -26,10 +26,10 @@
 
     /* Control colors */
     --review-controls-bg: rgba(40, 40, 40, 0.95);
-    --review-toggle-color: #9ca3af;
+    --review-toggle-color: #a2a2a2;
     --review-accept-color: #28a745;
     --review-reject-color: #dc3545;
-    --review-comment-color: #3b82f6;
+    --review-comment-color: #858585;
 }
 
 /* Review container */
@@ -48,7 +48,7 @@
     gap: 0.5em;
     background: var(--review-controls-bg);
     padding: 0.25em;
-    border-radius: 4px;
+    border-radius: 2px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -80,12 +80,12 @@
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5),
                 0 0 0 4px rgba(0, 0, 0, 0.2);
     background-color: rgba(0, 0, 0, 0.05);
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 /* Content area */
 .review-content {
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 /* Proposal content styling - default (no status) */
@@ -93,7 +93,7 @@
     background-color: var(--review-proposal-default-bg);
     padding: 1em;
     border-left: 4px solid var(--review-proposal-default-border);
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 /* Original content styling - default (no status) */
@@ -101,7 +101,7 @@
     background-color: var(--review-original-default-bg);
     padding: 1em;
     border-left: 4px solid var(--review-original-default-border);
-    border-radius: 4px;
+    border-radius: 2px;
 }
 
 /* Accepted state */
@@ -197,6 +197,6 @@
 
 /* Focus styles for accessibility */
 .review-icon::part(base):focus-visible {
-    outline: 2px solid #007bff;
+    outline: 2px solid #7f7f7f;
     outline-offset: 2px;
 }

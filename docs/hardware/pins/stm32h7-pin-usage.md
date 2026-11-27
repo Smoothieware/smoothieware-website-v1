@@ -912,25 +912,6 @@ For users migrating from V1, here's how key functions map between versions:
 The following images are extracted from the V2 Prime (TMC2660 variant) KiCad schematic PDF:
 
 {::nomarkdown}
-<style>
-.schematic-figure {
-  width: 100%;
-  margin: 2em 0;
-}
-.schematic-figure img {
-  width: 100%;
-  height: auto;
-  border: 1px solid #444;
-  border-radius: 4px;
-}
-.schematic-figure figcaption {
-  text-align: center;
-  font-size: 0.9em;
-  color: #aaa;
-  margin-top: 0.5em;
-  font-style: italic;
-}
-</style>
 
 <figure class="schematic-figure">
   <a href="/images/v2-schematic/schematic-page-01.png">

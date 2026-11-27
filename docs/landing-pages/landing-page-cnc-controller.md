@@ -14,7 +14,7 @@ title: CNC Controller Board - Smoothieboard v2 Prime
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <a href="https://www.robosprout.com/product-category/smoothieboards" style="display: inline-block; background: #0066cc; color: white; padding: 1rem 2rem; font-size: 1.25rem; font-weight: bold; text-decoration: none; border-radius: 8px;">
+  <a href="https://www.robosprout.com/product-category/smoothieboards" style="display: inline-block; background: #686868; color: white; padding: 1rem 2rem; font-size: 1.25rem; font-weight: bold; text-decoration: none; border-radius: 2px;">
     Shop Now - $200 at Robosprout
   </a>
   <div style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
@@ -166,7 +166,7 @@ title: CNC Controller Board - Smoothieboard v2 Prime
 
 {::nomarkdown}
 <div style="text-align: center; margin: 3rem 0;">
-  <a href="https://www.robosprout.com/product-category/smoothieboards" style="display: inline-block; background: #28a745; color: white; padding: 1.5rem 3rem; font-size: 1.5rem; font-weight: bold; text-decoration: none; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+  <a href="https://www.robosprout.com/product-category/smoothieboards" style="display: inline-block; background: #28a745; color: white; padding: 1.5rem 3rem; font-size: 1.5rem; font-weight: bold; text-decoration: none; border-radius: 2px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
     Shop Smoothieboard v2 - $200
   </a>
   <div style="margin-top: 1rem;">

@@ -23,7 +23,7 @@ raw {
     padding:         0;
 
     /* Rounded corners */
-    border-radius:   3px;
+    border-radius:   2px;
     overflow:        hidden;
 
     /* Vertical alignment with surrounding text */
@@ -55,7 +55,7 @@ raw {
     font-family:     'Courier New', Courier, monospace !important;
 
     /* Match the border radius of the container */
-    border-radius:   3px;
+    border-radius:   2px;
 
     /* Ensure text is selectable */
     user-select:     text;
