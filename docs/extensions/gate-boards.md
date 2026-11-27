@@ -316,13 +316,6 @@ The gate output does not leave the board directly. It switches on a TPS22919 loa
 
 The back of the board holds the power-entry protection: a controller chip with a supply monitor, a protection MOSFET, and three red lights (fault, over-voltage and reverse), each with a solder link to turn it off.
 
-{::nomarkdown}
-<figure class="xb-fig">
-  <img src="/images/extensions/gate-boards/gate-boards-back-view.png" alt="The back of the gate board, showing the power-entry protection circuit and its three red lights marked fault, over-voltage and reverse." style="width:100%;max-width:720px;height:auto;border-radius:10px">
-  <figcaption>The back of the board in a 3D rendering of the design files: the power-entry protection and its three red lights.</figcaption>
-</figure>
-{:/nomarkdown}
-
 What the lights tell you:
 
 {::nomarkdown}

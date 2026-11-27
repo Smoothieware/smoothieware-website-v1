@@ -175,6 +175,12 @@ permalink: /extensions/bouni-rs485-spindle-control
 An unpowered check of the board before it meets a controller or a drive.
 
 {::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="The connections of the board">
+  <svg viewBox="0 0 1000 600" role="img" aria-labelledby="xb-bsmr-wire"><title id="xb-bsmr-wire">Wiring: controller ground, direction, UART receive, UART transmit, 5 volt and 3.3 volt to J1 contacts 10, 6, 5, 4, 2 and 1; J3 contacts 1, 2 and 3 to the drive serial port D plus, D minus and common.</title><rect x="16" y="16" width="220" height="200" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="126" y="40" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Controller</text><image href="/images/extensions/bouni-rs485-spindle-control/bouni-rs485-spindle-control-diagram.webp" x="322.4" y="102.4" width="375.7" height="392.7"/><path d="M230 62H253V14H446.6V148.6" fill="none" stroke="#0d0f12" stroke-width="5.5" stroke-linejoin="round"/><path d="M230 62H253V14H446.6V148.6" fill="none" stroke="#8b949e" stroke-width="3" stroke-linejoin="round"/><circle cx="446.6" cy="148.6" r="3.6" fill="#8b949e" stroke="#fff" stroke-width="1"/><rect x="96" y="51" width="134" height="22" rx="11" fill="#8b949e"/><text x="163.0" y="66.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#111">10: ground</text><path d="M230 88H266V29H425.0V148.6" fill="none" stroke="#0d0f12" stroke-width="5.5" stroke-linejoin="round"/><path d="M230 88H266V29H425.0V148.6" fill="none" stroke="#2f7fe0" stroke-width="3" stroke-linejoin="round"/><circle cx="425.0" cy="148.6" r="3.6" fill="#2f7fe0" stroke="#fff" stroke-width="1"/><rect x="96" y="77" width="134" height="22" rx="11" fill="#2f7fe0"/><text x="163.0" y="92.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">6: direction</text><path d="M230 114H279V44H419.0V146.4L425.0 159.4" fill="none" stroke="#0d0f12" stroke-width="5.5" stroke-linejoin="round"/><path d="M230 114H279V44H419.0V146.4L425.0 159.4" fill="none" stroke="#e0b82f" stroke-width="3" stroke-linejoin="round"/><circle cx="425.0" cy="159.4" r="3.6" fill="#e0b82f" stroke="#fff" stroke-width="1"/><rect x="96" y="103" width="134" height="22" rx="11" fill="#e0b82f"/><text x="163.0" y="118.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#111">5: UART RX</text><path d="M230 140H292V59H414.2V148.6" fill="none" stroke="#0d0f12" stroke-width="5.5" stroke-linejoin="round"/><path d="M230 140H292V59H414.2V148.6" fill="none" stroke="#2e9e5b" stroke-width="3" stroke-linejoin="round"/><circle cx="414.2" cy="148.6" r="3.6" fill="#2e9e5b" stroke="#fff" stroke-width="1"/><rect x="96" y="129" width="134" height="22" rx="11" fill="#2e9e5b"/><text x="163.0" y="144.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">4: UART TX</text><path d="M230 166H305V74H403.4V148.6" fill="none" stroke="#0d0f12" stroke-width="5.5" stroke-linejoin="round"/><path d="M230 166H305V74H403.4V148.6" fill="none" stroke="#e8820c" stroke-width="3" stroke-linejoin="round"/><circle cx="403.4" cy="148.6" r="3.6" fill="#e8820c" stroke="#fff" stroke-width="1"/><rect x="96" y="155" width="134" height="22" rx="11" fill="#e8820c"/><text x="163.0" y="170.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#111">2: 5 V</text><path d="M230 192H318V89H397.4V146.4L403.4 159.4" fill="none" stroke="#0d0f12" stroke-width="5.5" stroke-linejoin="round"/><path d="M230 192H318V89H397.4V146.4L403.4 159.4" fill="none" stroke="#d92d2d" stroke-width="3" stroke-linejoin="round"/><circle cx="403.4" cy="159.4" r="3.6" fill="#d92d2d" stroke="#fff" stroke-width="1"/><rect x="96" y="181" width="134" height="22" rx="11" fill="#d92d2d"/><text x="163.0" y="196.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">1: 3.3 V</text><rect x="790" y="300" width="190" height="180" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="885" y="326" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Drive serial port</text><text x="885" y="468" text-anchor="middle" font-size="12" fill="#a9b4c2">names per its manual</text><path d="M561.0 426.0V580H766V430H806" fill="none" stroke="#0d0f12" stroke-width="5.5" stroke-linejoin="round"/><path d="M561.0 426.0V580H766V430H806" fill="none" stroke="#2f7fe0" stroke-width="3" stroke-linejoin="round"/><circle cx="561.0" cy="426.0" r="3.6" fill="#2f7fe0" stroke="#fff" stroke-width="1"/><circle cx="806.0" cy="430.0" r="3.6" fill="#2f7fe0" stroke="#fff" stroke-width="1"/><rect x="814" y="419" width="100" height="22" rx="11" fill="#2f7fe0"/><text x="864.0" y="434.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#fff">D+ / A</text><path d="M590.8 426.0V550H748V395H806" fill="none" stroke="#0d0f12" stroke-width="5.5" stroke-linejoin="round"/><path d="M590.8 426.0V550H748V395H806" fill="none" stroke="#e0b82f" stroke-width="3" stroke-linejoin="round"/><circle cx="590.8" cy="426.0" r="3.6" fill="#e0b82f" stroke="#fff" stroke-width="1"/><circle cx="806.0" cy="395.0" r="3.6" fill="#e0b82f" stroke="#fff" stroke-width="1"/><rect x="814" y="384" width="100" height="22" rx="11" fill="#e0b82f"/><text x="864.0" y="399.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#111">D&#8722; / B</text><path d="M620.5 426.0V520H730V360H806" fill="none" stroke="#0d0f12" stroke-width="5.5" stroke-linejoin="round"/><path d="M620.5 426.0V520H730V360H806" fill="none" stroke="#8b949e" stroke-width="3" stroke-linejoin="round"/><circle cx="620.5" cy="426.0" r="3.6" fill="#8b949e" stroke="#fff" stroke-width="1"/><circle cx="806.0" cy="360.0" r="3.6" fill="#8b949e" stroke="#fff" stroke-width="1"/><rect x="814" y="349" width="100" height="22" rx="11" fill="#8b949e"/><text x="864.0" y="364.5" text-anchor="middle" font-size="12.5" font-weight="700" fill="#111">common</text></svg>
+  </div>
+  <figcaption>The connections of the board. Wire it only after your controller pins, host software and the drive manual are confirmed; SmoothieV2 does not drive this link itself.</figcaption>
+</figure>
 <ol class="xb-steps">
   <li class="xb-step">
     <h3>Set the bus ends</h3>
@@ -201,9 +207,30 @@ SmoothieV2 contains no Modbus or drive-command application: no configuration app
 
 The ISOW1412 carries data and its own field-side power across the isolation barrier. The direction contact selects whether it drives or listens. Close SJ1 only if this board sits at an end of the bus.
 
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Data path: the direction contact selects sending or listening">
+  <svg viewBox="0 0 1000 130" role="img" aria-labelledby="xb-bsmr-path"><title id="xb-bsmr-path">The controller UART signals cross the isolation barrier inside the ISOW1412 to the RS-485 bus.</title><rect x="20" y="20" width="218" height="90" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="129" y="58" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Controller UART</text><text x="129" y="82" text-anchor="middle" font-size="12" fill="#a9b4c2">J1 contacts 4, 5, 6</text><rect x="268" y="20" width="218" height="90" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="376" y="58" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Isolation barrier</text><text x="376" y="82" text-anchor="middle" font-size="12" fill="#a9b4c2">inside U1</text><path d="M240 65H260" stroke="#5fb3ff" stroke-width="3"/><path d="M258 58L266 65L258 72Z" fill="#5fb3ff"/><rect x="515" y="20" width="218" height="90" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="624" y="58" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Transceiver U1</text><text x="624" y="82" text-anchor="middle" font-size="12" fill="#a9b4c2">ISOW1412</text><path d="M487 65H507" stroke="#5fb3ff" stroke-width="3"/><path d="M505 58L514 65L505 72Z" fill="#5fb3ff"/><rect x="762" y="20" width="218" height="90" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><text x="871" y="58" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">RS-485 bus</text><text x="871" y="82" text-anchor="middle" font-size="12" fill="#a9b4c2">J3 D+ and D&#8722;</text><path d="M734 65H754" stroke="#5fb3ff" stroke-width="3"/><path d="M752 58L762 65L752 72Z" fill="#5fb3ff"/></svg>
+  </div>
+  <figcaption>Data path: the direction contact selects sending or listening.</figcaption>
+</figure>
+{:/nomarkdown}
+
 ## Chaining {#chaining}
 
 J2 passes the Gadgeteer socket on to a further board. The UART and direction contacts are used by this board. A solder link on each contact sets whether it is passed through: check the link labels against <a href="#pinout">Pinout</a> before stacking boards.
+
+{::nomarkdown}
+{% include _includes/extension-chain-figure.html id="xb-bouni-rs485-spindle-control" board="RS-485 board" in_label="IN" chain_label="CHAIN" lane1="pin 3" lane2="pin 4, UART transmit" lane3="pin 6, direction" s1="closed" s2="open" s3="open" caption="Contacts 4, 5 and 6 stop at this board." %}
+<div class="xb-tablewrap"><table>
+  <thead><tr><th>Contacts</th><th>Link as designed</th><th>On CHAIN</th></tr></thead>
+  <tbody>
+    <tr><td>1, 2, 10</td><td>none, wired through</td><td>3.3 V, 5 V, ground</td></tr>
+    <tr><td>3, 7, 8, 9</td><td>closed</td><td>passed on</td></tr>
+    <tr><td>4 (transmit), 5 (receive), 6 (direction)</td><td>open</td><td>stop here</td></tr>
+  </tbody>
+</table></div>
+{:/nomarkdown}
 
 ## Troubleshooting {#troubleshooting}
 
@@ -224,123 +251,6 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 {::nomarkdown}
 <p>The design files for this board are not published for download.</p>
 {:/nomarkdown}
-
-## Wiring figures {#wiring-figures}
-
-<details markdown="1">
-<summary>Reading the connector callouts</summary>
-
-The dark end of each pill gives the contact number. The adjoining label gives its function. Colours help locate related functions; the label and connection instructions determine how to use the contact.
-
-- Red: 3.3 V supply.
-- Orange: 5 V supply.
-- Violet: Control signal.
-- Green: Signal — use the printed function label.
-- Near-black: Circuit ground.
-- Dark grey: Other labelled contact — read its exact function.
-
-A voltage in a signal name does not make that contact a power output. Circuit ground, cable shield and protective earth are different connections. An underside projection shows rear components through the front view; it is not a mirrored rear view.
-
-</details>
-
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-overview" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-overview.webp" title="Spindle module RS485" alt="Spindle module RS485 on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-j1-1-5" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-j1-1-5-central-pills.webp" title="J1 · Host interface" alt="J1 · Host interface on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-j1-6-10" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-j1-6-10-central-pills.webp" title="J1 · Host interface" alt="J1 · Host interface on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-j2-1-5" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-j2-1-5-central-pills.webp" title="J2 · Chain interface" alt="J2 · Chain interface on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-j2-6-10" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-j2-6-10-central-pills.webp" title="J2 · Chain interface" alt="J2 · Chain interface on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-vfd-1-3" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-vfd-1-3-central-pills.webp" title="J3 · RS485 bus" alt="J3 · RS485 bus on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-links3" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-links3.webp" title="Chain signal links" alt="Chain signal links on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-links6" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-links6.webp" title="Chain signal links" alt="Chain signal links on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-links8" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-links8.webp" title="Chain signal links" alt="Chain signal links on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-serial" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-serial.webp" title="Serial and direction path" alt="Serial and direction path on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-termination" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-termination.webp" title="Bus end termination" alt="Bus end termination on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-power" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-power.webp" title="Two supply domains" alt="Two supply domains on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-tests0" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-tests0-underside-caption.webp" title="Interface test pads" alt="Interface test pads on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-tests5" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-tests5-underside-caption.webp" title="Interface test pads" alt="Interface test pads on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
-
-{% include _includes/extension-instruction-diagram.html id="bouni-spindle-module-boards-v19-bsm-rs485-reader-compact-mounts" src="/images/extensions/bouni-spindle-module-boards/guides/bsm-rs485/reader-compact-mounts.webp" title="Mounting holes" alt="Mounting holes on the RS-485 board" caption="Component-side reference. Use the overview and focused sheets together." width=420 %}
-
-The annotated board-reference sheets above describe the board; the contact table below accompanies them. Follow the wiring section for the connection procedure and its limitations.
-
-### Connector contacts
-
-Contact numbering below is the PCB's pad numbering, viewed using the board-reference drawing. Same-numbered duplicate lands are combined in this table. Mechanical unnumbered pads are omitted here. `NC` means unconnected, not a spare. Named nets alone do not establish direction; use the signal-path explanation above.
-
-<details markdown="1">
-<summary>Contact inventory</summary>
-
-| Connector | Contact(s) | Function/net |
-| --- | --- | --- |
-| J1 — GADGETEER IN | 1 | `+3V3` |
-| J1 — GADGETEER IN | 2 | `+5V` |
-| J1 — GADGETEER IN | 3 | `/GAD_P3` |
-| J1 — GADGETEER IN | 4 | `/UART_TX` |
-| J1 — GADGETEER IN | 5 | `/UART_RX` |
-| J1 — GADGETEER IN | 6 | `/RS485_DIR` |
-| J1 — GADGETEER IN | 7 | `/GAD_P7` |
-| J1 — GADGETEER IN | 8 | `/GAD_P8` |
-| J1 — GADGETEER IN | 9 | `/GAD_P9` |
-| J1 — GADGETEER IN | 10 | `GND` |
-| J2 — GADGETEER CHAIN | 1 | `+3V3` |
-| J2 — GADGETEER CHAIN | 2 | `+5V` |
-| J2 — GADGETEER CHAIN | 3 | `/CHAIN_P3` |
-| J2 — GADGETEER CHAIN | 4 | `/CHAIN_P4` |
-| J2 — GADGETEER CHAIN | 5 | `/CHAIN_P5` |
-| J2 — GADGETEER CHAIN | 6 | `/CHAIN_P6` |
-| J2 — GADGETEER CHAIN | 7 | `/CHAIN_P7` |
-| J2 — GADGETEER CHAIN | 8 | `/CHAIN_P8` |
-| J2 — GADGETEER CHAIN | 9 | `/CHAIN_P9` |
-| J2 — GADGETEER CHAIN | 10 | `GND` |
-| J3 — RS485 D+ D- GND | 1 | `/BUS_P` |
-| J3 — RS485 D+ D- GND | 2 | `/BUS_N` |
-| J3 — RS485 D+ D- GND | 3 | `/GND_ISO` |
-
-</details>
-
-### Links, controls and indicators
-
-The footprint values identify the intended control or indication. A cut-to-disable LED link affects indication only. Check link population and default state before cutting or bridging.
-
-| Item | Label | Contact nets / observation |
-| --- | --- | --- |
-| JP4 | CHAIN P4 OPEN | 1 = /UART_TX; 2 = /CHAIN_P4 |
-| JP5 | CHAIN P5 OPEN | 1 = /UART_RX; 2 = /CHAIN_P5 |
-| JP6 | CHAIN P6 OPEN | 1 = /RS485_DIR; 2 = /CHAIN_P6 |
-| JP7 | CHAIN P7 BRIDGED | 1 = /GAD_P7; 2 = /CHAIN_P7 |
-| JP9 | CHAIN P9 BRIDGED | 1 = /GAD_P9; 2 = /CHAIN_P9 |
-| JP8 | CHAIN P8 BRIDGED | 1 = /GAD_P8; 2 = /CHAIN_P8 |
-| JP3 | CHAIN P3 BRIDGED | 1 = /GAD_P3; 2 = /CHAIN_P3 |
-
-### Termination link
-
-These are additional solder links, including references beginning `SJ` rather than `JP`.
-
-| Link | Label | Pad nets |
-| --- | --- | --- |
-| SJ1 | TERM 120R OPEN | 1=/BUS_P; 2=/TERM_MID |
-
-## Practical use with Smoothieboard V2 Prime
-
-Before installing, confirm the exact drive terminal mapping, protocol, addressing and direction control, as well as the host header allocation and both supply domains.
-
-## Smoothieware use
-
-SmoothieV2 contains no Modbus/VFD command application for this board. The UART console is not a half-duplex direction scheduler, Modbus register implementation or VFD fault controller.  Do not transfer the analog recipe to the serial board or invent Modbus registers.
-
-This refers to SmoothieV2 commit `2a21c0108b1d095ecd8b2b9358e94055f053c003`.
 
 ## Appendix: mounting dimensions {#mounting}
 

@@ -22,6 +22,7 @@ History: see CHANGELOG.archive.md.
 
 ### Fixed
 
+- Bouni analog and RS-485 spindle control pages and the raw pins breakout page: old-style wiring pictures replaced with current wiring, signal-path and chaining figures; a 3D rendering removed from the gate boards page.
 - The extension boards list now links the new Endstop inputs (basic) page in place of the historical ExtraEndstops page, which is linked from an appendix on the new page.
 - The extension boards list now links the new three-channel A5984 stepper driver board page in place of the historical one, which is linked from an appendix on the new page.
 - Extension board drawings now show the solder pads of underside-mounted pin headers, plated test points and prototyping holes. The main drawing on ten board pages now includes these features.
