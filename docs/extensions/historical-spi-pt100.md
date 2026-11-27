@@ -39,6 +39,7 @@ permalink: /extensions/historical-spi-pt100
   <a href="#tour">Board tour</a>
   <a href="#pinout">Pinout</a>
   <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
   <a href="#configuration">Configuration</a>
   <a href="#how-it-works">How it works</a>
   <a href="#troubleshooting">Troubleshooting</a>
@@ -137,6 +138,24 @@ P4 is wired in parallel with P1. Probe terminals: P3.1 FORCE+, P3.2 RTDIN+, P2.1
   <div class="xb-card"><b>SPI port</b><span>With its own select pin</span></div>
 </div>
 {:/nomarkdown}
+
+## Get started {#get-started}
+
+The minimum wiring first, then the order to do it in. Facts about each contact are in the [pinout](#pinout).
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Wiring">
+  <svg viewBox="0 0 1000 472" role="img" aria-labelledby="xb-historical-spi-pt100-wire"><title id="xb-historical-spi-pt100-wire">Wiring: P3 contact 1 to FORCE+; P3 contact 2 to RTDIN+.</title><image href="/images/extensions/historical-spi-pt100/directory-board-render.png" x="321" y="14" width="358" height="230"/><circle cx="526" cy="187" r="17" fill="none" stroke="#ffcc33" stroke-width="3"/><rect x="507" y="206" width="38" height="19" rx="9" fill="#ffcc33" stroke="#ffcc33" stroke-width="1.5"/><text x="526" y="220" text-anchor="middle" font-size="13" font-weight="700" fill="#111">P3</text><text x="130" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">P3 on this board</text><text x="870" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">PT100 probe</text><rect x="700" y="304" width="270" height="150" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><path d="M820 387.0H900M820 371.0H900" fill="none" stroke="#c4cad3" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="916" cy="379" r="20" fill="#b5251e" stroke="#7d120d" stroke-width="3"/><rect x="30" y="304" width="200" height="150" rx="8" fill="#2b2f35" stroke="#9aa2ad" stroke-width="1.5"/><path d="M230 364.0H700" fill="none" stroke="#2f7fe0" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="364" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><circle cx="700" cy="364" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><text x="216" y="369" text-anchor="end" font-size="14" fill="#e6ebf2">  1</text><text x="712" y="369" text-anchor="start" font-size="13" fill="#e6ebf2">FORCE+</text><rect x="340" y="353" width="220" height="22" rx="11" fill="#2f7fe0" stroke="#2f7fe0" stroke-width="1.5"/><text x="450" y="369" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">1: FORCE+</text><path d="M230 394.0H700" fill="none" stroke="#2f7fe0" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="394" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><circle cx="700" cy="394" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><text x="216" y="399" text-anchor="end" font-size="14" fill="#e6ebf2">  2</text><text x="712" y="399" text-anchor="start" font-size="13" fill="#e6ebf2">RTDIN+</text><rect x="340" y="383" width="220" height="22" rx="11" fill="#2f7fe0" stroke="#2f7fe0" stroke-width="1.5"/><text x="450" y="399" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">2: RTDIN+</text></svg>
+  </div>
+  <figcaption>Wiring drawn from the original design files. Make connections with all power off. Equipment is drawn as a typical unit, not a specific model.</figcaption>
+</figure>
+{:/nomarkdown}
+
+1. With all power off, find contact 1 on each connector and check every wire against the [pinout](#pinout).
+2. Connect the other probe lead to P2: contact 1 is RTDIN− and contact 2 FORCE−.
+3. Give the board its own chip-select pin.
+4. Check continuity and the rail voltages with a meter before connecting anything else.
 
 ## Configuration {#configuration}
 

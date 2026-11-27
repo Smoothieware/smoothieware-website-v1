@@ -39,6 +39,7 @@ permalink: /extensions/historical-spi-opto-isolator
   <a href="#tour">Board tour</a>
   <a href="#pinout">Pinout</a>
   <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
   <a href="#configuration">Configuration</a>
   <a href="#how-it-works">How it works</a>
   <a href="#troubleshooting">Troubleshooting</a>
@@ -177,6 +178,23 @@ permalink: /extensions/historical-spi-opto-isolator
   <div class="xb-card"><b>Meter and scope</b><span>To check levels and polarity</span></div>
 </div>
 {:/nomarkdown}
+
+## Get started {#get-started}
+
+The minimum wiring first, then the order to do it in. Facts about each contact are in the [pinout](#pinout).
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Wiring">
+  <svg viewBox="0 0 1000 666" role="img" aria-labelledby="xb-historical-spi-opto-isolator-wire"><title id="xb-historical-spi-opto-isolator-wire">Wiring: P2 contact 1 to ExternalGND; P2 contact 2 to External5V; P1 contact 1 to GND; P1 contact 2 to +5V.</title><image href="/images/extensions/historical-spi-opto-isolator/directory-board-render.png" x="423" y="14" width="155" height="230"/><text x="130" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">P2 on this board</text><text x="870" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">External-side supply</text><rect x="700" y="304" width="270" height="150" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><rect x="810" y="334" width="140" height="90" rx="8" fill="#cfd3d9" stroke="#3a3f46" stroke-width="1.5"/><rect x="824" y="345" width="112" height="34" rx="3" fill="#101418" stroke="#101418" stroke-width="1.5"/><text x="880" y="369" text-anchor="middle" font-size="18" fill="#5df07a">00.0 V</text><circle cx="840" cy="401" r="11" fill="#2c3036" stroke="#0d0f12" stroke-width="1.5"/><circle cx="894" cy="401" r="8" fill="#c0262c" stroke="#0d0f12" stroke-width="1.5"/><circle cx="924" cy="401" r="8" fill="#23262b" stroke="#0d0f12" stroke-width="1.5"/><rect x="30" y="304" width="200" height="150" rx="8" fill="#2b2f35" stroke="#9aa2ad" stroke-width="1.5"/><path d="M230 364.0H700" fill="none" stroke="#8b949e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="364" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><circle cx="700" cy="364" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><text x="216" y="369" text-anchor="end" font-size="14" fill="#e6ebf2">  1</text><text x="712" y="369" text-anchor="start" font-size="13" fill="#e6ebf2">ExternalGND</text><rect x="340" y="353" width="220" height="22" rx="11" fill="#8b949e" stroke="#8b949e" stroke-width="1.5"/><text x="450" y="369" text-anchor="middle" font-size="13" font-weight="700" fill="#111">1: ExternalGND</text><path d="M230 394.0H700" fill="none" stroke="#e8820c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="394" r="5" fill="#e8820c" stroke="#fff" stroke-width="1.5"/><circle cx="700" cy="394" r="5" fill="#e8820c" stroke="#fff" stroke-width="1.5"/><text x="216" y="399" text-anchor="end" font-size="14" fill="#e6ebf2">  2</text><text x="712" y="399" text-anchor="start" font-size="13" fill="#e6ebf2">External5V</text><rect x="340" y="383" width="220" height="22" rx="11" fill="#e8820c" stroke="#e8820c" stroke-width="1.5"/><text x="450" y="399" text-anchor="middle" font-size="13" font-weight="700" fill="#111">2: External5V</text><text x="130" y="486" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">P1 on this board</text><text x="870" y="486" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Host-side supply</text><rect x="700" y="498" width="270" height="150" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><rect x="810" y="528" width="140" height="90" rx="8" fill="#cfd3d9" stroke="#3a3f46" stroke-width="1.5"/><rect x="824" y="539" width="112" height="34" rx="3" fill="#101418" stroke="#101418" stroke-width="1.5"/><text x="880" y="563" text-anchor="middle" font-size="18" fill="#5df07a">00.0 V</text><circle cx="840" cy="595" r="11" fill="#2c3036" stroke="#0d0f12" stroke-width="1.5"/><circle cx="894" cy="595" r="8" fill="#c0262c" stroke="#0d0f12" stroke-width="1.5"/><circle cx="924" cy="595" r="8" fill="#23262b" stroke="#0d0f12" stroke-width="1.5"/><rect x="30" y="498" width="200" height="150" rx="8" fill="#2b2f35" stroke="#9aa2ad" stroke-width="1.5"/><path d="M230 558.0H700" fill="none" stroke="#8b949e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="558" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><circle cx="700" cy="558" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><text x="216" y="563" text-anchor="end" font-size="14" fill="#e6ebf2">GND  1</text><text x="712" y="563" text-anchor="start" font-size="13" fill="#e6ebf2">GND</text><rect x="340" y="547" width="220" height="22" rx="11" fill="#8b949e" stroke="#8b949e" stroke-width="1.5"/><text x="450" y="563" text-anchor="middle" font-size="13" font-weight="700" fill="#111">1: GND</text><path d="M230 588.0H700" fill="none" stroke="#e8820c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="588" r="5" fill="#e8820c" stroke="#fff" stroke-width="1.5"/><circle cx="700" cy="588" r="5" fill="#e8820c" stroke="#fff" stroke-width="1.5"/><text x="216" y="593" text-anchor="end" font-size="14" fill="#e6ebf2">+5V  2</text><text x="712" y="593" text-anchor="start" font-size="13" fill="#e6ebf2">+5V</text><rect x="340" y="577" width="220" height="22" rx="11" fill="#e8820c" stroke="#e8820c" stroke-width="1.5"/><text x="450" y="593" text-anchor="middle" font-size="13" font-weight="700" fill="#111">2: +5V</text></svg>
+  </div>
+  <figcaption>Wiring drawn from the original design files. Make connections with all power off. Equipment is drawn as a typical unit, not a specific model.</figcaption>
+</figure>
+{:/nomarkdown}
+
+1. With all power off, find contact 1 on each connector and check every wire against the [pinout](#pinout).
+2. Use one supply per side and check levels and polarity with a meter and oscilloscope. Every channel inverts.
+3. Check continuity and the rail voltages with a meter before connecting anything else.
 
 ## Configuration {#configuration}
 

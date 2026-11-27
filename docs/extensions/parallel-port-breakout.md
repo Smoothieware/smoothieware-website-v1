@@ -147,6 +147,15 @@ Contacts 1 and 2 of the sockets are not connected.
 Begin with an inspection with everything unpowered.
 
 {::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Wiring">
+  <svg viewBox="0 0 1000 472" role="img" aria-labelledby="xb-parallel-port-breakout-wire"><title id="xb-parallel-port-breakout-wire">Wiring: J6 contact 2 to probe 1, probe 2 on TP1.</title><image href="/images/extensions/parallel-port-breakout/v22/parallel-port-breakout-diagram.png" x="401" y="14" width="198" height="230"/><circle cx="435" cy="48" r="17" fill="none" stroke="#ffcc33" stroke-width="3"/><rect x="416" y="67" width="38" height="19" rx="9" fill="#ffcc33" stroke="#ffcc33" stroke-width="1.5"/><text x="435" y="81" text-anchor="middle" font-size="13" font-weight="700" fill="#111">J6</text><text x="130" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J6 on this board</text><text x="870" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Multimeter, unpowered</text><rect x="700" y="304" width="270" height="150" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><rect x="835" y="319" width="90" height="120" rx="8" fill="#e5b41f" stroke="#6e560a" stroke-width="1.5"/><rect x="846" y="331" width="68" height="34" rx="3" fill="#b9c8ad" stroke="#40463c" stroke-width="1.5"/><text x="880" y="355" text-anchor="middle" font-size="16" font-weight="700" fill="#14180f">V DC</text><circle cx="880" cy="389" r="17" fill="#2c3036" stroke="#0d0f12" stroke-width="1.5"/><path d="M880 389.0V375.0" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="862" cy="421" r="7" fill="#c0262c" stroke="#0d0f12" stroke-width="1.5"/><circle cx="898" cy="421" r="7" fill="#23262b" stroke="#0d0f12" stroke-width="1.5"/><rect x="30" y="304" width="200" height="150" rx="8" fill="#2b2f35" stroke="#9aa2ad" stroke-width="1.5"/><path d="M230 379.0H700" fill="none" stroke="#2f7fe0" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="379" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><circle cx="700" cy="379" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><text x="216" y="384" text-anchor="end" font-size="14" fill="#e6ebf2">  2</text><text x="712" y="384" text-anchor="start" font-size="13" fill="#e6ebf2">probe 1</text><rect x="340" y="368" width="220" height="22" rx="11" fill="#2f7fe0" stroke="#2f7fe0" stroke-width="1.5"/><text x="450" y="384" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">2: probe 1, probe 2 on TP1</text></svg>
+  </div>
+  <figcaption>Everything unpowered and both enable links removed: near zero ohms between J6 contact 2 and TP1 shows both are host ground. Equipment is drawn as a typical unit, not a specific model.</figcaption>
+</figure>
+{:/nomarkdown}
+
+{::nomarkdown}
 <ol class="xb-steps">
   <li class="xb-step">
     <h3>Remove everything</h3>

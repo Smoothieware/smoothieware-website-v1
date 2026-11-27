@@ -39,6 +39,7 @@ permalink: /extensions/historical-gadgeteer-3v3-5v-level-shifter
   <a href="#tour">Board tour</a>
   <a href="#pinout">Pinout</a>
   <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
   <a href="#configuration">Configuration</a>
   <a href="#how-it-works">How it works</a>
   <a href="#troubleshooting">Troubleshooting</a>
@@ -205,6 +206,23 @@ Check the order of J3 and J4 with a meter: the channel numbering does not run in
   <div class="xb-card"><b>Leads</b><span>Verified contact by contact</span></div>
 </div>
 {:/nomarkdown}
+
+## Get started {#get-started}
+
+The minimum wiring first, then the order to do it in. Facts about each contact are in the [pinout](#pinout).
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Wiring">
+  <svg viewBox="0 0 1000 472" role="img" aria-labelledby="xb-historical-gadgeteer-3v3-5v-level-shifter-wire"><title id="xb-historical-gadgeteer-3v3-5v-level-shifter-wire">Wiring: J1 contact 1 to +3V3; J1 contact 2 to +5V; J1 contact 3 to 1P3; J1 contact 10 to GND.</title><image href="/images/extensions/historical-gadgeteer-3v3-5v-level-shifter/directory-board-render.png" x="395" y="14" width="209" height="230"/><circle cx="460" cy="82" r="17" fill="none" stroke="#ffcc33" stroke-width="3"/><rect x="441" y="101" width="38" height="19" rx="9" fill="#ffcc33" stroke="#ffcc33" stroke-width="1.5"/><text x="460" y="115" text-anchor="middle" font-size="13" font-weight="700" fill="#111">J1</text><text x="130" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J1 on this board</text><text x="870" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">Host cable</text><rect x="700" y="304" width="270" height="150" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><rect x="870" y="345" width="60" height="68" rx="5" fill="#23262b" stroke="#9aa2ad" stroke-width="1.5"/><path d="M810 367.0H870M810 379.0H870M810 391.0H870" fill="none" stroke="#8b949e" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/><circle cx="888" cy="367" r="3.5" fill="#d9b45a" stroke="#0d0f12" stroke-width="1.5"/><circle cx="888" cy="391" r="3.5" fill="#d9b45a" stroke="#0d0f12" stroke-width="1.5"/><circle cx="900" cy="367" r="3.5" fill="#d9b45a" stroke="#0d0f12" stroke-width="1.5"/><circle cx="900" cy="391" r="3.5" fill="#d9b45a" stroke="#0d0f12" stroke-width="1.5"/><circle cx="912" cy="367" r="3.5" fill="#d9b45a" stroke="#0d0f12" stroke-width="1.5"/><circle cx="912" cy="391" r="3.5" fill="#d9b45a" stroke="#0d0f12" stroke-width="1.5"/><rect x="30" y="304" width="200" height="150" rx="8" fill="#2b2f35" stroke="#9aa2ad" stroke-width="1.5"/><path d="M230 334.0H700" fill="none" stroke="#d92d2d" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="334" r="5" fill="#d92d2d" stroke="#fff" stroke-width="1.5"/><circle cx="700" cy="334" r="5" fill="#d92d2d" stroke="#fff" stroke-width="1.5"/><text x="216" y="339" text-anchor="end" font-size="14" fill="#e6ebf2">+3V3  1</text><text x="712" y="339" text-anchor="start" font-size="13" fill="#e6ebf2">+3V3</text><rect x="340" y="323" width="220" height="22" rx="11" fill="#d92d2d" stroke="#d92d2d" stroke-width="1.5"/><text x="450" y="339" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">1: +3V3</text><path d="M230 364.0H700" fill="none" stroke="#e8820c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="364" r="5" fill="#e8820c" stroke="#fff" stroke-width="1.5"/><circle cx="700" cy="364" r="5" fill="#e8820c" stroke="#fff" stroke-width="1.5"/><text x="216" y="369" text-anchor="end" font-size="14" fill="#e6ebf2">+5V  2</text><text x="712" y="369" text-anchor="start" font-size="13" fill="#e6ebf2">+5V</text><rect x="340" y="353" width="220" height="22" rx="11" fill="#e8820c" stroke="#e8820c" stroke-width="1.5"/><text x="450" y="369" text-anchor="middle" font-size="13" font-weight="700" fill="#111">2: +5V</text><path d="M230 394.0H700" fill="none" stroke="#2f7fe0" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="394" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><circle cx="700" cy="394" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><text x="216" y="399" text-anchor="end" font-size="14" fill="#e6ebf2">1P3  3</text><text x="712" y="399" text-anchor="start" font-size="13" fill="#e6ebf2">1P3</text><rect x="340" y="383" width="220" height="22" rx="11" fill="#2f7fe0" stroke="#2f7fe0" stroke-width="1.5"/><text x="450" y="399" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">3: 1P3</text><path d="M230 424.0H700" fill="none" stroke="#8b949e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="424" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><circle cx="700" cy="424" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><text x="216" y="429" text-anchor="end" font-size="14" fill="#e6ebf2">GND  10</text><text x="712" y="429" text-anchor="start" font-size="13" fill="#e6ebf2">GND</text><rect x="340" y="413" width="220" height="22" rx="11" fill="#8b949e" stroke="#8b949e" stroke-width="1.5"/><text x="450" y="429" text-anchor="middle" font-size="13" font-weight="700" fill="#111">10: GND</text></svg>
+  </div>
+  <figcaption>Wiring drawn from the original design files. Make connections with all power off. Equipment is drawn as a typical unit, not a specific model.</figcaption>
+</figure>
+{:/nomarkdown}
+
+1. With all power off, find contact 1 on each connector and check every wire against the [pinout](#pinout).
+2. Supply both 3.3 V and 5 V from the host and verify each lead.
+3. Apply the settings under [Configuration](#configuration), then power up.
 
 ## Configuration {#configuration}
 

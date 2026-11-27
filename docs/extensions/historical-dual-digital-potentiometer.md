@@ -39,6 +39,7 @@ permalink: /extensions/historical-dual-digital-potentiometer
   <a href="#tour">Board tour</a>
   <a href="#pinout">Pinout</a>
   <a href="#what-you-need">What you need</a>
+  <a href="#get-started">Get started</a>
   <a href="#configuration">Configuration</a>
   <a href="#how-it-works">How it works</a>
   <a href="#troubleshooting">Troubleshooting</a>
@@ -150,6 +151,23 @@ J5–J8 carry IC1 wipers 0–3 and J9–J12 IC2 wipers 0–3: contact 1 ground, 
   <div class="xb-card"><b>Multimeter</b><span>To confirm each output</span></div>
 </div>
 {:/nomarkdown}
+
+## Get started {#get-started}
+
+The minimum wiring first, then the order to do it in. Facts about each contact are in the [pinout](#pinout).
+
+{::nomarkdown}
+<figure class="xb-fig">
+  <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Wiring">
+  <svg viewBox="0 0 1000 472" role="img" aria-labelledby="xb-historical-dual-digital-potentiometer-wire"><title id="xb-historical-dual-digital-potentiometer-wire">Wiring: J2 contact 1 to GND; J2 contact 2 to +3V3; J2 contact 3 to I2C_SDA; J2 contact 4 to I2C_SCL.</title><image href="/images/extensions/historical-dual-digital-potentiometer/directory-board-render.png" x="385" y="14" width="230" height="230"/><circle cx="518" cy="219" r="17" fill="none" stroke="#ffcc33" stroke-width="3"/><rect x="499" y="238" width="38" height="19" rx="9" fill="#ffcc33" stroke="#ffcc33" stroke-width="1.5"/><text x="518" y="252" text-anchor="middle" font-size="13" font-weight="700" fill="#111">J2</text><text x="130" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">J2 on this board</text><text x="870" y="292" text-anchor="middle" font-size="14" font-weight="700" fill="#e6ebf2">I2C host</text><rect x="700" y="304" width="270" height="150" rx="8" fill="#1f2226" stroke="#dfe4ee" stroke-width="1.5"/><rect x="815" y="329" width="130" height="100" rx="8" fill="#20365c" stroke="#7fa6e0" stroke-width="1.5"/><rect x="858" y="359" width="44" height="40" rx="3" fill="#14171c" stroke="#8b949e" stroke-width="1.5"/><circle cx="828" cy="345" r="4" fill="#d9b45a" stroke="#0d0f12" stroke-width="1.5"/><circle cx="828" cy="362" r="4" fill="#d9b45a" stroke="#0d0f12" stroke-width="1.5"/><circle cx="828" cy="379" r="4" fill="#d9b45a" stroke="#0d0f12" stroke-width="1.5"/><circle cx="828" cy="396" r="4" fill="#d9b45a" stroke="#0d0f12" stroke-width="1.5"/><circle cx="828" cy="413" r="4" fill="#d9b45a" stroke="#0d0f12" stroke-width="1.5"/><circle cx="930" cy="343" r="6" fill="#0d0f12" stroke="#c4cad3" stroke-width="1.5"/><circle cx="930" cy="415" r="6" fill="#0d0f12" stroke="#c4cad3" stroke-width="1.5"/><rect x="908" y="373" width="18" height="10" rx="1" fill="#c9a66b" stroke="#c9a66b" stroke-width="1.5"/><rect x="30" y="304" width="200" height="150" rx="8" fill="#2b2f35" stroke="#9aa2ad" stroke-width="1.5"/><path d="M230 334.0H700" fill="none" stroke="#8b949e" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="334" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><circle cx="700" cy="334" r="5" fill="#8b949e" stroke="#fff" stroke-width="1.5"/><text x="216" y="339" text-anchor="end" font-size="14" fill="#e6ebf2">  1</text><text x="712" y="339" text-anchor="start" font-size="13" fill="#e6ebf2">GND</text><rect x="340" y="323" width="220" height="22" rx="11" fill="#8b949e" stroke="#8b949e" stroke-width="1.5"/><text x="450" y="339" text-anchor="middle" font-size="13" font-weight="700" fill="#111">1: GND</text><path d="M230 364.0H700" fill="none" stroke="#d92d2d" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="364" r="5" fill="#d92d2d" stroke="#fff" stroke-width="1.5"/><circle cx="700" cy="364" r="5" fill="#d92d2d" stroke="#fff" stroke-width="1.5"/><text x="216" y="369" text-anchor="end" font-size="14" fill="#e6ebf2">  2</text><text x="712" y="369" text-anchor="start" font-size="13" fill="#e6ebf2">+3V3</text><rect x="340" y="353" width="220" height="22" rx="11" fill="#d92d2d" stroke="#d92d2d" stroke-width="1.5"/><text x="450" y="369" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">2: +3V3</text><path d="M230 394.0H700" fill="none" stroke="#2f7fe0" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="394" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><circle cx="700" cy="394" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><text x="216" y="399" text-anchor="end" font-size="14" fill="#e6ebf2">  3</text><text x="712" y="399" text-anchor="start" font-size="13" fill="#e6ebf2">I2C_SDA</text><rect x="340" y="383" width="220" height="22" rx="11" fill="#2f7fe0" stroke="#2f7fe0" stroke-width="1.5"/><text x="450" y="399" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">3: I2C_SDA</text><path d="M230 424.0H700" fill="none" stroke="#2f7fe0" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/><circle cx="230" cy="424" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><circle cx="700" cy="424" r="5" fill="#2f7fe0" stroke="#fff" stroke-width="1.5"/><text x="216" y="429" text-anchor="end" font-size="14" fill="#e6ebf2">  4</text><text x="712" y="429" text-anchor="start" font-size="13" fill="#e6ebf2">I2C_SCL</text><rect x="340" y="413" width="220" height="22" rx="11" fill="#2f7fe0" stroke="#2f7fe0" stroke-width="1.5"/><text x="450" y="429" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">4: I2C_SCL</text></svg>
+  </div>
+  <figcaption>Wiring drawn from the original design files. Make connections with all power off. Equipment is drawn as a typical unit, not a specific model.</figcaption>
+</figure>
+{:/nomarkdown}
+
+1. With all power off, find contact 1 on each connector and check every wire against the [pinout](#pinout).
+2. Confirm each wiper output order with a meter: the design files label one pin inconsistently.
+3. Check continuity and the rail voltages with a meter before connecting anything else.
 
 ## Configuration {#configuration}
 
