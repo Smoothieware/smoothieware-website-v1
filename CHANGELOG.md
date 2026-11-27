@@ -16,6 +16,7 @@ History: see CHANGELOG.archive.md.
 - Extension board pages: the board drawings now show lights in their real colours, solder links, test pads and the holes of parts soldered underneath; page text that called these "not drawn" is corrected.
 
 ### Changed
+- Troubleshooting page: the board LED section is more compact, in two columns, with smaller transparent animations.
 - Troubleshooting page: the board status LED pictures are back as new animations, shown separately for V1 and V2 boards, replacing unrelated placeholder photos.
 - Endstop inputs (basic) board page: updated for the current hardware, with 3.3 V controller signals in both supply positions, a resettable sensor fuse, static-discharge protection, test pads, new voltage figures and `^` pin settings.
 - Gadgeteer perma-proto page updated to board v17: visible cuttable copper links, chain connector moved to the left margin with labelled wiring holes, all example projects wired to off-board parts through screw terminals.
