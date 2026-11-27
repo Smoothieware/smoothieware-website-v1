@@ -177,7 +177,12 @@ function add_scroll_helpers() {
   update();
 }
 function link_tours(root) {
-  root.querySelectorAll(".xb-tour").forEach((tour) => {
+  root.querySelectorAll('.xb-tour-stage > img').forEach((image) => {
+        const shape = () => { if (image.naturalHeight) image.parentElement.style.setProperty('--ratio', String(image.naturalWidth / image.naturalHeight)); };
+        image.addEventListener('load', shape);
+        shape();
+    });
+    root.querySelectorAll(".xb-tour").forEach((tour) => {
     const light = (id, on) => {
       if (!id)
         return;

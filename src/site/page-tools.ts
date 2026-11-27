@@ -152,6 +152,11 @@ function add_scroll_helpers(): void {
 }
 
 function link_tours(root: HTMLElement): void {
+    root.querySelectorAll<HTMLImageElement>('.xb-tour-stage > img').forEach((image) => {
+        const shape = () => { if (image.naturalHeight) image.parentElement?.style.setProperty('--ratio', String(image.naturalWidth / image.naturalHeight)); };
+        image.addEventListener('load', shape);
+        shape();
+    });
     root.querySelectorAll('.xb-tour').forEach((tour) => {
         const light = (id: string | null, on: boolean): void => {
             if (!id) return;

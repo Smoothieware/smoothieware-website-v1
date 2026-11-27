@@ -308,13 +308,6 @@ function start() {
     let viewer = null;
     let items = [];
 
-    // Large pictures outside figures and tables are shown at half width too.
-    const halve = (image) => {
-        if (image.closest('figure, table, .menu, .no-zoom, .xb-tour')) return;
-        const column = root.clientWidth;
-        if (image.naturalWidth > 400 && image.getBoundingClientRect().width > column * 0.55) image.classList.add('half');
-    };
-
     const mark = () => {
         items = find_items(root);
         items.forEach(({ source }) => {
@@ -344,14 +337,12 @@ function start() {
         if (event.key === 'Enter' || event.key === ' ') open_from(event);
     });
 
-    const settle = (image) => { halve(image); mark(); };
-    root.querySelectorAll('img').forEach((image) => { if (image.complete) halve(image); });
     // Lazy and generated pictures arrive later; load events do not bubble, so capture them.
     root.addEventListener('load', (event) => {
-        if (event.target instanceof HTMLImageElement) settle(event.target);
+        if (event.target instanceof HTMLImageElement) mark();
     }, true);
     mark();
-    addEventListener('load', () => { root.querySelectorAll('img').forEach(halve); mark(); }, { once: true });
+    addEventListener('load', mark, { once: true });
 }
 
 if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);

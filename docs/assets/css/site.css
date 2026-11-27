@@ -6,7 +6,7 @@
  * Rules: greyscale plus one yellow accent (colour otherwise only carries
  * meaning: warnings, wire and light colours); 2px corners; tables with no
  * vertical lines, zebra or fills, a solid rule at top, under the header and at
- * the bottom, dotted rules between rows; diagrams at half the column width,
+ * the bottom, dotted rules between rows; pictures within 3/4 of the column and half the screen height,
  * opened full screen by the image viewer (src/site/lightbox.ts).
  */
 
@@ -156,12 +156,7 @@ h1.page-title { margin: .4rem 0 2rem; text-align: center; text-transform: upperc
 .markdown-body figure { margin: 1.6rem auto; min-width: 0; }
 .markdown-body figure img { max-width: 100%; height: auto; }
 .markdown-body figcaption { margin-top: .6rem; color: var(--muted); font-size: .84rem; line-height: 1.5; }
-/* Diagrams take half the column; the viewer shows them full screen. */
-.markdown-body figure:not(.xb-tour):not(.xb-wide), .markdown-body img.half { width: 50%; min-width: min(100%, 22rem); }
-.markdown-body figure:not(.xb-tour):not(.xb-wide) img { display: block; width: 100%; }
-.markdown-body figure figure { width: 100% !important; }
-.markdown-body img.half { display: block; width: 50% !important; min-width: min(100%, 22rem) !important; max-width: 100% !important; height: auto !important; margin-inline: auto; }
-.markdown-body figure:has(figure), .markdown-body .extension-board-render-grid figure { width: auto; }
+/* Figures are centred; their size limits are below. The viewer shows them full screen. */
 .zoomable { cursor: zoom-in; }
 .xb-fig-scroll { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: #171717; }
 .xb-fig svg, .xb-jumper svg { display: block; width: 100%; height: auto; font-family: Montserrat, Arial, sans-serif; }
@@ -376,7 +371,6 @@ body:has(dialog.lightbox[open]) { overflow: hidden; }
   .markdown-body h3 { font-size: 1.35rem !important; }
   .xb-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .xb-cards, .xb-jumpers { grid-template-columns: minmax(0, 1fr); }
-  .markdown-body figure:not(.xb-tour):not(.xb-wide), .markdown-body img.half { width: 100%; min-width: 0; }
   .markdown-body .xb-tablewrap table:not(.xb-spec) { min-width: 520px !important; }
   .markdown-body .xb-spec, .markdown-body .xb-spec :is(tbody, tr, td) { display: block !important; width: auto !important; }
   .markdown-body .xb-spec td { padding-right: 0 !important; }
@@ -392,12 +386,31 @@ body:has(dialog.lightbox[open]) { overflow: hidden; }
   .smoothie-nav, .page-toc, .to-top, .page-progress, .code-copy, .wiki-edit-callout { display: none !important; }
 }
 
-/* Older pages force pictures to 640 px inline; they follow the half-width rule too */
-.markdown-body img[style*="640px"] { display: block; width: 50% !important; min-width: min(100%, 22rem) !important; max-width: 100% !important; height: auto !important; margin-inline: auto !important; }
+
+/* Picture size: at most three quarters of the column and half the screen height, never distorted */
+.markdown-body figure:not(.xb-tour):not(.xb-wide) { width: 75%; }
+.markdown-body figure figure, .markdown-body figure:has(figure), .markdown-body .extension-board-render-grid figure { width: auto; }
+.markdown-body figure:not(.xb-tour):not(.xb-wide) img { display: block; width: auto; margin-inline: auto; }
+.markdown-body img:not(table img, .menu img, .extension-board-directory img) { max-height: 50vh !important; object-fit: contain; }
+.markdown-body img:not(table img, .menu img, .xb-hero img, .xb-tour img, figure img, sl-dialog img, .extension-board-directory img, .extension-board-visuals img) { max-width: 75% !important; }
+.markdown-body figure img { max-width: 100% !important; }
+/* SVG files often carry no size of their own */
+.markdown-body figure:not(.xb-tour) img[src$=".svg"] { width: 100%; }
+/* Older pages force pictures to 640 px inline */
+.markdown-body img[style*="640px"] { display: block; width: auto !important; min-width: 0 !important; height: auto !important; margin-inline: auto !important; }
+.markdown-body img[style*="640px"][src$=".svg"] { width: 75% !important; }
+.markdown-body .xb-hero figure:not(.xb-tour):not(.xb-wide) { width: 100%; }
+.markdown-body .xb-fig svg, .markdown-body .xb-hero svg { max-height: 50vh; }
+.markdown-body .schematic-figure img { width: auto; max-width: 100%; margin-inline: auto; }
+.markdown-body .xb-tour-stage { width: min(100%, calc(50vh * var(--ratio, 1))); margin-inline: auto; }
+.markdown-body .xb-tour-stage img { width: 100%; max-height: none !important; }
 
 /* Narrow screens: nothing may be wider than the column, whatever a page sets inline */
 @media (max-width: 760px) {
-  .markdown-body img, .markdown-body img.half, .markdown-body iframe { max-width: 100% !important; min-width: 0 !important; }
-  .markdown-body img.half, .markdown-body img[style*="640px"] { width: 100% !important; }
+  .markdown-body img, .markdown-body iframe { max-width: 100% !important; min-width: 0 !important; }
   .markdown-body raw { overflow-wrap: anywhere; }
+}
+@media (max-width: 760px) {
+  .markdown-body figure:not(.xb-tour):not(.xb-wide) { width: 100%; }
+  .markdown-body img:not(table img, .menu img, figure img) { max-width: 100% !important; }
 }
