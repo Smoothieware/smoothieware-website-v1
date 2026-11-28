@@ -6,6 +6,10 @@ History: see CHANGELOG.archive.md.
 
 ## [Unreleased]
 
+### Added
+
+- VL53L1X distance sensor board page, listed on the extension boards page and the homepage, linked with the ultrasonic distance sensor page.
+
 ### Fixed
 
 - Differential I2C signal extender page: the network jacks now open over the board edge; the remote has separate IN and OUT jacks for chaining, and the new terminator board closes the end of the cable.

@@ -207,6 +207,10 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/ultrasonic-distance-sensor">Ultrasonic distance sensor</a></p><p>Connects an HC-SR04 distance module to a controller socket.</p></td>
   </tr>
   <tr>
+    <td><a href="/extensions/vl53l1x-distance-sensor" aria-label="Open the VL53L1X distance sensor guide"><img src="/images/extensions/vl53l1x-distance-sensor/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/vl53l1x-distance-sensor">VL53L1X distance sensor</a></p><p>Measures distance with infrared light over I2C.</p></td>
+  </tr>
+  <tr>
     <td><a href="/extensions/vibration-sensor-board" aria-label="Open the Vibration sensor board guide"><img src="/images/extensions/vibration-sensor-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/vibration-sensor-board">Vibration sensor board</a></p><p>Signals knocks and vibration on a digital input.</p></td>
   </tr>

@@ -445,4 +445,6 @@ The first page of the module data sheet. Click the page to open the PDF. It is a
 </figure>
 {:/nomarkdown}
 
+For a narrower, light-based measurement over I2C, see the [VL53L1X distance sensor](/extensions/vl53l1x-distance-sensor).
+
 See all boards on the [extension boards](/extension-boards) page.

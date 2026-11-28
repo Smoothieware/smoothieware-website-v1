@@ -415,6 +415,7 @@ The [complete extension-board directory](/extension-boards) describes what each 
 - [SPI thermocouple breakout](/extensions/spi-thermocouple-breakout)
 - [ThermistorTrigger — Dual thermistor hardware setpoint trigger](/extensions/historical-thermistortrigger)¹
 - [Ultrasonic distance sensor](/extensions/ultrasonic-distance-sensor)
+- [VL53L1X distance sensor](/extensions/vl53l1x-distance-sensor)
 - [Vibration sensor board](/extensions/vibration-sensor-board)
 - [Water-flow sensor adapter](/extensions/water-flow-sensor-adapter)
 - [Carvera wireless-probe interface](/extensions/carvera-wireless-probe-interface)
