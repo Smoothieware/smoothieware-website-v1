@@ -40,7 +40,7 @@ History: see CHANGELOG.archive.md.
 
 ### Changed
 - One greyscale design for the whole site: 2 px corners, quieter callouts and buttons, and a single table style without vertical lines. Diagrams take half the page width; board tours show the drawing beside its numbered list.
-- Laser PSU adapter board: redrawn schematic PDF, four A3 pages (overview, protect loops, gating and outputs, power) with clearer wiring and notes; the circuit is unchanged.
+- Laser PSU adapter board: redrawn schematic PDF, four A3 pages (overview, protect loops, gating and outputs, controller and power); signals that cross between sections now carry large coded, coloured, clickable tags naming where they go, with a signal key on page 1 and a closed/open table on page 2; the circuit is unchanged.
 - Troubleshooting page: the comic is half as large and floats to the right of the text, the empty table of contents is gone, and the title, sections and problems use heading levels 1, 2 and 3.
 - Troubleshooting page: the board LED section is more compact, in two columns, with smaller transparent animations.
 - Laser diode driver page rewritten for the real-diode board: wiring diagrams, pinout, Smoothieware V2 configuration examples, troubleshooting and simulation results. The page comes with new laser head, door switch, key switch and Smoothieboard Prime drawings and hosted chip datasheets. Updated to board revision v46: regulator diode moved next to the regulator, alignment marks, a second ground test point, manufacturing notes and full part numbers, with new drawing, renders, schematic and parts list.
