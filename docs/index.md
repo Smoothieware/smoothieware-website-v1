@@ -475,6 +475,7 @@ The [complete extension-board directory](/extension-boards) describes what each 
 
 - [64-pin SPI I/O expander](/extensions/spi-io-expander)
 - [Bidirectional level shifting board](/extensions/bidirectional-level-shifting-board)
+- [Bouni RS-232 spindle control](/extensions/bouni-rs232-spindle-control)
 - [Bouni RS-485 spindle control](/extensions/bouni-rs485-spindle-control)
 - [Cheap UART adapter breakout](/extensions/cheap-uart-adapter-breakout)
 - [Differential I2C signal extender](/extensions/differential-i2c-signal-extender)

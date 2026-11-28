@@ -8,6 +8,8 @@ History: see CHANGELOG.archive.md.
 
 ### Added
 
+- Added the Bouni RS-232 spindle control wiring guide and listed the design on the homepage, in the extension-board directory and on the spindle family page.
+
 - VL53L1X distance sensor board page, listed on the extension boards page and the homepage, linked with the ultrasonic distance sensor page.
 
 ### Fixed

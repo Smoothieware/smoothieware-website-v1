@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Bouni spindle control"
-description: "Choose between the analog and RS-485 spindle control boards."
+description: "Choose between the analog, RS-232 and RS-485 spindle control boards."
 permalink: /extensions/bouni-spindle-module-boards
 ---
 
@@ -12,15 +12,15 @@ permalink: /extensions/bouni-spindle-module-boards
   <div>
     <p class="xb-eyebrow">Extension board · Spindle</p>
     <h1 id="bouni-spindle-module-boards">Bouni spindle control</h1>
-    <p class="xb-lead">Two boards for controlling a variable-frequency drive. Choose the one that matches the control input of your drive.</p>
+    <p class="xb-lead">Three boards for controlling a variable-frequency drive. Choose the one that matches the control input of your drive.</p>
   </div>
 </div>
 
 <div class="xb-stats">
-  <div class="xb-stat"><b>2</b><span>boards</span></div>
+  <div class="xb-stat"><b>3</b><span>boards</span></div>
   <div class="xb-stat"><b>0–10 V</b><span>analog board</span></div>
   <div class="xb-stat"><b>RS-485</b><span>serial board</span></div>
-  <div class="xb-stat"><b>isolated</b><span>both boards</span></div>
+  <div class="xb-stat"><b>RS-232</b><span>serial design draft</span></div>
 </div>
 
 <nav class="xb-nav" aria-label="On this page">
@@ -39,6 +39,7 @@ permalink: /extensions/bouni-spindle-module-boards
   <tbody>
     <tr><td><a href="/extensions/bouni-analog-spindle-control">Bouni analog spindle control</a></td><td>Analog speed voltage and run contact</td><td>Hardware PWM switch</td></tr>
     <tr><td><a href="/extensions/bouni-rs485-spindle-control">Bouni RS-485 spindle control</a></td><td>Differential serial bus</td><td>No drive protocol in SmoothieV2</td></tr>
+    <tr><td><a href="/extensions/bouni-rs232-spindle-control">Bouni RS-232 spindle control</a></td><td>Three-wire serial link</td><td>No drive protocol in SmoothieV2</td></tr>
   </tbody>
 </table>
 </div>

@@ -73,7 +73,7 @@ Historical entries appear alongside related modern boards. A similar name does n
   </tr>
   <tr>
     <td><a href="/extensions/bouni-spindle-module-boards" aria-label="Open the Bouni spindle control guide"><img src="/images/extensions/bouni-analog-spindle-control/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/bouni-spindle-module-boards">Bouni spindle control</a></p><p>Starting page for choosing between the analog and the RS-485 spindle control boards.</p></td>
+    <td><p class="extension-board-name"><a href="/extensions/bouni-spindle-module-boards">Bouni spindle control</a></p><p>Compare the analog, RS-232 and RS-485 spindle control boards.</p></td>
   </tr>
 </tbody>
 <tbody aria-labelledby="sensors-and-inputs">
@@ -343,6 +343,10 @@ Historical entries appear alongside related modern boards. A similar name does n
   <tr>
     <td><a href="/extensions/bidirectional-level-shifting-board" aria-label="Open the Bidirectional level shifting board guide"><img src="/images/extensions/bidirectional-level-shifting-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/bidirectional-level-shifting-board">Bidirectional level shifting board</a></p><p>A seven-channel digital level interface between a 3.3 V host domain and a separate peripheral domain.</p></td>
+  </tr>
+  <tr>
+    <td>Design draft</td>
+    <td><p class="extension-board-name"><a href="/extensions/bouni-rs232-spindle-control">Bouni RS-232 spindle control</a></p><p>Isolated three-wire serial link with a nine-pin D-sub and screw terminals.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/bouni-rs485-spindle-control" aria-label="Open the Bouni RS-485 spindle control guide"><img src="/images/extensions/bouni-rs485-spindle-control/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
