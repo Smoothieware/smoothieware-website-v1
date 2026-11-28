@@ -1,4 +1,5 @@
 ---
+title: "Stepper motors"
 permalink: /stepper-motors
 ---
 

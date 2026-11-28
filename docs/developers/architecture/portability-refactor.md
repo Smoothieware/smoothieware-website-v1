@@ -1,13 +1,13 @@
 ---
+title: "Portability refactor"
 permalink: /portability-refactor
 ---
 
-
-# Portability refactor Documentation
+{::nomarkdown}
+<span id="portability-refactor-documentation"></span>
+{:/nomarkdown}
 
 The purpose of this document is to outline the current problems with Smoothie's portability, propose a solution and guide the implementation.
-
-
 
 {::nomarkdown}
 <versioned orientation="horizontal">
@@ -27,8 +27,6 @@ This document describes the refactoring effort planned for V1 to improve hardwar
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 ## The problem
 Though Smoothie is based on mBed, it is not easily ported to other boards / processors.

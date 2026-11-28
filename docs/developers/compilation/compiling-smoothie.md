@@ -1,17 +1,17 @@
 ---
+title: "Compiling smoothie"
 permalink: /compiling-smoothie
 ---
 
-
-# Compilation from Source
+{::nomarkdown}
+<span id="compilation-from-source"></span>
+{:/nomarkdown}
 
 Smoothie can be compiled using [GCC](http://en.wikipedia.org/wiki/GNU_Compiler_Collection).
 
 First of all, [get Smoothie](getting-smoothie)'s source.
 
 You do not need to do any of this if you just want to use your board. This is only needed if you want the absolute latest firmware, or are modifying Smoothie's source.
-
-
 
 {::nomarkdown}
 <versioned orientation="horizontal">
@@ -32,13 +32,9 @@ You do not need to do any of this if you just want to use your board. This is on
 </versioned>
 {:/nomarkdown}
 
-
-
 ## Getting a toolchain
 
 To compile smoothie, you need a [toolchain](http://en.wikipedia.org/wiki/Toolchain) (a compiler, a linker, etc...).
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -63,14 +59,10 @@ Smoothie V2 requires a specific GCC version (10.3.1). Do NOT use newer or older 
 </versioned>
 {:/nomarkdown}
 
-
-
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   Do not use your own toolchain, even if you like it and it's more recent, use the toolchain the other Smoothie devs use, as it's the only one that's guaranteed to work (e.g. newer toolchains are known to produce binaries where network does not work), and the devs can bite if they try to help you for an hour only to figure out you tried to use XGCC super-plus version 3000 and everything would be fine if you were using the normal toolchain. Just follow the instructions.
 </sl-alert>
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -119,12 +111,12 @@ or you can take the appropriate directories and add them to your PATH through yo
 
 V2 uses Rake (Ruby Make) as its build system, which requires:
 
-1. **Ruby** (version 2.0 or later)
-2. **GCC 10.3.1** (arm-none-eabi-gcc)
+1. Ruby (version 2.0 or later)
+2. GCC 10.3.1 (arm-none-eabi-gcc)
    - Must be exactly version 10.3.1 - do NOT use 11.x or later
    - Obtain from: https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm
 
-3. **Make** and standard build tools
+3. Make and standard build tools
 
 For a specific platform, check the V2 repository build instructions, as toolchain setup varies by OS.
 
@@ -132,10 +124,6 @@ For a specific platform, check the V2 repository build instructions, as toolchai
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
-
-
 
 {::nomarkdown}
 <versioned orientation="horizontal">
@@ -164,8 +152,6 @@ For a specific platform, check the V2 repository build instructions, as toolchai
 </versioned>
 {:/nomarkdown}
 
-
-
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   On some operating systems (this has been reported with Windows and MacOS), having a "space" character in the path to your Smoothie installation, can cause the installation of the toolchain to fail.
@@ -174,8 +160,6 @@ For a specific platform, check the V2 repository build instructions, as toolchai
 </sl-alert>
 
 ## Compiling
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -220,76 +204,63 @@ The output binary will be in `smoothiev2_Prime/smoothiev2.bin` (or respective ta
 </versioned>
 {:/nomarkdown}
 
+**64-bit Linux Systems:** If you are running a 64bit GNU/Linux system, you might get an error like this:
 
+```bash
+Compiling vendor/NXP/capi/analogin_api.c
+make[[3|]]: arm-none-eabi-gcc : command not found
+```
 
-<sl-alert variant="danger" open>
-  <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
-  <strong>64-bit Linux Systems:</strong> If you are running a 64bit GNU/Linux system, you might get an error like this:
+or
 
-  ```bash
-  Compiling vendor/NXP/capi/analogin_api.c
-  make[[3|]]: arm-none-eabi-gcc : command not found
-  ```
+```bash
+Compiling vendor/NXP/capi/analogout_api.c
+arm-none-eabi-gcc: fatal error: cannot execute 'cc1': execvp: No such file or directory
+```
 
-  or
+This is because the toolchain is 32bit but your system is 64bit. To solve this you need to install the 32bit libraries on your system.
 
-  ```bash
-  Compiling vendor/NXP/capi/analogout_api.c
-  arm-none-eabi-gcc: fatal error: cannot execute 'cc1': execvp: No such file or directory
-  ```
+**On Debian/Ubuntu:**
 
-  This is because the toolchain is 32bit but your system is 64bit. To solve this you need to install the 32bit libraries on your system.
+```bash
+sudo dpkg --add-architecture i386
+sudo apt-get update
+sudo apt-get install libc6:i386
+```
 
-  **On Debian/Ubuntu:**
+**For Fedora/RPM users:**
 
-  ```bash
-  sudo dpkg --add-architecture i386
-  sudo apt-get update
-  sudo apt-get install libc6:i386
-  ```
+```bash
+sudo dnf install glibc.i686 zlib.i686
+```
 
-  **For Fedora/RPM users:**
+**On older Debian/Ubuntu systems, you might need:**
 
-  ```bash
-  sudo dnf install glibc.i686 zlib.i686
-  ```
+```bash
+sudo dpkg --add-architecture i386
+sudo apt-get update
+sudo apt-get install ia32-libs
+```
 
-  **On older Debian/Ubuntu systems, you might need:**
+or
 
-  ```bash
-  sudo dpkg --add-architecture i386
-  sudo apt-get update
-  sudo apt-get install ia32-libs
-  ```
+```bash
+sudo dpkg --add-architecture i386
+sudo apt-get update
+sudo apt-get install lib32z1 lib32ncurses5
+```
 
-  or
+After this, the make command should work.
 
-  ```bash
-  sudo dpkg --add-architecture i386
-  sudo apt-get update
-  sudo apt-get install lib32z1 lib32ncurses5
-  ```
+It is possible to compile Smoothie without having to install a compiler using the mBed <a href="http://mbed.org/handbook/Compiler-Tour">online compiler</a>, but please note that this only supports a very old version of Smoothie: [Smoothie on Mbed](http://mbed.org/users/scachat/code/Smoothie/file/)
 
-  After this, the make command should work.
-</sl-alert>
+This is not at all a recommended method.
 
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  It is possible to compile Smoothie without having to install a compiler using the mBed [online compiler](http://mbed.org/handbook/Compiler-Tour), but please note that this only supports a very old version of Smoothie: [Smoothie on Mbed](http://mbed.org/users/scachat/code/Smoothie/file/)
+**Windows sh.exe conflict:** On Windows, if you get an error like **`process_begin: CreateProcess(NULL, echo Building src, ...) failed.`**, this means that there is a sh.exe somewhere on your path (such as the one installed by the Windows GitHub client, or WINAVR) - this confuses GNU Make 3.81 into thinking you're on a Unix-like system. Also make sure WinAVR is removed from your PATH. Any failures to build a clean source branch will be due to an environment problem in your windows shell and is NOT a bug.
 
-  This is not at all a recommended method.
-</sl-alert>
+One solution is to replace **`build\win32\make.exe`** with a copy of version 3.82 - downloaded from [here](http://www.equation.com/servlet/equation.cmd?fa=make), perhaps.
 
-<sl-alert variant="warning" open>
-  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Windows sh.exe conflict:</strong> On Windows, if you get an error like **`process_begin: CreateProcess(NULL, echo Building src, ...) failed.`**, this means that there is a sh.exe somewhere on your path (such as the one installed by the Windows GitHub client, or WINAVR) - this confuses GNU Make 3.81 into thinking you're on a Unix-like system. Also make sure WinAVR is removed from your PATH. Any failures to build a clean source branch will be due to an environment problem in your windows shell and is NOT a bug.
-
-  One solution is to replace **`build\win32\make.exe`** with a copy of version 3.82 - downloaded from [here](http://www.equation.com/servlet/equation.cmd?fa=make), perhaps.
-
-  More information on the process of getting mBed code to compile with GCC can be found [here](http://mbed.org/forum/mbed/topic/2336/) (recommended read).
-</sl-alert>
-
-
+More information on the process of getting mBed code to compile with GCC can be found [here](http://mbed.org/forum/mbed/topic/2336/) (recommended read).
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -298,47 +269,35 @@ The output binary will be in `smoothiev2_Prime/smoothiev2.bin` (or respective ta
 
 **V1 Build Variants:**
 
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="check-circle"></sl-icon>
-  <strong>Building CNC version:</strong> If you are trying build the "CNC" version of Smoothie (with `grbl_mode` enabled by default and the special "CNC" control panel screen), you need to do:
+**Building CNC version:** If you are trying build the "CNC" version of Smoothie (with `grbl_mode` enabled by default and the special "CNC" control panel screen), you need to do:
 
-  ```bash
-  make clean
-  make CNC=1
-  ```
-</sl-alert>
+```bash
+make clean
+make CNC=1
+```
 
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="check-circle"></sl-icon>
-  <strong>Building with extruders and spindle:</strong> If you are trying build a version of Smoothie that has extruders, temperature control and spindle, you need to do:
+**Building with extruders and spindle:** If you are trying build a version of Smoothie that has extruders, temperature control and spindle, you need to do:
 
-  ```bash
-  make clean
-  make INCLUDE_MODULE="tools/drillingcycles tools/spindle"
-  ```
-</sl-alert>
+```bash
+make clean
+make INCLUDE_MODULE="tools/drillingcycles tools/spindle"
+```
 
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="check-circle"></sl-icon>
-  <strong>Building no-MSD version:</strong> To build the no-msd version of Smoothie (with Mass Storage over USB disabled, for example if your computer is abusing the interface by accessing it for no good reason, causing bugs), do:
+**Building no-MSD version:** To build the no-msd version of Smoothie (with Mass Storage over USB disabled, for example if your computer is abusing the interface by accessing it for no good reason, causing bugs), do:
 
-  ```bash
-  make clean
-  make DISABLEMSD=1
-  ```
-</sl-alert>
+```bash
+make clean
+make DISABLEMSD=1
+```
 
-<sl-alert variant="primary" open>
-  <sl-icon slot="icon" name="check-circle"></sl-icon>
-  <strong>Setting build defaults:</strong> If you want your branch to default to some things, let's say for example you want your branch to build as `CNC=1` without having to specify `make CNC=1` each time you build, you can:
+**Setting build defaults:** If you want your branch to default to some things, let's say for example you want your branch to build as `CNC=1` without having to specify `make CNC=1` each time you build, you can:
 
-  In the `src` directory create a file called `default_excludes.mk` and in that file add:
+In the `src` directory create a file called `default_excludes.mk` and in that file add:
 
-  ```bash
-  CNC=1
-  export EXCLUDE_MODULES = tools/laser tools/filamentdetector tools/scaracal tools/temperaturecontrol tools/extruder
-  ```
-</sl-alert>
+```bash
+CNC=1
+export EXCLUDE_MODULES = tools/laser tools/filamentdetector tools/scaracal tools/temperaturecontrol tools/extruder
+```
 
 {::nomarkdown}
 </v1>
@@ -362,8 +321,6 @@ Configuration of enabled modules and features is primarily handled through the c
 </versioned>
 {:/nomarkdown}
 
-
-
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>Video walkthrough:</strong> Here is how compiling looks like, step by step:
@@ -377,8 +334,6 @@ Configuration of enabled modules and features is primarily handled through the c
 {:/nomarkdown}
 
 ## Flashing to the board
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -443,11 +398,7 @@ Board downloads, validates (MD5), and flashes on next boot.
 </versioned>
 {:/nomarkdown}
 
-
-
 Detailed instructions can be found on the [Flashing Smoothie](/flashing-smoothie-firmware) page.
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -507,5 +458,3 @@ This automatically handles DFU mode entry and flashing. For manual DFU control, 
 </v2>
 </versioned>
 {:/nomarkdown}
-
-

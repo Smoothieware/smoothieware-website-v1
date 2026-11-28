@@ -4,7 +4,9 @@ layout: default
 title: Getting Started with Smoothie
 ---
 
-# Getting Started with Smoothieboard
+{::nomarkdown}
+<span id="getting-started-with-smoothieboard"></span>
+{:/nomarkdown}
 
 So you got your Smoothieboard and you want to get it running. Good news: it's not that complicated. Bad news: you still need to read stuff and do things in order.
 
@@ -26,19 +28,19 @@ Before you start plugging wires everywhere, here's the basic idea of how this wh
 
 **You want to make a physical object. Here's the chain:**
 
-1. **Design** your thing in CAD software (OpenSCAD, Fusion360, Inkscape, whatever)
-2. **Generate G-code** using a slicer/CAM program (Slic3r, CamBam, LightBurn, etc.)
-3. **Send commands** to Smoothieboard using host software (Pronterface, Octoprint, bCNC, etc.)
-4. **Smoothieboard receives** G-code via USB/Ethernet/SD card
-5. **Smoothie firmware executes** the commands by moving motors and controlling tools
-6. **Your machine makes** the thing
+1. Design your thing in CAD software (OpenSCAD, Fusion360, Inkscape, whatever)
+2. Generate G-code using a slicer/CAM program (Slic3r, CamBam, LightBurn, etc.)
+3. Send commands to Smoothieboard using host software (Pronterface, Octoprint, bCNC, etc.)
+4. Smoothieboard receives G-code via USB/Ethernet/SD card
+5. Smoothie firmware executes the commands by moving motors and controlling tools
+6. Your machine makes the thing
 
 **The parts of the system:**
 
-- **Smoothie** = The firmware (software) that runs on the board
-- **Smoothieboard** = The actual physical board (hardware)
-- **G-code** = The language that tells machines what to do
-- **Config file** = A text file on the SD card that tells Smoothie how to behave
+- Smoothie = The firmware (software) that runs on the board
+- Smoothieboard = The actual physical board (hardware)
+- G-code = The language that tells machines what to do
+- Config file = A text file on the SD card that tells Smoothie how to behave
 
 If you want more details on all this, read [Smoothie Basics](basics).
 
@@ -117,7 +119,7 @@ Here's what setting up a Smoothieboard looks like. Each machine guide gives you 
 ### Before anything else
 
 **You need:**
-- Basic electrical knowledge (voltage, current, polarity - see [Electricity Basics](basics#electricity) if you need a refresher)
+- Basic electrical knowledge (voltage, current, polarity - see [Electricity Basics](/basics#what-is-electricity) if you need a refresher)
 - Screwdrivers, wire strippers, multimeter
 - A power supply appropriate for your machine
 - USB cable (usually USB-A to USB-B)
@@ -142,10 +144,10 @@ If you're on Windows, go install the [Windows drivers](windows-drivers) now. Lin
 
 You need software on your computer to talk to the board. Pick one:
 
-- **[Smoopi](smoopi)** - Recommended, runs on Raspberry Pi with touchscreen
-- **[Pronterface](pronterface)** - Popular for 3D printers, simple and reliable
-- **[Octoprint](octoprint)** - Web-based 3D printer control, very nice
-- **[bCNC](bcnc)** - Good for CNC mills
+- [Smoopi](smoopi) - Recommended, runs on Raspberry Pi with touchscreen
+- [Pronterface](pronterface) - Popular for 3D printers, simple and reliable
+- [Octoprint](octoprint) - Web-based 3D printer control, very nice
+- [bCNC](bcnc) - Good for CNC mills
 
 See [Software](software) for the full list.
 
@@ -235,11 +237,11 @@ The SD card appears as a drive on your computer. You can copy files to it like a
 
 Your machine guide has the detailed wiring instructions. General order:
 
-1. **Power supply** - Wire AC power to your PSU, then PSU outputs to the board power inputs (see [Main Power Input](main-power-input))
-2. **Stepper motors** - Connect each motor to a driver output (see [Stepper Motors](stepper-motors))
-3. **Endstops** - Wire limit switches to endstop inputs (see [Endstops](endstops))
-4. **Sensors** - Thermistors for 3D printers (see [Temperature Control](temperaturecontrol))
-5. **Tools** - Heaters, lasers, spindles, whatever your machine uses
+1. Power supply - Wire AC power to your PSU, then PSU outputs to the board power inputs (see [Main Power Input](main-power-input))
+2. Stepper motors - Connect each motor to a driver output (see [Stepper Motors](stepper-motors))
+3. Endstops - Wire limit switches to endstop inputs (see [Endstops](endstops))
+4. Sensors - Thermistors for 3D printers (see [Temperature Control](temperaturecontrol))
+5. Tools - Heaters, lasers, spindles, whatever your machine uses
 
 **Test each component as you go.** Wire something, test it, then move on. If you wire everything at once and it doesn't work, you'll waste hours troubleshooting.
 
@@ -402,10 +404,10 @@ When you're stuck:
 
 **Then ask the community:**
 
-- **Community**: [Forums, chat and version-specific discussions](/community)
-- **IRC**: [#smoothieware on irc.libera.chat](/irc) - General help; #smoothiedev for development
-- **Email**: [wolf.arthur@gmail.com](mailto:wolf.arthur@gmail.com) - Be patient, volunteers
-- **GitHub bugs**: [Smoothieware V1](https://github.com/Smoothieware/Smoothieware/issues) or [Smoothieware V2](https://github.com/Smoothieware/SmoothieV2/issues)
+- Community: [Forums, chat and version-specific discussions](/community)
+- IRC: [#smoothieware on irc.libera.chat](/irc) - General help; #smoothiedev for development
+- Email: [wolf.arthur@gmail.com](mailto:wolf.arthur@gmail.com) - Be patient, volunteers
+- GitHub bugs: [Smoothieware V1](https://github.com/Smoothieware/Smoothieware/issues) or [Smoothieware V2](https://github.com/Smoothieware/SmoothieV2/issues)
 
 **When asking for help, include:**
 
@@ -426,7 +428,7 @@ When you're stuck:
 - [Motion Control](motion-control) - Fine-tune motion and acceleration
 - [Network](network) - Set up Ethernet
 - [SD Card](sd-card) - Print without a computer
-- [on_boot.gcode](on_boot.gcode) - Automate startup tasks
+- [on_boot.gcode](/on-boot-gcode) - Automate startup tasks
 
 **Want to help?**
 - [Contributing](contributing) - Help improve Smoothieware

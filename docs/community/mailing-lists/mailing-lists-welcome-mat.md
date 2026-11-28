@@ -1,9 +1,11 @@
 ---
+title: "Mailing lists welcome mat"
 permalink: /mailing-lists-welcome-mat
 ---
 
-
-# Smoothie Mailing Lists
+{::nomarkdown}
+<span id="smoothie-mailing-lists"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
@@ -14,7 +16,14 @@ permalink: /mailing-lists-welcome-mat
 
 Before posting to the mailing lists, please read the following recommendations:
 
-{% include community/forum/help-guidelines-for-include.md %}
+Before asking for help, please read the help guidelines : giving your board version, firmware version, configuration file and a clear description of the problem gets you an answer much faster.
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="book"></sl-icon>
+  <strong>Learn more:</strong> <a href="/help-guidelines">Help guidelines</a>
+</sl-alert>
+{:/nomarkdown}
 
 ## The Mailing Lists
 

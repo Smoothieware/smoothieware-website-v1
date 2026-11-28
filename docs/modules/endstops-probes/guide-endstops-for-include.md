@@ -4,9 +4,12 @@
 </a>
 {:/nomarkdown}
 
-# Endstops
+{::nomarkdown}
+<span id="endstops"></span>
+{:/nomarkdown}
 
 <!-- learning-diagram:25-guide-endstops -->
+
 {::nomarkdown}
 <figure id="learning-diagram-25-guide-endstops" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
   <a href="/images/learning-diagrams/25-guide-endstops.svg">
@@ -15,9 +18,6 @@
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Place the endstop at the homing end <a href="#learning-diagram-25-guide-endstops" aria-label="Permanent link to Place the endstop at the homing end" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-
-
-
 
 *It's essentially just a switch*
 
@@ -84,8 +84,9 @@ Other types exist like optical or hall-o sensors.
 Most mechanical end-stops have 3 connection points, to which you have to attach your wires: 
 
 * **C**: Common
-* **NO**: Normally Open, meaning it is not connected to **C** when the interrupter is not pressed, and connected to **C** when the interrupter is pressed.
-* **NC**: Normally Closed, meaning it is connected to **C** when the interrupter is not pressed, and not connected to **C** when the interrupter is pressed.
+* NO: Normally Open, meaning it is not connected to **C** when the interrupter is not pressed, and connected to **C** when the interrupter is pressed.
+* NC: Normally Closed, meaning it is connected to **C** when the interrupter is not pressed, and not connected to **C** when the interrupter is pressed.
+
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
   <a href="/images/recovered/end-stops.png">
@@ -251,8 +252,7 @@ For complete pinout information, see the [Smoothieboard Pinout documentation](pi
 {:/nomarkdown}
 
 For complete pinout information, see your board's pinout documentation:
-- [Prime Board Pinout](smoothieboard-prime-pinout)
-- [Mini Board Pinout](smoothieboard-mini-pinout)
+- [Prime Board Pinout](/smoothieboard-v2-prime)
 
 {::nomarkdown}
 </v2>

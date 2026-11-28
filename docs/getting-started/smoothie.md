@@ -1,20 +1,20 @@
 ---
+title: "Smoothie"
 permalink: /smoothie
 ---
 
-
-# Smoothie
+{::nomarkdown}
+<span id="smoothie"></span>
+{:/nomarkdown}
 
 ## What is Smoothieware?
 
 Smoothieware is a free, opensource, high-performance G-code interpreter and CNC control system designed for modern ARM-based microcontrollers. It enables precise motion control for various machines including 3D printers, laser cutters, CNC mills, and pick-and-place machines.
 
 The project consists of:
-- **Firmware**: Real-time control software running on dedicated hardware
-- **Controller Board**: Specialized PCB (Smoothieboard) with motor drivers and expansion capabilities
-- **Community**: Active developers and users providing support and extensions
-
-
+- Firmware: Real-time control software running on dedicated hardware
+- Controller Board: Specialized PCB (Smoothieboard) with motor drivers and expansion capabilities
+- Community: Active developers and users providing support and extensions
 
 ## Hardware Platform
 
@@ -116,8 +116,6 @@ Smoothieware runs on specialized controller hardware designed for precision moti
 </versioned>
 {:/nomarkdown}
 
-
-
 ## Getting Started
 
 Choose your path based on which version of Smoothieware you're using:
@@ -132,7 +130,7 @@ Choose your path based on which version of Smoothieware you're using:
 1. [Getting Started Guide](start) - Quick setup instructions
 2. [Smoothieboard Documentation](smoothieboards) - Hardware details
 3. [Configuration Guide](configuring-smoothie) - Software setup
-4. [FAQ](../community/faq) - Common questions answered
+4. FAQ - Common questions answered
 
 {::nomarkdown}
 </v1>
@@ -144,7 +142,7 @@ Choose your path based on which version of Smoothieware you're using:
 1. [Getting Started Guide](start) - Quick setup instructions (V2-specific)
 2. [Smoothieboard V2 Documentation](smoothieboards) - Hardware details
 3. [Configuration Guide](configuring-smoothie) - Software setup (V2-specific)
-4. [Migration Guide](../migration) - Upgrading from V1 to V2
+4. [Migration Guide](/migrating) - Upgrading from V1 to V2
 
 {::nomarkdown}
 </v2>
@@ -194,7 +192,7 @@ The Smoothie project welcomes contributions from developers, users, and enthusia
 - Create guides and tutorials
 - Help test firmware releases
 
-See the [Contributing Guide](../project/contributing) and [Editing the Wiki](../project/github/editing-the-wiki) pages for more information.
+See the [Contributing Guide](/contributing) and [Editing the Wiki](/editing-the-wiki) pages for more information.
 
 You can also [contact the project maintainers](mailto:wolf.arthur@gmail.com) to discuss how you can help.
 
@@ -203,8 +201,8 @@ You can also [contact the project maintainers](mailto:wolf.arthur@gmail.com) to 
 For detailed information about specific topics:
 
 - [Homepage](index) - Main documentation
-- [Developer Guide](../developers/developers-guide) - Software architecture and development
-- [Configuration Options](../configuration/configuration-options) - All available settings
-- [G-code Reference](../gcode-reference/) - Supported G-codes and M-codes
+- [Developer Guide](/developers-guide) - Software architecture and development
+- [Configuration Options](/configuration-options) - All available settings
+- [G-code Reference](/supported-g-codes) - Supported G-codes and M-codes
 - [Troubleshooting](../troubleshooting/) - Common problems and solutions
 - [Community Resources](community) - User projects and links

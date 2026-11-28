@@ -1,12 +1,13 @@
 ---
+title: "CNC milling"
 permalink: /landing-page-cnc-milling
 ---
 
-# Affordable CNC Mill Retrofit with Professional Features
+{::nomarkdown}
+<span id="affordable-cnc-mill-retrofit-with-professional-features"></span>
+{:/nomarkdown}
 
 **Convert your manual mill to CNC or upgrade your existing controller** with Smoothieboard v2. Powerful 32-bit control handles complex 3D toolpaths, multi-axis operations, and production work. Used in everything from desktop mills to Bridgeport conversions. $200 vs $1000+ commercial controllers.
-
-![CNC mill machining aluminum with Smoothieboard visible](/images/smoothieboard-cnc-mill-hero.jpg)
 
 **Control Your CNC Mill - $200**
 
@@ -16,8 +17,6 @@ permalink: /landing-page-cnc-milling
 ✅ **Native 4-Axis and 5-Axis Milling Support**
 ✅ **Production Reliable - Runs 8-Hour Aluminum Jobs**
 ✅ **$200 vs $1000+ Commercial Controllers**
-
----
 
 ## Upgrading or Building a CNC Mill? Common Problems:
 
@@ -35,8 +34,6 @@ Need balance of:
 - Expandability (probes, tool changers, multi-axis)
 - Affordability (hobby/small shop budgets)
 
----
-
 ## Professional CNC Mill Control at Hobbyist Price
 
 ### Technical Capabilities:
@@ -49,27 +46,25 @@ Need balance of:
 - Jerk control for clean finishes
 
 **Multi-Axis Support:**
-- **3-Axis:** X, Y, Z (standard milling)
-- **4-Axis:** Add A-axis for rotary indexing
-- **5-Axis:** A+B or A+C for full 5-axis simultaneous
+- 3-Axis: X, Y, Z (standard milling)
+- 4-Axis: Add A-axis for rotary indexing
+- 5-Axis: A+B or A+C for full 5-axis simultaneous
 - Native support - no hacks or firmware mods
 
 **Milling-Specific Features:**
-- **G-Code Interpreter:** Full RS274/NGC support
-- **Work Coordinate Systems:** {::nomarkdown}<gcode>G54</gcode>-<gcode>G59</gcode>{:/nomarkdown} (multiple setups)
-- **Tool Length Offsets:** G43/G49 support
-- **Canned Cycles:** G81-G89 drilling/boring cycles
-- **Probing:** Touch probe support (G38.x)
-- **Spindle Control:** PWM or relay for VFD
-- **Coolant Control:** M7/M8/M9 support
+- G-Code Interpreter: Full RS274/NGC support
+- Work Coordinate Systems: {::nomarkdown}<gcode>G54</gcode>-<gcode>G59</gcode>{:/nomarkdown} (multiple setups)
+- Tool Length Offsets: G43/G49 support
+- Canned Cycles: G81-G89 drilling/boring cycles
+- Probing: Touch probe support (G38.x)
+- Spindle Control: PWM or relay for VFD
+- Coolant Control: M7/M8/M9 support
 
 **Motion Quality:**
 - Advanced trajectory planning
 - Smooth cornering
 - Minimal tool marks
 - Consistent surface finish
-
----
 
 ## Proven in These CNC Mill Conversions
 
@@ -100,8 +95,6 @@ Need balance of:
 - Jewelry mills
 - Dental mills
 
----
-
 ## Works with Professional CAM Software
 
 ### Fusion 360 / HSMWorks:
@@ -128,8 +121,6 @@ Need balance of:
 - ✅ CNCjs (web-based)
 - ✅ Universal G-Code Sender (UGS)
 - ✅ LinuxCNC UI (via network)
-
----
 
 ## Expand to 4-Axis and 5-Axis Milling
 
@@ -163,8 +154,6 @@ delta_max_rate         30000   # Rotary speed
 - Native 5-axis kinematics
 - Works with 5-axis CAM output
 
----
-
 ## Reliable Enough for Production Work
 
 ### For Small Shops & Job Shops:
@@ -193,8 +182,6 @@ delta_max_rate         30000   # Rotary speed
 - Works with existing toolchains
 - Easy operator training
 
----
-
 ## Advanced Features for Precision Work
 
 ### Touch Probe Support:
@@ -214,8 +201,6 @@ delta_max_rate         30000   # Rotary speed
 - {::nomarkdown}<gcode>G92</gcode>{:/nomarkdown} temporary offsets
 - Multiple part setups
 - Fixture offsets
-
----
 
 ## Bridgeport Conversion: Before & After
 
@@ -244,8 +229,6 @@ delta_max_rate         30000   # Rotary speed
 | Expandability | Limited PC ports | 63 GPIO |
 | Cost | $800+ | $300 |
 
----
-
 ## Real CNC Mill Conversions with Smoothieboard
 
 ### Photo Gallery:
@@ -261,8 +244,6 @@ delta_max_rate         30000   # Rotary speed
 
 > "Bridgeport retrofit with Smoothie. Way easier than LinuxCNC parallel port setup, and just as capable."
 > — Retired machinist
-
----
 
 ## CNC Mill Controller Questions
 
@@ -290,8 +271,6 @@ A: Lathe support is currently being added, so this is something you'll be able t
 **Q: What about gang tooling or turrets?**
 A: Manual tool change (M6) is straightforward. ATC possible with GPIO programming.
 
----
-
 ## Upgrade Your CNC Mill Today
 
 ### Smoothieboard v2 Prime - $200
@@ -310,8 +289,6 @@ A: Manual tool change (M6) is straightforward. ATC possible with GPIO programmin
 - External stepper driver support available for larger machines (see [wiring guide](/general-appendixes))
 - Board can be re-used for lasers, 3D printers, vinyl cutters, pick and place machines, gluing machines, etc.
 
----
-
 ## Control Your CNC Mill with Professional 32-Bit Power
 
 **[Control Your CNC Mill - $200](https://www.robosprout.com)**
@@ -320,8 +297,6 @@ A: Manual tool change (M6) is straightforward. ATC possible with GPIO programmin
 - Production Reliable
 - $200 vs $1000+ Commercial
 - Handles Complex CAM Files
-
----
 
 *Smoothieboard v2 is OSHWA certified open hardware (FR000021). 15 years of proven performance in CNC milling applications. Used by thousands of machinists and hobbyists worldwide.*
 

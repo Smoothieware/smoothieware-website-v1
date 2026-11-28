@@ -1,9 +1,11 @@
 ---
+title: "Linux drivers"
 permalink: /linux-drivers
 ---
 
-
-# Linux + Smoothie == ❤️
+{::nomarkdown}
+<span id="linux--smoothie--️"></span>
+{:/nomarkdown}
 
 This is optional, but makes things more convenient.
 
@@ -86,7 +88,7 @@ It sets the permissions for all users to read/write (0666).
 
 ## PID problems
 
-If your PID and VIDs are `0000`, take a look at [this forum post](http://smoothieware.org/forum/t-1047411?from=email#post-2184547).
+If your PID and VIDs are `0000`, take a look at [this forum post](https://web.archive.org/web/2020/http://smoothieware.org/forum/t-1047411?from=email#post-2184547).
 
 ## Troubleshooting
 

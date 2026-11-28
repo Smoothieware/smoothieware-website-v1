@@ -384,22 +384,6 @@ img[src*="icon."] {
   height: auto !important;
 }
 
-/* Hide the site title H1 at the top of every page */
-.markdown-body > h1:first-child {
-  display: none;
-}
-
-
-/* Pages that show their own title mark it with {: .show-title}. */
-.markdown-body > h1.show-title:first-child {
-  display: block;
-}
-
-/* Extension guides need their board name before the task instructions. */
-.markdown-body.extension-guide > h1:first-child {
-  display: block;
-}
-
 /* Increase page width by 25% - override midnight theme's wrapper and section widths */
 .wrapper {
   width: 1000px !important; /* Default is 800px, increased by 25% */
@@ -685,4 +669,14 @@ section {
   height: auto;
   max-height: 160px;
   object-fit: contain;
+}
+
+/* Heading links added by the script at the end of the default layout */
+.markdown-body :is(h1, h2, h3, h4, h5, h6)[id] { scroll-margin-top: 100px; }
+.markdown-body a.heading-anchor { margin-left: .4em; text-decoration: none; opacity: .35; }
+.markdown-body a.heading-anchor::after { content: "#"; }
+.markdown-body :is(h1, h2, h3, h4, h5, h6):hover > a.heading-anchor,
+.markdown-body a.heading-anchor:focus-visible { opacity: 1; }
+@media (max-width: 1080px) {
+  .markdown-body :is(h1, h2, h3, h4, h5, h6)[id] { scroll-margin-top: 12px; }
 }

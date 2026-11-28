@@ -1,9 +1,11 @@
 ---
+title: "Policy"
 permalink: /policy
 ---
 
-
-# What makes a Smoothieboard a Smoothie?
+{::nomarkdown}
+<span id="what-makes-a-smoothieboard-a-smoothie"></span>
+{:/nomarkdown}
 
 Smoothieboard is a simplified controller board for robotic motion control and tool operation.
 

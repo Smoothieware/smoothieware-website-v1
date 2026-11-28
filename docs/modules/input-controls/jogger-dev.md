@@ -4,7 +4,9 @@ layout: default
 title: Jogger Developer Documentation
 ---
 
-# Jogger Developer Documentation
+{::nomarkdown}
+<span id="jogger-developer-documentation"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <versioned orientation="vertical">

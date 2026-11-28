@@ -1,5 +1,5 @@
 
-{% include modules/player/printing-from-sd-card-for-include.md %}
+{% include _includes/chapter.md file="modules/player/printing-from-sd-card-for-include.md" title="Printing, milling or cutting from the SD card" anchor="printing-milling-or-cutting-from-the-sd-card" %}
 
 ## Wiring
 <a name='wiring'></a>
@@ -52,8 +52,6 @@ If when you test it, the two motors turn in reverse, you need to reverse one of 
 
 You also need to set a current value for that driver that matches the total current your two motors will be using. For example if the motors are each 0.8Amps, your total is 1.6Amps and you need to set for that specific driver ( here gamma driver is shown ) :
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -77,8 +75,6 @@ gamma.current = 1.6
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 ## Doubling stepper motor drivers
 <a name='doubling-drivers'></a>
@@ -109,8 +105,6 @@ Finally you need to do two things in your configuration file:
 
 First, set the current value for **both** drivers. For example if you are using gamma and epsilon set:
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -137,13 +131,9 @@ epsilon.current = 1.5
 </versioned>
 {:/nomarkdown}
 
-
-
 Then, you need to make sure that none of the step, dir and enable configuration values for your slave stepper motor driver, are present in the configuration file.
 
 For example if you are using gamma as a slave, make sure that none of the following values are present in the configuration file:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -172,8 +162,6 @@ gamma.enable_pin = ...
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 If they are, remove them. And be careful, for the delta driver, if you started from the 3D printer configuration file, they are not referred to as delta_xxx_pin but as extruder_xxx_pin, if they are present you must remove them all.
 
@@ -225,8 +213,6 @@ Here, the 5V is taken from an endstop input's positive terminal, taken to the 5V
 
 In this case, you will also need to change those pins to be open-drain. To change a pin from being normal to being open-drain, you add a `o` lowercase "o" to the pin's number. For example:
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -276,8 +262,6 @@ alpha.step_pin = 2.0!o    # Pin for alpha stepper step signal (open-drain, inver
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -375,8 +359,6 @@ This example shows using P{::nomarkdown}<pin>1.30</pin>{:/nomarkdown}
 
 Then simply configure the module that will be using the SSR to use that pin, for example in the case of [Switch](switch):
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -409,15 +391,11 @@ misc.output_type = digital         # just an on or off pin
 </versioned>
 {:/nomarkdown}
 
-
-
-In the case of [TemperatureControl](temperature-control), where you use the SSR to control a heating element for example, there is a catch.
+In the case of [TemperatureControl](/temperaturecontrol), where you use the SSR to control a heating element for example, there is a catch.
 
 SSRs have a low maximum frequency they can be switched at. You need to specify that frequency or Smoothie will drive it way too fast. In this example, the maximum frequency is 20Hz.
 
 So, you need to modify your module to both use the correct pin (the free GPIO you wired to the SSR), and to the correct frequency. Here are the two lines to change:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -445,11 +423,7 @@ swimming_pool_heating.pwm_frequency = 20
 </versioned>
 {:/nomarkdown}
 
-
-
 Another option, which turns the heaters on/off even less often, is to use bang-bang, where the state is only changed when temperature deviates too much from the set value:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -479,8 +453,6 @@ bed.hysteresis = 2.0            # set to the temperature in degrees C to use as 
 </versioned>
 {:/nomarkdown}
 
-
-
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
   <iframe width="100%" height="720" src="https://www.youtube.com/embed/TiEwNf1H_Tc" frameborder="0" allowfullscreen></iframe>
@@ -496,8 +468,6 @@ For example, you have a board that has two connectors on the Z axis, but you wan
 In that case, all you need to do is exchange the 3 pin definitions for these two axes.
 
 For example:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -560,16 +530,14 @@ gamma.enable_pin = 0.10           # Pin for gamma enable
 </versioned>
 {:/nomarkdown}
 
-
-
 Now your beta driver becomes your Z axis, and your gamma driver becomes your Y axis.
 
 Please note that the current control parameters do not get swapped: `alpha_current` always controls the current for M1, no matter what you do to the step/direction pins.
 
 ## Which pins are which
 
-{% include hardware/pins/pinout-for-include.md %}
+{% include _includes/chapter.md file="hardware/pins/pinout-for-include.md" %}
 
 ## Protecting a power input with a fuse
 
-{% include hardware/power/fuse-protection-for-include.md %}
+{% include _includes/chapter.md file="hardware/power/fuse-protection-for-include.md" %}

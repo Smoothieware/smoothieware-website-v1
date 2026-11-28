@@ -1,10 +1,13 @@
 ---
+sitemap: false
 permalink: /test-components
 layout: default
 title: Shoelace Components Test
 ---
 
-# Shoelace Components Test Page
+{::nomarkdown}
+<span id="shoelace-components-test-page"></span>
+{:/nomarkdown}
 
 This page tests Shoelace components integration with the Smoothieware theme.
 

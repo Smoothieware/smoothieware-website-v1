@@ -1,12 +1,13 @@
 ---
+title: "Laser cutting"
 permalink: /landing-page-laser-cutting
 ---
 
-# Professional Laser Control with Full LightBurn Support
+{::nomarkdown}
+<span id="professional-laser-control-with-full-lightburn-support"></span>
+{:/nomarkdown}
 
 **Transform your laser cutter with professional-grade control.** Smoothieboard v2 works with LightBurn, LaserGRBL, and all major laser software. Smooth raster engraving, accurate power control, and rock-solid reliability. Perfect for CO2, diode, or fiber lasers. Used by laser cutting professionals worldwide.
-
-![Smoothieboard controlling a laser cutter with detailed engraving](/images/smoothieboard-laser-hero.jpg)
 
 **Upgrade Your Laser Cutter - $200**
 
@@ -16,8 +17,6 @@ permalink: /landing-page-laser-cutting
 ✅ **Smooth Raster Engraving with True Grayscale Control**
 ✅ **Works with Any Laser Type - CO2, Diode, Fiber**
 ✅ **Rock-Solid Reliability - 15 Years Proven**
-
----
 
 ## Is Your Laser Controller Holding You Back?
 
@@ -30,8 +29,6 @@ permalink: /landing-page-laser-cutting
 - ❌ **Stuttering Motion** - Laser pauses on curves
 
 ### For Professional Work, You Need Better:
-
----
 
 ## Professional-Grade Laser Control
 
@@ -61,8 +58,6 @@ permalink: /landing-page-laser-cutting
 - ✅ **Air Assist Control** - Automated based on job
 - ✅ **Custom Sensors** - 63 GPIO for any addition
 
----
-
 ## Works Perfectly with LightBurn
 
 ### Why LightBurn Matters:
@@ -76,15 +71,13 @@ LightBurn is the industry standard for laser cutting/engraving. If you're seriou
 - ✅ **Advanced Toolpathing** - Smoothie handles complex paths
 
 ### Also Works With:
-- **Visicut** - Full laser control application with direct Smoothieware interface
+- Visicut - Full laser control application with direct Smoothieware interface
 - LaserGRBL (free, open-source)
 - LaserWeb
 - Inkscape with G-code plugin
-- **Smoopi** - Raspberry Pi based touch interface created specifically for Smoothieboard ([GitHub](https://github.com/wolfmanjm/kivy-smoothie-host))
+- Smoopi - Raspberry Pi based touch interface created specifically for Smoothieboard ([GitHub](https://github.com/wolfmanjm/kivy-smoothie-host))
 - Any G-code sender that outputs standard G-code
 - Any G-code sender
-
----
 
 ## Universal Laser Compatibility
 
@@ -119,8 +112,6 @@ LightBurn is the industry standard for laser cutting/engraving. If you're seriou
 
 **Note:** Smoothieboard has been used to refurbish **thousands** of laser cutters worldwide, from small desktop K40s to large industrial Chinese CO2 lasers. If your laser cutter needs a controller upgrade, Smoothieboard is the solution.
 
----
-
 ## See the Difference in Engraving Quality
 
 ### Stock Controller Raster:
@@ -143,8 +134,6 @@ LightBurn is the industry standard for laser cutting/engraving. If you're seriou
 - Smooth curves
 - Consistent power delivery
 
----
-
 ## Add Rotary Engraving to Your Laser
 
 ### Why Rotary Matters:
@@ -166,8 +155,6 @@ Engrave on:
 - Roller rotaries
 - Indexing rotaries
 - Custom builds
-
----
 
 ## Reliable Enough for Production Work
 
@@ -195,8 +182,6 @@ Engrave on:
 - Automated material handling (GPIO)
 - Camera for precise alignment
 
----
-
 ## Proven in Real Laser Cutting Machines
 
 ### Gallery of Laser Upgrades:
@@ -216,8 +201,6 @@ Search for authentic quotes from laser users who upgraded to Smoothie:
 - MakerForums laser discussions
 
 **Important:** Only use real quotes with verifiable sources and user permission.
-
----
 
 ## Laser Controller Questions Answered
 
@@ -245,15 +228,13 @@ A: Smoothie is used in production environments. Reliable enough for client work.
 **Q: Is $200 worth it vs my $50 Chinese controller?**
 A: How many controllers have you replaced? Plus improved quality = happier clients = more business. ROI is fast.
 
----
-
 ## Upgrade Your Laser Cutter Today
 
 ### Smoothieboard v2 Prime - $200
 
 #### Choose Your Version:
-- **TMC2660 (1.2-2.2A):** Most lasers
-- **TMC2590 (2.5-4.6A):** High-power steppers
+- TMC2660 (1.2-2.2A): Most lasers
+- TMC2590 (2.5-4.6A): High-power steppers
 
 #### Laser-Specific Resources (Free):
 - Laser wiring diagrams
@@ -265,8 +246,6 @@ A: How many controllers have you replaced? Plus improved quality = happier clien
 #### Where to Buy:
 - [Robosprout (USA) - Ships worldwide](https://www.robosprout.com)
 
----
-
 ## Upgrade Your Laser Cutter to Professional Control
 
 **[Upgrade Your Laser Cutter - $200](https://www.robosprout.com)**
@@ -275,8 +254,6 @@ A: How many controllers have you replaced? Plus improved quality = happier clien
 - Smooth Raster Engraving
 - Works with Any Laser
 - Rotary Ready
-
----
 
 *Smoothieboard v2 is OSHWA certified open hardware (FR000021). 15 years of proven performance in laser cutting applications. Used by thousands of laser cutting professionals worldwide.*
 

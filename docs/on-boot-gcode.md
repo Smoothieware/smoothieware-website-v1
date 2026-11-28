@@ -4,7 +4,9 @@ layout: default
 title: on_boot.gcode - Startup G-code File
 ---
 
-# on_boot.gcode - Startup G-code File
+{::nomarkdown}
+<span id="on_bootgcode---startup-g-code-file"></span>
+{:/nomarkdown}
 
 The `on_boot.gcode` file is a special G-code file that Smoothieware automatically executes when the board boots up. This feature allows you to run initialization commands, homing sequences, or startup configurations without manual intervention.
 
@@ -15,24 +17,20 @@ The `on_boot.gcode` file is a special G-code file that Smoothieware automaticall
 </sl-alert>
 {:/nomarkdown}
 
----
-
 ## What is on_boot.gcode?
 
 `on_boot.gcode` is a standard G-code file stored on your Smoothieboard's SD card that runs automatically after the board completes its boot sequence. Think of it as a startup script for your CNC machine, 3D printer, laser cutter, or other Smoothie-controlled device.
 
 ### Common Use Cases
 
-- **Automatic homing** on power-up
-- **Setting default temperatures** for hotends or heated beds
-- **Initializing tool positions** or offsets
-- **Loading saved settings** or profiles
-- **Running calibration routines**
-- **Setting default speeds** and acceleration values
-- **Enabling/disabling specific features** for your workflow
-- **Moving to a safe parking position** after boot
-
----
+- Automatic homing on power-up
+- Setting default temperatures for hotends or heated beds
+- Initializing tool positions or offsets
+- Loading saved settings or profiles
+- Running calibration routines
+- Setting default speeds and acceleration values
+- Enabling/disabling specific features for your workflow
+- Moving to a safe parking position after boot
 
 ## Location and File Format
 
@@ -50,11 +48,11 @@ When you connect your Smoothieboard via USB, the SD card appears as a removable 
 
 The file uses standard G-code format:
 
-- **One command per line**
-- **Comments** start with `;` or `()`
-- **Standard G-code syntax** (same as any G-code file)
-- **Case insensitive** ({::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} and {::nomarkdown}<gcode>g28</gcode>{:/nomarkdown} are equivalent)
-- **Blank lines** are ignored
+- One command per line
+- Comments start with `;` or `()`
+- Standard G-code syntax (same as any G-code file)
+- Case insensitive ({::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} and {::nomarkdown}<gcode>g28</gcode>{:/nomarkdown} are equivalent)
+- Blank lines are ignored
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -62,8 +60,6 @@ The file uses standard G-code format:
   <strong>Tip:</strong> Keep your on_boot.gcode file simple and fast. Complex routines that take a long time will delay your machine being ready to use.
 </sl-alert>
 {:/nomarkdown}
-
----
 
 ## Configuration
 
@@ -97,16 +93,14 @@ Or simply comment out the line:
 # on_boot_gcode_enable true
 ```
 
----
-
 ## Execution Timing
 
 The `on_boot.gcode` file executes:
 
-- **After the board completes booting** (typically 2-3 seconds after power-on)
-- **After the configuration file is loaded**
-- **Before any other commands** from the console or host software
-- **On every reset or power cycle** (not just cold boots)
+- After the board completes booting (typically 2-3 seconds after power-on)
+- After the configuration file is loaded
+- Before any other commands from the console or host software
+- On every reset or power cycle (not just cold boots)
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -114,8 +108,6 @@ The `on_boot.gcode` file executes:
   <strong>Important:</strong> The on_boot.gcode file runs on EVERY boot, including resets and watchdog timer resets. Ensure your commands are safe to run repeatedly.
 </sl-alert>
 {:/nomarkdown}
-
----
 
 ## Practical Examples
 
@@ -181,18 +173,16 @@ You can use `on_boot.gcode` to load settings saved with {::nomarkdown}<mcode>M50
 M501         ; Load settings from config-override
 ```
 
----
-
 ## Best Practices
 
 ### Do's
 
-- **Keep it simple**: Fast, essential commands only
-- **Add comments**: Document what each command does
-- **Test thoroughly**: Verify commands work as expected before relying on auto-execution
-- **Use safe defaults**: Assume unknown machine state at boot
-- **Home before moving**: Always home axes before absolute position moves
-- **Turn off heaters/spindles**: Ensure tools are off by default
+- Keep it simple: Fast, essential commands only
+- Add comments: Document what each command does
+- Test thoroughly: Verify commands work as expected before relying on auto-execution
+- Use safe defaults: Assume unknown machine state at boot
+- Home before moving: Always home axes before absolute position moves
+- Turn off heaters/spindles: Ensure tools are off by default
 
 ### Don'ts
 
@@ -209,39 +199,37 @@ M501         ; Load settings from config-override
 </sl-alert>
 {:/nomarkdown}
 
----
-
 ## Troubleshooting
 
 ### on_boot.gcode Not Executing
 
 If your `on_boot.gcode` file is not running on boot:
 
-1. **Check the filename**: Must be exactly `on_boot.gcode` (case may matter on some systems)
-2. **Verify location**: File must be in the root directory of the SD card (`/sd/on_boot.gcode`)
-3. **Check configuration**: Ensure `on_boot_gcode_enable true` is in your config file
-4. **Verify the path**: Confirm `on_boot_gcode /sd/on_boot.gcode` matches your file location
-5. **Check file format**: Ensure the file is plain text, not a Word document or other format
-6. **Look for errors**: Connect via console and watch for error messages during boot
+1. Check the filename: Must be exactly `on_boot.gcode` (case may matter on some systems)
+2. Verify location: File must be in the root directory of the SD card (`/sd/on_boot.gcode`)
+3. Check configuration: Ensure `on_boot_gcode_enable true` is in your config file
+4. Verify the path: Confirm `on_boot_gcode /sd/on_boot.gcode` matches your file location
+5. Check file format: Ensure the file is plain text, not a Word document or other format
+6. Look for errors: Connect via console and watch for error messages during boot
 
 ### Commands Not Working as Expected
 
 If commands execute but don't work correctly:
 
-1. **Test individually**: Try each command manually via console to verify syntax
-2. **Check prerequisites**: Some commands require specific machine states or modules enabled
-3. **Add delays**: Some hardware needs time to respond; add small `G4 P500` (500ms delay) between commands
-4. **Verify configuration**: Ensure required modules (endstops, motors, etc.) are configured
-5. **Check console output**: Watch the console during boot for error messages
+1. Test individually: Try each command manually via console to verify syntax
+2. Check prerequisites: Some commands require specific machine states or modules enabled
+3. Add delays: Some hardware needs time to respond; add small `G4 P500` (500ms delay) between commands
+4. Verify configuration: Ensure required modules (endstops, motors, etc.) are configured
+5. Check console output: Watch the console during boot for error messages
 
 ### Partial Execution
 
 If only some commands execute:
 
-1. **Check for errors**: An invalid command may stop execution
-2. **Verify G-code syntax**: Use a G-code validator or test commands individually
-3. **Look for file corruption**: Try recreating the file from scratch
-4. **Check line endings**: Use Unix-style line endings (LF), not Windows (CRLF)
+1. Check for errors: An invalid command may stop execution
+2. Verify G-code syntax: Use a G-code validator or test commands individually
+3. Look for file corruption: Try recreating the file from scratch
+4. Check line endings: Use Unix-style line endings (LF), not Windows (CRLF)
 
 ### Debugging Tips
 
@@ -258,8 +246,6 @@ You can also test your `on_boot.gcode` file manually by playing it:
 ```
 play /sd/on_boot.gcode
 ```
-
----
 
 ## Version Compatibility
 
@@ -286,14 +272,12 @@ Smoothieware v2 also supports boot-time G-code execution. While the exact implem
 </versioned>
 {:/nomarkdown}
 
----
-
 ## Related Features
 
 ### config-override
 
 {::nomarkdown}
-The [config-override](configuring-smoothie#config-override) file is created when you use the <mcode>M500</mcode> command to save settings. You can load these saved settings in your `on_boot.gcode`:
+The <a href="/configuring-smoothie#config-overrides">config-override</a> file is created when you use the <mcode>M500</mcode> command to save settings. You can load these saved settings in your `on_boot.gcode`:
 {:/nomarkdown}
 
 ```gcode
@@ -309,8 +293,6 @@ Similar to `on_boot.gcode`, you can define G-code sequences for suspend and resu
 
 See [Player Options](player-options) for details.
 
----
-
 ## Related Documentation
 
 - [Player Module](player) - Handles G-code file playback
@@ -320,16 +302,14 @@ See [Player Options](player-options) for details.
 - [Console Commands](console-commands) - Direct control via console
 - [Configuring Smoothie](configuring-smoothie) - Main configuration guide
 
----
-
 ## Summary
 
 The `on_boot.gcode` file provides a powerful way to automate your machine's startup sequence:
 
-- **Simple setup**: Just create a G-code file on your SD card
-- **Automatic execution**: Runs every time the board boots
-- **Flexible configuration**: Enable/disable and customize the file path
-- **Standard G-code**: Use familiar G-code commands
-- **Safety first**: Design startup sequences with safety in mind
+- Simple setup: Just create a G-code file on your SD card
+- Automatic execution: Runs every time the board boots
+- Flexible configuration: Enable/disable and customize the file path
+- Standard G-code: Use familiar G-code commands
+- Safety first: Design startup sequences with safety in mind
 
 Whether you're running a 3D printer, CNC mill, laser cutter, or other machine, `on_boot.gcode` can save time and ensure consistent initialization every time you power on your Smoothieboard.

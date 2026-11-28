@@ -1,16 +1,17 @@
 ---
+title: "Getting help community"
 permalink: /getting-help-community
 ---
 
-# Getting Help from the Community
+{::nomarkdown}
+<span id="getting-help-from-the-community"></span>
+{:/nomarkdown}
 
 The Smoothieware community is active and helpful. There are several channels where you can get support, ask questions, and discuss the project.
 
 ## Communication Channels
 
 - [IRC (recommended)](irc) - Real-time chat with the community and developers
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -31,8 +32,6 @@ The Smoothieware community is active and helpful. There are several channels whe
 </versioned>
 {:/nomarkdown}
 
-
-
 - [Forum](https://forum.makerforums.info/c/controllers/smoothie/) - Discussion board for questions and announcements
 - [Support Mailing list](http://groups.google.com/group/smoothieware-support) - Email-based support discussions
 - [Dev Mailing list](http://groups.google.com/group/smoothie-dev) - Development discussions and planning
@@ -52,6 +51,6 @@ Please review the [Help Guidelines](help-guidelines) before posting your questio
 
 ## See Also
 
-- [Getting Help](getting-help) - Overview of all help resources
+- Getting Help - Overview of all help resources
 - [Troubleshooting](troubleshooting) - Common problems and solutions
 - [Forum Guidelines](forum-guidelines) - Best practices for forum posts

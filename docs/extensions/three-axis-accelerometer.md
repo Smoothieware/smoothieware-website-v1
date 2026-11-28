@@ -20,7 +20,7 @@ permalink: /extensions/three-axis-accelerometer
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/three-axis-accelerometer/three-axis-accelerometer-diagram.png" alt="Top view of the accelerometer board: a ten-contact socket on the left and right edges, a small sensor in the middle and a Qwiic connector near the bottom.">
+    <img src="/images/extensions/three-axis-accelerometer/three-axis-accelerometer-diagram.webp" alt="Top view of the accelerometer board: a ten-contact socket on the left and right edges, a small sensor in the middle and a Qwiic connector near the bottom.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -79,7 +79,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/three-axis-accelerometer/three-axis-accelerometer-diagram.png" alt="Top view of the accelerometer board with 11 numbered markers that are explained in the list below.">
+      <img src="/images/extensions/three-axis-accelerometer/three-axis-accelerometer-diagram.webp" alt="Top view of the accelerometer board with 11 numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pl" href="#tour-1" style="left:13.3%;top:50.0%" aria-label="1: input socket i in (j1)">1<span class="xb-pop"><b>Input socket I IN (J1)</b> — SDA on contact 8, SCL on 9, interrupts on 3 and 6.</span></a>
       <a class="xb-mk xb-pr" href="#tour-2" style="left:86.7%;top:50.0%" aria-label="2: chain socket chain (j2)">2<span class="xb-pop"><b>Chain socket CHAIN (J2)</b> — Continues the bus.</span></a>
       <a class="xb-mk" href="#tour-3" style="left:50.0%;top:83.3%" aria-label="3: qwiic connector (j3)">3<span class="xb-pop"><b>Qwiic connector (J3)</b> — The same I2C bus on a four-way cable, 3.3&nbsp;V.</span></a>
@@ -319,7 +319,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/three-axis-accelerometer/three-axis-accelerometer-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/three-axis-accelerometer/three-axis-accelerometer-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
-    <tr><td><a href="/images/extensions/three-axis-accelerometer/three-axis-accelerometer-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/three-axis-accelerometer/three-axis-accelerometer-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

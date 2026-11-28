@@ -1,9 +1,11 @@
 ---
+title: "Syringe COVID-19 notes"
 permalink: /syringe-covid19-notes
 ---
 
-
-# Covid19 Syringe Pusher Smoothieboard Notes
+{::nomarkdown}
+<span id="covid19-syringe-pusher-smoothieboard-notes"></span>
+{:/nomarkdown}
 
 ## Context
 

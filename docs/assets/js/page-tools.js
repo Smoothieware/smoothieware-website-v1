@@ -67,6 +67,13 @@ function add_copy_button(block) {
 function is_shown(element) {
   return element.getClientRects().length > 0;
 }
+var CONTENTS_LIMIT = 20;
+function contents_depth(headings) {
+  let depth = 4;
+  while (depth > 2 && headings.filter((heading) => Number(heading.tagName[1]) <= depth).length > CONTENTS_LIMIT)
+    depth -= 1;
+  return depth;
+}
 function build_contents(root) {
   if (root.querySelector(".xb-nav"))
     return;
@@ -80,12 +87,9 @@ function build_contents(root) {
   const title = document.createElement("summary");
   title.textContent = "On this page";
   const list = document.createElement("ul");
-  let section;
   const entries = headings.map((heading) => {
     const item = document.createElement("li");
-    if (heading.tagName !== "H4")
-      section = heading;
-    else
+    if (heading.tagName === "H4")
       item.className = "subsub";
     if (heading.tagName === "H3")
       item.className = "sub";
@@ -96,7 +100,7 @@ function build_contents(root) {
     link.textContent = (copy.textContent ?? "").replace(/\s*#\s*$/, "").trim();
     item.append(link);
     list.append(item);
-    return { heading, item, link, section };
+    return { heading, item, link };
   });
   box.append(title, list);
   nav.append(box);
@@ -118,19 +122,14 @@ function build_contents(root) {
   const update = () => {
     waiting = false;
     let current;
-    let active;
-    for (const { heading, item, link, section: section2 } of entries) {
-      const shown = is_shown(heading);
-      item.hidden = !shown;
+    const visible = entries.filter(({ heading }) => is_shown(heading));
+    const depth = contents_depth(visible.map(({ heading }) => heading));
+    for (const entry of entries) {
+      const { heading, item, link } = entry;
+      item.hidden = !visible.includes(entry) || Number(heading.tagName[1]) > depth;
       link.removeAttribute("aria-current");
-      if (shown && (heading.getBoundingClientRect().top < 140 || !current)) {
+      if (!item.hidden && (heading.getBoundingClientRect().top < 140 || !current))
         current = link;
-        active = section2;
-      }
-    }
-    for (const { heading, item, section: section2 } of entries) {
-      if (heading.tagName === "H4" && section2 !== active)
-        item.hidden = true;
     }
     current?.setAttribute("aria-current", "true");
     if (current && nav.scrollHeight > nav.clientHeight) {
@@ -177,12 +176,15 @@ function add_scroll_helpers() {
   update();
 }
 function link_tours(root) {
-  root.querySelectorAll('.xb-tour-stage > img').forEach((image) => {
-        const shape = () => { if (image.naturalHeight) image.parentElement.style.setProperty('--ratio', String(image.naturalWidth / image.naturalHeight)); };
-        image.addEventListener('load', shape);
-        shape();
-    });
-    root.querySelectorAll(".xb-tour").forEach((tour) => {
+  root.querySelectorAll(".xb-tour-stage > img").forEach((image) => {
+    const shape = () => {
+      if (image.naturalHeight)
+        image.parentElement?.style.setProperty("--ratio", String(image.naturalWidth / image.naturalHeight));
+    };
+    image.addEventListener("load", shape);
+    shape();
+  });
+  root.querySelectorAll(".xb-tour").forEach((tour) => {
     const light = (id, on) => {
       if (!id)
         return;

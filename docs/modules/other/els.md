@@ -3,7 +3,9 @@ permalink: /els
 title: ELS (Electronic Leadscrew)
 ---
 
-# ELS - Electronic Leadscrew Module
+{::nomarkdown}
+<span id="els---electronic-leadscrew-module"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -31,10 +33,10 @@ The ELS (Electronic Leadscrew) module provides a user-friendly interface for lat
 
 The ELS module provides:
 
-- **Real-time RPM display** on a 7-segment LED display
-- **Pitch/feed rate selection** using physical buttons
-- **Visual status indicators** via LEDs
-- **Standalone operation** without requiring a host computer
+- Real-time RPM display on a 7-segment LED display
+- Pitch/feed rate selection using physical buttons
+- Visual status indicators via LEDs
+- Standalone operation without requiring a host computer
 
 This makes it ideal for manual lathe operations where you want the convenience of electronic leadscrew control without needing to use a computer interface.
 
@@ -42,9 +44,9 @@ This makes it ideal for manual lathe operations where you want the convenience o
 
 The ELS module requires:
 
-1. **[TM1638 Display Module](/tm1638-display)** - 8-digit 7-segment display with 8 LEDs and 8 buttons
-2. **[Lathe Module](/lathe)** - Spindle encoder and threading support
-3. **Spindle Encoder** - Quadrature encoder for RPM and position feedback
+1. [TM1638 Display Module](/tm1638-display) - 8-digit 7-segment display with 8 LEDs and 8 buttons
+2. [Lathe Module](/lathe) - Spindle encoder and threading support
+3. Spindle Encoder - Quadrature encoder for RPM and position feedback
 
 ### TM1638 Display
 
@@ -144,11 +146,11 @@ The ELS module automatically discovers and uses the configured Lathe and TM1638 
 
 ### Basic Usage
 
-1. **Power on** - Display shows current RPM (left) and pitch value (right)
-2. **Adjust pitch** - Use S8 and S6 for 0.1 mm/rev changes, or use S4 to edit one of the four digits
-3. **Start spindle** - Use your spindle control (<mcode>M3</mcode> command or physical switch)
-4. **Engage leadscrew** - Press S2 to start synchronized motion
-5. **Stop** - Press S1 to disengage
+1. Power on - Display shows current RPM (left) and pitch value (right)
+2. Adjust pitch - Use S8 and S6 for 0.1 mm/rev changes, or use S4 to edit one of the four digits
+3. Start spindle - Use your spindle control (<mcode>M3</mcode> command or physical switch)
+4. Engage leadscrew - Press S2 to start synchronized motion
+5. Stop - Press S1 to disengage
 
 ### Manual electronic leadscrew workflow
 
@@ -162,9 +164,9 @@ The ELS module automatically discovers and uses the configured Lathe and TM1638 
 
 ### Manual Mode vs Distance Mode
 
-- **Manual mode**: Press S2 to issue `G33.1 K...`; press S1 to send its stop request.
-- **Fixed test move**: S3 issues `G33.1 K... Z20`. The direction and distance are not configurable in the current ELS interface, so do not treat this as a finished threading cycle.
-- **Command-line distance mode**: Issue a supported `G33` or `G33.1` form directly, following the distinctions and limits on the [Lathe page](/lathe#g-code-support).
+- Manual mode: Press S2 to issue `G33.1 K...`; press S1 to send its stop request.
+- Fixed test move: S3 issues `G33.1 K... Z20`. The direction and distance are not configurable in the current ELS interface, so do not treat this as a finished threading cycle.
+- Command-line distance mode: Issue a supported `G33` or `G33.1` form directly, following the distinctions and limits on the [Lathe page](/lathe#g-code-support).
 
 LED 2 indicates whether distance mode is active (specified via G-code).
 

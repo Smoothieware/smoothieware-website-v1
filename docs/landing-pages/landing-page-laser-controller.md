@@ -3,7 +3,9 @@ permalink: /landing-page-laser-controller
 title: Laser Cutter Controller - Professional Laser Control
 ---
 
-# Professional Laser Control with Full LightBurn Support
+{::nomarkdown}
+<span id="professional-laser-control-with-full-lightburn-support"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
@@ -23,8 +25,6 @@ title: Laser Cutter Controller - Professional Laser Control
 </div>
 {:/nomarkdown}
 
----
-
 ## Is Your Laser Controller Holding You Back?
 
 ### Common Frustrations with Stock Controllers:
@@ -37,8 +37,6 @@ title: Laser Cutter Controller - Professional Laser Control
 - ❌ **USB Connectivity Issues** - Long jobs can fail due to USB disconnections or PC power management
 
 **For Professional Work, You Need Better Control.**
-
----
 
 ## Professional-Grade Laser Control
 
@@ -71,8 +69,6 @@ title: Laser Cutter Controller - Professional Laser Control
 - ✅ **Air Assist Control** - Automated based on job requirements
 - ✅ **Custom Sensors** - 63 GPIO for any addition you need
 
----
-
 ## Works Perfectly with LightBurn
 
 {::nomarkdown}
@@ -101,8 +97,6 @@ title: Laser Cutter Controller - Professional Laser Control
 - Visicut
 - Any G-code sender
 
----
-
 ## Universal Laser Compatibility
 
 ### Supported Laser Types:
@@ -129,8 +123,6 @@ title: Laser Cutter Controller - Professional Laser Control
 - 5W to 150W+ laser tubes
 - PWM or analog power control
 - Configurable power ranges
-
----
 
 ## Rotary Axis Support
 
@@ -160,8 +152,6 @@ title: Laser Cutter Controller - Professional Laser Control
 - DIY custom rotary builds
 - Multi-roller systems for large diameter
 
----
-
 ## Production-Ready Features
 
 ### For Small Businesses & Etsy Sellers:
@@ -184,8 +174,6 @@ title: Laser Cutter Controller - Professional Laser Control
 - No variation batch-to-batch
 - Professional quality for client work
 
----
-
 ## Before & After: Engraving Quality
 
 ### Stock Controller Raster Engraving:
@@ -204,8 +192,6 @@ title: Laser Cutter Controller - Professional Laser Control
 >
 > — Laser engraving business owner
 
----
-
 ## Laser Resources & Guides
 
 **Installation Guides:**
@@ -219,8 +205,6 @@ title: Laser Cutter Controller - Professional Laser Control
 - LaserGRBL setup instructions
 - Camera alignment tutorials
 - Rotary axis configuration
-
----
 
 ## Frequently Asked Questions
 
@@ -247,8 +231,6 @@ A: Smoothieboard can control all of these via the Switch module (included in fir
 **Q: Is $200 worth it for professional work?**
 
 A: Ask yourself: What's the cost of a failed client job from controller issues? What's the value of using LightBurn properly? Most professional laser users say this upgrade pays for itself quickly.
-
----
 
 ## Ready to Upgrade Your Laser?
 
@@ -284,8 +266,6 @@ A: Ask yourself: What's the cost of a failed client job from controller issues? 
   </div>
 </div>
 {:/nomarkdown}
-
----
 
 **Related Pages:**
 - [K40 Laser Specific Upgrade Guide](landing-page-k40-laser-upgrade)

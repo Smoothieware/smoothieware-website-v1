@@ -1,4 +1,5 @@
 ---
+title: "Z-probe options"
 permalink: /zprobe-options
 ---
 

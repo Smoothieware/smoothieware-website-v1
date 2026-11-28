@@ -1,4 +1,6 @@
-# Arm Solutions
+{::nomarkdown}
+<span id="arm-solutions"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/board.png">
@@ -18,13 +20,13 @@ Smoothieware supports multiple arm/motion solutions to accommodate different mac
 
 | Setting | v1 | v2 | Description | Documentation |
 |---------|----|----|-------------|---------------|
-| <raw>cartesian</raw> | ✅ | ✅ | Standard X/Y/Z configuration where each motor directly controls one axis | [Cartesian](cartesian) |
-| <raw>linear_delta</raw> | ✅ | ✅ | Three vertical linear rails in triangular configuration (Rostock, Kossel) | [Delta](delta) |
-| <raw>corexy</raw> or <raw>hbot</raw> | ✅ | ✅ | Crossed-belt system where both motors contribute to X and Y movement | [HBot/CoreXY](hbot) |
-| <raw>corexz</raw> | ✅ | ✅ | Crossed-belt variant where both motors contribute to X and Z movement | [CoreXZ](corexz) |
-| <raw>morgan</raw> | ✅ | ✅ | SCARA-style robotic arm with two parallel rotary joints | [Morgan SCARA](morgan-scara) |
-| <raw>rotary_delta</raw> | ✅ | ✅ | Delta variant using rotating joints instead of linear slides (experimental) | [Rotary Delta](rotary-delta) |
-| <raw>rotatable_cartesian</raw> | ✅ | ❌ | Cartesian system rotated by a specified angle (v1 only) | [Rotatable Cartesian](rotatable-cartesian) |
+| <raw>cartesian</raw> | Yes | Yes | Standard X/Y/Z configuration where each motor directly controls one axis | [Cartesian](cartesian) |
+| <raw>linear_delta</raw> | Yes | Yes | Three vertical linear rails in triangular configuration (Rostock, Kossel) | [Delta](delta) |
+| <raw>corexy</raw> or <raw>hbot</raw> | Yes | Yes | Crossed-belt system where both motors contribute to X and Y movement | [HBot/CoreXY](hbot) |
+| <raw>corexz</raw> | Yes | Yes | Crossed-belt variant where both motors contribute to X and Z movement | [CoreXZ](corexz) |
+| <raw>morgan</raw> | Yes | Yes | SCARA-style robotic arm with two parallel rotary joints | [Morgan SCARA](morgan-scara) |
+| <raw>rotary_delta</raw> | Yes | Yes | Delta variant using rotating joints instead of linear slides (experimental) | [Rotary Delta](rotary-delta) |
+| <raw>rotatable_cartesian</raw> | Yes | No | Cartesian system rotated by a specified angle (v1 only) | [Rotatable Cartesian](rotatable-cartesian) |
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
@@ -39,8 +41,6 @@ Smoothieware supports multiple arm/motion solutions to accommodate different mac
 {:/nomarkdown}
 
 ## Configuration
-
-
 
 To configure your machine for the right type, see its specific page linked in the table above.
 
@@ -86,5 +86,3 @@ arm_solution = linear_delta
 {:/nomarkdown}
 
 If no arm solution is specified, `cartesian` is used by default.
-
-

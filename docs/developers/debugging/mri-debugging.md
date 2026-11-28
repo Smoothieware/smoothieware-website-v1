@@ -1,14 +1,11 @@
 ---
-permalink: /mri-debugging
+title: "MRI debugging"
+permalink: /mri-debugging/
 ---
 
-
----
-layout: default
-title: Debugging with MRI
----
-
-# Debugging with MRI
+{::nomarkdown}
+<span id="debugging-with-mri"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -19,8 +16,6 @@ If Smoothie crashes, or you manually tell it to, it can go into a special mode (
 
 If you are using a JTAG debugger with your Smoothie project, you can scroll down to the sections which discuss mini and full dumps since those are applicable to JTAG debugging as well.
 
----
-
 ## What is MRI?
 
 Smoothie contains the Monitor for Remote Inspection, MRI, a debug monitor for the NXP LPC1768 device.
@@ -29,12 +24,12 @@ This monitor allows the GNU Debugger, GDB, to be connected to the device when a 
 
 It can also be configured to break on start and then used to step through any desired Smoothie source code but this isn't the default configuration in the Smoothie project where it is primarily used for crash analysis.
 
-
 ## Indication of Crash
 
 When Smoothie crashes and MRI takes over control of the device, you will see this text dumped to the serial console:
 
 ```
+
 $T0b0c:20430010;0d:e07c0010;0e:a1960000;0f:58410010;
 ```
 
@@ -59,16 +54,14 @@ But sometimes you want to put Smoothie into MRI mode to poke around in its brain
 
 If you want to do that, you have two ways to cause Smoothie to enter MRI mode:
 
-- **Press the ISP button** next to the Reset button on your Smoothieboard
-- **Send the break command** over any serial interface (UART, USB/Serial, or Telnet)
-
----
+- Press the ISP button next to the Reset button on your Smoothieboard
+- Send the break command over any serial interface (UART, USB/Serial, or Telnet)
 
 ## Connecting GDB to MRI
 
 GDB should have been installed along with the GCC compiler and other GNU tools used to build the Smoothie source code.
 
-Note that you need to compile Smoothie yourself before you can do any debugging, please see [compiling-smoothie](compiling-smoothie).
+Note that you need to compile Smoothie yourself before you can do any debugging, please see [compiling-smoothie](/compiling-smoothie).
 
 From a Terminal or Command Prompt that is able to build Smoothie, you should be able to set the current directory to the root of the Smoothie project which contains main.bin, main.elf, etc and run one of the following commands to launch GDB.
 
@@ -222,6 +215,8 @@ And reduce the base stepping frequency:
 ```
 base_stepping_frequency 50000 # Base frequency for stepping
 ```
+
+Note: The {::nomarkdown}<setting v1="base_stepping_frequency" v2="system.step_frequency"></setting>{:/nomarkdown} setting controls the base frequency for stepping.
 
 {::nomarkdown}
 <sl-alert variant="primary" open>

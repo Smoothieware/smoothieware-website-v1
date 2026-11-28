@@ -36,14 +36,14 @@
                 <p>Set the type of sensor used to read temperature.</p>
                 <ul>
                     <li><raw>thermistor</raw> — the usual thermistor reading via ADC method</li>
-                    <li><raw>max31855</raw> — read values from a thermocouple over SPI. See <a href="temperaturecontrol#thermocouple">Reading a thermocouple</a></li>
+                    <li><raw>max31855</raw> — read values from a thermocouple over SPI. See <a href="/temperaturecontrol#thermocouple-via-spi">Reading a thermocouple</a></li>
                 </ul>
             </td>
         </tr>
         <tr>
             <td><setting no-version v1="temperature_control.{name}.thermistor"></setting></td>
             <td><setting no-version v2="temperature control.thermistor"></setting></td>
-            <td class="description-cell">Set the thermistor model for this module. Several different common models are pre-defined, see <a href="temperaturecontrol#toc5">thermistor choice guide</a>.</td>
+            <td class="description-cell">Set the thermistor model for this module. Several different common models are pre-defined, see <a href="/temperaturecontrol-thermistor-choice">thermistor choice guide</a>.</td>
         </tr>
         <tr>
             <td><setting no-version v1="temperature_control.{name}.beta"></setting></td>

@@ -3,7 +3,9 @@ permalink: /landing-page-cnc-mill
 title: CNC Mill Controller - Affordable Professional Control
 ---
 
-# CNC Mill Controller That Handles Your Complex CAM Files
+{::nomarkdown}
+<span id="cnc-mill-controller-that-handles-your-complex-cam-files"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
@@ -22,8 +24,6 @@ title: CNC Mill Controller - Affordable Professional Control
   </div>
 </div>
 {:/nomarkdown}
-
----
 
 ## Upgrading or Building a CNC Mill?
 
@@ -45,8 +45,6 @@ You need:
 
 **Smoothieboard v2 delivers all of this at $200.**
 
----
-
 ## Professional CNC Mill Control at Hobbyist Price
 
 ### Technical Capabilities:
@@ -59,20 +57,20 @@ You need:
 - Jerk control for clean surface finishes
 
 **Multi-Axis Support:**
-- **3-Axis:** X, Y, Z (standard milling)
-- **4-Axis:** Add A-axis for rotary indexing or wrapped engraving
-- **5-Axis:** A+B or A+C for full 5-axis simultaneous machining
+- 3-Axis: X, Y, Z (standard milling)
+- 4-Axis: Add A-axis for rotary indexing or wrapped engraving
+- 5-Axis: A+B or A+C for full 5-axis simultaneous machining
 - Native support - no firmware hacks or modifications needed
 
 **CNC Milling Features:**
 - Full RS274/NGC G-code interpreter
-- **GRBL Compatibility Mode** - Can parse GRBL-style G-code; works with bCNC, UGS, Candle
+- GRBL Compatibility Mode - Can parse GRBL-style G-code; works with bCNC, UGS, Candle
 - Work coordinate systems ({::nomarkdown}<gcode>G54</gcode>{:/nomarkdown}-{::nomarkdown}<gcode>G59</gcode>{:/nomarkdown} for multiple setups)
 - Tool length offsets (G43/G49)
 - Canned drilling cycles (G81-G89)
 - Touch probe support (G38.x for part setup and tool measurement)
-- **Console Commands** - Telnet/USB access for real-time control and debugging
-- **Web Interface** - HTTP server for file upload, job monitoring, and control
+- Console Commands - Telnet/USB access for real-time control and debugging
+- Web Interface - HTTP server for file upload, job monitoring, and control
 - Spindle control (PWM or relay for VFD)
 - Coolant control (M7/M8/{::nomarkdown}<mcode>M9</mcode>{:/nomarkdown})
 
@@ -81,8 +79,6 @@ You need:
 - Smooth cornering at speed
 - Minimal tool marks
 - Consistent surface finish across entire job
-
----
 
 ## Proven Retrofit Applications
 
@@ -94,14 +90,14 @@ You need:
 - Custom desktop builds
 
 ### Benchtop Mills:
-- **Grizzly G0704** (very popular conversion)
+- Grizzly G0704 (very popular conversion)
 - Sieg X2/SX2
 - Harbor Freight 44991
 - Bolton Tools mills
 - PM-25 / PM-30 mills
 
 ### Industrial Conversions:
-- **Bridgeport Series 1** (classic retrofit)
+- Bridgeport Series 1 (classic retrofit)
 - Lagun mills
 - Webb mills
 - Generic knee mills
@@ -112,8 +108,6 @@ You need:
 - Engraving machines
 - Jewelry mills
 - Dental milling
-
----
 
 ## CAM Software Integration
 
@@ -150,8 +144,6 @@ You need:
 - ✅ **Universal G-Code Sender (UGS)** - Java-based, cross-platform
 - ✅ Any standard G-code sender
 
----
-
 ## Multi-Axis Milling Capability
 
 ### 4-Axis Rotary Milling:
@@ -184,8 +176,6 @@ delta_max_rate         30000   # A-axis rotary speed
 - Native 5-axis trajectory calculation
 - Works with 5-axis CAM post-processors
 
----
-
 ## Production Features for Small Shops
 
 {::nomarkdown}
@@ -213,8 +203,6 @@ delta_max_rate         30000   # A-axis rotary speed
 - Advanced acceleration control prevents jerking
 - Minimal tool marks on finished parts
 
----
-
 ## vs Commercial Controllers
 
 | Feature | Parallel Port (LinuxCNC) | GRBL Controllers | Commercial ($1000+) | Smoothieboard v2 |
@@ -230,8 +218,6 @@ delta_max_rate         30000   # A-axis rotary speed
 | **Expandability** | Limited by PC | Limited GPIO | Varies | 63 GPIO |
 | **Documentation** | Scattered | Good | Vendor-specific | 250+ pages |
 | **Open Source** | Yes (software) | Yes (firmware) | No | Yes (HW + FW) |
-
----
 
 ## Touch Probing & Tool Management
 
@@ -252,8 +238,6 @@ delta_max_rate         30000   # A-axis rotary speed
 - {::nomarkdown}<gcode>G92</gcode>{:/nomarkdown} temporary coordinate offsets
 - Multiple part setups on one fixture
 - Fixture offset management
-
----
 
 ## Frequently Asked Questions
 
@@ -276,8 +260,6 @@ A: Yes. Just add the configuration for the A-axis when you're ready. No firmware
 **Q: How does it compare to Mach3/Mach4?**
 
 A: Smoothie is open-source and standalone (no PC needed). Mach3/4 require a Windows PC and specific motion controllers. For hobby/small shop use, Smoothie offers better value and simpler setup.
-
----
 
 ## Ready to Upgrade Your Mill?
 
@@ -313,8 +295,6 @@ A: Smoothie is open-source and standalone (no PC needed). Mach3/4 require a Wind
   </div>
 </div>
 {:/nomarkdown}
-
----
 
 **Related Pages:**
 - [CNC Mill Installation Guide](cnc-mill-guide)

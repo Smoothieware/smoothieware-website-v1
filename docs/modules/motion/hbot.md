@@ -1,8 +1,11 @@
 ---
+title: "H-bot"
 permalink: /hbot
 ---
 
-# H-Bot and CoreXY Configuration
+{::nomarkdown}
+<span id="h-bot-and-corexy-configuration"></span>
+{:/nomarkdown}
 
 <!-- learning-diagram:36-hbot-racking -->
 {::nomarkdown}
@@ -13,9 +16,6 @@ permalink: /hbot
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">H-Bot uses both motors for X and Y <a href="#learning-diagram-36-hbot-racking" aria-label="Permanent link to H-Bot uses both motors for X and Y" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-
-
-
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -32,9 +32,9 @@ Both systems use two motors to control X and Y movement, with each motor contrib
 
 In an H-Bot or CoreXY system:
 
-- **Alpha motor** (Motor 1): Contributes to both X and Y movement
-- **Beta motor** (Motor 2): Contributes to both X and Y movement (in different combinations)
-- **Gamma motor** (Motor 3): Controls Z movement independently
+- Alpha motor (Motor 1): Contributes to both X and Y movement
+- Beta motor (Motor 2): Contributes to both X and Y movement (in different combinations)
+- Gamma motor (Motor 3): Controls Z movement independently
 
 The key difference from Cartesian is that moving in the X direction requires **both** X/Y motors to move, and moving in the Y direction also requires **both** motors to move (but in different combinations).
 
@@ -61,22 +61,20 @@ This means:
 
 CoreXY and H-Bot offer several advantages:
 
-- **Reduced moving mass**: Motors can be mounted to the stationary frame
-- **Higher speeds**: Less inertia allows faster acceleration and deceleration
-- **Better precision**: Less vibration from moving motors
-- **Compact design**: Efficient use of space in the frame
-- **Smoother motion**: Belt arrangement can provide better motion characteristics
+- Reduced moving mass: Motors can be mounted to the stationary frame
+- Higher speeds: Less inertia allows faster acceleration and deceleration
+- Better precision: Less vibration from moving motors
+- Compact design: Efficient use of space in the frame
+- Smoother motion: Belt arrangement can provide better motion characteristics
 
 ### Common Applications
 
-- **3D printers** - Especially speed-focused designs (Voron, Hypercube, etc.)
-- **Laser cutters and engravers** - Fast, precise X/Y movement
-- **Small CNC routers** - Where speed and precision matter
-- **Plotters and cutters** - Vinyl cutters, pen plotters
+- 3D printers - Especially speed-focused designs (Voron, Hypercube, etc.)
+- Laser cutters and engravers - Fast, precise X/Y movement
+- Small CNC routers - Where speed and precision matter
+- Plotters and cutters - Vinyl cutters, pen plotters
 
 ## Configuration
-
-
 
 To configure your HBot or CoreXY machine, set the `arm_solution` parameter in your configuration file to either `corexy` or `hbot`:
 
@@ -119,11 +117,7 @@ arm_solution = hbot
 
 Both options use the same implementation in Smoothieware. Choose the name that matches your mechanical belt configuration.
 
-
-
 ### Complete Configuration Example
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -200,8 +194,6 @@ gamma.driver = tmc2660
 </versioned>
 {:/nomarkdown}
 
-
-
 ## Speed Settings
 
 It is recommended to set the `alpha_max_rate` and `beta_max_rate` to the highest speed your steppers can achieve.
@@ -262,19 +254,19 @@ To systematically test and correct directions:
 
 ### Advantages ✅
 
-- **High speed**: Reduced moving mass allows for very fast movements
-- **Good acceleration**: Motors mounted to frame reduce vibration
-- **Precise**: Less flex and wobble compared to moving motor gantries
-- **Compact**: Efficient use of frame space
-- **Proven design**: Used in many high-performance 3D printers
+- High speed: Reduced moving mass allows for very fast movements
+- Good acceleration: Motors mounted to frame reduce vibration
+- Precise: Less flex and wobble compared to moving motor gantries
+- Compact: Efficient use of frame space
+- Proven design: Used in many high-performance 3D printers
 
 ### Disadvantages ❌
 
-- **Complex setup**: Getting directions right can be confusing initially
-- **Belt management**: Long belts require careful routing and tensioning
-- **Motor coordination**: Firmware must handle coordinated movements
-- **Troubleshooting**: Problems can be harder to diagnose than Cartesian
-- **Limited Z performance**: Z axis is still typically a moving bed
+- Complex setup: Getting directions right can be confusing initially
+- Belt management: Long belts require careful routing and tensioning
+- Motor coordination: Firmware must handle coordinated movements
+- Troubleshooting: Problems can be harder to diagnose than Cartesian
+- Limited Z performance: Z axis is still typically a moving bed
 
 ## Comparison with Other Arm Solutions
 
@@ -292,10 +284,10 @@ To systematically test and correct directions:
 
 Well-known CoreXY designs include:
 
-- **Voron** (V0, V1, V2, Trident) - High-performance 3D printers
-- **Hypercube** and **Hypercube Evolution** - DIY CoreXY 3D printers
-- **BLV MGN Cube** - Modular CoreXY 3D printer
-- **RatRig V-Core** - Large format CoreXY printer
+- Voron (V0, V1, V2, Trident) - High-performance 3D printers
+- Hypercube and **Hypercube Evolution** - DIY CoreXY 3D printers
+- BLV MGN Cube - Modular CoreXY 3D printer
+- RatRig V-Core - Large format CoreXY printer
 - Many commercial laser engravers and cutters
 
 ## Troubleshooting
@@ -323,8 +315,8 @@ Well-known CoreXY designs include:
 
 For developers or those interested in the implementation details:
 
-- **v1:** [HBotSolution.cpp](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/robot/arm_solutions/HBotSolution.cpp)
-- **v2:** [HBotSolution.cpp](https://github.com/Smoothieware/Smoothieware-v2/blob/main/Firmware/src/robot/arm_solutions/HBotSolution.cpp)
+- v1: [HBotSolution.cpp](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/robot/arm_solutions/HBotSolution.cpp)
+- v2: [HBotSolution.cpp](https://github.com/Smoothieware/Smoothieware-v2/blob/main/Firmware/src/robot/arm_solutions/HBotSolution.cpp)
 
 ## See Also
 

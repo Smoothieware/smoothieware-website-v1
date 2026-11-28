@@ -1,9 +1,11 @@
 ---
+title: "Module name"
 permalink: /module-name
 ---
 
-
-# Module Names
+{::nomarkdown}
+<span id="module-names"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
@@ -19,8 +21,6 @@ For example, if your machine has several extruders, you can create several Extru
 There is no limit to how many modules you can create.
 
 ## Creating Module Instances
-
-
 
 Modules are created by choosing a module name, and setting the `enable` option to `true` for that module.
 
@@ -90,5 +90,3 @@ Common modules that support multiple instances:
 - Temperature Control
 - Switch
 - Z Probe
-
-

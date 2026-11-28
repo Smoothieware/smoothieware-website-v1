@@ -1,9 +1,11 @@
 ---
+title: "Smoothieboard beta"
 permalink: /smoothieboard-beta
 ---
 
-
-# Smoothieboard Beta (Legacy Documentation)
+{::nomarkdown}
+<span id="smoothieboard-beta-legacy-documentation"></span>
+{:/nomarkdown}
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
@@ -85,11 +87,9 @@ Price may vary from vendor to vendor.
 - Dimensions are 105x105mm
 - 3D files can be found [here on Thingiverse](http://www.thingiverse.com/thing:45537) to design cases and plates and such.
 
----
+## Documentation
 
-# Documentation
-
-## Border connectors
+### Border connectors
 
 Most connectors on smoothieboard are broken out to the borders for easy access:
 
@@ -117,7 +117,7 @@ Most connectors on smoothieboard are broken out to the borders for easy access:
 
 Here is a list of the different connectors, in clockwise order:
 
-### Stepper motors
+#### Stepper motors
 
 Stepper motors are indicated as X, Y, Z (cartesian movement axes) and E (3D printer extruder). However, in Smoothie, stepper drivers are alpha, beta, gamma and delta. They are equivalent, in the same order.
 
@@ -128,7 +128,7 @@ For each stepper motor you get two options:
 - 3.5mm: mostly used for the larger screw terminals
 - 2.54mm: mostly for smaller pins, or more sophisticated pin-like connectors.
 
-### Stepper motor power input
+#### Stepper motor power input
 
 This has two inputs side by side: one for 5V (this is optional, you will probably be providing 5V via USB), and one for VBB (the stepper motors (and optionally mosfets) power input), that is 12 or 24V.
 
@@ -140,7 +140,7 @@ You can also solder 3.5mm connectors (not recommended unless you use little powe
 
 Finally, for the VBB input, there are pads to solder a SMT Jack power plug (the kind you commonly find on 12V wall plugs), which is nice to have if you are going to plug/unplug your board a lot.
 
-### Small mosfets
+#### Small mosfets
 
 These are two small SMT mosfets: [ZXMN4A06](http://octopart.com/parts/search?q=ZXMN4A06) (40V/5A)
 
@@ -152,7 +152,7 @@ And then each mosfet has its own two-pin output, with the choice between 2.54mm 
 
 You can also take the power from VBB instead of from the power input, using jumpers, see the dedicated part in the non-border stuff section below.
 
-### Big mosfets
+#### Big mosfets
 
 These are two big mosfets: [AOT240L](http://www.digikey.com/scripts/DkSearch/dksus.dll?WT.z_header=search_go&lang=en&keywords=785-1270-5-ND&x=0&y=0&cur=USD) rated up to 40V and 20A (more with cooling).
 
@@ -166,7 +166,7 @@ We recommend using 3.5mm connectors for all connectors.
 
 You can also take the power from VBB instead of from the power input, using jumpers, see the dedicated part in the non-border stuff section below.
 
-### Endstops
+#### Endstops
 
 There are 6 endstop connectors. Though if you use all 6, you are crazy.
 
@@ -176,25 +176,25 @@ Each connector is a 3-pin 2.54mm connector, providing 3.3V, GND, and the actual 
 
 You can connect either 2.54mm pins, or 2.54mm screw terminals here.
 
-### USB
+#### USB
 
 USB provides the main means of communication with the host computer. The connector is mini-USB.
 
-### Ethernet
+#### Ethernet
 
 The RJ45 connector is optional. When plugged in, the smoothieboard will serve a web interface that will allow for control of the machine. [link](http://components.arrow.com/part/detail/41642456S6980467N6266)
 
-### MicroSD
+#### MicroSD
 
 The microSD card stores the config file, gcode files, the web interface files, and other, futury stuff.
 
-### Thermistor inputs
+#### Thermistor inputs
 
 Thermistors are mostly used for hotends, and heated beds. In conjunction with mosfets and heating elements, they allow for precise temperature control.
 
 Each thermistor has a couple of 2.54mm pins (allowing for pin connectors or screw terminals). 4 thermistors means a row of 8 pins.
 
-## Non-border connectors and components
+### Non-border connectors and components
 
 {::nomarkdown}
 <a href="https://farm9.static.flickr.com/8437/7831724724_2e1f40d8f7_b.jpg">
@@ -208,51 +208,51 @@ All of them are optional and not soldered by default.
 
 Here is a list of those connectors, in clockwise order:
 
-### Play/Pause button
+#### Play/Pause button
 
 The Play/Pause button is a button with a LED in it. The LED lights up when the board is in pause. That can be because a heater is waiting to be hot for example, or when you click the button. Clicking the button again resumes normal operations.
 
 The component is [this LED Tactile Button](http://www.sparkfun.com/products/10442). Solder it if you want to have some pausing fun. Most prefer red, as it's pausy, but there are other choices.
 
-### Extra pins breakout
+#### Extra pins breakout
 
 Mystery!
 
-### Other extra pins breakout
+#### Other extra pins breakout
 
 Breaks out un-used pins {::nomarkdown}<pin>1.30</pin>{:/nomarkdown}, {::nomarkdown}<pin>1.31</pin>{:/nomarkdown}, {::nomarkdown}<pin>1.23</pin>{:/nomarkdown} and {::nomarkdown}<pin>1.22</pin>{:/nomarkdown}. For extension fun.
 
-### SD card SPI breakout
+#### SD card SPI breakout
 
 The SD card interfaces with the MCU using SPI communication. In case you would want to not plug the SD card into the smoothieboard, but connect an external SD card connector instead, those SPI pins are broken out.
 
 See pictures for pinout.
 
-### Stepper motor breakouts
+#### Stepper motor breakouts
 
 All stepper motors have their enable, step and direction pins broken out. So if you burn one (which is very difficult, simply don't connect/disconnect them with the power turned on), you can connect a replacement driver.
 
-### Extra stepper driver connector
+#### Extra stepper driver connector
 
 You can connect an additional stepper motor driver (like a pololu-like board) to the board. This is useful for example to add a second extruder.
 
 The step, direction, and enable pins are broken out, as well as VBB, GND and 3.3V.
 
-### SPI breakout
+#### SPI breakout
 
 The SPI breakout allows you to connect stuff that talks SPI. For example a second SD card. Or something else, your turn to think of something.
 
-### LEDs breakout
+#### LEDs breakout
 
 There are 4 LEDs on the smoothieboard, in a row, mostly used for debugging right now.
 
 Their pins are broken out so they are not completely wasted and you can use them if you really need them.
 
-### I2C breakout
+#### I2C breakout
 
 I2C is broken out to connect to peripherals. Lots of stuff talks I2C. Smoothiepanel, and smoothiedriver will talk I2C, and they are awesome. This is an awesome port.
 
-### Small mosfets power select
+#### Small mosfets power select
 
 This is a pair of pins for jumpers. When nothing is soldered, the power for the small mosfets is taken from the small mosfets power connector.
 
@@ -260,18 +260,18 @@ When the pins are soldered, and the jumper connects them to each other, power fo
 
 Don't connect the power input and the jumper at the same time, that'd be bad, probably.
 
-### Mosfets breakout
+#### Mosfets breakout
 
 All pins for control of the 4 mosfets are broken out here. In case you want to do something with them.
 
-### Big mosfet 1 and 2
+#### Big mosfet 1 and 2
 
 Those may or may not come pre-soldered. If they are not pre-soldered, you can solder mosfets you like here.
 
-### Big mosfets power select
+#### Big mosfets power select
 
 See the same for small mosfets. It's just two jumpers instead of one, but it's the same thing.
 
-### Reset and bootloader buttons
+#### Reset and bootloader buttons
 
 Breaking pins out doesn't cost much, right...

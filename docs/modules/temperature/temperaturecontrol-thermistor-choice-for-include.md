@@ -1,8 +1,4 @@
 
-
-
-
-
 <!-- learning-diagram:41-sensor-types -->
 {::nomarkdown}
 <figure id="learning-diagram-41-sensor-types" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
@@ -12,11 +8,9 @@
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Smoothie converts thermistor resistance to temperature <a href="#learning-diagram-41-sensor-types" aria-label="Permanent link to Smoothie converts thermistor resistance to temperature" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-### Thermistor Choice
+## Thermistor Choice
 
 Different models of thermistors are used in hotends or heated beds, and each type translates temperature into resistance differently. It's essential to inform Smoothie about the specific thermistor model you have to ensure accurate temperature readings.
-
-
 
 This configuration is done using the `thermistor` option in the configuration file. You provide the name of your thermistor, and Smoothie will handle the math accordingly.
 
@@ -48,8 +42,6 @@ hotend.thermistor = EPCOS100K
 </versioned>
 {:/nomarkdown}
 
-
-
 Currently, Smoothie recognizes the following thermistor models:
 
 | Name | Beta for 0-80°C | Beta for 185-230°C | I for Steinhart Hart | J for Steinhart Hart | K for Steinhart Hart | Part number |
@@ -63,13 +55,11 @@ Currently, Smoothie recognizes the following thermistor models:
 | `RRRF10K` | 3964 | | | | | |
 | `HT100K` | 3990 | | | | | |
 
-#### Unknown Thermistor
+### Unknown Thermistor
 
 If your thermistor is not recognized by Smoothie, you can define the parameters manually in the configuration file using either the beta value or the Steinhart Hart algorithm.
 
-##### Using Beta Values
-
-
+#### Using Beta Values
 
 Set the beta value in the configuration file:
 
@@ -101,8 +91,6 @@ hotend.beta = 4066   # set beta for thermistor
 </versioned>
 {:/nomarkdown}
 
-
-
 {::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
@@ -114,9 +102,7 @@ If the thermistor is 100K ohms at 25°C, this setting is usually sufficient. Add
 
 If you're unsure about your thermistor model, contact the designer or seller of your 3D printer, hotend, or heated bed to obtain the specifications and beta value.
 
-##### Using the Steinhart Hart Algorithm
-
-
+#### Using the Steinhart Hart Algorithm
 
 This is the preferred method. Set the Steinhart Hart coefficients in the configuration file:
 
@@ -148,11 +134,7 @@ hotend.coefficients = 0.000722376862540841,0.000216302098124288,0.00000009264016
 </versioned>
 {:/nomarkdown}
 
-
-
 To determine the Steinhart Hart coefficients for your thermistor, please refer to the [SteinhartHart](steinharthart) page.
-
-
 
 Alternatively, if you have the temperature curve for your thermistor, you can define three points on that curve and let Smoothie calculate the coefficients:
 
@@ -183,5 +165,3 @@ hotend.rt_curve = 20.0,126800,150,1360,240,206.5
 </v2>
 </versioned>
 {:/nomarkdown}
-
-

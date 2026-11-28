@@ -1,4 +1,5 @@
 ---
+title: "Motion control options"
 permalink: /motion-control-options
 ---
 

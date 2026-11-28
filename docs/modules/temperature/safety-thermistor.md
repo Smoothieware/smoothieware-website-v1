@@ -1,8 +1,11 @@
 ---
+title: "Safety thermistor"
 permalink: /safety-thermistor
 ---
 
-# Safety Thermistor
+{::nomarkdown}
+<span id="safety-thermistor"></span>
+{:/nomarkdown}
 
 <!-- learning-diagram:45-safety-thermistor -->
 {::nomarkdown}
@@ -13,9 +16,6 @@ permalink: /safety-thermistor
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">A second thermistor can shut down the PSU <a href="#learning-diagram-45-safety-thermistor" aria-label="Permanent link to A second thermistor can shut down the PSU" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-
-
-
 
 Hot-ends have a heating element (controlled by a MOSFET) and a thermistor to read its temperature.
 
@@ -40,8 +40,6 @@ To implement this, you need three things:
 - A [temperatureswitch](temperatureswitch) module that turns a switch off if a temperaturecontrol module goes above a given temperature.
 
 ## Example Configuration
-
-
 
 Here is an example configuration:
 
@@ -106,8 +104,6 @@ psu.designator = F           # Designator for the safety thermistor
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 ## Important Notes
 

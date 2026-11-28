@@ -3,7 +3,9 @@ permalink: /ros
 title: ROS and Smoothie
 ---
 
-# ROS and Smoothie
+{::nomarkdown}
+<span id="ros-and-smoothie"></span>
+{:/nomarkdown}
 
 You can use Smoothie to drive the motors of a robot that you control from ROS. Run ROS on a computer, connect that computer to Smoothie's USB serial port, and send G-code through a driver that converts your robot commands into motor coordinates.
 
@@ -415,13 +417,13 @@ A controller's cancellation response must match what it does to the board. Rejec
 
 ## Check the integration in stages
 
-1. **Model:** inspect the URDF in RViz, including joint axes, zero, units, and tool geometry. Plan in simulation before connecting motors.
-2. **Calibration:** test one joint at a time. Confirm sign, reduction, microstepping, physical range, homing, and return to a known reference.
-3. **Serial:** retain a transcript containing a move acknowledgement, `M400` completion, position response, and an error case. Check port opening and reset behaviour.
-4. **State:** compare reported coordinates with measured joints. Distinguish commanded targets, controller step-count estimates, and encoder measurements in the driver documentation.
-5. **Execution:** inspect `ros2 action list -t`, `ros2 control list_controllers`, and `ros2 topic echo /joint_states` when using ros2_control. Verify the joint order and the feedback source.
-6. **Faults:** commission disconnect, timeout, cancellation, reset, and emergency-stop handling with an appropriate controlled test. Ensure a reconnect does not replay an old target.
-7. **Trajectory:** measure timing and intermediate positions on a slow path with clearance. Verify that the hardware follows the path that MoveIt checked.
+1. Model: inspect the URDF in RViz, including joint axes, zero, units, and tool geometry. Plan in simulation before connecting motors.
+2. Calibration: test one joint at a time. Confirm sign, reduction, microstepping, physical range, homing, and return to a known reference.
+3. Serial: retain a transcript containing a move acknowledgement, `M400` completion, position response, and an error case. Check port opening and reset behaviour.
+4. State: compare reported coordinates with measured joints. Distinguish commanded targets, controller step-count estimates, and encoder measurements in the driver documentation.
+5. Execution: inspect `ros2 action list -t`, `ros2 control list_controllers`, and `ros2 topic echo /joint_states` when using ros2_control. Verify the joint order and the feedback source.
+6. Faults: commission disconnect, timeout, cancellation, reset, and emergency-stop handling with an appropriate controlled test. Ensure a reconnect does not replay an old target.
+7. Trajectory: measure timing and intermediate positions on a slow path with clearance. Verify that the hardware follows the path that MoveIt checked.
 
 If RViz moves but the machine does not, check whether you launched a mock hardware component. If a joint moves too far, check radians versus degrees and microstep settings. If a move looks correct but takes longer than planned, inspect feedrate, acceleration limits, queueing, and the firmware's planner before changing MoveIt's execution tolerances.
 

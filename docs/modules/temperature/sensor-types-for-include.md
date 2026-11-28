@@ -1,5 +1,7 @@
 
-# Sensor Types
+{::nomarkdown}
+<span id="sensor-types"></span>
+{:/nomarkdown}
 
 When setting up endstops and probes for your CNC machine or 3D printer, choosing the right sensor type is crucial for reliable operation.
 

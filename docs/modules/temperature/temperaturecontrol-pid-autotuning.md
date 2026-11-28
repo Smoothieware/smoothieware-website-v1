@@ -1,4 +1,5 @@
 ---
+title: "PID autotuning"
 permalink: /temperaturecontrol-pid-autotuning
 ---
 

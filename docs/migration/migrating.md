@@ -1,4 +1,5 @@
 ---
+title: "Migrating"
 permalink: /migrating
 ---
 

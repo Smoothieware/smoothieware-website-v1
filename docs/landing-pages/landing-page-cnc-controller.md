@@ -3,7 +3,9 @@ permalink: /landing-page-cnc-controller
 title: CNC Controller Board - Smoothieboard v2 Prime
 ---
 
-# CNC Board Failed Again? Upgrade to Reliable 32-Bit Control
+{::nomarkdown}
+<span id="cnc-board-failed-again-upgrade-to-reliable-32-bit-control"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
@@ -22,8 +24,6 @@ title: CNC Controller Board - Smoothieboard v2 Prime
   </div>
 </div>
 {:/nomarkdown}
-
----
 
 ## Frustrated with Your Current CNC Controller?
 
@@ -47,8 +47,6 @@ title: CNC Controller Board - Smoothieboard v2 Prime
 - ✅ **GRBL Compatibility Mode** - Can parse GRBL-style G-code for easy migration
 - ✅ **250+ Pages Documentation** - Comprehensive, organized, community-supported
 - ✅ **63 GPIO Expansion** - 8 Gadgeteer headers for adding rotary axes, probes, sensors, custom features
-
----
 
 ## 32-Bit Power Under the Hood
 
@@ -82,8 +80,6 @@ title: CNC Controller Board - Smoothieboard v2 Prime
 - Pick-and-place machines
 - Custom automation
 
----
-
 ## Built by Makers, for Makers
 
 {::nomarkdown}
@@ -102,8 +98,6 @@ title: CNC Controller Board - Smoothieboard v2 Prime
 > "Been running Smoothie on my laser cutter for 3 years. Rock solid, never fails. Best upgrade I ever made."
 >
 > — MakerForums user
-
----
 
 ## How Smoothieboard Stacks Up
 
@@ -124,8 +118,6 @@ title: CNC Controller Board - Smoothieboard v2 Prime
 | **Documentation** | Wiki, scattered | 250+ pages organized |
 | **Open Source** | Firmware only | OSHWA certified HW+FW (FR000021) |
 
----
-
 ## Never Feel Stuck
 
 {::nomarkdown}
@@ -136,19 +128,17 @@ title: CNC Controller Board - Smoothieboard v2 Prime
 {:/nomarkdown}
 
 **What You Get:**
-- **250+ pages of documentation** - [Browse the full docs](/)
-- **Step-by-step guides** - [3D Printer Guide](3d-printer-guide), [Laser Guide](laser-cutter-guide), [CNC Mill Guide](cnc-mill-guide)
-- **Active community forums** - 24-hour average response time
-- **Configuration examples** - For every common machine type
-- **Regular firmware updates** - 15 years of continuous development
+- 250+ pages of documentation - [Browse the full docs](/)
+- Step-by-step guides - [3D Printer Guide](3d-printer-guide), [Laser Guide](laser-cutter-guide), [CNC Mill Guide](cnc-mill-guide)
+- Active community forums - 24-hour average response time
+- Configuration examples - For every common machine type
+- Regular firmware updates - 15 years of continuous development
 
 **Key Resources:**
 - [Full Documentation](/)
 - [Configuration Guide](configuring-smoothie)
 - [Supported G-Codes](supported-g-codes)
 - [GitHub Repository](https://github.com/Smoothieware/Smoothieware)
-
----
 
 ## Ready to Upgrade?
 
@@ -170,7 +160,7 @@ title: CNC Controller Board - Smoothieboard v2 Prime
     Shop Smoothieboard v2 - $200
   </a>
   <div style="margin-top: 1rem;">
-    <img src="/images/oshw-logo.svg" alt="OSHWA Certified" style="height: 40px; display: inline-block; margin: 0 10px;" />
+    <img src="/images/oshw-logo.png" alt="OSHWA Certified" style="height: 40px; display: inline-block; margin: 0 10px;" />
     <span style="display: inline-block; margin: 0 10px; font-weight: bold;">OSHWA FR000021</span>
   </div>
   <div style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
@@ -179,21 +169,17 @@ title: CNC Controller Board - Smoothieboard v2 Prime
 </div>
 {:/nomarkdown}
 
----
-
 ## OSHWA Certified Open Hardware
 
 Smoothieboard v2 is certified by the Open Source Hardware Association (OSHWA) under certification FR000021. This means:
 
-- **You own it** - No vendor lock-in
-- **You can fix it** - Design files available
-- **You can modify it** - Improve it for your needs
-- **You can build it** - Make your own if you want
-- **Community-driven** - 15 years of collaborative development
+- You own it - No vendor lock-in
+- You can fix it - Design files available
+- You can modify it - Improve it for your needs
+- You can build it - Make your own if you want
+- Community-driven - 15 years of collaborative development
 
 This is more than just an open-source firmware running on proprietary hardware. Smoothieboard v2 is **fully open** - hardware, firmware, and documentation.
-
----
 
 ## Frequently Asked Questions
 
@@ -214,8 +200,6 @@ A: Smoothieboard is a complete hardware + firmware solution with a 32-bit proces
 
 **Q: Do you offer support?**
 A: We have extensive documentation (250+ pages), active community forums, and IRC channels. Average response time is under 24 hours. For commercial support inquiries, [contact us](contact).
-
----
 
 {::nomarkdown}
 <sl-alert variant="warning" open>

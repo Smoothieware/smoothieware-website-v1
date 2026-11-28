@@ -1,10 +1,10 @@
-# Stopping Smoothie
+{::nomarkdown}
+<span id="stopping-smoothie"></span>
+{:/nomarkdown}
 
 There are several different ways to stop Smoothie during operation, each with different behaviors and use cases.
 
 Understanding these methods is important for safe operation and troubleshooting.
-
----
 
 ## Stop Methods Comparison
 
@@ -65,8 +65,6 @@ Understanding these methods is important for safe operation and troubleshooting.
 </tr>
 </table>
 
----
-
 ## Detailed Method Descriptions
 
 ### Feed Hold and Cycle Start (`!` / `~`, V2)
@@ -92,8 +90,6 @@ Stops the execution of a file being played from SDCARD.
 
 **Documentation:** [Player module](player)
 
----
-
 ### Suspend Command (suspend / `M600`)
 
 Suspends the execution of a file being played from SDCARD or being streamed from a host.
@@ -113,15 +109,13 @@ Suspends the execution of a file being played from SDCARD or being streamed from
 
 **Documentation:** [Player module](player)
 
----
-
 ### Kill Button / `M112`
 
 Emergency stop that instantly halts all operations.
 
 **Behavior:**
-- **If kill button pressed:** Stops instantly
-- **If `M112` issued from host:** Has to wait for the receive buffer to have room
+- If kill button pressed: Stops instantly
+- If `M112` issued from host: Has to wait for the receive buffer to have room
 - All heaters turned off
 - File playing aborted
 - Position is lost
@@ -140,8 +134,6 @@ Emergency stop that instantly halts all operations.
 </sl-alert>
 {:/nomarkdown}
 
----
-
 ### Control-X
 
 Sends a control character to stop Smoothie instantly.
@@ -157,8 +149,6 @@ Sends a control character to stop Smoothie instantly.
 **Use Case:** Emergency stop from terminal/console when streaming G-code.
 
 **Recovery:** No, position is lost. Homing will be required.
-
----
 
 ## Halt State
 
@@ -182,11 +172,9 @@ When the kill button is pressed (or there is a temperature fault, `M112` is issu
 
 The Halt state can be cleared by:
 
-1. **Issuing `M999`** from the host
-2. **Holding the flashing kill button** for 2 seconds
-3. **Using the LCD panel** (if equipped)
-
----
+1. Issuing `M999` from the host
+2. Holding the flashing kill button for 2 seconds
+3. Using the LCD panel (if equipped)
 
 ## Using Buttons and Sensors
 
@@ -196,8 +184,6 @@ The Halt state can be cleared by:
   <strong>Tip:</strong> A <a href="switch">Switch module</a> or V2 <a href="button-box">Button Box</a> can trigger queued stop-related commands such as suspend or kill. The V2 feed-hold characters <code>!</code> and <code>~</code> use a real-time console path and are not ordinary queued G-code commands.
 </sl-alert>
 {:/nomarkdown}
-
----
 
 ## Best Practices
 
@@ -217,8 +203,6 @@ The Halt state can be cleared by:
 2. Home all axes before attempting further movement
 3. Check that heaters are at safe temperatures before proceeding
 4. Verify machine state before resuming work
-
----
 
 ## Further Reading
 

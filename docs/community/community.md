@@ -4,13 +4,13 @@ layout: default
 title: Community
 ---
 
-# Community
+{::nomarkdown}
+<span id="community"></span>
+{:/nomarkdown}
 
 Join the Smoothieware community to get help, share your projects, and connect with other users and developers.
 
 ## Communication Channels
-
-
 
 We have several ways to connect with the community:
 
@@ -51,8 +51,6 @@ We have several ways to connect with the community:
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 ## Contributing
 

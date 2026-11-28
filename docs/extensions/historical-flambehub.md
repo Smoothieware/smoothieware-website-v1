@@ -363,5 +363,7 @@ Only what the design source states or the circuit fixes. Blank cells are not spe
 
 ## Design source {#origin}
 
+The reference drawings are derived from the original design at revision 02f355e19b2fc8b0a7baaca4e1a2e3b2ae2ffc71, original author attribution is kept in [the source and notices archive](/images/extensions/historical-flambehub/guides/native-contact-reference/native-source-and-notices.zip), and they are distributed under [GPL 3.0](/images/extensions/historical-flambehub/guides/reconstructed-reference/upstream-0-LICENSE).
+
 Third-party design by Chris Cecil: [original board file](https://raw.githubusercontent.com/Ccecil/Flambehub/02f355e19b2fc8b0a7baaca4e1a2e3b2ae2ffc71/Flambehub_0.2.kicad_pcb) (<code>Flambehub_0.2.kicad_pcb</code>). It is a separate hardware design, not a current Smoothieware board.
 See all boards on the [extension boards](/extension-boards) page.

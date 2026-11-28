@@ -4,11 +4,13 @@ layout: default
 title: Debug - Review Tags
 ---
 
-# Review Tag Debug Page
+{::nomarkdown}
+<span id="review-tag-debug-page"></span>
+{:/nomarkdown}
 
 This page demonstrates the `<review>` custom tags used for proposing and reviewing documentation changes during AI-assisted updates.
 
-**Documentation**: See [Review Tags documentation](/project/github/editing-the-wiki#review-tags-for-ai-assisted-updates) for complete usage guide.
+**Documentation**: See [Review Tags documentation](/editing-the-wiki) for complete usage guide.
 
 ## Features
 
@@ -300,9 +302,9 @@ Simple original text without formatting.
 <proposal>
 {:/nomarkdown}
 
-# Heading 1
-## Heading 2
-### Heading 3
+## Heading 1
+### Heading 2
+#### Heading 3
 
 **Bold text**, *italic text*, and `inline code`.
 
@@ -335,7 +337,7 @@ Simple original text without formatting.
 
 ---
 
-### Test 6: Long Content Test
+#### Test 6: Long Content Test
 
 **Source:**
 
@@ -385,15 +387,15 @@ This is a test of longer content to verify scrolling and layout behavior.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
 
-### Section 1
+#### Section 1
 
 Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-### Section 2
+#### Section 2
 
 Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
 
-### Section 3
+#### Section 3
 
 Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
 
@@ -411,7 +413,7 @@ Short original content.
 
 ---
 
-### Test 7: Multiple Custom Tags
+#### Test 7: Multiple Custom Tags
 
 **Source:**
 
@@ -469,7 +471,7 @@ Configure your extruder settings.
 
 ---
 
-### Test 8: Review with Lists and Code
+#### Test 8: Review with Lists and Code
 
 **Source:**
 
@@ -553,7 +555,7 @@ Configure stepper driver settings.
 
 ---
 
-### Test 9: Review with Versioned Tag (Combined Tags)
+#### Test 9: Review with Versioned Tag (Combined Tags)
 
 This test demonstrates how to combine `<review>` and `<versioned>` tags for proposing version-specific changes.
 
@@ -575,7 +577,7 @@ We have several communication channels available:
 **V1 Community Channels:**
 
 - [IRC (recommended)](/irc) - Real-time chat for quick questions
-- [Forum](forum/c-496918/general) - Threaded discussions
+- [Forum](/community) - Threaded discussions
 - <setting v1="network.enable"></setting> for network configuration
 
 <sl-alert variant="primary" open>
@@ -634,7 +636,7 @@ We have several communication channels available:
 **V1 Community Channels:**
 
 - [IRC (recommended)](/irc) - Real-time chat for quick questions
-- [Forum](forum/c-496918/general) - Threaded discussions
+- [Forum](/community) - Threaded discussions
 - <setting v1="network.enable"></setting> for network configuration
 
 <sl-alert variant="primary" open>
@@ -677,12 +679,12 @@ Join our IRC channel or forums for support.
 
 ---
 
-## LocalStorage Viewer
+### LocalStorage Viewer
 
 This section displays the current state of all review data stored in your browser's localStorage:
 
 <div id="review-data-container">
-    <h3>Current Review Data</h3>
+    <h4>Current Review Data</h4>
     <div id="review-data-display" style="background: #f5f5f5; padding: 1em; border-radius: 4px; margin: 1em 0;">
         <pre id="review-json" style="margin: 0;"></pre>
     </div>
@@ -710,9 +712,9 @@ This section displays the current state of all review data stored in your browse
 
 ---
 
-## Testing Instructions
+### Testing Instructions
 
-### How to Use This Page
+#### How to Use This Page
 
 1. **View Proposals**: By default, all reviews show the proposed content (pink background)
 2. **Toggle View**: Click the eye icon to switch between proposal and original content
@@ -723,7 +725,7 @@ This section displays the current state of all review data stored in your browse
 7. **Verify Persistence**: Reload the page to verify your review states persist
 8. **Export Data**: Use the "Copy JSON to Clipboard" button above to export review data
 
-### Expected Behavior
+#### Expected Behavior
 
 - **Icon State**: Active icons should have subtle background highlight and ring effect
 - **Toggle**: Eye icon should change when viewing original vs proposal
@@ -732,7 +734,7 @@ This section displays the current state of all review data stored in your browse
 - **LocalStorage**: Data should persist across page reloads
 - **Production Mode**: On non-localhost URLs, reviews should be invisible
 
-### Testing Production Mode
+#### Testing Production Mode
 
 To test production safety, you can temporarily modify the `is_localhost()` function in `review-tag.ts` to return `false`, then reload the page. You should see only the original content with no review UI.
 
@@ -740,24 +742,24 @@ To test production safety, you can temporarily modify the `is_localhost()` funct
 
 ---
 
-## Troubleshooting
+### Troubleshooting
 
-### Reviews not appearing?
+#### Reviews not appearing?
 - Ensure you're viewing on localhost (check URL)
 - Check browser console for errors
 - Verify review tags have valid `id` attributes
 
-### Icons not working?
+#### Icons not working?
 - Check that Shoelace is loaded
 - Verify no JavaScript errors in console
 - Try refreshing the page
 
-### LocalStorage not persisting?
+#### LocalStorage not persisting?
 - Check browser privacy settings
 - Ensure localStorage is enabled
 - Try clearing localStorage and testing again
 
-### Custom tags not rendering?
+#### Custom tags not rendering?
 - Verify other tag scripts are loaded
 - Check console for reprocessing errors
 - Ensure tags are properly formatted

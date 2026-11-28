@@ -338,5 +338,7 @@ Related boards, each with its own pinout and limits: [Three-channel A5984 steppe
 
 ## Design source {#origin}
 
+The drawings on this page are derived from the original design files, licensed under the [CERN Open Hardware Licence 1.2](/images/extensions/historical-a5984-stepper-driver/guides/source-derived-annotated/LICENSE.source-CERN-OHL-1.2.txt).
+
 This board comes from the [original design files](https://github.com/Smoothieware/Smoothieboard2/tree/52ab340de33180a975b25f856c161993488e6ace/extensions/A5984Breakout). It was drawn for an earlier controller generation than Smoothieboard V2 Prime; match connections contact by contact.
 See all boards on the [extension boards](/extension-boards) page.

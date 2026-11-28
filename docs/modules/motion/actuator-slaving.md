@@ -3,7 +3,9 @@ permalink: /actuator-slaving
 title: Slaved Axes
 ---
 
-# Slaved Axes
+{::nomarkdown}
+<span id="slaved-axes"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -91,6 +93,7 @@ See the [G28 command family](/g28#g287-slaved-axis-homing-v2-only) for the comma
 
 - [`Robot.cpp` actuator configuration](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/robot/Robot.cpp#L285-L354)
 - [`Endstops.cpp` `G28.7` handling](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/tools/endstops/Endstops.cpp#L988-L1003)
+
 {::nomarkdown}
 </v2>
 </versioned>

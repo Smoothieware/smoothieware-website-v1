@@ -1,9 +1,11 @@
 ---
+title: "GRBL mode"
 permalink: /grbl-mode
 ---
 
-
-# Using Smoothie in grbl_mode
+{::nomarkdown}
+<span id="using-smoothie-in-grbl_mode"></span>
+{:/nomarkdown}
 
 (Or CNC mode)
 
@@ -70,7 +72,7 @@ Then Smoothie will interpret the G-code you send to it the same way Reprap-type 
 
   This page only mentions 3D printers and CNC mills. Lasers are neither.<br><br>
 
-  Traditionally, Lasercutting software (like <a href="laserweb">laserweb</a> or <a href="visicut">visicut</a>) have learned to talk to Smoothie in its 3D printing mode.<br><br>
+  Traditionally, Lasercutting software (like <a href="laserweb">laserweb</a> or <a href="https://visicut.org/">visicut</a>) have learned to talk to Smoothie in its 3D printing mode.<br><br>
 
   However, more CNC oriented software can also be used to control lasers (they are virtually similar to a CNC mill with a very thin tool and no Z axis), this is the case for example of <a href="bcnc">bcnc</a>.
 </sl-alert>

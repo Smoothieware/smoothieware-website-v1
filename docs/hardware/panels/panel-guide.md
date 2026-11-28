@@ -1,4 +1,5 @@
 ---
+title: "Panel guide"
 permalink: /panel-guide
 ---
 

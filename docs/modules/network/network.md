@@ -1,9 +1,11 @@
 ---
+title: "Network"
 permalink: /network
 ---
 
-
-# Network Interface
+{::nomarkdown}
+<span id="network-interface"></span>
+{:/nomarkdown}
 
 Smoothieboard has an RJ45 connector, which can be used to connect the board to your local Ethernet network and communicate with it over TCP/IP.
 
@@ -18,8 +20,6 @@ To enable the network, set <setting v1="network.enable" v2="network.enable"></se
 The IP address can be set statically or set to use DHCP.
 
 However, due to buffer size limitations, some DHCP servers are not supported.
-
-
 
 Here is an example of a setup using DHCP (meaning that the router automatically assigns an IP address to the Smoothieboard):
 
@@ -60,10 +60,6 @@ ip_address = auto        # use dhcp to get ip address
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
-
-
 
 And an example of how to set up with a static IP:
 
@@ -109,8 +105,6 @@ ip_gateway = 192.168.3.1      # the gateway address
 </versioned>
 {:/nomarkdown}
 
-
-
 The basic network configuration options appear in the V1 [configuration sample](https://github.com/Smoothieware/Smoothieware/blob/edge/ConfigSamples/Smoothieboard/config) and the V2 [CNC sample](https://github.com/Smoothieware/SmoothieV2/blob/master/ConfigSamples/config-cnc.ini).
 
 If your configuration file does not contain the network section, it probably means the version of Smoothie that shipped with your board is too old.
@@ -143,11 +137,17 @@ To access Smoothie over the network, you first need to know its IP address. If y
 - If you have access to your network's main router's administration interface, it should tell you the IP address of all peripherals connected to it.
 - If you are connected to the board via USB, you can use a program like Pronterface to send the `@net` command, which gives you the current IP address.
 - If you are running Linux, you can use a command like `nmap -sn 192.168.0.0/24` to find all accessible peripherals on the network.
-- **NOTE**: If the IP address shows `173.222.239.190`, then it means that DHCP did not get an IP address assigned. (Try a static IP instead).
+- NOTE: If the IP address shows `173.222.239.190`, then it means that DHCP did not get an IP address assigned. (Try a static IP instead).
 
 {::nomarkdown}
 <versioned orientation="vertical">
-<v1>V2 uses a different set of network services. See [V1 network services](#v1-network-services) below.</v1>
+<v1>
+{:/nomarkdown}
+
+V2 uses a different set of network services. See [V1 network services](#v1-network-services) below.
+
+{::nomarkdown}
+</v1>
 <v2>
 {:/nomarkdown}
 
@@ -256,7 +256,7 @@ http://ip_of_smoothie/sd/webif/index.html
 {::nomarkdown}
 <sl-alert variant="success" open>
   <sl-icon slot="icon" name="check-circle"></sl-icon>
-  Smoothie ships with a very basic web interface, however, you can install better ones by following these instructions: <a href="install-web-interface.md">Installing the new web interface</a>.
+  Smoothie ships with a very basic web interface, however, you can install better ones by following these instructions: <a href="/install-web-interface">Installing the new web interface</a>.
 </sl-alert>
 {:/nomarkdown}
 
@@ -319,7 +319,13 @@ If you want, you can also add the filesystem to your `/etc/fstab` as follows:
 
 {::nomarkdown}
 </v1>
-<v2>V1 network services are not available in V2. See [V2 network services](#v2-network-services) above.</v2>
+<v2>
+{:/nomarkdown}
+
+V1 network services are not available in V2. See [V2 network services](#v2-network-services) above.
+
+{::nomarkdown}
+</v2>
 </versioned>
 {:/nomarkdown}
 
@@ -357,8 +363,6 @@ They are available from various electronics suppliers (search for "HR911105A" or
 
 ## Hostname
 
-
-
 You can configure a hostname for the DHCP server as such:
 
 {::nomarkdown}
@@ -390,8 +394,6 @@ hostname = smoothie1       # optionally set this hostname for dhcp
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 Note the <setting v1="network.hostname" v2="network.hostname"></setting> is optional. (see section 3.14 [RFC 2132](https://www.ietf.org/rfc/rfc2132.txt))
 

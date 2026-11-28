@@ -1,9 +1,11 @@
 ---
+title: "New features"
 permalink: /new-features
 ---
 
-
-# New Features
+{::nomarkdown}
+<span id="new-features"></span>
+{:/nomarkdown}
 
 This page records feature announcements by date. Topic pages provide the configuration and operating instructions.
 
@@ -36,7 +38,7 @@ The feature list below records V2 releases. V1's experimental backlash branch is
 | Button Box matrix keypads | Not implemented in checked V2 source; sample configuration is ahead of the implementation | [Matrix keypad status](/button-box#matrix-keypads) |
 | Direct MPG axis control and shared hand wheel with pushbutton axis selection | V2 implementation | [MPG](/mpg#axis-selector-optional) |
 | Slaved internal-driver axes and independent alignment | V2 implementation | [Slaved Axes](/actuator-slaving) |
-| Auxiliary UART console or `echo -1` target | V2 implementation | [UART target mode](/uart#send-text-to-a-connected-device-v2-only) |
+| Auxiliary UART console or `echo -1` target | V2 implementation | [UART target mode](/uart#send-text-to-a-connected-device) |
 | NIST `G30` and `G30.1` in GRBL mode | V2 implementation | [G30 stored position](/g30#nist-stored-position-in-v2-grbl-mode) |
 | ECCE `ed` file editor | V2 implementation | [`ed`](/console-commands#ed) |
 | Interactive `le` command editor and session history | V2 implementation | [`le`](/console-commands#le) |
@@ -52,7 +54,6 @@ Firmware development can change these statuses. Check each linked page's source 
 </v2>
 </versioned>
 {:/nomarkdown}
-
 
 ## 2013/04
 
@@ -87,4 +88,3 @@ Firmware development can change these statuses. Check each linked page's source 
 - Now to enable the second usb serial port set {::nomarkdown}<setting v1="second_usb_serial_enable" v2="consoles.second_usb_serial_enable"></setting>{:/nomarkdown} to true in config.
 
 - Added `progress`, `abort`, and `help` commands to SimpleShell.
-

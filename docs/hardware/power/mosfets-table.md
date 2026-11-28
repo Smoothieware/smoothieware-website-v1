@@ -1,4 +1,5 @@
 ---
+title: "MOSFETs table"
 permalink: /mosfets-table
 ---
 

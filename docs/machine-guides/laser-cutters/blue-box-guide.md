@@ -6,7 +6,7 @@ title: SmoothK40 Guide
 
 ( See also [Smoothiebox Guide](bluebox-guide) )
 
-# SmoothK40 Guide
+## SmoothK40 Guide
 
 {::nomarkdown}
 <a href="https://omtechlaser.com/cdn/shop/files/1_d4b5e2f8-be9d-4ed7-91f8-c00245b09768.jpg?v=1722323278&width=500">
@@ -20,7 +20,7 @@ You want to use proper software to drive your Laser machine, this is the best re
 
 by Stephane BUISSON (Oct/Nov 2015)
 
-## Understanding Your Power Supply
+### Understanding Your Power Supply
 
 Before you get started you should have a look into your laser power supply.
 
@@ -38,7 +38,7 @@ Laser fire on L or on IN.
 
 The best way to find out your case is to look at how your original wiring was in the factory state.
 
-### PSU Connection Requirements
+#### PSU Connection Requirements
 
 To fire the PSU will need to satisfy several conditions, materialized by corresponding connections.
 
@@ -67,7 +67,7 @@ But I made it work with this schema:
 </a>
 {:/nomarkdown}
 
-## Connecting Endstops and Motors
+### Connecting Endstops and Motors
 
 From the factory, I identified 2 original wirings, very similar.
 
@@ -95,7 +95,7 @@ This is simple and very straightforward.
 
 No need to touch the front panel wiring (pot, switches, Vu meter).
 
-### Level shifter
+#### Level shifter
 
 Smoothie board Pin {::nomarkdown}<pin>2.5</pin>{:/nomarkdown} on JP 33 is 3.3V you will need a level shifter to 5V (2GBP on eBay),
 see schema for wiring.
@@ -106,7 +106,7 @@ see schema for wiring.
 </a>
 {:/nomarkdown}
 
-### LCD
+#### LCD
 
 Not compulsory, but handy to have to display your IP (dhcp), to home or jog the head, and print from SD.
 
@@ -114,7 +114,7 @@ Needs its own voltage regulator for readable contrast.
 
 The limited 30 cm cables length for the display make it delicate to install the LCD on the front panel, but it's doable.
 
-### Motors
+#### Motors
 
 Identify your motors, and check their specs (max current).
 
@@ -140,7 +140,7 @@ Y Motor 17HA113Y-22A2 FH140513
 
 And you are ready to implement the Smoothie config file.
 
-## Config
+### Config
 
 The section you want to update are:
 
@@ -150,7 +150,7 @@ The section you want to update are:
 - Steps per mm accordingly to your measurements (I suggest doing several straight lines, measure them with caliper and make average (for precision reading) for X &Y)
 - Network following your specs.
 
-### Microstepping Capabilities
+#### Microstepping Capabilities
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -171,7 +171,7 @@ Smoothie v2 boards with TMC2660 or TMC2590 drivers support up to 1/256 microstep
 </versioned>
 {:/nomarkdown}
 
-### My Configuration Example
+#### My Configuration Example
 
 In my case:
 
@@ -241,11 +241,11 @@ network.hostname                             SmoothK40             # Some DHCP s
 
 Command: tracing ({::nomarkdown}<gcode>G1</gcode>{:/nomarkdown}) a line from your actual position to (X100, Y100) full laser power (S1)
 
-## Laser G-code Examples
+### Laser G-code Examples
 
 Understanding basic laser-specific G-code commands will help you control your laser cutter effectively:
 
-### Laser Control Commands
+#### Laser Control Commands
 
 **Turn Laser On/Off:**
 ```gcode
@@ -260,7 +260,7 @@ G1 X50 Y50 S0.8 ; Linear move with laser at 80% power
 G1 X100 F3000   ; Linear move at 3000mm/min feed rate (laser power unchanged)
 ```
 
-### Practical Examples
+#### Practical Examples
 
 **Cut a 50mm square at 60% power:**
 ```gcode
@@ -289,9 +289,9 @@ M5               ; Turn laser off
 </sl-alert>
 {:/nomarkdown}
 
-## Troubleshooting Common Issues
+### Troubleshooting Common Issues
 
-### Laser Won't Fire
+#### Laser Won't Fire
 
 **Check Power Supply Connections:**
 - Verify all PSU connections are secure (G, P, L, IN, 5V)
@@ -310,7 +310,7 @@ M5               ; Turn laser off
 - Ensure level shifter is properly powered
 - Check for loose connections at PSU terminals
 
-### Inconsistent Laser Power
+#### Inconsistent Laser Power
 
 **Symptoms:** Laser power varies unexpectedly or doesn't match S values
 
@@ -321,7 +321,7 @@ M5               ; Turn laser off
 - Check PSU potentiometer setting if equipped
 - Verify clean 5V signal from level shifter
 
-### Positioning Errors
+#### Positioning Errors
 
 **Steps per mm calibration:**
 - Cut test lines (100mm in X and Y directions)
@@ -334,7 +334,7 @@ M5               ; Turn laser off
 - If motors run hot: decrease current slightly
 - Check motor datasheet for maximum current rating
 
-### Network Connection Issues
+#### Network Connection Issues
 
 **Can't connect to board:**
 - Verify network cable is connected
@@ -348,7 +348,7 @@ M5               ; Turn laser off
 - Check for EMI interference (route network cable away from stepper wires)
 - Verify router/switch supports the connection speed
 
-### Stepper Motor Problems
+#### Stepper Motor Problems
 
 **Motors won't move:**
 - Check enable pins are set correctly
@@ -361,7 +361,7 @@ M5               ; Turn laser off
 - Current too low or too high
 - Microstepping configuration issue
 
-### Endstop Issues
+#### Endstop Issues
 
 **Endstops not triggering:**
 - Test endstop continuity with multimeter
@@ -369,9 +369,9 @@ M5               ; Turn laser off
 - Check if endstop needs pull-up resistor
 - Try inverting endstop pin with `!`
 
-# Software
+## Software
 
-## VisiCut (Ethernet only with beta version 1.7.290 sept 2015)
+### VisiCut (Ethernet only with beta version 1.7.290 sept 2015)
 
 Download the latest (Smoothie tab for dev. version) [Visicut Download](http://hci.rwth-aachen.de/visicut-download)
 
@@ -385,13 +385,13 @@ You are done ;-))
 </a>
 {:/nomarkdown}
 
-## Fusion 360
+### Fusion 360
 
 Works with Smoothie in USB.
 
 Free for non-professional use.
 
-### Community Resources
+#### Community Resources
 
 Join and comments on the G+ K40 User's community
 

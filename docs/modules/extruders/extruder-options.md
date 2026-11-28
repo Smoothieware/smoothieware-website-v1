@@ -1,4 +1,5 @@
 ---
+title: "Extruder options"
 permalink: /extruder-options
 ---
 

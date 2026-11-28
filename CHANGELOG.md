@@ -6,18 +6,31 @@ History: see CHANGELOG.archive.md.
 
 ## [Unreleased]
 
-### Changed
-
-- VL53L1X distance sensor board page: updated for the narrower 30 x 40 mm board.
-
 ### Added
 
-- VL53L1X distance sensor board page, listed on the extension boards page and the homepage, linked with the ultrasonic distance sensor page.
+- Added the Bouni RS-232 spindle control wiring guide and listed the design on the homepage, in the extension-board directory and on the spindle family page.
+
+- Troubleshooting page: the "Prepare your config" step now shows, in two columns with screenshots, how to share a config file with Pastebin or GitHub Gist.
+- Every page now has one large title made from its address, and a table of contents beside the text.
+- Troubleshooting page: shorter problem headings, the full symptom is now the first line under each. Old links still work.
+- Long tables of contents (over 20 entries) now leave out the deepest headings, main chapters always stay.
+
+### Changed
+
+- Rename 22 extension-board guides and retain redirects from their previous addresses. Expand the RS232 BREAKOUT (bouni) wiring and reference guide.
+
+- The "Migrating to Smoothie" illustration is now a photo of birds flying at sunset.
+- Chapters use consistent heading levels. Machine guides and module pages show shorter versions of other pages with "Learn more" links where the full text isn't needed.
+- The todo page now links to the issues on GitHub. "Coming soon" notes link to a contact address.
+
+### Removed
+
+- Duplicate pages were merged (old addresses still work), and internal notes and backup files were taken off the site.
+- Broken links, missing images and text that showed raw markup are fixed.
 
 ### Fixed
 
 - Differential I2C signal extender page: the network jacks now open over the board edge; the remote has separate IN and OUT jacks for chaining, and the new terminator board closes the end of the cable.
-- Laser diode driver page rewritten for the real-diode board: wiring diagrams, pinout, Smoothieware V2 configuration examples, troubleshooting and simulation results. The page comes with new laser head, door switch, key switch and Smoothieboard Prime drawings and hosted chip datasheets. Updated to board revision v46: regulator diode moved next to the regulator, alignment marks, a second ground test point, manufacturing notes and full part numbers, with new drawing, renders, schematic and parts list.
 - Laser power-supply adapter page: simulation graphs redrawn in the site dark style (same data).
 - Three older breakout board pages now have eight board-tour points; the Bouni spindle chooser page shows both boards.
 - Extruder harness page: corrected board-tour popup placement.
@@ -29,21 +42,24 @@ History: see CHANGELOG.archive.md.
 - One greyscale design for the whole site: 2 px corners, quieter callouts and buttons, and a single table style without vertical lines. Diagrams take half the page width; board tours show the drawing beside its numbered list.
 - Laser PSU adapter board: redrawn schematic PDF, four A3 pages (overview, protect loops, gating and outputs, power) with clearer wiring and notes; the circuit is unchanged.
 - Troubleshooting page: the comic is half as large and floats to the right of the text, the empty table of contents is gone, and the title, sections and problems use heading levels 1, 2 and 3.
+- Troubleshooting page: the board LED section is more compact, in two columns, with smaller transparent animations.
+- Laser diode driver page rewritten for the real-diode board: wiring diagrams, pinout, Smoothieware V2 configuration examples, troubleshooting and simulation results. The page comes with new laser head, door switch, key switch and Smoothieboard Prime drawings and hosted chip datasheets. Updated to board revision v46: regulator diode moved next to the regulator, alignment marks, a second ground test point, manufacturing notes and full part numbers, with new drawing, renders, schematic and parts list.
+ Troubleshooting page: the board status LED pictures are back as new animations, shown separately for V1 and V2 boards, replacing unrelated placeholder photos.
 - Troubleshooting page: the long config override article inside the steps is now a short warning box linking to the override pages, as its own numbered step.
 - The 3D printer guide no longer repeats the whole troubleshooting page; it links to it.
-- Troubleshooting page: the board LED section is more compact, in two columns, with smaller transparent animations.
-- Troubleshooting page: the board status LED pictures are back as new animations, shown separately for V1 and V2 boards, replacing unrelated placeholder photos.
 - Endstop inputs (basic) board page: updated for the current hardware, with 3.3 V controller signals in both supply positions, a resettable sensor fuse, static-discharge protection, test pads, new voltage figures and `^` pin settings.
 - Gadgeteer perma-proto page updated to board v17: visible cuttable copper links, chain connector moved to the left margin with labelled wiring holes, all example projects wired to off-board parts through screw terminals.
 
-- Serve SVG-derived extension-board illustrations as lossless WebP where the verified export saves space.
+- Serve SVG-derived extension-board illustrations as lossless WebP where the verified export saves space. Migrated another 6,456 illustrations and updated their image links and source records.
 
 ### Added
 
-- Troubleshooting page: the "Prepare your config" step now shows, in two columns with screenshots, how to share a config file with Pastebin or GitHub Gist.
+- VL53L1X distance sensor board page: updated for the narrower 30 x 40 mm board.
+- VL53L1X distance sensor board page, listed on the extension boards page and the homepage, linked with the ultrasonic distance sensor page.
 - Pictures are at most three quarters of the page width and half the screen height, keeping their proportions.
 - Full-screen image viewer for pictures and diagrams on every page: next and previous, wheel and pinch zoom, drag to pan, keyboard control.
 - Quick page search (Ctrl+K or /), "On this page" contents on wide screens, reading progress, back-to-top and copy buttons on code blocks.
+- Every page heading now has a "#" link that points to that section, for sharing and bookmarking.
 - New page: Differential I2C signal extender (host board, chainable remote boards and a terminator board), with drawings, wiring examples, limits, schematics and parts lists.
 - Gadgeteer perma-proto page: new example project that delays STEP and DIR signals by about 1, 10 or 20 µs, with a DIP switch to choose which signal, fixed-capacitor and trimmer-capacitor drawings, a capacitor table, a timing graph and two chip datasheets.
 - A page for the Endstop inputs (basic) board: pinout, wiring, configuration, limits, mounting, electrical and simulation data, with a comparison against the Endstop and probe inputs (advanced) board on both pages.
@@ -58,6 +74,8 @@ History: see CHANGELOG.archive.md.
 - Extension board pages: older boards gained "Get started" wiring drawings and step cards, and wrong contact labels and wire colours in some wiring drawings were corrected.
 - Extension board pages that lacked them now show a wiring figure in "Get started" and a signal-path figure in "How it works".
 - Bouni analog and RS-485 spindle control pages and the raw pins breakout page: old-style wiring pictures replaced with current wiring, signal-path and chaining figures; a 3D rendering removed from the gate boards page.
+- Troubleshooting page heading levels now form a proper outline.
+- The config override link on the on-boot G-code page now points to the right section.
 - The extension boards list now links the new Endstop inputs (basic) page in place of the historical ExtraEndstops page, which is linked from an appendix on the new page.
 - The extension boards list now links the new three-channel A5984 stepper driver board page in place of the historical one, which is linked from an appendix on the new page.
 - Extension board drawings now show the solder pads of underside-mounted pin headers, plated test points and prototyping holes. The main drawing on ten board pages now includes these features.

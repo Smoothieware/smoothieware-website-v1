@@ -1,9 +1,11 @@
 ---
+title: "Octoprint"
 permalink: /octoprint
 ---
 
-
-# Octoprint Connection Guide
+{::nomarkdown}
+<span id="octoprint-connection-guide"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/octoprint.png">
@@ -11,14 +13,13 @@ permalink: /octoprint
 </a>
 {:/nomarkdown}
 
-
 [Octoprint](http://octoprint.org) is a popular web interface for 3D printers that provides remote control and monitoring capabilities.
 
 There are 3 different ways to connect Octoprint to Smoothie:
 
-- **Ethernet** - Network connection via socat
-- **USB** - Direct USB serial connection
-- **UART pins** - Serial connection via UART pins
+- Ethernet - Network connection via socat
+- USB - Direct USB serial connection
+- UART pins - Serial connection via UART pins
 
 ## Connecting via Ethernet
 
@@ -49,10 +50,10 @@ Proceed to Octoprint [Web UI](http://octopi.local).
 Go to **OctoPrint Settings** → **Serial Connection**:
 
 1. Set **Additional serial ports** to `/dev/ttySmoothie`
-2. **Save**, then reopen the same settings page
+2. Save, then reopen the same settings page
 3. Set **Serial Port** to `/dev/ttySmoothie`
 4. Set **Baudrate** to maximum: `250000`
-5. **Save** and close
+5. Save and close
 
 ### Step 4: Test the connection
 

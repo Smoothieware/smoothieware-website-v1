@@ -1,9 +1,11 @@
 
-# Migrating to Smoothie
+{::nomarkdown}
+<span id="migrating-to-smoothie"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
-<a href="/images/migration.png">
-  <img src="/images/migration.png" alt="Migration" style="width: 320px; float: right; margin-left: 1rem;"/>
+<a href="/images/migration.jpg">
+  <img src="/images/migration.jpg" alt="Migration" style="width: 320px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
 

@@ -1,8 +1,11 @@
 ---
+title: "Smoothieboard beta guide"
 permalink: /smoothieboard-beta-guide
 ---
 
-# Smoothieboard Beta Guide
+{::nomarkdown}
+<span id="smoothieboard-beta-guide"></span>
+{:/nomarkdown}
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
@@ -38,9 +41,9 @@ This also meant you had to solder them yourself.
 
 A great way to see what connector options you have for each connection is to look at reference pictures (see the [connector options photo](https://www.flickr.com/photos/arthurwolf/7832149516/)).
 
-- **Blue screw terminals**: 3.5mm pitch screw terminals (except for the bigger one at the power input, that is 5mm). Those are extremely common.
-- **Green screw terminals**: 2.54mm screw terminals. They are nice but more difficult to come by.
-- **Black 2.54mm pins**: Much cheaper alternative for 2.54mm connections.
+- Blue screw terminals: 3.5mm pitch screw terminals (except for the bigger one at the power input, that is 5mm). Those are extremely common.
+- Green screw terminals: 2.54mm screw terminals. They are nice but more difficult to come by.
+- Black 2.54mm pins: Much cheaper alternative for 2.54mm connections.
 
 You can find links to buy those connectors on the [Smoothieboard](smoothieboards) page, in the "border connectors" section.
 
@@ -132,17 +135,17 @@ It shows you the contents of the microSD card. You can use it at any time to acc
 
 Now you will want to install a serial terminal program to talk to your Smoothieboard:
 
-- **Windows**: [Teraterm](http://ttssh2.sourceforge.jp/index.html.en) works well
-- **Linux, FreeBSD, Mac OS X**: [Cutecom](http://cutecom.sourceforge.net/) is pretty nice
-- **All platforms**: [Pronterface](https://github.com/kliment/Printrun) provides a more "control-oriented" interface and lets you start printing right away
+- Windows: [Teraterm](http://ttssh2.sourceforge.jp/index.html.en) works well
+- Linux, FreeBSD, Mac OS X: [Cutecom](http://cutecom.sourceforge.net/) is pretty nice
+- All platforms: [Pronterface](https://github.com/kliment/Printrun) provides a more "control-oriented" interface and lets you start printing right away
 
 ### Connecting
 
 Use your program of choice to talk to Smoothie. The interface will be named:
 
-- **COM1** or something similar in Windows
-- **/dev/ttyACM0** or something similar in Linux
-- **/dev/tty.usbmodem412** or something similar in OS X
+- COM1 or something similar in Windows
+- /dev/ttyACM0 or something similar in Linux
+- /dev/tty.usbmodem412 or something similar in OS X
 
 Once the serial terminal is up and running, resetting the board should display `smoothie ok` in the terminal.
 

@@ -1,8 +1,11 @@
 ---
+title: "Tools"
 permalink: /tools
 ---
 
-# Tools
+{::nomarkdown}
+<span id="tools"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/glove.png">

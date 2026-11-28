@@ -4,7 +4,9 @@ layout: default
 title: Latest Smoothie Commits
 ---
 
-# Latest Smoothie Commits
+{::nomarkdown}
+<span id="latest-smoothie-commits"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/oshw-logo.png">
@@ -71,12 +73,11 @@ title: Latest Smoothie Commits
 </v2>
 </versioned>
 
-
 <style>
 /* Additional styling for better appearance */
-#edge-commits, #master-commits,
-#v1-edge-commits, #v1-master-commits,
-#v2-master-commits {
+## edge-commits, #master-commits,
+## v1-edge-commits, #v1-master-commits,
+## v2-master-commits {
   min-height: 100px;
 }
 </style>

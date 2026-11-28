@@ -142,41 +142,41 @@
       ]
     }
   ],
-  "arduino-to-gadgeteer-shield": [
+  "arduino-expansion-shield": [
     {
       "role": "arduino to gadgeteer shield",
       "version": "v23",
-      "cad_source_path": "extension-boards/src/arduino-to-gadgeteer-shield/attempt/versions/v23/arduino-to-gadgeteer-shield.kicad_pcb",
+      "cad_source_path": "extension-boards/src/arduino-expansion-shield/attempt/versions/v23/arduino-expansion-shield.kicad_pcb",
       "cad_sha256": "0b7a248e97f693b161c925b0e67203beb9d78e952986434c63034b61f5fde4ec",
       "diagram": {
-        "url": "/images/extensions/arduino-to-gadgeteer-shield/arduino-to-gadgeteer-shield-diagram.webp",
+        "url": "/images/extensions/arduino-expansion-shield/arduino-expansion-shield-diagram.webp",
         "sha256": "fcead12460f549d81df6c3fcccdfaf647496a953cffcb10aadeeaed283fa3bc7",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/arduino-to-gadgeteer-shield/v23/arduino-to-gadgeteer-shield.svg",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/arduino-expansion-shield/v23/arduino-expansion-shield.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "0b7a248e97f693b161c925b0e67203beb9d78e952986434c63034b61f5fde4ec",
         "caption": "v23; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/arduino-to-gadgeteer-shield/arduino-to-gadgeteer-shield-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/arduino-expansion-shield/arduino-expansion-shield-diagram.svg",
         "archived_svg_sha256": "0640b89d6627e6dff1d108eadc1dcf9ae1ae94d02af0a987e7b65d094451608b"
       },
       "renders": [
         {
-          "url": "/images/extensions/arduino-to-gadgeteer-shield/arduino-to-gadgeteer-shield-populated-isometric.png",
+          "url": "/images/extensions/arduino-expansion-shield/arduino-expansion-shield-populated-isometric.png",
           "sha256": "d0823748cf1a6bef70b641e536d652ed33494bc2deac1b6d73d0d4f7810effcd",
-          "source_path": "extension-boards/src/arduino-to-gadgeteer-shield/attempt/versions/v23/populations/arduino-to-gadgeteer-shield/normal/populated-isometric.png",
+          "source_path": "extension-boards/src/arduino-expansion-shield/attempt/versions/v23/populations/arduino-expansion-shield/normal/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/arduino-to-gadgeteer-shield/arduino-to-gadgeteer-shield-populated-top.png",
+          "url": "/images/extensions/arduino-expansion-shield/arduino-expansion-shield-populated-top.png",
           "sha256": "a78f1f628247c7e3318dd9d0f8daf666730a2a16c28e672b7f310af6a905e0d6",
-          "source_path": "extension-boards/src/arduino-to-gadgeteer-shield/attempt/versions/v23/populations/arduino-to-gadgeteer-shield/normal/populated-top.png",
+          "source_path": "extension-boards/src/arduino-expansion-shield/attempt/versions/v23/populations/arduino-expansion-shield/normal/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/arduino-to-gadgeteer-shield/arduino-to-gadgeteer-shield-populated-bottom.png",
+          "url": "/images/extensions/arduino-expansion-shield/arduino-expansion-shield-populated-bottom.png",
           "sha256": "85048f1495a875787016ee6bb746c195de14696653c749fa41f655b65b441049",
-          "source_path": "extension-boards/src/arduino-to-gadgeteer-shield/attempt/versions/v23/populations/arduino-to-gadgeteer-shield/normal/populated-bottom.png",
+          "source_path": "extension-boards/src/arduino-expansion-shield/attempt/versions/v23/populations/arduino-expansion-shield/normal/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         }
@@ -314,14 +314,14 @@
       "cad_source_path": "extension-boards/src/bltouch-like-probe/attempt/versions/v18/bltouch-like-probe.kicad_pcb",
       "cad_sha256": "b44750907ce8c8efdff9f8fb14e110d84a290d22b2a8824a1a30a59ebf3c1c0b",
       "diagram": {
-        "url": "/images/extensions/bltouch-like-probe/bltouch-like-probe-diagram.png",
-        "sha256": "18be01c25a4a84e46a03695d03351097523925888ec3c4c64303983b0a641403",
+        "url": "/images/extensions/bltouch-like-probe/bltouch-like-probe-diagram.webp",
+        "sha256": "20ea347b078c8d1602af072a52786e9b09c6785c3c9fe5d4b13495b6fbd2b118",
         "source_path": "smoothie-diagrams/data/extension-board-renders/bltouch-like-probe/v18/bltouch-like-probe.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "b44750907ce8c8efdff9f8fb14e110d84a290d22b2a8824a1a30a59ebf3c1c0b",
         "caption": "v18; source hash matches this CAD revision.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/bltouch-like-probe/bltouch-like-probe-diagram.svg",
-        "archived_svg_sha256": "8739694290493a0c69d33737629af99f5cda0b026511f8de4647ef894bc78504",
+        "archived_svg_sha256": "ce93a8298159b3e29be15007160b2ee4c7147e75b03a406e7ced259b7aaa196a",
         "previous_svg_sha256": "04ac8f100b8da2c9ef3eee7c21fe75353f63a1a57402d5520a4b2c101e27f504"
       },
       "renders": [
@@ -349,41 +349,41 @@
       ]
     }
   ],
-  "bouni-spindle-module-boards": [
+  "spindle-control-breakouts": [
     {
       "role": "bsm analog",
       "version": "v19",
-      "cad_source_path": "extension-boards/src/bouni-spindle-module-boards/attempt/versions/v19/bsm-analog.kicad_pcb",
+      "cad_source_path": "extension-boards/src/spindle-control-breakouts/attempt/versions/v19/bsm-analog.kicad_pcb",
       "cad_sha256": "01b040015d706fac4c0320b3fe3569fcf9fb813fe0c36afb1b99ae0b49a1551f",
       "diagram": {
-        "url": "/images/extensions/bouni-spindle-module-boards/bsm-analog-diagram.webp",
+        "url": "/images/extensions/spindle-control-breakouts/bsm-analog-diagram.webp",
         "sha256": "9187fbd1f30db21940cd118562de5a8007f0b92030711b874df2500720daae08",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/bouni-spindle-module-boards/v19/bsm-analog.svg",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/spindle-control-breakouts/v19/bsm-analog.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "01b040015d706fac4c0320b3fe3569fcf9fb813fe0c36afb1b99ae0b49a1551f",
         "caption": "v19; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/bouni-spindle-module-boards/bsm-analog-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/spindle-control-breakouts/bsm-analog-diagram.svg",
         "archived_svg_sha256": "2ffe5d6ac9a8baf99bfcb7e1bf0a294a488aa5ae3564515bd5c56e16169f6871"
       },
       "renders": [
         {
-          "url": "/images/extensions/bouni-spindle-module-boards/bsm-analog-populated-isometric.png",
+          "url": "/images/extensions/spindle-control-breakouts/bsm-analog-populated-isometric.png",
           "sha256": "58139ae3f3df55c31892f2564263d359b4fc3df212a2f646cfba5b4aba8cff0b",
-          "source_path": "extension-boards/src/bouni-spindle-module-boards/attempt/versions/v19/populations/bsm-analog/normal/populated-isometric.png",
+          "source_path": "extension-boards/src/spindle-control-breakouts/attempt/versions/v19/populations/bsm-analog/normal/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/bouni-spindle-module-boards/bsm-analog-populated-top.png",
+          "url": "/images/extensions/spindle-control-breakouts/bsm-analog-populated-top.png",
           "sha256": "e62343442c1f4de0d1bf43f96b8af220d8b79f7a49e265681216f9a241af65a8",
-          "source_path": "extension-boards/src/bouni-spindle-module-boards/attempt/versions/v19/populations/bsm-analog/normal/populated-top.png",
+          "source_path": "extension-boards/src/spindle-control-breakouts/attempt/versions/v19/populations/bsm-analog/normal/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/bouni-spindle-module-boards/bsm-analog-populated-bottom.png",
+          "url": "/images/extensions/spindle-control-breakouts/bsm-analog-populated-bottom.png",
           "sha256": "419d7941804080c09c9bf36327e7025b0288be62a8ce02dcdacb19819cc10ef2",
-          "source_path": "extension-boards/src/bouni-spindle-module-boards/attempt/versions/v19/populations/bsm-analog/normal/populated-bottom.png",
+          "source_path": "extension-boards/src/spindle-control-breakouts/attempt/versions/v19/populations/bsm-analog/normal/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         }
@@ -392,37 +392,37 @@
     {
       "role": "bsm rs485",
       "version": "v19",
-      "cad_source_path": "extension-boards/src/bouni-spindle-module-boards/attempt/versions/v19/bsm-rs485.kicad_pcb",
+      "cad_source_path": "extension-boards/src/spindle-control-breakouts/attempt/versions/v19/bsm-rs485.kicad_pcb",
       "cad_sha256": "84d4c269ae2b24f15c380d55d3c20271fec3f1f7131ec071f9db58b1a5ef1ca2",
       "diagram": {
-        "url": "/images/extensions/bouni-spindle-module-boards/bsm-rs485-diagram.webp",
+        "url": "/images/extensions/spindle-control-breakouts/bsm-rs485-diagram.webp",
         "sha256": "beefd632dd6418a93033cd64e47684282aa4cf705de8410849eafb717d779152",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/bouni-spindle-module-boards/v19/bsm-rs485.svg",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/spindle-control-breakouts/v19/bsm-rs485.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "84d4c269ae2b24f15c380d55d3c20271fec3f1f7131ec071f9db58b1a5ef1ca2",
         "caption": "v19; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/bouni-spindle-module-boards/bsm-rs485-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/spindle-control-breakouts/bsm-rs485-diagram.svg",
         "archived_svg_sha256": "e214df36aacf0c802de6418c1d2f167301a11f30aa4753a8ce306a3e1da04e03"
       },
       "renders": [
         {
-          "url": "/images/extensions/bouni-spindle-module-boards/bsm-rs485-populated-isometric.png",
+          "url": "/images/extensions/spindle-control-breakouts/bsm-rs485-populated-isometric.png",
           "sha256": "f1e010b6ae58bebbc31ae2c740b5eb32ee71efed797d2b9f5430dd8968be57d9",
-          "source_path": "extension-boards/src/bouni-spindle-module-boards/attempt/versions/v19/populations/bsm-rs485/normal/populated-isometric.png",
+          "source_path": "extension-boards/src/spindle-control-breakouts/attempt/versions/v19/populations/bsm-rs485/normal/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/bouni-spindle-module-boards/bsm-rs485-populated-top.png",
+          "url": "/images/extensions/spindle-control-breakouts/bsm-rs485-populated-top.png",
           "sha256": "4857d4ca632bf2ec253048f784f287fd087c6ec5ca0d465b9fbc2476184c98c9",
-          "source_path": "extension-boards/src/bouni-spindle-module-boards/attempt/versions/v19/populations/bsm-rs485/normal/populated-top.png",
+          "source_path": "extension-boards/src/spindle-control-breakouts/attempt/versions/v19/populations/bsm-rs485/normal/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/bouni-spindle-module-boards/bsm-rs485-populated-bottom.png",
+          "url": "/images/extensions/spindle-control-breakouts/bsm-rs485-populated-bottom.png",
           "sha256": "be92b3ecc9f9276dc9f21097260679dc1bd853319c2897c6307c22bde6c7aff7",
-          "source_path": "extension-boards/src/bouni-spindle-module-boards/attempt/versions/v19/populations/bsm-rs485/normal/populated-bottom.png",
+          "source_path": "extension-boards/src/spindle-control-breakouts/attempt/versions/v19/populations/bsm-rs485/normal/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         }
@@ -511,41 +511,41 @@
       ]
     }
   ],
-  "buzzer-module": [
+  "buzzer-breakout": [
     {
-      "role": "buzzer module",
+      "role": "Buzzer breakout",
       "version": "v14",
-      "cad_source_path": "extension-boards/src/buzzer-module/attempt/versions/v14/buzzer-module.kicad_pcb",
+      "cad_source_path": "extension-boards/src/buzzer-breakout/attempt/versions/v14/buzzer-breakout.kicad_pcb",
       "cad_sha256": "6bc77eda610bb58ec562285216d892c781092cf5743c45742f3bd0db7fafa9a0",
       "diagram": {
-        "url": "/images/extensions/buzzer-module/buzzer-module-diagram.webp",
+        "url": "/images/extensions/buzzer-breakout/buzzer-breakout-diagram.webp",
         "sha256": "e71b4fa5b1672fb3c911fbfd7d486ea22d6a1ad566f294dfdc3f7ff60da44a18",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/buzzer-module/v14/buzzer-module.svg",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/buzzer-breakout/v14/buzzer-breakout.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "6bc77eda610bb58ec562285216d892c781092cf5743c45742f3bd0db7fafa9a0",
         "caption": "v14; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/buzzer-module/buzzer-module-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/buzzer-breakout/buzzer-breakout-diagram.svg",
         "archived_svg_sha256": "8322f2b1aef5fbb0adbbbbfd2aa0be583a3c3fb5a4ec45a6f1502fd987c7ea54"
       },
       "renders": [
         {
-          "url": "/images/extensions/buzzer-module/buzzer-module-populated-isometric.png",
+          "url": "/images/extensions/buzzer-breakout/buzzer-breakout-populated-isometric.png",
           "sha256": "515fc2d442abc0f8fb297220853736b544527dd57a2c1c074e903f8eb8eaa654",
-          "source_path": "extension-boards/src/buzzer-module/attempt/versions/v14/populations/buzzer-module/normal/populated-isometric.png",
+          "source_path": "extension-boards/src/buzzer-breakout/attempt/versions/v14/populations/buzzer-breakout/normal/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/buzzer-module/buzzer-module-populated-top.png",
+          "url": "/images/extensions/buzzer-breakout/buzzer-breakout-populated-top.png",
           "sha256": "8908710e5c7a428fbf6bc4ce7f6fa918ac252c7bcd71d12143fabff3c829be56",
-          "source_path": "extension-boards/src/buzzer-module/attempt/versions/v14/populations/buzzer-module/normal/populated-top.png",
+          "source_path": "extension-boards/src/buzzer-breakout/attempt/versions/v14/populations/buzzer-breakout/normal/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/buzzer-module/buzzer-module-populated-bottom.png",
+          "url": "/images/extensions/buzzer-breakout/buzzer-breakout-populated-bottom.png",
           "sha256": "a5396e111e89ad1509aaf8975e98210e9a14823d6bb3fff07cd82cb09a6fd087",
-          "source_path": "extension-boards/src/buzzer-module/attempt/versions/v14/populations/buzzer-module/normal/populated-bottom.png",
+          "source_path": "extension-boards/src/buzzer-breakout/attempt/versions/v14/populations/buzzer-breakout/normal/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         }
@@ -807,8 +807,8 @@
       "cad_source_path": "extension-boards/src/differential-i2c-signal-extender/attempt/versions/v02/host/die-host.kicad_pcb",
       "cad_sha256": "56b13f965aacb639d05efd03173d97a683d1c382fb29f75831f3d79a3ffcd4ed",
       "diagram": {
-        "url": "/images/extensions/differential-i2c-signal-extender/v02/differential-i2c-signal-extender-host-diagram.png",
-        "sha256": "8e8a09943543b0da79382bff7dc40ec8223d8941813122fe0e767f5e71db3191",
+        "url": "/images/extensions/differential-i2c-signal-extender/v02/differential-i2c-signal-extender-host-diagram.webp",
+        "sha256": "0cb4406262e1bbf944333391a2f905bf26d0545b2161467fe983376bba8194aa",
         "source_path": "smoothie-diagrams/data/extension-board-renders/differential-i2c-signal-extender/v02/die-host.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "56b13f965aacb639d05efd03173d97a683d1c382fb29f75831f3d79a3ffcd4ed",
@@ -824,8 +824,8 @@
       "cad_source_path": "extension-boards/src/differential-i2c-signal-extender/attempt/versions/v02/remote/die-remote.kicad_pcb",
       "cad_sha256": "b1d3a6e5eee18079bed86320c7e04cf5246974521c3cb2a53580b46223d45bcd",
       "diagram": {
-        "url": "/images/extensions/differential-i2c-signal-extender/v02/differential-i2c-signal-extender-remote-diagram.png",
-        "sha256": "c1b45cfcdae5de3cb13cd72cc816efd28cdd528a2e043df9ec46c87751f624d7",
+        "url": "/images/extensions/differential-i2c-signal-extender/v02/differential-i2c-signal-extender-remote-diagram.webp",
+        "sha256": "ff0a32f268e7cb2113504baee4bb9db6b2b0ad9e9528b44e52bd19b5ca37274f",
         "source_path": "smoothie-diagrams/data/extension-board-renders/differential-i2c-signal-extender/v02/die-remote.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "b1d3a6e5eee18079bed86320c7e04cf5246974521c3cb2a53580b46223d45bcd",
@@ -841,8 +841,8 @@
       "cad_source_path": "extension-boards/src/differential-i2c-signal-extender/attempt/versions/v02/terminator/die-terminator.kicad_pcb",
       "cad_sha256": "5397d1a8766fc07e8f7225a36b5d7f359aef1c77407358930bedb198ab3ac419",
       "diagram": {
-        "url": "/images/extensions/differential-i2c-signal-extender/v02/differential-i2c-signal-extender-terminator-diagram.png",
-        "sha256": "a5dc2f28f133df5a95c427bcc0e18409d582db9b129e7e83f64cfc5de6b1fef7",
+        "url": "/images/extensions/differential-i2c-signal-extender/v02/differential-i2c-signal-extender-terminator-diagram.webp",
+        "sha256": "ee85a7fd6017fb0e890d27a7781666d331bf0d4a8c995155cc1c12a4498064c8",
         "source_path": "smoothie-diagrams/data/extension-board-renders/differential-i2c-signal-extender/v02/die-terminator.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "5397d1a8766fc07e8f7225a36b5d7f359aef1c77407358930bedb198ab3ac419",
@@ -1054,82 +1054,82 @@
       ]
     }
   ],
-  "d-sub-to-gadgeteer-in": [
+  "d-sub-input-adapter": [
     {
       "role": "d sub to gadgeteer in",
       "version": "v24",
-      "cad_source_path": "extension-boards/src/d-sub-to-gadgeteer-in/attempt/versions/v24/d-sub-to-gadgeteer-in.kicad_pcb",
+      "cad_source_path": "extension-boards/src/d-sub-input-adapter/attempt/versions/v24/d-sub-input-adapter.kicad_pcb",
       "cad_sha256": "8906d78334a380bf63d9708ec3bfc7f5995b9a053607717ca8d7d9d7d20ace3f",
       "diagram": {
-        "url": "/images/extensions/d-sub-to-gadgeteer-in/d-sub-to-gadgeteer-in-diagram.webp",
+        "url": "/images/extensions/d-sub-input-adapter/d-sub-input-adapter-diagram.webp",
         "sha256": "53e48a307f6f2bdd76b2f5ee8a8f7e20f1fc0993731c64545106eff38b17141b",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/d-sub-to-gadgeteer-in/v24/d-sub-to-gadgeteer-in.svg",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/d-sub-input-adapter/v24/d-sub-input-adapter.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "8906d78334a380bf63d9708ec3bfc7f5995b9a053607717ca8d7d9d7d20ace3f",
         "caption": "v24; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/d-sub-to-gadgeteer-in/d-sub-to-gadgeteer-in-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/d-sub-input-adapter/d-sub-input-adapter-diagram.svg",
         "archived_svg_sha256": "1068ccc9dfa8b315cdba1d376be8be5afefa2e11dbdd46f7d3de588f596d3f97"
       },
       "renders": [
         {
-          "url": "/images/extensions/d-sub-to-gadgeteer-in/d-sub-to-gadgeteer-in-populated-isometric.png",
+          "url": "/images/extensions/d-sub-input-adapter/d-sub-input-adapter-populated-isometric.png",
           "sha256": "49fcd55140e82c5cab1215aae7753471980ccdfe8a4b60c2c93775921d85fd84",
-          "source_path": "extension-boards/src/d-sub-to-gadgeteer-in/attempt/versions/v24/populations/d-sub-to-gadgeteer-in/normal/populated-isometric.png",
+          "source_path": "extension-boards/src/d-sub-input-adapter/attempt/versions/v24/populations/d-sub-input-adapter/normal/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/d-sub-to-gadgeteer-in/d-sub-to-gadgeteer-in-populated-top.png",
+          "url": "/images/extensions/d-sub-input-adapter/d-sub-input-adapter-populated-top.png",
           "sha256": "529e217a80f24635f77f08da224b31782629de157579dd7114de8e348a615304",
-          "source_path": "extension-boards/src/d-sub-to-gadgeteer-in/attempt/versions/v24/populations/d-sub-to-gadgeteer-in/normal/populated-top.png",
+          "source_path": "extension-boards/src/d-sub-input-adapter/attempt/versions/v24/populations/d-sub-input-adapter/normal/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/d-sub-to-gadgeteer-in/d-sub-to-gadgeteer-in-populated-bottom.png",
+          "url": "/images/extensions/d-sub-input-adapter/d-sub-input-adapter-populated-bottom.png",
           "sha256": "946d2727a7561296a81269b85d6e6b29e687273aa1cc88687530ceaecf591acf",
-          "source_path": "extension-boards/src/d-sub-to-gadgeteer-in/attempt/versions/v24/populations/d-sub-to-gadgeteer-in/normal/populated-bottom.png",
+          "source_path": "extension-boards/src/d-sub-input-adapter/attempt/versions/v24/populations/d-sub-input-adapter/normal/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         }
       ]
     }
   ],
-  "d-sub-to-gadgeteer-out": [
+  "d-sub-output-adapter": [
     {
       "role": "d sub to gadgeteer out",
       "version": "v26",
-      "cad_source_path": "extension-boards/src/d-sub-to-gadgeteer-out/attempt/versions/v26/d-sub-to-gadgeteer-out.kicad_pcb",
+      "cad_source_path": "extension-boards/src/d-sub-output-adapter/attempt/versions/v26/d-sub-output-adapter.kicad_pcb",
       "cad_sha256": "0ecb09617a1a22caf214f748eedec55577eb7fe3c1e5d47de3deaf39aacd816c",
       "diagram": {
-        "url": "/images/extensions/d-sub-to-gadgeteer-out/d-sub-to-gadgeteer-out-diagram.webp",
+        "url": "/images/extensions/d-sub-output-adapter/d-sub-output-adapter-diagram.webp",
         "sha256": "c96b0f1a97b644657956e4925f50e2f172ebd267cd64d0e81df363ece4a7c86d",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/d-sub-to-gadgeteer-out/v26/d-sub-to-gadgeteer-out.svg",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/d-sub-output-adapter/v26/d-sub-output-adapter.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "0ecb09617a1a22caf214f748eedec55577eb7fe3c1e5d47de3deaf39aacd816c",
         "caption": "v26; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/d-sub-to-gadgeteer-out/d-sub-to-gadgeteer-out-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/d-sub-output-adapter/d-sub-output-adapter-diagram.svg",
         "archived_svg_sha256": "8a61b89fc451f78145b3a16e6af08b2981f473ae6768c7af451844082ad1539d"
       },
       "renders": [
         {
-          "url": "/images/extensions/d-sub-to-gadgeteer-out/d-sub-to-gadgeteer-out-populated-isometric.png",
+          "url": "/images/extensions/d-sub-output-adapter/d-sub-output-adapter-populated-isometric.png",
           "sha256": "f4506c5c139a586d9630e1b469480aee69b8f1a8536b5dcb41d0656dd65a95cd",
-          "source_path": "extension-boards/src/d-sub-to-gadgeteer-out/attempt/versions/v26/populations/d-sub-to-gadgeteer-out/normal/populated-isometric.png",
+          "source_path": "extension-boards/src/d-sub-output-adapter/attempt/versions/v26/populations/d-sub-output-adapter/normal/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/d-sub-to-gadgeteer-out/d-sub-to-gadgeteer-out-populated-top.png",
+          "url": "/images/extensions/d-sub-output-adapter/d-sub-output-adapter-populated-top.png",
           "sha256": "441a8c73dfcbd3c2d587c8863af2a9ed1a4f92fe3b96f947d303e04f9447de1e",
-          "source_path": "extension-boards/src/d-sub-to-gadgeteer-out/attempt/versions/v26/populations/d-sub-to-gadgeteer-out/normal/populated-top.png",
+          "source_path": "extension-boards/src/d-sub-output-adapter/attempt/versions/v26/populations/d-sub-output-adapter/normal/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/d-sub-to-gadgeteer-out/d-sub-to-gadgeteer-out-populated-bottom.png",
+          "url": "/images/extensions/d-sub-output-adapter/d-sub-output-adapter-populated-bottom.png",
           "sha256": "e4f72f44e42d907a0fa403eb9df29e1c189301f2ab183633b141ff4e31169d78",
-          "source_path": "extension-boards/src/d-sub-to-gadgeteer-out/attempt/versions/v26/populations/d-sub-to-gadgeteer-out/normal/populated-bottom.png",
+          "source_path": "extension-boards/src/d-sub-output-adapter/attempt/versions/v26/populations/d-sub-output-adapter/normal/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         }
@@ -1259,41 +1259,41 @@
       ]
     }
   ],
-  "gadgeteer-to-can": [
+  "can-bus-adapter": [
     {
       "role": "gadgeteer to can",
       "version": "v21",
-      "cad_source_path": "extension-boards/src/gadgeteer-to-can/attempt/versions/v21/gadgeteer-to-can.kicad_pcb",
+      "cad_source_path": "extension-boards/src/can-bus-adapter/attempt/versions/v21/can-bus-adapter.kicad_pcb",
       "cad_sha256": "06e0655a5f39ab8ec8997d30d5c99ebca10117a1e5a735ae4bf2a73989245575",
       "diagram": {
-        "url": "/images/extensions/gadgeteer-to-can/gadgeteer-to-can-diagram.webp",
+        "url": "/images/extensions/can-bus-adapter/can-bus-adapter-diagram.webp",
         "sha256": "12c6ac63e5b630954a58cc85ad56c72eb53223f789eaeed25ade44b033e670bc",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/gadgeteer-to-can/v21/gadgeteer-to-can.svg",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/can-bus-adapter/v21/can-bus-adapter.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "06e0655a5f39ab8ec8997d30d5c99ebca10117a1e5a735ae4bf2a73989245575",
         "caption": "v21; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/gadgeteer-to-can/gadgeteer-to-can-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/can-bus-adapter/can-bus-adapter-diagram.svg",
         "archived_svg_sha256": "19703f4ace2cec372ea0085ce1da51fc87ca9689e13d0cb9edc04a63cde52da2"
       },
       "renders": [
         {
-          "url": "/images/extensions/gadgeteer-to-can/gadgeteer-to-can-populated-isometric.png",
+          "url": "/images/extensions/can-bus-adapter/can-bus-adapter-populated-isometric.png",
           "sha256": "923bed2b7390c0f090e8e61baf74d9cdd61df45899d1d13680f56513f2d33e96",
-          "source_path": "extension-boards/src/gadgeteer-to-can/attempt/versions/v21/populations/gadgeteer-to-can/normal/populated-isometric.png",
+          "source_path": "extension-boards/src/can-bus-adapter/attempt/versions/v21/populations/can-bus-adapter/normal/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/gadgeteer-to-can/gadgeteer-to-can-populated-top.png",
+          "url": "/images/extensions/can-bus-adapter/can-bus-adapter-populated-top.png",
           "sha256": "082dfa903b2c799afb22b09e452efa32bed0e11a40b0ae808e0114372b685a95",
-          "source_path": "extension-boards/src/gadgeteer-to-can/attempt/versions/v21/populations/gadgeteer-to-can/normal/populated-top.png",
+          "source_path": "extension-boards/src/can-bus-adapter/attempt/versions/v21/populations/can-bus-adapter/normal/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/gadgeteer-to-can/gadgeteer-to-can-populated-bottom.png",
+          "url": "/images/extensions/can-bus-adapter/can-bus-adapter-populated-bottom.png",
           "sha256": "52e330035e7d716cc165b9683baf2483c6480116ba2777f74e0992c14ab044c8",
-          "source_path": "extension-boards/src/gadgeteer-to-can/attempt/versions/v21/populations/gadgeteer-to-can/normal/populated-bottom.png",
+          "source_path": "extension-boards/src/can-bus-adapter/attempt/versions/v21/populations/can-bus-adapter/normal/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         }
@@ -1472,8 +1472,8 @@
       "cad_source_path": "extension-boards/src/hx711-load-cell-amplifier/attempt/versions/v16/hx711_load_cell_amplifier.kicad_pcb",
       "cad_sha256": "9339d337e1b4492193d171075379e4c7e4aa2c3db0d0a382b9f37ec23ff8bac3",
       "diagram": {
-        "url": "/images/extensions/hx711-load-cell-amplifier/hx711_load_cell_amplifier-diagram.png",
-        "sha256": "c613736cdbe97f3f394c8661e15cefb93381a1d0b60f74e3918d7554bba37571",
+        "url": "/images/extensions/hx711-load-cell-amplifier/hx711_load_cell_amplifier-diagram.webp",
+        "sha256": "27c67ce95c90bfdc7c5b12caa458146bfd3c2a693dc2d82f79e689cfabc937a7",
         "source_path": "smoothie-diagrams/data/extension-board-renders/hx711-load-cell-amplifier/v16/hx711_load_cell_amplifier.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "9339d337e1b4492193d171075379e4c7e4aa2c3db0d0a382b9f37ec23ff8bac3",
@@ -1513,14 +1513,14 @@
       "cad_source_path": "extension-boards/src/inductive-proximity-sensor-adapter/attempt/versions/v22/inductive-proximity-sensor-adapter.kicad_pcb",
       "cad_sha256": "4272b2e4705d6038e30e35a279c45e193fd07387c74b327803cc2823c5137cc9",
       "diagram": {
-        "url": "/images/extensions/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-diagram.png",
-        "sha256": "e81dca2e5fb76032ea3d449a3d971a348404c0e72dbab96697ad9b7242f51cd0",
+        "url": "/images/extensions/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-diagram.webp",
+        "sha256": "4a7b2527dab7692b326c07f9824d00d818ce4735575d47d51f51b221013775f4",
         "source_path": "smoothie-diagrams/data/extension-board-renders/inductive-proximity-sensor-adapter/v22/inductive-proximity-sensor-adapter.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "4272b2e4705d6038e30e35a279c45e193fd07387c74b327803cc2823c5137cc9",
         "caption": "v22; source hash matches this CAD revision.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/inductive-proximity-sensor-adapter/inductive-proximity-sensor-adapter-diagram.svg",
-        "archived_svg_sha256": "a7266aeb47ed8dc71599d627a8f0e9b210b4501c05b8c2a11d23dba033640c02",
+        "archived_svg_sha256": "430361aac920c9989a2afbb7dfb5a4119a8d9cda4d361b0532eb1c5ed4553d59",
         "previous_svg_sha256": "0a85479d3178483b3cc76d1e004d21fa924b6d70d64656fd2876a756eaba5e77"
       },
       "renders": [
@@ -1555,14 +1555,14 @@
       "cad_source_path": "extension-boards/src/input-protector/attempt/versions/v17/input-protector.kicad_pcb",
       "cad_sha256": "7a751e4ff74b0e0839c39eb01fac1469d1e11a0a198d2d64d1c1ea48a2a335d9",
       "diagram": {
-        "url": "/images/extensions/input-protector/input-protector-diagram.png",
-        "sha256": "e24470a8d81981d9a288e4ced03ccef6fb425de84e4903d41798aaf3ca617176",
+        "url": "/images/extensions/input-protector/input-protector-diagram.webp",
+        "sha256": "21654870f1796a541c4f9fda16d305f05013450a2f156bbd1a8d7a1a4509bf30",
         "source_path": "smoothie-diagrams/data/extension-board-renders/input-protector/v17/input-protector.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "7a751e4ff74b0e0839c39eb01fac1469d1e11a0a198d2d64d1c1ea48a2a335d9",
         "caption": "v17; source hash matches this CAD revision.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/input-protector/input-protector-diagram.svg",
-        "archived_svg_sha256": "9b480bb3c23f79336c8c0789c9b890bc7fdbaac34f6f872dc83aadf124a4ad53",
+        "archived_svg_sha256": "9ad29eb4302bf8c49c64e2d45cff38366bff330e82eaabf1138a3545d38939df",
         "previous_svg_sha256": "ed9c95b81224e930e345131895affa7fb369e3a22ea4cde834d2692b2053de47"
       },
       "renders": [
@@ -1597,8 +1597,8 @@
       "cad_source_path": "extension-boards/src/intel-edison-breakout/attempt/versions/v21/intel-edison-breakout.kicad_pcb",
       "cad_sha256": "da995bf1c88513941558e7d8bc939ba741a4bf12cacc30425f1b9fdf36d3ecf6",
       "diagram": {
-        "url": "/images/extensions/intel-edison-breakout/intel-edison-breakout-diagram.png",
-        "sha256": "75062128832fdefaf5d3aac8ae0cda99cbeb315e62217143e2b0285d3b965bc0",
+        "url": "/images/extensions/intel-edison-breakout/intel-edison-breakout-diagram.webp",
+        "sha256": "59d64b309a7dcf82033e872eb43429c72fae1f1504ce40cc0d497630f7eb6dce",
         "source_path": "smoothie-diagrams/data/extension-board-renders/intel-edison-breakout/v21/intel-edison-breakout.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "da995bf1c88513941558e7d8bc939ba741a4bf12cacc30425f1b9fdf36d3ecf6",
@@ -1638,14 +1638,14 @@
       "cad_source_path": "extension-boards/src/laser-barrier-board/attempt/versions/v20/emitter/emitter.kicad_pcb",
       "cad_sha256": "588ccbd8145fda686277ea8d4958b655802cfe4db1cd7cee24ba3ebe9b22d404",
       "diagram": {
-        "url": "/images/extensions/laser-barrier-board/emitter-diagram.png",
-        "sha256": "879ceb33a5c6fa07edef40e172628d71601ef9aaa684f676758744b263effb8b",
+        "url": "/images/extensions/laser-barrier-board/emitter-diagram.webp",
+        "sha256": "95db920caf08110b3d08e7165398ff9b45674539b66619dbd87b4729580f6709",
         "source_path": "smoothie-diagrams/data/extension-board-renders/laser-barrier-board/v20/emitter.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "588ccbd8145fda686277ea8d4958b655802cfe4db1cd7cee24ba3ebe9b22d404",
         "caption": "v20; source hash matches this CAD revision.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/laser-barrier-board/emitter-diagram.svg",
-        "archived_svg_sha256": "6ee3176e240948986b7cea155f7c9c7905bcd8384193dcd12e5958274964dfd3",
+        "archived_svg_sha256": "d5c08a4ad2f6876132c9a28ab6ba6cb11b39d540971ec150a21bdcc706119957",
         "previous_svg_sha256": "f650363026a993be76e8e2e74b4c43db066a05ad80819177234e1cd38acfa017"
       },
       "renders": [
@@ -1678,14 +1678,14 @@
       "cad_source_path": "extension-boards/src/laser-barrier-board/attempt/versions/v20/receiver/receiver.kicad_pcb",
       "cad_sha256": "452ddb188935b293dae7126174d22cfdc1aa1380bc977a141344b5df8e280a5f",
       "diagram": {
-        "url": "/images/extensions/laser-barrier-board/receiver-diagram.png",
-        "sha256": "33f3236b594ea80d70cd50d613e93f43d3b8de13248714eab8235b9509f986fb",
+        "url": "/images/extensions/laser-barrier-board/receiver-diagram.webp",
+        "sha256": "438e8a0f9b522cd320f10fd5712dc34d470945cc5409d354b4597e636db87967",
         "source_path": "smoothie-diagrams/data/extension-board-renders/laser-barrier-board/v20/receiver.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "452ddb188935b293dae7126174d22cfdc1aa1380bc977a141344b5df8e280a5f",
         "caption": "v20; source hash matches this CAD revision.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/laser-barrier-board/receiver-diagram.svg",
-        "archived_svg_sha256": "68d967a41e0a1f32f10f6326efff802eadee03d1c7ec817671b431aae6cd4996",
+        "archived_svg_sha256": "7b3d5d2ad7eee2b2c8d814c7bf41856359093a25fd273ddfeea331a9abd3a06d",
         "previous_svg_sha256": "4128160ce7db92afe74bfff9b2cacee4edb8ac2268812755d9c50427c372821d"
       },
       "renders": [
@@ -1761,8 +1761,8 @@
       "cad_source_path": "extension-boards/src/laser-psu-adapter-board/attempt/versions/v25/laser-psu-adapter.kicad_pcb",
       "cad_sha256": "395c7962f581ff027e882851b8622f48f01aa6a7ee888ba1434fff35b3ace518",
       "diagram": {
-        "url": "/images/extensions/laser-psu-adapter-board/earlier-design/laser-psu-adapter-diagram.png",
-        "sha256": "38642c2280236cdbf9f8e251579583009301b7acc5b4ee8f15573fe02da066f3",
+        "url": "/images/extensions/laser-psu-adapter-board/earlier-design/laser-psu-adapter-diagram.webp",
+        "sha256": "5f4b63a0f2b9d9adc68f9af3122039077fd9fa6fc57298f934cc04f786b35c90",
         "source_path": "smoothie-diagrams/data/extension-board-renders/laser-psu-adapter-board/v25/laser-psu-adapter.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "395c7962f581ff027e882851b8622f48f01aa6a7ee888ba1434fff35b3ace518",
@@ -1802,8 +1802,8 @@
       "cad_source_path": "extension-boards/src/leadshine-like-external-servo-drivers/attempt/versions/v28/servo-foc.kicad_pcb",
       "cad_sha256": "05e846d1ae6ef102663992b8d671792abbbc6cdfd01fb4663018d17f59296bd0",
       "diagram": {
-        "url": "/images/extensions/leadshine-like-external-servo-drivers/servo-foc-diagram.png",
-        "sha256": "f269285478aad2193e445346a1142c5c97651abbdff03b8c2631fd3667d7803f",
+        "url": "/images/extensions/leadshine-like-external-servo-drivers/servo-foc-diagram.webp",
+        "sha256": "cc8a3894350cd8563a3e23e5b2d008c635fcd69c566c6c72e28770d91b9b0ac4",
         "source_path": "smoothie-diagrams/data/extension-board-renders/leadshine-like-external-servo-drivers/v28/servo-foc.svg",
         "source_hash_matches": false,
         "embedded_cad_sha256": "028910193051653fee1d3236f4797e81612873fb7aed55cce72e484add43325f",
@@ -1821,8 +1821,8 @@
       "cad_source_path": "extension-boards/src/leadshine-like-external-stepper-drivers/attempt/versions/v18/leadshine-drive.kicad_pcb",
       "cad_sha256": "655ca3c405ac418a2565ec6fe286c87efcf9c9c56107569caf24e8e44d727163",
       "diagram": {
-        "url": "/images/extensions/leadshine-like-external-stepper-drivers/leadshine-drive-diagram.png",
-        "sha256": "d8b0b592595459618854fabe3d2aeaf3ca9eada42129ea69bef2bda41b648f90",
+        "url": "/images/extensions/leadshine-like-external-stepper-drivers/leadshine-drive-diagram.webp",
+        "sha256": "50ed93c78f06e77643e5fe6f5e8e5655fb234389ac0c788a908be0656672d547",
         "source_path": "smoothie-diagrams/data/extension-board-renders/leadshine-like-external-stepper-drivers/v18/leadshine-drive.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "655ca3c405ac418a2565ec6fe286c87efcf9c9c56107569caf24e8e44d727163",
@@ -1862,14 +1862,14 @@
       "cad_source_path": "extension-boards/src/led-breakout/attempt/versions/v18/led-breakout.kicad_pcb",
       "cad_sha256": "a2e75ef1e45973aec2307918e1add6d66627c3c44fe7778ddf69913fa0f1af16",
       "diagram": {
-        "url": "/images/extensions/led-breakout/led-breakout-diagram.png",
-        "sha256": "2ef12ad853d3df298c2c0eab1459ccd74f765f8f6cf594ff69217c9ad247175c",
+        "url": "/images/extensions/led-breakout/led-breakout-diagram.webp",
+        "sha256": "b048b472d42c657e6c9ccf3db88169bdc58f56e14829947dfe0711748736ca3c",
         "source_path": "smoothie-diagrams/data/extension-board-renders/led-breakout/v18/led-breakout.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "a2e75ef1e45973aec2307918e1add6d66627c3c44fe7778ddf69913fa0f1af16",
         "caption": "v18; source hash matches this CAD revision.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/led-breakout/led-breakout-diagram.svg",
-        "archived_svg_sha256": "f062ef4075c59a07f701a35a7445efb08ac51541f41fed2ce243d4645f9276bc"
+        "archived_svg_sha256": "6894d4226470e727840353041d49f5b7e9bd1ad652aa20b9d272f8638c95fd0d"
       },
       "renders": [
         {
@@ -1903,8 +1903,8 @@
       "cad_source_path": "extension-boards/src/long-distance-extender/attempt/versions/v15/emitter/emitter.kicad_pcb",
       "cad_sha256": "51dc682f81d0f0bc9c6bd81974f6a03b01d91ab470637d8723be5e54ddd31fef",
       "diagram": {
-        "url": "/images/extensions/long-distance-extender/emitter-diagram.png",
-        "sha256": "c3174fe075b2752410beb87fc22ba97ec2b31b8438b5cb9ce946daca106f3e28",
+        "url": "/images/extensions/long-distance-extender/emitter-diagram.webp",
+        "sha256": "850dd4c595330ebe545ed7a2db051e90c5dd4b213d35e69d69fac3a5bf35e1b7",
         "source_path": "smoothie-diagrams/data/extension-board-renders/long-distance-extender/v15/emitter.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "51dc682f81d0f0bc9c6bd81974f6a03b01d91ab470637d8723be5e54ddd31fef",
@@ -1942,8 +1942,8 @@
       "cad_source_path": "extension-boards/src/long-distance-extender/attempt/versions/v15/receiver/receiver.kicad_pcb",
       "cad_sha256": "f4aa13b932c848f8a5f024da53e1a9a056aafb966e7bf3097f44cac8df564c78",
       "diagram": {
-        "url": "/images/extensions/long-distance-extender/receiver-diagram.png",
-        "sha256": "c9a4b7ddd0c20308fbef041a76edbc2ecece9d84b7b027b7b5cde66777a80cda",
+        "url": "/images/extensions/long-distance-extender/receiver-diagram.webp",
+        "sha256": "46cc6ad8841ce41f815cd2226c7960de91f7837d136b49534318d2c70304e8f1",
         "source_path": "smoothie-diagrams/data/extension-board-renders/long-distance-extender/v15/receiver.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "f4aa13b932c848f8a5f024da53e1a9a056aafb966e7bf3097f44cac8df564c78",
@@ -1983,8 +1983,8 @@
       "cad_source_path": "extension-boards/src/mechanical-endstop-breakout/attempt/versions/v18/mech-endstop.kicad_pcb",
       "cad_sha256": "51024c4739b0ed4e33ef6470cc43b3de8705227bd619dc70c02c6f4540c46b00",
       "diagram": {
-        "url": "/images/extensions/mechanical-endstop-breakout/mech-endstop-diagram.png",
-        "sha256": "55d8dd23baf777703c03d4f83fb098bd2825326c73b68730cbb180093ce524f6",
+        "url": "/images/extensions/mechanical-endstop-breakout/mech-endstop-diagram.webp",
+        "sha256": "2e8f6945a6e0dfd29cf007c095d977ce3ee29048a71a8726258252de036135b3",
         "source_path": "smoothie-diagrams/data/extension-board-renders/mechanical-endstop-breakout/v18/mech-endstop.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "51024c4739b0ed4e33ef6470cc43b3de8705227bd619dc70c02c6f4540c46b00",
@@ -2024,8 +2024,8 @@
       "cad_source_path": "extension-boards/src/opto-isolation-pass-through-board/attempt/versions/v20/opto-isolation.kicad_pcb",
       "cad_sha256": "c46abee9f37e1049f40615f40ed71a64b483364132e17026c525ac9dd170f0d2",
       "diagram": {
-        "url": "/images/extensions/opto-isolation-pass-through-board/opto-isolation-diagram.png",
-        "sha256": "ec86d61d263c8190e1222d46d5dbe3f272c37abccc31ceb11e12579b1dc1601e",
+        "url": "/images/extensions/opto-isolation-pass-through-board/opto-isolation-diagram.webp",
+        "sha256": "cad51db91e367e33e49f335849d3fa41d037dba5f70fe02290c3a26f86e90e8b",
         "source_path": "smoothie-diagrams/data/extension-board-renders/opto-isolation-pass-through-board/v20/opto-isolation.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "c46abee9f37e1049f40615f40ed71a64b483364132e17026c525ac9dd170f0d2",
@@ -2065,8 +2065,8 @@
       "cad_source_path": "extension-boards/src/papilio-adapter/attempt/versions/v17/papilio-adapter.kicad_pcb",
       "cad_sha256": "9ede7353b510781fbfe36d3ba05d55ca7aaface6d9cdb2a0fa97cf4450a48c91",
       "diagram": {
-        "url": "/images/extensions/papilio-adapter/papilio-adapter-diagram.png",
-        "sha256": "9199d0715035dc654d3951dfd561593077e9ee71c86180802c375407eee479b5",
+        "url": "/images/extensions/papilio-adapter/papilio-adapter-diagram.webp",
+        "sha256": "967110abe322c6f636589fd5d233eca8c83c741883bb533d8bc54431e1d63593",
         "source_path": "smoothie-diagrams/data/extension-board-renders/papilio-adapter/v17/papilio-adapter.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "9ede7353b510781fbfe36d3ba05d55ca7aaface6d9cdb2a0fa97cf4450a48c91",
@@ -2106,8 +2106,8 @@
       "cad_source_path": "extension-boards/src/parallel-port-breakout/attempt/versions/v22/parallel-port-breakout.kicad_pcb",
       "cad_sha256": "2753ab9f5785c3f6db221b1a04c08cd505818b57094c1e4d2ca4213d3984c70a",
       "diagram": {
-        "url": "/images/extensions/parallel-port-breakout/parallel-port-breakout-diagram.png",
-        "sha256": "b63e2f2caeddfc9477a5f4daaf7b2b815ce73337a0aac0830c0898497bb2fde2",
+        "url": "/images/extensions/parallel-port-breakout/parallel-port-breakout-diagram.webp",
+        "sha256": "075968953f9cb0a1d00769fe6dfa421c329342be1a46a6054de46e56d77ac5b8",
         "source_path": "smoothie-diagrams/data/extension-board-renders/parallel-port-breakout/v22/parallel-port-breakout.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "2753ab9f5785c3f6db221b1a04c08cd505818b57094c1e4d2ca4213d3984c70a",
@@ -2140,41 +2140,41 @@
       ]
     }
   ],
-  "perma-proto-gadgeteer": [
+  "perma-proto-breadboard": [
     {
       "role": "perma proto gadgeteer",
       "version": "v17",
-      "cad_source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v17/perma-proto-gadgeteer.kicad_pcb",
+      "cad_source_path": "extension-boards/src/perma-proto-breadboard/attempt/versions/v17/perma-proto-breadboard.kicad_pcb",
       "cad_sha256": "a8bb21d95a234d017856c549a8701a58bd39a8bb710682a70ce97117fa0f82a4",
       "diagram": {
-        "url": "/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.webp",
+        "url": "/images/extensions/perma-proto-breadboard/perma-proto-breadboard-diagram.webp",
         "sha256": "819b954ca311e9eddff7adce8567eef1d10c857c24ffa4ca00801b54528c0d28",
-        "source_path": "smoothie-diagrams/data/website-extension-svg/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.svg",
+        "source_path": "smoothie-diagrams/data/website-extension-svg/perma-proto-breadboard/perma-proto-breadboard-diagram.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "a8bb21d95a234d017856c549a8701a58bd39a8bb710682a70ce97117fa0f82a4",
         "caption": "v17; drawn from this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/perma-proto-breadboard/perma-proto-breadboard-diagram.svg",
         "archived_svg_sha256": "87e8e86e438fd0e7809aeebb6f64b12641a0cf563523a9ea988342f5116e5591"
       },
       "renders": [
         {
-          "url": "/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-populated-isometric.png",
+          "url": "/images/extensions/perma-proto-breadboard/perma-proto-breadboard-populated-isometric.png",
           "sha256": "4cd055900ff7a881ececd4d69a73eb9e0bef266198b5991a6bc0ebdaf457c678",
-          "source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v17/renders/populated-isometric.png",
+          "source_path": "extension-boards/src/perma-proto-breadboard/attempt/versions/v17/renders/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Computer render of the populated board, not a photograph."
         },
         {
-          "url": "/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-populated-top.png",
+          "url": "/images/extensions/perma-proto-breadboard/perma-proto-breadboard-populated-top.png",
           "sha256": "7663eead692e27e22eb9a09456b3a63715e14d7407641ccf931193966a5ff288",
-          "source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v17/renders/populated-top.png",
+          "source_path": "extension-boards/src/perma-proto-breadboard/attempt/versions/v17/renders/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Computer render of the populated board, not a photograph."
         },
         {
-          "url": "/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-populated-bottom.png",
+          "url": "/images/extensions/perma-proto-breadboard/perma-proto-breadboard-populated-bottom.png",
           "sha256": "f1e1227d12dc88e9820afc87ecf5b4826de6a6680948f35795ad1517e5da8ea6",
-          "source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v17/renders/populated-bottom.png",
+          "source_path": "extension-boards/src/perma-proto-breadboard/attempt/versions/v17/renders/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Computer render of the populated board, not a photograph."
         }
@@ -2188,8 +2188,8 @@
       "cad_source_path": "extension-boards/src/pololu-driver-breakout-board/attempt/versions/v34/pololu-driver-breakout.kicad_pcb",
       "cad_sha256": "e51a4f5945a3ea59ad4a124f615735adeb44b2305b4c8eeb2894fce1dfc772a2",
       "diagram": {
-        "url": "/images/extensions/pololu-driver-breakout-board/pololu-driver-breakout-diagram.png",
-        "sha256": "39c133779cdde82e8dae547936264f803e632d6ba8b3dffe164ee4748ce9780e",
+        "url": "/images/extensions/pololu-driver-breakout-board/pololu-driver-breakout-diagram.webp",
+        "sha256": "44eda941d0ec399c29219dab5bd4b54ac4e8927b9a77cb882434d9f1aeabe5da",
         "source_path": "smoothie-diagrams/data/extension-board-renders/pololu-driver-breakout-board/v34/pololu-driver-breakout.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "e51a4f5945a3ea59ad4a124f615735adeb44b2305b4c8eeb2894fce1dfc772a2",
@@ -2229,8 +2229,8 @@
       "cad_source_path": "extension-boards/src/position-feedback-board/attempt/versions/v33/position-feedback.kicad_pcb",
       "cad_sha256": "e9ff7319c7506563b9b18d593dc6c7b26699494477569ac95608a7c91fa6a810",
       "diagram": {
-        "url": "/images/extensions/position-feedback-board/position-feedback-diagram.png",
-        "sha256": "17246643898895e0da325f797cfbfe7b701ffd3167347371bb256be2f819e3cd",
+        "url": "/images/extensions/position-feedback-board/position-feedback-diagram.webp",
+        "sha256": "e8b74ed55762e7b57ec34e850acbe2dd48f78265f71d52df5855350ad38d383d",
         "source_path": "smoothie-diagrams/data/extension-board-renders/position-feedback-board/v33/position-feedback.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "e9ff7319c7506563b9b18d593dc6c7b26699494477569ac95608a7c91fa6a810",
@@ -2270,8 +2270,8 @@
       "cad_source_path": "extension-boards/src/power-supply-connector-board/attempt/versions/v23/working/psu.kicad_pcb",
       "cad_sha256": "164c0311ee49f9108eb84eeebf02b6aa7509d43a2eb531a2a01f53c5a75ceb03",
       "diagram": {
-        "url": "/images/extensions/power-supply-connector-board/psu-diagram.png",
-        "sha256": "2c54f8c591a17f8cf1102880e6acbfdae6a2a12416f1049fa7db91e92c89eafc",
+        "url": "/images/extensions/power-supply-connector-board/psu-diagram.webp",
+        "sha256": "7925d37f9b28f2d6af0c38d0da2fe82fbaa1dd1862e002ab58f6c511ba60d8c9",
         "source_path": "smoothie-diagrams/data/extension-board-renders/power-supply-connector-board/v23/psu.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "164c0311ee49f9108eb84eeebf02b6aa7509d43a2eb531a2a01f53c5a75ceb03",
@@ -2289,14 +2289,14 @@
       "cad_source_path": "extension-boards/src/pressure-sensor/attempt/versions/v23/pressure-sensor.kicad_pcb",
       "cad_sha256": "e70537c4c77f0c76f30022899a834341726a6c8b76000b44d00b0154c2de7df6",
       "diagram": {
-        "url": "/images/extensions/pressure-sensor/pressure-sensor-diagram.png",
-        "sha256": "147c62de22e3ce9ee9ec31d9ef1db8dbe7de34e97e80b46ef497366a644e25fd",
+        "url": "/images/extensions/pressure-sensor/pressure-sensor-diagram.webp",
+        "sha256": "3cf20c8f0f4779b1cdc7e445317fa60219c286880a0f6aecad42b26e1d56a502",
         "source_path": "smoothie-diagrams/data/extension-board-renders/pressure-sensor/v23/pressure-sensor.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "e70537c4c77f0c76f30022899a834341726a6c8b76000b44d00b0154c2de7df6",
         "caption": "v23; source hash matches this CAD revision.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/pressure-sensor/pressure-sensor-diagram.svg",
-        "archived_svg_sha256": "04429adf8b58a8f17521787c22564f42797d624efb5e486262046582a255c49e",
+        "archived_svg_sha256": "d0116c67c32ecb619acb67badb451f3a5d6885a700fbe24fe9a81ca02000a81a",
         "previous_svg_sha256": "6afc477b54a37d8903f8befc9b600d9604a10c12a249479aa504a1117676b09c"
       },
       "renders": [
@@ -2324,41 +2324,41 @@
       ]
     }
   ],
-  "qwiic-to-gadgeteer-adapter": [
+  "qwiic-expansion-adapter": [
     {
       "role": "qwiic to gadgeteer adapter",
       "version": "v20",
-      "cad_source_path": "extension-boards/src/qwiic-to-gadgeteer-adapter/attempt/versions/v20/qwiic-to-gadgeteer-adapter.kicad_pcb",
+      "cad_source_path": "extension-boards/src/qwiic-expansion-adapter/attempt/versions/v20/qwiic-expansion-adapter.kicad_pcb",
       "cad_sha256": "0037e26e223670937dabe70666af8e9a526ad10f041c50918c602a4beb123646",
       "diagram": {
-        "url": "/images/extensions/qwiic-to-gadgeteer-adapter/qwiic-to-gadgeteer-adapter-diagram.png",
-        "sha256": "849c778e219d73616c5798236e5dd6f4a02dbab78616c343282920581e58b0f2",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/qwiic-to-gadgeteer-adapter/v20/qwiic-to-gadgeteer-adapter.svg",
+        "url": "/images/extensions/qwiic-expansion-adapter/qwiic-expansion-adapter-diagram.webp",
+        "sha256": "8b6d703b8e49ce34dd55d012a6998db474bdd94b61847d95593a0d38322dc00e",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/qwiic-expansion-adapter/v20/qwiic-expansion-adapter.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "0037e26e223670937dabe70666af8e9a526ad10f041c50918c602a4beb123646",
         "caption": "v20; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/qwiic-to-gadgeteer-adapter/qwiic-to-gadgeteer-adapter-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/qwiic-expansion-adapter/qwiic-expansion-adapter-diagram.svg",
         "archived_svg_sha256": "51110a03bc829015f36288c7ae424d4ab57c597122ff6de1e85389cca30d556e"
       },
       "renders": [
         {
-          "url": "/images/extensions/qwiic-to-gadgeteer-adapter/qwiic-to-gadgeteer-adapter-populated-isometric.png",
+          "url": "/images/extensions/qwiic-expansion-adapter/qwiic-expansion-adapter-populated-isometric.png",
           "sha256": "b18d6bd793eb9f7411c7607a3ba4b05b8900cb3a6b2eb8bab246f425ec4d1e74",
-          "source_path": "extension-boards/src/qwiic-to-gadgeteer-adapter/attempt/versions/v20/populations/qwiic-to-gadgeteer-adapter/normal/populated-isometric.png",
+          "source_path": "extension-boards/src/qwiic-expansion-adapter/attempt/versions/v20/populations/qwiic-expansion-adapter/normal/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/qwiic-to-gadgeteer-adapter/qwiic-to-gadgeteer-adapter-populated-top.png",
+          "url": "/images/extensions/qwiic-expansion-adapter/qwiic-expansion-adapter-populated-top.png",
           "sha256": "e4481d4039127d376311be00410566c3cc51fc95034366c1226ad665faa939cd",
-          "source_path": "extension-boards/src/qwiic-to-gadgeteer-adapter/attempt/versions/v20/populations/qwiic-to-gadgeteer-adapter/normal/populated-top.png",
+          "source_path": "extension-boards/src/qwiic-expansion-adapter/attempt/versions/v20/populations/qwiic-expansion-adapter/normal/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/qwiic-to-gadgeteer-adapter/qwiic-to-gadgeteer-adapter-populated-bottom.png",
+          "url": "/images/extensions/qwiic-expansion-adapter/qwiic-expansion-adapter-populated-bottom.png",
           "sha256": "abcb5cb466dbb13912a801418e876e7bf0c295220fd73b14f6980a6300d7200c",
-          "source_path": "extension-boards/src/qwiic-to-gadgeteer-adapter/attempt/versions/v20/populations/qwiic-to-gadgeteer-adapter/normal/populated-bottom.png",
+          "source_path": "extension-boards/src/qwiic-expansion-adapter/attempt/versions/v20/populations/qwiic-expansion-adapter/normal/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         }
@@ -2372,8 +2372,8 @@
       "cad_source_path": "extension-boards/src/raspberry-pi-zero-breakout/attempt/versions/v17/rpi-zero-breakout.kicad_pcb",
       "cad_sha256": "69f71b3001dcbff470224b60c3fb9a28dab5ef3abec49b7f98a667bb8586f7f7",
       "diagram": {
-        "url": "/images/extensions/raspberry-pi-zero-breakout/rpi-zero-breakout-diagram.png",
-        "sha256": "65aad30d232e233843c9ee13bd99af5cb3eee9f2c52199ddabf23a6b517216f0",
+        "url": "/images/extensions/raspberry-pi-zero-breakout/rpi-zero-breakout-diagram.webp",
+        "sha256": "0cef19ba404392b80b6b5630e09a64b70514e7ac2858d7e2015f8063bb5a59cf",
         "source_path": "smoothie-diagrams/data/extension-board-renders/raspberry-pi-zero-breakout/v17/rpi-zero-breakout.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "69f71b3001dcbff470224b60c3fb9a28dab5ef3abec49b7f98a667bb8586f7f7",
@@ -2413,14 +2413,14 @@
       "cad_source_path": "extension-boards/src/raw-pins-breakout/attempt/versions/v15/raw-pins-breakout.kicad_pcb",
       "cad_sha256": "1945f91b08a2d172178e9a79d10fa38c00cda04ff3cce7590c19a8ebc052c5a2",
       "diagram": {
-        "url": "/images/extensions/raw-pins-breakout/raw-pins-breakout-diagram.png",
-        "sha256": "f2729db7f2fe0d369f278b7ce5dba4c8f481f501c203b4b7016589c1f708c68c",
+        "url": "/images/extensions/raw-pins-breakout/raw-pins-breakout-diagram.webp",
+        "sha256": "e79cefecbfedf8051ef8c0055f29d4991e4cb02ad41789d72307e6dc71c69a48",
         "source_path": "smoothie-diagrams/data/extension-board-renders/raw-pins-breakout/v15/raw-pins-breakout.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "1945f91b08a2d172178e9a79d10fa38c00cda04ff3cce7590c19a8ebc052c5a2",
         "caption": "v15; source hash matches this CAD revision.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/raw-pins-breakout/raw-pins-breakout-diagram.svg",
-        "archived_svg_sha256": "79950ea29227f65b6ce5e02050b7fc326a483193693445bdce6e0d0c79773037"
+        "archived_svg_sha256": "823830e0e3d66f6a1b88cef4e809123aa93519662b2ec437c1f259473b99d773"
       },
       "renders": [
         {
@@ -2454,14 +2454,14 @@
       "cad_source_path": "extension-boards/src/raw-pins-screw-terminal-breakout/attempt/versions/v24/raw-pins-screw-terminal-breakout.kicad_pcb",
       "cad_sha256": "6495237a6bcae001f61aa7bd6edd3a686ec629eea3c57aaa059381a7d1db6b46",
       "diagram": {
-        "url": "/images/extensions/raw-pins-screw-terminal-breakout/raw-pins-screw-terminal-breakout-diagram.png",
-        "sha256": "c7449cc3370c424889b4c1b3d654fb22fd6e18ef0df73f63d8ffed713d9c0dda",
+        "url": "/images/extensions/raw-pins-screw-terminal-breakout/raw-pins-screw-terminal-breakout-diagram.webp",
+        "sha256": "8383f101b32dce27037f7f3f0b9bc9356b17021f8e990a5d498b29ad3fe11821",
         "source_path": "smoothie-diagrams/data/extension-board-renders/raw-pins-screw-terminal-breakout/v24/raw-pins-screw-terminal-breakout.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "6495237a6bcae001f61aa7bd6edd3a686ec629eea3c57aaa059381a7d1db6b46",
         "caption": "v24; source hash matches this CAD revision.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/raw-pins-screw-terminal-breakout/raw-pins-screw-terminal-breakout-diagram.svg",
-        "archived_svg_sha256": "0e0ec81cc38b16659044f5a1a112490303f204c72b9e57349928441b1eba500d"
+        "archived_svg_sha256": "f89d9b9a2df4f1cb35f7c37a0bcab440f77d64617b64a9bc7ce7fb9acd086c77"
       },
       "renders": [
         {
@@ -2495,8 +2495,8 @@
       "cad_source_path": "extension-boards/src/sd-card-breakout/attempt/versions/v21/sd-card-breakout.kicad_pcb",
       "cad_sha256": "f0c02fd2802a1a364bf94549b43c4029c6fc59ff4031c5b484ed4e660549fff5",
       "diagram": {
-        "url": "/images/extensions/sd-card-breakout/sd-card-breakout-diagram.png",
-        "sha256": "79a73feb56852b3793245af794a979edf4b0b2448176c8cdf61140e88f489636",
+        "url": "/images/extensions/sd-card-breakout/sd-card-breakout-diagram.webp",
+        "sha256": "0c8cd52a8faed5d43f8b6ba0dbf5b062ef032bcd3c69bf61fbc68f7598552c96",
         "source_path": "smoothie-diagrams/data/extension-board-renders/sd-card-breakout/v21/sd-card-breakout.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "f0c02fd2802a1a364bf94549b43c4029c6fc59ff4031c5b484ed4e660549fff5",
@@ -2536,8 +2536,8 @@
       "cad_source_path": "extension-boards/src/serial-to-wifi-board/attempt/versions/v16/serial-to-wifi-board.kicad_pcb",
       "cad_sha256": "33913f02dcbbb3b3447a5d14fdbccfba76d64b142308f6a760f8e2e9318a0076",
       "diagram": {
-        "url": "/images/extensions/serial-to-wifi-board/serial-to-wifi-board-diagram.png",
-        "sha256": "4ef1be723a8d91ddeaca5c9ed952abb08557cf91bdddc7974224e2963fa6fcbe",
+        "url": "/images/extensions/serial-to-wifi-board/serial-to-wifi-board-diagram.webp",
+        "sha256": "52d496fb7fb1b83e1aee6cfff43d79efde5ef2c7e59dd4ca66161a03bf36e5fd",
         "source_path": "smoothie-diagrams/data/extension-board-renders/serial-to-wifi-board/v16/serial-to-wifi-board.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "33913f02dcbbb3b3447a5d14fdbccfba76d64b142308f6a760f8e2e9318a0076",
@@ -2577,14 +2577,14 @@
       "cad_source_path": "extension-boards/src/servo-control/attempt/versions/v24/servo-control.kicad_pcb",
       "cad_sha256": "5ef31f641a2ea6ad41d17cd7c01c2da94b539c6e2dfd00004a473f11285010b8",
       "diagram": {
-        "url": "/images/extensions/servo-control/servo-control-diagram.png",
-        "sha256": "583c4e50cc8c659f8be7128428f4dca44a5d3139820aafed71acd1f349103279",
+        "url": "/images/extensions/servo-control/servo-control-diagram.webp",
+        "sha256": "9eb32d63ea2e9bb4bb6700b8ad8e9e9a6fa280cb64135bea823b66e4eca4264b",
         "source_path": "smoothie-diagrams/data/extension-board-renders/servo-control/v24/servo-control.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "5ef31f641a2ea6ad41d17cd7c01c2da94b539c6e2dfd00004a473f11285010b8",
         "caption": "v24; source hash matches this CAD revision.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/servo-control/servo-control-diagram.svg",
-        "archived_svg_sha256": "c22af8ba11f0619ce0cd0818d27b61d62c9eb9cf93cabae441c4c701a3aa34e6",
+        "archived_svg_sha256": "3af9c82e361b308a503c1b951b8d7ed1a1420f396186697ed28e20f389adda43",
         "previous_svg_sha256": "7c48c27d7c05bd10ebc6df215bd20c6388d0820724151d48c431c7a91de868b1"
       },
       "renders": []
@@ -2597,14 +2597,14 @@
       "cad_source_path": "extension-boards/src/seven-channel-ac-mechanical-relay/attempt/versions/v17/seven-channel-ac-mechanical-relay.kicad_pcb",
       "cad_sha256": "98ae3cafd2cb808bc450dff11200152f3fff89d3378fafb1491ae647c235fc8d",
       "diagram": {
-        "url": "/images/extensions/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-diagram.png",
-        "sha256": "3f24b19ff3d1811ddfa9abca1258dab7f8b7a7763b4ac32854313a445c49d24c",
+        "url": "/images/extensions/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-diagram.webp",
+        "sha256": "bfa0ce0ae5998b63ab6e3e8a646960b43d68b8c47e0860b9674d9f62fcce322b",
         "source_path": "smoothie-diagrams/data/extension-board-renders/seven-channel-ac-mechanical-relay/v17/seven-channel-ac-mechanical-relay.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "98ae3cafd2cb808bc450dff11200152f3fff89d3378fafb1491ae647c235fc8d",
         "caption": "v17; source hash matches this CAD revision.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/seven-channel-ac-mechanical-relay/seven-channel-ac-mechanical-relay-diagram.svg",
-        "archived_svg_sha256": "350c0b7f8767805fa93ea50841ea6e6e9d60a7066c5a98dfaf4060558d7de675",
+        "archived_svg_sha256": "e851c25fade151cabd19e8cc6dee7a88fc31ff59a429a1feee05e0c30d6e55ea",
         "previous_svg_sha256": "107c84debd1cbe8cd1371a6292d6ee902b889fb48316db7cd0a1c2e2d9aa4ab8"
       },
       "renders": []
@@ -2617,14 +2617,14 @@
       "cad_source_path": "extension-boards/src/seven-channel-dc-mechanical-relay/attempt/versions/v24/seven-channel-dc-mechanical-relay.kicad_pcb",
       "cad_sha256": "19ac2c58cfd2a35e8dedb8c0644971cb2473a4bb10643d49010202432131fbe0",
       "diagram": {
-        "url": "/images/extensions/seven-channel-dc-mechanical-relay/seven-channel-dc-mechanical-relay-diagram.png",
-        "sha256": "a615f8468f1872ff509ea4ef48ca373a8d6ae381706815d4235cd0f219b99033",
+        "url": "/images/extensions/seven-channel-dc-mechanical-relay/seven-channel-dc-mechanical-relay-diagram.webp",
+        "sha256": "9e2205094142656eba5a1cd2ad2616632994aeddd4cc75f989c6c805ec5d1a72",
         "source_path": "smoothie-diagrams/data/extension-board-renders/seven-channel-dc-mechanical-relay/v24/seven-channel-dc-mechanical-relay.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "19ac2c58cfd2a35e8dedb8c0644971cb2473a4bb10643d49010202432131fbe0",
         "caption": "v24; source hash matches this CAD revision.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/seven-channel-dc-mechanical-relay/seven-channel-dc-mechanical-relay-diagram.svg",
-        "archived_svg_sha256": "b24ddd82624df68b3fa7c0ebe30db70d650fec2587e318d48519719b1450011b",
+        "archived_svg_sha256": "a33538ad7fc6843f0a6a7e2e787a573fcfc461251f8fb623a846dedd8673a65b",
         "previous_svg_sha256": "3854414532210ac8e43afa606bac10dbc4b4c6cc8802b590de850f64fe45c74c"
       },
       "renders": []
@@ -2637,8 +2637,8 @@
       "cad_source_path": "extension-boards/src/simple-pt100-amplifier-board/attempt/versions/v22/simple-pt100-amp.kicad_pcb",
       "cad_sha256": "b58d174a8c8e55c45f3d7f288702fb5d7486723167d714240a4dd327f82af0a5",
       "diagram": {
-        "url": "/images/extensions/simple-pt100-amplifier-board/simple-pt100-amp-diagram.png",
-        "sha256": "f63e7ab6399f8d177479d0653c76b698892c54adf5f21fe2dec217ac0e5bf252",
+        "url": "/images/extensions/simple-pt100-amplifier-board/simple-pt100-amp-diagram.webp",
+        "sha256": "70a40119eb07d24f2364983148dabd71e9f4a1eb95b6b2b3f5e16ead1d5cd1b4",
         "source_path": "smoothie-diagrams/data/extension-board-renders/simple-pt100-amplifier-board/v22/simple-pt100-amp.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "b58d174a8c8e55c45f3d7f288702fb5d7486723167d714240a4dd327f82af0a5",
@@ -2678,14 +2678,14 @@
       "cad_source_path": "extension-boards/src/single-channel-ac-mechanical-relay/attempt/versions/v19/single-channel-ac-mechanical-relay.kicad_pcb",
       "cad_sha256": "76101289ddaef013dec470c8c6192cd48f610b626e9d9807c994bf0bedfe21ef",
       "diagram": {
-        "url": "/images/extensions/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-diagram.png",
-        "sha256": "3527e0c22e29a4b47702d8a10b7b6d16b255aadd2c6ba4139404716612c32b8d",
+        "url": "/images/extensions/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-diagram.webp",
+        "sha256": "c7bf80ade6e04c876615e50b7d24ca9e407dc4f6ea526368fcc748cb9bf9d711",
         "source_path": "smoothie-diagrams/data/extension-board-renders/single-channel-ac-mechanical-relay/v19/single-channel-ac-mechanical-relay.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "76101289ddaef013dec470c8c6192cd48f610b626e9d9807c994bf0bedfe21ef",
         "caption": "v19; source hash matches this CAD revision.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/single-channel-ac-mechanical-relay/single-channel-ac-mechanical-relay-diagram.svg",
-        "archived_svg_sha256": "c06f037d225f38fa7c1bd5aca6c0eae06e877a8f7d748b7831e1abbea55f790e",
+        "archived_svg_sha256": "ea4844a0fc55e61abb2c9c0311138e198e3981586bca9d3b7252a57923a74613",
         "previous_svg_sha256": "1a54b479475885d82b45eeeb51985441c60dad11f436a67b2fd04096244e7c29"
       },
       "renders": [
@@ -2720,14 +2720,14 @@
       "cad_source_path": "extension-boards/src/single-channel-dc-mechanical-relay/attempt/versions/v20/single-channel-dc-mechanical-relay.kicad_pcb",
       "cad_sha256": "eb30aab068748b8def81ea3c2977c4ca74525ee68629062322b1daef90a4f149",
       "diagram": {
-        "url": "/images/extensions/single-channel-dc-mechanical-relay/single-channel-dc-mechanical-relay-diagram.png",
-        "sha256": "fb2b5d2842e21d632437dc737dceea8b0af1bee175513bb685f085bacd58790b",
+        "url": "/images/extensions/single-channel-dc-mechanical-relay/single-channel-dc-mechanical-relay-diagram.webp",
+        "sha256": "60c338bf97d3c7ae065c8fcac6257d2584d0513f5a30a5fc98160cdabaa1a7ca",
         "source_path": "smoothie-diagrams/data/extension-board-renders/single-channel-dc-mechanical-relay/v20/single-channel-dc-mechanical-relay.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "eb30aab068748b8def81ea3c2977c4ca74525ee68629062322b1daef90a4f149",
         "caption": "v20; source hash matches this CAD revision.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/single-channel-dc-mechanical-relay/single-channel-dc-mechanical-relay-diagram.svg",
-        "archived_svg_sha256": "de7384bae6dc494360aada2f74daf738d9714d1a6e69d817a7b1d152263b1721",
+        "archived_svg_sha256": "dfa8516fcff54b6a9230de46a77c9c1bdb5120373c39a0945ea5030c04f02179",
         "previous_svg_sha256": "5642f0bde8f09f393140d1525bfe526ec5d5a978b785d2111634ce5068bd0d0c"
       },
       "renders": [
@@ -2762,14 +2762,14 @@
       "cad_source_path": "extension-boards/src/single-channel-large-mosfet-output/attempt/versions/v18/large-mosfet.kicad_pcb",
       "cad_sha256": "450c3677061258c944c32a09b81aede660f40a45c6b96ecb8cfb2ffa94955f50",
       "diagram": {
-        "url": "/images/extensions/single-channel-large-mosfet-output/large-mosfet-diagram.png",
-        "sha256": "fc73e7db61eae7194ed8580b8447e3dcd0ba457e3d6216a7ed2eb123dd048179",
+        "url": "/images/extensions/single-channel-large-mosfet-output/large-mosfet-diagram.webp",
+        "sha256": "1c15bac706496146dde3c4510aa3fbb4aee2863a55a58a6f24ac129640d9869f",
         "source_path": "smoothie-diagrams/data/extension-board-renders/single-channel-large-mosfet-output/v18/large-mosfet.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "450c3677061258c944c32a09b81aede660f40a45c6b96ecb8cfb2ffa94955f50",
         "caption": "Top view drawn from revision v18.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/single-channel-large-mosfet-output/large-mosfet-diagram.svg",
-        "archived_svg_sha256": "e0e16db557b1ab2e2a1b3785859c95ca7eb5b1d214c57817b9f0bd39fdff0d73"
+        "archived_svg_sha256": "7476d6daec8cfd024cd700e979a85befe26dcfae1287005cd6f781d6bd00540f"
       },
       "renders": []
     }
@@ -2781,14 +2781,14 @@
       "cad_source_path": "extension-boards/src/single-channel-small-mosfet-advanced-output/attempt/versions/v29/small-mosfet.kicad_pcb",
       "cad_sha256": "364bd095cbe246ffac50bd6ccf9f7fcafcc992e19574270c87467a95562349bf",
       "diagram": {
-        "url": "/images/extensions/single-channel-small-mosfet-advanced-output/small-mosfet-advanced-diagram.png",
-        "sha256": "afa17aed25f6060a9f81cd9a1f01fe3aabb5ff38a5f8a5606b9bfb18cde40ec4",
+        "url": "/images/extensions/single-channel-small-mosfet-advanced-output/small-mosfet-advanced-diagram.webp",
+        "sha256": "3609bb7201ba2954e6b87ea7f0b87ac51714e8013ba61bf0d555f83a7dafcbb1",
         "source_path": "smoothie-diagrams/data/extension-board-renders/single-channel-small-mosfet-advanced-output/v29/small-mosfet.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "364bd095cbe246ffac50bd6ccf9f7fcafcc992e19574270c87467a95562349bf",
         "caption": "Top view drawn from revision v29.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/single-channel-small-mosfet-advanced-output/small-mosfet-advanced-diagram.svg",
-        "archived_svg_sha256": "ec0cb6d5839b90cd3146cea5e38e119960c7b33425e50d9c1f56fbeb07e0bafe"
+        "archived_svg_sha256": "b60bafb226c7086e8c442ff0c457d70e9164f9c754fee2ae7501d63d9648ae20"
       },
       "renders": []
     }
@@ -2800,8 +2800,8 @@
       "cad_source_path": "extension-boards/src/single-channel-solid-state-relay-output/attempt/versions/v15/ssr-ac-out.kicad_pcb",
       "cad_sha256": "a9a3ad2b99f623ff2511fb501cf348dc9666d1da85b4c49fdac78559a48cda32",
       "diagram": {
-        "url": "/images/extensions/single-channel-solid-state-relay-output/ssr-ac-out-diagram.png",
-        "sha256": "e15a6240d879786d89f61059da22b1e6104a1e474d63e33051c148e160090d81",
+        "url": "/images/extensions/single-channel-solid-state-relay-output/ssr-ac-out-diagram.webp",
+        "sha256": "523137fccfa52882ac74baf01afb878c20c69938a3b5c8a122320e28e93c2ff0",
         "source_path": "smoothie-diagrams/data/extension-board-renders/single-channel-solid-state-relay-output/v15/ssr-ac-out.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "a9a3ad2b99f623ff2511fb501cf348dc9666d1da85b4c49fdac78559a48cda32",
@@ -2841,14 +2841,14 @@
       "cad_source_path": "extension-boards/src/smoke-detector/attempt/versions/v18/smoke-detector.kicad_pcb",
       "cad_sha256": "be670139f56d8c087adffcb872ab9326952a3adf8f33403258c13eaef6062808",
       "diagram": {
-        "url": "/images/extensions/smoke-detector/smoke-detector-diagram.png",
-        "sha256": "fef9954a14d9590b22b0c2bbd40ff4e715e9ff5ed37c0bee024142cc79d74e7d",
+        "url": "/images/extensions/smoke-detector/smoke-detector-diagram.webp",
+        "sha256": "71b029c59f6c9dfb0264c4521edfba341e006018577f9ba98ba40720d951159c",
         "source_path": "smoothie-diagrams/data/extension-board-renders/smoke-detector/v18/smoke-detector.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "be670139f56d8c087adffcb872ab9326952a3adf8f33403258c13eaef6062808",
         "caption": "v18; source hash matches this CAD revision.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/smoke-detector/smoke-detector-diagram.svg",
-        "archived_svg_sha256": "fec538c283452b6ef7b0b38ebbe8bd334e7574098876eac1dbbba8a1bc94a5c8",
+        "archived_svg_sha256": "8ee84909c17c8961d58db6f7c582b38bbcb9120389d1e0f98a9d873f772dd05f",
         "previous_svg_sha256": "f430d9d168e8f62830c9f97c4ca22832296fd286116a91e5d7bb937f26389eb6"
       },
       "renders": [
@@ -2883,8 +2883,8 @@
       "cad_source_path": "extension-boards/src/spectral-analysis-board/attempt/versions/v31/spectral-analysis.kicad_pcb",
       "cad_sha256": "146c0f332dc9fd34bba6561d71c96533401bce51db60e9ee663315521c9d2b48",
       "diagram": {
-        "url": "/images/extensions/spectral-analysis-board/spectral-analysis-diagram.png",
-        "sha256": "450026f0cba582e9610d7ec2c68652ea5873f9acfba5f85504ebfa6ce011b4cd",
+        "url": "/images/extensions/spectral-analysis-board/spectral-analysis-diagram.webp",
+        "sha256": "6aeadd51cb46c7314f54731d6e6bc2bb18d23f138bfd8465ebdee7d210125a15",
         "source_path": "smoothie-diagrams/data/extension-board-renders/spectral-analysis-board/v31/spectral-analysis.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "146c0f332dc9fd34bba6561d71c96533401bce51db60e9ee663315521c9d2b48",
@@ -2924,8 +2924,8 @@
       "cad_source_path": "extension-boards/src/spi-hub/attempt/versions/v14/spi-hub.kicad_pcb",
       "cad_sha256": "5749c4801853b7abeb7621203ef34923190d2eb57b6e4dbacc4a5c5ac7738439",
       "diagram": {
-        "url": "/images/extensions/spi-hub/spi-hub-diagram.png",
-        "sha256": "482a5083787431979fc595fcecf7e998e65fe64b35a84d24e5d58361ce47b92b",
+        "url": "/images/extensions/spi-hub/spi-hub-diagram.webp",
+        "sha256": "bb0f15b9822cd39d73dbe8a17ac3624ce509f200471a68791340389f02a1e77e",
         "source_path": "smoothie-diagrams/data/extension-board-renders/spi-hub/v14/spi-hub.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "5749c4801853b7abeb7621203ef34923190d2eb57b6e4dbacc4a5c5ac7738439",
@@ -2965,8 +2965,8 @@
       "cad_source_path": "extension-boards/src/spi-pt100-amplifier-board/attempt/versions/v17/spi-pt100.kicad_pcb",
       "cad_sha256": "cc99ad4931cd1e0a647389a0d34d085c71c27334645d71fc1f2c5489211a30c9",
       "diagram": {
-        "url": "/images/extensions/spi-pt100-amplifier-board/spi-pt100-diagram.png",
-        "sha256": "bc74d748838e8e17786c9ecc34aed5bfccd5926f22fe9e901eff8fef77f55f80",
+        "url": "/images/extensions/spi-pt100-amplifier-board/spi-pt100-diagram.webp",
+        "sha256": "c5085309ab9e4cb9eabd6203a49ef06b7a08a3964bb85cd4803aadf1c1a6c2cd",
         "source_path": "smoothie-diagrams/data/extension-board-renders/spi-pt100-amplifier-board/v17/spi-pt100.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "cc99ad4931cd1e0a647389a0d34d085c71c27334645d71fc1f2c5489211a30c9",
@@ -3006,8 +3006,8 @@
       "cad_source_path": "extension-boards/src/spi-thermocouple-breakout/attempt/versions/v16/spi-thermocouple.kicad_pcb",
       "cad_sha256": "6f528cd7fcdabc5548466ec9de23ee2298a2cd4323a806ccf6344bb73753e4ad",
       "diagram": {
-        "url": "/images/extensions/spi-thermocouple-breakout/spi-thermocouple-diagram.png",
-        "sha256": "abd24921afefd7aff8da17aa03c882a0a9d0e9e65d2825c56e45738b88b01d6d",
+        "url": "/images/extensions/spi-thermocouple-breakout/spi-thermocouple-diagram.webp",
+        "sha256": "c7cc105cb0646e05c3e69fdcd57e63e89cb71c3c71db0d6da85bfcdd275c21bd",
         "source_path": "smoothie-diagrams/data/extension-board-renders/spi-thermocouple-breakout/v16/spi-thermocouple.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "6f528cd7fcdabc5548466ec9de23ee2298a2cd4323a806ccf6344bb73753e4ad",
@@ -3047,8 +3047,8 @@
       "cad_source_path": "extension-boards/src/stepper-driver-breakout-allegro/attempt/versions/v19/stepper-driver-allegro.kicad_pcb",
       "cad_sha256": "d5563528f89d16026aabe229d566e161f0bfa3f7da780df8dfb58e43935d449f",
       "diagram": {
-        "url": "/images/extensions/stepper-driver-breakout-allegro/stepper-driver-allegro-diagram.png",
-        "sha256": "9d68dc913d8057787e8f09dd8c344c1eecde681f5b78a4656bef12a9a42742d4",
+        "url": "/images/extensions/stepper-driver-breakout-allegro/stepper-driver-allegro-diagram.webp",
+        "sha256": "0cbf5ad013b4954f41949cc6ee2e6fcc62c011b66af129b39977df2e897f0b7b",
         "source_path": "smoothie-diagrams/data/extension-board-renders/stepper-driver-breakout-allegro/v19/stepper-driver-allegro.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "d5563528f89d16026aabe229d566e161f0bfa3f7da780df8dfb58e43935d449f",
@@ -3088,8 +3088,8 @@
       "cad_source_path": "extension-boards/src/three-channel-A5984-stepper-driver-board/attempt/website/a5984-3ch.kicad_pcb",
       "cad_sha256": "1bd88cbeb444730a151ed9709f9abf5b4ffbca33f9fcbcc490c826f9dc8375ee",
       "diagram": {
-        "url": "/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-diagram.png",
-        "sha256": "3121cc397d26da3dcf74af4a709b2de24e9f94a5ecaf42ff8517bf6b7391e1e2",
+        "url": "/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-diagram.webp",
+        "sha256": "471347d62ba5824b7f03cd68fbe437cef7f71b14a1b9f588f6c66081c08bf7ac",
         "source_path": "smoothie-diagrams/data/extension-board-renders/three-channel-a5984-stepper-driver/v03/a5984-3ch.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "1bd88cbeb444730a151ed9709f9abf5b4ffbca33f9fcbcc490c826f9dc8375ee",
@@ -3107,8 +3107,8 @@
       "cad_source_path": "extension-boards/src/stepper-driver-breakout-trinamic/attempt/versions/v19/tmc2660-stepper.kicad_pcb",
       "cad_sha256": "d34b82229913ce7fdc1dbb9def9f557b8cdbc50a9a743225cdec61872aae1d46",
       "diagram": {
-        "url": "/images/extensions/stepper-driver-breakout-trinamic/tmc2660-stepper-diagram.png",
-        "sha256": "ed43d7c28f1eb533b6e799b63a9df1e6398680e9766bfea41ec25be0e35d4e0a",
+        "url": "/images/extensions/stepper-driver-breakout-trinamic/tmc2660-stepper-diagram.webp",
+        "sha256": "f61fc4b6a38937f5b5e1d4294f96066e1cff1d9e8b32662192e47563567db739",
         "source_path": "smoothie-diagrams/data/extension-board-renders/stepper-driver-breakout-trinamic/v19/tmc2660-stepper.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "d34b82229913ce7fdc1dbb9def9f557b8cdbc50a9a743225cdec61872aae1d46",
@@ -3148,8 +3148,8 @@
       "cad_source_path": "extension-boards/src/uart-breakout/attempt/versions/v17/uart-breakout.kicad_pcb",
       "cad_sha256": "8c636819b48578bf0f6671f56aa770681398f88ad96085823395f1d34f5a5ab5",
       "diagram": {
-        "url": "/images/extensions/uart-breakout/uart-breakout-diagram.png",
-        "sha256": "eb9663eb63709b5dc518e0e7ec74d879cc54f3a6f3320a6e2e23be0cb92d3417",
+        "url": "/images/extensions/uart-breakout/uart-breakout-diagram.webp",
+        "sha256": "847e4cd96414fd261e1bd2150de17b2be8691fc7d1660e4598f80394cc749ec8",
         "source_path": "smoothie-diagrams/data/extension-board-renders/uart-breakout/v17/uart-breakout.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "8c636819b48578bf0f6671f56aa770681398f88ad96085823395f1d34f5a5ab5",
@@ -3189,14 +3189,14 @@
       "cad_source_path": "extension-boards/src/universal-panel-adapter/attempt/versions/v20/universal-panel-adapter.kicad_pcb",
       "cad_sha256": "c8c902c33ca19ae5d25926bd60944c2c078aa3169e9d64a6b520518f3c2cd28a",
       "diagram": {
-        "url": "/images/extensions/universal-panel-adapter/universal-panel-adapter-diagram.png",
-        "sha256": "14568e0882a8106ec04269e4d09d144e52d502d7a30a6df4ab1a14c721012d0a",
+        "url": "/images/extensions/universal-panel-adapter/universal-panel-adapter-diagram.webp",
+        "sha256": "226f19412ce6b91794f64374d668925d5406ed97b1f5ef409492f9da781978ca",
         "source_path": "smoothie-diagrams/data/extension-board-renders/universal-panel-adapter/v20/universal-panel-adapter.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "c8c902c33ca19ae5d25926bd60944c2c078aa3169e9d64a6b520518f3c2cd28a",
         "caption": "v20; source hash matches this CAD revision.",
         "archived_svg": "smoothie-diagrams/data/website-extension-svg/universal-panel-adapter/universal-panel-adapter-diagram.svg",
-        "archived_svg_sha256": "8e58cf115d88607d6d59d462cc48caeeb8dccad26ae1f9cb4d8978f58edc3c99"
+        "archived_svg_sha256": "106923822e091ff59c18865101327332802a243eaca7838840133860e08f05c1"
       },
       "renders": [
         {
@@ -3230,8 +3230,8 @@
       "cad_source_path": "extension-boards/src/usb-serial-breakout/attempt/versions/v15/usb-serial.kicad_pcb",
       "cad_sha256": "d060d8ec5a6d71a2f95d6aec38067c934b7383c1bbd31d7ec5200b79dff6bec1",
       "diagram": {
-        "url": "/images/extensions/usb-serial-breakout/usb-serial-diagram.png",
-        "sha256": "0a76cb4e0154703023e73407b10053b1ab43ae0f850c414be3cb2108252ddd1c",
+        "url": "/images/extensions/usb-serial-breakout/usb-serial-diagram.webp",
+        "sha256": "a24d5844dd20816b6c52c15dc27e0e95d5b9b9447d014429218a676abdd521db",
         "source_path": "smoothie-diagrams/data/extension-board-renders/usb-serial-breakout/v15/usb-serial.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "d060d8ec5a6d71a2f95d6aec38067c934b7383c1bbd31d7ec5200b79dff6bec1",
@@ -3271,8 +3271,8 @@
       "cad_source_path": "extension-boards/src/water-flow-sensor-adapter/attempt/versions/v20/water-flow-adapter.kicad_pcb",
       "cad_sha256": "d55ceb77981307ba67394eb6dee6b28cdaa0b7c7879e51c1822a23d8ab7a7111",
       "diagram": {
-        "url": "/images/extensions/water-flow-sensor-adapter/water-flow-adapter-diagram.png",
-        "sha256": "cf151465da9d0f81cc58a06b33df8e7297f206f7e5954ca61efd64613b223470",
+        "url": "/images/extensions/water-flow-sensor-adapter/water-flow-adapter-diagram.webp",
+        "sha256": "74bf0ac578bda996c9b04dc8259e11c9faf61f9f0136fbdbb8b1ac683daae33d",
         "source_path": "smoothie-diagrams/data/extension-board-renders/water-flow-sensor-adapter/v20/water-flow-adapter.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "d55ceb77981307ba67394eb6dee6b28cdaa0b7c7879e51c1822a23d8ab7a7111",
@@ -3305,41 +3305,41 @@
       ]
     }
   ],
-  "wireless-gadgeteer-extender": [
+  "wireless-expansion-extender": [
     {
-      "role": "wireless gadgeteer extender",
+      "role": "Wireless expansion extender",
       "version": "v19",
-      "cad_source_path": "extension-boards/src/wireless-gadgeteer-extender/attempt/versions/v19/wireless-gadgeteer-extender.kicad_pcb",
+      "cad_source_path": "extension-boards/src/wireless-expansion-extender/attempt/versions/v19/wireless-expansion-extender.kicad_pcb",
       "cad_sha256": "7cc492849c362ed2d2a481624ab3cf8c247aac8725129ad46560462c733fecf3",
       "diagram": {
-        "url": "/images/extensions/wireless-gadgeteer-extender/wireless-gadgeteer-extender-diagram.png",
-        "sha256": "8610785839971800d3257a15ae8994204f5610255aef5eb5a946ec43ebf4486a",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/wireless-gadgeteer-extender/v19/wireless-gadgeteer-extender.svg",
+        "url": "/images/extensions/wireless-expansion-extender/wireless-expansion-extender-diagram.webp",
+        "sha256": "29115f37275df656bae506cfa5a6f52ea829db70c33cdbf9a5b7daf17dfaf960",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/wireless-expansion-extender/v19/wireless-expansion-extender.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "7cc492849c362ed2d2a481624ab3cf8c247aac8725129ad46560462c733fecf3",
         "caption": "v19; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/wireless-gadgeteer-extender/wireless-gadgeteer-extender-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/wireless-expansion-extender/wireless-expansion-extender-diagram.svg",
         "archived_svg_sha256": "825ccc680c11d2cddcf20606d174f5bce21e5471bf68526378b250c044444e21"
       },
       "renders": [
         {
-          "url": "/images/extensions/wireless-gadgeteer-extender/wireless-gadgeteer-extender-populated-isometric.png",
+          "url": "/images/extensions/wireless-expansion-extender/wireless-expansion-extender-populated-isometric.png",
           "sha256": "5e19939b251b11ba1bbecb7119c07541b988f6b4fcf7722c37a73e326fd9034f",
-          "source_path": "extension-boards/src/wireless-gadgeteer-extender/attempt/versions/v19/populations/wireless-gadgeteer-extender/normal/populated-isometric.png",
+          "source_path": "extension-boards/src/wireless-expansion-extender/attempt/versions/v19/populations/wireless-expansion-extender/normal/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/wireless-gadgeteer-extender/wireless-gadgeteer-extender-populated-top.png",
+          "url": "/images/extensions/wireless-expansion-extender/wireless-expansion-extender-populated-top.png",
           "sha256": "45934f972602be51080b44971e5a44616dba0a52ee8d37076f1db41b482eafdf",
-          "source_path": "extension-boards/src/wireless-gadgeteer-extender/attempt/versions/v19/populations/wireless-gadgeteer-extender/normal/populated-top.png",
+          "source_path": "extension-boards/src/wireless-expansion-extender/attempt/versions/v19/populations/wireless-expansion-extender/normal/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/wireless-gadgeteer-extender/wireless-gadgeteer-extender-populated-bottom.png",
+          "url": "/images/extensions/wireless-expansion-extender/wireless-expansion-extender-populated-bottom.png",
           "sha256": "8cc11b4ab9c48f3eaea655fd43f572b6b8b0529b334bb1675f791f5104c3790a",
-          "source_path": "extension-boards/src/wireless-gadgeteer-extender/attempt/versions/v19/populations/wireless-gadgeteer-extender/normal/populated-bottom.png",
+          "source_path": "extension-boards/src/wireless-expansion-extender/attempt/versions/v19/populations/wireless-expansion-extender/normal/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         }
@@ -3353,8 +3353,8 @@
       "cad_source_path": "extension-boards/src/wireless-series-master/attempt/versions/v14/wireless-series-master.kicad_pcb",
       "cad_sha256": "3ebeab631adafcb91e2c705f9972ce772818bd22bb09b81b3740ca62f0af920c",
       "diagram": {
-        "url": "/images/extensions/wireless-series-master/wireless-series-master-diagram.png",
-        "sha256": "b7ac3d84871c132d6ac65f28a110d8f3aa33594a834f3d6156929c153deaae0e",
+        "url": "/images/extensions/wireless-series-master/wireless-series-master-diagram.webp",
+        "sha256": "16f9cf2dd534de031e9448c79fdc7031d2bc22eac9678906a65311aa1ba3f129",
         "source_path": "smoothie-diagrams/data/extension-board-renders/wireless-series-master/v14/wireless-series-master.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "3ebeab631adafcb91e2c705f9972ce772818bd22bb09b81b3740ca62f0af920c",

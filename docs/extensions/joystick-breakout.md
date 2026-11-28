@@ -20,7 +20,7 @@ permalink: /extensions/joystick-breakout
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/joystick-breakout/joystick-breakout-diagram.png" alt="Top view of the thumb joystick board: a ten-contact socket on the left and right edges and the square joystick with its round cap in the middle.">
+    <img src="/images/extensions/joystick-breakout/joystick-breakout-diagram.webp" alt="Top view of the thumb joystick board: a ten-contact socket on the left and right edges and the square joystick with its round cap in the middle.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -79,7 +79,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/joystick-breakout/joystick-breakout-diagram.png" alt="Top view of the thumb joystick board with 9 numbered markers that are explained in the list below.">
+      <img src="/images/extensions/joystick-breakout/joystick-breakout-diagram.webp" alt="Top view of the thumb joystick board with 9 numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pl" href="#tour-1" style="left:10.8%;top:50.0%" aria-label="1: input socket a in (j1)">1<span class="xb-pop"><b>Input socket A IN (J1)</b> — The type A socket to the controller. Contact 3 is X, 4 is Y and 6 is the switch.</span></a>
       <a class="xb-mk xb-pr" href="#tour-2" style="left:89.2%;top:50.0%" aria-label="2: chain socket a chain (j2)">2<span class="xb-pop"><b>Chain socket A CHAIN (J2)</b> — Passes the unused contacts to a further board. The three contacts this board uses are cut off from it by open solder links.</span></a>
       <a class="xb-mk xb-pb" href="#tour-3" style="left:50.0%;top:47.6%" aria-label="3: thumb joystick (rv1)">3<span class="xb-pop"><b>Thumb joystick (RV1)</b> — Two potentiometers and a push switch in one metal-framed body. The cap is not part of the joystick part number: choose one for its 4&nbsp;mm shaft.</span></a>
@@ -332,7 +332,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/joystick-breakout/joystick-breakout-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/joystick-breakout/joystick-breakout-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
-    <tr><td><a href="/images/extensions/joystick-breakout/joystick-breakout-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/joystick-breakout/joystick-breakout-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

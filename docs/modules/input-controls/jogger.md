@@ -4,7 +4,9 @@ layout: default
 title: Jogger Module
 ---
 
-# Jogger Module
+{::nomarkdown}
+<span id="jogger-module"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -152,6 +154,12 @@ For information on how to write a module which the jogger can read, see the [jog
 
 {::nomarkdown}
 </v1>
-<v2>The Jogger module is not available in V2. Use the [MPG module](/mpg) for jogging.</v2>
+<v2>
+{:/nomarkdown}
+
+The Jogger module is not available in V2. Use the [MPG module](/mpg) for jogging.
+
+{::nomarkdown}
+</v2>
 </versioned>
 {:/nomarkdown}

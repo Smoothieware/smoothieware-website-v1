@@ -1,8 +1,11 @@
 ---
+title: "Accel branch"
 permalink: /accel-branch
 ---
 
-# Acceleration Branch
+{::nomarkdown}
+<span id="acceleration-branch"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/binary-code.png">
@@ -93,11 +96,7 @@ In order to analyze how much various things we do take to execute, their cost, w
 
 This has been extremely useful in the past to figure out where we spent too much time, what needed fixing, etc.
 
-{::nomarkdown}
-<a href="/images/step-generation-graph.png">
-  <img src="/images/step-generation-graph.png" alt="Step generation graph showing timing analysis" style="min-width: 640px; display: block; margin: 2rem auto;"/>
-</a>
-{:/nomarkdown}
+The picture of this graph got lost, the colours below are the ones it used.
 
 1. In white, is the X-axis step signal. It is [turned on here](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/StepperMotor.cpp#L52) and [turned off here](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/StepTicker.cpp#L134).
 2. In brown is the [duration of this interrupt](https://github.com/arthurwolf/Smoothie/blob/edge/src/libs/StepTicker.cpp#L151). This is the total time we spend generating steps. It is the time we want to reduce as much as possible. A bit of the rest of the time is spent doing acceleration, all the rest in the main loop, mostly doing Planner math.
@@ -234,8 +233,6 @@ These are optimizations that are most useful in the case we don't do anything. A
 Compared to the previous graph, we now spend significantly less time in the interrupt when no step is generated, and a bit less time when one or more steps are generated.
 
 ## V1 vs V2 Step Generation Comparison
-
-
 
 The stepping and acceleration architecture has evolved significantly between V1 and V2:
 

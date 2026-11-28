@@ -1,9 +1,11 @@
 ---
+title: "Blue Box laser guide"
 permalink: /bluebox-guide
 ---
 
-
-# Your guide to installing Smoothieboard in a Blue Box Laser Cutting machine
+{::nomarkdown}
+<span id="your-guide-to-installing-smoothieboard-in-a-blue-box-laser-cutting-machine"></span>
+{:/nomarkdown}
 
 ( See also [blue-box-guide](blue-box-guide) )
 
@@ -48,7 +50,22 @@ This guide is based on Stephane BUISSON's blue box build log.
 ## Safety
 
 {% include machine-guides/laser-cutters/laser-warning-for-include.md %}
-{% include hardware/wiring/warning-for-include.md %}
+## Safety warnings
+
+{::nomarkdown}
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Make sure you read this. Seriously. Not kidding. Do it. It's important.</strong>
+  <ul>
+    <li>Check the polarity of every power input, and check it again. Reversed polarity can damage or destroy all or part of your board. The 3.5mm and 5mm power connectors are inverted, so rely on the diagrams.</li>
+    <li>Never connect or disconnect stepper motors while the board is powered.</li>
+    <li>Keep anything metallic away from the board, a short will destroy it.</li>
+    <li>Never put 12V or 24V into a 5V, endstop or thermistor input.</li>
+    <li>If your machine has heaters, set up <a href="/temperaturecontrol#safety">the heater safety measures</a>. Fires will kill you if you don't.</li>
+  </ul>
+  Before you wire anything, read <a href="/warning">all the wiring safety warnings</a>.
+</sl-alert>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -192,8 +209,6 @@ Once you have located each set of 4 wires, separate them from the rest, and for 
 
 Then connect the X stepper motor to the M1 stepper motor driver, and the Y stepper motor to the M2 stepper motor driver.
 
-
-
 **Motor Configuration:**
 
 {::nomarkdown}
@@ -231,8 +246,6 @@ y.steps_per_mm = 157.575           # Steps per mm for Y axis
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 Once this is done, connect to the board via USB using software such as Pronterface or the web interface, power up the machine, and you should be able to move the stepper motors, and therefore the axes, using the controls in the software.
 

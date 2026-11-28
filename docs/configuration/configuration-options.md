@@ -1,12 +1,15 @@
 ---
+title: "Configuration options"
 permalink: /configuration-options
 ---
 
-# Configuration Options
-
+{::nomarkdown}
+<span id="configuration-options"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <link rel="stylesheet" href="/assets/css/config-tables.css">
+<script src="/assets/js/config-tables.js"></script>
 <a href="/images/board.png">
   <img src="/images/board.png" alt="Configuration" width="150" height="150" style="float: right; margin-left: 1rem;"/>
 </a>
@@ -21,8 +24,6 @@ Some advanced options are omitted from this list and are not recommended for gen
 If you want more information about a given module, how it works and how to configure it, (and any advanced options that are not in this list) you can refer to that module's specific documentation page.
 
 For information on pin options and electrical settings (pull up, pull down, open drain, etc.), please refer to [configuring-smoothie](configuring-smoothie).
-
----
 
 ## System & General Settings
 

@@ -24,8 +24,6 @@ Using G-code, you tell Smoothie where to move and when to cut.
 
 Smoothie moves the motors, and the Laser module talks to the laser power supply to tell it when to turn off and on, and using how much power.
 
----
-
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Be very careful</strong> with the laser tube side of your Power Supply: voltages there are commonly around 40,000 volts, making it very dangerous.
@@ -113,8 +111,6 @@ Now that the PSU is wired to the Smoothieboard and that you know which pin you a
 
 You now need to edit the "config" file on the SD card (the default configuration file already contains example laser lines so you may only need to edit/enable those) to add or setup the laser part as follows:
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -154,8 +150,6 @@ pwm_pin = 2.5                # This pin will be PWMed to control the laser
 </versioned>
 {:/nomarkdown}
 
-
-
 If needed, replace the 2.5 value for <setting v1="laser_module_pwm_pin" v2="laser.pwm_pin"></setting> with the pin you chose in the wiring section.
 
 Save the file, reset the board, you are now ready for laser testing.
@@ -192,8 +186,6 @@ The wiring looks like this:
 
 You then also need to configure the laser module accordingly:
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -224,8 +216,6 @@ pwm_pin = 1.23o!             # This pin will be PWMed to control the laser
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 ### Note on K40
 

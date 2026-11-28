@@ -20,7 +20,7 @@ permalink: /extensions/spi-io-expander
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/spi-io-expander/spi-io-expander-diagram.png" alt="Top view of the I/O expander: four expander chips, resistor arrays and four 20-way pin headers, with sockets on the left and right edges.">
+    <img src="/images/extensions/spi-io-expander/spi-io-expander-diagram.webp" alt="Top view of the I/O expander: four expander chips, resistor arrays and four 20-way pin headers, with sockets on the left and right edges.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -83,7 +83,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/spi-io-expander/spi-io-expander-diagram.png" alt="Top view of the I/O expander board with 11 numbered markers that are explained in the list below.">
+      <img src="/images/extensions/spi-io-expander/spi-io-expander-diagram.webp" alt="Top view of the I/O expander board with 11 numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pl" href="#tour-1" style="left:5.0%;top:50.0%" aria-label="1: input socket s in (j1)">1<span class="xb-pop"><b>Input socket S IN (J1)</b> — Chip select 6, MOSI 7, MISO 8, clock 9, interrupt 3, reset 4.</span></a>
       <a class="xb-mk xb-pr" href="#tour-2" style="left:95.0%;top:50.0%" aria-label="2: chain socket chain (j2)">2<span class="xb-pop"><b>Chain socket CHAIN (J2)</b> — SPI data and clock continue.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-3" style="left:20.2%;top:9.1%" aria-label="3: port 1 header (j3)">3<span class="xb-pop"><b>Port 1 header (J3)</b> — Lines of expander U1.</span></a>
@@ -336,7 +336,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/spi-io-expander/spi-io-expander-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/spi-io-expander/spi-io-expander-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
-    <tr><td><a href="/images/extensions/spi-io-expander/spi-io-expander-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/spi-io-expander/spi-io-expander-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

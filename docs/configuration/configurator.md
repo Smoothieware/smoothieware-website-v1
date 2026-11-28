@@ -1,8 +1,11 @@
 ---
+title: "Configurator"
 permalink: /configurator
 ---
 
-# Configurator
+{::nomarkdown}
+<span id="configurator"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/coding.png">
@@ -13,8 +16,6 @@ permalink: /configurator
 The Configurator module allows you to manipulate configuration using console commands.
 
 This provides a powerful interface for adjusting Smoothie's settings without editing the config file directly.
-
-
 
 The Configurator module allows you to manipulate configuration using console commands.
 
@@ -31,9 +32,9 @@ In Smoothieware V1, the Configurator provides three console commands that work w
 
 The three main commands are:
 
-- **config-get**: Query configuration values from cache or specific sources (ROM, SD, EEPROM)
-- **config-set**: Write configuration values to a source (typically SD card)
-- **config-load**: Debug and manage the configuration cache (load, unload, dump, checksum)
+- config-get: Query configuration values from cache or specific sources (ROM, SD, EEPROM)
+- config-set: Write configuration values to a source (typically SD card)
+- config-load: Debug and manage the configuration cache (load, unload, dump, checksum)
 
 Settings use a flat key-value structure. For example: `alpha_steps_per_mm`, `temperature_control.hotend.thermistor_pin`
 
@@ -48,8 +49,8 @@ In Smoothieware V2, the Configurator has been completely redesigned to work with
 
 The two available commands are:
 
-- **config-get**: Retrieve all key-value pairs from a specific section
-- **config-set**: Set or delete a key in a section
+- config-get: Retrieve all key-value pairs from a specific section
+- config-set: Set or delete a key in a section
 
 Settings are organized hierarchically in INI sections. For example: `[alpha]` section with `steps_per_mm` key.
 
@@ -57,7 +58,5 @@ Settings are organized hierarchically in INI sections. For example: `[alpha]` se
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 For detailed information, see the [Console Commands](console-commands) documentation.

@@ -1,5 +1,7 @@
 
-# Pin Configuration
+{::nomarkdown}
+<span id="pin-configuration"></span>
+{:/nomarkdown}
 
 A "pin" is an input or output on the Smoothieboard.
 
@@ -73,9 +75,9 @@ When the pin is active, it connects to ground (pulls the voltage down to 0V). Wh
 
 **Why it matters for 3D printers/CNC:**
 Open-drain is useful when multiple devices need to share the same signal wire. For example:
-- **Multiple endstops on one pin**: If you wire several endstop switches in series, they can all share one input pin using open-drain. When any switch triggers, it pulls the signal to ground.
-- **Shared alarm signals**: When multiple devices need to signal an error condition on the same wire.
-- **Level shifting**: When connecting 5V devices to 3.3V pins, open-drain lets you safely interface between different voltage levels.
+- Multiple endstops on one pin: If you wire several endstop switches in series, they can all share one input pin using open-drain. When any switch triggers, it pulls the signal to ground.
+- Shared alarm signals: When multiple devices need to signal an error condition on the same wire.
+- Level shifting: When connecting 5V devices to 3.3V pins, open-drain lets you safely interface between different voltage levels.
 
 **When to use it:**
 Use open-drain (`o`) when you need to connect multiple switches or sensors to a single pin, or when interfacing with devices that expect open-collector/open-drain outputs.
@@ -96,9 +98,9 @@ Inside the microcontroller chip, there's a resistor (typically around 50kΩ) con
 
 **Why it matters for 3D printers/CNC:**
 Pull-up mode is the standard way to connect switches and sensors:
-- **Endstop switches**: When the switch is open (not triggered), the pull-up keeps the pin at 3.3V (high). When the switch closes, it connects the pin to ground, reading as 0V (low).
-- **Thermistor connections**: Many temperature sensors work with pull-up resistors to create a voltage divider.
-- **Simple wiring**: You only need two wires to your switch - one to the pin and one to ground. No separate power wire needed.
+- Endstop switches: When the switch is open (not triggered), the pull-up keeps the pin at 3.3V (high). When the switch closes, it connects the pin to ground, reading as 0V (low).
+- Thermistor connections: Many temperature sensors work with pull-up resistors to create a voltage divider.
+- Simple wiring: You only need two wires to your switch - one to the pin and one to ground. No separate power wire needed.
 
 **When to use it:**
 Use pull-up (`^`) for most switches, buttons, and sensors. This is the default and works for the majority of inputs on a 3D printer or CNC mill. If you don't specify a modifier, the pin automatically uses pull-up mode.
@@ -124,9 +126,9 @@ Instead of connecting to 3.3V, the internal resistor connects between the pin an
 
 **Why it matters for 3D printers/CNC:**
 Pull-down is less common but useful in specific situations:
-- **Active-high sensors**: Some sensors output 3.3V when triggered and disconnect when not triggered. Pull-down ensures the pin reads 0V when disconnected.
-- **Normally-closed switches**: If you're using a switch that's closed by default and opens when triggered, pull-down can simplify your wiring.
-- **Positive logic preference**: When you want the pin to read "low" in the idle state and "high" when activated.
+- Active-high sensors: Some sensors output 3.3V when triggered and disconnect when not triggered. Pull-down ensures the pin reads 0V when disconnected.
+- Normally-closed switches: If you're using a switch that's closed by default and opens when triggered, pull-down can simplify your wiring.
+- Positive logic preference: When you want the pin to read "low" in the idle state and "high" when activated.
 
 **When to use it:**
 Use pull-down (`v`) when connecting sensors or switches that provide a positive voltage when active, or when you specifically want the opposite behavior of pull-up mode. This is relatively rare in typical 3D printer setups.
@@ -146,9 +148,9 @@ The pin has circuitry that detects whether the last signal was high or low, then
 
 **Why it matters for 3D printers/CNC:**
 Repeater mode is useful in specific edge cases:
-- **Long wire runs**: When you have very long cables (several meters) that might pick up electrical noise, repeater mode helps maintain signal stability.
-- **Floating inputs**: When a pin might be disconnected temporarily but needs to maintain its last known state.
-- **Reducing noise**: The weak holding force helps filter out brief noise spikes on the wire.
+- Long wire runs: When you have very long cables (several meters) that might pick up electrical noise, repeater mode helps maintain signal stability.
+- Floating inputs: When a pin might be disconnected temporarily but needs to maintain its last known state.
+- Reducing noise: The weak holding force helps filter out brief noise spikes on the wire.
 
 **When to use it:**
 Use repeater mode (`@`) when you have long cables prone to noise, or when you need a pin to maintain its state even when the signal source briefly disconnects. This is the least commonly used mode in typical 3D printer or CNC setups - most users will never need it.
@@ -357,10 +359,10 @@ Uses pull-down to keep the pin low by default, then inverts the reading. This me
 
 ### Important Notes on Combining Modifiers
 
-- **Order doesn't matter** - `!o^` and `^o!` and `o!^` all do the same thing
-- **Conflicting modifiers** - Don't combine pull-up (`^`) and pull-down (`v`) on the same pin, or pull-up (`^`) with no-pull (`-`). Only use one pull mode at a time.
-- **Logical combinations** - Think through what each modifier does and make sure they work together logically
-- **Test your setup** - When using multiple modifiers, always test that the pin behaves as expected before relying on it for critical functions like endstops or safety sensors
+- Order doesn't matter - `!o^` and `^o!` and `o!^` all do the same thing
+- Conflicting modifiers - Don't combine pull-up (`^`) and pull-down (`v`) on the same pin, or pull-up (`^`) with no-pull (`-`). Only use one pull mode at a time.
+- Logical combinations - Think through what each modifier does and make sure they work together logically
+- Test your setup - When using multiple modifiers, always test that the pin behaves as expected before relying on it for critical functions like endstops or safety sensors
 
 ### Quick Reference: Common Combinations
 
@@ -487,10 +489,8 @@ beta_max_endstop                     PG4^
   <strong>Tip:</strong> Use the example configuration file as a starting point, then customize the settings (like speeds, accelerations, and thermistor values) for your specific machine. This ensures all pin assignments are correct for your hardware.
 </sl-alert>
 
----
-
 **Summary:**
-- **Pull-up (`^`)** - Default, best for switches and sensors (pin high by default, goes low when triggered)
-- **Pull-down (`v`)** - Opposite of pull-up (pin low by default, goes high when triggered)
-- **Open-drain (`o`)** - For sharing pins between multiple devices or level shifting
-- **Repeater (`@`)** - For long cables or maintaining state (rarely needed)
+- Pull-up (`^`) - Default, best for switches and sensors (pin high by default, goes low when triggered)
+- Pull-down (`v`) - Opposite of pull-up (pin low by default, goes high when triggered)
+- Open-drain (`o`) - For sharing pins between multiple devices or level shifting
+- Repeater (`@`) - For long cables or maintaining state (rarely needed)

@@ -1,7 +1,7 @@
 ---
+title: "Debugging with Eclipse"
 permalink: /eclipse
 ---
-
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -9,8 +9,6 @@ permalink: /eclipse
   <strong>NOTE:</strong> Using Eclipse is <strong>not</strong> supported by the Smoothie developers, you are on your own if you decide to use it.
 </sl-alert>
 {:/nomarkdown}
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -20,12 +18,12 @@ permalink: /eclipse
 This guide is for **Smoothieware V1** development on the LPC1768 platform using Eclipse with the GNU ARM toolchain and make-based build system.
 
 **V1 Development Environment:**
-- **IDE**: Eclipse with GNU ARM plugins
-- **Build System**: Makefile-based
-- **Toolchain**: gcc-arm-none-eabi
-- **Debugger**: MRI (Monitor for Remote Inspection) over UART
-- **Processor**: LPC1769 (Cortex-M3)
-- **Flash Method**: USB mass storage (drag-and-drop firmware.bin)
+- IDE: Eclipse with GNU ARM plugins
+- Build System: Makefile-based
+- Toolchain: gcc-arm-none-eabi
+- Debugger: MRI (Monitor for Remote Inspection) over UART
+- Processor: LPC1769 (Cortex-M3)
+- Flash Method: USB mass storage (drag-and-drop firmware.bin)
 
 {::nomarkdown}
 </v1>
@@ -35,13 +33,13 @@ This guide is for **Smoothieware V1** development on the LPC1768 platform using 
 For **Smoothieware V2** development on STM32H745, the development environment differs significantly:
 
 **V2 Development Environment:**
-- **IDE**: STM32CubeIDE or Visual Studio Code recommended
-- **Build System**: Rake/Ruby-based build system (not make)
-- **Toolchain**: gcc-arm-none-eabi (same) or ARM Compiler 6
-- **Debugger**: Hardware debuggers (ST-Link, J-Link, etc.) via SWD
-- **Processor**: STM32H745 dual-core (Cortex-M7 + M4)
-- **Flash Method**: ST-Link programmer or DFU mode
-- **RTOS**: FreeRTOS (V2 uses RTOS, V1 is bare-metal)
+- IDE: STM32CubeIDE or Visual Studio Code recommended
+- Build System: Rake/Ruby-based build system (not make)
+- Toolchain: gcc-arm-none-eabi (same) or ARM Compiler 6
+- Debugger: Hardware debuggers (ST-Link, J-Link, etc.) via SWD
+- Processor: STM32H745 dual-core (Cortex-M7 + M4)
+- Flash Method: ST-Link programmer or DFU mode
+- RTOS: FreeRTOS (V2 uses RTOS, V1 is bare-metal)
 
 The Eclipse setup described on this page will **not work** for V2 development. Refer to the V2 development documentation for proper setup.
 
@@ -55,7 +53,7 @@ I first want to thank [David Cabanis](http://mbed.org/users/dcabanis/) for the e
 
 It forms the core of this page. David, You Rock!
 
-# Install Eclipse with C/C++ and GNU Support
+## Install Eclipse with C/C++ and GNU Support
 
 To get started, you need to install Eclipse.
 
@@ -82,10 +80,10 @@ This guide also applies to later versions - 4.5 (Mars) and 4.6 (Neon).
     - At some point it will complain about unsigned content. Ignore this warning by pressing the **Ok** button.
   - At the end of the install wizard, press the **Restart Now** button.
 - [optional] If you like to use the GIT plugin for eclipse repeat the previous step with the following package source and package selection:
-  - **Luna - http://download.eclipse.org/releases/luna**
-  - **Collaboration/Eclipse Git Team Provider**, **Collaboration/Java implementation of Git**
+  - Luna - http://download.eclipse.org/releases/luna
+  - Collaboration/Eclipse Git Team Provider, **Collaboration/Java implementation of Git**
 
-# Create Eclipse Project for Smoothie
+## Create Eclipse Project for Smoothie
 
 - Open a shell and change into the **workspace directory** using `cd`
 
@@ -109,12 +107,13 @@ This guide also applies to later versions - 4.5 (Mars) and 4.6 (Neon).
     - Leave the options **C** and **C++** checked
     - Select **Cross ARM GCC** toolchain from the **Toolchain for Indexer Settings** list.
     - Click the **Finish** button.
+
   {::nomarkdown}
   <versioned orientation="vertical">
   <v1>
   {:/nomarkdown}
 
-  - Now you have to be quick: In the lower right corner there is the progress icon. Click it. If it isn't there, click **Window->Show View->other** and select **General/Progress**
+  - Now you have to be quick: In the lower right corner there is the progress icon. Click it. If it isn't there, click <strong>Window-&gt;Show View-&gt;other</strong> and select <strong>General/Progress</strong>
     - When the **C/C++ Indexer** is running in the **Progress** view, stop it by clicking the red square icon.
     - The CHECKSUM macro can make the indexer run out of memory.
     - To correct this, unfold the structure in the Project Explorer and open **src/libs/checksumm.h**
@@ -183,9 +182,10 @@ You now have a new created project named like the **project directory** in the l
         - Click the **Ok** button.
 - At this point you can click the **Ok** button on the **Properties** dialog.
 
-# Clean and Build the Project
+## Clean and Build the Project
 - To clean select **Project->Clean..:** from the main menu. Make your selection and click ok.
   - The **Console** should should show:
+
 ```plaintext
 [Time] **** Clean-only build of configuration Debug for project Smoothie ****
 make clean 
@@ -201,6 +201,7 @@ make[1]: Verlasse Verzeichnis '/home/stth/daten/programmieren/eclipse_smt/Smooth
 ```
 - Click on the hammer icon in the main tool bar
   - the **Console** view should show:
+
 ```plaintext
 [Time] **** Build of configuration Debug for project Smoothie ****
 make all 
@@ -230,7 +231,7 @@ make[1]: Verlasse Verzeichnis '/home/stth/daten/programmieren/eclipse_smt/Smooth
       - Select **Project Settings**
       - Uncheck all entries in the list below
 
-# Configure and build a debug configuration
+## Configure and build a debug configuration
 - Right-click on the **Smoothie** project in the **Project Explorer** pane.
 - Select **Properties** from the pop-up menu.
   - Select **C/C++ Build** item in left pane.
@@ -249,7 +250,7 @@ make[1]: Verlasse Verzeichnis '/home/stth/daten/programmieren/eclipse_smt/Smooth
 
 **If you change Build configurations, always perform a make clean (Project->Clean) and make all (Project->Build), before you use the binaries**
 
-# Run Smoothie under the Debugger
+## Run Smoothie under the Debugger
 Now comes the really fun part. Not only can we build Smoothie in Eclipse, we can also run it under its debugger UI.
 
 - Right-click on the **Smoothie** project in the **Project Explorer** pane.
@@ -276,7 +277,7 @@ Now that you have the debug configuration setup, you are ready to try running Sm
 - In the toolbar at the top of Eclipse, there is a button that looks like a bug which has a small down pointing arrow to its right. Click the arrow with your mouse and select the **Smoothie Debug** configuration that was just created.
 - You should now be in the debugger at the top of the main() function.
 
-# Thanks
+## Thanks
 Thanks again to David Cabanis for his help. Also thanks to the Smoothie users that helped me with Eclipse and testing.
 
 One source of inspiration on setting this toolchain it's the page from MBED site: 

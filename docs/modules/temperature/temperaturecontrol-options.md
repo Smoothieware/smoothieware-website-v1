@@ -1,4 +1,5 @@
 ---
+title: "Temperature control options"
 permalink: /temperaturecontrol-options
 ---
 

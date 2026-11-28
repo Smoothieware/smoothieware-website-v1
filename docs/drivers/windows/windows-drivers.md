@@ -1,8 +1,11 @@
 ---
+title: "Windows drivers"
 permalink: /windows-drivers
 ---
 
-# Smoothie Drivers for Windows
+{::nomarkdown}
+<span id="smoothie-drivers-for-windows"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="danger" open>
@@ -60,7 +63,6 @@ permalink: /windows-drivers
 
 <p>These drivers are for <strong>Smoothieware V1</strong> hardware only.</p>
 
-
 ## Using the Installers
 
 Download the installer and run it. After that, Smoothieboard's USB serial should be recognized automatically.
@@ -70,14 +72,12 @@ Download the installer and run it. After that, Smoothieboard's USB serial should
 - Support for second USB serial port (not compatible with having USB mass storage disabled)
 - Removed the "!" from the Smoothie DFU device in Windows Device Manager
 
----
-
 ## Driver Files
 
 For manual installation:
 
-- **Windows 2000/Vista/7/8 (64bit/32bit)**: [smoothieware-windows-signeddriver-v1.1.zip](/images/windows-drivers/smoothieware-windows-signeddriver-v1.1.zip)
-- **Windows 8.1**: [smoothieware-windows-signeddriver-v1.0.zip](/images/windows-drivers/smoothieware-windows-signeddriver-v1.0.zip)
+- Windows 2000/Vista/7/8 (64bit/32bit): [smoothieware-windows-signeddriver-v1.1.zip](/images/windows-drivers/smoothieware-windows-signeddriver-v1.1.zip)
+- Windows 8.1: [smoothieware-windows-signeddriver-v1.0.zip](/images/windows-drivers/smoothieware-windows-signeddriver-v1.0.zip)
 
 ## How to Install the Driver Files Manually
 

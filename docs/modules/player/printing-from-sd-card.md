@@ -1,4 +1,5 @@
 ---
+title: "Printing from sd card"
 permalink: /printing-from-sd-card
 ---
 

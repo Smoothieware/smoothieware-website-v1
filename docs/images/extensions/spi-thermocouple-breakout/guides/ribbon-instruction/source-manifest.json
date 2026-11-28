@@ -1099,36 +1099,36 @@
     "ribbon-contacts-1-5.svg": "9f8ced120698830ae99688d8c4ed551b45febf956c7a58b704392cd681efe559",
     "board-reference.svg": "8d0cea2f9beedf5874d2a4aaa24146682247e9b9d5a317a7e1a4c390b469e5c5"
   },
-  "website_png_exports": {
+  "website_webp_exports": {
     "board-reference.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/spi-thermocouple-breakout/guides/ribbon-instruction/board-reference.svg",
       "archived_svg_sha256": "eed75d4d867b60aeea6b643acb2eec7250f0196b1b6f6ab481f250b794b3f7a5",
-      "url": "/images/extensions/spi-thermocouple-breakout/guides/ribbon-instruction/board-reference.png",
-      "sha256": "d0b5ae3ae0000c6b661f1f2740974a80f30a25e23561f06f54419a699b057968"
+      "url": "/images/extensions/spi-thermocouple-breakout/guides/ribbon-instruction/board-reference.webp",
+      "sha256": "5fe853dfe04de81172623aa9bc282c6be77c1f266b06490263c00a9503efbc76"
     },
     "prime-wiring.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/spi-thermocouple-breakout/guides/ribbon-instruction/prime-wiring.svg",
       "archived_svg_sha256": "57c862b6573fb07d2492cac4b88e1f4a343df8ffdd39de104adf601c2a53b18f",
-      "url": "/images/extensions/spi-thermocouple-breakout/guides/ribbon-instruction/prime-wiring.png",
-      "sha256": "78add2c6831a9873a072364a0e6c0e7d853d1e1ddcdd644ebd54e881b158c019"
+      "url": "/images/extensions/spi-thermocouple-breakout/guides/ribbon-instruction/prime-wiring.webp",
+      "sha256": "753328d9855783f6f7873e5323a8291e416456977c3484902cc5d52de501d32c"
     },
     "ribbon-circuit-key.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/spi-thermocouple-breakout/guides/ribbon-instruction/ribbon-circuit-key.svg",
       "archived_svg_sha256": "c3ffcb0ef6e197823711c4b2ae13182c9e0725bf5d15e0a4cc23a4f5c3b2c423",
-      "url": "/images/extensions/spi-thermocouple-breakout/guides/ribbon-instruction/ribbon-circuit-key.png",
-      "sha256": "fbea2a2334745599cb91077184a9ef40ff7a12244a4bb169f77220b9a0b00d97"
+      "url": "/images/extensions/spi-thermocouple-breakout/guides/ribbon-instruction/ribbon-circuit-key.webp",
+      "sha256": "0a9973c1af27de94bf15c900e1a3de272e547b681f51928bef7c310fdf3bb0de"
     },
     "ribbon-contacts-1-5.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/spi-thermocouple-breakout/guides/ribbon-instruction/ribbon-contacts-1-5.svg",
       "archived_svg_sha256": "8215eda2ca1758c8b5174456374e2405c0a18775caa869f41de6cea501cf32d4",
-      "url": "/images/extensions/spi-thermocouple-breakout/guides/ribbon-instruction/ribbon-contacts-1-5.png",
-      "sha256": "0ae4e99f120daea9e90a1cfb9848d73d04f13d9ac191ad4cadc84031f69c02c5"
+      "url": "/images/extensions/spi-thermocouple-breakout/guides/ribbon-instruction/ribbon-contacts-1-5.webp",
+      "sha256": "955d117a6d478da7c5677edcca01ddd74a5e1e29f5f7c30364ba1afefee850e3"
     },
     "ribbon-contacts-6-10.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/spi-thermocouple-breakout/guides/ribbon-instruction/ribbon-contacts-6-10.svg",
       "archived_svg_sha256": "4e9e8809bae4436f44d1513287b1ccdf2af5c59cc484eea823999cd3ab75d163",
-      "url": "/images/extensions/spi-thermocouple-breakout/guides/ribbon-instruction/ribbon-contacts-6-10.png",
-      "sha256": "430917d5bd10008d75dd8acf05c7fc38f0560d8e0dcd34da1c542af492b2eb0c"
+      "url": "/images/extensions/spi-thermocouple-breakout/guides/ribbon-instruction/ribbon-contacts-6-10.webp",
+      "sha256": "dde8442498a5f8bae6e5424acbf5241a8e618a7ec9da0ed0994741a35baa4975"
     }
   }
 }

@@ -1,8 +1,11 @@
 ---
+title: "Queue refactor"
 permalink: /queue-refactor
 ---
 
-# Queue Refactor Documentation
+{::nomarkdown}
+<span id="queue-refactor-documentation"></span>
+{:/nomarkdown}
 
 The goal of this document is to describe the current problem with the queue, propose a possible solution, and describe its implementation (called the queue refactor).
 
@@ -113,10 +116,10 @@ Then when the time comes, they get that information back.
 
 This has so many advantages:
 
-- **Much lower RAM usage**
-- **Can be about as simple to the coder as we do now**
-- **Much faster**
-- **Fixed-size (in bytes not Blocks) Queue for all the data** (including non-movement data), for easier RAM management
+- Much lower RAM usage
+- Can be about as simple to the coder as we do now
+- Much faster
+- Fixed-size (in bytes not Blocks) Queue for all the data (including non-movement data), for easier RAM management
 
 Here is the proposed format for the new Blocks (now called "Actions" to differentiate them from the movement Blocks (which become just another kind of Action)):
 

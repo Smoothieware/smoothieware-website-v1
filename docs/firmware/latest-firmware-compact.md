@@ -1,4 +1,5 @@
 ---
+title: "Latest firmware compact"
 permalink: /latest-firmware-compact
 ---
 

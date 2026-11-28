@@ -1,4 +1,5 @@
 ---
+title: "Z-probe guide"
 permalink: /z-probe-guide
 ---
 

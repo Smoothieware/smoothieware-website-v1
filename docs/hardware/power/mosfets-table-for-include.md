@@ -1,11 +1,11 @@
 
-#### MOSFETs Table
+## MOSFETs Table
 
 This page documents the MOSFET outputs available on Smoothieboard and their specifications.
 
 MOSFETs are used to control high-power devices like heated beds, hotends, fans, and other accessories.
 
-##### MOSFET Specifications
+### MOSFET Specifications
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -21,30 +21,30 @@ MOSFETs are used to control high-power devices like heated beds, hotends, fans, 
 | Maximum current     | 12A                | 12A                | 3A                    | 3A                 | 12A       | 3A        |
 | Used by default for | Heated bed         |                    | Hotend 0              | Fan                | Hotend 1  |           |
 
-##### Understanding MOSFET Pairs
+### Understanding MOSFET Pairs
 
 Smoothieboard has three MOSFET pairs:
 
-###### Big MOSFETs Pair (P{::nomarkdown}<pin>2.7</pin>{:/nomarkdown} and P{::nomarkdown}<pin>2.5</pin>{:/nomarkdown})
+#### Big MOSFETs Pair (P{::nomarkdown}<pin>2.7</pin>{:/nomarkdown} and P{::nomarkdown}<pin>2.5</pin>{:/nomarkdown})
 
-- **Current capacity**: 12A each
-- **Power input**: Shared between the two outputs (between P{::nomarkdown}<pin>2.7</pin>{:/nomarkdown} and P{::nomarkdown}<pin>2.5</pin>{:/nomarkdown} terminals)
-- **Typical use**: Heated bed (high current devices)
-- **Note**: Both outputs share the same power input
+- Current capacity: 12A each
+- Power input: Shared between the two outputs (between P{::nomarkdown}<pin>2.7</pin>{:/nomarkdown} and P{::nomarkdown}<pin>2.5</pin>{:/nomarkdown} terminals)
+- Typical use: Heated bed (high current devices)
+- Note: Both outputs share the same power input
 
-###### Small MOSFETs Pair (P{::nomarkdown}<pin>2.4</pin>{:/nomarkdown} and P{::nomarkdown}<pin>2.6</pin>{:/nomarkdown})
+#### Small MOSFETs Pair (P{::nomarkdown}<pin>2.4</pin>{:/nomarkdown} and P{::nomarkdown}<pin>2.6</pin>{:/nomarkdown})
 
-- **Current capacity**: 3A each
-- **Power input**: Shared between the two outputs (between P{::nomarkdown}<pin>2.6</pin>{:/nomarkdown} and P{::nomarkdown}<pin>1.23</pin>{:/nomarkdown} terminals)
-- **Typical use**: Hotend 0 and fan (moderate current devices)
-- **Note**: Both outputs share the same power input
+- Current capacity: 3A each
+- Power input: Shared between the two outputs (between P{::nomarkdown}<pin>2.6</pin>{:/nomarkdown} and P{::nomarkdown}<pin>1.23</pin>{:/nomarkdown} terminals)
+- Typical use: Hotend 0 and fan (moderate current devices)
+- Note: Both outputs share the same power input
 
-###### Mixed MOSFETs Pair (P{::nomarkdown}<pin>1.23</pin>{:/nomarkdown} and P{::nomarkdown}<pin>1.22</pin>{:/nomarkdown})
+#### Mixed MOSFETs Pair (P{::nomarkdown}<pin>1.23</pin>{:/nomarkdown} and P{::nomarkdown}<pin>1.22</pin>{:/nomarkdown})
 
-- **Current capacity**: P{::nomarkdown}<pin>1.23</pin>{:/nomarkdown}: 12A, P{::nomarkdown}<pin>1.22</pin>{:/nomarkdown}: 3A
-- **Power input**: Taken directly from VBB (main power supply)
-- **Typical use**: P{::nomarkdown}<pin>1.23</pin>{:/nomarkdown} for Hotend 1, P{::nomarkdown}<pin>1.22</pin>{:/nomarkdown} for accessories
-- **Note**: These outputs use the main VBB power supply
+- Current capacity: P{::nomarkdown}<pin>1.23</pin>{:/nomarkdown}: 12A, P{::nomarkdown}<pin>1.22</pin>{:/nomarkdown}: 3A
+- Power input: Taken directly from VBB (main power supply)
+- Typical use: P{::nomarkdown}<pin>1.23</pin>{:/nomarkdown} for Hotend 1, P{::nomarkdown}<pin>1.22</pin>{:/nomarkdown} for accessories
+- Note: These outputs use the main VBB power supply
 
 {::nomarkdown}
 </v1>
@@ -61,35 +61,35 @@ Smoothieboard has three MOSFET pairs:
 | SSR1 | Logic output | mA | External SSR control |
 | SSR2 | Logic output | mA | External SSR control |
 
-##### Understanding MOSFET Outputs
+### Understanding MOSFET Outputs
 
 Smoothieboard v2 has a simplified MOSFET architecture:
 
-###### Low-Current FETs (Hotend A, Hotend B, Fan 1, Fan 2)
+#### Low-Current FETs (Hotend A, Hotend B, Fan 1, Fan 2)
 
-- **Current capacity**: ~5A each
-- **Power input**: Shared VFET rail (2× XT30 connectors)
-- **Safety feature**: High-side PFET watchdog can cut power to all 4 outputs
-- **Note**: All share the same power source, controlled by safety watchdog
+- Current capacity: ~5A each
+- Power input: Shared VFET rail (2× XT30 connectors)
+- Safety feature: High-side PFET watchdog can cut power to all 4 outputs
+- Note: All share the same power source, controlled by safety watchdog
 
-###### Bed FET
+#### Bed FET
 
-- **Current capacity**: ~10-12A (dual parallel MOSFETs)
-- **Power input**: Direct from VFET (not through PFET watchdog)
-- **Typical use**: Heated bed
-- **Note**: Independent of safety watchdog for bed stability
+- Current capacity: ~10-12A (dual parallel MOSFETs)
+- Power input: Direct from VFET (not through PFET watchdog)
+- Typical use: Heated bed
+- Note: Independent of safety watchdog for bed stability
 
-###### SSR Outputs
+#### SSR Outputs
 
-- **Current capacity**: Milliamps (logic level signals)
-- **Use**: Control external solid-state relays for high-power loads
+- Current capacity: Milliamps (logic level signals)
+- Use: Control external solid-state relays for high-power loads
 
 {::nomarkdown}
 </v2>
 </versioned>
 {:/nomarkdown}
 
-##### Important Safety Notes
+### Important Safety Notes
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -105,9 +105,7 @@ Smoothieboard v2 has a simplified MOSFET architecture:
 </sl-alert>
 {:/nomarkdown}
 
-##### Configuration
-
-
+### Configuration
 
 To configure a MOSFET output in your config file, use the appropriate pin number from the "Digital output pin" row.
 
@@ -152,9 +150,7 @@ heater_pin = 2.4
 </versioned>
 {:/nomarkdown}
 
-
-
-##### Related Documentation
+### Related Documentation
 
 - [Smoothieboard](smoothieboard) - Main board documentation
 - [Temperature Control](temperaturecontrol) - Configuring heaters

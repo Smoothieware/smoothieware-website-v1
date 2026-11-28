@@ -4,7 +4,9 @@ layout: default
 title: Welcome to Smoothieware
 ---
 
-# Welcome to Smoothieware
+{::nomarkdown}
+<span id="welcome-to-smoothieware"></span>
+{:/nomarkdown}
 
 Smoothieware is an open-source G-code interpreter and CNC control system that turns your computer (or SBC) into a powerful motion controller for 3D printers, laser cutters, CNC mills, pick-and-place machines, and other automated equipment.
 
@@ -24,15 +26,15 @@ Select your version to get tailored guidance:
 **V1 is a mature, stable, production-ready firmware** for the LPC1769-based Smoothieboard. It's been refined over years and powers thousands of machines.
 
 **Start here:**
-1. [Installing Firmware](/firmware/installing-firmware-lpc) - Flash V1 firmware to your board
-2. [Configuring Smoothie](/configuration/configuring-smoothie) - Set up your machine configuration
+1. [Installing Firmware](/flashing-smoothie-firmware) - Flash V1 firmware to your board
+2. [Configuring Smoothie](/configuring-smoothie) - Set up your machine configuration
 3. [Getting Help](/getting-help-community) - Join the IRC channel or forum
 
 **Key resources:**
-- [Configuration Options](/configuration/configuration-options) - Complete settings reference
-- [G-code Reference](/gcode-reference) - Supported G-codes and M-codes
-- [Hardware Documentation](/hardware) - Board specifications and pinouts
-- [Machine-Specific Guides](/machine-guides) - 3D printer, laser, CNC setup
+- [Configuration Options](/configuration-options) - Complete settings reference
+- [G-code Reference](/supported-g-codes) - Supported G-codes and M-codes
+- [Hardware Documentation](/smoothieboard) - Board specifications and pinouts
+- [Machine-Specific Guides](/guides) - 3D printer, laser, CNC setup
 
 **Communication:**
 - [IRC (Recommended)](/irc) - Real-time chat on #smoothie @ irc.freenode.net
@@ -81,14 +83,14 @@ Select your version to get tailored guidance:
 
 This documentation site covers:
 
-- **Getting Started** - Installation, configuration, first steps
-- **Configuration** - All settings and options for your version
-- **Hardware** - Board specifications, pinouts, wiring
-- **Firmware** - Flashing and updating your firmware
-- **Modules** - Specialized functionality (temperature control, leveling, etc.)
-- **G-code Reference** - Supported commands and syntax
-- **Troubleshooting** - Common issues and solutions
-- **Developer Guides** - Architecture, development, contributing
+- Getting Started - Installation, configuration, first steps
+- Configuration - All settings and options for your version
+- Hardware - Board specifications, pinouts, wiring
+- Firmware - Flashing and updating your firmware
+- Modules - Specialized functionality (temperature control, leveling, etc.)
+- G-code Reference - Supported commands and syntax
+- Troubleshooting - Common issues and solutions
+- Developer Guides - Architecture, development, contributing
 
 ## Need Help?
 
@@ -98,9 +100,9 @@ This documentation site covers:
 {:/nomarkdown}
 
 **V1 Users:**
-- **Quick questions?** Join [IRC](/irc) for real-time help
-- **Detailed discussions?** Post on the [Forum](https://forum.makerforums.info/)
-- **Email support?** [Support Mailing List](http://groups.google.com/group/smoothieware-support)
+- Quick questions? Join [IRC](/irc) for real-time help
+- Detailed discussions? Post on the [Forum](https://forum.makerforums.info/)
+- Email support? [Support Mailing List](http://groups.google.com/group/smoothieware-support)
 
 {::nomarkdown}
 </v1>
@@ -108,9 +110,9 @@ This documentation site covers:
 {:/nomarkdown}
 
 **V2 Users:**
-- **Community help?** [Maker Forums](https://forum.makerforums.info/) (most active)
-- **Real-time chat?** [Discord](https://forum.makerforums.info/) (community-run)
-- **Email support?** [Support Mailing List](http://groups.google.com/group/smoothieware-support)
+- Community help? [Maker Forums](https://forum.makerforums.info/) (most active)
+- Real-time chat? [Discord](https://forum.makerforums.info/) (community-run)
+- Email support? [Support Mailing List](http://groups.google.com/group/smoothieware-support)
 
 {::nomarkdown}
 </v2>
@@ -137,7 +139,7 @@ Even small contributions make a huge difference for new users!
 
 ## Learn More
 
-- **[About Smoothieware](/about)** - Project history and philosophy
-- **[Community](/community)** - Join the Smoothie community
-- **[GitHub Repositories](https://github.com/Smoothieware)** - Source code
-- **[License](/license)** - GNU GPL v3
+- About Smoothieware - Project history and philosophy
+- [Community](/community) - Join the Smoothie community
+- [GitHub Repositories](https://github.com/Smoothieware) - Source code
+- [License](https://www.gnu.org/licenses/gpl-3.0.html) - GNU GPL v3

@@ -1,4 +1,5 @@
 ---
+title: "Power supply control"
 permalink: /power-supply-control
 ---
 

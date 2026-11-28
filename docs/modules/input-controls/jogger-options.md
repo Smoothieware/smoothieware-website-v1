@@ -1,4 +1,5 @@
 ---
+title: "Jogger options"
 permalink: /jogger-options
 ---
 

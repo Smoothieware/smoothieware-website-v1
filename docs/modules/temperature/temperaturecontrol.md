@@ -1,9 +1,11 @@
 ---
+title: "Temperature control"
 permalink: /temperaturecontrol
 ---
 
-
-# Temperaturecontrol
+{::nomarkdown}
+<span id="temperaturecontrol"></span>
+{:/nomarkdown}
 
 <!-- learning-diagram:42-temperature-control -->
 {::nomarkdown}
@@ -14,9 +16,6 @@ permalink: /temperaturecontrol
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Temperature control reads a sensor and drives a heater <a href="#learning-diagram-42-temperature-control" aria-label="Permanent link to Temperature control reads a sensor and drives a heater" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-
-
-
 
 This module reads temperature reading sensors (thermistors) and uses heater and cooler elements to maintain a set temperature.
 
@@ -33,8 +32,6 @@ This is a J-head hotend with its thermistor and heating element.
 ## Multiple modules
 
 In Smoothie, you do not get just one TemperatureControl module. You can actually create as many as you want, simply by adding them to the [configuration file](/configuring-smoothie).
-
-
 
 It goes something like this:
 
@@ -80,8 +77,6 @@ bed.thermistor_pin = 0.24
 
 This will create and configure two separate TemperatureControl modules that will act completely independently from each other.
 
-
-
 The line that effectively "creates" the module is the {::nomarkdown}<setting v1="temperature_control.{name}.enable" v2="temperature control.enable"></setting>{:/nomarkdown} option. If set to true, a module is created and further configuration is read. If set to false, further configuration for this module is ignored as no module is created.
 
 In the **Configuration** section below, the first two parts (`temperature_control.module_name`) of the configuration are sometimes omitted for conciseness, but have to be added in your actual configuration file ([see example](/configuring-smoothie)).
@@ -99,8 +94,6 @@ A given controller board only has a given number of [ADCs](http://en.wikipedia.o
 On the [Smoothieboard](smoothieboards) for example, there are 4 thermistor inputs, labelled from **T0** (or th1) to **T3** (or th4), and corresponding in the same order to the pins {::nomarkdown}<pin>0.23</pin>{:/nomarkdown} to {::nomarkdown}<pin>0.26</pin>{:/nomarkdown}. T0 is usually used for the hotend, and T1 for the bed.
 
 Thermistor inputs are not polarized, the direction you connect them in on your board is not important.
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -129,8 +122,6 @@ hotend.thermistor_pin = 0.23
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -164,6 +155,10 @@ hotend.thermistor_pin = 0.23
 </sl-alert>
 {:/nomarkdown}
 
+{::nomarkdown}
+<span id="toc5"></span>
+{:/nomarkdown}
+
 ##### Choosing the right thermistor
 
 {% include modules/temperature/temperaturecontrol-thermistor-choice-for-include.md %}
@@ -174,7 +169,7 @@ Note PT100 as used by the e3d amplifier is supported in current edge, but not in
 
 ##### Configuration and usage
 
-{% include modules/temperature/pt100-for-include.md %}
+{% include _includes/chapter.md file="modules/temperature/pt100-for-include.md" deeper="2" %}
 
 #### Thermocouple via SPI
 
@@ -224,8 +219,6 @@ The SPI1 pins are available on Smoothieboard v2 expansion headers. Use any avail
 
 To configure Smoothie to use the thermocouple connected like this, replace the thermistor and thermistor_pin parameters with the following:
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -263,13 +256,9 @@ hotend.spi_channel = 0    # SPI channel 0 or 1
 </versioned>
 {:/nomarkdown}
 
-
-
 Note that when using max31855, you need to reduce the frequency at which temperatures are read. This is due to a limitation in the amplifier. For more information see [this pull request](https://github.com/Smoothieware/Smoothieware/pull/891).
 
 There is a quirk to the max31855 and max6675 chips: They take 100 and 220 milliseconds, respectively, to perform the temp conversion. Sampling them faster than this will interrupt the conversion process, causing the chip to return the same value every for every subsequent sampling. To resolve that issue, readings_per_second should be 9 for the max31855 and 4 for the max6675.
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -299,8 +288,6 @@ module_name.readings_per_second = 4
 </versioned>
 {:/nomarkdown}
 
-
-
 #### Thermocouple via Amplifier
 
 Smoothie supports reading thermocouples via an ADC (the same kind used to read thermistors) if the analog value is converted by the [AD8495](https://www.adafruit.com/product/1778) thermocouple amplifier.
@@ -308,8 +295,6 @@ Smoothie supports reading thermocouples via an ADC (the same kind used to read t
 This allows you to read values from a thermocouple without having to use a SPI port.
 
 To use the AD8495, you need to set the right sensor type:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -361,8 +346,6 @@ NOTE from a community member: The AD8495 needs a GND and VCC. Using either GND o
 </versioned>
 {:/nomarkdown}
 
-
-
 ### Heating things up.
 
 To reach the desired temperature, you need a means of changing the temperature. This is usually done by letting current through:
@@ -388,8 +371,6 @@ See this schematic below or on the [Smoothieboard](smoothieboards) page to see w
 Read more about the mosfets [here](/mosfets)
 
 To set a pin to a given heater, do for example:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -419,11 +400,27 @@ hotend.heater_pin = 2.7
 </versioned>
 {:/nomarkdown}
 
-
-
 **Note on pins:**
 
-{% include hardware/pins/pin-configuration-for-include.md %}
+A pin is an input or output of the board, you name it by its number in the config, see the [pinout](/pinout). You can change how it behaves by adding modifiers after the number, for example `1.19!` inverts it.
+
+| Modifier | Symbol |
+| --- | --- |
+| Invert pin | `!` |
+| Open drain | `o` |
+| Pull up ( default on most pins ) | `^` |
+| Pull down | `v` |
+| No pull up | `-` |
+| Repeater mode | `@` |
+
+Some pins have hardware on the board forcing a given configuration, for example endstop inputs have on-board pull-up resistors which configuration can't remove.
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="book"></sl-icon>
+  <strong>Learn more:</strong> <a href="/pin-configuration">Pin configuration</a>
+</sl-alert>
+{:/nomarkdown}
 
 ### Controlling with G-codes
 
@@ -436,8 +433,6 @@ There is a set of widely used G-codes corresponding to different usual actions (
 But as you are defining your own custom temperature controller, you have to choose what gcode will be used to control it, Smoothie doesn't know what exactly it's controlling.
 
 So for example if this is a hotend, it will look something like this for the "standard" gcodes:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -469,8 +464,6 @@ hotend.set_and_wait_m_code = 109
 </versioned>
 {:/nomarkdown}
 
-
-
 `set_m_code` is used to set a given temperature, and continue running Smoothie immediately. `set_and_wait_m_code` is used to set a given temperature, and then pause Smoothie until that temperature is reached.
 
 ### Reading with G-code
@@ -486,8 +479,6 @@ ok T:22.1 /0.0 @0 B:22.5 /75.0 @210
 ```
 
 Here T is the hotend, and B is the bed. This is a convention. But in your configuration, we have to specify which is which:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -517,14 +508,14 @@ hotend.designator = T
 </versioned>
 {:/nomarkdown}
 
-
+{::nomarkdown}
+<span id="bang-bang"></span>
+{:/nomarkdown}
 
 ### Bang Bang Control
 
 The simplest form of heat control is called bang bang this simply turns the heater on or off depending on whether it is under or over the target temperature (plus some hysteresis).
 This is best used for high amp beds using a relay to turn it on and off.
-
-
 
 to enable this form of control in the config define the following...
 
@@ -558,8 +549,6 @@ bed.hysteresis = 2.0          # set to the temperature in degrees C to use as hy
 </versioned>
 {:/nomarkdown}
 
-
-
 Example: If you set your temperature to 50 degrees, and your hysterisis is 2 degrees, then the heaters will turn on if the temperature is below 48 degrees, and off if the temperature is above 52 degrees.
 
 The default form of heater control is PID.
@@ -574,7 +563,7 @@ The default form of heater control is PID.
 
 ### Fine Tuning
 
-{% include modules/temperature/temperaturecontrol-fine-tuning-for-include.md %}
+{% include _includes/chapter.md file="modules/temperature/temperaturecontrol-fine-tuning-for-include.md" deeper="2" %}
 
 ## Safety
 
@@ -619,8 +608,6 @@ You do not need to do anything to activate this, it is on by default.
 
 You activate this safety check (and you should) by adding the following to your configuration:
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -649,8 +636,6 @@ module_name.max_temp = 300
 </versioned>
 {:/nomarkdown}
 
-
-
 Once this is set, it will be impossible to set temperatures higher than the {::nomarkdown}<setting v1="temperature_control.{name}.max_temp" v2="temperature control.max_temp"></setting>{:/nomarkdown} value.
 
 Also, if the temperature reaches this {::nomarkdown}<setting v1="temperature_control.{name}.max_temp" v2="temperature control.max_temp"></setting>{:/nomarkdown} temperature, Smoothie will turn off all heaters, go into HALT state, and print out the following message:
@@ -665,6 +650,10 @@ You need to solve the issue, and then either reset the board or issue the {::nom
 The most likely cause for this problem is that a heater mosfet is stuck being always active. If this is the case, Smoothie cannot control that heater anymore, and nothing the firmware can do can solve the issue, and you are on your way to a fire.
 
 This is why you need to give Smoothie a second way to cut power: either by having a signal that allows you to turn the power supply off, or a solid-state relay capable of cutting all power to all mosfets. See documentation below for how to achieve this.
+
+{::nomarkdown}
+<span id="runaway"></span>
+{:/nomarkdown}
 
 ### Runaway detection
 
@@ -685,8 +674,6 @@ To configure this value, we first need to ask the machine to heat-up, and use a 
 Then, we add a margin to this, for example 20%, and we say that if the hotend takes more than 120 seconds to heat up, something is wrong.
 
 Now that you have a reasonable safety value, add the `runaway_heating_timeout` option to your configuration file:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -715,8 +702,6 @@ module_name.runaway_heating_timeout = 120  # max is 4088 seconds
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 Now, if heating ever takes longer than 120 seconds, Smoothie will know there is a problem, enter HALT state, turn off heaters, and show the following message:
 

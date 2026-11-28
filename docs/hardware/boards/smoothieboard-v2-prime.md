@@ -1,8 +1,11 @@
 ---
+title: "Smoothieboard v2 prime"
 permalink: /smoothieboard-v2-prime
 ---
 
-# Smoothieboard v2 Prime Technical Specifications
+{::nomarkdown}
+<span id="smoothieboard-v2-prime-technical-specifications"></span>
+{:/nomarkdown}
 
 Smoothieboard v2 Prime is the current production version of the Smoothie controller board. It's a complete redesign from v1, featuring a dual-core STM32H745 microcontroller, TMC2660 or TMC2590 stepper drivers, extensive GPIO expansion via Gadgeteer headers, and much faster SD card access.
 
@@ -203,13 +206,13 @@ Why 2× XT30 instead of 1× XT60? Lower vertical profile (XT60 is taller, interf
 - Heated bed: 250W @ 24V = 10.4A
 - 2× Hotends: 80W @ 24V = 3.3A
 - 2× Fans: 10W @ 24V = 0.4A
-- **Total: ~14A** → Single XT30 sufficient (but use both for reliability)
+- Total: ~14A → Single XT30 sufficient (but use both for reliability)
 
 **Example 2: 12V System**
 - Heated bed: 250W @ 12V = 20.8A
 - 2× Hotends: 80W @ 12V = 6.7A
 - 2× Fans: 10W @ 12V = 0.8A
-- **Total: ~28A** → **MUST use both XT30 connectors**
+- Total: ~28A → **MUST use both XT30 connectors**
 
 This is why the dual XT30 design was chosen. 12V systems need the combined capacity.
 
@@ -287,12 +290,12 @@ Pin 10: GND
 ```
 
 Each header has a mix of capabilities:
-- **SPI:** High-speed data (multiple devices can share bus with different CS pins)
-- **I2C:** Multiple devices on 2 wires (sensors, displays, I/O expanders)
-- **ADC:** 6 unbuffered analog inputs across headers
-- **GPIO:** Header-specific digital signals, subject to shared board functions
-- **PWM:** Pulse width modulation (on some pins)
-- **UART:** Serial communication (on some headers)
+- SPI: High-speed data (multiple devices can share bus with different CS pins)
+- I2C: Multiple devices on 2 wires (sensors, displays, I/O expanders)
+- ADC: 6 unbuffered analog inputs across headers
+- GPIO: Header-specific digital signals, subject to shared board functions
+- PWM: Pulse width modulation (on some pins)
+- UART: Serial communication (on some headers)
 
 For physical wiring, use the P11/P12 expansion schematics linked above. The [revision-qualified firmware pin map](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/pins.md) documents software aliases and peripheral names for GA through GI; reconcile these with the exact hardware revision before assigning a signal.
 
@@ -313,7 +316,7 @@ The 5V on headers is sourced from the on-board regulator (3A total). Be careful 
 - Board logic: ~300-500mA
 - Raspberry Pi 3: ~500-1500mA (idle to active)
 - 7" touchscreen: ~400-700mA
-- **Total: ~1.2-2.7A** (within 3A capacity)
+- Total: ~1.2-2.7A (within 3A capacity)
 - Remaining: 300-800mA for other peripherals
 
 The 3.3V on headers is sourced from main 3.3V regulator (board logic power). Limited current available - typical budget: 100-500mA total across all headers. Use this for low-power sensors and logic, not power-hungry devices.
@@ -360,7 +363,7 @@ SDIO interface - this is huge:
 
 - v1: SPI interface (~400-500 kB/s)
 - v2: SDIO interface (10-25 MB/s)
-- **20-50× faster**
+- 20-50× faster
 
 Large G-code files load instantly. Web interface is responsive. Raster laser images that would take minutes to load on v1 now load in seconds. This addresses the #1 complaint about v1.
 
@@ -488,16 +491,16 @@ Covered above - 2× XT30, 12-24V, powers all heaters/fans/bed.
 - Heated bed: 250W @ 24V = 10.4A
 - Fans: 10W @ 24V = 0.4A
 - Board logic + peripherals (5V regulator from 24V): ~50W equivalent @ 24V
-- **Total: ~18-20A @ 24V = 450-480W**
-- **Recommended PSU: 24V, 25-30A (600-720W)** for headroom
+- Total: ~18-20A @ 24V = 450-480W
+- Recommended PSU: 24V, 25-30A (600-720W) for headroom
 
 **Typical CNC Router (24V System):**
 
 - 4× stepper motors @ 3A: 12A @ 24V = 288W
 - Spindle (via SSR, separate PSU): N/A (not from board)
 - Board logic: ~50W equivalent @ 24V
-- **Total: ~15A @ 24V = 360W** (motors + board)
-- **Recommended PSU: 24V, 20A (480W)** (plus separate spindle PSU)
+- Total: ~15A @ 24V = 360W (motors + board)
+- Recommended PSU: 24V, 20A (480W) (plus separate spindle PSU)
 
 The CNC example shows why you might want external drivers for high-current motors - 3A is pushing the limit even for TMC2590. For big NEMA 34 motors drawing 6A+, definitely use external drivers.
 
@@ -567,10 +570,10 @@ The layout is designed to minimize noise - power circuitry separated from sensit
 | **Cooling**               | Passive (heatsinks on drivers) + optional active (fan recommended) |
 
 **Cooling Recommendations:**
-- **TMC2660 Variant:** Passive cooling usually sufficient in open air. Fan recommended in enclosures or warm environments.
-- **TMC2590 Variant:** Active cooling (fan) recommended, especially at high currents (>3A). 40-60mm fan blowing across stepper drivers works well.
-- **Enclosed Builds:** Always add a fan for enclosed electronics boxes. Temperature can build up quickly.
-- **On-Board Thermistor:** Monitor board temperature via firmware. If it hits >50-60°C, add more cooling.
+- TMC2660 Variant: Passive cooling usually sufficient in open air. Fan recommended in enclosures or warm environments.
+- TMC2590 Variant: Active cooling (fan) recommended, especially at high currents (>3A). 40-60mm fan blowing across stepper drivers works well.
+- Enclosed Builds: Always add a fan for enclosed electronics boxes. Temperature can build up quickly.
+- On-Board Thermistor: Monitor board temperature via firmware. If it hits >50-60°C, add more cooling.
 
 ## Firmware
 
@@ -585,8 +588,8 @@ The layout is designed to minimize noise - power circuitry separated from sensit
 ### Firmware Architecture
 
 **Dual-Core Usage:**
-- **M7 Core:** Main firmware, motion control, real-time tasks
-- **M4 Core:** Currently unused/disabled (available for future features)
+- M7 Core: Main firmware, motion control, real-time tasks
+- M4 Core: Currently unused/disabled (available for future features)
 
 **FreeRTOS Benefits:**
 - Better multitasking than v1's bare-metal approach
@@ -637,9 +640,9 @@ Configure 2 motors to act as a single axis (e.g., dual Y motors on a gantry). In
 
 Three methods:
 
-1. **Drag-and-Drop:** Enter MSD mode, drag firmware.bin to SD card, eject, board auto-flashes.
-2. **Auto-Update:** Send `update` command via network, board handles everything automatically.
-3. **SD Card Direct:** Remove card, copy firmware.bin, re-insert, reboot.
+1. Drag-and-Drop: Enter MSD mode, drag firmware.bin to SD card, eject, board auto-flashes.
+2. Auto-Update: Send `update` command via network, board handles everything automatically.
+3. SD Card Direct: Remove card, copy firmware.bin, re-insert, reboot.
 
 Easy firmware updates - no programmer or special tools needed. The auto-update feature is particularly nice for headless setups where you can't easily access the SD card.
 
@@ -733,12 +736,12 @@ Connection via USB serial, Telnet, HTTP API, or standalone from SD card.
 
 ### Other Applications
 
-- **Pen Plotters:** XY motion with Z-axis servo for pen up/down
-- **Foam Cutters:** Hot-wire foam cutting (XY table + wire temperature via MOSFET)
-- **Vinyl Cutters:** XY motion with blade pressure control
-- **3D Scanning:** Turntable + laser line scanner (via Gadgeteer expansion)
-- **Automated Testing:** Custom motion profiles, sensor integration, data logging
-- **Art Installations:** Creative motion control projects, LED control
+- Pen Plotters: XY motion with Z-axis servo for pen up/down
+- Foam Cutters: Hot-wire foam cutting (XY table + wire temperature via MOSFET)
+- Vinyl Cutters: XY motion with blade pressure control
+- 3D Scanning: Turntable + laser line scanner (via Gadgeteer expansion)
+- Automated Testing: Custom motion profiles, sensor integration, data logging
+- Art Installations: Creative motion control projects, LED control
 
 The configurable firmware means you can adapt it to unusual applications.
 
@@ -932,8 +935,6 @@ Pin 3: GND
 - [Smoothieboards Main Page](smoothieboards) - All board variants
 - [Configuring Smoothie](configuring-smoothie) - Configuration guide
 - [Getting a Smoothieboard](getting-smoothieboard) - Where to buy
-
----
 
 *Last updated: 2025-10-21*
 *OSHWA Certification: FR000021*

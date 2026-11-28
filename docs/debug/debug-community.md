@@ -4,7 +4,9 @@ layout: default
 title: Debug Community - Review Tag Test
 ---
 
-# First (unchanged)
+{::nomarkdown}
+<span id="first-unchanged"></span>
+{:/nomarkdown}
 
 ---
 permalink: /community
@@ -12,11 +14,11 @@ layout: default
 title: Community
 ---
 
-# Community
+## Community
 
 Join the Smoothieware community to get help, share your projects, and connect with other users and developers.
 
-## Communication Channels
+### Communication Channels
 
 
 
@@ -28,7 +30,7 @@ We have several ways to connect with the community:
 {:/nomarkdown}
 
 - [IRC (recommended ヾ(❀◦◡◦)彡*:・゚✧ )](/irc) - Real-time chat for quick questions and discussions
-- [Forum](forum/c-496918/general) - Threaded discussions for in-depth topics
+- [Forum](/community) - Threaded discussions for in-depth topics
 - [Support Mailing list](http://groups.google.com/group/smoothieware-support) - Email-based support and discussions
 - [Dev Mailing list](http://groups.google.com/group/smoothie-dev) - Development discussions and contributions
 
@@ -60,7 +62,7 @@ We have several ways to connect with the community:
 
 
 
-## Contributing
+### Contributing
 
 The Smoothie project is always looking for help.
 
@@ -72,7 +74,7 @@ See also: [Contributing Guide](contributing)
 
 ---
 
-# Second (accept - proposal replaces review)
+## Second (accept - proposal replaces review)
 
 ---
 permalink: /community
@@ -80,11 +82,11 @@ layout: default
 title: Community
 ---
 
-# Community
+## Community
 
 Join the Smoothieware community to get help, share your projects, and connect with other users and developers.
 
-## Communication Channels
+### Communication Channels
 
 
 
@@ -96,7 +98,7 @@ We have several ways to connect with the community:
 {:/nomarkdown}
 
 - [IRC (recommended ヾ(❀◦◡◦)彡*:・゚✧ )](/irc) - Real-time chat for quick questions and discussions
-- [Forum](forum/c-496918/general) - Threaded discussions for in-depth topics
+- [Forum](/community) - Threaded discussions for in-depth topics
 - [Support Mailing list](http://groups.google.com/group/smoothieware-support) - Email-based support and discussions
 - [Dev Mailing list](http://groups.google.com/group/smoothie-dev) - Development discussions and contributions
 
@@ -128,7 +130,7 @@ We have several ways to connect with the community:
 
 
 
-## Contributing
+### Contributing
 
 The Smoothie project is always looking for help.
 
@@ -140,7 +142,7 @@ See also: [Contributing Guide](contributing)
 
 ---
 
-# Third (reject - original replaces review)
+## Third (reject - original replaces review)
 
 ---
 permalink: /community
@@ -148,18 +150,18 @@ layout: default
 title: Community
 ---
 
-# Community
+## Community
 
 Join the Smoothieware community to get help, share your projects, and connect with other users and developers.
 
-## Communication Channels
+### Communication Channels
 
 
 
 We have several ways to connect with the community:
 
 - [IRC (recommended ヾ(❀◦◡◦)彡*:・゚✧ )](/irc) - Real-time chat for quick questions and discussions
-- [Forum](forum/c-496918/general) - Threaded discussions for in-depth topics
+- [Forum](/community) - Threaded discussions for in-depth topics
 - [Support Mailing list](http://groups.google.com/group/smoothieware-support) - Email-based support and discussions
 - [Dev Mailing list](http://groups.google.com/group/smoothie-dev) - Development discussions and contributions
 
@@ -170,7 +172,7 @@ We have several ways to connect with the community:
 
 
 
-## Contributing
+### Contributing
 
 The Smoothie project is always looking for help.
 

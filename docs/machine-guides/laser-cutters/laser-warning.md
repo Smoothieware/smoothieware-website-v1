@@ -1,4 +1,5 @@
 ---
+title: "Laser warning"
 permalink: /laser-warning
 ---
 

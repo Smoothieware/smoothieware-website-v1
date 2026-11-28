@@ -1,9 +1,11 @@
 ---
+title: "Wifi"
 permalink: /wifi
 ---
 
-
-# Wifi
+{::nomarkdown}
+<span id="wifi"></span>
+{:/nomarkdown}
 
 ## ESP3D
 

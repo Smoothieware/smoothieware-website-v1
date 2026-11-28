@@ -1,8 +1,11 @@
 ---
+title: "Forum welcome mat"
 permalink: /forum-welcome-mat
 ---
 
-# The Smoothie Forum
+{::nomarkdown}
+<span id="the-smoothie-forum"></span>
+{:/nomarkdown}
 
 Before accessing the forum, please read the following recommendations:
 

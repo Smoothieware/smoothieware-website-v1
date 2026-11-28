@@ -1,8 +1,11 @@
 ---
+title: "Morgan scara"
 permalink: /morgan-scara
 ---
 
-# Morgan SCARA
+{::nomarkdown}
+<span id="morgan-scara"></span>
+{:/nomarkdown}
 
 <!-- learning-diagram:40-morgan-scara -->
 {::nomarkdown}
@@ -13,9 +16,6 @@ permalink: /morgan-scara
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Morgan SCARA uses two rotary joints <a href="#learning-diagram-40-morgan-scara" aria-label="Permanent link to Morgan SCARA uses two rotary joints" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-
-
-
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -39,28 +39,26 @@ SCARA robots use two parallel rotary joints to provide compliance in a plane whi
 
 ### SCARA Characteristics
 
-- **Two rotary joints**: Alpha (proximal) and Beta (distal) joints rotate in parallel planes
-- **Linear Z axis**: Vertical movement via a linear actuator
-- **Horizontal compliance**: The arm can flex horizontally but remains rigid vertically
-- **Fast operation**: Rotary joints allow quick movements in the horizontal plane
-- **Compact workspace**: Semicircular or annular work envelope
-- **High repeatability**: Excellent for repetitive assembly tasks
+- Two rotary joints: Alpha (proximal) and Beta (distal) joints rotate in parallel planes
+- Linear Z axis: Vertical movement via a linear actuator
+- Horizontal compliance: The arm can flex horizontally but remains rigid vertically
+- Fast operation: Rotary joints allow quick movements in the horizontal plane
+- Compact workspace: Semicircular or annular work envelope
+- High repeatability: Excellent for repetitive assembly tasks
 
 ### SCARA Workspace
 
 A SCARA robot's workspace is typically:
-- **Shape**: Semicircular or annular (ring-shaped) in the horizontal plane
-- **Inner radius**: Minimum reach determined by arm lengths
-- **Outer radius**: Maximum reach when both arms are extended
-- **Height**: Determined by the Z axis travel
+- Shape: Semicircular or annular (ring-shaped) in the horizontal plane
+- Inner radius: Minimum reach determined by arm lengths
+- Outer radius: Maximum reach when both arms are extended
+- Height: Determined by the Z axis travel
 
 ## Morgan SCARA Variant
 
 The "Morgan" variant is a specific SCARA implementation that was designed and contributed to the Smoothieware project. It may have specific geometric or kinematic characteristics that differ from standard SCARA implementations.
 
 ## Configuration
-
-
 
 To configure your machine to use the Morgan SCARA arm solution, add this to your configuration file:
 
@@ -88,11 +86,7 @@ arm_solution = morgan
 </versioned>
 {:/nomarkdown}
 
-
-
 ### Configuration Parameters
-
-
 
 Based on the source code, Morgan SCARA likely requires the following parameters (exact names may vary - refer to the source code for definitive information):
 
@@ -182,46 +176,44 @@ max_rate = 300
 </sl-alert>
 {:/nomarkdown}
 
-
-
 ## When to Use Morgan SCARA
 
 SCARA robots are ideal for:
 
 ### Applications ✅
 
-- **Pick and place operations**: Electronic component placement, assembly line work
-- **Assembly tasks**: Screw driving, part insertion, snap-fit assembly
-- **Dispensing**: Adhesive dispensing, solder paste application
-- **Inspection**: Camera-based inspection of parts
-- **Testing**: Probing and testing of electronic assemblies
-- **Packaging**: Placing items into containers or trays
+- Pick and place operations: Electronic component placement, assembly line work
+- Assembly tasks: Screw driving, part insertion, snap-fit assembly
+- Dispensing: Adhesive dispensing, solder paste application
+- Inspection: Camera-based inspection of parts
+- Testing: Probing and testing of electronic assemblies
+- Packaging: Placing items into containers or trays
 
 ### Advantages
 
-- **High speed**: Rotary joints allow very fast horizontal movements
-- **Excellent repeatability**: Ideal for repetitive tasks
-- **Vertical rigidity**: Strong in the Z direction for pressing and insertion
-- **Compact footprint**: Takes up less space than Cartesian robots
-- **Good reach**: Can access a large area relative to its size
+- High speed: Rotary joints allow very fast horizontal movements
+- Excellent repeatability: Ideal for repetitive tasks
+- Vertical rigidity: Strong in the Z direction for pressing and insertion
+- Compact footprint: Takes up less space than Cartesian robots
+- Good reach: Can access a large area relative to its size
 
 ### Disadvantages
 
-- **Complex kinematics**: Inverse kinematics calculations required
-- **Difficult calibration**: Requires precise knowledge of arm lengths and joint offsets
-- **Limited workspace**: Semicircular reach, cannot reach behind itself
-- **Singularities**: Certain positions may be unreachable or unstable
-- **Not intuitive**: G-code commands don't directly correspond to joint movements
+- Complex kinematics: Inverse kinematics calculations required
+- Difficult calibration: Requires precise knowledge of arm lengths and joint offsets
+- Limited workspace: Semicircular reach, cannot reach behind itself
+- Singularities: Certain positions may be unreachable or unstable
+- Not intuitive: G-code commands don't directly correspond to joint movements
 
 ## Calibration Considerations
 
 SCARA robots require careful calibration:
 
-1. **Arm lengths**: Precise measurement of proximal and distal arm segments
-2. **Joint offsets**: Angular offset when joints are at "zero" position
-3. **Z-axis offset**: Height of tool tip relative to base
-4. **Steps per degree**: Calibration of rotary joint steps
-5. **Joint limits**: Physical rotation limits to avoid collisions
+1. Arm lengths: Precise measurement of proximal and distal arm segments
+2. Joint offsets: Angular offset when joints are at "zero" position
+3. Z-axis offset: Height of tool tip relative to base
+4. Steps per degree: Calibration of rotary joint steps
+5. Joint limits: Physical rotation limits to avoid collisions
 
 ## Comparison with Other Arm Solutions
 
@@ -254,8 +246,8 @@ SCARA robots require careful calibration:
 
 For developers or those interested in the implementation details:
 
-- **v1:** [MorganSCARASolution.cpp](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/robot/arm_solutions/MorganSCARASolution.cpp)
-- **v2:** [MorganSCARASolution.cpp](https://github.com/Smoothieware/Smoothieware-v2/blob/main/Firmware/src/robot/arm_solutions/MorganSCARASolution.cpp)
+- v1: [MorganSCARASolution.cpp](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/robot/arm_solutions/MorganSCARASolution.cpp)
+- v2: [MorganSCARASolution.cpp](https://github.com/Smoothieware/Smoothieware-v2/blob/main/Firmware/src/robot/arm_solutions/MorganSCARASolution.cpp)
 
 Reading the source code is highly recommended if you're implementing a Morgan SCARA system, as it contains the exact kinematic equations and parameter names.
 

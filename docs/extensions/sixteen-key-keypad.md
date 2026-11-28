@@ -20,7 +20,7 @@ permalink: /extensions/sixteen-key-keypad
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/sixteen-key-keypad/sixteen-key-keypad-diagram.png" alt="Top view of the keypad board: sockets at the upper left and right, a Qwiic connector on top and a four by four grid of push buttons.">
+    <img src="/images/extensions/sixteen-key-keypad/sixteen-key-keypad-diagram.webp" alt="Top view of the keypad board: sockets at the upper left and right, a Qwiic connector on top and a four by four grid of push buttons.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -79,7 +79,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/sixteen-key-keypad/sixteen-key-keypad-diagram.png" alt="Top view of the keypad board with 10 numbered markers that are explained in the list below.">
+      <img src="/images/extensions/sixteen-key-keypad/sixteen-key-keypad-diagram.webp" alt="Top view of the keypad board with 10 numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:6.1%;top:20.5%" aria-label="1: input socket i in (j1)">1<span class="xb-pop"><b>Input socket I IN (J1)</b> — SDA on contact 8, SCL on 9, interrupt on 3.</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-2" style="left:93.9%;top:20.5%" aria-label="2: chain socket chain (j2)">2<span class="xb-pop"><b>Chain socket CHAIN (J2)</b> — Continues the bus.</span></a>
       <a class="xb-mk xb-pb" href="#tour-3" style="left:75.0%;top:5.7%" aria-label="3: qwiic connector (j3)">3<span class="xb-pop"><b>Qwiic connector (J3)</b> — The same bus on a four-way cable.</span></a>
@@ -323,7 +323,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/sixteen-key-keypad/sixteen-key-keypad-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/sixteen-key-keypad/sixteen-key-keypad-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
-    <tr><td><a href="/images/extensions/sixteen-key-keypad/sixteen-key-keypad-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/sixteen-key-keypad/sixteen-key-keypad-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

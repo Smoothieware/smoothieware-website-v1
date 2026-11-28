@@ -1,9 +1,11 @@
 ---
+title: "Kill pause button"
 permalink: /kill-pause-button
 ---
 
-
-# Kill/Pause Button
+{::nomarkdown}
+<span id="killpause-button"></span>
+{:/nomarkdown}
 
 There are two solutions:
 
@@ -34,8 +36,6 @@ Wire a simple button on two pins.
   The pause mechanism causes the axis to stop immediately with no deceleration, and when restarted it continues at the speed it was going with no acceleration. This will most likely cause the stepper motors to skip and thus lose position.
 </sl-alert>
 {:/nomarkdown}
-
-
 
 The pause button may be configured as a kill switch instead of pause, this will halt all operations and turn off heaters and pause the host. It can be cleared with a {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown} or reset. To enable a kill button the following is added to the config:
 
@@ -68,5 +68,3 @@ unkill_enable = true         # if true, allows the button to clear halt state (2
 {:/nomarkdown}
 
 When in the halted state (after kill button is pressed) the play LED will flash rapidly, whereas when paused it flashes slowly.
-
-

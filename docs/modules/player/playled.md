@@ -1,9 +1,11 @@
 ---
+title: "Play LED"
 permalink: /playled
 ---
 
-
-# Play LED
+{::nomarkdown}
+<span id="play-led"></span>
+{:/nomarkdown}
 
 The Play LED is a visual indicator that shows when Smoothieboard is actively executing G-code from a file.
 
@@ -13,9 +15,9 @@ This is useful for knowing at a glance whether your machine is running a job.
 
 The Play LED:
 
-- **Turns ON** when a file is being played from the SD card
-- **Turns OFF** when no file is being executed
-- **Provides visual feedback** without needing to check a screen or computer
+- Turns ON when a file is being played from the SD card
+- Turns OFF when no file is being executed
+- Provides visual feedback without needing to check a screen or computer
 
 This is particularly helpful when you want to quickly check if a long print job is still running from across the room.
 
@@ -33,10 +35,10 @@ This provides both a visual indicator (LED) and a button for controlling playbac
 
 ### Features of LED Tactile Button
 
-- **Integrated LED**: Shows play status
-- **Button function**: Can be programmed to start/stop/pause execution
-- **Easy installation**: Solders directly to designated pads on the board
-- **Low profile**: Doesn't take up much space
+- Integrated LED: Shows play status
+- Button function: Can be programmed to start/stop/pause execution
+- Easy installation: Solders directly to designated pads on the board
+- Low profile: Doesn't take up much space
 
 ## Simple LED Option
 
@@ -52,14 +54,12 @@ This is a more basic solution that only provides the visual indicator without a 
 
 ### Simple LED Requirements
 
-- **Standard LED**: Any 5mm or 3mm LED will work
-- **Current limiting resistor**: Typically 330Ω to 1kΩ
-- **Two wire connection**: Connect to the designated play LED pins
-- **Polarity matters**: LED must be connected with correct polarity (anode to positive, cathode to negative)
+- Standard LED: Any 5mm or 3mm LED will work
+- Current limiting resistor: Typically 330Ω to 1kΩ
+- Two wire connection: Connect to the designated play LED pins
+- Polarity matters: LED must be connected with correct polarity (anode to positive, cathode to negative)
 
 ## Configuration
-
-
 
 To enable and configure the play LED in your config file:
 
@@ -96,8 +96,6 @@ disable = false                       # Enable LED support
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 The play LED will automatically turn on when a file is being executed from the SD card.
 

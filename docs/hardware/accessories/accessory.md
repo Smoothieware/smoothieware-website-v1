@@ -1,8 +1,11 @@
 ---
+title: "Accessory"
 permalink: /accessory
 ---
 
-# Smoothieware Mini
+{::nomarkdown}
+<span id="smoothieware-mini"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/circuit.png">

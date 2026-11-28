@@ -1,9 +1,11 @@
 ---
+title: "Spindle mosfet control"
 permalink: /spindle-mosfet-control
 ---
 
-
-# Spindle Control with a MOSFET
+{::nomarkdown}
+<span id="spindle-control-with-a-mosfet"></span>
+{:/nomarkdown}
 
 If you are not using a VFD, and your spindle motor is a DC motor of low enough power, you can control it directly using the MOSFETs on the Smoothieboard.
 
@@ -67,25 +69,37 @@ Make sure you properly connect both the input power and output connections.
 
 ## MOSFETs
 
-{% include hardware/power/mosfets-for-include.md %}
+The spindle is switched by one of the MOSFET outputs, wired between the power supply and the MOSFET terminal, which switches to ground.
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="book"></sl-icon>
+  <strong>Learn more:</strong> <a href="/mosfets">MOSFET wiring</a>
+</sl-alert>
+{:/nomarkdown}
 
 In order to configure your Smoothieboard to use a specific MOSFET, you need to know which pin corresponds to which MOSFET.
 
 Here is a recapitulating table to help you find that out:
 
-{% include hardware/power/mosfets-table-for-include.md %}
+The big MOSFETs and the small MOSFETs don't have the same current limits. Check the ratings of your board before you connect a load, exceeding them can damage it.
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="book"></sl-icon>
+  <strong>Learn more:</strong> <a href="/mosfets-table">MOSFET specifications and pairs</a>, <a href="/mosfets">MOSFET wiring</a>
+</sl-alert>
+{:/nomarkdown}
 
 ## Wiring
 
-TODO: diagram
+Diagram {::nomarkdown}<a href="mailto:wolf.arthur@gmail.com">coming soon</a>{:/nomarkdown}.
 
 ## Configuration
 
 Now that you have located which MOSFET you are going to use for Spindle control, and what GPIO pin it corresponds to, you need to add a spindle control section to your configuration file.
 
 We will be doing this using the [Switch](switch) module.
-
-
 
 Add this to your configuration file:
 
@@ -129,8 +143,6 @@ spindle.max_pwm = 255                # set max pwm for the pin default is 255
 </versioned>
 {:/nomarkdown}
 
-
-
 ## Controlling the Spindle
 
 Now that everything is configured, you can use G-codes to control the Spindle.
@@ -173,8 +185,8 @@ Smoothie then measures the real RPM of the spindle and adjusts the PWM value acc
 
 To use this module, you need to connect your spindle to pins with proper hardware support:
 
-- **PWM output pin:** any of {::nomarkdown}<pin>1.18</pin>{:/nomarkdown}, {::nomarkdown}<pin>1.20</pin>{:/nomarkdown}, {::nomarkdown}<pin>1.21</pin>{:/nomarkdown}, {::nomarkdown}<pin>1.23</pin>{:/nomarkdown}, {::nomarkdown}<pin>1.24</pin>{:/nomarkdown}, {::nomarkdown}<pin>1.26</pin>{:/nomarkdown}, {::nomarkdown}<pin>2.0</pin>{:/nomarkdown} - {::nomarkdown}<pin>2.5</pin>{:/nomarkdown}, {::nomarkdown}<pin>2.26</pin>{:/nomarkdown}, {::nomarkdown}<pin>3.25</pin>{:/nomarkdown}
-- **Feedback sensor pin:** must be in port 0 or port 2; {::nomarkdown}<pin>2.6</pin>{:/nomarkdown} and {::nomarkdown}<pin>2.7</pin>{:/nomarkdown} are available on smoothieboard
+- PWM output pin: any of {::nomarkdown}<pin>1.18</pin>{:/nomarkdown}, {::nomarkdown}<pin>1.20</pin>{:/nomarkdown}, {::nomarkdown}<pin>1.21</pin>{:/nomarkdown}, {::nomarkdown}<pin>1.23</pin>{:/nomarkdown}, {::nomarkdown}<pin>1.24</pin>{:/nomarkdown}, {::nomarkdown}<pin>1.26</pin>{:/nomarkdown}, {::nomarkdown}<pin>2.0</pin>{:/nomarkdown} - {::nomarkdown}<pin>2.5</pin>{:/nomarkdown}, {::nomarkdown}<pin>2.26</pin>{:/nomarkdown}, {::nomarkdown}<pin>3.25</pin>{:/nomarkdown}
+- Feedback sensor pin: must be in port 0 or port 2; {::nomarkdown}<pin>2.6</pin>{:/nomarkdown} and {::nomarkdown}<pin>2.7</pin>{:/nomarkdown} are available on smoothieboard
 
 ### PID Configuration Options
 

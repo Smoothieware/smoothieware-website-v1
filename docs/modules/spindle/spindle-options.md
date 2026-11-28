@@ -1,4 +1,5 @@
 ---
+title: "Spindle options"
 permalink: /spindle-options
 ---
 

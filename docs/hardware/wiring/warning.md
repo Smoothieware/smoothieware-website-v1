@@ -1,4 +1,5 @@
 ---
+title: "Warning"
 permalink: /warning
 ---
 

@@ -1,8 +1,11 @@
 ---
+title: "Configuring smoothie"
 permalink: /configuring-smoothie
 ---
 
-# Configuration File
+{::nomarkdown}
+<span id="configuration-file"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/board.png">
@@ -21,8 +24,6 @@ This makes Smoothie incredibly user-friendly and accessible, even for beginners.
 Simply edit the configuration file, **unmount/safely eject** the SD card from the host (in your operating system's menus, not physically), and reset the board (press the reset button, unplug the USB cable, or issue the `reset` command).
 
 The configuration changes will be applied immediately after the board resets.
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -83,11 +84,7 @@ Start from the [V2 Prime 3D-printer example](https://github.com/Smoothieware/Smo
 </versioned>
 {:/nomarkdown}
 
-
-
 ## Configuration File Format
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -129,8 +126,6 @@ This structured format makes the configuration organized and hierarchical, with 
 </versioned>
 {:/nomarkdown}
 
-
-
 You can find a complete list of possible configuration options [here](configuration-options).
 
 {% include project/donate-for-include.md %}
@@ -156,8 +151,6 @@ You can find a complete list of possible configuration options [here](configurat
 </sl-alert>
 {:/nomarkdown}
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -181,10 +174,6 @@ You can find a complete list of possible configuration options [here](configurat
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -212,8 +201,6 @@ The filename must be `config.ini`
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -273,8 +260,6 @@ And now, when configuration is read, Smoothie will read both files, and take the
 
 If you have a long and complex configuration, this can be helpful to organize better.
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -314,11 +299,7 @@ To avoid problems, use the default file from github (see link above) as your sta
 </versioned>
 {:/nomarkdown}
 
-
-
 ## Console configuration commands
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -376,8 +357,6 @@ You can find more information at [Console Commands](/console-commands).
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 ## Config Overrides
 
@@ -447,13 +426,31 @@ M665
 
 ## Advanced pin configuration
 
-{% include hardware/pins/pin-configuration-for-include.md %}
+A pin is an input or output of the board, you name it by its number in the config, see the [pinout](/pinout). You can change how it behaves by adding modifiers after the number, for example `1.19!` inverts it.
+
+| Modifier | Symbol |
+| --- | --- |
+| Invert pin | `!` |
+| Open drain | `o` |
+| Pull up ( default on most pins ) | `^` |
+| Pull down | `v` |
+| No pull up | `-` |
+| Repeater mode | `@` |
+
+Some pins have hardware on the board forcing a given configuration, for example endstop inputs have on-board pull-up resistors which configuration can't remove.
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="book"></sl-icon>
+  <strong>Learn more:</strong> <a href="/pin-configuration">Pin configuration</a>
+</sl-alert>
+{:/nomarkdown}
 
 ## Related Configuration Features
 
 ### Startup Automation
 
-Beyond the main configuration file, Smoothie also supports startup automation through the [on_boot.gcode](on_boot.gcode) file. This allows you to automatically execute G-code commands every time your board boots up.
+Beyond the main configuration file, Smoothie also supports startup automation through the [on_boot.gcode](/on-boot-gcode) file. This allows you to automatically execute G-code commands every time your board boots up.
 
 This is useful for:
 - Automatically homing axes on startup
@@ -461,13 +458,11 @@ This is useful for:
 - Initializing machine state
 - Running calibration routines
 
-See the [on_boot.gcode documentation](on_boot.gcode) for details on how to set this up.
+See the [on_boot.gcode documentation](/on-boot-gcode) for details on how to set this up.
 
 ### SD Card Files
 
 For more information about other special files on the SD card (like `config-override`, `firmware.bin`, etc.), see the [SD Card documentation](sd-card).
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -499,5 +494,3 @@ If you need to restrict access to certain settings, consider using read-only fil
 </v2>
 </versioned>
 {:/nomarkdown}
-
-

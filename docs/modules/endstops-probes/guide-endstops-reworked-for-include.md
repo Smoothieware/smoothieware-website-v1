@@ -4,7 +4,9 @@
 </a>
 {:/nomarkdown}
 
-# Endstops
+{::nomarkdown}
+<span id="endstops"></span>
+{:/nomarkdown}
 
 <!-- learning-diagram:25-guide-endstops -->
 {::nomarkdown}
@@ -81,8 +83,8 @@ Other types exist like optical or Hall-effect sensors.
 [Mechanical end-stops](https://reprap.org/wiki/Mechanical_Endstop) are simple interrupters. Most have three connection points, to which you have to attach your wires:
 
 - **C**: Common
-- **NO**: Normally Open, meaning it is not connected to **C** when the interrupter is not pressed, and connected to **C** when the interrupter is pressed.
-- **NC**: Normally Closed, meaning it is connected to **C** when the interrupter is not pressed, and not connected to **C** when the interrupter is pressed.
+- NO: Normally Open, meaning it is not connected to **C** when the interrupter is not pressed, and connected to **C** when the interrupter is pressed.
+- NC: Normally Closed, meaning it is connected to **C** when the interrupter is not pressed, and not connected to **C** when the interrupter is pressed.
 
 Use **C** and **NC** for the usual wiring.
 

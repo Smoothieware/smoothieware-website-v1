@@ -3,7 +3,9 @@ layout: default
 title: Code Tag Popup Test
 ---
 
-# Code Tag Popup Test
+{::nomarkdown}
+<span id="code-tag-popup-test"></span>
+{:/nomarkdown}
 
 This page tests the G-code and M-code popup functionality including the new **related codes** feature.
 

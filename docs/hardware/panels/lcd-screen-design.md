@@ -1,9 +1,11 @@
 ---
+title: "Lcd screen design"
 permalink: /lcd-screen-design
 ---
 
-
-# LCD Screen Design
+{::nomarkdown}
+<span id="lcd-screen-design"></span>
+{:/nomarkdown}
 
 The goal of this page is to work on design ideas for LCD screens for the panel system in Smoothie.
 

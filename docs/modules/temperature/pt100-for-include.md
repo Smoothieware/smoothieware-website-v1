@@ -1,5 +1,7 @@
 
-# PT100 Temperature Sensors
+{::nomarkdown}
+<span id="pt100-temperature-sensors"></span>
+{:/nomarkdown}
 
 A [PT100](https://en.wikipedia.org/wiki/Resistance_thermometer) is a commonly used RTD (Resistance Temperature Detector).
 
@@ -31,8 +33,6 @@ Other PT100 amplifiers may be supported later (i.e. MAX31865 via SPI).
 {:/nomarkdown}
 
 ## Configuration
-
-
 
 You wire a PT100 *almost* the same way you would a thermistor, but you need to specify to Smoothie it is a PT100 and where you connected the amplifier signal output:
 
@@ -67,8 +67,6 @@ hotend.e3d_amplifier_pin = 1.30     # must be a free ADC pin, not a temperature 
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>

@@ -3,7 +3,9 @@ permalink: /smoothieboard-v2-schematic
 title: Smoothieboard V2 Prime Schematic Reference
 ---
 
-# Smoothieboard V2 Prime Schematic Reference
+{::nomarkdown}
+<span id="smoothieboard-v2-prime-schematic-reference"></span>
+{:/nomarkdown}
 
 This page provides a complete technical reference for the Smoothieboard V2 Prime hardware, extracted from the KiCad schematics. It covers all major subsystems including the microcontroller, power system, motor drivers, MOSFETs, inputs, and expansion headers.
 
@@ -25,8 +27,6 @@ This page provides a complete technical reference for the Smoothieboard V2 Prime
   <a href="/smoothieboard-v2-differences">V1 vs V2 Differences</a>
 </sl-alert>
 {:/nomarkdown}
-
----
 
 ## Schematic Page Overview
 
@@ -127,8 +127,6 @@ Three identical ideal diode circuits for automatic power source selection.
 
 Four identical TMC2660 stepper motor driver circuits (Alpha, Beta, Gamma, Delta).
 
----
-
 ## 1. Schematic Sheet Structure
 
 | Sheet | File | Description |
@@ -147,13 +145,11 @@ Four identical TMC2660 stepper motor driver circuits (Alpha, Beta, Gamma, Delta)
 | 12/13 | `driver-2660.sch` | Motor driver C (TMC2660) |
 | 13/13 | `driver-2660.sch` | Motor driver D (TMC2660) |
 
----
-
 ## 2. Microcontroller (STM32H745XIHx)
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>STM32H745 MCU</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>STM32H745 MCU</h3></div>
   <a href="/images/v2-schematic/parts/mcu-stm32h745.png">
     <img src="/images/v2-schematic/parts/mcu-stm32h745.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -296,13 +292,11 @@ Baud rate: 115200 8N1
 
 **Board Detection:** 4-bit ID via <pin>PF3</pin>, <pin>PF5</pin>, <pin>PF7</pin>, <pin>PE10</pin> determines driver variant (TMC2590 vs TMC2660).
 
----
-
 ## 3. Power System
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>5V DC-DC Converter (TPS5430)</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>5V DC-DC Converter (TPS5430)</h3></div>
   <a href="/images/v2-schematic/parts/power-5v-dcdc.png">
     <img src="/images/v2-schematic/parts/power-5v-dcdc.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -344,8 +338,8 @@ External 5V ────────────► MT9700 Current Limit ──�
 | **Output Capacitors** | C112, C119 (22µF each) |
 
 **Disable Jumper:**
-- **JP16:** Cut to disable onboard 5V regulator
-- **Location:** Near OSHW logo, top side
+- JP16: Cut to disable onboard 5V regulator
+- Location: Near OSHW logo, top side
 
 ### 3.3 3.3V DC-DC Converter (MT3410L)
 
@@ -386,9 +380,9 @@ External 5V ────────────► MT9700 Current Limit ──�
 {:/nomarkdown}
 
 Three identical ideal diode circuits (pages 7-9) enable automatic selection between power sources:
-- **5V Regulator Output** → 5V rail
-- **USB 5V** → 5V rail (current limited)
-- **External 5V** → 5V rail (current limited)
+- 5V Regulator Output → 5V rail
+- USB 5V → 5V rail (current limited)
+- External 5V → 5V rail (current limited)
 
 Uses SQ3493EV dual N-channel MOSFETs with MBT3906DW1 transistor control.
 
@@ -419,8 +413,8 @@ The UVLO circuit (U25 BD4722G) monitors VMOT and signals the MCU when voltage dr
 {:/nomarkdown}
 
 Both USB 5V and external 5V inputs are protected by MT9700 current limiting switches:
-- **USB 5V (U18):** Limited to 1.44A (R63=4.7k)
-- **External 5V (J10):** Limited to 0.32A (R65=21.5k)
+- USB 5V (U18): Limited to 1.44A (R63=4.7k)
+- External 5V (J10): Limited to 0.32A (R65=21.5k)
 
 ### 3.8 RTC Backup Battery
 
@@ -458,13 +452,11 @@ A CR2032 coin cell (B5817WS holder) maintains RTC time when main power is off.
 </div>
 {:/nomarkdown}
 
----
-
 ## 4. Motor Drivers (TMC2660)
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>Motor Driver Blocks (Main Sheet)</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>Motor Driver Blocks (Main Sheet)</h3></div>
   <a href="/images/v2-schematic/parts/motor-drivers-sheet.png">
     <img src="/images/v2-schematic/parts/motor-drivers-sheet.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -474,7 +466,7 @@ A CR2032 coin cell (B5817WS holder) maintains RTC time when main power is off.
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>Motor Driver Blocks C/D</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>Motor Driver Blocks C/D</h3></div>
   <a href="/images/v2-schematic/parts/motor-drivers-sheet-2.png">
     <img src="/images/v2-schematic/parts/motor-drivers-sheet-2.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -484,7 +476,7 @@ A CR2032 coin cell (B5817WS holder) maintains RTC time when main power is off.
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>TMC2660 Driver Circuit</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>TMC2660 Driver Circuit</h3></div>
   <a href="/images/v2-schematic/parts/motor-driver-tmc2660.png">
     <img src="/images/v2-schematic/parts/motor-driver-tmc2660.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -540,13 +532,11 @@ A CR2032 coin cell (B5817WS holder) maintains RTC time when main power is off.
 | C | {::nomarkdown}<pin>PK2</pin>{:/nomarkdown} | SG_TST_C |
 | D | {::nomarkdown}<pin>PK3</pin>{:/nomarkdown} | SG_TST_D |
 
----
-
 ## 5. MOSFET Outputs
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>MOSFETs Block (Main Sheet)</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>MOSFETs Block (Main Sheet)</h3></div>
   <a href="/images/v2-schematic/parts/mosfets-sheet.png">
     <img src="/images/v2-schematic/parts/mosfets-sheet.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -556,7 +546,7 @@ A CR2032 coin cell (B5817WS holder) maintains RTC time when main power is off.
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>MOSFET Gate Driver (74HCT541)</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>MOSFET Gate Driver (74HCT541)</h3></div>
   <a href="/images/v2-schematic/parts/mosfet-buffer-ssr.png">
     <img src="/images/v2-schematic/parts/mosfet-buffer-ssr.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -618,13 +608,11 @@ A CR2032 coin cell (B5817WS holder) maintains RTC time when main power is off.
 </div>
 {:/nomarkdown}
 
----
-
 ## 6. Inputs
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>Inputs Block (Main Sheet)</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>Inputs Block (Main Sheet)</h3></div>
   <a href="/images/v2-schematic/parts/inputs-sheet.png">
     <img src="/images/v2-schematic/parts/inputs-sheet.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -714,13 +702,11 @@ All endstops are buffered and ESD protected.
 | **Voltage Range** | 3-45V (configurable via JP7) |
 | **Protection** | ESD + buffering + comparator |
 
----
-
 ## 7. Expansion Headers (Gadgeteer)
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>Expansion Headers Schematic</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>Expansion Headers Schematic</h3></div>
   <a href="/images/v2-schematic/parts/expansion-headers.png">
     <img src="/images/v2-schematic/parts/expansion-headers.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -764,18 +750,16 @@ All endstops are buffered and ESD protected.
 {:/nomarkdown}
 
 The expansion headers connect to dedicated GPIO banks on the MCU, with some headers providing special peripheral functions:
-- **GD:** UART4 for serial communication
-- **GE:** TIM15 for PWM output
-- **GG:** I2C4 for sensor/display buses
-- **GH:** ADC channels for analog input
-
----
+- GD: UART4 for serial communication
+- GE: TIM15 for PWM output
+- GG: I2C4 for sensor/display buses
+- GH: ADC channels for analog input
 
 ## 8. USB
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>USB Host + Device Circuit</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>USB Host + Device Circuit</h3></div>
   <a href="/images/v2-schematic/parts/usb-host-device.png">
     <img src="/images/v2-schematic/parts/usb-host-device.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -798,13 +782,11 @@ The expansion headers connect to dedicated GPIO banks on the MCU, with some head
 | USB_HOST_D+ | {::nomarkdown}<pin>PB14</pin>{:/nomarkdown} |
 | USB_PWR_ON | {::nomarkdown}<pin>PB13</pin>{:/nomarkdown} |
 
----
-
 ## 9. Ethernet
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>Ethernet Block (Main Sheet)</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>Ethernet Block (Main Sheet)</h3></div>
   <a href="/images/v2-schematic/parts/ethernet-sheet.png">
     <img src="/images/v2-schematic/parts/ethernet-sheet.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -814,7 +796,7 @@ The expansion headers connect to dedicated GPIO banks on the MCU, with some head
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>Ethernet PHY (LAN8720A)</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>Ethernet PHY (LAN8720A)</h3></div>
   <a href="/images/v2-schematic/parts/ethernet-phy.png">
     <img src="/images/v2-schematic/parts/ethernet-phy.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -849,8 +831,6 @@ The expansion headers connect to dedicated GPIO banks on the MCU, with some head
 
 The board uses an RJ45 connector with integrated magnetics (HR911105A), including link and activity LEDs.
 
----
-
 ## 10. Board Detection
 
 The board automatically detects its type via 4 board ID pins:
@@ -862,16 +842,14 @@ The board automatically detects its type via 4 board ID pins:
 | BDET_PF7 | {::nomarkdown}<pin>PF7</pin>{:/nomarkdown} | Board detect bit 2 |
 | BDET_PE10 | {::nomarkdown}<pin>PE10</pin>{:/nomarkdown} | Board detect bit 3 |
 
-- **Board ID 0:** TMC2590 drivers
-- **Board ID 1:** TMC2660 drivers
-
----
+- Board ID 0: TMC2590 drivers
+- Board ID 1: TMC2660 drivers
 
 ## 10. LED Indicators
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>Debug LED Circuit</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>Debug LED Circuit</h3></div>
   <a href="/images/v2-schematic/parts/leds.png">
     <img src="/images/v2-schematic/parts/leds.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -905,13 +883,11 @@ The board automatically detects its type via 4 board ID pins:
 | 3.3V LED | Logic power present |
 | Per-MOSFET LEDs | Output state |
 
----
-
 ## 12. Mounting Holes
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>PCB Mounting Holes</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>PCB Mounting Holes</h3></div>
   <a href="/images/v2-schematic/parts/mounting-holes.png">
     <img src="/images/v2-schematic/parts/mounting-holes.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -921,15 +897,11 @@ The board automatically detects its type via 4 board ID pins:
 
 The board includes four M3 mounting holes at standard locations. Holes H3 and H4 include grounding pads for chassis connection.
 
----
-
 ## Related Pages
 
 - [Smoothieboard V2 Prime](/smoothieboard-v2-prime) - Technical specifications
 - [STM32H7 Pin Usage](/stm32h7-pin-usage) - Complete pin assignments
 - [Smoothieboard V2 Differences](/smoothieboard-v2-differences) - V1 vs V2 comparison
 - [Pin Configuration](/pin-configuration) - How to configure pins
-
----
 
 *Last updated: November 2025*

@@ -1,8 +1,11 @@
 ---
+title: "Dokuwiki"
 permalink: /dokuwiki
 ---
 
-# DokuWiki
+{::nomarkdown}
+<span id="dokuwiki"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/binary-code.png">
@@ -16,9 +19,9 @@ It is loved by users for its clean and readable [syntax](editing-the-wiki).
 
 The ease of maintenance, backup and integration makes it an administrator's favorite.
 
-Built in [access controls](acl) and [authentication connectors](auth) make DokuWiki especially useful in the enterprise context and the large number of [plugins](plugins) contributed by its vibrant community allow for a broad range of use cases beyond a traditional wiki.
+Built in [access controls](https://www.dokuwiki.org/acl) and [authentication connectors](https://www.dokuwiki.org/auth) make DokuWiki especially useful in the enterprise context and the large number of [plugins](https://www.dokuwiki.org/plugins) contributed by its vibrant community allow for a broad range of use cases beyond a traditional wiki.
 
-Read the [DokuWiki Manual](manual) to unleash the full power of DokuWiki.
+Read the [DokuWiki Manual](https://www.dokuwiki.org/manual) to unleash the full power of DokuWiki.
 
 ## Download
 
@@ -30,44 +33,44 @@ All documentation and additional information besides the [syntax description](ed
 
 **About DokuWiki**
 
-- [A feature list](features) :!:
-- [Happy Users](users)
-- [Who wrote about it](press)
-- [What Bloggers think](blogroll)
+- [A feature list](https://www.dokuwiki.org/features) :!:
+- [Happy Users](https://www.dokuwiki.org/users)
+- [Who wrote about it](https://www.dokuwiki.org/press)
+- [What Bloggers think](https://www.dokuwiki.org/blogroll)
 - [Compare it with other wiki software](http://www.wikimatrix.org/show/DokuWiki)
 
 **Installing DokuWiki**
 
-- [System Requirements](requirements)
+- [System Requirements](https://www.dokuwiki.org/requirements)
 - [Download DokuWiki](http://download.dokuwiki.org/) :!:
-- [Change Log](changes)
-- [How to install or upgrade](install) :!:
-- [Configuration](config)
+- [Change Log](https://www.dokuwiki.org/changes)
+- [How to install or upgrade](https://www.dokuwiki.org/install) :!:
+- [Configuration](https://www.dokuwiki.org/config)
 
 **Using DokuWiki**
 
 - [Wiki Syntax](editing-the-wiki)
-- [The manual](manual) :!:
-- [Frequently Asked Questions (FAQ)](faq)
+- [The manual](https://www.dokuwiki.org/manual) :!:
+- [Frequently Asked Questions (FAQ)](https://www.dokuwiki.org/faq)
 - [Glossary](glossary)
 - [Search for DokuWiki help and documentation](http://search.dokuwiki.org)
 
 **Customizing DokuWiki**
 
-- [Tips and Tricks](tips)
-- [How to create and use templates](template)
-- [Installing plugins](plugins)
-- [Development Resources](development)
+- [Tips and Tricks](https://www.dokuwiki.org/tips)
+- [How to create and use templates](https://www.dokuwiki.org/template)
+- [Installing plugins](https://www.dokuwiki.org/plugins)
+- [Development Resources](https://www.dokuwiki.org/development)
 
 **DokuWiki Feedback and Community**
 
-- [Subscribe to the newsletter](newsletter) :!:
+- [Subscribe to the newsletter](https://www.dokuwiki.org/newsletter) :!:
 - [Join the mailing list](mailing-lists-welcome-mat)
 - [Check out the user forum](http://forum.dokuwiki.org)
 - [Talk to other users in the IRC channel](irc)
 - [Submit bugs and feature wishes](https://github.com/splitbrain/dokuwiki/issues)
 - [Share your experiences in the WikiMatrix forum](http://www.wikimatrix.org/forum/viewforum.php?id=10)
-- [Some humble thanks](thanks)
+- [Some humble thanks](https://www.dokuwiki.org/thanks)
 
 ## Copyright
 

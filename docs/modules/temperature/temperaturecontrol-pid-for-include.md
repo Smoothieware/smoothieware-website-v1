@@ -1,5 +1,4 @@
 
-
 <!-- learning-diagram:43-pid-control -->
 {::nomarkdown}
 <figure id="learning-diagram-43-pid-control" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
@@ -9,7 +8,7 @@
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">PID corrects temperature error three ways <a href="#learning-diagram-43-pid-control" aria-label="Permanent link to PID corrects temperature error three ways" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-### Temperature Control PID
+## Temperature Control PID
 
 {::nomarkdown}
 <a href="/images/temporary/joystick-generic.jpg">
@@ -17,7 +16,7 @@
 </a>
 {:/nomarkdown}
 
-#### Why PID is Important
+### Why PID is Important
 
 PID is crucial for stable temperature control.
 
@@ -34,9 +33,7 @@ This overshooting is something we do not want.
 
 It means reaching temperatures that could be undesirable, and it means you will not be able to correctly stabilize the temperature.
 
----
-
-#### What is PID?
+### What is PID?
 
 The solution to this is [PID](http://en.wikipedia.org/wiki/PID_controller).
 
@@ -48,14 +45,9 @@ It uses some math, allowing us to correct those problems by turning the heater o
 - **I**ntegral - Responds to accumulated error over time
 - **D**erivative - Responds to rate of change of error
 
----
-
-
-#### Configuring PID Values
+### Configuring PID Values
 
 The P, I, and D factors are configured in your config file as follows:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -89,8 +81,6 @@ hotend.d_factor = 100
 </versioned>
 {:/nomarkdown}
 
-
-
 {::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
@@ -98,9 +88,7 @@ hotend.d_factor = 100
 </sl-alert>
 {:/nomarkdown}
 
----
-
-#### Finding the Right Values
+### Finding the Right Values
 
 The really tricky thing is to find the right values for these 3 factors.
 
@@ -108,7 +96,7 @@ The default ones are most probably wrong for your setup.
 
 So unless you have been given those values with your hardware, or you are a PID grand-master, you will need some help finding the optimal values.
 
-##### PID Auto-Tuning
+#### PID Auto-Tuning
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
@@ -119,30 +107,26 @@ So unless you have been given those values with your hardware, or you are a PID 
 
 To auto-tune your PID values:
 
-1. **Start the auto-tune process:**
+1. Start the auto-tune process:
    {::nomarkdown}<mcode>M303</mcode>{:/nomarkdown} E0 S200
    - {::nomarkdown}<raw>E0</raw>{:/nomarkdown} specifies the hotend (use {::nomarkdown}<raw>E1</raw>{:/nomarkdown}, {::nomarkdown}<raw>E2</raw>{:/nomarkdown}, etc. for other extruders)
    - {::nomarkdown}<raw>S200</raw>{:/nomarkdown} is the target temperature (adjust to your typical printing temperature)
 
-2. **Wait for completion** - The process will take several minutes as it cycles the heater and measures response
+2. Wait for completion - The process will take several minutes as it cycles the heater and measures response
 
-3. **Review the results** - The auto-tune will output the calculated PID values
+3. Review the results - The auto-tune will output the calculated PID values
 
-4. **Update your config** - Add the new values to your config file
+4. Update your config - Add the new values to your config file
 
-5. **Test** - Heat to your target temperature and verify stability
+5. Test - Heat to your target temperature and verify stability
 
----
-
-#### Manual PID Tuning
+### Manual PID Tuning
 
 If auto-tuning doesn't work well for your setup, you can manually tune:
 
-##### Starting Values
+#### Starting Values
 
 Begin with conservative values:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -176,19 +160,17 @@ hotend.d_factor = 100
 </versioned>
 {:/nomarkdown}
 
+#### Tuning Process
 
-
-##### Tuning Process
-
-1. **Adjust P first:**
+1. Adjust P first:
    - Too low: Slow to reach temperature, large oscillations
    - Too high: Fast oscillations, unstable
 
-2. **Then adjust I:**
+2. Then adjust I:
    - Too low: Won't eliminate steady-state error
    - Too high: Overshoots, slow to stabilize
 
-3. **Finally adjust D:**
+3. Finally adjust D:
    - Too low: More overshoot
    - Too high: Very sensitive, noisy
 
@@ -199,38 +181,34 @@ hotend.d_factor = 100
 </sl-alert>
 {:/nomarkdown}
 
----
-
-#### Different Heater Types
+### Different Heater Types
 
 Different heater configurations may require different tuning approaches:
 
-##### High-Power Heaters
+#### High-Power Heaters
 
 High-power heaters (like cartridge heaters) may need:
 - Lower P values
 - Higher D values
 - Faster response times
 
-##### Low-Power Heaters
+#### Low-Power Heaters
 
 Low-power heaters (like resistive wire) may need:
 - Higher P values
 - More integral action
 - Slower response tuning
 
-##### Heated Beds
+#### Heated Beds
 
 Heated beds typically need:
 - Much lower P values due to large thermal mass
 - More integral action for steady-state
 - Lower D values due to slow thermal response
 
----
+### Troubleshooting PID Issues
 
-#### Troubleshooting PID Issues
-
-##### Temperature Oscillates
+#### Temperature Oscillates
 
 **Symptom:** Temperature swings up and down around target
 
@@ -239,7 +217,7 @@ Heated beds typically need:
 - Increase D factor
 - Check for good thermal coupling between heater and thermistor
 
-##### Slow to Reach Temperature
+#### Slow to Reach Temperature
 
 **Symptom:** Takes a long time to heat up
 
@@ -248,7 +226,7 @@ Heated beds typically need:
 - Check PWM frequency settings
 - Verify heater power is adequate
 
-##### Overshoots Temperature
+#### Overshoots Temperature
 
 **Symptom:** Temperature goes past target then settles
 
@@ -257,7 +235,7 @@ Heated beds typically need:
 - Increase D factor
 - Reduce I factor
 
-##### Won't Stabilize
+#### Won't Stabilize
 
 **Symptom:** Can't maintain steady temperature
 
@@ -266,15 +244,11 @@ Heated beds typically need:
 - Check for environmental factors (drafts, etc.)
 - Verify thermistor is working correctly
 
----
+### Advanced Configuration
 
-#### Advanced Configuration
-
-##### PWM Frequency
+#### PWM Frequency
 
 The PWM frequency can affect PID performance:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -304,15 +278,11 @@ hotend.pwm_frequency = 1000
 </versioned>
 {:/nomarkdown}
 
-
-
 Higher frequencies (1000-4000 Hz) are typically better for solid-state relays and MOSFETs.
 
-##### Bang-Bang Mode
+#### Bang-Bang Mode
 
 For very simple setups, you can disable PID entirely:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -342,22 +312,16 @@ hotend.bang_bang = true
 </versioned>
 {:/nomarkdown}
 
-
-
 This uses simple on/off control. Not recommended for most applications.
 
----
-
-#### Further Reading
+### Further Reading
 
 - [Temperature Control module documentation](/temperaturecontrol)
-- [Thermistor configuration](/thermistors)
-- [Heater configuration](/heater)
+- [Thermistor configuration](/temperaturecontrol-thermistor-choice)
+- [Heater configuration](/temperaturecontrol)
 - {::nomarkdown}<mcode>M303</mcode>{:/nomarkdown} G-code documentation (see [supported G-codes](/supported-g-codes))
 
----
-
-#### Safety Notes
+### Safety Notes
 
 {::nomarkdown}
 <sl-alert variant="danger" open>

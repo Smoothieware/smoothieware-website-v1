@@ -1,9 +1,11 @@
 ---
+title: "Supported g codes"
 permalink: /supported-g-codes
 ---
 
-
-# Supported G-Codes
+{::nomarkdown}
+<span id="supported-g-codes"></span>
+{:/nomarkdown}
 
 Smoothie is primarily a [G-code](http://en.wikipedia.org/wiki/G-code) interpreter.
 
@@ -40,8 +42,6 @@ table td:nth-child(3) {
   width: 15%;
 }
 </style>
-
-
 
 | G-Code | Description | Example |
 | ------ | ----------- | ------- |
@@ -91,8 +91,6 @@ table td:nth-child(3) {
 | <gcode>G92.1</gcode> | Clear the <gcode>G92</gcode> and <gcode>G30</gcode> Znnn offsets | <gcode>G92.1</gcode> |
 | <gcode>G92.4</gcode> | manually set homing (MCS) for XYZ  | <gcode>G92.4</gcode> X0 Y0 Z0 |
 | <gcode>G94</gcode> | Feedrate mode (motion per minute) - standard modal command for feedrate units (mm/min) | <gcode>G94</gcode> |
-
-
 
 {::nomarkdown}
 <sl-alert variant="warning" open>

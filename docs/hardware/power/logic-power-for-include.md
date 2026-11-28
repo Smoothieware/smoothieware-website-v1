@@ -1,6 +1,6 @@
-# Logic Power Inputs
-
-
+{::nomarkdown}
+<span id="logic-power-inputs"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -17,8 +17,8 @@ There are different ways of providing logic power to your board.
 
 Your board needs two sorts of power to work:
 
-- **12-24V power** to turn motors, heat hotends, etc.
-- **5V (or "logic") power** to power the microcontroller (the brain)
+- 12-24V power to turn motors, heat hotends, etc.
+- 5V (or "logic") power to power the microcontroller (the brain)
 
 ## Three Ways to Provide 5V Power
 
@@ -74,8 +74,8 @@ The board's logic circuits (5V line) typically consume up to 500mA current (what
 
 Your board needs two sorts of power to work:
 
-- **12-24V power** to turn motors, heat hotends, etc.
-- **5V (or "logic") power** to power the microcontroller (the brain)
+- 12-24V power to turn motors, heat hotends, etc.
+- 5V (or "logic") power to power the microcontroller (the brain)
 
 ## Three 5V Power Sources
 
@@ -153,10 +153,10 @@ This is useful when you:
 
 Smoothieboard v2 uses **ideal diode ORing** for automatic power source selection:
 
-- **Automatic switching**: The board selects the source with the highest voltage
-- **Backflow prevention**: Power cannot flow backward between sources
-- **Minimal voltage drop**: Only ~tens of mV loss (vs ~600mV with standard diodes on v1)
-- **No manual switching**: Connect everything, and it just works
+- Automatic switching: The board selects the source with the highest voltage
+- Backflow prevention: Power cannot flow backward between sources
+- Minimal voltage drop: Only ~tens of mV loss (vs ~600mV with standard diodes on v1)
+- No manual switching: Connect everything, and it just works
 
 **Typical priority order:**
 1. Onboard regulator (if Vmot present)
@@ -181,8 +181,8 @@ Smoothieboard v2 has several LEDs to help you monitor power status:
 
 You can physically disable individual power sources by cutting jumpers:
 
-- **JP15**: Cut to disable USB 5V input (useful when connecting Raspberry Pi via USB)
-- **JP16**: Cut to disable onboard 5V regulator (if using external 5V supply exclusively)
+- JP15: Cut to disable USB 5V input (useful when connecting Raspberry Pi via USB)
+- JP16: Cut to disable onboard 5V regulator (if using external 5V supply exclusively)
 
 {::nomarkdown}
 <sl-alert variant="danger" open>
@@ -213,5 +213,3 @@ The onboard 3A regulator handles this comfortably with headroom to spare!
 </v2>
 </versioned>
 {:/nomarkdown}
-
-

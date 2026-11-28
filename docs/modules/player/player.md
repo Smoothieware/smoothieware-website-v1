@@ -1,9 +1,11 @@
 ---
+title: "Player"
 permalink: /player
 ---
 
-
-# Playing G-code files
+{::nomarkdown}
+<span id="playing-g-code-files"></span>
+{:/nomarkdown}
 
 The Player module allows you to play files from the SD card.
 
@@ -16,8 +18,6 @@ Mac users beware: it appears that the play function does not accept files that h
 Files on sdcard **MUST** be line terminated by `\n` **ONLY**, not `\r` (Note for MAC users).
 
 On the very latest version of smoothieware it will tolerate `\r\n` terminated lines.
-
-
 
 ## Configuration
 
@@ -61,8 +61,6 @@ play /sd/gcodefile.gcode -v
   You can possibly use the <mcode>M24</mcode> G-code instead.
 </sl-alert>
 
-
-
 ### `progress`
 
 When a file is playing, you can use the `progress` command to get a report of the current position in the file, and elapsed time.
@@ -76,8 +74,6 @@ You can also use the `abort` command to stop the execution of the file.
 Can be used for either sd card playing or when streaming from Pronterface or Octoprint.
 
 Will suspend a print in progress. It does the following:
-
-
 
 1. Send pause to upstream host, or pause if printing from sd
 2. Wait for empty queue
@@ -100,9 +96,20 @@ This could be triggered by a Switch module to setup a simple out of filament det
   <strong>Performance Note:</strong> The queue must drain before it will suspend. If you need to have the system suspend quicker the only way to do it is to set the config variable <setting v1="mm_per_line_segment" v2="motion control.mm_per_line_segment"></setting> to <code>1</code>. This will mean it will stop within 32mm, but there is a performance penalty for segmenting when you do not need to.
 </sl-alert>
 
+## Stopping Smoothie
 
+There are several ways to stop a file being played : 
 
-{% include troubleshooting/stopping-smoothie-for-include.md %}
+* {::nomarkdown}<mcode>M26</mcode>{:/nomarkdown} ( abort ) stops the print, heaters stay as they are, and the file must be restarted from the beginning
+* {::nomarkdown}<mcode>M600</mcode>{:/nomarkdown} ( suspend ) stops once the movement queue is empty and turns heaters off by default, you resume with resume or {::nomarkdown}<mcode>M601</mcode>{:/nomarkdown}
+* {::nomarkdown}<mcode>M112</mcode>{:/nomarkdown} or the kill button is the emergency stop : heaters are turned off, the position is lost, and you need {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown} then homing
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="book"></sl-icon>
+  <strong>Learn more:</strong> <a href="/stopping-smoothie">Stopping Smoothie</a>
+</sl-alert>
+{:/nomarkdown}
 
 ### `resume`
 
@@ -116,8 +123,6 @@ Will resume a suspended print. It does the following:
 ## G-codes
 
 The following G-codes are supported by the Player module:
-
-
 
 - {::nomarkdown}<mcode>M21</mcode>{:/nomarkdown} : Initialize the SD card. This does nothing in Smoothie but is kept for compatibility
 - {::nomarkdown}<mcode>M23</mcode>{:/nomarkdown} : Select a file, for example : {::nomarkdown}<mcode>M23</mcode>{:/nomarkdown} file.gcode

@@ -1,8 +1,11 @@
 ---
+title: "Smoopi"
 permalink: /smoopi
 ---
 
-# Smoopi
+{::nomarkdown}
+<span id="smoopi"></span>
+{:/nomarkdown}
 
 ## Overview
 
@@ -25,7 +28,7 @@ The Host is suitable for controlling both 3D printers and CNC and Laser machines
 
 Installation instructions can be found in the upstream [INSTALL.md](https://github.com/wolfmanjm/kivy-smoothie-host/blob/master/INSTALL.md).
 
-There is a convenient RPI [image](http://smoothieware.org/_media/bin/smoopi.img) file that can be copied to an SD card for a ready-to-go installation.
+There is a convenient RPI [image](https://web.archive.org/web/2020/http://smoothieware.org/_media/bin/smoopi.img) file that can be copied to an SD card for a ready-to-go installation.
 
 ### Linux serial-port permissions
 

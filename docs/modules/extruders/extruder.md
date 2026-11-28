@@ -1,8 +1,7 @@
 ---
+title: "Extruder"
 permalink: /extruder
 ---
-
-
 
 <!-- learning-diagram:46-extruder-path -->
 {::nomarkdown}

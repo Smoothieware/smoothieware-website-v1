@@ -1,4 +1,4 @@
-### MOSFETs
+## MOSFETs
 
 {::nomarkdown}
 <a href="/images/temporary/mosfet-generic.jpg">
@@ -12,8 +12,6 @@
   <strong>Safety Warning:</strong> If it will burn your skin, don't touch it. Simple.
 </sl-alert>
 {:/nomarkdown}
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -123,31 +121,27 @@ Use SSR outputs to control external solid-state relays for:
 ### Power LED Indicators
 
 Each MOSFET output has its own LED indicator showing when it's active:
-- **Hotend1 LED**: Hotend 1 heater active
-- **Hotend2 LED**: Hotend 2 heater active
-- **Fan1 LED**: Fan 1 active
-- **Fan2 LED**: Fan 2 active
-- **Bed LED**: Heated bed active
+- Hotend1 LED: Hotend 1 heater active
+- Hotend2 LED: Hotend 2 heater active
+- Fan1 LED: Fan 1 active
+- Fan2 LED: Fan 2 active
+- Bed LED: Heated bed active
 
 {::nomarkdown}
 </v2>
 </versioned>
 {:/nomarkdown}
 
-
-
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
 {:/nomarkdown}
 
-- **Big MOSFET pair**: Their outputs are labeled **P{::nomarkdown}<pin>2.7</pin>{:/nomarkdown}** and **P{::nomarkdown}<pin>2.5</pin>{:/nomarkdown}** on the schematic, the input connector for them is found between them. They are found on the 4X and 5X boards. To power those MOSFETs, you need to provide them with power by wiring their power input to the power supply.
+- Big MOSFET pair: Their outputs are labeled **P{::nomarkdown}<pin>2.7</pin>{:/nomarkdown}** and **P{::nomarkdown}<pin>2.5</pin>{:/nomarkdown}** on the schematic, the input connector for them is found between them. They are found on the 4X and 5X boards. To power those MOSFETs, you need to provide them with power by wiring their power input to the power supply.
 
-- **Small MOSFET pair**: Their outputs are labeled **P{::nomarkdown}<pin>2.6</pin>{:/nomarkdown}** and **P{::nomarkdown}<pin>2.4</pin>{:/nomarkdown}** on the schematic, the input connector for them is found by their side, between P{::nomarkdown}<pin>2.6</pin>{:/nomarkdown} and P{::nomarkdown}<pin>1.23</pin>{:/nomarkdown}. They are found on all of the boards. To power those MOSFETs, you need to provide them with power by wiring their power input to the power supply.
+- Small MOSFET pair: Their outputs are labeled **P{::nomarkdown}<pin>2.6</pin>{:/nomarkdown}** and **P{::nomarkdown}<pin>2.4</pin>{:/nomarkdown}** on the schematic, the input connector for them is found by their side, between P{::nomarkdown}<pin>2.6</pin>{:/nomarkdown} and P{::nomarkdown}<pin>1.23</pin>{:/nomarkdown}. They are found on all of the boards. To power those MOSFETs, you need to provide them with power by wiring their power input to the power supply.
 
-- **Mixed MOSFET pair**: Their outputs are labeled **P{::nomarkdown}<pin>1.22</pin>{:/nomarkdown}** and **P{::nomarkdown}<pin>1.23</pin>{:/nomarkdown}** on the schematic. The pair is called "mixed" because it consists of one big MOSFET and one small MOSFET. They do not have a specific input, they take power directly from VBB (the Stepper motors power input described in the Stepper Motors chapter). To power those MOSFETs, you need to provide them with power by wiring their power input (which is the same as the one for the stepper motors) to the power supply.
+- Mixed MOSFET pair: Their outputs are labeled **P{::nomarkdown}<pin>1.22</pin>{:/nomarkdown}** and **P{::nomarkdown}<pin>1.23</pin>{:/nomarkdown}** on the schematic. The pair is called "mixed" because it consists of one big MOSFET and one small MOSFET. They do not have a specific input, they take power directly from VBB (the Stepper motors power input described in the Stepper Motors chapter). To power those MOSFETs, you need to provide them with power by wiring their power input (which is the same as the one for the stepper motors) to the power supply.
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
@@ -277,7 +271,7 @@ All MOSFET outputs on Smoothieboard v2 are powered from the **VFET** power input
 
 If you need to control more than 10-12A (the bed FET limit), use the SSR outputs to control an external Solid State Relay:
 
-- **SSR1/SSR2** provide logic-level signals to drive SSR coils
+- SSR1/SSR2 provide logic-level signals to drive SSR coils
 - Use a properly rated SSR for your load (e.g., 40A SSR for AC-powered heated beds)
 - SSRs are recommended for AC mains-powered heaters
 
@@ -287,5 +281,3 @@ For information see the [Solid State Relay Appendix](general-appendixes#solidsta
 </v2>
 </versioned>
 {:/nomarkdown}
-
-

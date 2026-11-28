@@ -3,11 +3,19 @@ permalink: /button-box
 title: Button Box
 ---
 
-# Button Box Module
+{::nomarkdown}
+<span id="button-box-module"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <versioned orientation="vertical">
-<v1>This module is not available in Smoothieware V1. See the [Switch module](/switch) for V1-compatible button inputs.</v1>
+<v1>
+{:/nomarkdown}
+
+This module is not available in Smoothieware V1. See the [Switch module](/switch) for V1-compatible button inputs.
+
+{::nomarkdown}
+</v1>
 <v2>
 {:/nomarkdown}
 
@@ -22,11 +30,11 @@ title: Button Box
 
 The Button Box module allows you to create programmable button panels for your CNC machine. Each button can execute G-code commands, M-codes, or special actions when pressed or released. This is ideal for:
 
-- **Jogging controls** - Buttons for X+, X-, Y+, Y-, Z+, Z-
-- **Machine control** - Start, stop, pause, resume buttons
-- **Macro execution** - Custom operation sequences
-- **Tool changes** - Pre-programmed tool change routines
-- **Spindle control** - Start/stop spindle with preset speeds
+- Jogging controls - Buttons for X+, X-, Y+, Y-, Z+, Z-
+- Machine control - Start, stop, pause, resume buttons
+- Macro execution - Custom operation sequences
+- Tool changes - Pre-programmed tool change routines
+- Spindle control - Start/stop spindle with preset speeds
 
 ## Overview
 
@@ -100,7 +108,7 @@ xminus.release = $J STOP
 {::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Matrix scanning is not implemented in the checked V2 source.</strong> The sample <code>button-box.ini</code> contains a 4-by-4 keypad example, but the Button Box implementation still marks matrix scanning as TODO at commit <a href="https://github.com/Smoothieware/SmoothieV2/commit/2a21c0108b1d095ecd8b2b9358e94055f053c003"><code>2a21c010</code></a>. Use one GPIO input per button. Sample configuration alone does not establish firmware support.
+  <strong>Matrix scanning is not implemented in the checked V2 source.</strong> The sample <code>button-box.ini</code> contains a 4-by-4 keypad example, but the Button Box implementation still marks matrix scanning as unfinished at commit <a href="https://github.com/Smoothieware/SmoothieV2/commit/2a21c0108b1d095ecd8b2b9358e94055f053c003"><code>2a21c010</code></a>. Use one GPIO input per button. Sample configuration alone does not establish firmware support.
 </sl-alert>
 {:/nomarkdown}
 
@@ -255,17 +263,17 @@ The external module must call the Button Box API to register and trigger these v
 
 ### Button Not Responding
 
-1. **Check wiring**: Button should connect pin to GND
-2. **Verify pull-up**: Use `^` suffix in pin configuration
-3. **Check pin conflicts**: Ensure pin isn't used by another module
-4. **Verify enable**: Button must have `enable = true` (default)
+1. Check wiring: Button should connect pin to GND
+2. Verify pull-up: Use `^` suffix in pin configuration
+3. Check pin conflicts: Ensure pin isn't used by another module
+4. Verify enable: Button must have `enable = true` (default)
 
 ### Command Not Executing
 
-1. **Machine busy**: Commands queue if machine is running
-2. **Queue full**: A normal queued command is retried on the next poll while the button remains in its triggering state
-3. **Invalid command**: Check G-code/M-code syntax
-4. **Check console**: Error messages appear in console output
+1. Machine busy: Commands queue if machine is running
+2. Queue full: A normal queued command is retried on the next poll while the button remains in its triggering state
+3. Invalid command: Check G-code/M-code syntax
+4. Check console: Error messages appear in console output
 
 ### Button Triggers Multiple Times
 
@@ -309,6 +317,7 @@ Use Button Box for input-only button panels on V2. Use Switch for input/output c
   Verify button state handling and special actions in the checked <a href="https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/buttonbox/buttonbox.cpp">V2 Button Box source</a>.
 </sl-alert>
 {:/nomarkdown}
+
 {::nomarkdown}
 </v2>
 </versioned>

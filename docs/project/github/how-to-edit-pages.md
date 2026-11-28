@@ -4,7 +4,9 @@ layout: default
 title: How to Edit Pages
 ---
 
-# How to Edit Pages
+{::nomarkdown}
+<span id="how-to-edit-pages"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
@@ -20,6 +22,10 @@ If you want to edit pages on this site, you'll need to work with the GitHub repo
 To create a link to a new page, use syntax: `[new page name](new-page-name)` or `[text to display](new-page-name)`.
 
 Follow the link to create a new page and instantly edit it!
+
+## Headers
+
+Don't write a page title, it is made from the address. Start chapters with `##`, see [Editing the wiki](editing-the-wiki).
 
 ## Getting Started
 

@@ -1,8 +1,11 @@
 ---
+title: "Uart"
 permalink: /uart
 ---
 
-# UART ports
+{::nomarkdown}
+<span id="uart-ports"></span>
+{:/nomarkdown}
 
 Smoothieboard has hardware [UART](https://en.wikipedia.org/wiki/Universal_asynchronous_receiver/transmitter) serial ports independent from USB serial.
 

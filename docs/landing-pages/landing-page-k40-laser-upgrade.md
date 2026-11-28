@@ -4,7 +4,9 @@ title: K40 Laser Controller Upgrade with Smoothieboard
 description: "Plan a K40 laser controller retrofit with Smoothieboard. Check wiring, power, interlocks, firmware, and software compatibility before installation."
 ---
 
-# Upgrade a K40 Laser Cutter Controller with Smoothieboard
+{::nomarkdown}
+<span id="upgrade-a-k40-laser-cutter-controller-with-smoothieboard"></span>
+{:/nomarkdown}
 
 Smoothieboard is a controller option for a K40 laser cutter when the machine's motor, endstop, laser power control, power supply, and safety interlock connections have been identified and matched to the chosen board. K40 and blue box machines have different controller and power supply revisions, so there is no universal drop-in wiring plan.
 

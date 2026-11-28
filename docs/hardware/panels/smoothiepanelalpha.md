@@ -1,9 +1,11 @@
 ---
+title: "SmoothiePanel alpha"
 permalink: /smoothiepanelalpha
 ---
 
-
-# SmoothiePanel Alpha (Legacy Documentation)
+{::nomarkdown}
+<span id="smoothiepanel-alpha-legacy-documentation"></span>
+{:/nomarkdown}
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
@@ -20,10 +22,10 @@ It was designed to bring a 20x4 RGB Character Display, UART, SPI, 4-bit ADC, and
 
 The basic interface panel was to support:
 
-- **Illuminated pause button**: Visual indicator for pause state
-- **Illuminated back button**: Navigation control with LED
-- **RGB Click Encoder**: Rotary encoder with push button and RGB LED
-- **Lots of extra I/O**: Additional GPIO for expansion
+- Illuminated pause button: Visual indicator for pause state
+- Illuminated back button: Navigation control with LED
+- RGB Click Encoder: Rotary encoder with push button and RGB LED
+- Lots of extra I/O: Additional GPIO for expansion
 
 It was intended to control a [Smoothieboard](smoothieboard) though it could easily be connected to any system with available I2C.
 

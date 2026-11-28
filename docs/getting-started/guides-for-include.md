@@ -1,5 +1,7 @@
 
-# Smoothie Guides
+{::nomarkdown}
+<span id="smoothie-guides"></span>
+{:/nomarkdown}
 
 Choose the guide that matches your machine type. These guides apply to both Smoothieware V1 and V2, though specific configuration steps and pin assignments may differ.
 

@@ -1,8 +1,11 @@
 ---
+title: "CoreXZ"
 permalink: /corexz
 ---
 
-# CoreXZ Arm Solution
+{::nomarkdown}
+<span id="corexz-arm-solution"></span>
+{:/nomarkdown}
 
 <!-- learning-diagram:35-corexz-mixing -->
 {::nomarkdown}
@@ -13,9 +16,6 @@ permalink: /corexz
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">CoreXZ mixes two motors across X and Z <a href="#learning-diagram-35-corexz-mixing" aria-label="Permanent link to CoreXZ mixes two motors across X and Z" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-
-
-
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -32,9 +32,9 @@ In a CoreXZ system, two motors work together to control both X and Z movement, w
 
 Unlike traditional Cartesian systems where each motor directly controls one axis, CoreXZ uses both motors to contribute to movement in the X and Z directions:
 
-- **Alpha motor** (Motor 1): Controls both X and Z movement
-- **Beta motor** (Motor 2): Controls both X and Z movement (in a different combination)
-- **Gamma motor** (Motor 3): Controls Y movement independently
+- Alpha motor (Motor 1): Controls both X and Z movement
+- Beta motor (Motor 2): Controls both X and Z movement (in a different combination)
+- Gamma motor (Motor 3): Controls Y movement independently
 
 The mathematical relationship is:
 - Alpha position = (x_reduction × X) + (z_reduction × Z)
@@ -62,8 +62,6 @@ CoreXZ is useful for machines where:
 
 ## Configuration
 
-
-
 To configure your machine to use the CoreXZ arm solution, add this to your configuration file:
 
 {::nomarkdown}
@@ -90,8 +88,6 @@ arm_solution = corexz
 </versioned>
 {:/nomarkdown}
 
-
-
 ### Reduction Parameters
 
 CoreXZ uses two reduction parameters that scale the contribution of each axis to the motor positions:
@@ -110,8 +106,6 @@ These parameters allow you to adjust for different pulley sizes or gear ratios i
 The default `z_reduction` of 3.0 assumes that the Z axis typically needs more torque and less speed than the X axis.
 
 ### Complete Configuration Example
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -188,8 +182,6 @@ gamma.driver = tmc2660
 </versioned>
 {:/nomarkdown}
 
-
-
 ## Speed Settings
 
 It is recommended to set the `alpha_max_rate` and `beta_max_rate` to the highest speed your steppers can achieve.
@@ -249,8 +241,8 @@ The firmware will automatically handle the coordination of the alpha and beta mo
 
 For developers or those interested in the implementation details, the CoreXZ solution is implemented in:
 
-- **v1:** [CoreXZSolution.cpp](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/robot/arm_solutions/CoreXZSolution.cpp)
-- **v2:** [CoreXZSolution.cpp](https://github.com/Smoothieware/Smoothieware-v2/blob/main/Firmware/src/robot/arm_solutions/CoreXZSolution.cpp)
+- v1: [CoreXZSolution.cpp](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/robot/arm_solutions/CoreXZSolution.cpp)
+- v2: [CoreXZSolution.cpp](https://github.com/Smoothieware/Smoothieware-v2/blob/main/Firmware/src/robot/arm_solutions/CoreXZSolution.cpp)
 
 ## See Also
 

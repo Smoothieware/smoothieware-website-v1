@@ -1,11 +1,11 @@
 ---
+title: "List of events"
 permalink: /listofevents
 ---
 
-
-# List of Events for Modules in Smoothie
-
-
+{::nomarkdown}
+<span id="list-of-events-for-modules-in-smoothie"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <versioned orientation="horizontal">
@@ -68,20 +68,16 @@ Smoothieware V2 does not use the event-based module system. Instead, V2 uses Fre
 
 ## Event System Architecture
 
-
-
 The Smoothieware V1 event system provides a publish-subscribe pattern for module communication. Events are defined in `/libs/Module.h` as an enumeration, and the kernel dispatches these events to all registered modules.
 
 ### How Events Work
 
-1. **Event Definition**: All events are defined in the `_EVENT_ENUM` enumeration in `/libs/Module.h`
-2. **Registration**: Modules register for specific events using `register_for_event(EVENT_NAME)` in their constructor or `on_module_loaded()` method
-3. **Dispatching**: The kernel calls events via `THEKERNEL->call_event(EVENT_NAME, argument)`
-4. **Handling**: Registered modules receive the event through their corresponding callback method (e.g., `on_idle()`, `on_gcode_received()`, etc.)
+1. Event Definition: All events are defined in the `_EVENT_ENUM` enumeration in `/libs/Module.h`
+2. Registration: Modules register for specific events using `register_for_event(EVENT_NAME)` in their constructor or `on_module_loaded()` method
+3. Dispatching: The kernel calls events via `THEKERNEL->call_event(EVENT_NAME, argument)`
+4. Handling: Registered modules receive the event through their corresponding callback method (e.g., `on_idle()`, `on_gcode_received()`, etc.)
 
 ## Registering for Events
-
-
 
 To register your module for an event, add the registration call in your module's constructor or `on_module_loaded()` method (V1 only):
 
@@ -142,8 +138,6 @@ void MyModule::on_halt(void *argument) {
 
 ## Best Practices
 
-
-
 These best practices apply to Smoothieware V1 module development using the event system.
 
 {::nomarkdown}
@@ -176,51 +170,6 @@ These best practices apply to Smoothieware V1 module development using the event
 ## Event Call Frequency
 
 {::nomarkdown}
-<style>
-.frequency-table-wrapper {
-  width: 100%;
-  overflow-x: auto;
-}
-
-.frequency-table-wrapper table {
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
-}
-
-.frequency-table-wrapper th,
-.frequency-table-wrapper td {
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  vertical-align: top;
-}
-
-.frequency-table-wrapper th {
-  background-color: #f5f5f5;
-  font-weight: bold;
-}
-
-.frequency-table-wrapper th:nth-child(1),
-.frequency-table-wrapper td:nth-child(1) {
-  width: 40%;
-}
-
-.frequency-table-wrapper th:nth-child(2),
-.frequency-table-wrapper td:nth-child(2) {
-  width: 25%;
-}
-
-.frequency-table-wrapper th:nth-child(3),
-.frequency-table-wrapper td:nth-child(3) {
-  width: 35%;
-}
-
-.frequency-table-wrapper code {
-  word-break: break-all;
-}
-</style>
 
 <div class="frequency-table-wrapper">
 {:/nomarkdown}
@@ -255,23 +204,21 @@ V2 modules use a registry and request-based communication model. See the [V2 mod
 
 ## See Also
 
-
-
 {::nomarkdown}
 <versioned orientation="horizontal">
 <v1>
 {:/nomarkdown}
 
-- [Module Development Guide](/module-development-guide) - General module development
+- [Module Development Guide](/moduleexample) - General module development
 - [Module Example](/moduleexample) - Simple module example
-- [Public Data System](/publicdataexample) - Using ON_GET_PUBLIC_DATA and ON_SET_PUBLIC_DATA
+- Public Data System - Using ON_GET_PUBLIC_DATA and ON_SET_PUBLIC_DATA
 
 {::nomarkdown}
 </v1>
 <v2>
 {:/nomarkdown}
 
-This page is for Smoothieware V1 module development. For V2, see the V2 module documentation (coming soon).
+This page is for Smoothieware V1 module development. For V2, see the V2 module documentation ({::nomarkdown}<a href="mailto:wolf.arthur@gmail.com">coming soon</a>{:/nomarkdown}).
 
 {::nomarkdown}
 </v2>

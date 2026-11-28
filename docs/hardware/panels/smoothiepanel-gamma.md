@@ -4,15 +4,15 @@ layout: default
 title: SmoothiePanel Gamma
 ---
 
-# SmoothiePanel Gamma
+{::nomarkdown}
+<span id="smoothiepanel-gamma"></span>
+{:/nomarkdown}
 
 SmoothiePanel is an [Open Source Hardware](http://en.wikipedia.org/wiki/Open-source_hardware) control interface for industrial robotic machinery.
 
 It adds a screen and user interface to allow easy control of a Smoothieboard.
 
 The current design brings a graphic LCD with RGB Backlight and changeable interface panel down to a port, optionally SPI, UART, or USB.
-
----
 
 ## About SmoothiePanel
 
@@ -28,8 +28,6 @@ So that brings us to our newest prototype! We've gone back to using an MCU but t
 
 It still has the Nunchuck port of course but has also gone back to the original idea of customizable / replaceable interface panel.
 
----
-
 ## Preview
 
 {::nomarkdown}
@@ -38,8 +36,6 @@ It still has the Nunchuck port of course but has also gone back to the original 
   <strong>Image Missing:</strong> The preview image for the prototype assembly is currently unavailable.
 </sl-alert>
 {:/nomarkdown}
-
----
 
 ## Current Status
 
@@ -52,12 +48,10 @@ It still has the Nunchuck port of course but has also gone back to the original 
 
 ### Development Progress
 
-- **Hardware:** Prototype 3 PCB complete and tested
-- **Software:** Both master and slave side code in development
-- **LCD Screens:** Custom graphic LCD screens currently on order
-- **Interface Panel:** Customizable/replaceable design confirmed working
-
----
+- Hardware: Prototype 3 PCB complete and tested
+- Software: Both master and slave side code in development
+- LCD Screens: Custom graphic LCD screens currently on order
+- Interface Panel: Customizable/replaceable design confirmed working
 
 ## Getting One
 
@@ -88,27 +82,23 @@ Or you can simply make yourself known by [email here (reprap at logxen dot com)]
 
 No strings attached, it's just to help us plan.
 
----
-
 ## Technical Features
 
 ### Gamma Version Features
 
-- **Microcontroller:** ARM Cortex-M0 with USB support
-- **Display:** Graphic LCD with RGB backlight
-- **Interface:** Customizable/replaceable interface panel
-- **Connectivity:** SPI, UART, or USB options
-- **Controller Port:** Wii Nunchuck compatible
-- **License:** Open Source Hardware
+- Microcontroller: ARM Cortex-M0 with USB support
+- Display: Graphic LCD with RGB backlight
+- Interface: Customizable/replaceable interface panel
+- Connectivity: SPI, UART, or USB options
+- Controller Port: Wii Nunchuck compatible
+- License: Open Source Hardware
 
 ### Improvements Over Beta
 
-1. **Eliminated I2C issues** - No more noise-related lockups
-2. **USB capability** - Direct USB connection option
-3. **More reliable** - MCU-based design instead of port expanders
-4. **Flexible connectivity** - Multiple connection options
-
----
+1. Eliminated I2C issues - No more noise-related lockups
+2. USB capability - Direct USB connection option
+3. More reliable - MCU-based design instead of port expanders
+4. Flexible connectivity - Multiple connection options
 
 ## Related Documentation
 
@@ -117,15 +107,11 @@ No strings attached, it's just to help us plan.
 - [Smoothieboard](smoothieboard) - The main controller board
 - [Panel Module](panel) - Firmware support for panels
 
----
-
 ## Contact
 
 For questions, interest in purchasing, or to discuss the project:
 
 **Email:** [reprap@logxen.com](mailto:reprap@logxen.com)
-
----
 
 ## Contributing
 

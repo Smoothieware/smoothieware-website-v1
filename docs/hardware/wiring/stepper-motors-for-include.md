@@ -1,5 +1,7 @@
 
-# Stepper Motors
+{::nomarkdown}
+<span id="stepper-motors"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
@@ -114,8 +116,6 @@ Now, as described in the "Unboxing" paragraph, connect the board to your compute
 
 For example, if your alpha stepper motor has a current rating of 1.68A, edit the corresponding line to read:
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -139,8 +139,6 @@ alpha.current = 1.68             # X stepper motor current
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 Do this for each stepper motor you have to connect to the board. (If you have a Cartesian robot, see which motor connects to which stepper driver in the array above. If you use another type of arm solution, see the specific documentation.)
 
@@ -170,8 +168,6 @@ To help you, there is an awesome calculator by the awesome Josef Prusa: [http://
 
 Once you know the correct value for a given stepper motor driver, set it in the config file.:
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -196,8 +192,6 @@ alpha.steps_per_mm = 80               # Steps per mm for alpha stepper
 </versioned>
 {:/nomarkdown}
 
-
-
 Do this for each stepper motor driver.
 
 In the case of your extruder stepper motor, the principle is the same, but the value is <setting v1="extruder.hotend.steps_per_mm" v2="extruder.hotend.steps_per_mm"></setting>.
@@ -219,8 +213,6 @@ Now you need to move an axis to make sure the stepper motor is turning in the ri
 Your X axis will move. If it moved to the right, great! Everything is fine, and you have nothing to change. If it moved to the left, you need to invert the direction of that axis.
 
 You do this by editing the configuration file, and inverting the direction pin for that stepper motor driver:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -258,8 +250,6 @@ alpha.dir_pin = 0.5!             # Pin for alpha stepper direction (inverted)
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 This is for your axes. In the case of your extruder, the config value is <setting v1="extruder.hotend.dir_pin" v2="extruder.hotend.dir_pin"></setting>.
 

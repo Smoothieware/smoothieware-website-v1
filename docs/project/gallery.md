@@ -1,8 +1,11 @@
 ---
+title: "Gallery"
 permalink: /gallery
 ---
 
-# Gallery
+{::nomarkdown}
+<span id="gallery"></span>
+{:/nomarkdown}
 
 A collection of projects and machines powered by Smoothieware and Smoothieboard.
 

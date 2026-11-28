@@ -1,4 +1,5 @@
 ---
+title: "Guide endstops"
 permalink: /guide-endstops
 ---
 

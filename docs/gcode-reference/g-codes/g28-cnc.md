@@ -1,8 +1,11 @@
 ---
+title: "G28 (CNC mode)"
 permalink: /g28-cnc
 ---
 
-# {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} G-code
+{::nomarkdown}
+<span id="-g-code"></span>
+{:/nomarkdown}
 
 <!-- learning-diagram:13-g28-cnc-intermediate -->
 {::nomarkdown}
@@ -13,9 +16,6 @@ permalink: /g28-cnc
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">CNC G28 goes to the recorded origin <a href="#learning-diagram-13-g28-cnc-intermediate" aria-label="Permanent link to CNC G28 goes to the recorded origin" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-
-
-
 
 {::nomarkdown}
 <a href="/images/temporary/cnc-spindle-generic.jpg">
@@ -33,7 +33,7 @@ The origin point is a recorded position, it is arbitrary and you choose it, but 
 
 It is not necessarily the `0,0,0` point of the workspace coordinates, but it can be if you want it to.
 
-### Format
+## Format
 
 The command is used as such:
 
@@ -45,27 +45,27 @@ Which means: go to the origin position.
 
 Note: This G-code currently only works for the X and Y axes, but ignores the Z axis. This might change in the future, if you are not sure, just try it out manually on your machine.
 
-### Parameters
+## Parameters
 
 No parameters.
 
-### Friend Gcodes
+## Friend Gcodes
 
 The {::nomarkdown}<gcode>G28.1</gcode>{:/nomarkdown} Gcode is used to set the origin position for the machine.
 
-### Configuration
+## Configuration
 
 See the [endstops](endstops) module.
 
-### Speeds
+## Speeds
 
 The speed at which the movement to the origin point will occur is the "seek" speed, which is the speed of the last {::nomarkdown}<gcode>G0</gcode>{:/nomarkdown} command issued, or if none was ever issued, the value of the {::nomarkdown}<setting v1="default_seek_rate" v2="motion control.default_seek_rate"></setting>{:/nomarkdown} configuration [option](configuring-smoothie).
 
-### Endstop seeking
+## Endstop seeking
 
 If you are looking for a way to "home" to the endstops, the same way {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} does on 3D printers, use the `$H` command to trigger this behavior, and configure it using the [Endstop](endstops) module.
 
-### Further reading
+## Further reading
 
 These resources are used as references for Gcode:
 * [LinuxCNC Gcode list](http://linuxcnc.org/docs/html/gcode.html)

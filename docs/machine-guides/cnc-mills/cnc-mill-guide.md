@@ -1,9 +1,11 @@
 ---
+title: "CNC mill guide"
 permalink: /cnc-mill-guide
 ---
 
-
-# Your guide to installing Smoothieboard in a CNC Milling Machine
+{::nomarkdown}
+<span id="your-guide-to-installing-smoothieboard-in-a-cnc-milling-machine"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/guide-cnc-mill.png">
@@ -94,11 +96,26 @@ Smoothieware V2 CNC installations can also use [slaved axes](/actuator-slaving),
 </versioned>
 {:/nomarkdown}
 
-{% include getting-started/unboxing-for-include.md %}
+{% include _includes/chapter.md file="getting-started/unboxing-for-include.md" title="Unboxing" anchor="unboxing" %}
 
-{% include migration/migrating-for-include.md %}
+{% include _includes/chapter.md file="migration/migrating-for-include.md" title="Migrating to Smoothie" anchor="migrating-to-smoothie" %}
 
-{% include hardware/wiring/warning-for-include.md %}
+## Safety warnings
+
+{::nomarkdown}
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Make sure you read this. Seriously. Not kidding. Do it. It's important.</strong>
+  <ul>
+    <li>Check the polarity of every power input, and check it again. Reversed polarity can damage or destroy all or part of your board. The 3.5mm and 5mm power connectors are inverted, so rely on the diagrams.</li>
+    <li>Never connect or disconnect stepper motors while the board is powered.</li>
+    <li>Keep anything metallic away from the board, a short will destroy it.</li>
+    <li>Never put 12V or 24V into a 5V, endstop or thermistor input.</li>
+    <li>If your machine has heaters, set up <a href="/temperaturecontrol#safety">the heater safety measures</a>. Fires will kill you if you don't.</li>
+  </ul>
+  Before you wire anything, read <a href="/warning">all the wiring safety warnings</a>.
+</sl-alert>
+{:/nomarkdown}
 
 ## CNC firmware
 
@@ -122,8 +139,6 @@ The V2 GRBL mode setting uses the INI-style configuration shown below.
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 **GRBL Mode Configuration:**
 
@@ -155,21 +170,19 @@ This setting is enabled by default in the CNC firmware build, which means Smooth
 </versioned>
 {:/nomarkdown}
 
-
-
 - The Spindle module
 
 You will find information on flashing the firmware at [getting-smoothie](/getting-smoothie)
 
 You will find more information on GRBL mode on the [grbl_mode](/grbl-mode) page.
 
-{% include hardware/power/logic-power-for-include.md %}
+{% include _includes/chapter.md file="hardware/power/logic-power-for-include.md" title="Logic Power Inputs" anchor="logic-power-inputs" %}
 
-{% include hardware/power/main-power-input-for-include.md %}
+{% include _includes/chapter.md file="hardware/power/main-power-input-for-include.md" title="Main Power Input" %}
 
-{% include hardware/wiring/stepper-motors-for-include.md %}
+{% include _includes/chapter.md file="hardware/wiring/stepper-motors-for-include.md" title="Stepper Motors" anchor="stepper-motors" %}
 
-{% include modules/endstops-probes/guide-endstops-for-include.md %}
+{% include _includes/chapter.md file="modules/endstops-probes/guide-endstops-for-include.md" title="Endstops" anchor="endstops" %}
 
 ## Endstop Configuration Differences
 
@@ -223,17 +236,17 @@ type = min
 
 For more details on motion control configuration differences between v1 and v2, see the [Motion Control documentation](/motion-control).
 
-{% include modules/spindle/spindle-control-for-include.md %}
+{% include _includes/chapter.md file="modules/spindle/spindle-control-for-include.md" title="Spindle Control" anchor="spindle-control" %}
 
-{% include modules/endstops-probes/z-probe-guide-for-include.md %}
+{% include _includes/chapter.md file="modules/endstops-probes/z-probe-guide-for-include.md" title="Z-Probe Guide" anchor="z-probe-guide" %}
 
-{% include hardware/panels/panel-guide-for-include.md %}
+{% include _includes/chapter.md file="hardware/panels/panel-guide-for-include.md" title="Panel Guide" anchor="panel-guide" %}
 
-# Startup Automation
+## Startup Automation
 
 For CNC mills, automating startup tasks can improve safety and workflow efficiency.
 
-## Safe Startup Sequence
+### Safe Startup Sequence
 
 You can configure your mill to automatically run a safe startup sequence when it boots. Create a file called `on_boot.gcode` in the root of your SD card.
 
@@ -257,9 +270,9 @@ on_boot_gcode_enable true
 on_boot_gcode /sd/on_boot.gcode
 ```
 
-See the [on_boot.gcode documentation](on_boot.gcode) for more details and examples specific to CNC applications.
+See the [on_boot.gcode documentation](/on-boot-gcode) for more details and examples specific to CNC applications.
 
-# Appendixes
+## Appendixes
 
 ### External stepper drivers
 
@@ -279,18 +292,29 @@ However, if you do not want to use the module, there are solutions to convert th
 
 - If you are using Cambam you can use [this post-processor script](http://chibidibidiwah.wdfiles.com/local--files/cnc-mill-guide/SmoothiePCB.cbpp)
 
-{% include hardware/wiring/general-appendixes-for-include.md %}
+The appendixes cover the practical wiring work you may need along the way : 
 
-## Troubleshooting
+* [Wiring](/general-appendixes#wiring)
+* [Crimping connectors](/general-appendixes#crimping-connectors)
+* [Soldering connectors](/general-appendixes#soldering-connectors)
+* [Using two steppers motor on a single driver](/general-appendixes#using-two-steppers-motor-on-a-single-driver)
+* [Doubling stepper motor drivers](/general-appendixes#doubling-stepper-motor-drivers)
+* [External Stepper Drivers](/general-appendixes#external-stepper-drivers)
+* [Solid State Relays](/general-appendixes#solid-state-relays)
+* [Swapping stepper motor drivers](/general-appendixes#swapping-stepper-motor-drivers)
+* [Which pins are which](/general-appendixes#which-pins-are-which)
+* [Protecting a power input with a fuse](/general-appendixes#protecting-a-power-input-with-a-fuse)
+
+### Troubleshooting
 
 If you run into trouble, something doesn't work as it should, head over to the [Troubleshooting](troubleshooting) page for a list of common problems and means of diagnosis.
 
 You can also contact the [Community](/irc) for help if you can't find an answer in the documentation.
 
-# bCNC configuration
+## bCNC configuration
 
 {% include software/host-software/bcnc-for-include.md %}
 
-# Software
+## Software
 
 See the comprehensive [Software Compatibility List](software) for all software that works with Smoothieware.

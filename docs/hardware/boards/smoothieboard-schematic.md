@@ -4,22 +4,20 @@ layout: default
 title: Smoothieboard Schematic
 ---
 
-# Smoothieboard Schematic
+{::nomarkdown}
+<span id="smoothieboard-schematic"></span>
+{:/nomarkdown}
 
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   This page provides access to the Smoothieboard schematic diagrams and design files.
 </sl-alert>
 
----
-
 ## About the Schematic
 
 The Smoothieboard schematic is fully open-source hardware, licensed under the [CERN OHL v.1.2](http://www.ohwr.org/projects/cernohl/wiki).
 
 All design files, including schematics, PCB layouts, and bill of materials, are available on GitHub.
-
----
 
 ## Access the Schematic Files
 
@@ -39,25 +37,21 @@ The repository includes:
 - Assembly drawings
 - 3D models
 
----
-
 ## Viewing the Schematic
 
 You can view the schematic in several ways:
 
-1. **PDF Format** - Download the PDF from the GitHub repository for easy viewing
-2. **KiCad** - Open the source files in KiCad (free and open-source PCB design software)
-3. **Online Viewer** - Use GitHub's file viewer to browse the design files
-
----
+1. PDF Format - Download the PDF from the GitHub repository for easy viewing
+2. KiCad - Open the source files in KiCad (free and open-source PCB design software)
+3. Online Viewer - Use GitHub's file viewer to browse the design files
 
 ## Board Versions
 
 Different versions of the Smoothieboard have different schematics:
 
-- **Smoothieboard v1** - The main production version
-- **Smoothieboard v2** - The latest generation (see separate documentation)
-- **Beta/Alpha versions** - Historical development versions
+- Smoothieboard v1 - The main production version
+- Smoothieboard v2 - The latest generation (see separate documentation)
+- Beta/Alpha versions - Historical development versions
 
 Make sure you're looking at the schematic for your specific board version.
 
@@ -65,8 +59,6 @@ Make sure you're looking at the schematic for your specific board version.
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Version Check:</strong> Always verify you have the correct schematic version for your board. The version is printed on the PCB itself.
 </sl-alert>
-
----
 
 ## Additional Resources
 
@@ -78,19 +70,15 @@ For understanding and working with the Smoothieboard hardware:
 - [Hardware troubleshooting](troubleshooting)
 - [How to wire your board](how-to-wire)
 
----
-
 ## Contributing
 
 If you find errors in the schematic or have improvements to suggest, please:
 
 1. Open an issue on the [Smoothieboard GitHub repository](https://github.com/Smoothieware/Smoothieboard/issues)
 2. Submit a pull request with your proposed changes
-3. Discuss on the [community forums]([http://forum.smoothieware.org/](https://smoothieware.org/forum-welcome-mat))
+3. Discuss on the [community forums](/community)
 
 We welcome contributions and bug reports!
-
----
 
 ## License
 

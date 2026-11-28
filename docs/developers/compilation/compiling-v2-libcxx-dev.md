@@ -1,8 +1,11 @@
 ---
+title: "Compiling V2 libc++ dev"
 permalink: /compiling-v2-libcxx-dev
 ---
 
-# Compiling Smoothie V2 with libcxx Development
+{::nomarkdown}
+<span id="compiling-smoothie-v2-with-libcxx-development"></span>
+{:/nomarkdown}
 
 This guide shows the process of setting up and compiling Smoothie V2 with the libcxx development environment.
 

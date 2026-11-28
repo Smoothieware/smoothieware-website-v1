@@ -1,8 +1,11 @@
 ---
+title: "Console commands"
 permalink: /console-commands
 ---
 
-# Console commands
+{::nomarkdown}
+<span id="console-commands"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/coding.png">
@@ -73,8 +76,6 @@ Here are the different commands, grouped by module.
 </v2>
 </versioned>
 {:/nomarkdown}
-
----
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -372,7 +373,7 @@ abort
 
 Stops an execution of play
 
-{% include troubleshooting/stopping-smoothie-for-include.md %}
+To stop the machine, see [Stopping Smoothie](#stopping-smoothie).
 
 ### mem
 
@@ -522,8 +523,6 @@ pwd
 </versioned>
 {:/nomarkdown}
 
----
-
 ### suspend
 
 `suspend`
@@ -591,8 +590,6 @@ calc_thermistor 25,10000,100,950,220,47
 </v1>
 </versioned>
 {:/nomarkdown}
-
----
 
 ## Config
 
@@ -816,9 +813,16 @@ These are commands designed to return information to a Host program like Smoopi.
 
 ### Stopping Smoothie
 
-{% include troubleshooting/stopping-smoothie-for-include.md %}
+If something goes wrong, Control-X stops Smoothie instantly, even while streaming. {::nomarkdown}<mcode>M112</mcode>{:/nomarkdown} does too, but has to wait for the receive buffer to have room.
 
----
+Heaters are turned off and the position is lost, send {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown} ( or `$X` ) to leave the Halt state, then home again.
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="book"></sl-icon>
+  <strong>Learn more:</strong> <a href="/stopping-smoothie">Stopping Smoothie</a>
+</sl-alert>
+{:/nomarkdown}
 
 {::nomarkdown}
 <versioned orientation="vertical">

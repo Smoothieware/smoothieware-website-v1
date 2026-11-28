@@ -1,8 +1,11 @@
 ---
+title: "Test"
 permalink: /test
 ---
 
-# Test Page
+{::nomarkdown}
+<span id="test-page"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>

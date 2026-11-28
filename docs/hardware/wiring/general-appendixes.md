@@ -1,4 +1,5 @@
 ---
+title: "General appendixes"
 permalink: /general-appendixes
 ---
 

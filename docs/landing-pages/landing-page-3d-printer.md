@@ -3,7 +3,9 @@ permalink: /landing-page-3d-printer
 title: 3D Printer Controller - 32-Bit Without the Complexity
 ---
 
-# Done with Marlin Recompilation? Switch to Smoothieboard
+{::nomarkdown}
+<span id="done-with-marlin-recompilation-switch-to-smoothieboard"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
@@ -22,8 +24,6 @@ title: 3D Printer Controller - 32-Bit Without the Complexity
   </div>
 </div>
 {:/nomarkdown}
-
----
 
 ## 8-Bit Board Holding Your Printer Back?
 
@@ -44,8 +44,6 @@ You've spent hours:
 - Wondering why "editing one setting" requires 10 minutes of compilation
 
 **There's a Better Way.**
-
----
 
 ## 32-Bit Power with RepRap Simplicity
 
@@ -75,8 +73,6 @@ You've spent hours:
 - ✅ **Network Control** - Ethernet with Telnet, HTTP, and Simple FTP (no USB cable needed)
 - ✅ **Custom Features** - Modular firmware architecture makes contributions simple
 
----
-
 ## Printer Architecture Support
 
 {::nomarkdown}
@@ -103,8 +99,6 @@ You've spent hours:
 
 **Kinematics Automatically Handled** - Linear delta math, CoreXY transformations, SCARA calculations all built-in.
 
----
-
 ## Smoothie vs Marlin: The Comparison
 
 | Feature | Marlin (8-bit) | Smoothieboard v2 |
@@ -127,8 +121,6 @@ You've spent hours:
 **Marlin:** Edit Configuration.h → Install PlatformIO → Compile (5 min wait) → Upload → Test → Repeat if wrong. **Total: 15-30 minutes.**
 
 **Smoothie:** Edit {::nomarkdown}<setting v1="extruder.hotend.steps_per_mm" v2="extruder.hotend.steps_per_mm"></setting>{:/nomarkdown} → Save → Reboot. **Total: 30 seconds.**
-
----
 
 ## Not Klipper, Not Marlin - Just Smoothie
 
@@ -158,8 +150,6 @@ You've spent hours:
 - Prefer OSHWA open hardware
 - Don't need bleeding-edge features like input shaper
 
----
-
 ## Multi-Material & Advanced Features
 
 **Multi-Material Printing:**
@@ -185,8 +175,6 @@ You've spent hours:
 - Inductive/capacitive probe support
 - Strain gauge bed leveling
 - Custom sensor integration via GPIO
-
----
 
 ## Configuration Example: See How Easy It Is
 
@@ -215,8 +203,6 @@ temperature_control.bed.thermistor  Honeywell100K
 
 Change PID values? Edit three numbers. Save. Reboot. Done.
 
----
-
 ## Software Compatibility
 
 ### Works with Your Favorite Tools:
@@ -235,8 +221,6 @@ Change PID values? Edit three numbers. Save. Reboot. Done.
 - ✅ **Smoothie Web Interface** - Built-in HTTP server for network control
 
 **Your Workflow Doesn't Change:** Slice → Send G-code → Print
-
----
 
 ## Frequently Asked Questions
 
@@ -272,8 +256,6 @@ A: Not currently. If input shaper is critical for you, Klipper might be a better
 
 A: The processor is 25x faster, yes. Motion is smoother at high speeds. Whether YOU can print faster depends on your printer's mechanical limits (not the controller).
 
----
-
 ## Ready to Upgrade Your 3D Printer?
 
 ### Smoothieboard v2 Prime - $200
@@ -308,8 +290,6 @@ A: The processor is 25x faster, yes. Motion is smoother at high speeds. Whether 
   </div>
 </div>
 {:/nomarkdown}
-
----
 
 **Related Pages:**
 - [Complete 3D Printer Installation Guide](3d-printer-guide)

@@ -4,7 +4,9 @@ layout: default
 title: Using the Touchprobe
 ---
 
-# Using the Touchprobe
+{::nomarkdown}
+<span id="using-the-touchprobe"></span>
+{:/nomarkdown}
 
 <!-- learning-diagram:28-touchprobe-two-pass -->
 {::nomarkdown}
@@ -15,9 +17,6 @@ title: Using the Touchprobe
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Touch probing uses a fast pass and a slow pass <a href="#learning-diagram-28-touchprobe-two-pass" aria-label="Permanent link to Touch probing uses a fast pass and a slow pass" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-
-
-
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -32,8 +31,6 @@ title: Using the Touchprobe
   <strong>Alternative:</strong> For modern probing functionality, see the <a href="zprobe">ZProbe module</a> which is actively maintained and supports more features.
 </sl-alert>
 {:/nomarkdown}
-
----
 
 ## About Touchprobes
 
@@ -54,8 +51,6 @@ Currently, the only operation regarding touchprobes supported by this module is 
 
 This means only moves along a single axis will work.
 
----
-
 ## Basic Usage Examples
 
 ### Simple Probe Move
@@ -71,8 +66,6 @@ G31 Z-10 F150
 - {::nomarkdown}<gcode>G31</gcode>{:/nomarkdown} - Probe move command
 - Z-10 - Move to Z position -10
 - F150 - Feed rate of 150 mm/min
-
----
 
 ### Two-Stage Probe (Fast then Slow)
 
@@ -95,8 +88,6 @@ M114
 - {::nomarkdown}<mcode>M114</mcode>{:/nomarkdown} - Report current position
 
 In addition to the {::nomarkdown}<mcode>M114</mcode>{:/nomarkdown} report, every touch is logged to a file if logging is enabled (see Configuration section below).
-
----
 
 ## Configuration
 
@@ -122,8 +113,6 @@ touchprobe_debounce_count           100                # reports touch if probe 
 | `touchprobe_pin` | Input pin for probe signal |
 | `touchprobe_debounce_count` | Higher values = more noise resistance but slower response |
 
----
-
 ## Using Log Files
 
 The log file is an easy way to create point clouds of the probed objects.
@@ -145,8 +134,6 @@ If you forget to safely remove the SD card, try to remount it afterward.
 
 Most of the time, no data loss will happen.
 
----
-
 ### Convert to Stanford PLY File
 
 It's very easy to convert the logfile to a PLY file, which is supported by most point cloud applications.
@@ -155,11 +142,11 @@ It's very easy to convert the logfile to a PLY file, which is supported by most 
 
 #### Conversion Steps
 
-1. **Count the points** - Find out how many points have been logged
+1. Count the points - Find out how many points have been logged
    - On Linux/Mac: Use `wc -l filename.csv`
    - On Windows: Open in a text editor and check line count
 
-2. **Create the PLY header:**
+2. Create the PLY header:
    ```ply
    ply
    format ascii 1.0
@@ -173,15 +160,13 @@ It's very easy to convert the logfile to a PLY file, which is supported by most 
    end_header
    ```
 
-3. **Replace `xxxxxxxx`** with the number you found in step 1
+3. Replace `xxxxxxxx` with the number you found in step 1
 
-4. **Prepend the header** to your log file data
+4. Prepend the header to your log file data
 
-5. **Save with .ply extension**
+5. Save with .ply extension
 
-6. **You're done!** Open in any point cloud viewer
-
----
+6. You're done! Open in any point cloud viewer
 
 ## Finding the Center of Round Objects
 
@@ -200,22 +185,20 @@ A common CNC task is finding the center of circular holes or bosses.
 
 ### Steps
 
-1. **Probe along the Y-axis** for P1 and P2 (opposite sides)
+1. Probe along the Y-axis for P1 and P2 (opposite sides)
 
-2. **Calculate the center between them:**
+2. Calculate the center between them:
 
    P3 = (P1.x, P1.y + (P2.y - P1.y) / 2)
 
-3. **Probe along the X-axis** for P4 and P5
+3. Probe along the X-axis for P4 and P5
    - Make sure the Y-axis is positioned at P3.y
 
-4. **Calculate the center between them:**
+4. Calculate the center between them:
 
    M = (P4.x + (P5.x - P4.x) / 2, P3.y)
 
-5. **M is the center** of the round object
-
----
+5. M is the center of the round object
 
 ## Alternatives
 
@@ -223,9 +206,7 @@ Since this module is deprecated, consider using:
 
 - [ZProbe module](zprobe) - Modern, actively maintained probing system
 - [{::nomarkdown}<gcode>G30</gcode>{:/nomarkdown} command](g30) - Built-in probing command
-- [Leveling strategies](leveling-strategy) - For bed leveling and surface mapping
-
----
+- [Leveling strategies](/zprobe) - For bed leveling and surface mapping
 
 ## Further Reading
 

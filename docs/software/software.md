@@ -1,13 +1,12 @@
 ---
+title: "Software"
 permalink: /software
 ---
-
 
 {::nomarkdown}
 <p>All software below either knows how to interface with (or how to generate G-code) for Smoothieware.</p>
 
 <h2 id="software-list">Software list.</h2>
-
 
 <div class="category-section">
   <h2 id="3d-printing-software" class="category-header">3D Printing Software</h2>
@@ -76,7 +75,6 @@ permalink: /software
 
     </sl-card>
 
-
     <sl-card class="software-card">
       <img slot="image" src="/images/software-screenshots/cura-3-of-3.png" alt="Cura Screenshot" style="width: 100%; height: auto; object-fit: cover;">
 
@@ -109,7 +107,7 @@ permalink: /software
           <sl-icon name="book" slot="prefix"></sl-icon>
           Documentation
         </sl-button>
-        <sl-button href="/cura" target="_blank" class="link-button" variant="default" size="small">
+        <sl-button href="https://ultimaker.com/software/ultimaker-cura/" target="_blank" class="link-button" variant="default" size="small">
           <sl-icon name="link" slot="prefix"></sl-icon>
           Smoothie Setup
         </sl-button>
@@ -2527,7 +2525,7 @@ permalink: /software
       </sl-details>
 
       <div class="links-section">
-        <sl-button href="https://smoothieware.org/fast-stream" target="_blank" class="link-button" variant="default" size="small">
+        <sl-button href="https://github.com/Smoothieware/Smoothieware/blob/edge/fast-stream.py" target="_blank" class="link-button" variant="default" size="small">
           <sl-icon name="book" slot="prefix"></sl-icon>
           Documentation
         </sl-button>
@@ -2688,10 +2686,6 @@ permalink: /software
   <strong>CAM</strong> software, or <strong>CAM Package</strong>, for Computer Assisted Manufacturing, is software that is used to take a 2D or 3D file, and based on some settings you input, transform it into a list of tool movements (G-code file) for a machine that uses a tool to remove material from a workpiece.
 </sl-alert>
 
-        </div>
       </section>
-
-    </div>
-
 
 {:/nomarkdown}

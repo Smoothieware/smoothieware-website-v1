@@ -1,8 +1,11 @@
 ---
+title: "Advanced motor driver"
 permalink: /advancedmotordriver
 ---
 
-# Advanced Driver Chip Module
+{::nomarkdown}
+<span id="advanced-driver-chip-module"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/circuit.png">
@@ -38,8 +41,6 @@ This module is used to control SPI based stepper motor driver chips, like the Pa
 
 This module is enabled in config with:
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -65,11 +66,7 @@ motor_driver_control.motor1.enable true  # where motor1 is any name you wish
 </versioned>
 {:/nomarkdown}
 
-
-
 The chip this controls is set with:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -98,11 +95,7 @@ motor_driver_control.motor1.chip DRV8711    # this can be one of DRV8711 or TMC2
 </versioned>
 {:/nomarkdown}
 
-
-
 The SPI channel to use must be set with:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -131,11 +124,7 @@ motor_driver_control.motor1.spi_frequency 100000 # the SPI frequency to use
 </versioned>
 {:/nomarkdown}
 
-
-
 Other config settings:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -172,11 +161,7 @@ common.halt_on_driver_alarm = true  # Halt on alarm condition
 </versioned>
 {:/nomarkdown}
 
-
-
 Some chip-specific configs are...
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -211,11 +196,7 @@ alpha.standstill_current = 0
 </versioned>
 {:/nomarkdown}
 
-
-
 An example of config entries is as follows, this sets two advanced drivers, one is a DRV8711 and the other is a TMC2660.
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -287,13 +268,9 @@ beta.standstill_current = 0
 </versioned>
 {:/nomarkdown}
 
-
-
 **NOTE:** The step and dir must be driven via the step and dir pins and cannot be driven over the SPI interface.
 
 They are configured as normal, for example...
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -320,8 +297,6 @@ alpha.dir_pin = 0.5    # Pin for alpha stepper direction
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 ## M code settings
 

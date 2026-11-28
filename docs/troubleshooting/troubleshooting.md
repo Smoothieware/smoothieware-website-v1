@@ -1,9 +1,11 @@
 ---
+title: "Troubleshooting"
 permalink: /troubleshooting
 ---
 
-# Troubleshooting a problem with your Smoothieboard
-{: .show-title}
+{::nomarkdown}
+<span id="troubleshooting-a-problem-with-your-smoothieboard"></span>
+{:/nomarkdown}
 
 If you have a problem with your Smoothieboard, don't panic.
 
@@ -79,7 +81,10 @@ Unplug everything from your board, then plug things back into the board one at a
 
 Start with USB, then the power supply, then do the same for each peripheral in turn until everything is plugged back in. If you do not know what the problem is, it should help you pinpoint it.
 
-### 5. Prepare your config for asking for help.
+### 5. Prepare your config
+{: id="5-prepare-your-config-for-asking-for-help"}
+
+Do this before asking for help.
 
 Open your configuration file.
 
@@ -113,7 +118,10 @@ Now put it on a paste website, either of these two is fine :
 
 You can now give this link to people on IRC or the forums, without having to copy/paste the entire file, and people will be able to see your config and help you.
 
-### 6. Isolate the problem as much as possible
+### 6. Isolate the problem
+{: id="6-isolate-the-problem-as-much-as-possible"}
+
+Isolate it as much as possible.
 
 You want to make sure your remove as many influencing factors when debugging an issue. This makes sure you don't confuse a problem with another, or miss the fact that two problems are actually working together to ruin your life.
 
@@ -131,7 +139,10 @@ Make sure this is not a hardware problem before asking for help also, is your la
 
 Finally, make sure you mention all those steps you have taken when asking the community for help, if you don't people will start telling you to do things you have already done.
 
-### 7. Describe/Take a picture of your setup
+### 7. Show your setup
+{: id="7-describetake-a-picture-of-your-setup"}
+
+Describe your setup, or take a picture of it.
 
 Take a picture of your Smoothieboard, a global view of it ( tip : pictures are much sharper and therefore useful, if neither the camera nor the subject are moving. Deposit your camera on a flat surface or fix it in some fashion. If you think pressing the button will make it move, remember you can use a 5-second countdown to take pictures. )
 
@@ -141,7 +152,10 @@ When posting on a forum/social media to get help, attach your config ( it's past
 
 If using a mailing list, do not insert the pictures in the body of your email, but rather attach them to the email. This make things easier for volunteers helping you, and not doing so often leads to ridiculously weird email client layouts ( for example if the picture is much larger than the screen ).
 
-### 8. Before asking the community for help.
+### 8. Before asking for help
+{: id="8-before-asking-the-community-for-help"}
+
+Before asking the community for help : 
 
 If you have an Open-Source board like the Smoothieboard, a board from Panucatt, or one of the many designed by the community and that support the project, ignore this.
 
@@ -161,7 +175,8 @@ Ideally, use Pronterface when troubleshooting, for various reasons ( one of whic
 
 ## Power supply problems
 
-### Smoothieboard does not work at all
+### Board does not work at all
+{: id="smoothieboard-does-not-work-at-all"}
 
 First off, do any LEDs turn on on the board when plugged in via USB ?
 
@@ -176,7 +191,10 @@ If LEDs turn on, it then depends on what they do :
 <v1>
 {:/nomarkdown}
 
-### Plugged in and 3.3V LED is OFF
+### 3.3V LED is off
+{: id="plugged-in-and-33v-ledis-off"}
+
+The board is plugged in, and the 3.3V LED is OFF.
 
 This means the microcontroller on your Smoothieboard is not getting any power.
 
@@ -192,7 +210,10 @@ If this still does not solve the problem, examine the board for problems with yo
 
 If you can still not find anything, [contact the community](getting-help-community).
 
-### The 3.3V LED is ON but LED4 is not ON
+### LED4 is off
+{: id="the-33v-ledis-on-but-led4-is-not-on"}
+
+The 3.3V LED is ON but LED4 is not ON.
 
 LED4 indicates SD card status. If it is not lit up, it means there is a problem with your SD card.
 
@@ -206,12 +227,15 @@ If it still fails, then as you tried two SD cards they are probably both fine. T
 
 Format a SD card as FAT32, and on that fresh card, copy two files: 
 
-- **firmware.bin** , with this exact name, which you can find [here](getting-smoothie)
-- **config** , with this exact name, which you can find [here](configuring-smoothie)
+- firmware.bin , with this exact name, which you can find [here](getting-smoothie)
+- config , with this exact name, which you can find [here](configuring-smoothie)
 
 Then insert the card into your Smoothieboard and try again.
 
-### The 3.3V LED is ON but none of the 1 through 4 LEDS is ON
+### LEDs 1 to 4 are off
+{: id="the-33v-ledis-on-but-none-of-the-1-through-4-leds-is-on"}
+
+The 3.3V LED is ON but none of the 1 through 4 LEDS is ON.
 
 Or LED1 and LED4 are ON, but LED2 and LED3 are not blinking.
 
@@ -222,15 +246,24 @@ Try with a [fresh configuration file](configuring-smoothie), and if it does not 
 If you soldered the smoothieboard then check either the 12 MHz oscillator or the SD card/SD card slot.
 *This could be a bad solder joint with the 12 MHz oscillator (crystal), a bad SD card slot, a bad SD card, and/or a bad config file. 
 
-### The 3.3V LED is ON, and LEDs 1 and 3 are ON and 3 is not blinking, LEDs 2 and 4 are OFF
+### Missing bootloader
+{: id="the-33v-led-is-on-and-leds-1-and-3-are-onand-3-is-not-blinking-leds-2-and-4are-off"}
+
+The 3.3V LED is ON, LEDs 1 and 3 are ON and 3 is not blinking, LEDs 2 and 4 are OFF.
 
 This could mean your board has no bootloader, which is very wrong. Contact whomever sold you your Smoothieboard.
 
-### The 3.3V LED is ON, and LEDs 1, 2, 3 and 4 are ON and none are blinking
+### Missing firmware
+{: id="the-33v-led-is-on-and-leds-1-2-3-and-4-are-on-and-none-are-blinking"}
+
+The 3.3V LED is ON, LEDs 1, 2, 3 and 4 are ON and none are blinking.
 
 This could mean you have a bootloader but no firmware was ever flashed or found on the SD card. Again, this is very wrong, contact whomever sold you your Smoothieboard.
 
-### 12 or 24V power is plugged in but the VBB LED is not ON
+### VBB LED is off
+{: id="12-or-24v-power-is-plugged-in-but-the-vbbled-is-not-on"}
+
+12 or 24V power is plugged in but the VBB LED is not ON.
 
 Unplug power immediately !
 
@@ -238,7 +271,10 @@ Check that your power is not in reverse polarity.
 
 Even if you think you have it correct (read the instructions carefully, the markings on the board can be a bit confusing), try reversing it just in case.
 
-### All LEDs are on but LED 2 and 3 are solid
+### LEDs 2 and 3 are solid
+{: id="all-leds-are-on-but-led-2-and-3-are-solid"}
+
+All LEDs are on, but LED 2 and 3 are solid.
 
 Firmware didn't get flashed, you need to flash it and also make sure you uploaded a valid config.
 
@@ -247,13 +283,17 @@ Firmware didn't get flashed, you need to flash it and also make sure you uploade
 </versioned>
 {:/nomarkdown}
 
-### It smells like something is burning!
+### Burning smell
+{: id="it-smells-like-something-is-burning"}
+
+It smells like something is burning!
 
 Whaaaaa! Unplug everything! Get a fire extinguisher!
 
 Now, try to remember exactly what you were doing with your board, and contact whomever sold it to you.
 
-### Mosfets are never turning on
+### Mosfets never turn on
+{: id="mosfets-are-never-turning-on"}
 
 You configured everything right and plugged the heating elements into your mosfet outputs, but no matter what you do, they do not turn on.
 
@@ -265,7 +305,8 @@ If you don't know about grounding, it's a great idea to read this post : [Earth
 
 ## Configuration problems
 
-### Changes to configuration are ignored in general
+### Config changes ignored
+{: id="changes-to-configuration-are-ignored-in-general"}
 
 The config changes are not taken into account, files do not appear or do not update on the SD card
 
@@ -277,13 +318,17 @@ Sometimes the SD card can get corrupted after which it will do strange things. A
 
 For configuration changes which are being made in the `config` file and are not being applied, check that they are not being overridden in the `config-override` file in the same folder (see [the config override page](/override-warning) for full details).
 
-### Changes to configuration are ignored on a particular line
+### One config line ignored
+{: id="changes-to-configuration-are-ignored-on-a-particular-line"}
+
+Your change to one particular line of the configuration is ignored.
 
 If a line begins with the `#` character, it means it is "commented out" and Smoothieboard will ignore it. 
 
 You need to remove the `#` character and Smoothie will now take the line into account.
 
-### «  No strategy found to handle G32 »
+### G32 strategy error
+{: id="--no-strategy-found-to-handle-g32-"}
 
 If you try to run bed leveling or calibration, and the board answers something like «  No strategy found to handle <gcode>G32</gcode> », please do the following : 
 
@@ -293,7 +338,8 @@ If you try to run bed leveling or calibration, and the board answers something l
 
 This error message most of the time means your config and firmware aren't up to date with each other. Upgrading everything solves the issue.
 
-### Bed leveling seems to have no effect
+### Bed leveling has no effect
+{: id="bed-leveling-seems-to-have-no-effect"}
 
 If you try to run bed leveling or calibration, and it seems to have no effect at all, please do the following : 
 
@@ -303,6 +349,22 @@ If you try to run bed leveling or calibration, and it seems to have no effect at
 
 This symptom most of the time means your config and firmware aren't up to date with each other. Upgrading everything solves the issue.
 
+{::nomarkdown}
+<span id="disable-msd"></span>
+{:/nomarkdown}
+
+### How to disable MSD permanently
+
+If your host computer gets along fine with the serial interface but the mass storage one ( the SD card showing up as a USB drive ) causes you trouble, you can disable it. This is for V1 boards.
+
+Install [this version of the firmware](https://github.com/Smoothieware/Smoothieware/blob/edge/FirmwareBin/firmware-disablemsd.bin?raw=true) ( remember to rename it `firmware.bin` ), and add this to your config file :
+
+```
+msd_disable  true  # disable msd
+```
+
+The mass storage device will no longer be available, but serial should work. The option only does something with that version of the firmware.
+
 ## Web Interface problems
 
 ### Why is my web interface missing?
@@ -311,7 +373,10 @@ If you connected to your Smoothieboard over the network and expected to see the 
 
 ## Movement problems
 
-### My stepper motor does not turn correctly
+### Motor turns badly
+{: id="my-stepper-motor-does-not-turn-correctly"}
+
+Your stepper motor does not turn correctly.
 
 If it always turns in the same direction, and/or turns only weakly, and/or makes a strange sound, one very common cause of that is that only 3 of the wires of the motor are connected to the stepper motor driver.
 
@@ -321,7 +386,10 @@ If that doesn't help, do the following : 
 - Try this motor on another stepper motor driver
 - Try another motor on this stepper motor driver
 
-### My stepper motor does not turn at all and makes a very high-pitched sound
+### Motor makes a high-pitched sound
+{: id="my-stepper-motor-does-not-turn-at-all-and-makes-a-very-high-pitched-sound"}
+
+Your stepper motor does not turn at all and makes a very high-pitched sound.
 
 A motor not moving at all, or moving erratically, or making a high pitch sound, or vibrating instead of moving, is a typical consequence of trying to move a motor too fast, or trying to accelerate a motor to too high a speed with too high acceleration (not "giving it enough time" to reach its target speed).
 
@@ -333,9 +401,10 @@ It's also possible you are trying to home, or to probe too fast. See the corresp
 
 If you are using external stepper motor drivers (driven by ENn, Stn and DIRn pins) check polarity, voltage and timings of signals to your driver. Also consider increasing {::nomarkdown}<setting v1="microseconds_per_step_pulse" v2="system.step_pulse_us"></setting>{:/nomarkdown} slightly if the default 1us pulse width is too narrow for your driver or cable lengths.
 
-### My stepper motor does not turn at all
+### Motor does not turn
+{: id="my-stepper-motor-does-not-turn-at-all"}
 
-And it does not present any resistance/torque when turning it manually :
+Your stepper motor does not turn at all, and it does not present any resistance/torque when turning it manually :
 
 This means the stepper motor driver is maybe not able to power the stepper motor. 
 

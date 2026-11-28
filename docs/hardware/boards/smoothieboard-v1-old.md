@@ -1,15 +1,17 @@
 ---
+title: "Smoothieboard v1 old"
 permalink: /smoothieboard-v1-old
 ---
 
-# SmoothieBoard v1 (Old)
+{::nomarkdown}
+<span id="smoothieboard-v1-old"></span>
+{:/nomarkdown}
 
 SmoothieBoard is an [Open Source Hardware](http://en.wikipedia.org/wiki/Open-source_hardware) [CNC controller board](http://en.wikipedia.org/wiki/Numerical_control) based on the [LPC 1769](http://www.nxp.com/products/microcontrollers-and-processors/arm-processors/lpc-cortex-m-mcus/lpc-cortex-m3/lpc1700-series/512kb-flash-64kb-sram-ethernet-usb-lqfp100-package:LPC1769FBD100) or LPC1768 Cortex-M3 chip.
 
 It is intended to run the [Smoothie modular firmware](http://smoothieware.org/) ( [GPL](http://en.wikipedia.org/wiki/Gpl) too ), and is targeted at [3D Printers](http://reprap.org), [Laser cutters](http://en.wikipedia.org/wiki/Laser_cutter), [CNC Mills](http://en.wikipedia.org/wiki/Milling_machine), [Pick and place](http://en.wikipedia.org/wiki/Pick_and_place) and other small-sized CNC machines.
 
 Larger machines can be driven using external drivers.
-
 
 {::nomarkdown}
 <sl-button variant="primary" size="large" href="getting-smoothieboard">Get a Smoothieboard</sl-button>
@@ -29,9 +31,9 @@ The [Smoothie](http://smoothieware.org) firmware is designed for maximum usefuln
 
 Here are some of the machines it's already possible to control using the current firmware and a SmoothieBoard:
 
-- **3D printers**, like [repraps](http://reprap.org/wiki/Main_Page) including extruder control, bed and hotend temp control.
-- **CNC mills**, CNC lathes.
-- **Laser cutters**
+- 3D printers, like [repraps](http://reprap.org/wiki/Main_Page) including extruder control, bed and hotend temp control.
+- CNC mills, CNC lathes.
+- Laser cutters
 
 And with more to come: laser engraving, SMT pick and place machine, foam cutter, delta robot, and anything else you care to imagine.
 
@@ -115,8 +117,8 @@ This is because if you use for example a non-cartesian arm solution (for example
 
 For each stepper motor you get two options:
 
-- **3.5mm**: mostly used for the larger screw terminals
-- **2.54mm**: mostly for smaller pins, or more sophisticated pin-like connectors.
+- 3.5mm: mostly used for the larger screw terminals
+- 2.54mm: mostly for smaller pins, or more sophisticated pin-like connectors.
 
 ### Stepper motor power input
 

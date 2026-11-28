@@ -21,7 +21,7 @@ permalink: /extensions/raw-pins-breakout
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/raw-pins-breakout/v15/raw-pins-breakout-diagram.png" alt="Top view of the Raw pins breakout.">
+    <img src="/images/extensions/raw-pins-breakout/v15/raw-pins-breakout-diagram.webp" alt="Top view of the Raw pins breakout.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -83,7 +83,7 @@ The numbers on the drawing match the list below it.
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/raw-pins-breakout/v15/raw-pins-breakout-diagram.png" alt="Top view of the Raw pins breakout with numbered markers explained in the list below.">
+      <img src="/images/extensions/raw-pins-breakout/v15/raw-pins-breakout-diagram.webp" alt="Top view of the Raw pins breakout with numbered markers explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:17.8%;top:42.7%" aria-label="1: Host socket (IN Y)">1<span class="xb-pop"><b>Host socket (IN Y)</b> — the ribbon cable from the controller.</span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:49.3%;top:9.1%" aria-label="2: Pin header (J2)">2<span class="xb-pop"><b>Pin header (J2)</b> — pin 1 (3.3&nbsp;V) at the top, pin 10 (GND) at the bottom.</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-3" style="left:82.2%;top:42.7%" aria-label="3: Chain socket (CHAIN Y)">3<span class="xb-pop"><b>Chain socket (CHAIN Y)</b> — carries the contacts to a second board.</span></a>
@@ -151,7 +151,7 @@ This test reads one button on PB1 of Smoothieboard V2 Prime.
 {::nomarkdown}
 <figure class="xb-fig">
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Minimal wiring: one ribbon cable and one button">
-  <svg viewBox="0 0 1000 440" role="img" aria-labelledby="xb-raw-wire"><title id="xb-raw-wire">A ten-wire ribbon cable from Smoothieboard V2 Prime header G_F to the Raw Pins board connector J1, and a normally open button between header pins 3 and 10.</title><rect x="20" y="150" width="180" height="140" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="110" y="182" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">Smoothieboard</text><text x="110" y="202" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">V2 Prime</text><text x="110" y="235" text-anchor="middle" font-size="12" fill="#b3b3b3">header G_F (J37)</text><clipPath id="xb-raw-clip"><rect x="357.0" y="27.0" width="346.79999999999995" height="390.0" rx="12"/></clipPath><g clip-path="url(#xb-raw-clip)"><image href="/images/extensions/raw-pins-breakout/raw-pins-breakout-diagram.png" x="348.3" y="23.9" width="364.8" height="408.0"/></g><path d="M200 220H412.8" stroke="#a1a1a1" stroke-width="30"/><path d="M200 207H412.8" stroke="#c0262c" stroke-width="4"/><rect x="384" y="138" width="60" height="120" rx="4" fill="#2f2f2f" stroke="#a1a1a1"/><text x="280" y="260" text-anchor="middle" font-size="12" fill="#b3b3b3">ten-wire ribbon</text><rect x="780" y="130" width="150" height="150" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><circle cx="855" cy="205" r="45" fill="#e23b32" stroke="#7d120d" stroke-width="5"/><text x="855" y="308" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">button (normally open)</text><path d="M528.0 121.8H740V170H792" fill="none" stroke="#0d0f12" stroke-width="5.5" stroke-linejoin="round"/><path d="M528.0 121.8H740V170H792" fill="none" stroke="#e0b82f" stroke-width="3" stroke-linejoin="round"/><path d="M528.0 335.2H760V240H792" fill="none" stroke="#0d0f12" stroke-width="5.5" stroke-linejoin="round"/><path d="M528.0 335.2H760V240H792" fill="none" stroke="#939393" stroke-width="3" stroke-linejoin="round"/><circle cx="528.0" cy="121.8" r="3.6" fill="#e0b82f" stroke="#fff" stroke-width="1"/><circle cx="528.0" cy="335.2" r="3.6" fill="#939393" stroke="#fff" stroke-width="1"/><circle cx="792.0" cy="170.0" r="3.6" fill="#e0b82f" stroke="#fff" stroke-width="1"/><circle cx="792.0" cy="240.0" r="3.6" fill="#939393" stroke="#fff" stroke-width="1"/><text x="742" y="111.8" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">3: P3</text><text x="742" y="359.2" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">10: GND</text></svg>
+  <svg viewBox="0 0 1000 440" role="img" aria-labelledby="xb-raw-wire"><title id="xb-raw-wire">A ten-wire ribbon cable from Smoothieboard V2 Prime header G_F to the Raw Pins board connector J1, and a normally open button between header pins 3 and 10.</title><rect x="20" y="150" width="180" height="140" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><text x="110" y="182" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">Smoothieboard</text><text x="110" y="202" text-anchor="middle" font-size="14" font-weight="700" fill="#eaeaea">V2 Prime</text><text x="110" y="235" text-anchor="middle" font-size="12" fill="#b3b3b3">header G_F (J37)</text><clipPath id="xb-raw-clip"><rect x="357.0" y="27.0" width="346.79999999999995" height="390.0" rx="12"/></clipPath><g clip-path="url(#xb-raw-clip)"><image href="/images/extensions/raw-pins-breakout/raw-pins-breakout-diagram.webp" x="348.3" y="23.9" width="364.8" height="408.0"/></g><path d="M200 220H412.8" stroke="#a1a1a1" stroke-width="30"/><path d="M200 207H412.8" stroke="#c0262c" stroke-width="4"/><rect x="384" y="138" width="60" height="120" rx="4" fill="#2f2f2f" stroke="#a1a1a1"/><text x="280" y="260" text-anchor="middle" font-size="12" fill="#b3b3b3">ten-wire ribbon</text><rect x="780" y="130" width="150" height="150" rx="8" fill="#1f2226" stroke="#e4e4e4" stroke-width="1.5"/><circle cx="855" cy="205" r="45" fill="#e23b32" stroke="#7d120d" stroke-width="5"/><text x="855" y="308" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">button (normally open)</text><path d="M528.0 121.8H740V170H792" fill="none" stroke="#0d0f12" stroke-width="5.5" stroke-linejoin="round"/><path d="M528.0 121.8H740V170H792" fill="none" stroke="#e0b82f" stroke-width="3" stroke-linejoin="round"/><path d="M528.0 335.2H760V240H792" fill="none" stroke="#0d0f12" stroke-width="5.5" stroke-linejoin="round"/><path d="M528.0 335.2H760V240H792" fill="none" stroke="#939393" stroke-width="3" stroke-linejoin="round"/><circle cx="528.0" cy="121.8" r="3.6" fill="#e0b82f" stroke="#fff" stroke-width="1"/><circle cx="528.0" cy="335.2" r="3.6" fill="#939393" stroke="#fff" stroke-width="1"/><circle cx="792.0" cy="170.0" r="3.6" fill="#e0b82f" stroke="#fff" stroke-width="1"/><circle cx="792.0" cy="240.0" r="3.6" fill="#939393" stroke="#fff" stroke-width="1"/><text x="742" y="111.8" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">3: P3</text><text x="742" y="359.2" text-anchor="middle" font-size="13" font-weight="700" fill="#eaeaea">10: GND</text></svg>
   </div>
   <figcaption>Minimal wiring: one ribbon cable and one button. Make connections with the power off.</figcaption>
 </figure>
@@ -287,13 +287,15 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
 
 ## Downloads {#downloads}
 
+The wiring drawings keep the original board markings and attribution of the Smoothieboard V2 Prime and Raw Pins Breakout designs.
+
 {::nomarkdown}
 <div class="xb-tablewrap"><table>
   <thead><tr><th>File</th><th>What it is</th></tr></thead>
   <tbody>
     <tr><td><a href="/images/extensions/raw-pins-breakout/v15/raw-pins-breakout-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/raw-pins-breakout/v15/raw-pins-breakout-bom.csv">Parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/raw-pins-breakout/v15/raw-pins-breakout-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/raw-pins-breakout/v15/raw-pins-breakout-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

@@ -1,8 +1,9 @@
 ---
+title: "Spindle module"
 permalink: /spindle-module
 ---
 
-# Basics
+## Basics
 
 The Spindle is the main effector on your CNC Mill/Router.
 
@@ -21,9 +22,7 @@ The spindle module supports different types of spindles which are described in t
 </sl-alert>
 {:/nomarkdown}
 
-## General
-
-
+### General
 
 The spindle module has an option which lets you enable or disable the entire module:
 
@@ -59,20 +58,16 @@ ignore_on_halt = false       # set to false to turn off spindle during HALT (saf
 </versioned>
 {:/nomarkdown}
 
-
-
-## G-code
+### G-code
 
 Available G-code commands:
-
 
 - {::nomarkdown}<mcode>M3</mcode>{:/nomarkdown} will start the spindle. {::nomarkdown}<mcode>M3</mcode>{:/nomarkdown} {::nomarkdown}<raw>S5000</raw>{:/nomarkdown} will start the spindle and set speed to 5000 RPM.
 - {::nomarkdown}<mcode>M5</mcode>{:/nomarkdown} will stop the spindle. Last set RPM is remembered and used for next {::nomarkdown}<mcode>M3</mcode>{:/nomarkdown} command if {::nomarkdown}<raw>S</raw>{:/nomarkdown} argument is not given.
 - {::nomarkdown}<mcode>M957</mcode>{:/nomarkdown} will report the current spindle speed and PWM value. This returns not the actual value but the value that was set through {::nomarkdown}<mcode>M3</mcode>{:/nomarkdown}.
 - {::nomarkdown}<mcode>M958</mcode>{:/nomarkdown} will report the current PID parameters. {::nomarkdown}<mcode>M958</mcode>{:/nomarkdown} {::nomarkdown}<raw>Px.xxx Ix.xxx Dx.xxx</raw>{:/nomarkdown} will set them (to save the new values, you need to edit config file manually).
 
-
-## PWM Spindle
+### PWM Spindle
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -83,9 +78,7 @@ Available G-code commands:
 </sl-alert>
 {:/nomarkdown}
 
-### Example config options
-
-
+#### Example config options
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -139,8 +132,6 @@ control_smoothing = 0.1      # default 0.1. This value is low pass filter time c
 </versioned>
 {:/nomarkdown}
 
-
-
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
@@ -163,8 +154,6 @@ control_smoothing = 0.1      # default 0.1. This value is low pass filter time c
   <br><br>
 </sl-alert>
 {:/nomarkdown}
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -210,8 +199,6 @@ servo.failsafe_set_to = 0
 </versioned>
 {:/nomarkdown}
 
-
-
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
@@ -219,7 +206,7 @@ servo.failsafe_set_to = 0
 </sl-alert>
 {:/nomarkdown}
 
-## Analog Spindle
+### Analog Spindle
 
 This module is used to control a [VFD](http://en.wikipedia.org/wiki/Variable-frequency_drive) with a PWM that is converted to a 0-10V analog signal by an additional circuit.
 
@@ -238,9 +225,7 @@ It is also the mode of choice if you run a brushless motor spindle driven by an 
 </sl-alert>
 {:/nomarkdown}
 
-### Example config options
-
-
+#### Example config options
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -286,9 +271,7 @@ switch_on_pin = 2.6          # the pin which is used to enable the VFD (optional
 </versioned>
 {:/nomarkdown}
 
-
-
-### PWM to analog converter circuit
+#### PWM to analog converter circuit
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -346,7 +329,7 @@ This example shows how to wire the Smoothieboard to a Huanyang VFD using the PCB
 </sl-alert>
 {:/nomarkdown}
 
-## Modbus Spindle
+### Modbus Spindle
 
 This module is used to control a [VFD](http://en.wikipedia.org/wiki/Variable-frequency_drive) using an [RS485](http://en.wikipedia.org/wiki/RS-485) communication bus.
 
@@ -363,9 +346,7 @@ But it also can support VFDs that are not compliant with the Modbus standard suc
 </sl-alert>
 {:/nomarkdown}
 
-### Example config options
-
-
+#### Example config options
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -403,9 +384,7 @@ dir_pin = 2.5                # RS485 is only half-duplex, so we need a pin to sw
 </versioned>
 {:/nomarkdown}
 
-
-
-### Huanyang VFD Modbus Parameters
+#### Huanyang VFD Modbus Parameters
 
 In order to get the Huanyang VFD accepting commands via ModBus, you need to change a few parameters:
 
@@ -422,7 +401,7 @@ In order to get the Huanyang VFD accepting commands via ModBus, you need to chan
 </sl-alert>
 {:/nomarkdown}
 
-### RS485 extension board
+#### RS485 extension board
 
 Like an analog spindle, the Modbus spindle needs an external circuit, but that is much simpler.
 

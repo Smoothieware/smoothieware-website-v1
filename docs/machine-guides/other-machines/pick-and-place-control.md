@@ -1,4 +1,5 @@
 ---
+title: "Pick and place control"
 permalink: /pick-and-place-control
 ---
 

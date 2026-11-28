@@ -1,9 +1,11 @@
 ---
+title: "Switch"
 permalink: /switch
 ---
 
-
-# Switch module
+{::nomarkdown}
+<span id="switch-module"></span>
+{:/nomarkdown}
 
 The Switch module takes care of basic input from things like buttons and switches and controls simple devices like fans and pumps.
 
@@ -32,9 +34,7 @@ If you come from the industry, the Switch module is Smoothie's implementation of
 
 ## Configuration
 
-Like [TemperatureControl](temperature-control), there can be multiple Switch modules. All you need to do is give each module its own name in the config file.
-
-
+Like [TemperatureControl](/temperaturecontrol), there can be multiple Switch modules. All you need to do is give each module its own name in the config file.
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -84,8 +84,6 @@ zplus10.output_on_command = G91G0Z10G90      # G90 and G91 switch to relative po
 </versioned>
 {:/nomarkdown}
 
-
-
 ### All options
 
 {% include modules/input-controls/switch-options-for-include.md %}
@@ -97,8 +95,6 @@ The initial internal state of the switch at boot is set by the <setting v1="swit
 Also remember that individual pins can be inverted with a `!` ( see [Pin Configuration](/pin-configuration) ). Default is false.
 
 There is also a <setting v1="switch.{name}.startup_value" v2="switch.{name}.startup_value"></setting> setting that sets the default analog value used for pwm on an output pin. This value defaults to always on.
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -126,8 +122,6 @@ fan1.startup_value = 127
 </versioned>
 {:/nomarkdown}
 
-
-
 ### Input and Output Pins
 **NOTE** a switch can have either an input pin defined or an output pin but not both.
 If for some reason you needed an input pin to control one or more output pins you could define two (or more) switches, one input and one or more outputs. Then the input pin would define the M-codes that turn on/off the output pins in its output_on_command (and/or its output_off_command).
@@ -139,8 +133,6 @@ This setting will enable a pin that can be used to change the state of the switc
 There is also a behavior setting for the input pin. Currently the valid options are `momentary` (default) and `toggle`. 
 
 The `toggle` behavior allows a momentary button to behave like an on-off toggle switch. If you are connecting a physical toggle switch you would probably want the behavior set to `momentary`.
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -168,13 +160,9 @@ fan1.input_pin_behavior = toggle
 </versioned>
 {:/nomarkdown}
 
-
-
 ### Output Pin
 
 Set this config value to drive an output pin based on the internal state of the Switch module. Remember that the pin can always be inverted with a `!` ( see [Pin Configuration](/pin-configuration) ).
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -204,11 +192,7 @@ fan1.max_pwm = 255                 # sets the max pwm for this pin
 </versioned>
 {:/nomarkdown}
 
-
-
 To set an output pin to be non-pwm so it just turns on or off set output_type digital
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -235,8 +219,6 @@ psu.output_pin = 1.30o!             # set to open drain, inverted to control an 
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 ### Output type
 
@@ -282,8 +264,6 @@ Use ordinary spaces in these serial messages. Switch translates underscores in `
 
 There are also a set of config settings that allow the Switch module to both generate and react to Gcodes as necessary. The `input_on_command` is also able to read an S parameter to set an analog value for pwm over the output pin. This allows things like driving a fan at less than full speed or dimming an led.
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -310,8 +290,6 @@ fan1.input_off_command = M107    # any command starting with this exact string t
 </versioned>
 {:/nomarkdown}
 
-
-
 In addition to `input_on_command` and `input_off_command` there are also corresponding config settings `output_on_command` and `output_off_command`. Offhand, it seems unlikely that a single switch module would need to use both input_ and output_ commands.
 
 {::nomarkdown}
@@ -328,8 +306,6 @@ In addition to `input_on_command` and `input_off_command` there are also corresp
 This configuration will allow you to control a fan using the standard reprap G-codes for controlling a fan
 
 This is already present in the default configuration file
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -367,15 +343,11 @@ fan.output_type = pwm                        # PWM output settable with S parame
 </versioned>
 {:/nomarkdown}
 
-
-
 ### Hobby Servo
 
 This configuration will allow you to control a servo using the standard reprap G-codes for controlling a servo.
 
 `M280 S5` would be fully to the left and `M280 S10` would be fully to the right.
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -419,10 +391,6 @@ servo.output_type = swpwm                      # Software pwm output settable wi
 </versioned>
 {:/nomarkdown}
 
-
-
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -459,13 +427,11 @@ servo2.output_type = hwpwm                     # H/W pwm output settable with S 
 </versioned>
 {:/nomarkdown}
 
-
-
 To find a PWM-capable pins, see [Pinout](pinout)
 
 ### Power supply control
 
-{% include hardware/power/power-supply-control-for-include.md %}
+{% include _includes/chapter.md file="hardware/power/power-supply-control-for-include.md" anchor="power-supply-control" deeper="2" %}
 
 ### Pause when out of filament
 
@@ -474,8 +440,6 @@ This configuration allows you to use a pin to detect when the machine is out of 
 Another switch is configured to allow you to resume the machine once the button is pressed.
 
 Additional configuration allows you to specify commands that are executed when the machine suspends, and when it resumes.
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -519,15 +483,11 @@ before_resume_gcode = G91_G1E1_G90                          # Gcode to run after
 </versioned>
 {:/nomarkdown}
 
-
-
 Note, there is a real filament detector module which works much better than this, see [filament-detector](/filament-detector).
 
 ### Suspend and resume buttons
 
 This configuration allows you to set a suspend button, and a resume button.
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -571,15 +531,23 @@ before_resume_gcode = G91_G1E1_G90                          # Gcode to run after
 </versioned>
 {:/nomarkdown}
 
+### Stopping Smoothie
 
+A [switch](/switch) or a [button box](/button-box) can send stop commands for you : 
 
-{% include troubleshooting/stopping-smoothie-for-include.md %}
+* {::nomarkdown}<mcode>M600</mcode>{:/nomarkdown} suspends the file, {::nomarkdown}<mcode>M601</mcode>{:/nomarkdown} resumes it
+* {::nomarkdown}<mcode>M112</mcode>{:/nomarkdown} halts everything : heaters are turned off, the position is lost, and you need {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown} then homing
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="book"></sl-icon>
+  <strong>Learn more:</strong> <a href="/stopping-smoothie">Stopping Smoothie</a>
+</sl-alert>
+{:/nomarkdown}
 
 ### Suspend/resume single button
 
 This configuration allows you to set a single button to both pause and resume the machine
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -619,13 +587,9 @@ before_resume_gcode = G91_G1E1_G90                          # Gcode to run after
 </versioned>
 {:/nomarkdown}
 
-
-
 ### Spindle control button
 
 This configuration allows you to set a single button to start and stop your [spindle](spindle-module).
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -659,13 +623,9 @@ spindle.input_pin_behavior = toggle           # This pin toggles between it's on
 </versioned>
 {:/nomarkdown}
 
-
-
 ### Laser power supply
 
 For the enable ( TTL ) pin on a CO2 laser PSU, for power control use the [Laser](laser) module.
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -699,8 +659,6 @@ laser.output_pin = 1.31                       # Pin to control, to be connected 
 </versioned>
 {:/nomarkdown}
 
-
-
 Note this is now supported by the [laser module](laser) itself, where the pin is automatically toggled, using the `laser_module_ttl_pin` configuration option.
 
 However, if you are not using that functionality, this allows you to turn the laser power supply using G-codes.
@@ -712,8 +670,6 @@ Smoothie has a reset button, and you can wire an external button to that ( see [
 However, maybe you have an existing [Panel](panel), which has a button on it, and you want to turn that into a reset button.
 
 If that's the case, you can setup a switch module to read whatever pin you wired that button to, and make it trigger the `reset` command whenever it is pressed, like this:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -743,8 +699,6 @@ reset.output_on_command = reset               # Command to reset the board
 </versioned>
 {:/nomarkdown}
 
-
-
 ### Homing a multi-motor axis.
 
 Let's say your machine has a Y or Z axis that has not one, but two or more stepper motors.
@@ -757,8 +711,6 @@ The way this is accomplished is fairly simple:
 - Enable and home each axis in turn
 
 Here is how you would set up switch modules for two stepper motor drivers:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -803,8 +755,6 @@ z-2.output_pin = 1.30                         # Pin to control enable pin of dri
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 For wiring, simply wire pin {::nomarkdown}<pin>1.31</pin>{:/nomarkdown} to the enable pin of the first stepper driver and pin {::nomarkdown}<pin>1.30</pin>{:/nomarkdown} to the enable pin of the second stepper driver. 
 

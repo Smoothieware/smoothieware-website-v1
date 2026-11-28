@@ -1,8 +1,11 @@
 ---
+title: "SmoothiePanel beta"
 permalink: /smoothiepanel-beta
 ---
 
-# SmoothiePanel Beta
+{::nomarkdown}
+<span id="smoothiepanel-beta"></span>
+{:/nomarkdown}
 
 SmoothiePanel is an [Open Source Hardware](http://en.wikipedia.org/wiki/Open-source_hardware) integrated PanelMax.
 

@@ -1,16 +1,14 @@
-# Power Supply Control
+{::nomarkdown}
+<span id="power-supply-control"></span>
+{:/nomarkdown}
 
 This page describes how to control your power supply's ON/OFF signal from Smoothie using the Switch module.
 
 This allows your board to automatically turn the power supply on or off when needed, such as at the start or end of a job.
 
----
-
 ## Method 1: Direct Connection to ATX PS_ON
 
 Here is how to control an ATX power supply's ON/OFF signal from a bare pin connected to the PS_ON signal:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -50,8 +48,6 @@ psu.failsafe_set_to = 1       # so the ATX turns off on a system crash
 </versioned>
 {:/nomarkdown}
 
-
-
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
@@ -59,13 +55,9 @@ psu.failsafe_set_to = 1       # so the ATX turns off on a system crash
 </sl-alert>
 {:/nomarkdown}
 
----
-
 ## Method 2: Using a MOSFET or SSR
 
 Here is how to control an ATX power supply's ON/OFF signal from a small MOSFET connected to the PS_ON signal, or to an SSR which powers a non-ATX PSU:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -103,16 +95,12 @@ psu.output_type = digital     # on/off only
 </versioned>
 {:/nomarkdown}
 
-
-
 {::nomarkdown}
 <sl-alert variant="primary" open>
   <sl-icon slot="icon" name="lightbulb"></sl-icon>
   <strong>Tip:</strong> When using a MOSFET, note that the pin is NOT inverted (no <code>!</code> after the pin number), unlike the direct connection method.
 </sl-alert>
 {:/nomarkdown}
-
----
 
 ## G-code Commands
 
@@ -122,8 +110,6 @@ Once configured, you can control your power supply with these commands:
 | ------- | -------- |
 | {::nomarkdown}<mcode>M80</mcode>{:/nomarkdown} | Turn power supply ON |
 | {::nomarkdown}<mcode>M81</mcode>{:/nomarkdown} | Turn power supply OFF |
-
----
 
 ## Safety Considerations
 
@@ -139,10 +125,8 @@ The `ignore_on_halt` parameter determines whether the power supply should turn o
 
 **Options:**
 
-- **Commented out or set to false** - Power supply will turn off on HALT conditions, including overheat faults (recommended for safety)
-- **Set to true** - Power supply stays on during HALT conditions from limit switches, but this may prevent automatic shutdown during dangerous conditions
-
----
+- Commented out or set to false - Power supply will turn off on HALT conditions, including overheat faults (recommended for safety)
+- Set to true - Power supply stays on during HALT conditions from limit switches, but this may prevent automatic shutdown during dangerous conditions
 
 ## Further Reading
 

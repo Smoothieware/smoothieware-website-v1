@@ -1,0 +1,4628 @@
+{
+  "board": "Teensy 4.1 to Gadgeteer host",
+  "revision": "v05",
+  "selected_population": "Qwiic J7; J8 absent",
+  "producer": {
+    "path": "smoothie-diagrams/src/host-adapter-guides/teensy.py",
+    "sha256": "b4f960608a4a7a7feb845db7c1228bfc7155b105972d508f06a114e4ba0b6f4f"
+  },
+  "successor_comparison": {
+    "revision": "v06",
+    "electrical_connector_roles_preserved": 96,
+    "connector_roles": [
+      [
+        "J9",
+        "1",
+        "HOST_VIN"
+      ],
+      [
+        "J9",
+        "2",
+        "GND"
+      ],
+      [
+        "J9",
+        "3",
+        "HOST_3V3"
+      ],
+      [
+        "J9",
+        "4",
+        "H_P23"
+      ],
+      [
+        "J9",
+        "5",
+        "H_P22"
+      ],
+      [
+        "J9",
+        "6",
+        "H_P21"
+      ],
+      [
+        "J9",
+        "7",
+        "H_P20"
+      ],
+      [
+        "J9",
+        "8",
+        "H_P19"
+      ],
+      [
+        "J9",
+        "9",
+        "H_P18"
+      ],
+      [
+        "J9",
+        "10",
+        "H_P17"
+      ],
+      [
+        "J9",
+        "11",
+        "H_P16"
+      ],
+      [
+        "J9",
+        "12",
+        "H_P15"
+      ],
+      [
+        "J9",
+        "13",
+        "H_P14"
+      ],
+      [
+        "J9",
+        "14",
+        "H_P13"
+      ],
+      [
+        "J9",
+        "15",
+        "GND"
+      ],
+      [
+        "J10",
+        "1",
+        "GND"
+      ],
+      [
+        "J10",
+        "2",
+        "H_P0"
+      ],
+      [
+        "J10",
+        "3",
+        "H_P1"
+      ],
+      [
+        "J10",
+        "4",
+        "H_P2"
+      ],
+      [
+        "J10",
+        "5",
+        "H_P3"
+      ],
+      [
+        "J10",
+        "6",
+        "H_P4"
+      ],
+      [
+        "J10",
+        "7",
+        "H_P5"
+      ],
+      [
+        "J10",
+        "8",
+        "H_P6"
+      ],
+      [
+        "J10",
+        "9",
+        "H_P7"
+      ],
+      [
+        "J10",
+        "10",
+        "H_P8"
+      ],
+      [
+        "J10",
+        "11",
+        "H_P9"
+      ],
+      [
+        "J10",
+        "12",
+        "H_P10"
+      ],
+      [
+        "J10",
+        "13",
+        "H_P11"
+      ],
+      [
+        "J10",
+        "14",
+        "H_P12"
+      ],
+      [
+        "J10",
+        "15",
+        "HOST_3V3"
+      ],
+      [
+        "J10",
+        "16",
+        "H_P24"
+      ],
+      [
+        "J10",
+        "17",
+        "H_P25"
+      ],
+      [
+        "J10",
+        "18",
+        "H_P26"
+      ],
+      [
+        "J10",
+        "19",
+        "H_P27"
+      ],
+      [
+        "J10",
+        "20",
+        "H_P28"
+      ],
+      [
+        "J10",
+        "21",
+        "H_P29"
+      ],
+      [
+        "J10",
+        "22",
+        "H_P30"
+      ],
+      [
+        "J2",
+        "1",
+        "+3V3P"
+      ],
+      [
+        "J2",
+        "2",
+        "+5VS"
+      ],
+      [
+        "J2",
+        "3",
+        "S_J2_3"
+      ],
+      [
+        "J2",
+        "4",
+        "S_J2_4"
+      ],
+      [
+        "J2",
+        "5",
+        "S_J2_5"
+      ],
+      [
+        "J2",
+        "6",
+        "S_J2_6"
+      ],
+      [
+        "J2",
+        "10",
+        "GND"
+      ],
+      [
+        "J5",
+        "1",
+        "+3V3P"
+      ],
+      [
+        "J5",
+        "2",
+        "+5VS"
+      ],
+      [
+        "J5",
+        "3",
+        "S_J5_3"
+      ],
+      [
+        "J5",
+        "6",
+        "S_J5_6"
+      ],
+      [
+        "J5",
+        "8",
+        "S_J5_8"
+      ],
+      [
+        "J5",
+        "9",
+        "S_J5_9"
+      ],
+      [
+        "J5",
+        "10",
+        "GND"
+      ],
+      [
+        "J6",
+        "1",
+        "+3V3P"
+      ],
+      [
+        "J6",
+        "2",
+        "+5VS"
+      ],
+      [
+        "J6",
+        "3",
+        "S_J6_3"
+      ],
+      [
+        "J6",
+        "6",
+        "S_J6_6"
+      ],
+      [
+        "J6",
+        "7",
+        "S_J6_7"
+      ],
+      [
+        "J6",
+        "8",
+        "S_J6_8"
+      ],
+      [
+        "J6",
+        "9",
+        "S_J6_9"
+      ],
+      [
+        "J6",
+        "10",
+        "GND"
+      ],
+      [
+        "J4",
+        "1",
+        "+3V3P"
+      ],
+      [
+        "J4",
+        "2",
+        "+5VS"
+      ],
+      [
+        "J4",
+        "3",
+        "S_J4_3"
+      ],
+      [
+        "J4",
+        "4",
+        "S_J4_4"
+      ],
+      [
+        "J4",
+        "5",
+        "S_J4_5"
+      ],
+      [
+        "J4",
+        "6",
+        "S_J4_6"
+      ],
+      [
+        "J4",
+        "10",
+        "GND"
+      ],
+      [
+        "J3",
+        "1",
+        "+3V3P"
+      ],
+      [
+        "J3",
+        "2",
+        "+5VS"
+      ],
+      [
+        "J3",
+        "3",
+        "S_J3_3"
+      ],
+      [
+        "J3",
+        "4",
+        "S_J3_4"
+      ],
+      [
+        "J3",
+        "5",
+        "S_J3_5"
+      ],
+      [
+        "J3",
+        "6",
+        "S_J3_6"
+      ],
+      [
+        "J3",
+        "7",
+        "S_J3_7"
+      ],
+      [
+        "J3",
+        "8",
+        "S_J3_8"
+      ],
+      [
+        "J3",
+        "9",
+        "S_J3_9"
+      ],
+      [
+        "J3",
+        "10",
+        "GND"
+      ],
+      [
+        "J1",
+        "1",
+        "+3V3P"
+      ],
+      [
+        "J1",
+        "2",
+        "+5VS"
+      ],
+      [
+        "J1",
+        "3",
+        "S_J1_3"
+      ],
+      [
+        "J1",
+        "4",
+        "S_J1_4"
+      ],
+      [
+        "J1",
+        "5",
+        "S_J1_5"
+      ],
+      [
+        "J1",
+        "6",
+        "S_J1_6"
+      ],
+      [
+        "J1",
+        "7",
+        "S_J1_7"
+      ],
+      [
+        "J1",
+        "8",
+        "S_J1_8"
+      ],
+      [
+        "J1",
+        "9",
+        "S_J1_9"
+      ],
+      [
+        "J1",
+        "10",
+        "GND"
+      ],
+      [
+        "J7",
+        "1",
+        "GND"
+      ],
+      [
+        "J7",
+        "2",
+        "+3V3P"
+      ],
+      [
+        "J7",
+        "3",
+        "S_J5_8"
+      ],
+      [
+        "J7",
+        "4",
+        "S_J5_9"
+      ],
+      [
+        "J7",
+        "MP",
+        "GND"
+      ],
+      [
+        "J7",
+        "MP",
+        "GND"
+      ],
+      [
+        "J8",
+        "1",
+        "GND"
+      ],
+      [
+        "J8",
+        "2",
+        "+3V3P"
+      ],
+      [
+        "J8",
+        "3",
+        "S_J5_8"
+      ],
+      [
+        "J8",
+        "4",
+        "S_J5_9"
+      ]
+    ],
+    "layout_or_footprint_changes": [
+      "U1",
+      "R1",
+      "R2",
+      "R3",
+      "R4",
+      "U2",
+      "R5",
+      "R6",
+      "R7",
+      "U3",
+      "R8",
+      "R9",
+      "U4",
+      "R10",
+      "R11",
+      "U5",
+      "R12",
+      "R13",
+      "R14",
+      "R15",
+      "U6",
+      "R16",
+      "R17",
+      "R18",
+      "U7",
+      "R19",
+      "R20",
+      "U8",
+      "R21",
+      "R22",
+      "U9",
+      "R23",
+      "R24",
+      "U10",
+      "R25",
+      "R26",
+      "U11",
+      "R27",
+      "R28",
+      "U12",
+      "R29",
+      "R30",
+      "R31",
+      "JP1",
+      "R32",
+      "D2",
+      "JP2",
+      "R33",
+      "D3",
+      "J8",
+      "FID1",
+      "FID2",
+      "H5",
+      "H7"
+    ],
+    "selected_for_illustrations": false,
+    "qualification": "not promoted; missing selected qualification record"
+  },
+  "sources": {
+    "extension-boards/src/teensy-to-gadgeteer-host/attempt/versions/v05/teensy-to-gadgeteer-host.kicad_pcb": "f894511d5e1bec9c38a49467a9daa0b3a54e1c79e4f5e3f1acdd05a573c3edb4",
+    "extension-boards/src/teensy-to-gadgeteer-host/attempt/versions/v05/teensy-to-gadgeteer-host.kicad_sch": "a8b8ddfc89902d8a6441149236262561aa823804c34b8517383b6a97bc576231",
+    "extension-boards/src/teensy-to-gadgeteer-host/attempt/design-contract.json": "8669ae352ccac576e4e0b77c40e9d43593f4d0c9898f8f6e04feeef9c56753b9",
+    "extension-boards/src/teensy-to-gadgeteer-host/attempt/versions/v06/teensy-to-gadgeteer-host.kicad_pcb": "953faec909c6bbe4536049b9a3f37d77ef0480e4c23754fc8f0621473998ad68",
+    "extension-boards/src/buzzer-module/attempt/versions/v14/buzzer-module.kicad_pcb": "6bc77eda610bb58ec562285216d892c781092cf5743c45742f3bd0db7fafa9a0",
+    "extension-boards/src/buzzer-module/attempt/versions/v14/exports/schematic-netlist.xml": "04accdc8043ad8631654ce5d296acf03bf0581674b6e5bdf01ff7e628ae956c4",
+    "smoothie-diagrams/data/extension-board-renders/buzzer-module/v14/buzzer-module.svg": "36e78aff9e1bfdcebf934252cb8a72a5b3d84ae3720d75205659e035972ad33b"
+  },
+  "pcb_to_abstract": {
+    "matrix": [
+      1,
+      0,
+      0,
+      1,
+      0,
+      0
+    ],
+    "units": "mm"
+  },
+  "contacts": [
+    {
+      "reference": "J9",
+      "pin": "1",
+      "local": [
+        0.0,
+        0.0
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        3.0,
+        20.38
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "21c56d0c-563d-59ac-a2ca-5437a851ea4e",
+      "net": "HOST_VIN"
+    },
+    {
+      "reference": "J9",
+      "pin": "2",
+      "local": [
+        0.0,
+        2.54
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        5.54,
+        20.38
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "c96bd551-df76-5fc2-9bf8-d3b2675c9f45",
+      "net": "GND"
+    },
+    {
+      "reference": "J9",
+      "pin": "3",
+      "local": [
+        0.0,
+        5.08
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        8.08,
+        20.38
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "5ec108af-0344-5f56-8fd1-f4b3e7650291",
+      "net": "HOST_3V3"
+    },
+    {
+      "reference": "J9",
+      "pin": "4",
+      "local": [
+        0.0,
+        7.62
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        10.620000000000001,
+        20.38
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "ac79fb63-51c8-5d46-892f-9e3e7b51cb45",
+      "net": "H_P23"
+    },
+    {
+      "reference": "J9",
+      "pin": "5",
+      "local": [
+        0.0,
+        10.16
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        13.16,
+        20.38
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "a0778875-a99d-5d9c-bc59-fd89d0a90080",
+      "net": "H_P22"
+    },
+    {
+      "reference": "J9",
+      "pin": "6",
+      "local": [
+        0.0,
+        12.7
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        15.7,
+        20.38
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "8c93f3b8-6bae-52cb-895e-30e630207272",
+      "net": "H_P21"
+    },
+    {
+      "reference": "J9",
+      "pin": "7",
+      "local": [
+        0.0,
+        15.24
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        18.240000000000002,
+        20.38
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "b0de6770-5640-5ae6-915b-421407331fa0",
+      "net": "H_P20"
+    },
+    {
+      "reference": "J9",
+      "pin": "8",
+      "local": [
+        0.0,
+        17.78
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        20.78,
+        20.38
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "ce14a9a0-e70c-5c6e-a705-5a1aab947cb1",
+      "net": "H_P19"
+    },
+    {
+      "reference": "J9",
+      "pin": "9",
+      "local": [
+        0.0,
+        20.32
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        23.32,
+        20.38
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "509eee20-d34a-5f0c-bf89-f953707c8dc7",
+      "net": "H_P18"
+    },
+    {
+      "reference": "J9",
+      "pin": "10",
+      "local": [
+        0.0,
+        22.86
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        25.86,
+        20.38
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "7e40ae9b-2224-5727-b71b-db3f6d27d3ca",
+      "net": "H_P17"
+    },
+    {
+      "reference": "J9",
+      "pin": "11",
+      "local": [
+        0.0,
+        25.4
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        28.4,
+        20.38
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "090aa917-5078-50b9-af0e-cf5b91909aee",
+      "net": "H_P16"
+    },
+    {
+      "reference": "J9",
+      "pin": "12",
+      "local": [
+        0.0,
+        27.94
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        30.94,
+        20.38
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "f0ef9d4d-6277-5599-a6bc-351d4c570d5a",
+      "net": "H_P15"
+    },
+    {
+      "reference": "J9",
+      "pin": "13",
+      "local": [
+        0.0,
+        30.48
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        33.480000000000004,
+        20.380000000000003
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "e5bb65fa-92a2-5399-bff9-e6ca3e110207",
+      "net": "H_P14"
+    },
+    {
+      "reference": "J9",
+      "pin": "14",
+      "local": [
+        0.0,
+        33.02
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        36.02,
+        20.380000000000003
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "ba02df35-9753-5b1f-ab74-1e1a7baf9760",
+      "net": "H_P13"
+    },
+    {
+      "reference": "J9",
+      "pin": "15",
+      "local": [
+        0.0,
+        35.56
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        38.56,
+        20.380000000000003
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "73db8186-60be-5832-abc7-802c2eb33d8a",
+      "net": "GND"
+    },
+    {
+      "reference": "J9",
+      "pin": "16",
+      "local": [
+        0.0,
+        38.1
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        41.1,
+        20.380000000000003
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "925b9922-af0d-501a-91d9-a68e78837d14",
+      "net": null
+    },
+    {
+      "reference": "J9",
+      "pin": "17",
+      "local": [
+        0.0,
+        40.64
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        43.64,
+        20.380000000000003
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "d7153212-48c9-56b2-b765-91b9b6b045a0",
+      "net": null
+    },
+    {
+      "reference": "J9",
+      "pin": "18",
+      "local": [
+        0.0,
+        43.18
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        46.18,
+        20.380000000000003
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "411ed4d0-2838-5816-a07d-4fb93bfab4fd",
+      "net": null
+    },
+    {
+      "reference": "J9",
+      "pin": "19",
+      "local": [
+        0.0,
+        45.72
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        48.72,
+        20.380000000000003
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "df583349-091c-5995-a68d-f4e336aa7bea",
+      "net": null
+    },
+    {
+      "reference": "J9",
+      "pin": "20",
+      "local": [
+        0.0,
+        48.26
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        51.26,
+        20.380000000000003
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "8ffedb09-2411-5b17-9596-e547a1c5943e",
+      "net": null
+    },
+    {
+      "reference": "J9",
+      "pin": "21",
+      "local": [
+        0.0,
+        50.8
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        53.8,
+        20.380000000000003
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "f0ee54ac-0f4a-5be2-ac33-e434821ed907",
+      "net": null
+    },
+    {
+      "reference": "J9",
+      "pin": "22",
+      "local": [
+        0.0,
+        53.34
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        56.34,
+        20.380000000000003
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "c0c55cde-118f-5692-8325-8d0fe6ed6481",
+      "net": null
+    },
+    {
+      "reference": "J9",
+      "pin": "23",
+      "local": [
+        0.0,
+        55.88
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        58.88,
+        20.380000000000003
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "d8e7799b-9660-508a-9182-47246fb4eb8c",
+      "net": null
+    },
+    {
+      "reference": "J9",
+      "pin": "24",
+      "local": [
+        0.0,
+        58.42
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        61.42,
+        20.380000000000003
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "197f6671-5759-5ca3-a356-0876c47aa305",
+      "net": null
+    },
+    {
+      "reference": "J10",
+      "pin": "1",
+      "local": [
+        0.0,
+        0.0
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        3.0,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "e740a6d3-486c-5be2-9921-db7af77588d7",
+      "net": "GND"
+    },
+    {
+      "reference": "J10",
+      "pin": "2",
+      "local": [
+        0.0,
+        2.54
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        5.54,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "3fec37dd-49dd-5a72-99f7-17e379ecf69d",
+      "net": "H_P0"
+    },
+    {
+      "reference": "J10",
+      "pin": "3",
+      "local": [
+        0.0,
+        5.08
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        8.08,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "c2238a86-0b02-519b-9c5b-ed8ecd78cc80",
+      "net": "H_P1"
+    },
+    {
+      "reference": "J10",
+      "pin": "4",
+      "local": [
+        0.0,
+        7.62
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        10.620000000000001,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "62ae9556-ae2e-50c9-b0e7-eac32f74d76b",
+      "net": "H_P2"
+    },
+    {
+      "reference": "J10",
+      "pin": "5",
+      "local": [
+        0.0,
+        10.16
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        13.16,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "107bccfa-4b41-5a41-8357-de8300becad5",
+      "net": "H_P3"
+    },
+    {
+      "reference": "J10",
+      "pin": "6",
+      "local": [
+        0.0,
+        12.7
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        15.7,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "9d615bf7-7ed2-58e4-a920-f54dba10895b",
+      "net": "H_P4"
+    },
+    {
+      "reference": "J10",
+      "pin": "7",
+      "local": [
+        0.0,
+        15.24
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        18.240000000000002,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "09228b83-b2ea-5c4d-a498-b8d74effd19e",
+      "net": "H_P5"
+    },
+    {
+      "reference": "J10",
+      "pin": "8",
+      "local": [
+        0.0,
+        17.78
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        20.78,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "1d886cf7-11d2-552e-b1e8-a4228df2c13a",
+      "net": "H_P6"
+    },
+    {
+      "reference": "J10",
+      "pin": "9",
+      "local": [
+        0.0,
+        20.32
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        23.32,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "8470f16a-fb2b-500c-8566-61ff24a46fbf",
+      "net": "H_P7"
+    },
+    {
+      "reference": "J10",
+      "pin": "10",
+      "local": [
+        0.0,
+        22.86
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        25.86,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "35b41921-9fd6-5e96-b883-ff4a63a9e298",
+      "net": "H_P8"
+    },
+    {
+      "reference": "J10",
+      "pin": "11",
+      "local": [
+        0.0,
+        25.4
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        28.4,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "b2e93c9e-5fc6-5567-8d52-f0a30c4ee32c",
+      "net": "H_P9"
+    },
+    {
+      "reference": "J10",
+      "pin": "12",
+      "local": [
+        0.0,
+        27.94
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        30.94,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "f864f70d-264f-5673-b93e-26bdea1d3232",
+      "net": "H_P10"
+    },
+    {
+      "reference": "J10",
+      "pin": "13",
+      "local": [
+        0.0,
+        30.48
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        33.480000000000004,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "6f271327-2c1b-52a8-a2a7-11f63e69840a",
+      "net": "H_P11"
+    },
+    {
+      "reference": "J10",
+      "pin": "14",
+      "local": [
+        0.0,
+        33.02
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        36.02,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "4770a45e-2a04-5036-ad17-815dccd675ce",
+      "net": "H_P12"
+    },
+    {
+      "reference": "J10",
+      "pin": "15",
+      "local": [
+        0.0,
+        35.56
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        38.56,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "4e9f3f8e-a9cd-5039-872d-435d54e25899",
+      "net": "HOST_3V3"
+    },
+    {
+      "reference": "J10",
+      "pin": "16",
+      "local": [
+        0.0,
+        38.1
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        41.1,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "37dc1488-d5fb-5d17-98ee-6900a79aa8af",
+      "net": "H_P24"
+    },
+    {
+      "reference": "J10",
+      "pin": "17",
+      "local": [
+        0.0,
+        40.64
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        43.64,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "5ac2eea4-1620-5cc7-9e84-366718e38385",
+      "net": "H_P25"
+    },
+    {
+      "reference": "J10",
+      "pin": "18",
+      "local": [
+        0.0,
+        43.18
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        46.18,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "f364afe9-9ffc-57bb-84e7-4bf298f4768b",
+      "net": "H_P26"
+    },
+    {
+      "reference": "J10",
+      "pin": "19",
+      "local": [
+        0.0,
+        45.72
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        48.72,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "ec1ef3cb-cf59-5928-be1c-ea5bf235f263",
+      "net": "H_P27"
+    },
+    {
+      "reference": "J10",
+      "pin": "20",
+      "local": [
+        0.0,
+        48.26
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        51.26,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "8c7b9f56-e3a8-5117-ba57-60f8cf9abf6b",
+      "net": "H_P28"
+    },
+    {
+      "reference": "J10",
+      "pin": "21",
+      "local": [
+        0.0,
+        50.8
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        53.8,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "70e4c7e4-6c9d-5099-805f-313824164de0",
+      "net": "H_P29"
+    },
+    {
+      "reference": "J10",
+      "pin": "22",
+      "local": [
+        0.0,
+        53.34
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        56.34,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "def1e888-9359-5802-8285-f95dac27476a",
+      "net": "H_P30"
+    },
+    {
+      "reference": "J10",
+      "pin": "23",
+      "local": [
+        0.0,
+        55.88
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        58.88,
+        35.62
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "3fa1c372-355f-508e-b909-caf6ddef74da",
+      "net": null
+    },
+    {
+      "reference": "J10",
+      "pin": "24",
+      "local": [
+        0.0,
+        58.42
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        61.42,
+        35.620000000000005
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "fd0d57d9-06de-59a4-a297-b48cd6338f74",
+      "net": null
+    },
+    {
+      "reference": "J2",
+      "pin": "1",
+      "local": [
+        -2.54,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        15.635,
+        9.74
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "89f9f86b-3344-5110-b128-29c169bc1a46",
+      "net": "+3V3P"
+    },
+    {
+      "reference": "J2",
+      "pin": "2",
+      "local": [
+        -2.54,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        14.365,
+        9.74
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "af00991f-8157-5429-a222-6dc1f8e83bc3",
+      "net": "+5VS"
+    },
+    {
+      "reference": "J2",
+      "pin": "3",
+      "local": [
+        -1.27,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        15.635,
+        8.47
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "462831f4-aeee-5ccc-83e6-eaa47ee7470d",
+      "net": "S_J2_3"
+    },
+    {
+      "reference": "J2",
+      "pin": "4",
+      "local": [
+        -1.27,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        14.365,
+        8.47
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "eae586b9-cf88-5e06-b62d-446a72593ef6",
+      "net": "S_J2_4"
+    },
+    {
+      "reference": "J2",
+      "pin": "5",
+      "local": [
+        0.0,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        15.635,
+        7.2
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "048b192f-1fb6-5111-a086-c5a3a7c6f02c",
+      "net": "S_J2_5"
+    },
+    {
+      "reference": "J2",
+      "pin": "6",
+      "local": [
+        0.0,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        14.365,
+        7.2
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "9a305aef-2731-5d60-bc9a-d5119dec6f97",
+      "net": "S_J2_6"
+    },
+    {
+      "reference": "J2",
+      "pin": "7",
+      "local": [
+        1.27,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        15.635,
+        5.93
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "a73c0fa3-143e-5c91-ae5b-f9266f5b0a36",
+      "net": null
+    },
+    {
+      "reference": "J2",
+      "pin": "8",
+      "local": [
+        1.27,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        14.365,
+        5.93
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "a5dc6f7f-d099-52b6-a430-43d8e799f61f",
+      "net": null
+    },
+    {
+      "reference": "J2",
+      "pin": "9",
+      "local": [
+        2.54,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        15.635,
+        4.66
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "e448711b-d25c-56d3-908c-ff5365cf9247",
+      "net": null
+    },
+    {
+      "reference": "J2",
+      "pin": "10",
+      "local": [
+        2.54,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        14.365,
+        4.66
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "5ac42f66-426d-5cad-9111-bac295dc29ae",
+      "net": "GND"
+    },
+    {
+      "reference": "J5",
+      "pin": "1",
+      "local": [
+        -2.54,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        38.635,
+        9.74
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "377e8e42-8f47-5da2-8e5c-024361b4c102",
+      "net": "+3V3P"
+    },
+    {
+      "reference": "J5",
+      "pin": "2",
+      "local": [
+        -2.54,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        37.365,
+        9.74
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "2a54945a-2acf-5a07-a45c-16ae1eb1b92e",
+      "net": "+5VS"
+    },
+    {
+      "reference": "J5",
+      "pin": "3",
+      "local": [
+        -1.27,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        38.635,
+        8.47
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "567ebdad-6538-5494-b2b8-14d2a8e7a95c",
+      "net": "S_J5_3"
+    },
+    {
+      "reference": "J5",
+      "pin": "4",
+      "local": [
+        -1.27,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        37.365,
+        8.47
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "9c3d7db2-12f9-5efc-a9d4-213bbe8f1411",
+      "net": null
+    },
+    {
+      "reference": "J5",
+      "pin": "5",
+      "local": [
+        0.0,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        38.635,
+        7.2
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "aca809bf-564d-52a7-ad06-e35236711032",
+      "net": null
+    },
+    {
+      "reference": "J5",
+      "pin": "6",
+      "local": [
+        0.0,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        37.365,
+        7.2
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "3def54a8-92b9-5523-987c-8e544b57c2a9",
+      "net": "S_J5_6"
+    },
+    {
+      "reference": "J5",
+      "pin": "7",
+      "local": [
+        1.27,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        38.635,
+        5.93
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "a046454e-a231-5dfb-b095-6fc6eca1182a",
+      "net": null
+    },
+    {
+      "reference": "J5",
+      "pin": "8",
+      "local": [
+        1.27,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        37.365,
+        5.93
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "ebe9d833-184b-5287-987f-3bc97491b6ab",
+      "net": "S_J5_8"
+    },
+    {
+      "reference": "J5",
+      "pin": "9",
+      "local": [
+        2.54,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        38.635,
+        4.66
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "dbd23ddd-088f-5460-a3e5-fb4bc994d70e",
+      "net": "S_J5_9"
+    },
+    {
+      "reference": "J5",
+      "pin": "10",
+      "local": [
+        2.54,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        37.365,
+        4.66
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "67fd185c-38d1-5e08-8cc9-25012f49be6d",
+      "net": "GND"
+    },
+    {
+      "reference": "J6",
+      "pin": "1",
+      "local": [
+        -2.54,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        61.635,
+        9.74
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "10fc5192-25c5-5064-a300-09e825ff59c7",
+      "net": "+3V3P"
+    },
+    {
+      "reference": "J6",
+      "pin": "2",
+      "local": [
+        -2.54,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        60.365,
+        9.74
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "5df285c0-26e1-54da-99b1-26607f6f36a6",
+      "net": "+5VS"
+    },
+    {
+      "reference": "J6",
+      "pin": "3",
+      "local": [
+        -1.27,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        61.635,
+        8.47
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "56503578-8633-5274-aa3f-1fcbde454d56",
+      "net": "S_J6_3"
+    },
+    {
+      "reference": "J6",
+      "pin": "4",
+      "local": [
+        -1.27,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        60.365,
+        8.47
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "48738aff-906c-5ad9-bb53-4d959c9ee716",
+      "net": null
+    },
+    {
+      "reference": "J6",
+      "pin": "5",
+      "local": [
+        0.0,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        61.635,
+        7.2
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "fb5ac597-2137-5004-bc4c-294ae49d005a",
+      "net": null
+    },
+    {
+      "reference": "J6",
+      "pin": "6",
+      "local": [
+        0.0,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        60.365,
+        7.2
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "4258c299-c97f-5c3d-a0d1-c2b3f774fecc",
+      "net": "S_J6_6"
+    },
+    {
+      "reference": "J6",
+      "pin": "7",
+      "local": [
+        1.27,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        61.635,
+        5.93
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "c745170b-e698-568f-807c-88d19ad59eee",
+      "net": "S_J6_7"
+    },
+    {
+      "reference": "J6",
+      "pin": "8",
+      "local": [
+        1.27,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        60.365,
+        5.93
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "b1f522c8-ddb3-5152-9568-629a16a078fc",
+      "net": "S_J6_8"
+    },
+    {
+      "reference": "J6",
+      "pin": "9",
+      "local": [
+        2.54,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        61.635,
+        4.66
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "f6c63395-5fb5-5251-a0c1-7a58477b18a3",
+      "net": "S_J6_9"
+    },
+    {
+      "reference": "J6",
+      "pin": "10",
+      "local": [
+        2.54,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        60.365,
+        4.66
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "00b7c45b-d59d-5c6f-ad59-cc98c0f354a7",
+      "net": "GND"
+    },
+    {
+      "reference": "J4",
+      "pin": "1",
+      "local": [
+        -2.54,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        14.365,
+        46.26
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "253fbd8f-bc21-53ba-bca6-e43de909ae3b",
+      "net": "+3V3P"
+    },
+    {
+      "reference": "J4",
+      "pin": "2",
+      "local": [
+        -2.54,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        15.635,
+        46.26
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "382e123b-f373-599c-ad3a-1c9dcd8463fb",
+      "net": "+5VS"
+    },
+    {
+      "reference": "J4",
+      "pin": "3",
+      "local": [
+        -1.27,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        14.365,
+        47.529999999999994
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "f71d3dd8-1838-5e6a-b67c-4ac009863fa4",
+      "net": "S_J4_3"
+    },
+    {
+      "reference": "J4",
+      "pin": "4",
+      "local": [
+        -1.27,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        15.635,
+        47.529999999999994
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "b539d92e-7a04-5bae-91df-219505db90c9",
+      "net": "S_J4_4"
+    },
+    {
+      "reference": "J4",
+      "pin": "5",
+      "local": [
+        0.0,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        14.365,
+        48.8
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "6cd00d49-35d8-562f-aeb5-f3ae87db9b80",
+      "net": "S_J4_5"
+    },
+    {
+      "reference": "J4",
+      "pin": "6",
+      "local": [
+        0.0,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        15.635,
+        48.8
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "f532c58a-ac20-5462-8a85-cf1ec9fbf405",
+      "net": "S_J4_6"
+    },
+    {
+      "reference": "J4",
+      "pin": "7",
+      "local": [
+        1.27,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        14.365,
+        50.07
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "22274e3b-25d6-55cf-951b-30620e238f12",
+      "net": null
+    },
+    {
+      "reference": "J4",
+      "pin": "8",
+      "local": [
+        1.27,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        15.635,
+        50.07
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "e45e032a-8dc3-52cb-81a9-1ee769bf6bdb",
+      "net": null
+    },
+    {
+      "reference": "J4",
+      "pin": "9",
+      "local": [
+        2.54,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        14.365,
+        51.339999999999996
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "20f92ccb-25b5-52b6-b452-98471f848ca2",
+      "net": null
+    },
+    {
+      "reference": "J4",
+      "pin": "10",
+      "local": [
+        2.54,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        15.635,
+        51.339999999999996
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "cb27a78c-62ba-5389-b647-d49060ee9ce7",
+      "net": "GND"
+    },
+    {
+      "reference": "J3",
+      "pin": "1",
+      "local": [
+        -2.54,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        37.365,
+        46.26
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "53570994-06a4-55fe-b417-e0202a2fc5e4",
+      "net": "+3V3P"
+    },
+    {
+      "reference": "J3",
+      "pin": "2",
+      "local": [
+        -2.54,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        38.635,
+        46.26
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "4c855fc1-f552-50ac-b7bb-0b489faf3931",
+      "net": "+5VS"
+    },
+    {
+      "reference": "J3",
+      "pin": "3",
+      "local": [
+        -1.27,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        37.365,
+        47.529999999999994
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "77283bb8-cea9-55b6-8a20-ec0f72b78ef9",
+      "net": "S_J3_3"
+    },
+    {
+      "reference": "J3",
+      "pin": "4",
+      "local": [
+        -1.27,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        38.635,
+        47.529999999999994
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "9d0c76b5-80da-59c4-a60c-4c9f0662f237",
+      "net": "S_J3_4"
+    },
+    {
+      "reference": "J3",
+      "pin": "5",
+      "local": [
+        0.0,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        37.365,
+        48.8
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "a1485b1f-c63e-586c-8d76-679cad89e533",
+      "net": "S_J3_5"
+    },
+    {
+      "reference": "J3",
+      "pin": "6",
+      "local": [
+        0.0,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        38.635,
+        48.8
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "54d4d1c6-1419-5bbd-b3e9-4f94f58b4a35",
+      "net": "S_J3_6"
+    },
+    {
+      "reference": "J3",
+      "pin": "7",
+      "local": [
+        1.27,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        37.365,
+        50.07
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "d53cb708-ad5b-518c-9c33-e53814a39048",
+      "net": "S_J3_7"
+    },
+    {
+      "reference": "J3",
+      "pin": "8",
+      "local": [
+        1.27,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        38.635,
+        50.07
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "449b814a-262e-54a6-90bd-e7c710f756fe",
+      "net": "S_J3_8"
+    },
+    {
+      "reference": "J3",
+      "pin": "9",
+      "local": [
+        2.54,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        37.365,
+        51.339999999999996
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "7a84976d-2404-592d-86e8-41643d3aeb5b",
+      "net": "S_J3_9"
+    },
+    {
+      "reference": "J3",
+      "pin": "10",
+      "local": [
+        2.54,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        38.635,
+        51.339999999999996
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "b92cdf8e-f36a-595f-88fc-e723d377f42b",
+      "net": "GND"
+    },
+    {
+      "reference": "J1",
+      "pin": "1",
+      "local": [
+        -2.54,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        60.365,
+        46.26
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "e3dae460-e9dc-508e-ba5f-d26e0a5fc3ff",
+      "net": "+3V3P"
+    },
+    {
+      "reference": "J1",
+      "pin": "2",
+      "local": [
+        -2.54,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        61.635,
+        46.26
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "1694d24b-bb03-5393-929f-ff58c3d98318",
+      "net": "+5VS"
+    },
+    {
+      "reference": "J1",
+      "pin": "3",
+      "local": [
+        -1.27,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        60.365,
+        47.529999999999994
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "e9a5f295-b397-57e0-97c7-8095f8960ee9",
+      "net": "S_J1_3"
+    },
+    {
+      "reference": "J1",
+      "pin": "4",
+      "local": [
+        -1.27,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        61.635,
+        47.529999999999994
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "b3a48d9a-3250-5154-8680-ae965e2b2907",
+      "net": "S_J1_4"
+    },
+    {
+      "reference": "J1",
+      "pin": "5",
+      "local": [
+        0.0,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        60.365,
+        48.8
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "984f9abb-04fd-5bed-b4f0-274445869774",
+      "net": "S_J1_5"
+    },
+    {
+      "reference": "J1",
+      "pin": "6",
+      "local": [
+        0.0,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        61.635,
+        48.8
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "54fc1e33-ae47-5479-b37f-586225fef188",
+      "net": "S_J1_6"
+    },
+    {
+      "reference": "J1",
+      "pin": "7",
+      "local": [
+        1.27,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        60.365,
+        50.07
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "2cf3de07-161f-5f69-a4fd-77314712a637",
+      "net": "S_J1_7"
+    },
+    {
+      "reference": "J1",
+      "pin": "8",
+      "local": [
+        1.27,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        61.635,
+        50.07
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "841778da-3d14-5972-abea-54aa3da6fcdf",
+      "net": "S_J1_8"
+    },
+    {
+      "reference": "J1",
+      "pin": "9",
+      "local": [
+        2.54,
+        0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        60.365,
+        51.339999999999996
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "59180835-3613-5391-9ec3-43520c023d4d",
+      "net": "S_J1_9"
+    },
+    {
+      "reference": "J1",
+      "pin": "10",
+      "local": [
+        2.54,
+        -0.635
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        61.635,
+        51.339999999999996
+      ],
+      "size": [
+        1.05,
+        1.05
+      ],
+      "drill": [
+        "0.74"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "8feecd06-3850-5389-a1e9-edfe2ea27029",
+      "net": "GND"
+    },
+    {
+      "reference": "J7",
+      "pin": "1",
+      "local": [
+        -1.5,
+        -2.0
+      ],
+      "kind": "smd",
+      "xy": [
+        70.7,
+        25.5
+      ],
+      "size": [
+        0.6,
+        1.55
+      ],
+      "drill": [],
+      "layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ],
+      "uuid": "526421c3-f441-5ca3-a72a-51b0bd164386",
+      "net": "GND"
+    },
+    {
+      "reference": "J7",
+      "pin": "2",
+      "local": [
+        -0.5,
+        -2.0
+      ],
+      "kind": "smd",
+      "xy": [
+        70.7,
+        24.5
+      ],
+      "size": [
+        0.6,
+        1.55
+      ],
+      "drill": [],
+      "layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ],
+      "uuid": "61c03f1d-eba0-53e1-8dcc-fc2690f89e46",
+      "net": "+3V3P"
+    },
+    {
+      "reference": "J7",
+      "pin": "3",
+      "local": [
+        0.5,
+        -2.0
+      ],
+      "kind": "smd",
+      "xy": [
+        70.7,
+        23.5
+      ],
+      "size": [
+        0.6,
+        1.55
+      ],
+      "drill": [],
+      "layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ],
+      "uuid": "5a793b14-ae22-53e1-b385-8b2f9e23da4d",
+      "net": "S_J5_8"
+    },
+    {
+      "reference": "J7",
+      "pin": "4",
+      "local": [
+        1.5,
+        -2.0
+      ],
+      "kind": "smd",
+      "xy": [
+        70.7,
+        22.5
+      ],
+      "size": [
+        0.6,
+        1.55
+      ],
+      "drill": [],
+      "layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ],
+      "uuid": "c1109c82-0019-58ff-98ee-cc7bcaad20a3",
+      "net": "S_J5_9"
+    },
+    {
+      "reference": "J7",
+      "pin": "MP",
+      "local": [
+        -2.8,
+        1.875
+      ],
+      "kind": "smd",
+      "xy": [
+        74.575,
+        26.8
+      ],
+      "size": [
+        1.2,
+        1.8
+      ],
+      "drill": [],
+      "layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ],
+      "uuid": "8fab3954-b302-5f43-a01f-b540f3c5bc22",
+      "net": "GND"
+    },
+    {
+      "reference": "J7",
+      "pin": "MP",
+      "local": [
+        2.8,
+        1.875
+      ],
+      "kind": "smd",
+      "xy": [
+        74.575,
+        21.2
+      ],
+      "size": [
+        1.2,
+        1.8
+      ],
+      "drill": [],
+      "layers": [
+        "F.Cu",
+        "F.Mask",
+        "F.Paste"
+      ],
+      "uuid": "15440746-d1ef-59aa-bd9e-64894b041e7d",
+      "net": "GND"
+    },
+    {
+      "reference": "J8",
+      "pin": "1",
+      "local": [
+        0.0,
+        0.0
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        65.5,
+        13.5
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "2661a027-08b8-57e7-aa86-7df2cedf8ade",
+      "net": "GND"
+    },
+    {
+      "reference": "J8",
+      "pin": "2",
+      "local": [
+        0.0,
+        2.54
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        68.04,
+        13.5
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "75350d65-a8ad-55ad-812f-ad603c36b5c5",
+      "net": "+3V3P"
+    },
+    {
+      "reference": "J8",
+      "pin": "3",
+      "local": [
+        0.0,
+        5.08
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        70.58,
+        13.5
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "82465dd5-d516-51a7-b8f7-6161137094a5",
+      "net": "S_J5_8"
+    },
+    {
+      "reference": "J8",
+      "pin": "4",
+      "local": [
+        0.0,
+        7.62
+      ],
+      "kind": "thru_hole",
+      "xy": [
+        73.12,
+        13.5
+      ],
+      "size": [
+        1.7,
+        1.7
+      ],
+      "drill": [
+        "1"
+      ],
+      "layers": [
+        "*.Cu",
+        "*.Mask"
+      ],
+      "uuid": "df94beb3-9005-5cb1-b7a9-a22d66bf31dc",
+      "net": "S_J5_9"
+    }
+  ],
+  "signal_channels": [
+    {
+      "socket": "J1",
+      "socket_type": "Y",
+      "contact": 3,
+      "function": "GPIO!",
+      "teensy_pin": "24",
+      "teensy_function": "A10 TX6 SCL2",
+      "pwm_capable": true,
+      "net": "S_J1_3",
+      "host_net": "H_P24"
+    },
+    {
+      "socket": "J1",
+      "socket_type": "Y",
+      "contact": 4,
+      "function": "GPIO",
+      "teensy_pin": "25",
+      "teensy_function": "A11 RX6 SDA2",
+      "pwm_capable": true,
+      "net": "S_J1_4",
+      "host_net": "H_P25"
+    },
+    {
+      "socket": "J1",
+      "socket_type": "Y",
+      "contact": 5,
+      "function": "GPIO",
+      "teensy_pin": "26",
+      "teensy_function": "A12 MOSI1",
+      "pwm_capable": false,
+      "net": "S_J1_5",
+      "host_net": "H_P26"
+    },
+    {
+      "socket": "J1",
+      "socket_type": "Y",
+      "contact": 6,
+      "function": "GPIO",
+      "teensy_pin": "27",
+      "teensy_function": "A13 SCK1",
+      "pwm_capable": false,
+      "net": "S_J1_6",
+      "host_net": "H_P27"
+    },
+    {
+      "socket": "J1",
+      "socket_type": "Y",
+      "contact": 7,
+      "function": "GPIO",
+      "teensy_pin": "28",
+      "teensy_function": "RX7",
+      "pwm_capable": true,
+      "net": "S_J1_7",
+      "host_net": "H_P28"
+    },
+    {
+      "socket": "J1",
+      "socket_type": "Y",
+      "contact": 8,
+      "function": "GPIO",
+      "teensy_pin": "29",
+      "teensy_function": "TX7",
+      "pwm_capable": true,
+      "net": "S_J1_8",
+      "host_net": "H_P29"
+    },
+    {
+      "socket": "J1",
+      "socket_type": "Y",
+      "contact": 9,
+      "function": "GPIO",
+      "teensy_pin": "30",
+      "teensy_function": "CRX3",
+      "pwm_capable": false,
+      "net": "S_J1_9",
+      "host_net": "H_P30"
+    },
+    {
+      "socket": "J2",
+      "socket_type": "A",
+      "contact": 3,
+      "function": "AIN",
+      "teensy_pin": "20",
+      "teensy_function": "A6 TX5",
+      "pwm_capable": false,
+      "net": "S_J2_3",
+      "host_net": "H_P20"
+    },
+    {
+      "socket": "J2",
+      "socket_type": "A",
+      "contact": 4,
+      "function": "AIN",
+      "teensy_pin": "21",
+      "teensy_function": "A7 RX5",
+      "pwm_capable": false,
+      "net": "S_J2_4",
+      "host_net": "H_P21"
+    },
+    {
+      "socket": "J2",
+      "socket_type": "A",
+      "contact": 5,
+      "function": "AIN",
+      "teensy_pin": "22",
+      "teensy_function": "A8 CTX1",
+      "pwm_capable": true,
+      "net": "S_J2_5",
+      "host_net": "H_P22"
+    },
+    {
+      "socket": "J2",
+      "socket_type": "A",
+      "contact": 6,
+      "function": "GPIO",
+      "teensy_pin": "23",
+      "teensy_function": "A9 CRX1",
+      "pwm_capable": true,
+      "net": "S_J2_6",
+      "host_net": "H_P23"
+    },
+    {
+      "socket": "J3",
+      "socket_type": "S",
+      "contact": 3,
+      "function": "GPIO!",
+      "teensy_pin": "4",
+      "teensy_function": "BCLK2",
+      "pwm_capable": true,
+      "net": "S_J3_3",
+      "host_net": "H_P4"
+    },
+    {
+      "socket": "J3",
+      "socket_type": "S",
+      "contact": 4,
+      "function": "GPIO",
+      "teensy_pin": "5",
+      "teensy_function": "IN2",
+      "pwm_capable": true,
+      "net": "S_J3_4",
+      "host_net": "H_P5"
+    },
+    {
+      "socket": "J3",
+      "socket_type": "S",
+      "contact": 5,
+      "function": "GPIO",
+      "teensy_pin": "6",
+      "teensy_function": "OUT1D",
+      "pwm_capable": true,
+      "net": "S_J3_5",
+      "host_net": "H_P6"
+    },
+    {
+      "socket": "J3",
+      "socket_type": "S",
+      "contact": 6,
+      "function": "CS",
+      "teensy_pin": "10",
+      "teensy_function": "CS",
+      "pwm_capable": true,
+      "net": "S_J3_6",
+      "host_net": "H_P10"
+    },
+    {
+      "socket": "J3",
+      "socket_type": "S",
+      "contact": 7,
+      "function": "MOSI",
+      "teensy_pin": "11",
+      "teensy_function": "MOSI",
+      "pwm_capable": true,
+      "net": "S_J3_7",
+      "host_net": "H_P11"
+    },
+    {
+      "socket": "J3",
+      "socket_type": "S",
+      "contact": 8,
+      "function": "MISO",
+      "teensy_pin": "12",
+      "teensy_function": "MISO",
+      "pwm_capable": true,
+      "net": "S_J3_8",
+      "host_net": "H_P12"
+    },
+    {
+      "socket": "J3",
+      "socket_type": "S",
+      "contact": 9,
+      "function": "SCK",
+      "teensy_pin": "13",
+      "teensy_function": "SCK LED",
+      "pwm_capable": true,
+      "net": "S_J3_9",
+      "host_net": "H_P13"
+    },
+    {
+      "socket": "J4",
+      "socket_type": "U",
+      "contact": 3,
+      "function": "GPIO!",
+      "teensy_pin": "2",
+      "teensy_function": "OUT2",
+      "pwm_capable": true,
+      "net": "S_J4_3",
+      "host_net": "H_P2"
+    },
+    {
+      "socket": "J4",
+      "socket_type": "U",
+      "contact": 4,
+      "function": "TX",
+      "teensy_pin": "1",
+      "teensy_function": "TX1",
+      "pwm_capable": true,
+      "net": "S_J4_4",
+      "host_net": "H_P1"
+    },
+    {
+      "socket": "J4",
+      "socket_type": "U",
+      "contact": 5,
+      "function": "RX",
+      "teensy_pin": "0",
+      "teensy_function": "RX1",
+      "pwm_capable": true,
+      "net": "S_J4_5",
+      "host_net": "H_P0"
+    },
+    {
+      "socket": "J4",
+      "socket_type": "U",
+      "contact": 6,
+      "function": "GPIO",
+      "teensy_pin": "3",
+      "teensy_function": "LRCLK2",
+      "pwm_capable": true,
+      "net": "S_J4_6",
+      "host_net": "H_P3"
+    },
+    {
+      "socket": "J5",
+      "socket_type": "I",
+      "contact": 3,
+      "function": "GPIO!",
+      "teensy_pin": "17",
+      "teensy_function": "A3 TX4 SDA1",
+      "pwm_capable": false,
+      "net": "S_J5_3",
+      "host_net": "H_P17"
+    },
+    {
+      "socket": "J5",
+      "socket_type": "I",
+      "contact": 6,
+      "function": "GPIO",
+      "teensy_pin": "14",
+      "teensy_function": "A0 TX3",
+      "pwm_capable": true,
+      "net": "S_J5_6",
+      "host_net": "H_P14"
+    },
+    {
+      "socket": "J5",
+      "socket_type": "I",
+      "contact": 8,
+      "function": "SDA",
+      "teensy_pin": "18",
+      "teensy_function": "A4 SDA",
+      "pwm_capable": true,
+      "net": "S_J5_8",
+      "host_net": "H_P18"
+    },
+    {
+      "socket": "J5",
+      "socket_type": "I",
+      "contact": 9,
+      "function": "SCL",
+      "teensy_pin": "19",
+      "teensy_function": "A5 SCL",
+      "pwm_capable": true,
+      "net": "S_J5_9",
+      "host_net": "H_P19"
+    },
+    {
+      "socket": "J6",
+      "socket_type": "P",
+      "contact": 3,
+      "function": "GPIO!",
+      "teensy_pin": "15",
+      "teensy_function": "A1 RX3",
+      "pwm_capable": true,
+      "net": "S_J6_3",
+      "host_net": "H_P15"
+    },
+    {
+      "socket": "J6",
+      "socket_type": "P",
+      "contact": 6,
+      "function": "GPIO",
+      "teensy_pin": "16",
+      "teensy_function": "A2 RX4 SCL1",
+      "pwm_capable": false,
+      "net": "S_J6_6",
+      "host_net": "H_P16"
+    },
+    {
+      "socket": "J6",
+      "socket_type": "P",
+      "contact": 7,
+      "function": "PWM",
+      "teensy_pin": "7",
+      "teensy_function": "RX2",
+      "pwm_capable": true,
+      "net": "S_J6_7",
+      "host_net": "H_P7"
+    },
+    {
+      "socket": "J6",
+      "socket_type": "P",
+      "contact": 8,
+      "function": "PWM",
+      "teensy_pin": "8",
+      "teensy_function": "TX2",
+      "pwm_capable": true,
+      "net": "S_J6_8",
+      "host_net": "H_P8"
+    },
+    {
+      "socket": "J6",
+      "socket_type": "P",
+      "contact": 9,
+      "function": "PWM",
+      "teensy_pin": "9",
+      "teensy_function": "OUT1C",
+      "pwm_capable": true,
+      "net": "S_J6_9",
+      "host_net": "H_P9"
+    }
+  ],
+  "scene": {
+    "schema": "wiring-scene/1",
+    "bounds_mm": [
+      0,
+      0,
+      100,
+      130
+    ],
+    "grid_mm": 5,
+    "origin_mm": [
+      0,
+      0
+    ],
+    "stroke_mm": 0.7,
+    "halo_mm": 1.4,
+    "clearance_mm": 5,
+    "sources": [
+      {
+        "path": "extension-boards/src/teensy-to-gadgeteer-host/attempt/versions/v05/teensy-to-gadgeteer-host.kicad_pcb",
+        "sha256": "f894511d5e1bec9c38a49467a9daa0b3a54e1c79e4f5e3f1acdd05a573c3edb4"
+      },
+      {
+        "path": "extension-boards/src/teensy-to-gadgeteer-host/attempt/versions/v05/teensy-to-gadgeteer-host.kicad_sch",
+        "sha256": "a8b8ddfc89902d8a6441149236262561aa823804c34b8517383b6a97bc576231"
+      },
+      {
+        "path": "extension-boards/src/teensy-to-gadgeteer-host/attempt/design-contract.json",
+        "sha256": "8669ae352ccac576e4e0b77c40e9d43593f4d0c9898f8f6e04feeef9c56753b9"
+      },
+      {
+        "path": "extension-boards/src/teensy-to-gadgeteer-host/attempt/versions/v06/teensy-to-gadgeteer-host.kicad_pcb",
+        "sha256": "953faec909c6bbe4536049b9a3f37d77ef0480e4c23754fc8f0621473998ad68"
+      },
+      {
+        "path": "extension-boards/src/buzzer-module/attempt/versions/v14/buzzer-module.kicad_pcb",
+        "sha256": "6bc77eda610bb58ec562285216d892c781092cf5743c45742f3bd0db7fafa9a0"
+      },
+      {
+        "path": "extension-boards/src/buzzer-module/attempt/versions/v14/exports/schematic-netlist.xml",
+        "sha256": "04accdc8043ad8631654ce5d296acf03bf0581674b6e5bdf01ff7e628ae956c4"
+      },
+      {
+        "path": "smoothie-diagrams/data/extension-board-renders/buzzer-module/v14/buzzer-module.svg",
+        "sha256": "36e78aff9e1bfdcebf934252cb8a72a5b3d84ae3720d75205659e035972ad33b"
+      }
+    ],
+    "description": "Expanded electrical connector key; native copper unchanged in separate insets",
+    "bodies": [],
+    "contacts": [
+      {
+        "id": "host.1",
+        "point_mm": [
+          20,
+          25
+        ]
+      },
+      {
+        "id": "buzzer.1",
+        "point_mm": [
+          80,
+          25
+        ]
+      },
+      {
+        "id": "host.2",
+        "point_mm": [
+          20,
+          35
+        ]
+      },
+      {
+        "id": "buzzer.2",
+        "point_mm": [
+          80,
+          35
+        ]
+      },
+      {
+        "id": "host.3",
+        "point_mm": [
+          20,
+          45
+        ]
+      },
+      {
+        "id": "buzzer.3",
+        "point_mm": [
+          80,
+          45
+        ]
+      },
+      {
+        "id": "host.4",
+        "point_mm": [
+          20,
+          55
+        ]
+      },
+      {
+        "id": "buzzer.4",
+        "point_mm": [
+          80,
+          55
+        ]
+      },
+      {
+        "id": "host.5",
+        "point_mm": [
+          20,
+          65
+        ]
+      },
+      {
+        "id": "buzzer.5",
+        "point_mm": [
+          80,
+          65
+        ]
+      },
+      {
+        "id": "host.6",
+        "point_mm": [
+          20,
+          75
+        ]
+      },
+      {
+        "id": "buzzer.6",
+        "point_mm": [
+          80,
+          75
+        ]
+      },
+      {
+        "id": "host.7",
+        "point_mm": [
+          20,
+          85
+        ]
+      },
+      {
+        "id": "buzzer.7",
+        "point_mm": [
+          80,
+          85
+        ]
+      },
+      {
+        "id": "host.8",
+        "point_mm": [
+          20,
+          95
+        ]
+      },
+      {
+        "id": "buzzer.8",
+        "point_mm": [
+          80,
+          95
+        ]
+      },
+      {
+        "id": "host.9",
+        "point_mm": [
+          20,
+          105
+        ]
+      },
+      {
+        "id": "buzzer.9",
+        "point_mm": [
+          80,
+          105
+        ]
+      },
+      {
+        "id": "host.10",
+        "point_mm": [
+          20,
+          115
+        ]
+      },
+      {
+        "id": "buzzer.10",
+        "point_mm": [
+          80,
+          115
+        ]
+      }
+    ],
+    "wires": [
+      {
+        "id": "core-01",
+        "net": "cable.1",
+        "source": "host.1",
+        "destination": "buzzer.1",
+        "color": "#c63b46"
+      },
+      {
+        "id": "core-02",
+        "net": "cable.2",
+        "source": "host.2",
+        "destination": "buzzer.2",
+        "color": "#d17b13"
+      },
+      {
+        "id": "core-03",
+        "net": "cable.3",
+        "source": "host.3",
+        "destination": "buzzer.3",
+        "color": "#486cba"
+      },
+      {
+        "id": "core-04",
+        "net": "cable.4",
+        "source": "host.4",
+        "destination": "buzzer.4",
+        "color": "#72838d"
+      },
+      {
+        "id": "core-05",
+        "net": "cable.5",
+        "source": "host.5",
+        "destination": "buzzer.5",
+        "color": "#72838d"
+      },
+      {
+        "id": "core-06",
+        "net": "cable.6",
+        "source": "host.6",
+        "destination": "buzzer.6",
+        "color": "#72838d"
+      },
+      {
+        "id": "core-07",
+        "net": "cable.7",
+        "source": "host.7",
+        "destination": "buzzer.7",
+        "color": "#72838d"
+      },
+      {
+        "id": "core-08",
+        "net": "cable.8",
+        "source": "host.8",
+        "destination": "buzzer.8",
+        "color": "#72838d"
+      },
+      {
+        "id": "core-09",
+        "net": "cable.9",
+        "source": "host.9",
+        "destination": "buzzer.9",
+        "color": "#72838d"
+      },
+      {
+        "id": "core-10",
+        "net": "cable.10",
+        "source": "host.10",
+        "destination": "buzzer.10",
+        "color": "#17212b"
+      }
+    ]
+  },
+  "routes": [
+    {
+      "id": "core-01",
+      "net": "cable.1",
+      "source": "host.1",
+      "destination": "buzzer.1",
+      "color": "#c63b46",
+      "points_mm": [
+        [
+          20.0,
+          25.0
+        ],
+        [
+          80.0,
+          25.0
+        ]
+      ],
+      "source_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      },
+      "destination_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      }
+    },
+    {
+      "id": "core-02",
+      "net": "cable.2",
+      "source": "host.2",
+      "destination": "buzzer.2",
+      "color": "#d17b13",
+      "points_mm": [
+        [
+          20.0,
+          35.0
+        ],
+        [
+          80.0,
+          35.0
+        ]
+      ],
+      "source_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      },
+      "destination_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      }
+    },
+    {
+      "id": "core-03",
+      "net": "cable.3",
+      "source": "host.3",
+      "destination": "buzzer.3",
+      "color": "#486cba",
+      "points_mm": [
+        [
+          20.0,
+          45.0
+        ],
+        [
+          80.0,
+          45.0
+        ]
+      ],
+      "source_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      },
+      "destination_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      }
+    },
+    {
+      "id": "core-04",
+      "net": "cable.4",
+      "source": "host.4",
+      "destination": "buzzer.4",
+      "color": "#72838d",
+      "points_mm": [
+        [
+          20.0,
+          55.0
+        ],
+        [
+          80.0,
+          55.0
+        ]
+      ],
+      "source_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      },
+      "destination_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      }
+    },
+    {
+      "id": "core-05",
+      "net": "cable.5",
+      "source": "host.5",
+      "destination": "buzzer.5",
+      "color": "#72838d",
+      "points_mm": [
+        [
+          20.0,
+          65.0
+        ],
+        [
+          80.0,
+          65.0
+        ]
+      ],
+      "source_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      },
+      "destination_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      }
+    },
+    {
+      "id": "core-06",
+      "net": "cable.6",
+      "source": "host.6",
+      "destination": "buzzer.6",
+      "color": "#72838d",
+      "points_mm": [
+        [
+          20.0,
+          75.0
+        ],
+        [
+          80.0,
+          75.0
+        ]
+      ],
+      "source_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      },
+      "destination_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      }
+    },
+    {
+      "id": "core-07",
+      "net": "cable.7",
+      "source": "host.7",
+      "destination": "buzzer.7",
+      "color": "#72838d",
+      "points_mm": [
+        [
+          20.0,
+          85.0
+        ],
+        [
+          80.0,
+          85.0
+        ]
+      ],
+      "source_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      },
+      "destination_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      }
+    },
+    {
+      "id": "core-08",
+      "net": "cable.8",
+      "source": "host.8",
+      "destination": "buzzer.8",
+      "color": "#72838d",
+      "points_mm": [
+        [
+          20.0,
+          95.0
+        ],
+        [
+          80.0,
+          95.0
+        ]
+      ],
+      "source_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      },
+      "destination_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      }
+    },
+    {
+      "id": "core-09",
+      "net": "cable.9",
+      "source": "host.9",
+      "destination": "buzzer.9",
+      "color": "#72838d",
+      "points_mm": [
+        [
+          20.0,
+          105.0
+        ],
+        [
+          80.0,
+          105.0
+        ]
+      ],
+      "source_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      },
+      "destination_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      }
+    },
+    {
+      "id": "core-10",
+      "net": "cable.10",
+      "source": "host.10",
+      "destination": "buzzer.10",
+      "color": "#17212b",
+      "points_mm": [
+        [
+          20.0,
+          115.0
+        ],
+        [
+          80.0,
+          115.0
+        ]
+      ],
+      "source_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      },
+      "destination_exit": {
+        "side": "external",
+        "overflight_mm": 0
+      }
+    }
+  ],
+  "logical_connector_contacts": 117,
+  "physical_connector_pad_instances": 118,
+  "checks": {
+    "signal_series_paths": 31,
+    "socket_contacts": 60,
+    "ribbon_conductors": 10,
+    "ribbon_centerline_pair_clearance": "at least 6.4 schematic mm"
+  },
+  "qualification": {
+    "native_coordinate_source": "v05 text CAD and matching frozen contract",
+    "kiCad_load_ERC_DRC": "not produced; unverified",
+    "mating_cable": "number-preserving cable required; physical assembly unqualified",
+    "native_fanout": "not qualified; cable endpoints are visibly labelled expanded electrical key",
+    "hardware": "unbuilt/unqualified",
+    "firmware": "example sketch not compiled or hardware tested",
+    "reader": "actual desktop and narrow viewer inspection pending"
+  },
+  "files": {
+    "j3-contacts-1-5.svg": "cdbb32ab5ce13e477152e513665ab2c7f9581750f51a9c50723b87e09c91ac97",
+    "j2-contacts-6-10.svg": "4956f7be74058d6d641187c15e0822a92b2872fdd530a2df035775b9e3c05d75",
+    "j1-contacts-1-5.svg": "12736b233b2a93c06b7d879e2a5209a2dcc171711f58e82f1dcb62b78b750fc7",
+    "j3-contacts-6-10.svg": "05b6d7acf9ca757867cf11b5a858036a95f0b382ce9d684f862f7b5a8f3d6ac9",
+    "full-wiring.svg": "85fd01974cac4b1c076b779f98ea58e9e130c7196ce1e50a6e3e40b78f7816fb",
+    "j4-contacts-1-5.svg": "127ea498a98c4bee2f535725131d44f98a73994bb927b75b81be032adaa82617",
+    "j5-contacts-1-5.svg": "e02b0e42b4eea0796e7ac542f5db1ffd27663177165bd7e088b02b073588d496",
+    "j2-contacts-1-5.svg": "52535d55b9fab2940ff727eb688eb4208246ebf7031a7007012e76fb50a5c6c6",
+    "power-service-key.svg": "138fe3589f032d40b30bc31dde19bba5f1d6b300ddaf1071726e7f0ed70c225f",
+    "board-reference.svg": "180c45b152755dbb775155122b0d68ba33e1655073f85ed3296f43b8a8e2f346",
+    "j6-contacts-6-10.svg": "9a61c8febf273d1c5b16b37481ebc7206e5de5f4dd254c7a0991a640b05ba6b8",
+    "j4-contacts-6-10.svg": "29ebdeafac8acf17c4fffcd98b0e394e091f0c487c5b6cb1871a6dd57a6debaa",
+    "teensy-to-gadgeteer-host.svg": "6070fd2b4bf7936446cd939df235e8dea2b8b88d9cfc8ba2858f52535d7721ff",
+    "j5-contacts-6-10.svg": "e37d149d0395f67314847f9654639e5fa9f761eeef478ce4e7548850fca32842",
+    "j1-contacts-6-10.svg": "2c7dbe988333d6860cfb3d2c678cbd26b96ed73c50a0bd6dcd2a80a8fbb1df71",
+    "j6-contacts-1-5.svg": "bfca78c1cd0a355d354d00514f42f98b78035891ed049f358c712cf278d81092"
+  },
+  "website_webp_exports": {
+    "board-reference.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/board-reference.svg",
+      "archived_svg_sha256": "e51f0034151839bec263e84d639ea34eb2b10b83f84247cf095494e790cc5825",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/board-reference.webp",
+      "sha256": "b74e62af557e108bd0a46c8f883966f0ae14bda88372e990bf2ddb864bb49771"
+    },
+    "j1-contacts-1-5.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j1-contacts-1-5.svg",
+      "archived_svg_sha256": "12736b233b2a93c06b7d879e2a5209a2dcc171711f58e82f1dcb62b78b750fc7",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j1-contacts-1-5.webp",
+      "sha256": "9c5347148341379007b5177d49261df8f6a7cfaae9567cfd7e74146c0cce6084"
+    },
+    "j1-contacts-6-10.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j1-contacts-6-10.svg",
+      "archived_svg_sha256": "2c7dbe988333d6860cfb3d2c678cbd26b96ed73c50a0bd6dcd2a80a8fbb1df71",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j1-contacts-6-10.webp",
+      "sha256": "b79406d44b862390b224729bca934bb25440c6c81a79a4d814db9a8b73b3a329"
+    },
+    "j2-contacts-1-5.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j2-contacts-1-5.svg",
+      "archived_svg_sha256": "52535d55b9fab2940ff727eb688eb4208246ebf7031a7007012e76fb50a5c6c6",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j2-contacts-1-5.webp",
+      "sha256": "397d657ff9c9980d05f886c92aa20d49cc1458ba8fef5e5c6ae9166744c0612a"
+    },
+    "j2-contacts-6-10.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j2-contacts-6-10.svg",
+      "archived_svg_sha256": "4956f7be74058d6d641187c15e0822a92b2872fdd530a2df035775b9e3c05d75",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j2-contacts-6-10.webp",
+      "sha256": "dcbaa853be5fb3fca6312baf2fd1adcbe73e4a7b0463edbf641faab081ff5349"
+    },
+    "j3-contacts-1-5.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j3-contacts-1-5.svg",
+      "archived_svg_sha256": "cdbb32ab5ce13e477152e513665ab2c7f9581750f51a9c50723b87e09c91ac97",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j3-contacts-1-5.webp",
+      "sha256": "21907cb8a8e4e7d915ab319f7f70f06ad44070f3de772af703f78bd627e5f4e9"
+    },
+    "j3-contacts-6-10.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j3-contacts-6-10.svg",
+      "archived_svg_sha256": "05b6d7acf9ca757867cf11b5a858036a95f0b382ce9d684f862f7b5a8f3d6ac9",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j3-contacts-6-10.webp",
+      "sha256": "3ccfb3c680e3a81e7b2ac79a45cf246b52bdcef0ad5d310f5b3467866f47c6ba"
+    },
+    "j4-contacts-1-5.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j4-contacts-1-5.svg",
+      "archived_svg_sha256": "127ea498a98c4bee2f535725131d44f98a73994bb927b75b81be032adaa82617",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j4-contacts-1-5.webp",
+      "sha256": "fb05868f37d61427abf55c1e29615a165ecbfc5659a5d441f9a3fd21a857f459"
+    },
+    "j4-contacts-6-10.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j4-contacts-6-10.svg",
+      "archived_svg_sha256": "29ebdeafac8acf17c4fffcd98b0e394e091f0c487c5b6cb1871a6dd57a6debaa",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j4-contacts-6-10.webp",
+      "sha256": "c9759f120e91e0b1a1a44684e8b02a93e4669eeae710d92cdf0472dd5d822f16"
+    },
+    "j5-contacts-1-5.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j5-contacts-1-5.svg",
+      "archived_svg_sha256": "e02b0e42b4eea0796e7ac542f5db1ffd27663177165bd7e088b02b073588d496",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j5-contacts-1-5.webp",
+      "sha256": "8966eae3f094d4551bf9d2828326deef9ee3c0d471dc9f30b4eddadb24920fd0"
+    },
+    "j5-contacts-6-10.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j5-contacts-6-10.svg",
+      "archived_svg_sha256": "e37d149d0395f67314847f9654639e5fa9f761eeef478ce4e7548850fca32842",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j5-contacts-6-10.webp",
+      "sha256": "c3910dc0516754119e3e08c10cc142858283799e9668ec7f47bf93d15af3cee3"
+    },
+    "j6-contacts-1-5.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j6-contacts-1-5.svg",
+      "archived_svg_sha256": "bfca78c1cd0a355d354d00514f42f98b78035891ed049f358c712cf278d81092",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j6-contacts-1-5.webp",
+      "sha256": "4e488d050f13fb7477c80bb298bfab0f0d7c2aaab955b2707d96b4c8a54e1507"
+    },
+    "j6-contacts-6-10.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/j6-contacts-6-10.svg",
+      "archived_svg_sha256": "9a61c8febf273d1c5b16b37481ebc7206e5de5f4dd254c7a0991a640b05ba6b8",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/j6-contacts-6-10.webp",
+      "sha256": "5345f337fa00906e6008fadeb6b6a4527b2242b3e2ddfe3cdf5514f44aef40b9"
+    },
+    "power-service-key.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/power-service-key.svg",
+      "archived_svg_sha256": "138fe3589f032d40b30bc31dde19bba5f1d6b300ddaf1071726e7f0ed70c225f",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/power-service-key.webp",
+      "sha256": "df351ae116869261952806d41ae887a6c3f3a7b212e8bf53e3ce2956cb44e85f"
+    },
+    "teensy-to-gadgeteer-host.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/teensy-to-gadgeteer-host.svg",
+      "archived_svg_sha256": "6070fd2b4bf7936446cd939df235e8dea2b8b88d9cfc8ba2858f52535d7721ff",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/teensy-to-gadgeteer-host.webp",
+      "sha256": "ecc83e1cb451ab9451d8bd16d2a97dc0c16b5c6d87f13c678c92f8f4513d1b59"
+    },
+    "full-wiring.svg": {
+      "archived_svg": "smoothie-diagrams/data/website-extension-svg/teensy-to-gadgeteer-host/guides/full-wiring.svg",
+      "archived_svg_sha256": "9f1d21987d891f9e6bdc7489d4352b33bf4cf495618b5cf3839f87f340b484b3",
+      "url": "/images/extensions/teensy-to-gadgeteer-host/guides/full-wiring.webp",
+      "sha256": "656d2c44aff43b2bf802a7309249dea60d6e56b5cab2b542bdf2826e6a12324c"
+    }
+  }
+}

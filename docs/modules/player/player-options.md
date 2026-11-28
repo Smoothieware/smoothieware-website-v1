@@ -1,4 +1,5 @@
 ---
+title: "Player options"
 permalink: /player-options
 ---
 

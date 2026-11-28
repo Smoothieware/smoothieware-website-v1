@@ -3,7 +3,9 @@ permalink: /tm1638-display
 title: TM1638 Display Module
 ---
 
-# TM1638 Display Module
+{::nomarkdown}
+<span id="tm1638-display-module"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -24,10 +26,10 @@ The TM1638 module provides support for inexpensive TM1638-based LED display boar
 
 TM1638 display modules are widely available and very affordable. They provide:
 
-- **8-digit 7-segment display** - Show numeric values, text, and status
-- **8 bi-color LEDs** - Status indicators (red/green on some modules)
-- **8 push buttons** - User input
-- **3-wire interface** - Simple Clock, Data, Strobe connection
+- 8-digit 7-segment display - Show numeric values, text, and status
+- 8 bi-color LEDs - Status indicators (red/green on some modules)
+- 8 push buttons - User input
+- 3-wire interface - Simple Clock, Data, Strobe connection
 
 These displays are commonly used with the [ELS (Electronic Leadscrew)](/els) module for lathe control.
 
@@ -107,10 +109,10 @@ strobe_pin = PG2
 
 The 8-digit display can show:
 
-- **Numbers** - Integer and decimal values
-- **Text** - Limited alphabet (some letters like M, W cannot be displayed)
-- **Hex values** - 0-9, A-F
-- **Decimal points** - Individual control per digit
+- Numbers - Integer and decimal values
+- Text - Limited alphabet (some letters like M, W cannot be displayed)
+- Hex values - 0-9, A-F
+- Decimal points - Individual control per digit
 
 #### Available Characters
 
@@ -214,10 +216,10 @@ TM1638* display = static_cast<TM1638*>(m);
 
 ### Display Shows Nothing
 
-1. **Check power**: Verify 5V is connected
-2. **Check wiring**: Verify CLK, DIO, STB connections
-3. **Enable module**: Ensure `enable = true` in config
-4. **Check pins**: Verify pin assignments are correct
+1. Check power: Verify 5V is connected
+2. Check wiring: Verify CLK, DIO, STB connections
+3. Enable module: Ensure `enable = true` in config
+4. Check pins: Verify pin assignments are correct
 
 ### Display Shows Garbage
 
@@ -227,9 +229,9 @@ TM1638* display = static_cast<TM1638*>(m);
 
 ### Buttons Not Working
 
-1. **No other module using them**: Buttons require another module (like ELS) to read them
-2. **Check module load order**: TM1638 must be loaded before modules that use it
-3. **Button bounce**: Rapid repeated presses may be button bounce
+1. No other module using them: Buttons require another module (like ELS) to read them
+2. Check module load order: TM1638 must be loaded before modules that use it
+3. Button bounce: Rapid repeated presses may be button bounce
 
 ### Dim Display
 
@@ -242,7 +244,7 @@ TM1638* display = static_cast<TM1638*>(m);
 If you need a different display type, consider:
 
 - [Panel](/panel) - LCD with encoder (V1 compatible)
-- [ST7920](/st7920) - Graphical LCD (V2)
+- ST7920 - Graphical LCD (V2)
 - [MAX7219 DRO](/max7219-dro) - Multi-axis seven-segment readout (V2)
 - Network interface - Web-based display
 

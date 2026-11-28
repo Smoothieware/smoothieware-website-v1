@@ -20,7 +20,7 @@ permalink: /extensions/rfid-reader
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/rfid-reader/rfid-reader-diagram.png" alt="Top view of the RFID carrier: an eight-way socket for the reader module on one edge, a small buffer chip and sockets on the left and right edges.">
+    <img src="/images/extensions/rfid-reader/rfid-reader-diagram.webp" alt="Top view of the RFID carrier: an eight-way socket for the reader module on one edge, a small buffer chip and sockets on the left and right edges.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -87,7 +87,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/rfid-reader/rfid-reader-diagram.png" alt="Top view of the RFID reader board with 10 numbered markers that are explained in the list below.">
+      <img src="/images/extensions/rfid-reader/rfid-reader-diagram.webp" alt="Top view of the RFID reader board with 10 numbered markers that are explained in the list below.">
       <a class="xb-mk" href="#tour-1" style="left:35.6%;top:71.9%" aria-label="1: module socket (j3)">1<span class="xb-pop"><b>Module socket (J3)</b> — Match the module&rsquo;s printed pin names to the board printing.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-2" style="left:9.0%;top:40.4%" aria-label="2: input socket s in (j1)">2<span class="xb-pop"><b>Input socket S IN (J1)</b> — Select 6, MOSI 7, MISO 8, clock 9, interrupt 3, reset 4.</span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-3" style="left:91.0%;top:40.4%" aria-label="3: chain socket chain (j2)">3<span class="xb-pop"><b>Chain socket CHAIN (J2)</b> — SPI data and clock continue.</span></a>
@@ -340,7 +340,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/rfid-reader/rfid-reader-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/rfid-reader/rfid-reader-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
-    <tr><td><a href="/images/extensions/rfid-reader/rfid-reader-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/rfid-reader/rfid-reader-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

@@ -1,8 +1,4 @@
 
-
-
-
-
 <!-- learning-diagram:44-pid-autotune -->
 {::nomarkdown}
 <figure id="learning-diagram-44-pid-autotune" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
@@ -12,7 +8,7 @@
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">PID autotune heats and cools for several cycles <a href="#learning-diagram-44-pid-autotune" aria-label="Permanent link to PID autotune heats and cools for several cycles" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-### PID Autotuning
+## PID Autotuning
 
 Smoothie can automatically tune (find) your P, I, and D factors using a process described [here](http://brettbeauregard.com/blog/2012/01/arduino-pid-autotune-library/).
 

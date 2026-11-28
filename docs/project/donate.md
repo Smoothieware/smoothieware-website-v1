@@ -1,4 +1,5 @@
 ---
+title: "Donate"
 permalink: /donate
 ---
 

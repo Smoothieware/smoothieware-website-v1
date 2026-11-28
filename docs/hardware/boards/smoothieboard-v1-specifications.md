@@ -1,8 +1,11 @@
 ---
+title: "Smoothieboard v1 specifications"
 permalink: /smoothieboard-v1-specifications
 ---
 
-# Smoothieboard v1 Technical Specifications
+{::nomarkdown}
+<span id="smoothieboard-v1-technical-specifications"></span>
+{:/nomarkdown}
 
 Smoothieboard v1 has been in production since 2013. It's a proven, reliable 32-bit CNC controller that works with 3D printers, laser cutters, CNC mills, and more. The v1 is still manufactured and will continue alongside the newer v2.
 
@@ -61,8 +64,6 @@ Step generation is handled by hardware timers for precise timing with minimal ji
 
 ### Current Setting
 
-
-
 Motor current is set in the [configuration file](configuring-smoothie), not with potentiometers. This is one of the nice things about Smoothieboards - no fiddling with tiny potentiometers with a screwdriver. Just edit a text file:
 
 {::nomarkdown}
@@ -103,13 +104,9 @@ Note: V2 uses milliamps (mA) instead of amps.
 
 The current settings are {::nomarkdown}<setting v1="alpha_current" v2="current control.alpha.current"></setting>{:/nomarkdown}, {::nomarkdown}<setting v1="beta_current" v2="current control.beta.current"></setting>{:/nomarkdown}, {::nomarkdown}<setting v1="gamma_current" v2="current control.gamma.current"></setting>{:/nomarkdown}, and {::nomarkdown}<setting v1="delta_current" v2="current control.delta.current"></setting>{:/nomarkdown}.
 
-
-
 Typical values range from 0.5A for small motors to 2.0A for larger NEMA 17 motors. Check your motor's datasheet for the rated current. You want to set it to the motor's rated current, or slightly below. Setting it too high won't make your motors stronger - it'll just make them hotter.
 
 ### Microstepping
-
-
 
 Set per-driver in the config file. Most users run 1/16 or 1/32 for a balance of smoothness and performance:
 
@@ -148,8 +145,6 @@ V2 with TMC drivers also supports up to 1/256 microstepping and features like St
 
 Higher microstepping (1/32) is quieter but may reduce high-speed performance slightly. The higher the microstepping, the more steps the processor needs to send for the same movement, which can become a bottleneck at very high speeds.
 
-
-
 ### External Drivers
 
 Step, direction, and enable pins are broken out for all drivers on headers. This means you can connect external drivers if you need more than 5 axes or higher current capability. This is common for large CNC machines with big NEMA 23 or NEMA 34 motors that need 4A or more, or for multi-extruder 3D printers.
@@ -183,7 +178,7 @@ The 3X has no large MOSFETs, the 4X has 2, and the 5X has 3.
 {::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Power Input Required:</strong> MOSFET power is separate from motor power. Each MOSFET group (small and large) requires its own 12-24V power input. See the <a href="mosfets.md">MOSFET documentation</a> for wiring details.
+  <strong>Power Input Required:</strong> MOSFET power is separate from motor power. Each MOSFET group (small and large) requires its own 12-24V power input. See the <a href="/mosfets">MOSFET documentation</a> for wiring details.
 </sl-alert>
 {:/nomarkdown}
 
@@ -276,7 +271,7 @@ Any endstop input can be used as a Z-probe for auto-bed leveling. Supported prob
 
 The probe repeatability depends mostly on the probe type and your mechanical setup. A good BLTouch or well-built mechanical probe can achieve repeatability better than 0.01mm.
 
-See the [Z-probe guide](z-probe-guide) and [leveling strategy documentation](leveling-strategy) for details.
+See the [Z-probe guide](z-probe-guide) and [leveling strategy documentation](/zprobe) for details.
 
 ## Connectivity
 
@@ -292,14 +287,14 @@ See the [Z-probe guide](z-probe-guide) and [leveling strategy documentation](lev
 
 **USB Mass Storage (MSD):** When you connect the board to a computer via USB, the SD card shows up as a USB drive. You can drag and drop G-code files, edit the config file directly, copy over a new firmware binary - all without needing any special software. This is incredibly convenient for configuration and file management.
 
-**USB Serial (CDC):** The board also appears as a virtual COM port. This is what host software uses to send G-code commands in real-time. Compatible with [Pronterface](pronterface), [Repetier-Host](repetier), [OctoPrint](octoprint), and pretty much any software that can talk to a serial port.
+**USB Serial (CDC):** The board also appears as a virtual COM port. This is what host software uses to send G-code commands in real-time. Compatible with [Pronterface](pronterface), [Repetier-Host](https://www.repetier.com/), [OctoPrint](octoprint), and pretty much any software that can talk to a serial port.
 
 Baud rate is typically 115200 but this is configurable.
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  <strong>Mac Users:</strong> Macs like to write hidden files (`.DS_Store`, `.Trashes`, etc.) to mounted drives. These files can interfere with the board's operation when printing from SD card. It's best to unmount the USB drive when you're not actively transferring files. See the <a href="sd-card.md">SD card documentation</a> for details.
+  <strong>Mac Users:</strong> Macs like to write hidden files (`.DS_Store`, `.Trashes`, etc.) to mounted drives. These files can interfere with the board's operation when printing from SD card. It's best to unmount the USB drive when you're not actively transferring files. See the <a href="/sd-card">SD card documentation</a> for details.
 </sl-alert>
 {:/nomarkdown}
 
@@ -365,7 +360,7 @@ The SD card is the brains of the configuration and file storage. It holds:
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>SD Card Speed Limitation:</strong> The SPI interface limits SD card speed to around 400-500 kB/s. This is fine for most G-code files, but very large or complex files (like high-resolution laser raster images) might benefit from streaming via USB or Ethernet instead. This limitation is fixed in <a href="smoothieboard-v2-prime.md">v2</a> with an SDIO interface that's much faster.
+  <strong>SD Card Speed Limitation:</strong> The SPI interface limits SD card speed to around 400-500 kB/s. This is fine for most G-code files, but very large or complex files (like high-resolution laser raster images) might benefit from streaming via USB or Ethernet instead. This limitation is fixed in <a href="/smoothieboard-v2-prime">v2</a> with an SDIO interface that's much faster.
 </sl-alert>
 {:/nomarkdown}
 
@@ -453,14 +448,14 @@ For this setup, you'd want a 24V power supply rated for at least 25A (600W) to h
 The board fits in most standard electronics enclosures designed for RepRap electronics. The mounting holes use standard spacing.
 
 **Connectors:**
-- **Stepper motors:** 4-pin headers, 0.1" (2.54mm) pitch
-- **Endstops:** 3-pin headers, 0.1" pitch
-- **Thermistors:** 3-pin headers, 0.1" pitch
-- **MOSFETs:** 2-pin or 3-pin screw terminals
-- **Power inputs:** Screw terminals, Molex, or power jacks (variant-dependent)
-- **USB:** Type B connector
-- **Ethernet:** RJ45 (if equipped)
-- **SD card:** MicroSD push-push or push-pull slot
+- Stepper motors: 4-pin headers, 0.1" (2.54mm) pitch
+- Endstops: 3-pin headers, 0.1" pitch
+- Thermistors: 3-pin headers, 0.1" pitch
+- MOSFETs: 2-pin or 3-pin screw terminals
+- Power inputs: Screw terminals, Molex, or power jacks (variant-dependent)
+- USB: Type B connector
+- Ethernet: RJ45 (if equipped)
+- SD card: MicroSD push-push or push-pull slot
 
 ### Environmental Specs
 
@@ -500,16 +495,16 @@ PID control for hotends gives you stable temperature with minimal overshoot. You
 **Modular Architecture:**
 Smoothieware is built from modules. Each module handles a specific function:
 
-- **Switch Module:** Endstops, limit switches, general switches
-- **Temperature Control Module:** Heaters, thermistors, PID loops
-- **Extruder Module:** Filament extrusion with acceleration matching
-- **Laser Module:** Laser power control, raster engraving, vector cutting
-- **ZProbe Module:** Auto-bed leveling, probing, mesh compensation
-- **Player Module:** Play G-code files from SD card
-- **Panel Module:** LCD display support (many types)
-- **Network Module:** Ethernet, HTTP server, Telnet, file transfer
-- **Endstops Module:** Homing and limit switch handling
-- **Kill Button Module:** Emergency stop functionality
+- Switch Module: Endstops, limit switches, general switches
+- Temperature Control Module: Heaters, thermistors, PID loops
+- Extruder Module: Filament extrusion with acceleration matching
+- Laser Module: Laser power control, raster engraving, vector cutting
+- ZProbe Module: Auto-bed leveling, probing, mesh compensation
+- Player Module: Play G-code files from SD card
+- Panel Module: LCD display support (many types)
+- Network Module: Ethernet, HTTP server, Telnet, file transfer
+- Endstops Module: Homing and limit switch handling
+- Kill Button Module: Emergency stop functionality
 
 And many more. Each module can be enabled or disabled in the config file. This keeps the firmware flexible - you only load what you need.
 
@@ -539,14 +534,14 @@ No programmer needed, no special software, no command-line tools. Just drag and 
 ### Host Software Compatibility
 
 **Tested and working:**
-- **Pronterface** (PrintRun) - Popular 3D printer control software
-- **Repetier-Host** - Another good 3D printer controller
-- **OctoPrint** - Web-based 3D printer control (via USB or Ethernet)
-- **LightBurn** - Laser cutting and engraving (commercial, excellent software)
-- **LaserGRBL** - Free laser control software (GRBL mode)
-- **bCNC** - CNC control software (GRBL mode)
-- **Universal G-Code Sender** - CNC control
-- **Smoothie Web Interface** - Built-in web UI served from board
+- Pronterface (PrintRun) - Popular 3D printer control software
+- Repetier-Host - Another good 3D printer controller
+- OctoPrint - Web-based 3D printer control (via USB or Ethernet)
+- LightBurn - Laser cutting and engraving (commercial, excellent software)
+- LaserGRBL - Free laser control software (GRBL mode)
+- bCNC - CNC control software (GRBL mode)
+- Universal G-Code Sender - CNC control
+- Smoothie Web Interface - Built-in web UI served from board
 
 Most software that can talk to a serial port will work. The board responds to standard G-code commands.
 
@@ -631,7 +626,7 @@ GPIO pins are 3.3V logic. Some pins are 5V tolerant (check the pinout diagram) b
 - Additional sensors (accelerometers, temperature, whatever you need)
 - Custom I/O modules for special applications
 
-See the [GPIO documentation](gpio) for pinouts and details.
+See the [GPIO documentation](/pinout) for pinouts and details.
 
 ## Open Source Hardware
 
@@ -903,7 +898,7 @@ All v1.x boards run the same firmware. Your config file works across all revisio
   • Follow all local laser safety regulations<br>
   • Never bypass safety interlocks<br>
   • Know your laser's wavelength and get the right goggles for it<br><br>
-  Lasers are not toys. Treat them with respect. See the <a href="laser-warning.md">laser safety documentation</a> for details.
+  Lasers are not toys. Treat them with respect. See the <a href="/laser-warning">laser safety documentation</a> for details.
 </sl-alert>
 {:/nomarkdown}
 
@@ -995,8 +990,6 @@ microseconds    16     # 1/16 microstepping
 microseconds    32     # 1/32 microstepping (quieter)
 ```
 
-
-
 **Temperature Control (Example for Hotend):**
 
 {::nomarkdown}
@@ -1038,8 +1031,6 @@ set_and_wait_m_code = 109
 {:/nomarkdown}
 
 Key temperature control settings include {::nomarkdown}<setting v1="temperature_control.{name}.enable" v2="temperature control.enable"></setting>{:/nomarkdown}, {::nomarkdown}<setting v1="temperature_control.{name}.thermistor_pin" v2="temperature control.thermistor_pin"></setting>{:/nomarkdown}, and {::nomarkdown}<setting v1="temperature_control.{name}.heater_pin" v2="temperature control.heater_pin"></setting>{:/nomarkdown}.
-
-
 
 See the [configuration documentation](configuring-smoothie) for complete details.
 
@@ -1116,7 +1107,5 @@ For more detailed troubleshooting, see the [troubleshooting guide](troubleshooti
 **Community:**
 - [Getting Help](getting-help-community)
 - [Contributing](contribution-guidlines)
-
----
 
 *Page last updated: 2025-10-21*

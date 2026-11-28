@@ -1,8 +1,11 @@
 ---
+title: "Simplify3d"
 permalink: /simplify3d
 ---
 
-# Simplify3D and Smoothie
+{::nomarkdown}
+<span id="simplify3d-and-smoothie"></span>
+{:/nomarkdown}
 
 ## The Problem
 
@@ -35,9 +38,9 @@ Simply pass your S3D G-code through this tool and the problem will stop occurrin
 
 A small update of the S3D issue:
 
-- **Simplify3D acknowledged the issue** and claims to have fixed it in their latest release ([Release Notes](https://www.simplify3d.com/software/release-notes/))
+- Simplify3D acknowledged the issue and claims to have fixed it in their latest release ([Release Notes](https://www.simplify3d.com/software/release-notes/))
 
-- **The latest major update to the Smoothie firmware** (see /blog for related blog posts), which is a complete rewrite of step generation, is expected to make Smoothie resistant, if you are using an older version of S3D, or some other new slicing program which would make the same mistake.
+- The latest major update to the Smoothie firmware (see /blog for related blog posts), which is a complete rewrite of step generation, is expected to make Smoothie resistant, if you are using an older version of S3D, or some other new slicing program which would make the same mistake.
 
 We'd really appreciate it if users of S3D and Smoothie would test the latest versions of both together.
 

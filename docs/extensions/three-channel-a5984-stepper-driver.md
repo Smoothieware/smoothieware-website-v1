@@ -20,7 +20,7 @@ permalink: /extensions/three-channel-a5984-stepper-driver
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-diagram.png" alt="Top view of the Three-channel A5984 stepper driver board: two ten-pin connectors and a green power terminal on the left, three driver channels in a column with their capacitors, chips, trimmers and four-pin motor headers.">
+    <img src="/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-diagram.webp" alt="Top view of the Three-channel A5984 stepper driver board: two ten-pin connectors and a green power terminal on the left, three driver channels in a column with their capacitors, chips, trimmers and four-pin motor headers.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -97,7 +97,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-diagram.png" alt="Top view of the Three-channel A5984 stepper driver board with thirteen numbered markers that are explained in the list below.">
+      <img src="/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-diagram.webp" alt="Top view of the Three-channel A5984 stepper driver board with thirteen numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-1" style="left:20.6%;top:30.9%" aria-label="1: input connector (input y)">1<span class="xb-pop"><b>Input connector (INPUT Y)</b> — a 2×5, 1.27 mm Gadgeteer Y connector that brings STEP and DIR for all three motors, the shared enable line, 3.3 V and ground from the controller.</span></a>
       <a class="xb-mk xb-pl" href="#tour-2" style="left:21.1%;top:65.7%" aria-label="2: chain connector (chain y)">2<span class="xb-pop"><b>Chain connector (CHAIN Y)</b> — a second connector wired contact for contact to the input. It passes all seven control signals on.</span></a>
       <a class="xb-mk xb-pb xb-pl" href="#tour-3" style="left:8.6%;top:49.7%" aria-label="3: motor power terminal">3<span class="xb-pop"><b>Motor power terminal</b> — a two-way screw terminal for 8 to 36 V DC. Plus is the upper screw, minus the lower one. There is no reverse-polarity protection.</span></a>
@@ -448,7 +448,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
-    <tr><td><a href="/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/three-channel-a5984-stepper-driver/three-channel-a5984-stepper-driver-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

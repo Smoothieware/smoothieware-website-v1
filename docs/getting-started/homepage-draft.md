@@ -4,7 +4,9 @@ layout: default
 title: Welcome to Smoothie
 ---
 
-# Welcome to Smoothie
+{::nomarkdown}
+<span id="welcome-to-smoothie"></span>
+{:/nomarkdown}
 
 Smoothie is a brain for computer-controlled fabrication machines.
 
@@ -14,12 +16,10 @@ It is made by a community.
 
 ## Quick Links
 
-- [Click here to see the documentation](documentation)
-- [Click here to see the source code](source-code)
+- [Click here to see the documentation](/guides)
+- [Click here to see the source code](https://github.com/Smoothieware/Smoothieware)
 - [Click here to engage the community](community)
-- [Click here to get a board](get-a-board)
-
----
+- [Click here to get a board](/getting-smoothieboard)
 
 ## In a Nutshell
 
@@ -47,8 +47,6 @@ Smoothieboard v1 runs on a LPC1769 Cortex-M3 32bit ARM chip, clocking 120Mhz, wi
 
 The firmware is the result of years of hard work making sure we use as much of the additional power as we can, and is improved in nearly every way possible in terms of performance and features, compared to code running on older platforms.
 
----
-
 ### Open Source
 
 {::nomarkdown}
@@ -70,8 +68,6 @@ The hardware files for the Smoothieboard are licensed under the [CERN OHL v.1.2]
 All of the documentation on this wiki is user-produced, and licensed under the Creative Commons [CC-BY-SA 3.0](http://creativecommons.org/licenses/by-sa/3.0/) license.
 
 We strongly believe in the idea of Open-Source and Open-Hardware, and see every day how much awesomer sharing everything makes a project.
-
----
 
 ### Universal
 
@@ -99,8 +95,6 @@ This means you can add a new tool, or use for the firmware, with a limited amoun
 
 And it also means that if the laser people make the motion control code better, the 3D printer people profit from the change, which wouldn't be the case if each community had their separate monolithic firmwares.
 
----
-
 ## Additional Features
 
 ### Feature Rich
@@ -115,8 +109,6 @@ Using superior hardware to pioneer features that make your life easier, allow fo
 
 Enjoy cutting-edge functionality and see more added all the time.
 
----
-
 ### Documented
 
 {::nomarkdown}
@@ -129,8 +121,6 @@ The most complete and beginner-friendly documentation around.
 
 Enjoy machine-specific step by step general guides, as well as in-depth documentation of each feature.
 
----
-
 ### Modular
 
 {::nomarkdown}
@@ -140,8 +130,6 @@ Enjoy machine-specific step by step general guides, as well as in-depth document
 {:/nomarkdown}
 
 Highly modular code allows for an easier contributor experience, better long-term codebase sanity, and also enjoy a very versatile system that makes it easy to do unusual and innovative things, often without even having to code anything.
-
----
 
 ### Easy
 
@@ -157,8 +145,6 @@ Even doing new and unusual things is made easier.
 
 And if anything goes wrong, find a very active community to help.
 
----
-
 ### Community Driven
 
 {::nomarkdown}
@@ -170,8 +156,6 @@ And if anything goes wrong, find a very active community to help.
 Built by the community, for the community.
 
 A vibrant ecosystem of contributors, users, and enthusiasts working together to make Smoothie better every day.
-
----
 
 ### Future Friendly
 

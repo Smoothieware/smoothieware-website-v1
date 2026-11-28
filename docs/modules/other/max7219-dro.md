@@ -3,7 +3,9 @@ permalink: /max7219-dro
 title: MAX7219 DRO
 ---
 
-# MAX7219 Digital Readout
+{::nomarkdown}
+<span id="max7219-digital-readout"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -108,6 +110,7 @@ The axis subsection name must be one of `x`, `y`, `z`, `a`, `b`, or `c`. The cor
 
 - [MAX7219 driver](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/display/max7219/max7219.cpp)
 - [DRO module](https://github.com/Smoothieware/SmoothieV2/blob/2a21c0108b1d095ecd8b2b9358e94055f053c003/Firmware/src/modules/utils/dro/dro.cpp)
+
 {::nomarkdown}
 </v2>
 </versioned>

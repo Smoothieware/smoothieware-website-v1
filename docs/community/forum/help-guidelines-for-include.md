@@ -1,4 +1,6 @@
-# Help Guidelines
+{::nomarkdown}
+<span id="help-guidelines"></span>
+{:/nomarkdown}
 
 General advice when asking for help from the Smoothieware community.
 
@@ -27,7 +29,7 @@ General advice when asking for help from the Smoothieware community.
 
 ## Before You Ask
 
-- **Please read the [Troubleshooting](troubleshooting) section** before you ask for help, in case your question is answered there.
+- Please read the [Troubleshooting](troubleshooting) section before you ask for help, in case your question is answered there.
 
 - A lot of questions have already been asked in the past. It might be worth it searching the forum for an answer to your question. The wiki may also have the answer you are searching for.
 
@@ -37,7 +39,7 @@ General advice when asking for help from the Smoothieware community.
 
 - **Please mention your board type, OS, machine type, and any other useful information.**
 
-- **Always include your configuration file.** It's likely if you don't post your configuration file, you will be asked for it, so save everyone (including you) some time and just post your config file right away with your first post.
+- Always include your configuration file. It's likely if you don't post your configuration file, you will be asked for it, so save everyone (including you) some time and just post your config file right away with your first post.
 
 - **NEVER paste the config directly in the forum.** Instead, paste it to [Pastebin](http://pastebin.com), and share the link in the forum. This keeps posts clean and readable.
 
@@ -52,7 +54,7 @@ General advice when asking for help from the Smoothieware community.
   <br><br>
   As such, <strong>we respectfully request</strong> in the nicest fashion possible, that you first contact the seller of the clone board for help before (not instead of) asking in the forum or anywhere else in the community, then after you have done this, you can ask the smoothie community for help of course, this isn't about preventing you from asking for help, just about making sure the sellers of boards that are toxic to the project at the very least do their part, by having these sorts of questions asked first. We believe it makes sense to request this, and we find most users tend to agree. We'd greatly appreciate it.
   <br><br>
-  Community members generally do not want to help companies that hurt the project we are all building. Please read <a href="troubleshooting#somebody-refused-to-help-me-because-my-board-is-a-mks-what-s-that-all-about">this explanation</a> before posting.
+  Community members generally do not want to help companies that hurt the project we are all building. Please read <a href="/troubleshooting#8-before-asking-the-community-for-help">this explanation</a> before posting.
 </sl-alert>
 {:/nomarkdown}
 

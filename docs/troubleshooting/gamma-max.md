@@ -1,4 +1,5 @@
 ---
+title: "Gamma max"
 permalink: /gamma-max
 ---
 

@@ -3,7 +3,9 @@ permalink: /subroutines
 title: O-word Subroutines
 ---
 
-# O-word Subroutines
+{::nomarkdown}
+<span id="o-word-subroutines"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <versioned orientation="vertical">

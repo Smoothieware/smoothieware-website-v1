@@ -1,5 +1,11 @@
+---
+title: "Migration details"
+permalink: /migration-details
+---
 
-# Migration Details
+{::nomarkdown}
+<span id="migration-details"></span>
+{:/nomarkdown}
 
 This page provides detailed information about migrating to Smoothie, including configuration format differences, choosing the right version, and common pitfalls to avoid.
 
@@ -125,11 +131,11 @@ Before migrating, you need to decide which version of Smoothie is right for your
 
 When migrating to Smoothie:
 
-- **Back up your existing configuration** before making changes
-- **Start with a fresh config file** from the Smoothie repository as a template
-- **Transfer settings gradually** rather than all at once
-- **Test each major change** before proceeding to the next
-- **Consult the troubleshooting guide** if you encounter issues
+- Back up your existing configuration before making changes
+- Start with a fresh config file from the Smoothie repository as a template
+- Transfer settings gradually rather than all at once
+- Test each major change before proceeding to the next
+- Consult the troubleshooting guide if you encounter issues
 
 ## Common Migration Pitfalls
 
@@ -219,6 +225,6 @@ Avoid these common mistakes when migrating to Smoothie:
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  Need help with your migration? Visit the <a href="irc">IRC channel</a> or check the <a href="troubleshooting">troubleshooting guide</a>.
+  Need help with your migration? Visit the <a href="/irc">IRC channel</a> or check the <a href="/troubleshooting">troubleshooting guide</a>.
 </sl-alert>
 {:/nomarkdown}

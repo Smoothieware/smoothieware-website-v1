@@ -1,13 +1,13 @@
 ---
+title: "Getting smoothieboard"
 permalink: /getting-smoothieboard
 ---
 
-
-# Getting Smoothieboard
+{::nomarkdown}
+<span id="getting-smoothieboard"></span>
+{:/nomarkdown}
 
 [Smoothieboard](/smoothieboards) comes in two main versions available for purchase. Choose the version that best fits your needs, then select a reseller in your region.
-
-
 
 ## Which Board Should You Get?
 
@@ -20,11 +20,11 @@ Both Smoothieboard v1 and v2-prime are currently in production. Here's a quick c
 
 **Smoothieboard v1**
 
-- **Processor**: LPC1769 (32-bit, 120 MHz)
-- **Drivers**: 3-5× A5984 stepper drivers
-- **Flash/RAM**: 512 KB / 64 KB
-- **Best for**: Budget-conscious makers, proven reliability
-- **Status**: In production since 2013
+- Processor: LPC1769 (32-bit, 120 MHz)
+- Drivers: 3-5× A5984 stepper drivers
+- Flash/RAM: 512 KB / 64 KB
+- Best for: Budget-conscious makers, proven reliability
+- Status: In production since 2013
 
 {::nomarkdown}
 </v1>
@@ -33,11 +33,11 @@ Both Smoothieboard v1 and v2-prime are currently in production. Here's a quick c
 
 **Smoothieboard v2-prime**
 
-- **Processor**: STM32H745 dual-core (480 MHz + 240 MHz)
-- **Drivers**: 4× TMC2660/2590 (SpreadCycle current control; no StealthChop2)
-- **Flash/RAM**: 2 MB / 1 MB
-- **Best for**: High-performance builds and expansion; see the [qualified driver features](smoothieboard-v2-prime#tmc-features-both-variants)
-- **Status**: In production since 2023
+- Processor: STM32H745 dual-core (480 MHz + 240 MHz)
+- Drivers: 4× TMC2660/2590 (SpreadCycle current control; no StealthChop2)
+- Flash/RAM: 2 MB / 1 MB
+- Best for: High-performance builds and expansion; see the [qualified driver features](smoothieboard-v2-prime#tmc-features-both-variants)
+- Status: In production since 2023
 
 {::nomarkdown}
 </v2>
@@ -46,16 +46,10 @@ Both Smoothieboard v1 and v2-prime are currently in production. Here's a quick c
 
 For detailed specifications and comparison, see [Smoothieboards Overview](/smoothieboard).
 
-
-
 ## North America
-
-
 
 - [Robosprout](https://www.robosprout.com/product-category/smoothieboards) (USA) - Official US reseller. Stocks both **v1 and v2-prime** (**In Stock**)
 - [Everlast Concepts LLC](https://www.amazon.com/dp/B0786SVQ9Z?ref=myi_title_dp) (USA & Amazon USA) - v1 reseller
-
-
 
 ## Europe and Rest of the World
 

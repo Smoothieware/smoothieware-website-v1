@@ -1,9 +1,11 @@
 ---
+title: "Filament detector"
 permalink: /filament-detector
 ---
 
-
-# Filament detector
+{::nomarkdown}
+<span id="filament-detector"></span>
+{:/nomarkdown}
 
 <!-- learning-diagram:47-filament-detector -->
 {::nomarkdown}
@@ -14,9 +16,6 @@ permalink: /filament-detector
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">The filament detector compares motion with encoder pulses <a href="#learning-diagram-47-filament-detector" aria-label="Permanent link to The filament detector compares motion with encoder pulses" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-
-
-
 
 The filament detector module allows you to add automated hardware to your machine to check that the filament is advancing correctly.
 
@@ -30,7 +29,7 @@ If a difference is detected, the filament is not advancing correctly, which mean
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   Smoothie uses the host command `action:pause` to tell the host to stop sending gcode.
 
-  Currently **ONLY** OctoPrint, Pronterface, Smoopi, and printing from SD card support this.
+  Currently <strong>ONLY</strong> OctoPrint, Pronterface, Smoopi, and printing from SD card support this.
 </sl-alert>
 
 ## M-Code Commands
@@ -39,8 +38,6 @@ If a difference is detected, the filament is not advancing correctly, which mean
 - Use {::nomarkdown}<mcode>M405</mcode>{:/nomarkdown} command to disable filament detector
 - Use {::nomarkdown}<mcode>M406</mcode>{:/nomarkdown} command to enable filament detector
 - Use {::nomarkdown}<mcode>M407</mcode>{:/nomarkdown} command to check if the filament detector gets triggered and to calibrate
-
-
 
 ## Configuration options
 
@@ -86,8 +83,6 @@ pulses_per_mm = 0.5
 </versioned>
 {:/nomarkdown}
 
-
-
 ## Calibration
 
 Disable the detector with {::nomarkdown}<mcode>M405</mcode>{:/nomarkdown}, pull a known length of filament through the detector then see how many pulses were detected with {::nomarkdown}<mcode>M407</mcode>{:/nomarkdown}.
@@ -109,7 +104,7 @@ The `encoder_pin` must be connected to an interrupt-capable pin on your board. T
 <v1>
 {:/nomarkdown}
 
-For Smoothieboard V1, most GPIO pins support interrupts. Common interrupt-capable pins include {::nomarkdown}<pin>2.11</pin>{:/nomarkdown}, {::nomarkdown}<pin>2.12</pin>{:/nomarkdown}, {::nomarkdown}<pin>2.13</pin>{:/nomarkdown}, and others. Consult the [Smoothieboard pinout documentation](/smoothieboard-guide#pinout) for complete details.
+For Smoothieboard V1, most GPIO pins support interrupts. Common interrupt-capable pins include {::nomarkdown}<pin>2.11</pin>{:/nomarkdown}, {::nomarkdown}<pin>2.12</pin>{:/nomarkdown}, {::nomarkdown}<pin>2.13</pin>{:/nomarkdown}, and others. Consult the [Smoothieboard pinout documentation](/pinout) for complete details.
 
 {::nomarkdown}
 </v1>
@@ -117,8 +112,8 @@ For Smoothieboard V1, most GPIO pins support interrupts. Common interrupt-capabl
 {:/nomarkdown}
 
 For Smoothieboard V2, interrupt-capable pins vary by board variant (Prime/Mini). Refer to your specific board's pinout documentation to identify which pins support interrupts:
-- [Smoothieboard Prime pinout documentation](/hardware/boards/smoothieboard-prime)
-- [Smoothieboard Mini pinout documentation](/hardware/boards/smoothieboard-mini)
+- [Smoothieboard Prime pinout documentation](/smoothieboard-v2-prime)
+- Smoothieboard Mini pinout documentation
 
 {::nomarkdown}
 </v2>
@@ -141,10 +136,10 @@ It will not trigger if there was no extrusion.
 
 Typical encoder wheels used for filament detection have the following specifications:
 
-- **Tooth count**: Usually 20 slots/teeth per rotation
-- **Pulses per rotation**: 20 pulses per full rotation (one pulse per slot)
-- **Wheel diameter**: Typically 30-40mm for the encoder disk
-- **Resolution**: The actual pulses per mm depends on the diameter of the contact surface with the filament and the encoder's tooth count
+- Tooth count: Usually 20 slots/teeth per rotation
+- Pulses per rotation: 20 pulses per full rotation (one pulse per slot)
+- Wheel diameter: Typically 30-40mm for the encoder disk
+- Resolution: The actual pulses per mm depends on the diameter of the contact surface with the filament and the encoder's tooth count
 
 For the common R/C car encoder kit mentioned above, a 20-slot wheel is standard. The `pulses_per_mm` setting must be calibrated for your specific setup as described in the Calibration section, as it depends on the effective diameter where the filament contacts the encoder wheel.
 

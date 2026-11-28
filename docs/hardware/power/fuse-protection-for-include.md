@@ -1,5 +1,7 @@
 
-# Fuse Protection
+{::nomarkdown}
+<span id="fuse-protection"></span>
+{:/nomarkdown}
 
 A [Fuse](https://en.wikipedia.org/wiki/Fuse_(electrical)) is a device which sacrifices itself (gets destroyed and stops letting electricity through) if the current passing through it is higher than a certain value.
 

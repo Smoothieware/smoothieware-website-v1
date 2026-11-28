@@ -1,4 +1,5 @@
 ---
+title: "RRD GLCD adapter"
 permalink: /rrdglcdadapter
 ---
 
@@ -6,22 +7,26 @@ permalink: /rrdglcdadapter
 <versioned orientation="vertical">
 <v1>
 {:/nomarkdown}
+
 This adapter is designed for Smoothieboard V1.
+
 {::nomarkdown}
 </v1>
 <v2>
 {:/nomarkdown}
+
 This adapter is not compatible with V2 hardware. See the [V2 panel options](/panel).
+
 {::nomarkdown}
 </v2>
 </versioned>
 {:/nomarkdown}
 
-# RRD GLCD Adapter board
+## RRD GLCD Adapter board
 
 This adapter allows you to connect a [Reprapdiscount GLCD panel](/panel) to a Smoothieboard easily.
 
-## Display Options Comparison
+### Display Options Comparison
 
 **Smoothieware V1 (Smoothieboard):**
 - Smoothiepanel (recommended)
@@ -31,7 +36,6 @@ This adapter allows you to connect a [Reprapdiscount GLCD panel](/panel) to a Sm
 **Smoothieware V2:**
 - ST7920-based displays (built-in support)
 - TM1638-based displays (built-in support)
-
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
@@ -52,15 +56,15 @@ All of the panel's functionalities are available:
 <v1>
 {:/nomarkdown}
 
-## Open Hardware
+### Open Hardware
 
 The Source is on [GitHub](https://github.com/llegoff/GlcdAdapter2)
 
-## Getting one
+### Getting one
 
 The RRDGLCD Adapter can be found from various electronics suppliers or built from the [GitHub source](https://github.com/llegoff/GlcdAdapter2).
 
-## Assembly
+### Assembly
 
 Place the 3-pin connectors below the PCB
 
@@ -106,7 +110,7 @@ On some RRDGLCD the connector are reversed
 </div>
 {:/nomarkdown}
 
-## Power supply
+### Power supply
 
 If Smoothieboard has a good 5V regulator, or a 5V power supply, the panel of the power supply can be drawn from this one by means of a diode (ex 1N5817).
 
@@ -126,7 +130,7 @@ If not, please install a voltage regulator Recom 785.0-1
 
 The diode and regulator may be mounted at the same time.
 
-## Configuration
+### Configuration
 
 The adapter is configured for Smoothieboard v1.0a and newer.
 
@@ -150,7 +154,7 @@ For v1.0 Smoothieboard, configure the PCB
 
 Cut the jumper track, and drop a welding goute on the other part of the jumper.
 
-## Use
+### Use
 
 Solder the connector missing
 
@@ -168,6 +172,7 @@ Update firmware (version after October 2014), see [Flashing Smoothie firmware](f
 </v1>
 <v2>
 {:/nomarkdown}
+
 The adapter assembly and configuration-port instructions apply to the V1 adapter.
 
 {::nomarkdown}
@@ -233,8 +238,6 @@ sdcd_pin = P0_27!^                 # sd detect signal (set to nc if no sdcard de
 </versioned>
 {:/nomarkdown}
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -244,14 +247,13 @@ If you do not want to use the buzzer, leaving out the `panel.buzz_pin` line will
 
 As there is no pull-down on the buzzer, it will keep buzzing.
 
-
-
 To avoid this, you can either solder a pull-down resistor on the adapter board or you can use this little hack:
 
 {::nomarkdown}
 </v1>
 <v2>
 {:/nomarkdown}
+
 These buzzer and soldering instructions apply to the V1 adapter.
 
 {::nomarkdown}
@@ -300,8 +302,6 @@ This will create a pseudo-switch that does nothing, but it will enable the pull-
 
 You have to leave out the `panel.buzz_pin` line.
 
-
-
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
   <a href="/images/rrdglcdadapter/adapter.jpg">
@@ -336,7 +336,9 @@ And soldering a cable under the PCB
 </v1>
 <v2>
 {:/nomarkdown}
+
 The remaining adapter wiring notes apply to V1 hardware.
+
 {::nomarkdown}
 </v2>
 </versioned>

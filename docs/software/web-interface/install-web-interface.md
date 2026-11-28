@@ -4,7 +4,9 @@ layout: default
 title: Installing the Web Interface
 ---
 
-# Installing the web interface to the SD card
+{::nomarkdown}
+<span id="installing-the-web-interface-to-the-sd-card"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/github-1.png">

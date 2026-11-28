@@ -1,4 +1,5 @@
 ---
+title: "Laser"
 permalink: /laser
 ---
 

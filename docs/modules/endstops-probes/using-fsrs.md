@@ -1,8 +1,11 @@
 ---
+title: "Using FSRs"
 permalink: /using-fsrs
 ---
 
-# Using FSRs with Smoothieboard
+{::nomarkdown}
+<span id="using-fsrs-with-smoothieboard"></span>
+{:/nomarkdown}
 
 <!-- learning-diagram:29-fsr-stack -->
 {::nomarkdown}
@@ -13,9 +16,6 @@ permalink: /using-fsrs
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">An FSR controller turns bed force into a switch input <a href="#learning-diagram-29-fsr-stack" aria-label="Permanent link to An FSR controller turns bed force into a switch input" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-
-
-
 
 FSRs (Force Sensing Resistors) can be used as bed leveling sensors with Smoothieboard to provide automatic bed leveling for 3D printers.
 
@@ -142,27 +142,27 @@ point3 = 100.0, 190.0                # Third probe point
 
 **FSR Not Triggering:**
 
-- **Check wiring:** Verify all connections between FSRs, controller board, and Smoothieboard
-- **Test controller output:** Use a multimeter to verify the controller board outputs a signal when FSRs are pressed
-- **Verify pin configuration:** Ensure the probe pin matches the physical connection
-- **Check inversion:** Try removing or adding the `!` (inversion) flag in the pin configuration
-- **Adjust sensitivity:** Most FSR controller boards have a potentiometer to adjust trigger threshold - try increasing sensitivity
+- Check wiring: Verify all connections between FSRs, controller board, and Smoothieboard
+- Test controller output: Use a multimeter to verify the controller board outputs a signal when FSRs are pressed
+- Verify pin configuration: Ensure the probe pin matches the physical connection
+- Check inversion: Try removing or adding the `!` (inversion) flag in the pin configuration
+- Adjust sensitivity: Most FSR controller boards have a potentiometer to adjust trigger threshold - try increasing sensitivity
 
 **False Triggers:**
 
-- **Reduce sensitivity:** Adjust the controller board's potentiometer to require more force
-- **Add debounce:** Increase `zprobe.debounce_count` to filter electrical noise
-- **Check mechanical stability:** Ensure FSRs are mounted firmly and the bed doesn't wobble
-- **Shield wiring:** Use shielded cable if electrical noise is suspected
-- **Verify weight distribution:** Make sure the nozzle contacts all FSRs evenly during probing
+- Reduce sensitivity: Adjust the controller board's potentiometer to require more force
+- Add debounce: Increase `zprobe.debounce_count` to filter electrical noise
+- Check mechanical stability: Ensure FSRs are mounted firmly and the bed doesn't wobble
+- Shield wiring: Use shielded cable if electrical noise is suspected
+- Verify weight distribution: Make sure the nozzle contacts all FSRs evenly during probing
 
 **Intermittent Detection:**
 
-- **FSR placement:** Ensure FSRs are positioned where the nozzle will consistently contact them
-- **FSR condition:** Check for damaged or worn FSRs - they degrade over time with use
-- **Temperature effects:** FSRs can be affected by heat - keep them away from heated beds
-- **Connector issues:** Verify all connectors are secure and making good contact
-- **Update debounce:** Try different `zprobe.debounce_count` values (typically 5-20)
+- FSR placement: Ensure FSRs are positioned where the nozzle will consistently contact them
+- FSR condition: Check for damaged or worn FSRs - they degrade over time with use
+- Temperature effects: FSRs can be affected by heat - keep them away from heated beds
+- Connector issues: Verify all connectors are secure and making good contact
+- Update debounce: Try different `zprobe.debounce_count` values (typically 5-20)
 
 ### Testing Your Setup
 
@@ -200,7 +200,7 @@ Both FSRs and BLTouch can provide automatic bed leveling, but with different cha
 </sl-alert>
 {:/nomarkdown}
 
-For more information about BLTouch, see the [BLTouch documentation](bltouch).
+For more information about BLTouch, see the [BLTouch documentation](/zprobe).
 
 ## Related Documentation
 

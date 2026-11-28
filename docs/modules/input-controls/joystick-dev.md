@@ -1,9 +1,11 @@
 ---
+title: "Joystick dev"
 permalink: /joystick-dev
 ---
 
-
-# Joystick Developer Documentation
+{::nomarkdown}
+<span id="joystick-developer-documentation"></span>
+{:/nomarkdown}
 
 ## Basic Usage
 

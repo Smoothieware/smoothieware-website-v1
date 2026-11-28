@@ -1,8 +1,11 @@
 ---
+title: "Search"
 permalink: /search_site
 ---
 
-# Search
+{::nomarkdown}
+<span id="search"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>

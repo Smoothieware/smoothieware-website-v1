@@ -1,9 +1,11 @@
 ---
+title: "Smoothieboard v1"
 permalink: /smoothieboard-v1
 ---
 
-
-# Smoothieboard v1
+{::nomarkdown}
+<span id="smoothieboard-v1"></span>
+{:/nomarkdown}
 
 Smoothieboard is an [Open-Source Hardware](http://www.oshwa.org/definition/) CNC controller designed by the Smoothie community to run the [Smoothieware](http://smoothieware.org) firmware.
 
@@ -61,7 +63,6 @@ This allows for pretty neat things like:
 - Editing the [configuration](/configuring-smoothie) without having to edit source file or reflash the firmware
 - Dropping Gcode files to the board and [executing them](/player)
 - Dropping firmware upgrade files to the board for easy [flashing](/flashing-smoothie-firmware)
-
 
 {::nomarkdown}
 <a href="/images/recovered/usb-cable.png">
@@ -149,15 +150,13 @@ See [Mosfets](mosfets).
 
 All v1 boards come with 4 temperature reading inputs.
 
-These can be used to read the resistance of thermistors in your hotend or heated bed, inferring from it its current temperature, and from this the [temperature control](temperature-control) module can regulate the temperature by choosing whether to heat it or not.
+These can be used to read the resistance of thermistors in your hotend or heated bed, inferring from it its current temperature, and from this the [temperature control](/temperaturecontrol) module can regulate the temperature by choosing whether to heat it or not.
 
-
-See [Temperature Control](temperature-control)<br/>
+See [Temperature Control](/temperaturecontrol)<br/>
 
 <a href="/images/temporary/circuit-board-generic.jpg">
   <img src="/images/temporary/circuit-board-generic.jpg" alt="Temperature Reading"/>
 </a>
-
 
 ## Endstops
 

@@ -1,4 +1,5 @@
 ---
+title: "Builds edge"
 permalink: /builds-edge
 ---
 

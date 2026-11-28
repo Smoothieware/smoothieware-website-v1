@@ -1,8 +1,11 @@
 ---
+title: "Smoothie on a breadboard"
 permalink: /smoothie-on-a-breadboard
 ---
 
-# Smoothie on a Breadboard
+{::nomarkdown}
+<span id="smoothie-on-a-breadboard"></span>
+{:/nomarkdown}
 
 <sl-alert variant="danger" open>
   <sl-icon slot="icon" name="exclamation-octagon"></sl-icon>
@@ -62,16 +65,16 @@ A short description:
 - The MicroSD breakout contains an SD card (up to 2GB, that's the size of the cheapest you can find these days anyway). On the SD Card is the config file to configure smoothie, and you can also put there GCode files and execute them from there.
 - The 4 pololu drivers (StepSticks would be fine, and are pin-compatible) drive the steppers to move the machine and the extruder. If you're here to move a laser, you don't need 4, but only 2 (or 3 if you have a Z axis).
 - The thermistor and hotend circuits are used to regulate the temperature in the 3D printer's hotend.
-**TODO**: Describe modifications for laser cutting, there are not a lot.
+The modifications for laser cutting, there are not a lot, are {::nomarkdown}<a href="mailto:wolf.arthur@gmail.com">coming soon</a>{:/nomarkdown}.
 
-# Assembly
+## Assembly
 
 Now instructions for a step-by-step assembly.
 The current design is quite compact, so there is not really much freedom on component placement, but this is mostly to say what connects to what.
-If you don't understand something, or don't see clearly what connects to where, you can look more in detail in the [Fritzing file](http://smoothieware.org/local--files/smoothie-on-a-breadboard/Smoothie-on-a-breadboard.fz) or [contact by email](mailto:wolf.arthur@gmail.com).
+If you don't understand something, or don't see clearly what connects to where, you can look more in detail in the [Fritzing file](https://web.archive.org/web/2020/http://smoothieware.org/local--files/smoothie-on-a-breadboard/Smoothie-on-a-breadboard.fz) or [contact by email](mailto:wolf.arthur@gmail.com).
 Warning: we will refer to the pin numbering found on the LPCXpresso PCB; this is different from the standard IC pin numbering, as both columns have increasing numbers from top to bottom instead of a counter-clockwise numbering.
 
-## Breadboards
+### Breadboards
 
 You'll need the breadboard in a bit of a special configuration, due to the dimension/pin configuration of the LPCXPresso board:
 
@@ -85,7 +88,7 @@ You'll need the breadboard in a bit of a special configuration, due to the dimen
 
 You just need to remove one of the power supply bars, and attach the two breadboards together (will require cutting the sticky sheet at the bottom of some breadboards).
 
-## LPCPxresso board
+### LPCPxresso board
 
 You must solder the two long ranges of holes on that board with standard 2.54mm golden pins at the bottom.
 Then simply insert into the breadboard, with the first pins on the left at 6 pins from the border.
@@ -94,7 +97,7 @@ Then simply insert into the breadboard, with the first pins on the left at 6 pin
   <img src="/images/recovered/bb02.jpg" alt="LPCXpresso board" style="display: block; margin: 20px auto; min-width: 640px; max-width: 100%; height: auto;"/>
 </a>
 
-## USB-Serial cable
+### USB-Serial cable
 
 To flash the bootloader, and later eventually debug, you need to connect to the board via serial. That won't work via USB directly until smoothie is flashed in there.
 You can use an [FTDI cable](https://www.adafruit.com/products/70), the [Arduino USB2Serial board](http://store.arduino.cc/eu/index.php?main_page=product_info&cPath=11_15&products_id=143), or even directly an Arduino board, using pins 0 and 1 as TX and RX.
@@ -109,7 +112,7 @@ The 5V pin goes into the VIN (4.5V-14V) pin on the LPCXpresso (orange wires).
 The LPCXpresso then outputs 3.3V, which is what we'll be using for our peripherals, from the top left pin (red wires). This goes into the top rail of the two bottom power bars. The 3.3V regulator on the LPCXpresso is located on the programmer side, so if you split the boards you will have to add an external 3.3V LDO.
 The LED and resistor are not necessary, but it's always nice to know you've connected the power correctly. The resistor value depends on your LED's luminosity and taste: I use 1Kohm on mine. Most LEDs will want less.
 
-## Buttons
+### Buttons
 
 You need a reset button to reset your board connected to pin 4, and a bootloader button connected to pin 51 (shown in the diagram below) to get it to enter bootloader mode in order to flash the SD card bootloader (this only needs to be done once).
 Also, a play/pause button is used to force the bootloader into DFU mode to flash the firmware, this is connected to pin <pin>2.12</pin>, and is not shown in the following diagram.
@@ -123,7 +126,7 @@ You'll then be able to flash the chip using lpc21isp [following these instructio
 
 To force the bootloader into DFU mode hold the play/pause button, press reset then release the play/pause button.
 
-## MicroSD card breakout board
+### MicroSD card breakout board
 
 Exact connection will depend on the pin order for your microSD breakout board.
 Here pictured is an imaginary breakout board that would have the pins in the same order as the LPCXpresso, making things neatly arranged:
@@ -144,7 +147,7 @@ If you have flashed the bootloader, copy smoothie as "firmware.bin" onto the SD 
 
 If flashing the bootloader works, but flashing firmwares from the SD card doesn't, you probably have an SD card problem. Try swapping DI and DO or using another SD card. SDHC may have compatibility issues, you may want to try an older card.
 
-## USB breakout board
+### USB breakout board
 
 USB connection is quite simple. It's pretty much the same as the serial cable: 5V to VIN (orange), GND to GND (black), connect D- (green) to pin 36 and D+ (blue) to pin 37 and you're done.
 
@@ -154,7 +157,7 @@ USB connection is quite simple. It's pretty much the same as the serial cable: 5
 
 If you have flashed the bootloader and then smoothie, it should show up as both Mass Storage, and USB/Serial to your computer.
 
-## Hotend control
+### Hotend control
 
 These two circuits allow you to read the hotend's temperature and change that temperature via a heater. You don't need that for CNC milling and lasercutting, so use a jumper and jump it if that's your case.
 
@@ -165,7 +168,7 @@ These two circuits allow you to read the hotend's temperature and change that te
 The bottom circuit is the thermistor circuit. From pin 20, connect a 4.7Kohm resistor to 3.3V power (orange), and a 10uF capacitor to ground. The 2.54mm screw terminal connects the pin 20 and the ground to the two wires from your thermistor. The thermistor doesn't have a polarity so it can be connected either way.
 The top circuit is the Mosfet circuit, it controls the heating element in your hotend. The horizontal resistor is 10Kohm and connects from the Gate to GND (pull-down resistor) and the other one is 1Kohm and connects the Gate to pin 45 on the LPCXpresso. The left 2.54mm screw terminal is the power input for the heater element. If you want to use only one power supply for both the heater and the steppers (will work fine with most ATX Power supplies), you can connect this to the top right power bar instead where we will later have the stepper motors' power rail. The other 2.54mm screw terminal goes to the heater.
 
-## Stepper drivers
+### Stepper drivers
 
 You need:
 - 4 stepper drivers for 3D printing
@@ -185,7 +188,7 @@ Bit of a legend:
 - The single dual-2.54mm screw terminal is for power input for the stepper drivers. The top and bottom power bars are for that voltage input, the center one is for the 3.3V from the microcontroller.
 - The rest is just wiring
 
-## Config
+### Config
 
 You are going to want to configure Smoothie to work with the pin assignment of your breadboard setup.
 Here is the corresponding configuration:
@@ -207,7 +210,7 @@ Also, make sure to disable current control as it will hang if enabled...
 currentcontrol_module_enable                 false             #
 ```
 
-## Notes
+### Notes
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
@@ -216,7 +219,7 @@ currentcontrol_module_enable                 false             #
   It is recommended you use the pinouts from this chart: <a href="lpc1769-pin-usage">LPC1769 Pin Usage</a>.
 </sl-alert>
 
-## Done
+### Done
 
 And there you go!
 

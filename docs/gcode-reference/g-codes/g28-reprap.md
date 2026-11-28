@@ -1,4 +1,5 @@
 ---
+title: "G28 (RepRap mode)"
 permalink: /g28-reprap
 ---
 
@@ -8,7 +9,9 @@ permalink: /g28-reprap
 </a>
 {:/nomarkdown}
 
-# {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} G-code
+{::nomarkdown}
+<span id="-g-code"></span>
+{:/nomarkdown}
 
 <!-- learning-diagram:14-g28-reprap-homing -->
 {::nomarkdown}
@@ -19,9 +22,6 @@ permalink: /g28-reprap
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Reprap G28 seeks the endstops <a href="#learning-diagram-14-g28-reprap-homing" aria-label="Permanent link to Reprap G28 seeks the endstops" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-
-
-
 
 {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} means "seek the endstops for each axis, stop once they are found and this position is now the origin for the machine".
 
@@ -57,15 +57,9 @@ G28 X0 Y0 Z0
 | `Y` | Move until you hit this endstop then set the position in this axis to this value | <gcode>G28</gcode> Y0 |
 | `Z` | Move until you hit this endstop then set the position in this axis to this value | <gcode>G28</gcode> Z0 |
 
-
-
 **Note on GRBL Mode:** The Reprap homing behavior described on this page applies when {::nomarkdown}<setting v1="grbl_mode" v2="general.grbl_mode"></setting>{:/nomarkdown} is set to `false` (default). When GRBL mode is enabled, {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} instead goes to the recorded machine origin. See [GRBL Mode](grbl-mode) for details.
 
-
-
 ## Configuration
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -104,8 +98,6 @@ homing.direction = home_to_min
 </versioned>
 {:/nomarkdown}
 
-
-
 ## Delta
 
 {::nomarkdown}
@@ -114,8 +106,6 @@ homing.direction = home_to_min
   This section describes Cartesian machine homing. For delta machines, see below.
 </sl-alert>
 {:/nomarkdown}
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -143,8 +133,6 @@ If you are using a [Delta](delta) machine (Cartesian or rotary), homing behavior
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 ## Further reading
 

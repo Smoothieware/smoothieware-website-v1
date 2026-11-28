@@ -1,9 +1,11 @@
 ---
+title: "SmoothieDriver"
 permalink: /smoothiedriver
 ---
 
-
-# Smoothiedriver
+{::nomarkdown}
+<span id="smoothiedriver"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -12,7 +14,7 @@ permalink: /smoothiedriver
 </sl-alert>
 {:/nomarkdown}
 
-Smoothiedriver is a series of motor driver PCBs that are designed to connect to the no-driver series of Smoothieboard (coming soon).
+Smoothiedriver is a series of motor driver PCBs that are designed to connect to the no-driver series of Smoothieboard ({::nomarkdown}<a href="mailto:wolf.arthur@gmail.com">coming soon</a>{:/nomarkdown}).
 
 At the core of the system is the 3 pin parallel stepper system used on modern repraps: Enable, Direction, Step.
 
@@ -32,8 +34,6 @@ The current prototype is a triple channel controller that can drive 3.5A per cha
 
 More drivers are planned and are in development from stepper drivers that can handle over 2A with 64x microstepping to BLDC controllers!
 
-
-
 ## Board Layout
 
 This image shows the board layout of the Smoothiedriver interface:
@@ -48,19 +48,17 @@ This image shows the board layout of the Smoothiedriver interface:
 
 You can download the eagle files for that image to check sizing here:
 
-- [SmoothieDriverPort.sch](smoothiedriver/smoothiedriverport.sch)
-- [SmoothieDriverPort.brd](smoothiedriver/smoothiedriverport.brd)
-
-
+- SmoothieDriverPort.sch
+- SmoothieDriverPort.brd
 
 ## Smoothiedriver Levels of Compliance
 
 ### Smoothie-compatible motor controllers
 
-- **Class X2. Electrically Compatible**
+- Class X2. Electrically Compatible
   - En-Dir-Step electrical interface
 
-- **Class X1. Hardware Compatible**
+- Class X1. Hardware Compatible
   - All requirements of Class X2
   - East edge pinout compatibility w/ Smoothieboard no-driver
 
@@ -68,12 +66,12 @@ The Pololu A4988 breakout boards commonly used in RAMPS boards and the CW4050 ar
 
 ### Smoothiedriver motor controllers
 
-- **Class 2. Basic Smoothiedriver**
+- Class 2. Basic Smoothiedriver
   - All requirements of Class X1
   - En-Dir-Step pins become En-Sda-Scl when En is disabled to receive basic config
   - North-South hardware I2C bus is passed through
 
-- **Class 1. Standard Smoothiedriver**
+- Class 1. Standard Smoothiedriver
   - All requirements of Class 2
   - Hardware I2C bus fully supports the Smoothie Accessory Protocol
 
@@ -81,12 +79,8 @@ The first true Smoothiedriver will probably be the Smoothiedriver DC.
 
 It will begin as a Class 2 Smoothiedriver until firmware for full Class 1 support has been completed on both sides (Smoothieware and Smoothieware Mini).
 
-
-
 ## Status
 
 The first Smoothiedriver DC-2 prototype had firmware but it was using a different MCU than is currently being targeted so the firmware will have to be rewritten.
 
-On the bright side, [mbed](https://www.mbed.org) just went open source so now the same libraries can be used for both [Smoothieware](smoothieware) and [Smoothieware Mini](accessory)!
-
-
+On the bright side, [mbed](https://www.mbed.org) just went open source so now the same libraries can be used for both [Smoothieware](/) and [Smoothieware Mini](accessory)!

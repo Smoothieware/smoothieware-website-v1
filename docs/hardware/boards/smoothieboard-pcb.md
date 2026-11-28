@@ -1,8 +1,11 @@
 ---
+title: "Smoothieboard pcb"
 permalink: /smoothieboard-pcb
 ---
 
-# Smoothieboard PCB
+{::nomarkdown}
+<span id="smoothieboard-pcb"></span>
+{:/nomarkdown}
 
 This page shows detailed views of the Smoothieboard printed circuit board (PCB) for reference and design purposes.
 

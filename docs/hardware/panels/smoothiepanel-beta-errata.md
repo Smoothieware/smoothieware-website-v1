@@ -1,8 +1,11 @@
 ---
+title: "SmoothiePanel beta errata"
 permalink: /smoothiepanel-beta-errata
 ---
 
-# Smoothiepanel Beta Proto1 Errata
+{::nomarkdown}
+<span id="smoothiepanel-beta-proto1-errata"></span>
+{:/nomarkdown}
 
 The limited release Smoothiepanel Beta Proto1 boards have a couple of bugs and gotchas that are being documented here.
 

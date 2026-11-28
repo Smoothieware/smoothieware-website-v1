@@ -1,9 +1,11 @@
 ---
+title: "Editing the wiki"
 permalink: /editing-the-wiki
 ---
 
-
-# Editing the Documentation
+{::nomarkdown}
+<span id="editing-the-documentation"></span>
+{:/nomarkdown}
 
 This documentation is hosted on GitHub Pages and uses Jekyll with Markdown formatting.
 
@@ -45,13 +47,21 @@ To make sure lines are separated, leave an empty line between them, like this:
 
 ### Headers
 
-You can add headers to structure your page (like on this page), by doing:
+The page title is made for you from the address of the page, so don't write one.
+
+Chapters start with two `#` signs, sub-chapters with three, and so on, without skipping a level :
 
 ```
-## Header
+## Chapter
+
+### Sub-chapter
 ```
 
-The number of `+` signs determines how big the header is, the page title has one `+` sign, and the rest get more and more as they go deeper.
+The table of contents on the right is built from those headers, don't write one by hand.
+
+### Embedding other pages
+
+Only embed another page when the reader needs all of it at that point. Otherwise write a few lines about what matters there, and link to the full page.
 
 ### Links
 
@@ -724,7 +734,7 @@ To use markdown inside versioned tags, you **must** wrap the HTML tags with `{::
 4. Repeat the pattern when closing tags
 
 **All markdown features work inside versioned content:**
-- **Bold** and _italic_ text
+- Bold and _italic_ text
 - Bullet and numbered lists
 - Code blocks with triple backticks
 - Inline `code`
@@ -884,9 +894,9 @@ Connect the thermistor to <pin>0.23</pin> (same pin) and configure with
 
 The versioned tag system integrates with the version selector in the page header:
 
-- **Show V1**: Displays only V1 content (V2 hidden)
-- **Show V2**: Displays only V2 content (V1 hidden)
-- **Show Both**: Displays both side-by-side or stacked with color-coded borders
+- Show V1: Displays only V1 content (V2 hidden)
+- Show V2: Displays only V2 content (V1 hidden)
+- Show Both: Displays both side-by-side or stacked with color-coded borders
   - V1 content: orange dotted border
   - V2 content: blue dotted border
 
@@ -986,11 +996,11 @@ Original content that's being replaced.
 
 **Key points when combining these tags:**
 
-1. **Review wraps versioned**: The `<review>` tag is the outermost wrapper
-2. **Versioned inside proposal**: Place the `<versioned>` tag inside the `<proposal>` section
-3. **Proper nesting**: Each tag pair must have correct `{::nomarkdown}` / `{:/nomarkdown}` wrappers
-4. **Blank lines**: Add blank lines after `{:/nomarkdown}` and before `{::nomarkdown}` for proper markdown parsing
-5. **Custom tags work**: You can use `<setting>`, `<pin>`, Shoelace components, etc. inside versioned sections
+1. Review wraps versioned: The `<review>` tag is the outermost wrapper
+2. Versioned inside proposal: Place the `<versioned>` tag inside the `<proposal>` section
+3. Proper nesting: Each tag pair must have correct `{::nomarkdown}` / `{:/nomarkdown}` wrappers
+4. Blank lines: Add blank lines after `{:/nomarkdown}` and before `{::nomarkdown}` for proper markdown parsing
+5. Custom tags work: You can use `<setting>`, `<pin>`, Shoelace components, etc. inside versioned sections
 
 ### Tag Structure
 
@@ -1029,10 +1039,10 @@ Examples:
 **On Localhost** (http://localhost:4000):
 - Shows proposed content with pink background
 - Displays control icons in top-right:
-  - **Toggle**: Switch between proposal and original
-  - **Accept** (green checkmark): Mark change as accepted
-  - **Reject** (red X): Mark change as rejected
-  - **Comment** (blue chat): Add review notes
+  - Toggle: Switch between proposal and original
+  - Accept (green checkmark): Mark change as accepted
+  - Reject (red X): Mark change as rejected
+  - Comment (blue chat): Add review notes
 - All actions saved to browser localStorage
 - Console logs review data for export
 
@@ -1072,7 +1082,7 @@ The acceleration setting controls speed.
 ```
 
 **Critical Requirements**:
-- **Must wrap with `{::nomarkdown}` / `{:/nomarkdown}`** to enable markdown processing
+- Must wrap with `{::nomarkdown}` / `{:/nomarkdown}` to enable markdown processing
 - Place `{:/nomarkdown}` immediately after opening tags (`<proposal>`, `<original>`)
 - Place `{::nomarkdown}` immediately before closing tags (`</proposal>`, `</original>`)
 - Custom tags (`<setting>`, `<pin>`, etc.) work normally inside review content
@@ -1081,11 +1091,11 @@ The acceleration setting controls speed.
 
 ### Workflow for AI Updates
 
-1. **AI proposes changes**: Wraps updates in `<review>` tags with unique IDs
-2. **Human reviews**: Views changes on localhost, uses icons to accept/reject/comment
-3. **Export review data**: Copy JSON from browser console
-4. **AI processes feedback**: Accepts accepted changes, refines commented changes, removes rejected changes
-5. **Finalize**: Remove `<review>` tags, leaving only final content
+1. AI proposes changes: Wraps updates in `<review>` tags with unique IDs
+2. Human reviews: Views changes on localhost, uses icons to accept/reject/comment
+3. Export review data: Copy JSON from browser console
+4. AI processes feedback: Accepts accepted changes, refines commented changes, removes rejected changes
+5. Finalize: Remove `<review>` tags, leaving only final content
 
 ### Review Data Export
 
@@ -1110,12 +1120,12 @@ Copy this JSON to provide feedback to the AI agent for refinement.
 
 ### Best Practices
 
-1. **Unique IDs**: Each review tag must have a globally unique ID
-2. **Descriptive IDs**: Use format `page:section` for clarity
-3. **One change per tag**: Keep proposals focused and atomic
-4. **Include original**: Always include `<original>` content when replacing (not adding)
-5. **Test rendering**: Verify custom tags render correctly inside reviews
-6. **Clean up**: Remove all `<review>` tags before pushing to production
+1. Unique IDs: Each review tag must have a globally unique ID
+2. Descriptive IDs: Use format `page:section` for clarity
+3. One change per tag: Keep proposals focused and atomic
+4. Include original: Always include `<original>` content when replacing (not adding)
+5. Test rendering: Verify custom tags render correctly inside reviews
+6. Clean up: Remove all `<review>` tags before pushing to production
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -1154,7 +1164,7 @@ They then look like this:
 You can insert raw HTML into the page by doing:
 
 ```html
-<h1>Custom HTML</h1>
+<h2>Custom HTML</h2>
 <p>Something else</p>
 {::nomarkdown}
 <a href="/images/circuit.png">

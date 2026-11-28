@@ -1,14 +1,17 @@
 ---
+title: "LaserWeb"
 permalink: /laserweb
 ---
 
-# LaserWeb
+{::nomarkdown}
+<span id="laserweb"></span>
+{:/nomarkdown}
 
 LaserWeb is a web-based interface for controlling laser cutters and engravers, including machines running Smoothieware.
 
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Coming Soon</strong>
+  <strong><a href="mailto:wolf.arthur@gmail.com">Coming soon</a></strong>
   <br><br>
   Documentation for using LaserWeb with Smoothieware is currently being prepared. This page will be updated with detailed setup and usage instructions.
 </sl-alert>

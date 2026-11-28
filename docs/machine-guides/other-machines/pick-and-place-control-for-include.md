@@ -1,5 +1,7 @@
 
-# Pick and Place Tool Control
+{::nomarkdown}
+<span id="pick-and-place-tool-control"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/temporary/pick-place-machine-generic.jpg">
@@ -157,11 +159,11 @@ Use the Switch module's ability to create multiple named instances to control ea
 
 Once configured, test your vacuum system:
 
-1. **Test vacuum sensors**: Use the configured M-codes to read vacuum levels with and without a component on the nozzle
-2. **Test solenoids**: Turn vacuum on and off using the configured commands
-3. **Test servos**: Move servos through their full range of motion
-4. **Test pick operation**: Attempt to pick up a component and verify the vacuum sensor detects it
-5. **Test place operation**: Place a component and verify vacuum releases properly
+1. Test vacuum sensors: Use the configured M-codes to read vacuum levels with and without a component on the nozzle
+2. Test solenoids: Turn vacuum on and off using the configured commands
+3. Test servos: Move servos through their full range of motion
+4. Test pick operation: Attempt to pick up a component and verify the vacuum sensor detects it
+5. Test place operation: Place a component and verify vacuum releases properly
 
 Always test carefully with low-value components first before running production jobs.
 

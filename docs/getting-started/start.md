@@ -4,7 +4,9 @@ layout: default
 title: Smoothieware Home
 ---
 
-# Smoothieware
+{::nomarkdown}
+<span id="smoothieware"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
@@ -21,14 +23,12 @@ title: Smoothieware Home
 </sl-alert>
 {:/nomarkdown}
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
 {:/nomarkdown}
 
-### Smoothieware V1
+## Smoothieware V1
 
 You're using the **original Smoothieware V1** platform with the LPC1769-based Smoothieboard.
 
@@ -48,7 +48,7 @@ You're using the **original Smoothieware V1** platform with the LPC1769-based Sm
 <v2>
 {:/nomarkdown}
 
-### Smoothieware V2
+## Smoothieware V2
 
 You're using the **new Smoothieware V2** platform with the STM32H745-based Smoothieboard V2 Prime.
 
@@ -76,8 +76,6 @@ You're using the **new Smoothieware V2** platform with the STM32H745-based Smoot
 </versioned>
 {:/nomarkdown}
 
-
-
 ## Quick Links
 
 ### Step-by-Step Guides
@@ -100,7 +98,7 @@ You're using the **new Smoothieware V2** platform with the STM32H745-based Smoot
 - [Communication](communication) - Connecting to Smoothieboard
 - [Motion Control](motion-control) - Motion system configuration
 - [Tools](tools) - Extruders, lasers, spindles, and more
-- [Using Smoothie](using-smoothie) - Operating your machine
+- [Using Smoothie](/configuring-smoothie) - Operating your machine
 
 ### Support
 

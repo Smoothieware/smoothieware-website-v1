@@ -1,9 +1,11 @@
 ---
+title: "How to wire"
 permalink: /how-to-wire
 ---
 
-
-# How to wire your Smoothieboard
+{::nomarkdown}
+<span id="how-to-wire-your-smoothieboard"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/recovered/complex-wiring.jpg">
@@ -49,7 +51,7 @@ Mains electricity is the general-purpose alternating-current (AC) electric power
 
 - **L** is for live, also known as hot or phase. It carries the alternate current to your house. **This is the main source of danger!** You should **NEVER EVER work on it while plugged**. You **shouldn't be able to touch exposed parts connected to L** while plugged.
 - **N** is for neutral. It completes the electrical circuit remaining at a voltage in proximity to 0V. The neutral is connected to the ground (Earth), and therefore has nearly the same electrical potential as the earth. This prevents the power circuits from increasing beyond earth voltage, such as when they are struck by lightning or become otherwise charged.
-- **Earth** wire or ground (written GND, P, or PE) connects the chassis of equipment to earth ground as **a protection against faults** (electric shock).
+- Earth wire or ground (written GND, P, or PE) connects the chassis of equipment to earth ground as **a protection against faults** (electric shock).
 
 ### DC Power
 DC power is provided by power supply units (PSUs). Power supplies have input for the mains (L, N, and PE) and a few outputs of DC voltage of a fixed value. Our machines usually use 12V or 24V PSUs. 5V PSUs are often found for electronics. CO2 lasers have their own specific power supply.

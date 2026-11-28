@@ -53,6 +53,16 @@ function is_shown(element: Element): boolean {
     return element.getClientRects().length > 0;
 }
 
+/** Above this many entries the deepest heading level leaves the contents. */
+const CONTENTS_LIMIT = 20;
+
+/** Deepest level to list: H4, then H3, are dropped while the list is too long. H2 always stays. */
+function contents_depth(headings: HTMLHeadingElement[]): number {
+    let depth = 4;
+    while (depth > 2 && headings.filter((heading) => Number(heading.tagName[1]) <= depth).length > CONTENTS_LIMIT) depth -= 1;
+    return depth;
+}
+
 function build_contents(root: HTMLElement): void {
     if (root.querySelector('.xb-nav')) return;
     const headings = [...root.querySelectorAll<HTMLHeadingElement>('h2[id], h3[id], h4[id]')]
@@ -65,11 +75,9 @@ function build_contents(root: HTMLElement): void {
     const title = document.createElement('summary');
     title.textContent = 'On this page';
     const list = document.createElement('ul');
-    let section: HTMLHeadingElement | undefined;
     const entries = headings.map((heading) => {
         const item = document.createElement('li');
-        if (heading.tagName !== 'H4') section = heading;
-        else item.className = 'subsub';
+        if (heading.tagName === 'H4') item.className = 'subsub';
         if (heading.tagName === 'H3') item.className = 'sub';
         const link = document.createElement('a');
         link.href = `#${heading.id}`;
@@ -78,7 +86,7 @@ function build_contents(root: HTMLElement): void {
         link.textContent = (copy.textContent ?? '').replace(/\s*#\s*$/, '').trim();
         item.append(link);
         list.append(item);
-        return { heading, item, link, section };
+        return { heading, item, link };
     });
     box.append(title, list);
     nav.append(box);
@@ -97,20 +105,14 @@ function build_contents(root: HTMLElement): void {
     const update = (): void => {
         waiting = false;
         let current: HTMLAnchorElement | undefined;
-        let active: HTMLHeadingElement | undefined;
-        for (const { heading, item, link, section } of entries) {
-            // Headings of the hidden firmware version leave the contents too.
-            const shown = is_shown(heading);
-            item.hidden = !shown;
+        // Headings of the hidden firmware version leave the contents too, and do not count.
+        const visible = entries.filter(({ heading }) => is_shown(heading));
+        const depth = contents_depth(visible.map(({ heading }) => heading));
+        for (const entry of entries) {
+            const { heading, item, link } = entry;
+            item.hidden = !visible.includes(entry) || Number(heading.tagName[1]) > depth;
             link.removeAttribute('aria-current');
-            if (shown && (heading.getBoundingClientRect().top < 140 || !current)) {
-                current = link;
-                active = section;
-            }
-        }
-        // H4 entries only open under the section being read.
-        for (const { heading, item, section } of entries) {
-            if (heading.tagName === 'H4' && section !== active) item.hidden = true;
+            if (!item.hidden && (heading.getBoundingClientRect().top < 140 || !current)) current = link;
         }
         current?.setAttribute('aria-current', 'true');
         if (current && nav.scrollHeight > nav.clientHeight) {

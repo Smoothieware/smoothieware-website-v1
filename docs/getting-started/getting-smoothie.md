@@ -1,9 +1,11 @@
 ---
+title: "Getting smoothie"
 permalink: /getting-smoothie
 ---
 
-
-# Binaries
+{::nomarkdown}
+<span id="binaries"></span>
+{:/nomarkdown}
 
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>

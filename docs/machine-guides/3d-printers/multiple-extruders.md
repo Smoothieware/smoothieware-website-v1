@@ -1,9 +1,11 @@
 ---
+title: "Multiple extruders"
 permalink: /multiple-extruders
 ---
 
-
-# Multiple Extrusion
+{::nomarkdown}
+<span id="multiple-extrusion"></span>
+{:/nomarkdown}
 
 Smoothie can handle up to 3 extruders (6 defined axes is the maximum the memory can handle).
 
@@ -20,11 +22,11 @@ To add extruders, simply add `Extruder` (controlling the extruder motor) and `Te
 
 For each extruder, you will need:
 
-- **One temperature input** for the hotend. Smoothieboard has 4 thermistor inputs, allowing for one heated bed and three hotends, or four hotends and no bed. Additional hotends can be added using thermocouple external boards connected to the SPI port.
+- One temperature input for the hotend. Smoothieboard has 4 thermistor inputs, allowing for one heated bed and three hotends, or four hotends and no bed. Additional hotends can be added using thermocouple external boards connected to the SPI port.
 
-- **One MOSFET output**: Smoothieboard has 6 MOSFET outputs that can be used for hotends. External MOSFETs or SSRs can be wired to any free GPIO pin for additional outputs.
+- One MOSFET output: Smoothieboard has 6 MOSFET outputs that can be used for hotends. External MOSFETs or SSRs can be wired to any free GPIO pin for additional outputs.
 
-- **One stepper motor driver**: Smoothieboard has 5 drivers, with 3 needed for 3-dimensional movement. Additional drivers can be wired using free GPIO pins.
+- One stepper motor driver: Smoothieboard has 5 drivers, with 3 needed for 3-dimensional movement. Additional drivers can be wired using free GPIO pins.
 
 Assuming a heated bed is used, two extruders can be driven with the on-board Smoothieboard. For three extruders, one external stepper motor driver is needed, and so on.
 

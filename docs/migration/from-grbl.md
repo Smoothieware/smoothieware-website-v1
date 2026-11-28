@@ -1,9 +1,11 @@
 ---
+title: "From GRBL"
 permalink: /from-grbl
 ---
 
-
-# Moving from GRBL to Smoothie
+{::nomarkdown}
+<span id="moving-from-grbl-to-smoothie"></span>
+{:/nomarkdown}
 
 If you are a GRBL user moving to a Smoothie system, you might have an existing configuration you want to port over.
 

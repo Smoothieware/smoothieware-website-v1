@@ -1,11 +1,11 @@
 ---
+title: "Mac drivers"
 permalink: /mac-drivers
 ---
 
-
-# Mac Drivers and USB Communication
-
-
+{::nomarkdown}
+<span id="mac-drivers-and-usb-communication"></span>
+{:/nomarkdown}
 
 Smoothieware works well on macOS without additional drivers. Both V1 and V2 use standard USB CDC/ACM (virtual serial port) and work out of the box.
 
@@ -28,11 +28,7 @@ Smoothieware works well on macOS without additional drivers. Both V1 and V2 use 
 </versioned>
 {:/nomarkdown}
 
-
-
 ## SD Card Issues on macOS
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -89,11 +85,7 @@ Smoothieware V2 provides better SD card access control. The MSD (Mass Storage De
 </versioned>
 {:/nomarkdown}
 
-
-
 ## Serial Communication
-
-
 
 Both V1 and V2 use standard USB CDC/ACM (virtual serial port) for communication. No additional drivers are required on macOS.
 
@@ -105,8 +97,6 @@ You can connect using any serial terminal program such as:
 - CoolTerm
 - Serial (Mac App Store)
 - Pronterface (for 3D printing)
-
-
 
 ## Related Documentation
 

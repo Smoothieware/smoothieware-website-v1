@@ -1,4 +1,5 @@
 ---
+title: "Network options"
 permalink: /network-options
 ---
 

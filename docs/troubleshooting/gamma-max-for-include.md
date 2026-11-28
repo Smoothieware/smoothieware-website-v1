@@ -1,4 +1,6 @@
-# Configuring Z height
+{::nomarkdown}
+<span id="configuring-z-height"></span>
+{:/nomarkdown}
 
 After homing (with {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown}), the machine knows it is at Z maximum position if your machine homes to max, and at Z minimum position if your machine homes to min.
 
@@ -54,7 +56,6 @@ Next time you home, the machine will know how high above the bed it is.
   <img src="/images/height-adjustment.svg" alt="Z reference diagram showing M306 homing offset and G30 probe offset" style="display: block; margin: 2rem auto; min-width: 640px; width: 80%; max-width: 800px;"/>
 </a>
 {:/nomarkdown}
-
 
 ## Finding gamma_max manually
 

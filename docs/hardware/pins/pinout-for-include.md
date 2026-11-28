@@ -1,4 +1,6 @@
-# Pinout
+{::nomarkdown}
+<span id="pinout"></span>
+{:/nomarkdown}
 
 This page shows the pinout diagrams for the board.
 

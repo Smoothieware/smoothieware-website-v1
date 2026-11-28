@@ -1,16 +1,17 @@
 ---
+title: "Unboxing (français)"
 permalink: /unboxing-fr
 ---
 
-# Déballage
+{::nomarkdown}
+<span id="déballage"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/recovered/usb-cable.png">
   <img src="/images/recovered/usb-cable.png" alt="Connecteurs USB" style="width: 320px; height: auto; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
-
-
 
 Votre Smoothieboard est livrée avec une carte Micro SD insérée dans le port Micro SD.
 
@@ -37,13 +38,9 @@ Vous avez une **Smoothieboard V2** si votre carte mesure environ 140-150mm × 12
 
 Avant de connecter votre carte, il est préférable de jeter un œil à notre liste de [Logiciels](software) et d'installer un programme "hôte" pour communiquer avec la smoothie.
 
-
-
 ## Connexion via USB
 
 Vous pouvez commencer par vous familiariser avec la Smoothieboard en la connectant à votre ordinateur.
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -64,8 +61,6 @@ Connectez un câble USB (Type-B ou Micro USB selon la variante) au port USB de l
 </versioned>
 {:/nomarkdown}
 
-
-
 {::nomarkdown}
 <a href="/images/smoothie-config-screencap.png">
   <img src="/images/smoothie-config-screencap.png" alt="Carte SD - Fichiers sur votre carte SD" style="width: 320px; height: auto; float: right; margin-left: 1rem;"/>
@@ -75,8 +70,6 @@ Connectez un câble USB (Type-B ou Micro USB selon la variante) au port USB de l
 Une fois la connexion effectuée, votre ordinateur reconnaîtra la Smoothieboard en tant que [périphérique de stockage USB](https://fr.wikipedia.org/wiki/USB_Mass_Storage) (comme un lecteur de clé USB ou de carte SD) et affichera les fichiers présents sur la carte SD.
 
 Des pilotes (drivers) sont nécessaires sous Windows 7 et 8, alors que Linux et Mac OS X peuvent supporter directement le périphérique. [Cliquez ici pour accéder aux pilotes.](windows-drivers)
-
-
 
 Ceci permet d'ajouter, de copier, d'éditer ou de supprimer n'importe quel fichier. Un fichier de configuration est déjà présent sur la carte SD.
 
@@ -118,8 +111,6 @@ default_acceleration = 1000
 
 Inutile de recompiler ou de configurer la carte — c'est un des grands avantages de Smoothieware.
 
-
-
 {::nomarkdown}
 <sl-alert variant="success" open>
   <sl-icon slot="icon" name="check-circle"></sl-icon>
@@ -156,15 +147,13 @@ Vous trouverez le même type de technologie, par exemple, sur une imprimante 2D 
 
 Vous pouvez ainsi accéder à une interface web hébergée par la carte, et contrôler l'appareil via votre navigateur.
 
-Cela vous permet de connecter en réseau des logiciels capables de le supporter (comme [Pronterface](pronterface) et [Visicut](visicut)) à votre Smoothieboard.
+Cela vous permet de connecter en réseau des logiciels capables de le supporter (comme [Pronterface](pronterface) et [Visicut](https://visicut.org/)) à votre Smoothieboard.
 
 Par défaut, le réseau est désactivé. Il est cependant très simple à activer et à configurer.
 
 Cette méthode est également recommandée pour communiquer avec votre Smoothieboard.
 
 Retrouvez toutes les informations nécessaires à l'utilisation de l'interface du réseau ici: [Interface réseau](network)
-
-
 
 ## Mettre à jour le micrologiciel
 
@@ -194,5 +183,3 @@ Le nouveau micrologiciel va alors s'installer (vous verrez les LEDs de la carte 
 Ceci est très utile si jamais vous demandez de l'aide, car la communauté suppose que vous avez la dernière version.
 
 Vous trouverez le fichier ainsi que des informations pour l'installation ici : [Mettre à jour le micrologiciel Smoothie](flashing-smoothie-firmware).
-
-

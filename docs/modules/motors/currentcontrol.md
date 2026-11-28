@@ -1,8 +1,11 @@
 ---
+title: "Current control"
 permalink: /currentcontrol
 ---
 
-# Digital current control
+{::nomarkdown}
+<span id="digital-current-control"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/circuit.png">
@@ -41,8 +44,6 @@ They are found near the other values for a given axis.
 
 For example:
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -79,8 +80,6 @@ beta.current = 1500          # Y stepper motor current in milliamps
 </versioned>
 {:/nomarkdown}
 
-
-
 {::nomarkdown}
 The current can also be set using `M907` where XYZ set the current for alpha, beta, gamma, and ABC set the current for delta, epsilon, and zeta respectively.
 
@@ -90,7 +89,7 @@ These are saved with <mcode>M503</mcode> in the config-override, use <mcode>M503
 {::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  On Smoothieboards that use an I2C based current controller, it is **NOT** recommended to issue M907 in GCode files.
+  On Smoothieboards that use an I2C based current controller, it is <strong>NOT</strong> recommended to issue M907 in GCode files.
 </sl-alert>
 {:/nomarkdown}
 

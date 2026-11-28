@@ -1,9 +1,11 @@
 ---
+title: "Smoothie accessory protocol"
 permalink: /smoothie-accessory-protocol
 ---
 
-
-# Smoothie Accessory Protocol Notes
+{::nomarkdown}
+<span id="smoothie-accessory-protocol-notes"></span>
+{:/nomarkdown}
 
 This document describes the protocol for communicating with Smoothie accessories and peripherals.
 
@@ -20,13 +22,13 @@ This document describes the protocol for communicating with Smoothie accessories
 
 The Smoothie Accessory Protocol has the following key characteristics:
 
-- **Master/Slave relationship** - The protocol is based on a master/slave relationship
-- **Master initiates** - The master always initiates communications, and slaves have IRQ lines to get the master's attention
-  - **UART exception** - For UART, the slave sends `\0` on a timer to assert an IRQ
+- Master/Slave relationship - The protocol is based on a master/slave relationship
+- Master initiates - The master always initiates communications, and slaves have IRQ lines to get the master's attention
+  - UART exception - For UART, the slave sends `\0` on a timer to assert an IRQ
     - This IRQ timer should be stopped when the master begins to send a command and restarted after the reply (assuming it was not a Clear IRQ command)
-- **Boot IRQ** - Slaves should assert an IRQ at boot once ready to accept commands
-- **Always reply** - All Commands from the master receive a Reply from the slave, even if it is just to say OK with no data
-- **Buffer limitations** - The protocol allows for describing messages of great length but this is limited by the practicality of buffer sizes. For now, all simple (not relayed or queued) binary commands should keep their command data under 16 bytes. I plan to use 32-byte buffers in early implementations and this needs to allow room for relaying queued messages to downstream devices. This will help enforce a level of economy in the core protocol. Later this cap can be raised.
+- Boot IRQ - Slaves should assert an IRQ at boot once ready to accept commands
+- Always reply - All Commands from the master receive a Reply from the slave, even if it is just to say OK with no data
+- Buffer limitations - The protocol allows for describing messages of great length but this is limited by the practicality of buffer sizes. For now, all simple (not relayed or queued) binary commands should keep their command data under 16 bytes. I plan to use 32-byte buffers in early implementations and this needs to allow room for relaying queued messages to downstream devices. This will help enforce a level of economy in the core protocol. Later this cap can be raised.
 
 ## Hardware Protocols
 

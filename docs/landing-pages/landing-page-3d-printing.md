@@ -1,12 +1,13 @@
 ---
+title: "3D printing"
 permalink: /landing-page-3d-printing
 ---
 
-# 32-Bit 3D Printing: Fast Prints, Smooth Motion
+{::nomarkdown}
+<span id="32-bit-3d-printing-fast-prints-smooth-motion"></span>
+{:/nomarkdown}
 
 **Tired of recompiling Marlin firmware every time you want to change a setting?** Smoothieboard v2 offers 32-bit performance with text-file configuration. Fast prints, smooth motion, endless expandability. Works with Cartesian, Delta, CoreXY, and more. The open-source upgrade your printer deserves.
-
-![Smoothieboard v2 installed in a 3D printer](/images/smoothieboard-3d-printer-hero.jpg)
 
 **Upgrade Your 3D Printer to 32-Bit - $200**
 
@@ -16,8 +17,6 @@ permalink: /landing-page-3d-printing
 ✅ **Text-File Configuration - No More Firmware Recompilation**
 ✅ **Multi-Material Ready with 63 GPIO**
 ✅ **Works with Your Existing Slicer and Software**
-
----
 
 ## Is Your 8-Bit Board Holding Your Printer Back?
 
@@ -39,8 +38,6 @@ You've spent hours:
 - Wondering why "just changing a number" requires compilation
 
 **There's a Better Way.**
-
----
 
 ## 32-Bit Power with RepRap Simplicity
 
@@ -64,8 +61,6 @@ You've spent hours:
 - ✅ **Filament Sensors** - Runout, encoder-based monitoring
 - ✅ **Chamber Temp** - Additional thermistor inputs
 - ✅ **Custom Features** - Module system for anything you imagine
-
----
 
 ## Works with HUNDREDS of 3D Printer Models
 
@@ -203,8 +198,6 @@ Smoothieboard can be used with virtually any 3D printer, from vintage RepRap mod
 - SCARA calculations
 - Custom arm solutions
 
----
-
 ## Smoothie vs Marlin: What's Different
 
 | Feature | Marlin (8-bit) | Smoothieboard v2 |
@@ -242,8 +235,6 @@ Smoothieboard can be used with virtually any 3D printer, from vintage RepRap mod
 
 **Total Time:** 30 seconds
 
----
-
 ## Not Klipper, Not Marlin - Just Smoothie
 
 ### vs Klipper:
@@ -263,8 +254,6 @@ Smoothieboard can be used with virtually any 3D printer, from vintage RepRap mod
 - Already have Pi
 - Comfortable with Linux
 - Want absolute fastest speeds
-
----
 
 ## Expand Your Printer's Capabilities
 
@@ -291,8 +280,6 @@ Smoothieboard can be used with virtually any 3D printer, from vintage RepRap mod
 - BLTouch support
 - Strain gauge bed leveling
 - Custom sensor integration
-
----
 
 ## See How Easy Configuration Really Is
 
@@ -325,8 +312,6 @@ temperature_control.bed.set_and_wait_m_code  190
 
 Change PID? Edit 3 numbers. Save. Reboot. Done.
 
----
-
 ## Proven in the RepRap Community
 
 ### Community Builds:
@@ -343,8 +328,6 @@ Change PID? Edit 3 numbers. Save. Reboot. Done.
 > "Built a triple-extruder mixing hotend printer. Smoothie's GPIO made it possible."
 > — Multi-material enthusiast
 
----
-
 ## Works with Your Favorite Slicer
 
 ### Fully Compatible:
@@ -359,8 +342,6 @@ Change PID? Edit 3 numbers. Save. Reboot. Done.
 - ✅ **Pronterface** - Direct USB control
 - ✅ **Repetier-Host** - Full support
 - ✅ **Web Interface** - Smoothie's built-in HTTP server
-
----
 
 ## 3D Printer Upgrade Questions
 
@@ -388,8 +369,6 @@ A: Processor is faster, yes. Motion is smoother at high speeds. Whether YOU can 
 **Q: What advanced features does it have?**
 A: Smoothie has advanced motion control, excellent print quality, and comprehensive features. Different firmware options emphasize different capabilities.
 
----
-
 ## Upgrade Your 3D Printer to 32-Bit
 
 ### Smoothieboard v2 Prime - $200
@@ -404,8 +383,6 @@ A: Smoothie has advanced motion control, excellent print quality, and comprehens
 #### Where to Buy:
 - [Robosprout (USA) - Ships worldwide](https://www.robosprout.com)
 
----
-
 ## Upgrade Your 3D Printer to 32-Bit
 
 **[Upgrade Your Printer - $200](https://www.robosprout.com)**
@@ -414,8 +391,6 @@ A: Smoothie has advanced motion control, excellent print quality, and comprehens
 - 32-Bit Performance
 - Multi-Material Ready
 - Text-File Configuration
-
----
 
 *Smoothieboard v2 is OSHWA certified open hardware (FR000021). 15 years of proven performance in the RepRap community. Used by thousands of 3D printing enthusiasts worldwide.*
 

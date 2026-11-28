@@ -1,8 +1,11 @@
 ---
+title: "Builds feature slaveswitch"
 permalink: /builds-feature-slaveswitch
 ---
 
-# Feature/Slaveswitch Builds
+{::nomarkdown}
+<span id="featureslaveswitch-builds"></span>
+{:/nomarkdown}
 
 This page contains the most recent automated builds for the [feature/slaveswitch](https://github.com/smoothieware/smoothieware/tree/feature/slaveswitch) branch.
 

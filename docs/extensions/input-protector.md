@@ -20,7 +20,7 @@ permalink: /extensions/input-protector
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/input-protector/input-protector-diagram.png" alt="Top view of the input protector: a three-contact field connector at the left, a surge diode and resistors, an eight-pin receiver chip in the middle, a transistor and a three-contact host connector at the right.">
+    <img src="/images/extensions/input-protector/input-protector-diagram.webp" alt="Top view of the input protector: a three-contact field connector at the left, a surge diode and resistors, an eight-pin receiver chip in the middle, a transistor and a three-contact host connector at the right.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -87,7 +87,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/input-protector/input-protector-diagram.png" alt="Top view of the input protector with eleven numbered markers that are explained in the list below.">
+      <img src="/images/extensions/input-protector/input-protector-diagram.webp" alt="Top view of the input protector with eleven numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pl" href="#tour-1" style="left:10.2%;top:53.5%" aria-label="1: field connector">1<span class="xb-pop"><b>Field connector (J1)</b> — a three-contact connector for the sensor side. Contact 1 is the signal, contact 2 the field ground. Contact 3 is not connected to anything and does not power a sensor. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pl" href="#tour-2" style="left:23.2%;top:52%" aria-label="2: surge diode">2<span class="xb-pop"><b>Surge diode</b> — an SMBJ58CA bidirectional suppressor across the field signal and ground. It clips short spikes. <i>Its clamp voltage is higher than the receiver&rsquo;s absolute maximum, so it does not by itself protect the receiver from an over-voltage signal.</i></span></a>
       <a class="xb-mk" href="#tour-3" style="left:33.7%;top:52%" aria-label="3: shunt resistor and capacitor">3<span class="xb-pop"><b>Shunt resistor and capacitor</b> — a 27.4&nbsp;k&Omega; resistor and a 22&nbsp;nF capacitor between the field signal and field ground. With the series resistors they set the input threshold and filter short pulses.</span></a>
@@ -371,7 +371,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
     <tr><td><a href="/images/extensions/input-protector/input-protector-schematic.pdf">Schematic (PDF)</a></td><td>The complete circuit diagram.</td></tr>
     <tr><td><a href="/images/extensions/input-protector/input-protector-bom-standard.csv">Parts list, 2.54 mm host connector (CSV)</a></td><td>Every component with its value, footprint and position</td></tr>
     <tr><td><a href="/images/extensions/input-protector/input-protector-bom-stemma.csv">Parts list, 2 mm JST PH host connector (CSV)</a></td><td>The same, with the compact host connector</td></tr>
-    <tr><td><a href="/images/extensions/input-protector/input-protector-diagram.png">Board drawing (SVG)</a></td><td>The top view used on this page, at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/input-protector/input-protector-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page, at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

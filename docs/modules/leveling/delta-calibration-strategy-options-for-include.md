@@ -1,5 +1,4 @@
 
-
 <!-- learning-diagram:33-delta-calibration -->
 {::nomarkdown}
 <figure id="learning-diagram-33-delta-calibration" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">

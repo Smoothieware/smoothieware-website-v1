@@ -1,8 +1,11 @@
 ---
+title: "Delta"
 permalink: /delta
 ---
 
-# Configuring a Smoothieboard for Linear Delta Kinematics
+{::nomarkdown}
+<span id="configuring-a-smoothieboard-for-linear-delta-kinematics"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -275,7 +278,23 @@ And it needs to know this, so that when you tell it to go to Z 0 (the bed), it k
 
 There are several ways to tell Smoothie how high the hotend is from the bed after homing:
 
-{% include troubleshooting/gamma-max-for-include.md %}
+## Configuring Z height
+
+After homing, Smoothie sets the current Z position to {::nomarkdown}<setting v1="gamma_max"></setting>{:/nomarkdown} if your machine homes to max, or to {::nomarkdown}<setting v1="gamma_min"></setting>{:/nomarkdown} if it homes to min. Setting it is your way of telling Smoothie the distance between your bed and the hotend when the machine has just homed.
+
+The simplest way to set it, if you have Z homing endstops : 
+
+1. Home with {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown}, then go where the machine thinks Z 0 is, with `G0 Z0`
+2. Jog the head down to the bed
+3. Send {::nomarkdown}<mcode>M306</mcode>{:/nomarkdown} Z0, which uses the current position as a homing offset
+4. Save with {::nomarkdown}<mcode>M500</mcode>{:/nomarkdown}
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="book"></sl-icon>
+  <strong>Learn more:</strong> <a href="/gamma-max">Configuring Z height, with the manual and probe methods</a>
+</sl-alert>
+{:/nomarkdown}
 
 ## Automated Calibration
 
@@ -315,7 +334,7 @@ This process will allow you to manually calibrate your delta printer:
 
 2. Home, with {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown}.
 
-3. **Point A**: Move to a point at the edge of the bed, in front of the X (alpha) tower.
+3. Point A: Move to a point at the edge of the bed, in front of the X (alpha) tower.
 
 4. Get the head set just right at the 0 position (so that a piece of paper can just slide between the hotend and bed plate).
 
@@ -325,7 +344,7 @@ This process will allow you to manually calibrate your delta printer:
 
 7. Repeat the same process (go back to Point A), and check it produces the same results.
 
-8. **Point B**: Move to a point at the edge of the bed, in front of the Y (beta) tower.
+8. Point B: Move to a point at the edge of the bed, in front of the Y (beta) tower.
 
 9. Tune the Y (beta) endstop offset value by entering {::nomarkdown}<mcode>M666</mcode>{:/nomarkdown} Ynnn where `nnn` is the distance between the hotend and bed at this point.
 
@@ -333,7 +352,7 @@ This process will allow you to manually calibrate your delta printer:
 
 11. Go back to point B, and keep this loop until the height is perfectly adjusted, and the hotend always touches the bed at this point.
 
-12. **Point C**: Move to a point at the edge of the bed, in front of the Z (gamma) tower.
+12. Point C: Move to a point at the edge of the bed, in front of the Z (gamma) tower.
 
 13. Tune the Z endstop offset value by entering {::nomarkdown}<mcode>M666</mcode>{:/nomarkdown} Znnn where `nnn` is the distance between the hotend and bed at this point.
 
@@ -443,8 +462,8 @@ Where:
 
 For developers or those interested in the implementation details, the Linear Delta solution is implemented in:
 
-- **v1:** [LinearDeltaSolution.cpp](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/robot/arm_solutions/LinearDeltaSolution.cpp)
-- **v2:** [LinearDeltaSolution.cpp](https://github.com/Smoothieware/Smoothieware-v2/blob/main/Firmware/src/robot/arm_solutions/LinearDeltaSolution.cpp)
+- v1: [LinearDeltaSolution.cpp](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/robot/arm_solutions/LinearDeltaSolution.cpp)
+- v2: [LinearDeltaSolution.cpp](https://github.com/Smoothieware/Smoothieware-v2/blob/main/Firmware/src/robot/arm_solutions/LinearDeltaSolution.cpp)
 
 The source code contains the kinematic equations used to convert between Cartesian coordinates and delta tower positions.
 
@@ -454,5 +473,5 @@ The source code contains the kinematic equations used to convert between Cartesi
 - [Rotary Delta](rotary-delta) - Alternative delta design with rotating joints
 - [Cartesian](cartesian) - Standard Cartesian configuration
 - [ZProbe](zprobe) - Automatic bed leveling and calibration
-- [Delta Calibration Strategy](delta-calibration-strategy) - Automated delta calibration
+- [Delta Calibration Strategy](/delta-calibration-strategy-options) - Automated delta calibration
 - [Motion Control](motion-control) - General motion control configuration

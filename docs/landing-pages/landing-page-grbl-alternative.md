@@ -1,12 +1,13 @@
 ---
+title: "GRBL alternative"
 permalink: /landing-page-grbl-alternative
 ---
 
-# 32-Bit Motion Control: Everything GRBL Does, Plus What It Can't
+{::nomarkdown}
+<span id="32-bit-motion-control-everything-grbl-does-plus-what-it-cant"></span>
+{:/nomarkdown}
 
 **Hitting GRBL's limits on memory, axes, or processing power?** Smoothieboard v2 offers 32-bit performance, 1MB RAM, 6-axis support, and text-file configuration. Keep the open-source values, ditch the 8-bit limitations. Used by CNC operators who outgrew GRBL.
-
-![Complex CNC part being machined with Smoothieboard](/images/smoothieboard-grbl-alternative-hero.jpg)
 
 **Upgrade from GRBL to Smoothieboard - $200**
 
@@ -16,8 +17,6 @@ permalink: /landing-page-grbl-alternative
 ✅ **Native 6-Axis Support (vs GRBL's 3-Axis Focus)**
 ✅ **Text-File Configuration - No Firmware Recompilation**
 ✅ **Still Open-Source + OSHWA Certified Hardware**
-
----
 
 ## You've Pushed GRBL as Far as It Can Go
 
@@ -39,8 +38,6 @@ You've probably tried:
 
 **There's a Better Way.**
 
----
-
 ## Everything GRBL Does, Without the Limitations
 
 ### Technical Comparison:
@@ -59,14 +56,12 @@ You've probably tried:
 | **Open Source** | Firmware only | OSHWA HW+FW (FR000021) |
 
 ### What This Means in Practice:
-- **Run complex 3D surfacing** that chokes GRBL
-- **Load huge CAM files** without splitting
-- **Add 4th/5th rotary axes** natively
-- **Change config in seconds** not hours
-- **Network your machine** - no USB cable limits
-- **Expand with sensors/tools** using abundant GPIO
-
----
+- Run complex 3D surfacing that chokes GRBL
+- Load huge CAM files without splitting
+- Add 4th/5th rotary axes natively
+- Change config in seconds not hours
+- Network your machine - no USB cable limits
+- Expand with sensors/tools using abundant GPIO
 
 ## Easy Transition for GRBL Users
 
@@ -77,10 +72,10 @@ You've probably tried:
 - ✅ **Similar Workflow** - Same CAM → controller → machine process
 
 ### What's Different (Better):
-- **Config in Text File** - Open `config.txt`, edit, save, reboot. No compiling.
-- **More Options** - More axes, more features, more expansion
-- **Networking** - Can use Ethernet (optional, USB still works)
-- **Better Documentation** - 250+ pages vs GRBL wiki
+- Config in Text File - Open `config.txt`, edit, save, reboot. No compiling.
+- More Options - More axes, more features, more expansion
+- Networking - Can use Ethernet (optional, USB still works)
+- Better Documentation - 250+ pages vs GRBL wiki
 
 ### Migration Time:
 - Wiring: 2-4 hours (similar to GRBL Arduino wiring)
@@ -90,12 +85,10 @@ You've probably tried:
 ### GRBL to Smoothie Config Translator:
 We provide a tool/guide to convert your GRBL $$ settings to Smoothie config.
 
----
-
 ## Need More Than 3 Axes? Smoothie's Got You
 
 ### Native 6-Axis Support:
-- **X, Y, Z** - Primary linear axes (like GRBL)
+- X, Y, Z - Primary linear axes (like GRBL)
 - **A** - Rotary around X (4th axis)
 - **B** - Rotary around Y (5th axis)
 - **C** - Rotary around Z (6th axis)
@@ -121,8 +114,6 @@ delta_max_rate         30000   # Set A axis speed
 ```
 Done. Seriously.
 
----
-
 ## Use Your Existing CNC Software
 
 ### Works with Popular GRBL Senders:
@@ -143,16 +134,14 @@ Done. Seriously.
 ### You Don't Need to Change Your Workflow:
 Same CAM → same sender → better controller.
 
----
-
 ## Still Open-Source, Just More Powerful
 
 ### OSHWA Certified Open Hardware:
-- **Certification:** FR000021
-- **License:** GPLv3 (firmware) + CERN-OHL (hardware)
-- **Design Files:** All on GitHub
-- **You Can:** Build it, modify it, sell it, fix it
-- **Community:** 15 years of development, active contributors
+- Certification: FR000021
+- License: GPLv3 (firmware) + CERN-OHL (hardware)
+- Design Files: All on GitHub
+- You Can: Build it, modify it, sell it, fix it
+- Community: 15 years of development, active contributors
 
 ### Unlike Closed-Source Alternatives:
 - No vendor lock-in
@@ -163,8 +152,6 @@ Same CAM → same sender → better controller.
 
 ### For GRBL Users Who Value Open-Source:
 You get the same open ethos, with hardware that matches the ambition of your projects.
-
----
 
 ## Common Questions from GRBL Users
 
@@ -192,8 +179,6 @@ A: GRBL-32 exists but is less mature/supported. Smoothie has 15 years of develop
 **Q: Can I go back to GRBL if I don't like it?**
 A: Technically yes (wiring is similar), but GRBL users who switch to Smoothie don't go back. You won't want to give up the extra power.
 
----
-
 ## Ready to Leave GRBL's Limits Behind?
 
 ### Smoothieboard v2 Prime - $200
@@ -217,8 +202,6 @@ A: Technically yes (wiring is similar), but GRBL users who switch to Smoothie do
 #### Where to Buy:
 - [Robosprout (USA) - Ships worldwide](https://www.robosprout.com)
 
----
-
 ## Upgrade from GRBL to Professional 32-Bit Control
 
 **[Upgrade from GRBL to Smoothieboard - $200](https://www.robosprout.com)**
@@ -228,8 +211,6 @@ A: Technically yes (wiring is similar), but GRBL users who switch to Smoothie do
 - Native 6-Axis Support
 - Text-File Configuration
 - Auto-updates over Internet (can be disabled)
-
----
 
 *Smoothieboard v2 is OSHWA certified open hardware (FR000021). 15 years of proven performance. The logical upgrade path for GRBL users who need more power, axes, and flexibility.*
 

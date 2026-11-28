@@ -1,4 +1,5 @@
 ---
+title: "Fuse protection"
 permalink: /fuse-protection
 ---
 

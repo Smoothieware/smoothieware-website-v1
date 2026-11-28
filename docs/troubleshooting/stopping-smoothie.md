@@ -1,4 +1,5 @@
 ---
+title: "Stopping smoothie"
 permalink: /stopping-smoothie
 ---
 

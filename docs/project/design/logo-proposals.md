@@ -1,8 +1,11 @@
 ---
+title: "Logo proposals"
 permalink: /logo-proposals
 ---
 
-# Logo proposals
+{::nomarkdown}
+<span id="logo-proposals"></span>
+{:/nomarkdown}
 
 This page lists all the logos that Smoothie community members have proposed for the project.
 
@@ -15,21 +18,7 @@ This page lists all the logos that Smoothie community members have proposed for 
 
 ## Skarab
 
-{::nomarkdown}
-<div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/smoothie-logo-green.svg">
-    <img src="/images/smoothie-logo-green.svg" alt="Smoothie Logo Green" style="width: 400px; max-width: 100%; height: auto; margin-bottom: 2rem;"/>
-  </a>
-</div>
-{:/nomarkdown}
-
-{::nomarkdown}
-<div style="text-align: center; margin: 2rem 0;">
-  <a href="/images/smoothie-logo.svg">
-    <img src="/images/smoothie-logo.svg" alt="Smoothie Logo" style="width: 400px; max-width: 100%; height: auto;"/>
-  </a>
-</div>
-{:/nomarkdown}
+These two pictures got lost, if you have a copy, please contribute it.
 
 ## Arthur Wolf
 

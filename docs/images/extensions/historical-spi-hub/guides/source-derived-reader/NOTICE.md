@@ -1,1 +1,0 @@
-Source-derived instructional references for the selected historical Smoothieboard2 revision 52ab340de33180a975b25f856c161993488e6ace. Original source and attribution remain linked from the board guide. CERN-OHL-1.2 applies to the source hardware; these illustrations do not establish electrical or physical qualification.

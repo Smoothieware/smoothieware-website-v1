@@ -1,9 +1,11 @@
 ---
+title: "LPC1769 pin usage 1.5"
 permalink: /lpc1769-pin-usage-1-5
 ---
 
-
-# LPC1769 Pin Usage 1.5
+{::nomarkdown}
+<span id="lpc1769-pin-usage-15"></span>
+{:/nomarkdown}
 
 This page documents the pin assignments for the LPC1769 microcontroller on Smoothieboard version 1.5.
 

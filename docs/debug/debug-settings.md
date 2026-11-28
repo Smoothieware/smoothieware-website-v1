@@ -4,7 +4,9 @@ layout: default
 title: Debug - Setting Tags
 ---
 
-# Setting Tag Debug Page
+{::nomarkdown}
+<span id="setting-tag-debug-page"></span>
+{:/nomarkdown}
 
 This page demonstrates the `<setting>` custom tags that display Smoothieware configuration options with interactive tooltips showing both v1 and v2 setting names.
 

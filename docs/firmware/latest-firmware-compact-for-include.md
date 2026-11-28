@@ -32,7 +32,6 @@
 </v2>
 </versioned>
 
-
 {:/nomarkdown}
 
 View the [full commit history →](latest-firmware)

@@ -3,7 +3,9 @@ permalink: /lathe
 title: Lathe Module
 ---
 
-# Lathe Module
+{::nomarkdown}
+<span id="lathe-module"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -31,9 +33,9 @@ The Lathe module enables spindle-synchronized turning operations on CNC lathes. 
 
 The Lathe module uses a quadrature encoder attached to the spindle to track its rotation. The carriage movement is then synchronized to the spindle position, allowing for:
 
-- **Threading operations** - Cut threads at a specified pitch (mm per revolution)
-- **Spindle-synchronized feeds** - Move the tool at a rate proportional to spindle speed
-- **Manual "half-nut" mode** - Engage/disengage the electronic leadscrew like a traditional lathe
+- Threading operations - Cut threads at a specified pitch (mm per revolution)
+- Spindle-synchronized feeds - Move the tool at a rate proportional to spindle speed
+- Manual "half-nut" mode - Engage/disengage the electronic leadscrew like a traditional lathe
 
 ## G-code support
 
@@ -114,7 +116,7 @@ index_minimum_us = 0       # With both edges, requested minimum pulse width
 | `index_pin` | Pin for index/Z channel pulse | `nc` |
 | `index_edge` | Index interrupt edge: `rising`, `falling`, or `both` | `falling` |
 | `index_debounce_us` | Minimum interval between accepted index edges | `300` |
-| `index_minimum_us` | Intended minimum pulse width when both edges are selected; enforcement is still a source TODO | `0` |
+| `index_minimum_us` | Intended minimum pulse width when both edges are selected; the source does not enforce it yet | `0` |
 | `use_qe` | Use the hardware quadrature encoder | `true` |
 | `qe_pullup` | Enable pull-ups on the fixed quadrature inputs | `false` |
 

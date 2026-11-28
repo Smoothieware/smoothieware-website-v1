@@ -1,5 +1,7 @@
 
-# Safety Warnings
+{::nomarkdown}
+<span id="safety-warnings"></span>
+{:/nomarkdown}
 
 Before you start wiring your machine's elements to the board, there are several things you need to keep in mind and be careful about during all of the assembly.
 
@@ -11,8 +13,6 @@ Before you start wiring your machine's elements to the board, there are several 
   <strong>Critical:</strong> The warnings on this page can save your equipment, prevent fires, and potentially save your life. Read every section carefully and follow all safety guidelines.
 </sl-alert>
 {:/nomarkdown}
-
----
 
 ## Polarity
 
@@ -40,8 +40,6 @@ Before you start wiring your machine's elements to the board, there are several 
 </sl-alert>
 {:/nomarkdown}
 
----
-
 ## Disconnecting Stepper Motors
 
 {::nomarkdown}
@@ -54,8 +52,6 @@ Before you start wiring your machine's elements to the board, there are several 
   <p>The drivers have very good protection against most possible problems and are very hard to destroy accidentally. But it is possible.</p>
 </sl-alert>
 {:/nomarkdown}
-
----
 
 ## Preventing Shorts
 
@@ -74,8 +70,6 @@ Before you start wiring your machine's elements to the board, there are several 
 </sl-alert>
 {:/nomarkdown}
 
----
-
 ## Using the Right Connector
 
 {::nomarkdown}
@@ -89,8 +83,6 @@ Before you start wiring your machine's elements to the board, there are several 
 </sl-alert>
 {:/nomarkdown}
 
----
-
 ## Crimping Quality
 
 {::nomarkdown}
@@ -103,8 +95,6 @@ Before you start wiring your machine's elements to the board, there are several 
   <p>Connections (to the stepper motors for example) lost while the machine is running can destroy your board.</p>
 </sl-alert>
 {:/nomarkdown}
-
----
 
 ## VBB Power Input Markings
 
@@ -121,8 +111,6 @@ Before you start wiring your machine's elements to the board, there are several 
 </sl-alert>
 {:/nomarkdown}
 
----
-
 ## USB vs Ethernet
 
 {::nomarkdown}
@@ -135,8 +123,6 @@ Before you start wiring your machine's elements to the board, there are several 
   <p>Ethernet, on the other hand, does not have this problem: save yourself the trouble, and use Ethernet right away. It's very nice. See <a href="network">Network</a> for information on how to set it up.</p>
 </sl-alert>
 {:/nomarkdown}
-
----
 
 ## How to Destroy Your Board (Don't Do These Things)
 
@@ -160,11 +146,9 @@ Before you start wiring your machine's elements to the board, there are several 
 
   <p><strong>The general idea here is:</strong> always make sure everything is clean, and double-check everything <strong>before</strong> turning the power on. You can not learn by making mistakes here, as mistakes will likely cost you your board.</p>
 
-  <p><a href="https://en.wikipedia.org/wiki/Electrostatic_discharge">Electrostatic discharge</a> can also destroy your board: make sure you <a href="http://smoothieware.org/forum/t-1381690?from=email#post-2475310">properly ground everything</a>.</p>
+  <p><a href="https://en.wikipedia.org/wiki/Electrostatic_discharge">Electrostatic discharge</a> can also destroy your board: make sure you <a href="https://web.archive.org/web/2020/http://smoothieware.org/forum/t-1381690?from=email#post-2475310">properly ground everything</a>.</p>
 </sl-alert>
 {:/nomarkdown}
-
----
 
 ## Heater Safety
 
@@ -178,8 +162,6 @@ Before you start wiring your machine's elements to the board, there are several 
   <p><strong>Fires will kill you if you don't.</strong></p>
 </sl-alert>
 {:/nomarkdown}
-
----
 
 ## Grounding
 
@@ -197,12 +179,10 @@ Before you start wiring your machine's elements to the board, there are several 
     <li><a href="https://www.machsupport.com/forum/index.php?topic=9587.0">Mach Support Forum</a></li>
     <li><a href="https://donsthings.blogspot.com/2018/09/battling-electrical-noise-in-cnc-builds.html">Don's Things: Battling Electrical Noise</a></li>
     <li><a href="https://makr.zone/grounding-the-machine/283/">Makr Zone: Grounding the Machine</a></li>
-    <li><a href="http://smoothieware.org/forum/t-1381690?from=email#post-2475310">Smoothie Forum Discussion</a></li>
+    <li><a href="https://web.archive.org/web/2020/http://smoothieware.org/forum/t-1381690?from=email#post-2475310">Smoothie Forum Discussion</a></li>
   </ul>
 </sl-alert>
 {:/nomarkdown}
-
----
 
 ## Environmental Hazards
 
@@ -223,15 +203,11 @@ Before you start wiring your machine's elements to the board, there are several 
 </sl-alert>
 {:/nomarkdown}
 
----
-
 ## Further Reading
 
 For a good read about safety, you can refer to the [RepRap Wiki documentation on the subject](http://reprap.org/wiki/Safety).
 
-To properly understand some of the safety instructions in this documentation, basic knowledge about electricity is required. See [this page](basics#electricity) for a refresher on the basics.
-
----
+To properly understand some of the safety instructions in this documentation, basic knowledge about electricity is required. See [this page](/basics#what-is-electricity) for a refresher on the basics.
 
 ## Summary
 

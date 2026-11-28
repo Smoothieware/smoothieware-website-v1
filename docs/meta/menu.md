@@ -4,14 +4,14 @@ layout: default
 title: Menu Icons Reference
 ---
 
-# Menu Icons Reference
+{::nomarkdown}
+<span id="menu-icons-reference"></span>
+{:/nomarkdown}
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Internal Page:</strong> This page is just an internal placeholder to work on icons for the top menu. If you got here, you probably took a wrong turn somewhere. Thanks for using the project and reading the documentation!
 </sl-alert>
-
----
 
 ## Social Media Icons (24px)
 
@@ -34,8 +34,6 @@ title: Menu Icons Reference
   <a href="/images/sprout.png"><img src="/images/sprout.png" alt="Sprout" style="width: 24px;"/></a>
 </div>
 {:/nomarkdown}
-
----
 
 ## Navigation Icons (40px)
 
@@ -72,8 +70,6 @@ title: Menu Icons Reference
 </div>
 {:/nomarkdown}
 
----
-
 ## Navigation Icons (64px)
 
 {::nomarkdown}
@@ -108,8 +104,6 @@ title: Menu Icons Reference
   </div>
 </div>
 {:/nomarkdown}
-
----
 
 ## Navigation
 

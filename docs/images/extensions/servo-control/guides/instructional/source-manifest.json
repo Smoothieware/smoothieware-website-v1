@@ -745,30 +745,30 @@
     "host-contacts-1-5.svg": "0cabd0178fd3e32bccb923a49021a3891ddf63fd33282e4f1d35de7c5e9a4421",
     "prime-host-wiring.svg": "90b95b1f31b95791edcac3f03efccf41ddcb0aad35a4f88efd43bb6fd75f48eb"
   },
-  "website_png_exports": {
+  "website_webp_exports": {
     "host-contacts-1-5.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/servo-control/guides/instructional/host-contacts-1-5.svg",
       "archived_svg_sha256": "4c8c3315dbe464af7231b1567b807a2fa377a49de2b1fc754c36a023c1d8bcb0",
-      "url": "/images/extensions/servo-control/guides/instructional/host-contacts-1-5.png",
-      "sha256": "123c184e9178e048e7e3ab9b0169911021f248dd636368cdfd57be109ed59a4a"
+      "url": "/images/extensions/servo-control/guides/instructional/host-contacts-1-5.webp",
+      "sha256": "ecc817a40e9324b370b6810b79f6ddbfe3c5d2e3eac93ea9a6dfd1e4e0d4350e"
     },
     "host-contacts-6-10.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/servo-control/guides/instructional/host-contacts-6-10.svg",
       "archived_svg_sha256": "f7e9cb28026383cb16acf1fcf2af548a205c1d2b4b1f12aa5760ea422e3bae6d",
-      "url": "/images/extensions/servo-control/guides/instructional/host-contacts-6-10.png",
-      "sha256": "6c8a08d3c44e1b5f4453d00914ffdf11e7b3b495161678dfee27430973863349"
+      "url": "/images/extensions/servo-control/guides/instructional/host-contacts-6-10.webp",
+      "sha256": "e4d2cd713d1be845dd57ee5bc33a33dcb0741d6574c367b727c5c2c5bd4f5f47"
     },
     "instructional-reference.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/servo-control/guides/instructional/instructional-reference.svg",
       "archived_svg_sha256": "d722d8aba0141a7e682eebdf3818f22644686cb1bbec10b4190594f1f87e39a8",
-      "url": "/images/extensions/servo-control/guides/instructional/instructional-reference.png",
-      "sha256": "fd38d2302ec757e2c1c1201ef67f090831bbefe036788adc110d6a251b6d960e"
+      "url": "/images/extensions/servo-control/guides/instructional/instructional-reference.webp",
+      "sha256": "49b91616d57d30177fc76df0e0e27268489d5de73c69484eba3017d523e80600"
     },
     "prime-host-wiring.svg": {
       "archived_svg": "smoothie-diagrams/data/website-extension-svg/servo-control/guides/instructional/prime-host-wiring.svg",
       "archived_svg_sha256": "ce827ee6382106052bf5621b9ea3263ff1819f0684d1a541fe83d437f1a8ead9",
-      "url": "/images/extensions/servo-control/guides/instructional/prime-host-wiring.png",
-      "sha256": "fb99baf54e2922c3146b8d61a0fe4eb286ce69bcd03031f987f015e3f944a91d"
+      "url": "/images/extensions/servo-control/guides/instructional/prime-host-wiring.webp",
+      "sha256": "f28ba0d2140fe417c5c2d97da32d75fcbc384dd60cab3e097dfbbde86bb567dc"
     }
   }
 }

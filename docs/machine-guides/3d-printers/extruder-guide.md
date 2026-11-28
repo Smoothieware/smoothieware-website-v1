@@ -1,4 +1,5 @@
 ---
+title: "Extruder guide"
 permalink: /extruder-guide
 ---
 

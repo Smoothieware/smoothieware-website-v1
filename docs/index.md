@@ -5,7 +5,9 @@ title: Smoothieware and Smoothieboard Documentation
 description: "Set up Smoothieboard with Smoothieware for laser cutters, CNC mills, 3D printers, and other machines. Find wiring, configuration, and firmware guides."
 ---
 
-# Smoothieware
+{::nomarkdown}
+<span id="smoothieware"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -14,14 +16,12 @@ description: "Set up Smoothieboard with Smoothieware for laser cutters, CNC mill
 </sl-alert>
 {:/nomarkdown}
 
-
-
 {::nomarkdown}
 <div id="v2-announcement-container" style="position: relative;">
   <sl-alert id="v2-announcement" variant="primary" open>
     <sl-icon slot="icon" name="rocket-takeoff"></sl-icon>
     <div style="display:flex;align-items:center;gap:15px;">
-      <a href="https://www.robosprout.com/product-category/smoothieboards" style = "font-size:48px;font-weight:bold;">SmoothieBoard v2 is HERE!</a>
+      <a href="https://www.robosprout.com/product-category/smoothieboards" style = "font-size:clamp(28px,8vw,48px);font-weight:bold;">SmoothieBoard v2 is HERE!</a>
       <a href="/images/fiesta-junina.png">
         <img src="/images/fiesta-junina.png" alt="Party" style="width:50px;height:50px;"/>
       </a>
@@ -31,17 +31,15 @@ description: "Set up Smoothieboard with Smoothieware for laser cutters, CNC mill
 </div>
 {:/nomarkdown}
 
-
-
 {::nomarkdown}
 <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.10.8/dist/index.umd.min.js"></script>
 {:/nomarkdown}
 
 The Smoothie project is always looking for help. Whatever your skills are, there are things you can do to improve the project with the other volunteers. If you feel that you could give us some of your free time, please [contact us](mailto:wolf.arthur@gmail.com), **help and working together** is what has made this project so neat, advanced and precious over the years, and is **very welcome**.
 
-# Documentation
+## Documentation
 
-## Step by step guides
+### Step by step guides
 
 <div class="menu">
   <div class="menu-item">
@@ -72,7 +70,7 @@ The Smoothie project is always looking for help. Whatever your skills are, there
 
 Retrofitting a K40 laser cutter? Start with the [K40 controller upgrade overview](/landing-page-k40-laser-upgrade) and the [laser cutter installation guide](/laser-cutter-guide).
 
-## Firmware documentation
+### Firmware documentation
 
 {::nomarkdown}
 <a href="/images/sprout-2.png">
@@ -80,7 +78,7 @@ Retrofitting a K40 laser cutter? Start with the [K40 controller upgrade overview
 </a>
 {:/nomarkdown}
 
-- **[Getting Started](getting-started)**: Complete guide to setting up your Smoothieboard from unboxing to first operation
+- [Getting Started](getting-started): Complete guide to setting up your Smoothieboard from unboxing to first operation
 - [Basics](basics): Fundamental concepts, terminology, and technical background
 - [Glossary](glossary): Definitions of common terms used in CNC and 3D printing
 - [Migrating](migrating): Migration guides from other firmware
@@ -98,7 +96,7 @@ Retrofitting a K40 laser cutter? Start with the [K40 controller upgrade overview
   - [Motion control](motion-control): All things related to gcode interpolation, motion and acceleration planning, and step generation
     - [Backlash compensation](backlash-compensation)² (experimental in both versions)
 {::nomarkdown}<versioned><v1></v1><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="actuator-slaving">Slaved Axes</a>²</div></v2></versioned>{:/nomarkdown}
-  - [Arm Solutions](arm-solutions): [Cartesian](cartesian), [Delta](delta), [Hbot](hbot), [Core-XY](Core-XY), [Rotary Delta](rotary-delta), [Morgan Scara](morgan-scara)
+  - [Arm Solutions](arm-solutions): [Cartesian](cartesian), [Delta](delta), [Hbot](hbot), Core-XY, [Rotary Delta](rotary-delta), [Morgan Scara](morgan-scara)
   - [6axis](6axis): Using A, B and C axes, for 4, 5 or 6 axis motion.
   - [Grbl mode](grbl-mode): Using Smoothie in CNC-specific mode instead of 3D printing mode
 
@@ -129,14 +127,13 @@ Retrofitting a K40 laser cutter? Start with the [K40 controller upgrade overview
 </a>
 {:/nomarkdown}
 
-
   - [Utilities](utils)
     - [Smoopi](smoopi): **New and Recommended** drive Smoothie using a color touch screen on [Raspberry Pi](https://www.raspberrypi.com/) 
     - [Player](player): Play files from the SD card
     - [Currentcontrol](currentcontrol): Digitally control your stepper motors current
     - [AdvancedMotorDriver](advancedmotordriver): For controlling SPI based stepper motor controllers like DRV8711 and TMC26X
     - [Configurator](configurator): Manipulate configuration using console commands
-    - [Kill Button](killbutton) and [Play LED](play-led): S/W based kill and play activity LED
+    - [Kill Button](killbutton) and [Play LED](/playled): S/W based kill and play activity LED
     - [Panel](panel): Drive smoothie directly without a host using monochrome lcd screens and click encoders
 {::nomarkdown}<versioned><v1><div class="versioned-list-item" style="margin-left:1.25em;"><a href="jogger">Jogger</a>: Joystick-based jogging control for manual machine movement</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="joystick">Joystick</a>: Analog input from joysticks, sliders, and knobs</div></v1><v2><div class="versioned-list-item" style="margin-left:1.25em;"><a href="tm1638-display">TM1638 Display</a>: 7-segment LED display with buttons</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="button-box">Button Box</a>²: Programmable button panel for macros and machine control</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="mpg">MPG</a>: Manual Pulse Generator hand wheels for axis jogging</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="voltage-monitor">Voltage Monitor</a>: Monitor power supply voltages</div><div class="versioned-list-item" style="margin-left:1.25em;"><a href="max7219-dro">MAX7219 digital readout</a>²</div></v2></versioned>{:/nomarkdown}
     - [on_boot.gcode File](on-boot-gcode): Execute G-codes every time the board boots
@@ -147,9 +144,7 @@ Retrofitting a K40 laser cutter? Start with the [K40 controller upgrade overview
 </a>
 {:/nomarkdown}
 
-
-
-- [Using Smoothie](using-smoothie): General firmware use
+- [Using Smoothie](/configuring-smoothie): General firmware use
   - [Console Commands](console-commands)
   - [Supported G-Codes](supported-g-codes)
 {::nomarkdown}<versioned><v1></v1><v2><div class="versioned-list-item" style="margin-left:2.5em;"><a href="subroutines">O-word subroutines</a>²</div></v2></versioned>{:/nomarkdown}
@@ -162,20 +157,18 @@ Retrofitting a K40 laser cutter? Start with the [K40 controller upgrade overview
     - [Octoprint](octoprint): Web-page based 3D printer control and management system.
     - [bCNC](bcnc): Control interface for CNC machines.
     - [Fusion360](fusion360): CAD/CAM software with a lot of features and a free/students tier.
-- **[Troubleshooting](troubleshooting)**: It doesn't work (ノo益o)ノ彡┻━┻ ! What to do ∩(︶▽︶)∩.
+    - [ROS](ros): Drive a robot with ROS and Smoothie.
+- [Troubleshooting](troubleshooting): It doesn't work (ノo益o)ノ彡┻━┻ ! What to do ∩(︶▽︶)∩.
   - [Error Messages Reference](error-messages): Complete documentation of all firmware error messages
   - [MRI](mri-debugging): An amazing tool to help smoothie firmware developers and hackers debug issues using a proper debugging workflow.
 - [Contributing](contributing): **We need your help!**
-  - [Todo](todo): List of the things that are being worked on in the project.
   - [Editing the Wiki](editing-the-wiki): How to edit this documentation and improve it.
-
 
 {::nomarkdown}
 <a href="/images/message.png">
   <img src="/images/message.png" alt="Binary Code" style="width: 75px; height: 75px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
-
 
 - [Communication](communication)
   - [Network](network)
@@ -184,7 +177,7 @@ Retrofitting a K40 laser cutter? Start with the [K40 controller upgrade overview
   - [Bluetooth](bluetooth-serial)
   - [Wifi](wifi) (new)
 
-- **What’s new**
+- What’s new
   - [Feature inventory and firmware status](new-features#fall-2026)
   - [Real-time feed hold and cycle start](feed-hold) <small>(v2)</small> — Pause and resume motion.
   - [Slaved internal-driver axes](actuator-slaving) <small>(v2)</small> — Drive two motors from one axis.
@@ -213,7 +206,7 @@ Retrofitting a K40 laser cutter? Start with the [K40 controller upgrade overview
  
 Note, Smoothieboards come completely pre-flashed, you do not need to compile or flash the firmware, unless you want to upgrade to a newer version, or to contribute to the code.
  
- - **[Getting the Smoothie Firmware](getting-smoothie)**
+ - [Getting the Smoothie Firmware](getting-smoothie)
  - [Flashing Smoothie](flashing-smoothie)
  - [Compiling Smoothie](compiling-smoothie)
  - [Setting up a SD-Card](sd-card)
@@ -229,7 +222,7 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 </a>
 {:/nomarkdown}
 
-## Hardware documentation
+### Hardware documentation
 
 **Available now**: [SmoothieBoard](smoothieboards), the modular and awesome, smoothie-dedicated CNC controller.
 
@@ -269,7 +262,7 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 </versioned>
 {:/nomarkdown}
 
-# Getting a Smoothieboard
+## Getting a Smoothieboard
 
 {::nomarkdown}
 <div style="clear: both; text-align: center; margin: 2rem 0;">
@@ -280,9 +273,9 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 </div>
 {:/nomarkdown}
 
-# Features
+## Features
 
-## For users
+### For users
 
 {::nomarkdown}
 <a href="/images/worker.png">
@@ -299,7 +292,7 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 - Composite USB Mass Storage + Serial interface to host.
 - Free [email support (✿◠‿◠)](mailto:wolf.arthur@gmail.com)
 
-## For hackers
+### For hackers
 
 {::nomarkdown}
 <a href="/images/blueprint-1.png">
@@ -309,14 +302,14 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 
 - Modular, event-driven design, allowing to add functionality easily without modifying the core. See the [ModuleExample](moduleexample)
 - Designed to support non-Cartesian machines
-- **V1 (LPC1769)** leaves lots of room for additional functionality. **V2 (STM32H745)** has significantly more resources.
+- V1 (LPC1769) leaves lots of room for additional functionality. **V2 (STM32H745)** has significantly more resources.
 - The mBed [functions](http://mbed.org/handbook/Homepage) and [additional libraries](http://mbed.org/cookbook/Homepage) are available for easy and fast prototyping. But compiles off-line (using GCC), not dependent on the mBed online compiler
 - Strict process for acceptance of new code, to keep the project at high quality
 - Heavily commented code
 
 {% include project/donate-for-include.md %}
 
-# Developer documentation
+## Developer documentation
 
 {::nomarkdown}
 <a href="/images/coding.png">
@@ -324,14 +317,13 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 </a>
 {:/nomarkdown}
 
-- **[Todo](todo)**: List of the things that are being worked on in the project. We need your help!
 - [HowItWorks](howitworks): Walk-through the inner workings of Smoothie (°٢°)
 - [ModuleExample](moduleexample): Basics of working with Modules in Smoothie
 - [Listofevents](listofevents): List of all Events you can register for
 - [Developers-Guide](developers-guide): Information useful to smoothie coders
 - [LPC1769 pin usage](lpc1769-pin-usage): Documents all the pins used and which are spare
 - [STM32H7 pin usage](stm32h7-pin-usage): Pin assignments for the STM32H7 microcontroller (V2)
-- [DebuggingSmoothie](debuggingsmoothie): Using the built-in MRI serial debugger
+- [DebuggingSmoothie](/mri-debugging): Using the built-in MRI serial debugger
 - [Coding-Standards](coding-standards)
 - [Contribution Guidelines](contribution-guidlines)
 - [Eclipse](eclipse): Using Eclipse IDE to build and debug
@@ -343,7 +335,7 @@ More: [Windows Drivers](windows-drivers), [Linux Drivers](linux-drivers), [Mac D
 Current edge build status: [![Build Status](https://app.travis-ci.com/Smoothieware/Smoothieware.svg?branch=edge)](https://app.travis-ci.com/Smoothieware/Smoothieware)
 
 <!-- extension-board-directory:start -->
-## Extension boards
+### Extension boards
 
 The [complete extension-board directory](/extension-boards) describes what each board does and links to its guide.
 
@@ -361,10 +353,10 @@ The [complete extension-board directory](/extension-boards) describes what each 
 <section markdown="1">
 {:/nomarkdown}
 
-### Motor and motion control
+#### Motor and motion control
 
 - [Advanced H-bridge encoder board](/extensions/advanced-h-bridge-encoder-board)
-- [Bouni analog spindle control](/extensions/bouni-analog-spindle-control)
+- [ANALOG SPINDLE CONTROL BREAKOUT (bouni)](/extensions/analog-spindle-control-breakout)
 - [External STEP/DIR signal breakout](/extensions/historical-external-stepper-signal-breakout)¹
 - [Six-axis interface board](/extensions/historical-six-axis-breakout)¹
 - [Leadshine-like external servo drivers](/extensions/leadshine-like-external-servo-drivers)
@@ -375,7 +367,7 @@ The [complete extension-board directory](/extension-boards) describes what each 
 - [Stepper motor driver breakout board (Allegro)](/extensions/stepper-driver-breakout-allegro)
 - [Stepper motor driver breakout board (Trinamic)](/extensions/stepper-driver-breakout-trinamic)
 - [Position feedback board](/extensions/position-feedback-board)
-- [Bouni spindle control](/extensions/bouni-spindle-module-boards)
+- [SPINDLE CONTROL BREAKOUTS (bouni)](/extensions/spindle-control-breakouts)
 - [Three-channel A5984 stepper driver board](/extensions/three-channel-a5984-stepper-driver)
 
 {::nomarkdown}
@@ -386,7 +378,7 @@ The [complete extension-board directory](/extension-boards) describes what each 
 <section markdown="1">
 {:/nomarkdown}
 
-### Sensors and inputs
+#### Sensors and inputs
 
 - [3-axis accelerometer](/extensions/three-axis-accelerometer)
 - [9-axis IMU](/extensions/nine-axis-imu)
@@ -432,7 +424,7 @@ The [complete extension-board directory](/extension-boards) describes what each 
 <section markdown="1">
 {:/nomarkdown}
 
-### Power, relays and outputs
+#### Power, relays and outputs
 
 - [AC SSR board](/extensions/ac-ssr-board)
 - [ATX connector board](/extensions/atx-connector-board)
@@ -441,7 +433,7 @@ The [complete extension-board directory](/extension-boards) describes what each 
 - [Extruder toolhead harness without motor](/extensions/historical-extruder-toolhead-harness-without-motor)¹
 - [Flambegate — High-side heater shutoff](/extensions/historical-flambegate)¹
 - [Flambehub — Hardware trigger and power-disconnect hub](/extensions/historical-flambehub)¹
-- [Four-PWM/two-input/probe interface](/extensions/historical-gadgeteer-pwm-io-board)¹
+- [Four-PWM/two-input/probe interface](/extensions/historical-pwm-io-board)¹
 - [Gate boards](/extensions/gate-boards)
 - [Additional general purpose outputs breakout / Servo board](/extensions/general-purpose-output-servo-board)
 - [IR remote emitter](/extensions/infrared-remote-emitter)
@@ -471,30 +463,31 @@ The [complete extension-board directory](/extension-boards) describes what each 
 <section markdown="1">
 {:/nomarkdown}
 
-### Communication and signal interfaces
+#### Communication and signal interfaces
 
 - [64-pin SPI I/O expander](/extensions/spi-io-expander)
 - [Bidirectional level shifting board](/extensions/bidirectional-level-shifting-board)
-- [Bouni RS-485 spindle control](/extensions/bouni-rs485-spindle-control)
+- [RS232 BREAKOUT (bouni)](/extensions/rs232-breakout)
+- [RS485/SPINDLE CONTROL BREAKOUT (bouni)](/extensions/rs485-spindle-control-breakout)
 - [Cheap UART adapter breakout](/extensions/cheap-uart-adapter-breakout)
 - [Differential I2C signal extender](/extensions/differential-i2c-signal-extender)
 - [Differential signal extender](/extensions/differential-signal-extender)
 - [Differential SPI LVDS extender](/extensions/historical-differential-spi-lvds-extender)¹
 - [Differential SPI signal extender](/extensions/differential-spi-signal-extender)
 - [Differential STEP/DIR/ENABLE extender](/extensions/differential-step-dir-en-extender)
-- [Fourteen channel 3.3/5 V level shifter](/extensions/historical-gadgeteer-3v3-5v-level-shifter)¹
-- [Gadgeteer RS-232 level adapter](/extensions/historical-gadgeteer-rs232-adapter)¹
-- [Gadgeteer-to-CAN adapter](/extensions/gadgeteer-to-can)
-- [Gadgeteer Qwiic hub](/extensions/historical-gadgeteer-qwiic-adapter)¹
+- [Fourteen-channel 3.3/5 V level shifter](/extensions/historical-3v3-5v-level-shifter)¹
+- [RS-232 level adapter](/extensions/historical-rs232-level-adapter)¹
+- [CAN bus adapter](/extensions/can-bus-adapter)
+- [Qwiic hub](/extensions/historical-qwiic-hub)¹
 - [jaUART CP2104 USB-UART adapter](/extensions/historical-jauart-usb-uart-adapter)¹
 - [Long distance extender](/extensions/long-distance-extender)
 - [Opto-isolation pass-through board](/extensions/opto-isolation-pass-through-board)
-- [Qwiic-to-Gadgeteer adapter](/extensions/qwiic-to-gadgeteer-adapter)
+- [Qwiic expansion adapter](/extensions/qwiic-expansion-adapter)
 - [Serial to WiFi board](/extensions/serial-to-wifi-board)
 - [SPI hub](/extensions/spi-hub)
 - [UART breakout](/extensions/uart-breakout)
 - [USB/Serial breakout](/extensions/usb-serial-breakout)
-- [Wireless Gadgeteer extender](/extensions/wireless-gadgeteer-extender)
+- [Wireless expansion extender](/extensions/wireless-expansion-extender)
 - [Wireless series Smoothieboard-side master](/extensions/wireless-series-master)
 - [BreakoutPins](/extensions/historical-breakoutpins)¹
 - [BreakoutTerm](/extensions/historical-breakoutterm)¹
@@ -510,16 +503,16 @@ The [complete extension-board directory](/extension-boards) describes what each 
 <section markdown="1">
 {:/nomarkdown}
 
-### Displays, controls and accessories
+#### Displays, controls and accessories
 
 - [16-key keypad](/extensions/sixteen-key-keypad)
 - [8x8 LED matrix](/extensions/led-matrix-8x8)
 - [Button boards](/extensions/button-boards)
-- [Buzzer module](/extensions/buzzer-module)
+- [Buzzer breakout](/extensions/buzzer-breakout)
 - [Camera trigger board](/extensions/camera-trigger-board)
 - [Character LCD display](/extensions/character-lcd-display)
 - [Debug probe](/extensions/debug-probe)
-- [DIP-switch and debounced-input board](/extensions/historical-gadgeteer-dip-switch-board)¹
+- [DIP-switch and debounced-input board](/extensions/historical-dip-switch-board)¹
 - [GLCD breakout](/extensions/glcd-breakout)
 - [Handwheel encoder interface](/extensions/rotary-encoder-handwheel-interface)
 - [LED bar, 8 lamps](/extensions/led-bar-8)
@@ -527,7 +520,7 @@ The [complete extension-board directory](/extension-boards) describes what each 
 - [RGB LED board](/extensions/rgb-led-board)
 - [Rotary potentiometer board](/extensions/rotary-potentiometer-board)
 - [SD audio player](/extensions/sd-audio-player)
-- [Seven-LED GPIO board](/extensions/historical-gadgeteer-led-breakout)¹
+- [Seven-LED GPIO board](/extensions/historical-seven-led-breakout)¹
 - [LED breakout](/extensions/led-breakout)
 - [SD card breakout](/extensions/sd-card-breakout)
 - [Thumb joystick breakout](/extensions/joystick-breakout)
@@ -543,28 +536,28 @@ The [complete extension-board directory](/extension-boards) describes what each 
 <section markdown="1">
 {:/nomarkdown}
 
-### Host adapters and prototyping
+#### Host adapters and prototyping
 
 - [Arduino adapter](/extensions/arduino-adapter)
-- [Arduino-to-Gadgeteer shield](/extensions/arduino-to-gadgeteer-shield)
+- [Arduino expansion shield](/extensions/arduino-expansion-shield)
 - [BeagleBone breakout](/extensions/beaglebone-breakout)
 - [Breadboard board](/extensions/breadboard-board)
 - [C.H.I.P. breakout board](/extensions/chip-breakout-board)
 - [CPLD adapter](/extensions/cpld-adapter)
-- [D-sub-to-Gadgeteer IN adapter](/extensions/d-sub-to-gadgeteer-in)
-- [D-sub-to-Gadgeteer OUT adapter](/extensions/d-sub-to-gadgeteer-out)
+- [D-sub input adapter](/extensions/d-sub-input-adapter)
+- [D-sub output adapter](/extensions/d-sub-output-adapter)
 - [Dual-device I2C digital potentiometer](/extensions/historical-dual-digital-potentiometer)¹
-- [ESP32 DevKit to Gadgeteer host board](/extensions/esp32-to-gadgeteer-host)
-- [Five-port Gadgeteer header adapter](/extensions/historical-five-port-gadgeteer-header-adapter)¹
+- [ESP32 DevKit expansion host](/extensions/esp32-devkit-expansion-host)
+- [Five-port expansion header adapter](/extensions/historical-five-port-header-adapter)¹
 - [Intel Edison breakout](/extensions/intel-edison-breakout)
 - [Papilio adapter](/extensions/papilio-adapter)
 - [Parallel port breakout](/extensions/parallel-port-breakout)
-- [Gadgeteer perma-proto breadboard](/extensions/perma-proto-gadgeteer)
-- [Raspberry Pi 40-pin to Gadgeteer HAT](/extensions/raspberry-pi-to-gadgeteer-hat)
+- [Perma-proto breadboard](/extensions/perma-proto-breadboard)
+- [Raspberry Pi 40-pin expansion HAT](/extensions/raspberry-pi-expansion-hat)
 - [Raspberry Pi Zero breakout](/extensions/raspberry-pi-zero-breakout)
 - [Raw pins breakout](/extensions/raw-pins-breakout)
 - [Raw pins screw terminal breakout](/extensions/raw-pins-screw-terminal-breakout)
-- [Teensy 4.1 to Gadgeteer host board](/extensions/teensy-to-gadgeteer-host)
+- [Teensy 4.1 expansion host](/extensions/teensy-expansion-host)
 - [C.H.I.P. DIP computer carrier](/extensions/historical-chip-dip-computer-carrier)¹
 - [Raspberry Pi Zero carrier with Ethernet](/extensions/historical-raspberry-pi-zero-ethernet)¹
 - [Raspberry Pi Zero carrier interface](/extensions/historical-raspberry-pi-zero-interface)¹
@@ -578,7 +571,7 @@ The [complete extension-board directory](/extension-boards) describes what each 
 {:/nomarkdown}
 <!-- extension-board-directory:end -->
 
-# Smoothie in Research
+## Smoothie in Research
 
 - [PARA: A one-meter reach, two-kg payload, three-DoF open source robotic arm with customizable end effector](https://pmc.ncbi.nlm.nih.gov/articles/PMC9123426/)
 - [OpenWorkstation: A modular open-source technology for automated in vitro workflows](https://pmc.ncbi.nlm.nih.gov/articles/PMC9041211/)
@@ -609,7 +602,7 @@ The [complete extension-board directory](/extension-boards) describes what each 
 - [Development of Open Source 3D Bioprinters For Low-Cost and High-Fidelity Biofabrication](https://abstracts.biomaterials.org/data/papers/2019/abstracts/511.pdf)
 - [Feature-based insight for forks in social coding platforms](https://www.sciencedirect.com/science/article/abs/pii/S0950584921001373)
 
-# Reviews
+## Reviews
 
 [Watch a review](http://www.youtube.com/embed/vsu_vAKvRO0?hd=1)
 

@@ -1,4 +1,5 @@
 ---
+title: "Temperature control PID"
 permalink: /temperaturecontrol-pid
 ---
 

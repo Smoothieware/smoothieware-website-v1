@@ -1,8 +1,11 @@
 ---
+title: "Rectangular grid calibration options"
 permalink: /rectangular-grid-calibration-options
 ---
 
-# Rectangular Grid Calibration Options
+{::nomarkdown}
+<span id="rectangular-grid-calibration-options"></span>
+{:/nomarkdown}
 
 <!-- learning-diagram:30-rectangular-grid -->
 {::nomarkdown}
@@ -13,9 +16,6 @@ permalink: /rectangular-grid-calibration-options
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">A rectangular grid maps the bed surface <a href="#learning-diagram-30-rectangular-grid" aria-label="Permanent link to A rectangular grid maps the bed surface" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-
-
-
 
 This page documents all configuration options for the rectangular grid leveling strategy in Smoothie.
 
@@ -79,8 +79,6 @@ For more information about leveling and probing, see:
 
 ## Example Configuration
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -138,5 +136,3 @@ human_readable = true
 </v2>
 </versioned>
 {:/nomarkdown}
-
-

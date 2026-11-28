@@ -1,12 +1,14 @@
 ---
+title: "Pick and place"
 permalink: /pick-and-place
 redirect_from:
   - /pick-and-place-guide
   - /pick-and-place-guide.html
 ---
 
-
-# Your guide to installing Smoothieboard in a Pick and Place Machine
+{::nomarkdown}
+<span id="your-guide-to-installing-smoothieboard-in-a-pick-and-place-machine"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/temporary/pick-place-machine-generic.jpg">
@@ -84,11 +86,26 @@ This guide will walk through everything you need to accomplish to successfully p
 
 At the end of this guide, you should have a fully working machine.
 
-{% include getting-started/unboxing-for-include.md %}
+{% include _includes/chapter.md file="getting-started/unboxing-for-include.md" title="Unboxing" anchor="unboxing" %}
 
-{% include migration/migrating-for-include.md %}
+{% include _includes/chapter.md file="migration/migrating-for-include.md" title="Migrating to Smoothie" anchor="migrating-to-smoothie" %}
 
-{% include hardware/wiring/warning-for-include.md %}
+## Safety warnings
+
+{::nomarkdown}
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Make sure you read this. Seriously. Not kidding. Do it. It's important.</strong>
+  <ul>
+    <li>Check the polarity of every power input, and check it again. Reversed polarity can damage or destroy all or part of your board. The 3.5mm and 5mm power connectors are inverted, so rely on the diagrams.</li>
+    <li>Never connect or disconnect stepper motors while the board is powered.</li>
+    <li>Keep anything metallic away from the board, a short will destroy it.</li>
+    <li>Never put 12V or 24V into a 5V, endstop or thermistor input.</li>
+    <li>If your machine has heaters, set up <a href="/temperaturecontrol#safety">the heater safety measures</a>. Fires will kill you if you don't.</li>
+  </ul>
+  Before you wire anything, read <a href="/warning">all the wiring safety warnings</a>.
+</sl-alert>
+{:/nomarkdown}
 
 ## Pick and Place firmware
 
@@ -201,38 +218,49 @@ Just remember to use the right command instead of the default one next time you 
 </sl-alert>
 {:/nomarkdown}
 
-{% include hardware/power/logic-power-for-include.md %}
+{% include _includes/chapter.md file="hardware/power/logic-power-for-include.md" title="Logic Power Inputs" anchor="logic-power-inputs" %}
 
-{% include hardware/power/main-power-input-for-include.md %}
+{% include _includes/chapter.md file="hardware/power/main-power-input-for-include.md" title="Main Power Input" %}
 
-{% include hardware/wiring/stepper-motors-for-include.md %}
+{% include _includes/chapter.md file="hardware/wiring/stepper-motors-for-include.md" title="Stepper Motors" anchor="stepper-motors" %}
 
-{% include modules/endstops-probes/guide-endstops-for-include.md %}
+{% include _includes/chapter.md file="modules/endstops-probes/guide-endstops-for-include.md" title="Endstops" anchor="endstops" %}
 
-# Pick and Place Tool Control
+## Pick and Place Tool Control
 
 Pick and Place machines use vacuum nozzles instead of spindles or lasers to manipulate components.
 
 This section covers how to configure and control the vacuum system, sensors, and nozzles.
 
-{% include machine-guides/other-machines/pick-and-place-control-for-include.md %}
+{% include _includes/chapter.md file="machine-guides/other-machines/pick-and-place-control-for-include.md" title="Pick and Place Tool Control" anchor="pick-and-place-tool-control" %}
 
-{% include modules/endstops-probes/z-probe-guide-for-include.md %}
+{% include _includes/chapter.md file="modules/endstops-probes/z-probe-guide-for-include.md" title="Z-Probe Guide" anchor="z-probe-guide" %}
 
-{% include hardware/panels/panel-guide-for-include.md %}
+{% include _includes/chapter.md file="hardware/panels/panel-guide-for-include.md" title="Panel Guide" anchor="panel-guide" %}
 
-# Appendixes
+## Appendixes
 
-{% include hardware/wiring/general-appendixes-for-include.md %}
+The appendixes cover the practical wiring work you may need along the way : 
+
+* [Wiring](/general-appendixes#wiring)
+* [Crimping connectors](/general-appendixes#crimping-connectors)
+* [Soldering connectors](/general-appendixes#soldering-connectors)
+* [Using two steppers motor on a single driver](/general-appendixes#using-two-steppers-motor-on-a-single-driver)
+* [Doubling stepper motor drivers](/general-appendixes#doubling-stepper-motor-drivers)
+* [External Stepper Drivers](/general-appendixes#external-stepper-drivers)
+* [Solid State Relays](/general-appendixes#solid-state-relays)
+* [Swapping stepper motor drivers](/general-appendixes#swapping-stepper-motor-drivers)
+* [Which pins are which](/general-appendixes#which-pins-are-which)
+* [Protecting a power input with a fuse](/general-appendixes#protecting-a-power-input-with-a-fuse)
 
 ### Pick and Place Specific Notes
 
 Pick and Place machines typically require:
 
-- **Fast acceleration**: Configure your acceleration values higher than typical CNC machines for quick pick and place operations
-- **Precise positioning**: Ensure your steps per millimeter are accurately calibrated
-- **Multiple axes**: Many Pick and Place machines have 4+ axes (X, Y, Z, and rotation)
-- **Vision systems**: Most modern machines integrate cameras for component and fiducial recognition
+- Fast acceleration: Configure your acceleration values higher than typical CNC machines for quick pick and place operations
+- Precise positioning: Ensure your steps per millimeter are accurately calibrated
+- Multiple axes: Many Pick and Place machines have 4+ axes (X, Y, Z, and rotation)
+- Vision systems: Most modern machines integrate cameras for component and fiducial recognition
 
 ### OpenPNP Integration
 
@@ -246,13 +274,13 @@ Key integration points:
 - Set up your vacuum sensing through M-codes
 - Calibrate your cameras and nozzle offsets
 
-## Troubleshooting
+### Troubleshooting
 
 If you run into trouble, something doesn't work as it should, head over to the [Troubleshooting](troubleshooting) page for a list of common problems and means of diagnosis.
 
 You can also contact the [Community](/irc) for help if you can't find an answer in the documentation.
 
-### Pick and Place Specific Issues
+#### Pick and Place Specific Issues
 
 **Components not picking up:**
 - Check vacuum pressure with sensors
@@ -272,6 +300,6 @@ You can also contact the [Community](/irc) for help if you can't find an answer 
 - Check for mechanical binding
 - Ensure proper motor cooling
 
-# Software
+## Software
 
 See the comprehensive [Software Compatibility List](software) for all software that works with Smoothieware.

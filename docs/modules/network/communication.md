@@ -1,9 +1,11 @@
 ---
+title: "Communication"
 permalink: /communication
 ---
 
-
-# Communication Modules
+{::nomarkdown}
+<span id="communication-modules"></span>
+{:/nomarkdown}
 
 Communication modules are modules used to represent/control ways of communication between the Smoothieboard and the rest of the world.
 

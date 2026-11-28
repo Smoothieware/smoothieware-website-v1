@@ -1,4 +1,5 @@
 ---
+title: "bCNC"
 permalink: /bcnc
 ---
 

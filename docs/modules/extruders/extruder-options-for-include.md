@@ -1,5 +1,4 @@
 
-
 <!-- learning-diagram:48-extruder-options -->
 {::nomarkdown}
 <figure id="learning-diagram-48-extruder-options" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">
@@ -34,7 +33,7 @@
             <td class="description-cell">
                 <p>Number of stepper motor steps required to move one millimeter of filament through the extruder — a critical calibration value.</p>
                 <p>Depends on your stepper motor steps/revolution (typically 200 for 1.8° motors), microstepping setting (e.g. 16x = 3200 steps/rev), and your extruder gear ratio/hobbed bolt diameter. Calculate as: <raw>(motor_steps_per_rev × microstepping) / (hobbed_bolt_circumference × gear_ratio)</raw>. Example: <raw>(200 × 16) / (3.14159 × 7mm × 1) ≈ 145 steps/mm</raw>.</p>
-                <p>Fine-tune by extruding a known length and measuring actual extrusion. Can be adjusted at runtime with <mcode>M92 E&lt;value&gt;</mcode> and saved with <mcode>M500</mcode>. [Learn more](extruder.md#steps_per_millimeter)</p>
+                <p>Fine-tune by extruding a known length and measuring actual extrusion. Can be adjusted at runtime with <mcode>M92 E&lt;value&gt;</mcode> and saved with <mcode>M500</mcode>. <a href="/extruder#steps-per-millimeter">Learn more</a></p>
             </td>
         </tr>
         <tr>
@@ -46,7 +45,7 @@
                     <li>Standard values: <raw>1.75mm</raw> or <raw>3.0mm</raw> (2.85mm)</li>
                     <li><raw>0</raw>: disables volumetric extrusion, using standard linear E values</li>
                 </ul>
-                <p>Can be changed at runtime with <mcode>M200 D&lt;diameter&gt;</mcode> (e.g., <mcode>M200 D1.75</mcode>) or disabled with <mcode>M200 D0</mcode>. Useful when switching between different filament sizes or when your slicer outputs volumetric E values. [Learn more](extruder.md#filament-diameter)</p>
+                <p>Can be changed at runtime with <mcode>M200 D&lt;diameter&gt;</mcode> (e.g., <mcode>M200 D1.75</mcode>) or disabled with <mcode>M200 D0</mcode>. Useful when switching between different filament sizes or when your slicer outputs volumetric E values. <a href="/extruder#filament-diameter">Learn more</a></p>
             </td>
         </tr>
         <tr>
@@ -132,7 +131,7 @@
                 <ul>
                     <li>Typical values: <raw>0.5-2mm</raw> for direct drive, <raw>4-7mm</raw> for Bowden</li>
                 </ul>
-                <p>Too little retraction causes stringing; too much can cause clogs or air gaps. The total retract amount includes this length plus <setting no-version v1="extruder.hotend.retract_recover_length"></setting> (if negative). Can be changed at runtime with <mcode>M207 S&lt;length&gt;</mcode> (e.g., <mcode>M207 S1.5</mcode>). Many slicers can use firmware retraction instead of generating explicit E moves. [Learn more about retraction](extruder.md#retract)</p>
+                <p>Too little retraction causes stringing; too much can cause clogs or air gaps. The total retract amount includes this length plus <setting no-version v1="extruder.hotend.retract_recover_length"></setting> (if negative). Can be changed at runtime with <mcode>M207 S&lt;length&gt;</mcode> (e.g., <mcode>M207 S1.5</mcode>). Many slicers can use firmware retraction instead of generating explicit E moves. <a href="/extruder#firmware-retract">Learn more about retraction</a></p>
             </td>
         </tr>
         <tr>

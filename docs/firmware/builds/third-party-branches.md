@@ -1,10 +1,11 @@
 ---
+title: "Third party branches"
 permalink: /third-party-branches
 ---
 
-# Third Party Branches
-
-
+{::nomarkdown}
+<span id="third-party-branches"></span>
+{:/nomarkdown}
 
 This page lists community-maintained branches and forks of Smoothie firmware that provide additional features or optimizations for specific use cases.
 
@@ -36,8 +37,6 @@ V2 has a significantly different codebase and architecture. If you're looking fo
 </sl-alert>
 {:/nomarkdown}
 
-
-
 ## Available Branches
 
 - [Simulated annealing](https://github.com/626Pilot/Smoothieware): Simulated annealing (AI) auto-calibration for Deltas, plus depth-map Z correction & probe calibration ([discussion](http://forum.seemecnc.com/viewtopic.php?f=82&t=7640&p=62978)).
@@ -56,8 +55,6 @@ V2 has a significantly different codebase and architecture. If you're looking fo
 - [OpenPNP branch](https://github.com/markmaker/Smoothieware/tree/feature/best-for-pnp): A [branch by Mark Maker](https://makr.zone/smoothieware-new-firmware-for-pnp/500/) with features specific for OpenPNP, recommended by the OpenPNP project to be able to use it to the fullest extent.
 
 ## Using a Third-Party Branch in Your Machine
-
-
 
 {::nomarkdown}
 <versioned>
@@ -81,8 +78,6 @@ V2 has a significantly different codebase and architecture. If you're looking fo
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -123,8 +118,6 @@ Here is for example how you would check out the pull request for the jogger feat
 git checkout -b skaterzero807-feature/Jogger edge
 git pull git://github.com/skaterzero807/Smoothieware.git feature/Jogger
 ```
-
-
 
 ## Ports to other platforms or MCU
 
@@ -175,8 +168,6 @@ These are community ports of Smoothieware **V1** to other hardware. They are **n
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 ## Ports of other firmwares to Smoothieboard
 

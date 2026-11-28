@@ -1,9 +1,11 @@
 ---
+title: "Temperature switch"
 permalink: /temperatureswitch
 ---
 
-
-# TemperatureSwitch
+{::nomarkdown}
+<span id="temperatureswitch"></span>
+{:/nomarkdown}
 
 TemperatureSwitch is an optional module that automatically controls an output (typically to control one of the small MOSFETs) through a [Switch](switch) module, based on a configurable threshold temperature.
 
@@ -14,8 +16,6 @@ Simply, TemperatureSwitch turns on/off the `switch.xxx` where `xxx` is the user-
 If the printer has multiple hot ends, TemperatureSwitch will monitor all of them and if any one goes over the threshold, will turn on the switch. It will only turn the switch off if all of them are below the threshold temperature.
 
 Since hot ends heat up relatively quickly and cool off slowly, the polling interval for heatup and cooldown are independently configurable in the [configuration file](configuring-smoothie). This is done to minimize processor load during printing.
-
-
 
 Here's a description of the configurable parameters:
 
@@ -158,8 +158,6 @@ psu_off.start_armed = false             # NEW IN V2: starts disarmed, must be ar
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 ## All options
 

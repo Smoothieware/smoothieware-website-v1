@@ -1,8 +1,11 @@
 ---
+title: "Lpc4337 pin usage"
 permalink: /lpc4337-pin-usage
 ---
 
-# LPC4337 Pin Usage
+{::nomarkdown}
+<span id="lpc4337-pin-usage"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>

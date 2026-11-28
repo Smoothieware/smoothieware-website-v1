@@ -1,4 +1,5 @@
 ---
+title: "Spindle control"
 permalink: /spindle-control
 ---
 

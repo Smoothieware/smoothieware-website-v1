@@ -9,7 +9,7 @@ title: Forth on Smoothieboard V2 (Experimental)
 </sl-alert>
 {:/nomarkdown}
 
-# Forth on Smoothieboard V2
+## Forth on Smoothieboard V2
 
 Forth lets you write and run small programs on the board. You can define a function, try it from a terminal, change it, and try again without rebuilding the C++ firmware. Mecrisp-Stellaris, the Forth implementation used here, compiles your definitions into machine code on the board.
 
@@ -17,9 +17,9 @@ Smoothie keeps running on the M7 core. Your Forth program runs on the M4 core an
 
 This walkthrough covers the branch at commit [`c87dac5c`](https://github.com/wolfmanjm/SmoothieV2/tree/c87dac5c9c37a52bedd96c25c044074548ad7390), checked on 2026-10-03. It does not apply to Smoothieboard V1 or to the single-core STM32H743.
 
-## Get and flash the Forth branch
+### Get and flash the Forth branch
 
-### 1. Build the Smoothie firmware
+#### 1. Build the Smoothie firmware
 
 Use Linux, Ruby/Rake, and the ARM GCC toolchain described in the branch's [build instructions](https://github.com/wolfmanjm/SmoothieV2/blob/add/forth/README.md). GCC 10.3.1 is the tested version. Set `ARMTOOLS` to your toolchain's `bin` directory if it is not in the default location.
 
@@ -33,13 +33,13 @@ nice -n 10 ionice -c 2 -n 7 rake target=Prime -m
 
 The output is `smoothiev2_Prime/smoothiev2.bin`. This is the Smoothie firmware with the Forth communications module. The M4 Forth kernel is a separate file, installed in step 3.
 
-### 2. Install the Smoothie firmware
+#### 2. Install the Smoothie firmware
 
 On a board already running Smoothie V2, copy the new `smoothiev2.bin` to the SD card as `flashme.bin`. Safely eject the card or its USB mass-storage mount, then reboot the board. Smoothie flashes that image on boot when `flash_on_boot` is enabled, which is the default.
 
 Keep your working firmware and configuration available while testing this branch. For initial programming or recovery, follow the branch's [firmware flashing instructions](https://github.com/wolfmanjm/SmoothieV2/blob/add/forth/Firmware/README.md) or the [flashing guide](flashing-smoothie).
 
-### 3. Enable Forth and install the M4 kernel
+#### 3. Enable Forth and install the M4 kernel
 
 Copy `tools/forth/forth-cm4.bin` from the same branch to the root of the SD card. Add this section to `config.ini`:
 
@@ -68,7 +68,7 @@ Confirm that the flash command reports `Flashing ok`. This command installs the 
 
 If Smoothie does not recognize `fth`, check that you installed the Forth branch and enabled `[forthcomms]` before proceeding.
 
-## Connect to Forth
+### Connect to Forth
 
 Open a USB serial terminal, preferably on the second USB serial port. On Linux this might be `/dev/ttyACM1`; check which device belongs to your board rather than assuming that number.
 
@@ -84,9 +84,9 @@ Turn off local echo in your terminal: Forth echoes the characters itself. In pic
 
 Press **Ctrl-D** to leave the Forth terminal and return to the Smoothie console. Leaving the terminal does not itself stop a program already running on the M4.
 
-## Your first Forth words
+### Your first Forth words
 
-### Calculate with the stack
+#### Calculate with the stack
 
 Forth keeps values on a stack. You put values on it, then call an operation that takes those values and leaves a result. The operator comes after its arguments:
 
@@ -118,7 +118,7 @@ Some useful stack words are:
 
 For example, `7 dup * .` prints `49`: `dup` gives the multiplication two copies of `7`.
 
-### Define a function
+#### Define a function
 
 Forth calls named operations **words**. Define your own with `:` and `;`:
 
@@ -139,7 +139,7 @@ Define another word using the first:
 
 This prints `25`. You can combine words into larger routines without rebuilding Smoothie.
 
-### Make a decision
+#### Make a decision
 
 Put conditionals inside a word definition:
 
@@ -158,7 +158,7 @@ Put conditionals inside a word definition:
 
 `0 <` tests whether the supplied number is less than zero. `if` consumes that result. `."` prints the following string, and `cr` prints a newline.
 
-### Repeat an operation
+#### Repeat an operation
 
 ```forth
 : count-ten ( -- )
@@ -173,7 +173,7 @@ count-ten
 
 The loop takes its limit first and its starting index second. It prints `0` through `9`; `i` gives you the current loop index.
 
-### Keep a value between calls
+#### Keep a value between calls
 
 ```forth
 0 variable counter
@@ -190,7 +190,7 @@ This prints `2`. A variable word leaves the address of its value on the stack. `
 
 The counter value lives in RAM; it is not a persistent setting.
 
-## Work with Forth source files
+### Work with Forth source files
 
 Keep longer programs in `.fs` files on your computer. Jim's [forth-console](https://github.com/wolfmanjm/forth-console) provides editing, command history, filename completion, and uploads. Its README lists the available binaries and build instructions.
 
@@ -214,7 +214,7 @@ The host console processes `#require` and `#include` directives to upload depend
 
 In forth-console, Ctrl-D quits the host program. Use its `\br` command to send Ctrl-D to the board and return the board connection to Smoothie mode.
 
-## Save definitions across resets
+### Save definitions across resets
 
 Once you have tested a word in RAM, Mecrisp can compile a definition to flash:
 
@@ -228,7 +228,7 @@ Switching back to `compiletoram` keeps later experiments in RAM. Flash definitio
 
 Follow the [Mecrisp documentation](https://mecrisp-stellaris-folkdoc.sourceforge.io/) for dictionary management and startup hooks. The M4 port notes describe QSPI dictionary storage as a plan, so do not assume this branch saves programs to QSPI or loads `.fs` files from the SD card on boot.
 
-## Read inputs and control outputs
+### Read inputs and control outputs
 
 Forth can access STM32 peripheral registers. The branch includes [`gpio-simple.fs`](https://github.com/wolfmanjm/SmoothieV2/blob/add/forth/tools/forth/examples/gpio-simple.fs), and Jim's [Forth hardware libraries](https://github.com/wolfmanjm/forth4stm32h745) include register definitions, GPIO, SPI, and display code. Some examples need files from that library repository.
 
@@ -260,7 +260,7 @@ You can combine the operations into a word:
 
 Calling `copy-input` copies the input state to the output once. Add control flow to build your own input-processing routine after testing each operation.
 
-## Probing routines
+### Probing routines
 
 Forth's probing feature lets you describe a sequence on the board: approach a surface, request a probe move, inspect the result, calculate an offset, and repeat at another location. Loops and conditionals allow routines that go beyond a fixed list of G-code lines.
 
@@ -268,7 +268,7 @@ Forth's probing feature lets you describe a sequence on the board: approach a su
 
 Use the [Z-probe module](zprobe) and [G-code reference](supported-g-codes) to establish the machine's probing behavior first. When adapting a Forth routine, keep a failed probe from continuing into later moves or offset changes.
 
-## Canned moves and machine macros
+### Canned moves and machine macros
 
 You can use Forth words to organize parking, repeated positioning, or another machine-specific sequence. For example, a parking macro can retract Z, wait for that move, then move X and Y to a known parking position. You can calculate positions and choose a path based on the program's state.
 
@@ -276,7 +276,7 @@ You can use Forth words to organize parking, repeated positioning, or another ma
 
 For fixed G-code sequences available in ordinary V2 firmware, see [O-word subroutines](subroutines).
 
-## Run a routine from a button
+### Run a routine from a button
 
 The button-triggered scripting feature combines Smoothie's [Switch module](switch) with a named Forth routine. A physical button can then request a probing or parking macro without a computer sending each step.
 
@@ -284,7 +284,7 @@ The button-triggered scripting feature combines Smoothie's [Switch module](switc
 
 An alternative is to read a spare button input from a Forth program using GPIO. That avoids the missing shell command, but machine movement still needs the Forth-to-Smoothie G-code interface. Add debouncing and release detection so holding the button does not start the routine repeatedly.
 
-## Troubleshooting
+### Troubleshooting
 
 | Symptom | Check |
 |---------|-------|
@@ -295,7 +295,7 @@ An alternative is to read a spare button input from a Forth program using GPIO. 
 | `fth run`, `load`, or `reset` reports an unknown subcommand | The checked handler has not implemented these advertised commands |
 | An example needs a missing `.fs` dependency | Obtain the dependency from the matching Forth hardware libraries and use a host console that processes `#require` |
 
-## Sources and further reading
+### Sources and further reading
 
 - [Forth branch README](https://github.com/wolfmanjm/SmoothieV2/blob/c87dac5c9c37a52bedd96c25c044074548ad7390/FORTH-README.md): installation and intended scripting features.
 - [Forth communications module](https://github.com/wolfmanjm/SmoothieV2/blob/c87dac5c9c37a52bedd96c25c044074548ad7390/Firmware/src/modules/utils/forth_cm4/ForthComms.cpp): configuration, USB terminal, M4 startup, and command implementation.

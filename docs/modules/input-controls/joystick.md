@@ -1,10 +1,11 @@
 ---
+title: "Joystick"
 permalink: /joystick
 ---
 
-
-
-# Joystick Module
+{::nomarkdown}
+<span id="joystick-module"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/temporary/joystick-generic.jpg">
@@ -258,8 +259,6 @@ start_value = 0
 ### Jogging 
 <a name='Jogging'></a>
 
-
-
 To use the joystick for jogging, configure two different modules with two different names. For example, one module will be called "horizontal" and the other "vertical". An example config file for the joystick is shown below:
 
 {::nomarkdown}
@@ -339,16 +338,12 @@ data_source_beta = vertical
 </versioned>
 {:/nomarkdown}
 
-
-
 These options tell the jogger the names of the joystick modules to read when jogging.
 
 <sl-alert variant="success" open>
   <sl-icon slot="icon" name="check-circle"></sl-icon>
   You're all set! For more jogging configuration options, see <a href="jogger">Jogger</a>.
 </sl-alert>
-
-
 
 ### Feed Rate Override
 <a name='fro'></a>
@@ -383,7 +378,7 @@ feedoverride.data_source                       fro
 
 <sl-alert variant="success" open>
   <sl-icon slot="icon" name="check-circle"></sl-icon>
-  You're all set! For more feed-rate override configuration options, see <a href="feed-rate-override">Feed Rate Override</a>.
+  You're all set! For more feed-rate override configuration options, see Feed Rate Override.
 </sl-alert>
 
 {::nomarkdown}
@@ -416,8 +411,6 @@ data_source = fro
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 ## Developer Documentation
 For information on how to write your own module which uses a joystick, see the [joystick developer documentation](joystick-dev).

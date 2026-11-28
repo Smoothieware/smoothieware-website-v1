@@ -1,8 +1,11 @@
 ---
+title: "Voltage regulator"
 permalink: /voltageregulator
 ---
 
-# Voltage Regulator
+{::nomarkdown}
+<span id="voltage-regulator"></span>
+{:/nomarkdown}
 
 A voltage regulator normally takes a higher voltage and transforms it into a lower voltage.
 

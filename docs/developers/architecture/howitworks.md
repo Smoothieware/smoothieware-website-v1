@@ -1,4 +1,5 @@
 ---
+title: "How it works"
 permalink: /howitworks
 ---
 
@@ -10,7 +11,7 @@ permalink: /howitworks
 </sl-alert>
 {:/nomarkdown}
 
-# Basics
+## Basics
 
 {::nomarkdown}
 <a href="/images/board.png">
@@ -19,8 +20,6 @@ permalink: /howitworks
 {:/nomarkdown}
 
 **In its most basic form, the job of Smoothie is to receive [G-code](http://en.wikipedia.org/wiki/G-code) commands and translate those into actual movement for a robot.**
-
-
 
 This is done in several steps:
 
@@ -58,15 +57,13 @@ The V2 firmware follows a similar conceptual flow: serial input is parsed into G
 
 Now let's get into more detail for each part:
 
-## GcodeDispatch
+### GcodeDispatch
 
 {::nomarkdown}
 <a href="/images/binary-code.png">
   <img src="/images/binary-code.png" alt="GcodeDispatch" style="width: 240px; float: right; margin: 0 0 1rem 1rem;"/>
 </a>
 {:/nomarkdown}
-
-
 
 {::nomarkdown}
 <versioned>
@@ -92,15 +89,13 @@ In V2, the G-code dispatch system follows a similar pattern: serial input is par
 
 {:/nomarkdown}
 
-## Robot
+### Robot
 
 {::nomarkdown}
 <a href="/images/howitworks6249350092_9ddb8439d8_z.jpg">
   <img src="/images/howitworks6249350092_9ddb8439d8_z.jpg" alt="Robot" style="min-width: 640px; min-height: 400px; width: 100%; max-width: 800px; height: auto; display: block; margin: 2rem auto;"/>
 </a>
 {:/nomarkdown}
-
-
 
 {::nomarkdown}
 <versioned>
@@ -130,15 +125,13 @@ In V2, the robot/planner module similarly handles movement G-codes and coordinat
 
 {:/nomarkdown}
 
-## Planner
+### Planner
 
 {::nomarkdown}
 <a href="/images/circuit.png">
   <img src="/images/circuit.png" alt="Planner" style="width: 240px; float: right; margin: 0 0 1rem 1rem;"/>
 </a>
 {:/nomarkdown}
-
-
 
 {::nomarkdown}
 <versioned>
@@ -174,15 +167,13 @@ In V2, the planner performs similar functions: it receives line segments, comput
 
 {:/nomarkdown}
 
-## Stepper
+### Stepper
 
 {::nomarkdown}
 <a href="/images/coding.png">
   <img src="/images/coding.png" alt="Stepper" style="width: 240px; float: right; margin: 0 0 1rem 1rem;"/>
 </a>
 {:/nomarkdown}
-
-
 
 {::nomarkdown}
 <versioned>

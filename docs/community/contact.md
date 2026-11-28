@@ -1,8 +1,11 @@
 ---
+title: "Contact"
 permalink: /contact
 ---
 
-# Contact
+{::nomarkdown}
+<span id="contact"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/hashtag.png">

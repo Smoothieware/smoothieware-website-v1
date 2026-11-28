@@ -4,7 +4,9 @@ layout: default
 title: Developers Guide
 ---
 
-# Developers Guide
+{::nomarkdown}
+<span id="developers-guide"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/coding.png">
@@ -12,7 +14,14 @@ title: Developers Guide
 </a>
 {:/nomarkdown}
 
-{% include developers/contributing-for-include.md %}
+Smoothie is a community effort, and any help is very welcome.
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="book"></sl-icon>
+  <strong>Learn more:</strong> <a href="/contributing">How to contribute</a>
+</sl-alert>
+{:/nomarkdown}
 
 This page contains information you need to know when coding for Smoothie.
 
@@ -21,8 +30,6 @@ It covers the configuration system, coding standards, and how to submit contribu
 ## How to submit a pull request to the Smoothieware Github project
 
 See the [Github](github) page for detailed instructions on submitting pull requests.
-
-
 
 ## Configuration and Module Development
 
@@ -264,5 +271,3 @@ No special methods required - defaults are simple Python function arguments.
 </v2>
 </versioned>
 {:/nomarkdown}
-
-

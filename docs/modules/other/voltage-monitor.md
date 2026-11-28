@@ -3,7 +3,9 @@ permalink: /voltage-monitor
 title: Voltage Monitor
 ---
 
-# Voltage Monitor
+{::nomarkdown}
+<span id="voltage-monitor"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <versioned orientation="vertical">

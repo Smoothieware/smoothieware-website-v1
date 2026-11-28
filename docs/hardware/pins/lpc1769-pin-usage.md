@@ -1,9 +1,11 @@
 ---
+title: "Lpc1769 pin usage"
 permalink: /lpc1769-pin-usage
 ---
 
-
-# LPC1769 Pin Usage
+{::nomarkdown}
+<span id="lpc1769-pin-usage"></span>
+{:/nomarkdown}
 
 This page documents all pin assignments for the LPC1769 microcontroller on Smoothieboard.
 
@@ -416,7 +418,7 @@ V2 Prime uses the STM32H745 ADC mapping; see [STM32H7 pin usage](/stm32h7-pin-us
 
 ## Pinout
 
-{% include hardware/pins/pinout-for-include.md %}
+{% include _includes/chapter.md file="hardware/pins/pinout-for-include.md" anchor="pinout" %}
 
 {::nomarkdown}
 </v1>

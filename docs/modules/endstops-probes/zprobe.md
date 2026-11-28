@@ -1,9 +1,11 @@
 ---
+title: "Z-probe"
 permalink: /zprobe
 ---
 
-
-# Probing with Smoothie
+{::nomarkdown}
+<span id="probing-with-smoothie"></span>
+{:/nomarkdown}
 
 <!-- learning-diagram:26-zprobe-role-choice -->
 {::nomarkdown}
@@ -14,9 +16,6 @@ permalink: /zprobe
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Configure the sensor as a probe or an endstop <a href="#learning-diagram-26-zprobe-role-choice" aria-label="Permanent link to Configure the sensor as a probe or an endstop" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-
-
-
 
 A probe is a switch (much like an Endstop) used to find where something is located automatically.
 
@@ -32,8 +31,8 @@ It can be used on 3D printers to:
 - Do grid-based bed leveling to compensate for bed height irregularities
 
 Different strategies are useful for different geometries of machines, click on one to go to it:
-- For [Delta](delta) machines, you can do [grid leveling](#delta-grid) **and** [calibration](#delta-calibration)
-- For [Cartesian](cartesian) machines, you can do [grid leveling](#rectangular-grid-compensation) **or** [three-point leveling](#three-point)
+- For [Delta](delta) machines, you can do [grid leveling](#delta-grid-compensation) **and** [calibration](#delta-calibration)
+- For [Cartesian](cartesian) machines, you can do [grid leveling](/rectangular-grid-calibration-options) **or** [three-point leveling](/three-point-strategy-options)
 
 <strong>NOTE:</strong> When {::nomarkdown}<gcode>G30</gcode>{:/nomarkdown} stores the probe position or prints out the value, it is in actuator units not necessarily in mm. This is only an issue for rotary deltas where the actuator units are degrees not mm. Most other configurations it will be mm.
 
@@ -70,11 +69,9 @@ The point is you configure your sensor as <em>either</em> a probe or an endstop,
 
 ## Types of probes
 
-{% include modules/temperature/sensor-types-for-include.md %}
+{% include _includes/chapter.md file="modules/temperature/sensor-types-for-include.md" %}
 
 ## Configuration
-
-
 
 Add the following to the config file:
 
@@ -181,9 +178,9 @@ There are several {::nomarkdown}<mcode>M670</mcode>{:/nomarkdown} parameters tha
 
 {% include modules/endstops-probes/zprobe-options-for-include.md %}
 
-# Probing for linear delta machines
+## Probing for linear delta machines
 
-## Delta calibration
+### Delta calibration
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -193,8 +190,6 @@ There are several {::nomarkdown}<mcode>M670</mcode>{:/nomarkdown} parameters tha
 {:/nomarkdown}
 
 Make sure the config has `delta_homing` true set and that `zprobe.max_z` is set to about 20-30mm shorter than the distance to the bed, otherwise it will crash into the bed at high speed.
-
-
 
 Also in the config set:
 
@@ -230,8 +225,6 @@ initial_height = 10      # height above bed to stop initial move
 </versioned>
 {:/nomarkdown}
 
-
-
 {::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
@@ -239,7 +232,7 @@ initial_height = 10      # height above bed to stop initial move
 </sl-alert>
 {:/nomarkdown}
 
-### Calibration routine
+#### Calibration routine
 
 Issuing the {::nomarkdown}<gcode>G32</gcode>{:/nomarkdown} command will run the full calibration sequence automatically.
 
@@ -253,11 +246,11 @@ Then it will probe the three towers at the specified `leveling-strategy.delta-ca
 
 It will also adjust the delta radius ({::nomarkdown}<mcode>M665</mcode>{:/nomarkdown} Rnnn) to get the center the same height as the outside points.
 
-### Configuration options
+#### Configuration options
 
 {% include modules/leveling/delta-calibration-strategy-options-for-include.md %}
 
-### Example configuration
+#### Example configuration
 
 To activate this leveling strategy, copy/paste the following to your [configuration file](configuring-smoothie) and edit it accordingly:
 
@@ -271,7 +264,7 @@ leveling-strategy.delta-calibration.initial_height        10        # The initia
                                                                     # will not hit the bed
 ```
 
-### Uses
+#### Uses
 
 These are the different ways to use the calibration routine:
 
@@ -329,7 +322,7 @@ See [http://minow.blogspot.com/](http://minow.blogspot.com/) for more details of
 
 Nothing is perfect
 
-## Delta Grid Compensation
+### Delta Grid Compensation
 
 Probes delta_grid.size points in X and Y (total probes size * size) and stores the relative offsets from the 0,0 Z height.
 When enabled every move will calculate the Z offset based on interpolating the height offset within the grids nearest 4 points.
@@ -352,9 +345,7 @@ First calibrate with {::nomarkdown}<gcode>G32</gcode>{:/nomarkdown} then if need
 </sl-alert>
 {:/nomarkdown}
 
-### Configuration
-
-
+#### Configuration
 
 The strategy must be enabled in the config as well as zprobe.
 
@@ -420,8 +411,6 @@ do_home = false
 </versioned>
 {:/nomarkdown}
 
-
-
 {::nomarkdown}
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
@@ -465,13 +454,11 @@ Optionally an initial_height can be set that tell the initial probe where to sto
 leveling-strategy.delta-grid.initial_height  10
 ```
 
-### Configuration options
+#### Configuration options
 
 {% include modules/leveling/delta-grid-calibration-options-for-include.md %}
 
-
-
-### Example configuration
+#### Example configuration
 
 To activate this leveling strategy, copy/paste the following to your [configuration file](configuring-smoothie) and edit it accordingly:
 
@@ -519,8 +506,6 @@ initial_height = 10         # Optionally an initial_height can be set that tell 
 </versioned>
 {:/nomarkdown}
 
-
-
-### Usage
+#### Usage
 
 | <gcode>G29</gcode> | test probes in a grid pattern within the radius producing a map of offsets, this can be imported into a graphing program to visualize the bed (

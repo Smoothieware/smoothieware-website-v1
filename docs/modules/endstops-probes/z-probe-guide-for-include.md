@@ -1,4 +1,6 @@
-# Z-Probe Guide
+{::nomarkdown}
+<span id="z-probe-guide"></span>
+{:/nomarkdown}
 
 <!-- learning-diagram:27-zprobe-guide-offset -->
 {::nomarkdown}
@@ -9,9 +11,6 @@
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">The probe and nozzle touch different points <a href="#learning-diagram-27-zprobe-guide-offset" aria-label="Permanent link to The probe and nozzle touch different points" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-
-
-
 
 Smoothie allows you to use a probe to do a variety of tasks that improve precision and automation in your CNC operations.
 
@@ -31,8 +30,8 @@ Calibrate machine geometry, particularly important for [delta machines](delta) w
 
 Automatically level un-even or non-level surfaces using either:
 
-- **Grid method** - Probes multiple points across the surface to create a height map
-- **Three-point method** - Probes three points to determine the plane of the surface
+- Grid method - Probes multiple points across the surface to create a height map
+- Three-point method - Probes three points to determine the plane of the surface
 
 ### Tool Height Detection
 
@@ -52,10 +51,10 @@ Automatically detect tool lengths when using multiple tools or when tools are ch
 
 Common probe types include:
 
-- **Touch probes** - Physical contact sensors
-- **Inductive probes** - Detect metal surfaces without contact
-- **Capacitive probes** - Can detect various materials
-- **BLTouch/servo probes** - Deployable mechanical probes
+- Touch probes - Physical contact sensors
+- Inductive probes - Detect metal surfaces without contact
+- Capacitive probes - Can detect various materials
+- BLTouch/servo probes - Deployable mechanical probes
 
 ## Getting Started
 

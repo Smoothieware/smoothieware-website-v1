@@ -1,24 +1,28 @@
 ---
+title: "SmoothiePanel"
 permalink: /smoothiepanel
 ---
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
 {:/nomarkdown}
+
 Historical SmoothiePanel documentation for V1 hardware.
+
 {::nomarkdown}
 </v1>
 <v2>
 {:/nomarkdown}
+
 For V2 display options, see the [panel documentation](/panel).
+
 {::nomarkdown}
 </v2>
 </versioned>
 {:/nomarkdown}
 
-# SmoothiePanel
+## SmoothiePanel
 
 SmoothiePanel is an [Open Source Hardware](http://en.wikipedia.org/wiki/Open-source_hardware) control interface for industrial robotic machinery.
 
@@ -28,7 +32,7 @@ The current design brings a graphic LCD with RGB Backlight and changeable interf
 
 It is intended to control a [Smoothieboard](smoothieboard) ([GPL](http://en.wikipedia.org/wiki/Gpl) too), though could easily be connected to almost any logic control system or even run stand-alone.
 
-## A bit of History
+### A bit of History
 
 The [original plan to use an ARM Cortex-M0 MCU](smoothiepanelalpha) has been brought back out and dusted off because the open source tool-chain is ready.
 
@@ -44,7 +48,7 @@ It still has the Nunchuck port of course but has also gone back to the original 
 
 There was then a Delta design that fixed a couple hardware bugs in the Gamma design and added the character LCD footprint back in.
 
-## Current Prototype - Proto5 (Epsilon)
+### Current Prototype - Proto5 (Epsilon)
 
 Having gone through all those designs and having implemented a mostly working firmware for the Gamma/Delta series, I am forced to accept that the M0 chip is just not capable of providing the full ease-of-use feature set that we have come to expect from using Smoothieboard.
 
@@ -56,7 +60,7 @@ This is going to add so much to the system it's almost silly.
 
 And otherwise I have managed to retain all previous design goals and the basic form factor of the previous two protos.
 
-### Benefits of the new Cortex-M3 migration
+#### Benefits of the new Cortex-M3 migration
 
 **Smoothie config**: The Smoothiepanel will be able to read its configuration from the Smoothieboard and dynamically configure itself for use at runtime.
 
@@ -74,7 +78,7 @@ Plus it saves on RAM and resource use on the motion controller itself which no l
 
 Just put a Classic Interface Panel on the front and a pair of 2xStepperDriver wings on the back and you would have everything you need to control a simple single extruder 3D printer.
 
-### Preview
+#### Preview
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -87,7 +91,7 @@ Proto5 (Epsilon) PCBs should be in any day now.
 
 In the meantime, the missing image would have shown Proto4 (Delta) sporting a Classic Interface Wing.
 
-## Status
+### Status
 
 The current status of this board is prototyping: I'm now on the 5th prototype of the board.
 
@@ -95,7 +99,7 @@ Software side of the new platform is going to be made extra easy because it will
 
 All the low level stuff is done!
 
-## Getting one
+### Getting one
 
 I am going to make more of the latest Epsilon proto board than I usually do, and I would like some community involvement at this stage.
 

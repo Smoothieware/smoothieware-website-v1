@@ -1,5 +1,7 @@
 
-# Panel Guide
+{::nomarkdown}
+<span id="panel-guide"></span>
+{:/nomarkdown}
 
 A panel is the combination of a screen and some kind of input method (buttons, encoder, touchscreen) attached to the machine.
 
@@ -9,12 +11,12 @@ This allows you to control your machine without a computer connection.
 
 With a panel connected to your Smoothieboard, you can:
 
-- **Move the machine**: Jog axes to position your tool or workpiece
-- **Start print jobs**: Browse and execute files from the SD card
-- **Monitor status**: View temperatures, positions, and progress
-- **Adjust settings**: Change feed rates, temperatures, and other parameters
-- **Emergency stop**: Quickly halt the machine if needed
-- **Control accessories**: Turn fans, lights, and other devices on/off
+- Move the machine: Jog axes to position your tool or workpiece
+- Start print jobs: Browse and execute files from the SD card
+- Monitor status: View temperatures, positions, and progress
+- Adjust settings: Change feed rates, temperatures, and other parameters
+- Emergency stop: Quickly halt the machine if needed
+- Control accessories: Turn fans, lights, and other devices on/off
 
 ## Supported Panel Types
 
@@ -42,10 +44,10 @@ Allows connection of various panel types using a standard interface.
 
 To use a panel with your Smoothieboard:
 
-1. **Choose your panel**: Select from the supported panel types above
-2. **Wire the panel**: Connect it to your Smoothieboard (see wiring guide for your specific panel)
-3. **Configure Smoothie**: Modify your config file to enable panel support
-4. **Test**: Power on and verify the panel displays correctly
+1. Choose your panel: Select from the supported panel types above
+2. Wire the panel: Connect it to your Smoothieboard (see wiring guide for your specific panel)
+3. Configure Smoothie: Modify your config file to enable panel support
+4. Test: Power on and verify the panel displays correctly
 
 ## Next Steps
 

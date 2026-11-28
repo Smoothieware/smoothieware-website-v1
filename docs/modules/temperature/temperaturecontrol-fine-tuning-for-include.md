@@ -1,5 +1,7 @@
 
-# Temperature Control Fine Tuning
+{::nomarkdown}
+<span id="temperature-control-fine-tuning"></span>
+{:/nomarkdown}
 
 This page provides tips for fine-tuning temperature control settings in Smoothie.
 
@@ -13,8 +15,6 @@ This page provides tips for fine-tuning temperature control settings in Smoothie
   If you are using a 12V heater on a 24V system, you need to limit the PWM duty cycle to prevent damage.
 </sl-alert>
 {:/nomarkdown}
-
-
 
 You need to set {::nomarkdown}<setting v1="temperature_control.{name}.max_pwm" v2="temperature control.max_pwm"></setting>{:/nomarkdown} to {::nomarkdown}<raw>64</raw>{:/nomarkdown}:
 
@@ -46,13 +46,9 @@ hotend.max_pwm = 64
 </versioned>
 {:/nomarkdown}
 
-
-
 ### Fixing Temperature Overshoot (10°C or More)
 
 If you are getting 10°C or more initial overshoot of temperature, you can set {::nomarkdown}<setting v1="temperature_control.{name}.i_max" v2="temperature control.i_max"></setting>{:/nomarkdown} to a lower value (default is {::nomarkdown}<setting v1="temperature_control.{name}.max_pwm" v2="temperature control.max_pwm"></setting>{:/nomarkdown}).
-
-
 
 {::nomarkdown}<raw>128</raw>{:/nomarkdown} seems to be a good value, but it can be tuned with {::nomarkdown}<mcode>M301</mcode>{:/nomarkdown} S0 Xnnn where {::nomarkdown}<raw>nnn</raw>{:/nomarkdown} is a number less than or equal to {::nomarkdown}<setting v1="temperature_control.{name}.max_pwm" v2="temperature control.max_pwm"></setting>{:/nomarkdown}:
 
@@ -84,8 +80,6 @@ hotend.i_max = 128
 </versioned>
 {:/nomarkdown}
 
-
-
 ### Setting Maximum Safe Temperature
 
 To avoid accidental setting of too high a temperature, you can set {::nomarkdown}<setting v1="temperature_control.{name}.max_temp" v2="temperature control.max_temp"></setting>{:/nomarkdown} to the maximum temp that is safe for the target heater.
@@ -93,8 +87,6 @@ To avoid accidental setting of too high a temperature, you can set {::nomarkdown
 This will ignore any setting of temperatures that are higher than this and instead set the temp to {::nomarkdown}<setting v1="temperature_control.{name}.max_temp" v2="temperature control.max_temp"></setting>{:/nomarkdown}.
 
 It will also trigger a shutdown if this temperature is exceeded.
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -124,12 +116,10 @@ hotend.max_temp = 230
 </versioned>
 {:/nomarkdown}
 
-
-
 ## Related Documentation
 
 For more information on temperature control, see:
 
 - [Temperature Control Module](temperaturecontrol) - Main temperature control documentation
-- [PID Tuning](pid-tuning) - Detailed PID tuning guide
+- [PID Tuning](/temperaturecontrol#pid-autotuning) - Detailed PID tuning guide
 - [Configuration Options](configuration-options) - All configuration options

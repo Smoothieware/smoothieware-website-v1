@@ -1,8 +1,11 @@
 ---
+title: "Basics"
 permalink: /basics
 ---
 
-# Smoothie basics
+{::nomarkdown}
+<span id="smoothie-basics"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
@@ -102,8 +105,8 @@ The Smoothieboard is the platform that Smoothie firmware runs on.
 
 ### Versions
 
-- **Smoothieboard v1** = LPC1769 processor, widely used, stable
-- **Smoothieboard v2** = STM32H745 processor, more powerful, newer
+- Smoothieboard v1 = LPC1769 processor, widely used, stable
+- Smoothieboard v2 = STM32H745 processor, more powerful, newer
 
 Both run Smoothie firmware, but the hardware capabilities differ. See [Smoothieboard](smoothieboards) for detailed hardware specifications.
 
@@ -165,9 +168,9 @@ M84           ; Disable motors
 
 You don't write G-code by hand (usually). CAM software generates it:
 
-- **3D printing**: Slicer software (Slic3r, Cura) converts STL → G-code
-- **Laser cutting**: CAM software (LightBurn) converts SVG/DXF → G-code
-- **CNC milling**: CAM software (Fusion360, CamBam) converts STL/DXF → G-code
+- 3D printing: Slicer software (Slic3r, Cura) converts STL → G-code
+- Laser cutting: CAM software (LightBurn) converts SVG/DXF → G-code
+- CNC milling: CAM software (Fusion360, CamBam) converts STL/DXF → G-code
 
 The CAM software figures out the optimal tool paths and outputs the G-code that makes it happen.
 
@@ -186,12 +189,12 @@ See [Supported G-codes](supported-g-codes) for the complete list of what Smoothi
 CNC machines work in a coordinate space:
 
 **Cartesian systems** (most common):
-- **X axis**: Typically left/right (horizontal)
-- **Y axis**: Typically front/back (horizontal, perpendicular to X)
-- **Z axis**: Typically up/down (vertical)
+- X axis: Typically left/right (horizontal)
+- Y axis: Typically front/back (horizontal, perpendicular to X)
+- Z axis: Typically up/down (vertical)
 
 **Additional axes**:
-- **A, B, C**: Rotational axes (advanced, not always present)
+- A, B, C: Rotational axes (advanced, not always present)
 - **E**: Extruder axis (3D printers)
 
 ### Origin and homing
@@ -259,8 +262,6 @@ Smoothie handles acceleration planning automatically - you just set the limits i
 </figure>
 {:/nomarkdown}
 
-
-
 Stepper motors move in discrete steps, not continuous rotation.
 
 **Steps per mm** tells Smoothie: "How many motor steps = 1mm of motion?"
@@ -295,26 +296,26 @@ Understanding how Smoothie is organized internally helps you configure it effect
 Smoothie isn't one monolithic program. It's built from independent **modules** that each handle specific functions:
 
 **Core modules everyone uses**:
-- **Motion module**: Coordinates motor movements, handles acceleration planning
-- **Endstops module**: Manages limit switches and homing
-- **Switch module**: Creates custom G-code → I/O mappings
+- Motion module: Coordinates motor movements, handles acceleration planning
+- Endstops module: Manages limit switches and homing
+- Switch module: Creates custom G-code → I/O mappings
 
 **Tool modules** (use what your machine needs):
-- **Extruder module**: Controls extruder for 3D printing
-- **Temperature control module**: Manages heaters and monitors thermistors
-- **Laser module**: Controls laser power for cutting/engraving
-- **Spindle module**: Controls spindle for CNC milling
-- **ZProbe module**: Handles bed leveling and probing
+- Extruder module: Controls extruder for 3D printing
+- Temperature control module: Manages heaters and monitors thermistors
+- Laser module: Controls laser power for cutting/engraving
+- Spindle module: Controls spindle for CNC milling
+- ZProbe module: Handles bed leveling and probing
 
 **Communication modules**:
-- **Network module**: Ethernet, web interface, FTP
-- **USB module**: USB serial communication
-- **Player module**: Plays G-code files from SD card
+- Network module: Ethernet, web interface, FTP
+- USB module: USB serial communication
+- Player module: Plays G-code files from SD card
 
 **Utility modules**:
-- **Panel module**: Support for LCD panels and encoders
-- **Current control module**: Digital stepper current control
-- **Kill button module**: Software-based emergency stop
+- Panel module: Support for LCD panels and encoders
+- Current control module: Digital stepper current control
+- Kill button module: Software-based emergency stop
 
 ### Event-driven design
 
@@ -737,9 +738,9 @@ The serial port uses a "ping-pong" protocol:
 **2. Ethernet** (alternative)
 
 The Ethernet port provides:
-- **Telnet interface**: Like USB serial, but over network
-- **Web interface**: Control via web browser
-- **FTP**: Upload files to SD card remotely
+- Telnet interface: Like USB serial, but over network
+- Web interface: Control via web browser
+- FTP: Upload files to SD card remotely
 
 Advantages:
 - Less prone to electromagnetic interference than USB
@@ -898,7 +899,7 @@ Before wiring anything:
 **Polarity**:
 - Positive (+) and negative (-)
 - DC current flows from + to -
-- **Reversing polarity destroys components**
+- Reversing polarity destroys components
 - Always double-check polarity before connecting power
 
 ### Educational resources
@@ -960,10 +961,10 @@ If you want to go further on this subject, you can also follow this [basic Elect
 - Calculate power dissipation for MOSFETs and heaters
 
 **Common voltage levels in CNC**:
-- **5V**: Logic level, some sensors
-- **12V**: Common for motors, heaters, fans
-- **24V**: Often used for motors and heaters
-- **120V/230V AC**: Main power input (dangerous - respect it)
+- 5V: Logic level, some sensors
+- 12V: Common for motors, heaters, fans
+- 24V: Often used for motors and heaters
+- 120V/230V AC: Main power input (dangerous - respect it)
 
 **Why 24V is often used instead of 12V**:
 - Higher voltage = lower current for same power

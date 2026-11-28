@@ -3,7 +3,9 @@ permalink: /mpg
 title: MPG (Manual Pulse Generator)
 ---
 
-# MPG - Manual Pulse Generator Module
+{::nomarkdown}
+<span id="mpg---manual-pulse-generator-module"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -20,10 +22,10 @@ title: MPG (Manual Pulse Generator)
 
 The MPG (Manual Pulse Generator) module allows you to use rotary encoders (hand wheels) to manually jog machine axes. This provides precise manual control similar to professional CNC machines, making it ideal for:
 
-- **Tool positioning** - Precisely position tools before operations
-- **Touch-off procedures** - Manually approach workpiece surfaces
-- **Manual machining** - Fine control during manual operations
-- **Setup and alignment** - Accurately position workpieces
+- Tool positioning - Precisely position tools before operations
+- Touch-off procedures - Manually approach workpiece surfaces
+- Manual machining - Fine control during manual operations
+- Setup and alignment - Accurately position workpieces
 
 ## Overview
 
@@ -128,9 +130,9 @@ z.mmperpulse = 0.005
 
 ### Movement Behavior
 
-- **Step size**: Each encoder count moves `mmperpulse`; if omitted, Smoothie derives it from the axis steps/mm and rounds it to four decimal places
-- **Direction**: Clockwise typically moves positive, counter-clockwise negative
-- **Speed**: Smoothie submits the accumulated movement at the axis maximum rate
+- Step size: Each encoder count moves `mmperpulse`; if omitted, Smoothie derives it from the axis steps/mm and rounds it to four decimal places
+- Direction: Clockwise typically moves positive, counter-clockwise negative
+- Speed: Smoothie submits the accumulated movement at the axis maximum rate
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -190,11 +192,11 @@ disable_mpg.press = M922
 
 ### No Movement When Turning Encoder
 
-1. **Check wiring**: Verify A and B connections
-2. **Verify pins**: Ensure pins are interrupt-capable
-3. **Check EXTI lines**: A and B pins must use different line numbers
-4. **Check subsection name**: Use `x`, `y`, `z`, `a`, `b`, `c`, or `shared`; arbitrary names such as `xaxis` are rejected
-5. **Shared selector**: A shared MPG starts with no axis selected; send `M922 X<distance>` or another valid axis first
+1. Check wiring: Verify A and B connections
+2. Verify pins: Ensure pins are interrupt-capable
+3. Check EXTI lines: A and B pins must use different line numbers
+4. Check subsection name: Use `x`, `y`, `z`, `a`, `b`, `c`, or `shared`; arbitrary names such as `xaxis` are rejected
+5. Shared selector: A shared MPG starts with no axis selected; send `M922 X<distance>` or another valid axis first
 
 ### Wrong Direction
 

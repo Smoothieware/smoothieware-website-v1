@@ -3,7 +3,9 @@ layout: default
 title: Pin Tag Popup Test
 ---
 
-# Pin Tag Popup Test
+{::nomarkdown}
+<span id="pin-tag-popup-test"></span>
+{:/nomarkdown}
 
 This page tests the `<pin>` custom tag functionality with interactive hover popups showing detailed pin information.
 

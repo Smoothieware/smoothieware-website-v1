@@ -242,6 +242,15 @@
     <div class="wrapper">
 
       <section>
+        {% unless content contains 'class="xb-hero' %}
+        {% comment %}The only H1 of a page: built from its address, exceptions in _data/page_titles.yml. Page sources start at ##.{% endcomment %}
+        {% assign slug = page.url | split: '/' | last | remove: '.html' %}
+        {% if page.url == '/' or page.url == '/index.html' %}{% assign slug = 'index' %}{% endif %}
+        {% assign page_title = site.data.page_titles[slug] %}
+        {% unless page_title %}{% assign page_title = slug | replace: '-', ' ' | replace: '_', ' ' %}{% endunless %}
+        <h1 class="page-title">{{ page_title }}</h1>
+        {% endunless %}
+
         <div class="markdown-body{% if page.url contains '/extensions/' %} extension-guide{% endif %}">
 
           {{ content }}
@@ -259,5 +268,37 @@
       </section>
 
     </div>
+    <script>
+      // Heading links: every heading in the page body gets a "#" link to itself.
+      // The mark is drawn by CSS so the heading text read by other scripts is unchanged.
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.markdown-body :is(h1, h2, h3, h4, h5, h6)').forEach((heading) => {
+          if (heading.closest('a, summary, sl-alert, sl-dialog, .wiki-edit-callout') || heading.querySelector('a')) return;
+          if (!heading.id) {
+            const base = heading.textContent.trim().toLowerCase().replace(/[^\p{L}\p{N}]+/gu, '-').replace(/^-+|-+$/g, '');
+            if (!base) return;
+            let id = base;
+            for (let n = 2; document.getElementById(id); n++) id = `${base}-${n}`;
+            heading.id = id;
+          }
+          const link = document.createElement('a');
+          link.className = 'heading-anchor';
+          link.href = `#${heading.id}`;
+          link.setAttribute('aria-label', `Link to section: ${heading.textContent.trim()}`);
+          heading.append(link);
+        });
+
+        // Images and generated tables can change the page height after the browser has
+        // jumped to the section in the address. Repeat the jump until the reader acts.
+        const wanted = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+        if (!wanted) return;
+        const jump = () => wanted.scrollIntoView({ behavior: 'instant', block: 'start' });
+        const watcher = new ResizeObserver(jump);
+        const stop = () => watcher.disconnect();
+        ['wheel', 'touchstart', 'keydown', 'pointerdown', 'hashchange'].forEach((type) => addEventListener(type, stop, { once: true, passive: true }));
+        watcher.observe(document.body);
+        addEventListener('load', () => { jump(); setTimeout(stop, 8000); }, { once: true });
+      });
+    </script>
   </body>
 </html>

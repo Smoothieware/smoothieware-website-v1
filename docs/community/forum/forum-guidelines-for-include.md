@@ -1,4 +1,6 @@
-# Forum Guidelines
+{::nomarkdown}
+<span id="forum-guidelines"></span>
+{:/nomarkdown}
 
 {% include community/forum/help-guidelines-for-include.md %}
 
@@ -13,4 +15,3 @@
   </ul>
 </sl-alert>
 {:/nomarkdown}
-

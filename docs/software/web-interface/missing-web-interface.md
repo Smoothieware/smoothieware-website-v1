@@ -1,7 +1,7 @@
 ---
-permalink: /missing-web-interface
+title: "Missing web interface"
+permalink: /missing-web-interface/
 ---
-
 
 ## Why is my web interface missing?
 
@@ -12,7 +12,7 @@ permalink: /missing-web-interface
 </sl-alert>
 {:/nomarkdown}
 
-You connected to your Smoothieboard over the [Network](network) and expected to be welcomed by the classic web interface.
+You connected to your Smoothieboard over the [Network](/network) and expected to be welcomed by the classic web interface.
 
 Instead, you received a webpage explaining that it is no longer available, and directing you here for information on how to resolve the issue.
 
@@ -52,11 +52,11 @@ It's fast and easy.
 
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
-  <sl-button variant="primary" size="large" href="install-web-interface">
+  <sl-button variant="primary" size="large" href="/install-web-interface">
     <sl-icon slot="prefix" name="download"></sl-icon>
     Install the Web Interface
   </sl-button>
 </div>
 {:/nomarkdown}
 
-You can find the complete instructions here: [Installing the web interface](install-web-interface)
+You can find the complete instructions here: [Installing the web interface](/install-web-interface)

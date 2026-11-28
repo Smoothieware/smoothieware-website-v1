@@ -1,8 +1,11 @@
 ---
+title: "Contribution guidelines"
 permalink: /contribution-guidlines
 ---
 
-# Contribution Guidelines
+{::nomarkdown}
+<span id="contribution-guidelines"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/github-1.png">

@@ -4,15 +4,15 @@ layout: default
 title: SD Card
 ---
 
-# SD Card
+{::nomarkdown}
+<span id="sd-card"></span>
+{:/nomarkdown}
 
 When the Smoothieboard is connected via USB to a computer, the SD Card will present as a removable drive.
 
 G-code files stored here may be played without the need of a host computer.
 
 (A display panel is useful to have fully host-free operation)
-
----
 
 ## Important Warning About SD Card Access
 
@@ -29,11 +29,7 @@ G-code files stored here may be played without the need of a host computer.
 
 A method of disabling auto mount on macOS is mentioned [here](https://wolfpaulus.com/jounal/mac/noautomount/).
 
----
-
 ## Files That May Be Found on the SD Card
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -70,11 +66,9 @@ A method of disabling auto mount on macOS is mentioned [here](https://wolfpaulus
 {::nomarkdown}
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
-  <strong>Tip:</strong> The <code>on_boot.gcode</code> file is particularly useful for running initialization commands every time your machine starts. See <a href="on_boot.gcode">on_boot.gcode documentation</a> for more details.
+  <strong>Tip:</strong> The <code>on_boot.gcode</code> file is particularly useful for running initialization commands every time your machine starts. See <a href="/on-boot-gcode">on_boot.gcode documentation</a> for more details.
 </sl-alert>
 {:/nomarkdown}
-
----
 
 ## Setting Up a New SD Card
 
@@ -104,10 +98,6 @@ On boot, the Smoothieboard will flash itself and rename the file to FIRMWARE.CUR
 Copy an existing config file or download an example from the GitHub repo linked from the [Configuring Smoothie](configuring-smoothie) page.
 
 The Smoothieboard only needs the "config" file on the SD card to work properly.
-
----
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -159,8 +149,6 @@ The Smoothieboard only needs the "config" file on the SD card to work properly.
 
 {:/nomarkdown}
 
----
-
 ## Troubleshooting
 
 If you're having issues with your SD card:
@@ -171,12 +159,10 @@ If you're having issues with your SD card:
 4. Check that the card is not write-protected
 5. Verify the config file is named correctly (case sensitive on some systems)
 
----
-
 ## Further Reading
 
 - [Getting Smoothie firmware](getting-smoothie)
 - [Configuring Smoothie](configuring-smoothie)
-- [on_boot.gcode](on_boot.gcode)
+- [on_boot.gcode](/on-boot-gcode)
 - [Supported G-codes](supported-g-codes)
 - [Player module](player)

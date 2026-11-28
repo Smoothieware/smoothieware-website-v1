@@ -1,7 +1,7 @@
 ---
+title: "Endstops"
 permalink: /endstops
 ---
-
 
 {% include modules/endstops-probes/guide-endstops-for-include.md %}
 
@@ -142,7 +142,7 @@ If your axis is moving away from the endstop when homing, you need to invert you
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  The firmware-cnc.bin is in CNC mode and by default uses grbl compatibility mode in this mode {::nomarkdown}<gcode>G28</gcode>{:/nomarkdown} does <strong>not</strong> home, it goes to a predefined park position (defined with {::nomarkdown}<gcode>G28.1</gcode>{:/nomarkdown}). To home in CNC/GRBL mode you issue $H, (or {::nomarkdown}<gcode>G28.2</gcode>{:/nomarkdown}).
+  The firmware-cnc.bin is in CNC mode and by default uses grbl compatibility mode in this mode <gcode>G28</gcode> does <strong>not</strong> home, it goes to a predefined park position (defined with <gcode>G28.1</gcode>). To home in CNC/GRBL mode you issue $H, (or <gcode>G28.2</gcode>).
 </sl-alert>
 
 <sl-alert variant="warning" open>
@@ -162,8 +162,6 @@ If your axis is moving away from the endstop when homing, you need to invert you
 
 Endstops may be configured to act as limit switches, during normal operations if any enabled limit switch is triggered the system will halt and all operations will stop, it will send a `!!` command to the host to stop it sending any more data (a recent dev octoprint and recent [Pronterface](pronterface) support this).
 Sending `$X`, or sending {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown}, or a reset will be required to continue. **NOTE** While any limit switch is still triggered the limits are disabled, so make sure you jog away from the limit otherwise you can crash into the limit switch. This is far from perfect but it is a compromise to allow you to jog off the endstop, if this were not the case it would only be possible to manually push the axis off the limit switch. A possible workaround is to also enable soft endstops as described below, and config it to ignore moves that will move past the soft endstop, if you do this then it will only allow the axis to jog away from the endstop.
-
-
 
 To enable endstops as limit switches the following config options can be used, they are disabled by default.
 
@@ -195,8 +193,6 @@ gamma_limit_enable = true            # set to true to enable Z min and max limit
 </versioned>
 {:/nomarkdown}
 
-
-
 When one axis is enabled both min and max endstops will be enabled as limit switches, setting an endstop pin to nc will disable it.
 
 <sl-alert variant="warning" open>
@@ -222,8 +218,6 @@ When one axis is enabled both min and max endstops will be enabled as limit swit
 Soft(ware) endstops is a feature that allows the board to refuse any command that would put it outside the bounds of the work area.
 
 Note that this feature only functions once the machine has been homed (until then it can't know where it is). After the machine has been homed this feature is enabled. it can be temporarily disabled using the `M211 S0` M-code, and can be enabled again using the `M211 S1` M-code.
-
-
 
 The configuration is as such:
 
@@ -264,8 +258,6 @@ halt = true           # Whether to issue a HALT state when hitting a soft endsto
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 Simply add this series of config options to your config file and the machine will start respecting soft endstops.
 

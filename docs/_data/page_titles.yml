@@ -1,0 +1,87 @@
+# Page titles are built from the last part of the address ("-" becomes a space,
+# CSS makes it uppercase). Add an entry only when that gives an unreadable title.
+index: Smoothieware
+6axis: 6-axis
+advancedmotordriver: Advanced motor driver
+atc: Automatic tool changer
+azteeg-x5: Azteeg X5
+bcnc: bCNC
+blue-box-guide: SmoothK40 guide
+bluebox-guide: Blue Box laser guide
+cnc-mill-guide: CNC mill guide
+compiling-v2-libcxx-dev: Compiling V2 libc++ dev
+contribution-guidlines: Contribution guidelines
+corexz: CoreXZ
+currentcontrol: Current control
+drillingcycles: Drilling cycles
+drillingcycles-options: Drilling cycles options
+els: Electronic lead screw
+emergencystop: Emergency stop
+eclipse: Debugging with Eclipse
+g28-1: G28.1
+g28-cnc: G28 (CNC mode)
+g28-reprap: G28 (RepRap mode)
+g92-cnc: G92 (CNC mode)
+grbl-mode: GRBL mode
+from-grbl: From GRBL
+hbot: H-bot
+howitworks: How it works
+killbutton: Kill button
+landing-pages: Landing pages
+laserweb: LaserWeb
+lcjbdz-guide: LCJBDZ guide
+listofevents: List of events
+logic-power: Logic power
+lpc1769-pin-usage-1-5: LPC1769 pin usage 1.5
+m1234: M1234
+max7219-dro: MAX7219 DRO
+moduleexample: Module example
+mosfets: MOSFETs
+mosfets-table: MOSFETs table
+mpg: MPG
+pcb-milling: PCB milling
+playled: Play LED
+pt100: PT100
+pwm-capable: PWM capable pins
+ros: ROS
+rrdglcdadapter: RRD GLCD adapter
+smoothiedriver: SmoothieDriver
+smoothiepanel: SmoothiePanel
+smoothiepanel-beta: SmoothiePanel beta
+smoothiepanel-beta-errata: SmoothiePanel beta errata
+smoothiepanel-gamma: SmoothiePanel gamma
+smoothiepanelalpha: SmoothiePanel alpha
+steinharthart: Steinhart-Hart
+stm32h7-pin-usage: STM32H7 pin usage
+subroutines: Subroutines
+syringe-covid19-notes: Syringe COVID-19 notes
+temperaturecontrol: Temperature control
+temperaturecontrol-fine-tuning: Temperature control fine tuning
+temperaturecontrol-options: Temperature control options
+temperaturecontrol-pid: Temperature control PID
+temperaturecontrol-pid-autotuning: PID autotuning
+temperaturecontrol-thermistor-choice: Thermistor choice
+temperatureswitch: Temperature switch
+temperatureswitch-options: Temperature switch options
+tm1638-display: TM1638 display
+touchprobe: Touch probe
+unboxing-fr: Unboxing (français)
+using-fsrs: Using FSRs
+voltageregulator: Voltage regulator
+windows-systeminfo: Windows system information
+zprobe: Z-probe
+zprobe-options: Z-probe options
+z-probe-guide: Z-probe guide
+search_site: Search
+3d-printer-guide: 3D printer guide
+landing-page-3d-printer: 3D printer
+landing-page-3d-printing: 3D printing
+landing-page-cnc-controller: CNC controller
+landing-page-cnc-mill: CNC mill
+landing-page-cnc-milling: CNC milling
+landing-page-grbl-alternative: GRBL alternative
+landing-page-k40-laser-upgrade: K40 laser upgrade
+landing-page-laser-controller: Laser controller
+landing-page-laser-cutting: Laser cutting
+landing-page-vinyl-cutter: Vinyl cutter
+mri-debugging: MRI debugging

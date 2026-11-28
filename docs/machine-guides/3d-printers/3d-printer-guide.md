@@ -1,9 +1,11 @@
 ---
+title: "3D printer guide"
 permalink: /3d-printer-guide
 ---
 
-
-# Your guide to installing Smoothieboard in a 3D printer
+{::nomarkdown}
+<span id="your-guide-to-installing-smoothieboard-in-a-3d-printer"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/guide-3d-printer.png">
@@ -57,27 +59,42 @@ This guide will walk through everything you need to accomplish to successfully p
 
 At the end of this guide, you should have a fully working machine.
 
-# Translations
+## Translations
 
 Some users have hand-translated this page. Note that this translated version is by definition never going to be up-to-date. Use it to help you understand in general, but any specific information should be taken from the original version, especially before asking the community for help.
 
-* [Version Francaise](3d-printer-guide-fr)
+* [Version Francaise](https://web.archive.org/web/2020/http://smoothieware.org/3d-printer-guide-fr)
 
-{% include getting-started/unboxing-for-include.md %}
+{% include _includes/chapter.md file="getting-started/unboxing-for-include.md" title="Unboxing" anchor="unboxing" %}
 
-{% include migration/migrating-for-include.md %}
+{% include _includes/chapter.md file="migration/migrating-for-include.md" title="Migrating to Smoothie" anchor="migrating-to-smoothie" %}
 
-{% include hardware/wiring/warning-for-include.md %}
+## Safety warnings
 
-{% include hardware/power/logic-power-for-include.md %}
+{::nomarkdown}
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Make sure you read this. Seriously. Not kidding. Do it. It's important.</strong>
+  <ul>
+    <li>Check the polarity of every power input, and check it again. Reversed polarity can damage or destroy all or part of your board. The 3.5mm and 5mm power connectors are inverted, so rely on the diagrams.</li>
+    <li>Never connect or disconnect stepper motors while the board is powered.</li>
+    <li>Keep anything metallic away from the board, a short will destroy it.</li>
+    <li>Never put 12V or 24V into a 5V, endstop or thermistor input.</li>
+    <li>If your machine has heaters, set up <a href="/temperaturecontrol#safety">the heater safety measures</a>. Fires will kill you if you don't.</li>
+  </ul>
+  Before you wire anything, read <a href="/warning">all the wiring safety warnings</a>.
+</sl-alert>
+{:/nomarkdown}
 
-{% include hardware/power/main-power-input-for-include.md %}
+{% include _includes/chapter.md file="hardware/power/logic-power-for-include.md" title="Logic Power Inputs" anchor="logic-power-inputs" %}
 
-{% include hardware/wiring/stepper-motors-for-include.md %}
+{% include _includes/chapter.md file="hardware/power/main-power-input-for-include.md" title="Main Power Input" %}
 
-{% include modules/motion/arm-solutions-for-include.md %}
+{% include _includes/chapter.md file="hardware/wiring/stepper-motors-for-include.md" title="Stepper Motors" anchor="stepper-motors" %}
 
-{% include machine-guides/3d-printers/extruder-guide-for-include.md %}
+{% include _includes/chapter.md file="modules/motion/arm-solutions-for-include.md" title="Arm Solutions" anchor="arm-solutions" %}
+
+{% include _includes/chapter.md file="machine-guides/3d-printers/extruder-guide-for-include.md" title="Extruder" anchor="extruder" %}
 
 {::nomarkdown}
 <a href="/images/v6-hero-hot-end.png">
@@ -87,7 +104,7 @@ Some users have hand-translated this page. Note that this translated version is 
 
 A hotend contains a thermistor and a heating element in its heating block.
 
-# Temperature control
+## Temperature control
 
 In a 3D printer, you heat thermoplastics.
 
@@ -101,7 +118,7 @@ For detailed information about temperature control in Smoothie, you can look at 
 
 The process is essentially the same to wire and control a hot-end, or a heated bed, and is as follows:
 
-## Thermistor
+### Thermistor
 
 A [thermistor](http://en.wikipedia.org/wiki/Thermistor)'s resistance changes with temperature.
 
@@ -156,7 +173,7 @@ Thermistors come in all shapes and sizes.
 
 {% include modules/temperature/temperaturecontrol-thermistor-choice-for-include.md %}
 
-## Heating element
+### Heating element
 
 Now that Smoothie can read the temperature, it needs a way to heat things and maintain a desired temperature.
 
@@ -178,7 +195,7 @@ These heating elements need to be connected to Smoothieboard on a port that allo
 
 Heated beds are often made out of a rigid, or flexible (kapton) PCB.
 
-### Example
+#### Example
 
 Let's say you want to connect a heated bed to your Smoothieboard.
 
@@ -207,9 +224,16 @@ temperature_control.bed.heater_pin           2.5              # Pin that control
 
 To help you figure out what is what, here is a recapitulating table:
 
-{% include hardware/power/mosfets-table-for-include.md %}
+The big MOSFETs and the small MOSFETs don't have the same current limits. Check the ratings of your board before you connect a load, exceeding them can damage it.
 
-## Testing
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="book"></sl-icon>
+  <strong>Learn more:</strong> <a href="/mosfets-table">MOSFET specifications and pairs</a>, <a href="/mosfets">MOSFET wiring</a>
+</sl-alert>
+{:/nomarkdown}
+
+### Testing
 
 Once your thermistor is connected, and both the power input and the heater elements are plugged in, you are ready to test your temperature controller.
 
@@ -227,15 +251,22 @@ Now, in Pronterface, set the temperature for either your bed or your hot-end, de
 
 Once you know the heater works correctly, there is still some tuning to do: tuning your PID settings.
 
-## PID
+### PID
 
-{% include modules/temperature/temperaturecontrol-pid-for-include.md %}
+PID is how Smoothie keeps a heater at a steady temperature, using three values : P, I and D. You usually don't need to work them out by hand, PID autotuning below finds them for you.
 
-## PID autotuning
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="book"></sl-icon>
+  <strong>Learn more:</strong> <a href="/temperaturecontrol-pid">PID, manual tuning and troubleshooting</a>
+</sl-alert>
+{:/nomarkdown}
+
+### PID autotuning
 
 {% include modules/temperature/temperaturecontrol-pid-autotuning-for-include.md %}
 
-## Heater safety
+### Heater safety
 
 There are features you can configure to make sure that your [temperature control](temperaturecontrol) module will detect when something is wrong, and stop the machine when that happens.
 
@@ -245,7 +276,7 @@ It is also a good thing to configure it well, because if you do not, it is possi
 
 You can read more about temperature control safety [here](/temperaturecontrol#safety).
 
-## Example setup
+### Example setup
 
 This information is all very abstract.
 
@@ -282,9 +313,9 @@ This means we will make 4 connections:
 </div>
 {:/nomarkdown}
 
-{% include modules/endstops-probes/guide-endstops-for-include.md %}
+{% include _includes/chapter.md file="modules/endstops-probes/guide-endstops-for-include.md" title="Endstops" anchor="endstops" %}
 
-# Fans
+## Fans
 
 Fans are important: they help you cool things down.
 
@@ -351,7 +382,6 @@ You can now control your fan digitally: issue the {::nomarkdown}<mcode>M106</mco
 -->
 Note starting with Smoothieboard version 1.1, **you do not need to do this anymore** on the first two small mosfets, as the diodes are there by default.
 
-
 {::nomarkdown}
 <div style="text-align: center; margin: 2rem 0;">
   <a href="/images/temporary/mosfet-generic.jpg">
@@ -365,18 +395,15 @@ The diode should be installed with the white band (negative side of the diode) s
 
 Good diodes to use are: 1N5819 or SS14.
 
+{% include _includes/chapter.md file="modules/endstops-probes/z-probe-guide-for-include.md" title="Z-Probe Guide" anchor="z-probe-guide" %}
 
+{% include _includes/chapter.md file="hardware/panels/panel-guide-for-include.md" title="Panel Guide" anchor="panel-guide" %}
 
-
-{% include modules/endstops-probes/z-probe-guide-for-include.md %}
-
-{% include hardware/panels/panel-guide-for-include.md %}
-
-# Automation and Startup
+## Automation and Startup
 
 Once you have your printer fully configured and working, you might want to automate certain startup tasks.
 
-## Automatic Homing on Boot
+### Automatic Homing on Boot
 
 A common automation is to have your printer automatically home all axes when it boots up. This ensures your printer is always in a known state when you start using it.
 
@@ -395,14 +422,24 @@ on_boot_gcode_enable true
 on_boot_gcode /sd/on_boot.gcode
 ```
 
-For more information and advanced examples, see the [on_boot.gcode documentation](on_boot.gcode).
+For more information and advanced examples, see the [on_boot.gcode documentation](/on-boot-gcode).
 
-# Appendixes
+## Appendixes
 
-{% include hardware/wiring/general-appendixes-for-include.md %}
+The appendixes cover the practical wiring work you may need along the way : 
 
+* [Wiring](/general-appendixes#wiring)
+* [Crimping connectors](/general-appendixes#crimping-connectors)
+* [Soldering connectors](/general-appendixes#soldering-connectors)
+* [Using two steppers motor on a single driver](/general-appendixes#using-two-steppers-motor-on-a-single-driver)
+* [Doubling stepper motor drivers](/general-appendixes#doubling-stepper-motor-drivers)
+* [External Stepper Drivers](/general-appendixes#external-stepper-drivers)
+* [Solid State Relays](/general-appendixes#solid-state-relays)
+* [Swapping stepper motor drivers](/general-appendixes#swapping-stepper-motor-drivers)
+* [Which pins are which](/general-appendixes#which-pins-are-which)
+* [Protecting a power input with a fuse](/general-appendixes#protecting-a-power-input-with-a-fuse)
 
-# Troubleshooting
+## Troubleshooting
 
 If something does not work, the troubleshooting page lists the steps to follow and the most common power, configuration, web interface and movement problems.
 

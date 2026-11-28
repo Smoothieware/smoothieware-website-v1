@@ -1,4 +1,5 @@
 ---
+title: "Laser options"
 permalink: /laser-options
 ---
 

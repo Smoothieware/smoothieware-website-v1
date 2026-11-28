@@ -1,4 +1,5 @@
 ---
+title: "Switch options"
 permalink: /switch-options
 ---
 

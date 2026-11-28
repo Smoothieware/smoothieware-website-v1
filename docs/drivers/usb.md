@@ -1,11 +1,11 @@
 ---
+title: "Usb"
 permalink: /usb
 ---
 
-
-# USB Port
-
-
+{::nomarkdown}
+<span id="usb-port"></span>
+{:/nomarkdown}
 
 Smoothieboard has USB connectivity that provides multiple interfaces for communicating with and controlling your board.
 
@@ -18,9 +18,9 @@ You can plug a USB cable into the Smoothieboard, and plug that cable into your c
 
 **Available USB Interfaces:**
 
-- **USB MSD (Mass Storage)** - Access the SD card as a removable drive (like a USB thumb drive)
-- **USB ACM (Serial)** - Send commands, G-codes, and receive responses; used by host programs
-- **USB DFU (Device Firmware Update)** - Program firmware (Linux only, developers only)
+- USB MSD (Mass Storage) - Access the SD card as a removable drive (like a USB thumb drive)
+- USB ACM (Serial) - Send commands, G-codes, and receive responses; used by host programs
+- USB DFU (Device Firmware Update) - Program firmware (Linux only, developers only)
 
 {::nomarkdown}
 </v1>
@@ -31,18 +31,16 @@ You can plug a USB cable into the Smoothieboard to control it via [Software](sof
 
 **Available USB Interfaces:**
 
-- **USB Device (USB2)**
-  - **USB ACM (Serial)** - Virtual COM port for sending commands and G-codes
-  - **USB MSC (Mass Storage)** - Access the SD card as a removable drive with safer mounting (button or command controlled)
+- USB Device (USB2)
+  - USB ACM (Serial) - Virtual COM port for sending commands and G-codes
+  - USB MSC (Mass Storage) - Access the SD card as a removable drive with safer mounting (button or command controlled)
 
-- **USB Host (USB1)** - USB-A host connector (J2) for future device support (keyboards, WiFi adapters, etc.)
+- USB Host (USB1) - USB-A host connector (J2) for future device support (keyboards, WiFi adapters, etc.)
 
 {::nomarkdown}
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 ## Best Practices
 
@@ -53,14 +51,12 @@ You can plug a USB cable into the Smoothieboard to control it via [Software](sof
 </sl-alert>
 {:/nomarkdown}
 
-
-
 To avoid USB disconnections and ensure stable communication:
 
-- **Use a short cable** - Keep your USB cable as short as possible (ideally less than 50 cm / 2 feet), shielded, with ferrite beads if possible
-- **Same power source** - Plug your machine and controlling computer into the same power strip
-- **Clean power** - Ensure your electrical installation is stable and free from interference
-- **Avoid interference** - Keep away from large motors, refrigerators, neon bulbs, and other strong electrical noise sources
+- Use a short cable - Keep your USB cable as short as possible (ideally less than 50 cm / 2 feet), shielded, with ferrite beads if possible
+- Same power source - Plug your machine and controlling computer into the same power strip
+- Clean power - Ensure your electrical installation is stable and free from interference
+- Avoid interference - Keep away from large motors, refrigerators, neon bulbs, and other strong electrical noise sources
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -76,9 +72,9 @@ If all of those rules are applied, USB will work fine in the vast majority of ca
 
 Additionally for V2:
 
-- **MSD Mount Timing** - When enabling MSD mode, wait a moment before accessing the SD card to allow the file system to stabilize
-- **External 5V Power** - If experiencing power-related issues, consider providing external 5V power via the 5vin header instead of relying solely on USB
-- **Cable Quality** - V2's improved power delivery benefits from high-quality USB cables; cheap or damaged cables may cause intermittent disconnections
+- MSD Mount Timing - When enabling MSD mode, wait a moment before accessing the SD card to allow the file system to stabilize
+- External 5V Power - If experiencing power-related issues, consider providing external 5V power via the 5vin header instead of relying solely on USB
+- Cable Quality - V2's improved power delivery benefits from high-quality USB cables; cheap or damaged cables may cause intermittent disconnections
 
 If all guidelines are followed, USB will work reliably in nearly all cases.
 
@@ -87,11 +83,7 @@ If all guidelines are followed, USB will work reliably in nearly all cases.
 </versioned>
 {:/nomarkdown}
 
-
-
 ## Drivers
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -148,11 +140,7 @@ The Smoothieboard will appear as:
 </versioned>
 {:/nomarkdown}
 
-
-
 ## Usage
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -160,8 +148,8 @@ The Smoothieboard will appear as:
 {:/nomarkdown}
 
 Once the driver is installed, the Smoothieboard should be recognized as:
-- **Mass Storage Device** - Access files on the SD card (like a USB thumb drive)
-- **Serial (COM) Device** - Send commands and G-codes (e.g., via [Pronterface](pronterface))
+- Mass Storage Device - Access files on the SD card (like a USB thumb drive)
+- Serial (COM) Device - Send commands and G-codes (e.g., via [Pronterface](pronterface))
 
 {::nomarkdown}
 </v1>
@@ -170,20 +158,18 @@ Once the driver is installed, the Smoothieboard should be recognized as:
 
 The Smoothieboard should be recognized as:
 
-- **Serial (COM) Device** - Send commands and G-codes via the USB ACM interface (e.g., via [Pronterface](pronterface))
-- **Mass Storage Device** - Access SD card files (appears as a removable disk)
+- Serial (COM) Device - Send commands and G-codes via the USB ACM interface (e.g., via [Pronterface](pronterface))
+- Mass Storage Device - Access SD card files (appears as a removable disk)
 
 **MSD (Mass Storage) Activation:**
 
 By default, V2 does NOT automatically mount the SD card via USB (safer operation). To access the SD card:
 
-- **Via Pushbutton**: Press the MSD button on the board (typically on the top edge) to toggle MSD mode
-- **Via Command**: Use a G-code or serial command to enable MSD mode (check firmware documentation)
-- **LED Indicator**: An LED shows when MSD mode is active
+- Via Pushbutton: Press the MSD button on the board (typically on the top edge) to toggle MSD mode
+- Via Command: Use a G-code or serial command to enable MSD mode (check firmware documentation)
+- LED Indicator: An LED shows when MSD mode is active
 
 {::nomarkdown}
 </v2>
 </versioned>
 {:/nomarkdown}
-
-

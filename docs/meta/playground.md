@@ -1,8 +1,11 @@
 ---
+title: "Playground"
 permalink: /playground
 ---
 
-# Playground
+{::nomarkdown}
+<span id="playground"></span>
+{:/nomarkdown}
 
 This page is a sandbox for testing documentation features and trying out new formatting ideas.
 

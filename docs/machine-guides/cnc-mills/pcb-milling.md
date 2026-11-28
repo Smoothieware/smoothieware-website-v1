@@ -4,7 +4,9 @@ layout: default
 title: PCB Milling
 ---
 
-# PCB Milling
+{::nomarkdown}
+<span id="pcb-milling"></span>
+{:/nomarkdown}
 
 <sl-alert variant="neutral" open>
   <sl-icon slot="icon" name="info-circle"></sl-icon>
@@ -12,8 +14,6 @@ title: PCB Milling
 </sl-alert>
 
 Build-in leveling made Smoothieware a very powerful tool for PCB milling - no need to recalculate G-codes, just run leveling using {::nomarkdown}<gcode>G31</gcode>{:/nomarkdown}/{::nomarkdown}<gcode>G32</gcode>{:/nomarkdown} and mill.
-
----
 
 ## Grid Leveling "By Two Corners"
 
@@ -28,8 +28,6 @@ Enable it in the configuration with:
 ```gcode
 leveling-strategy.rectangular-grid.only_by_two_corners        true
 ```
-
-
 
 **Configuration:**
 
@@ -56,8 +54,6 @@ only_by_two_corners = true
 </v2>
 </versioned>
 {:/nomarkdown}
-
----
 
 ## PCB Milling Configuration Examples
 
@@ -261,8 +257,6 @@ switch_on_pin = nc        # No switch on pin
 </versioned>
 {:/nomarkdown}
 
----
-
 Before two corners mode, you had to correct machine (0,0) and bed size according to the desired probing grid position and size.
 
 "Two corners" is not an absolutely correct name for this mode, because it uses only one corner and rectangle size. Name from one of CAD.
@@ -280,15 +274,11 @@ The R1 sets a special two corners mode which uses the current position of the he
 
 **NOTE:** If there is a probe offset, which is not recommended, then it will move the probe to where we asked it to start from.
 
----
-
 ### Usage
 
 | Command | Description |
 | ------- | ----------- |
 | {::nomarkdown}<gcode>G32</gcode>{:/nomarkdown} Xnn Ynn Ann Bnn Inn Jnn | Probes the grid from X, Y (Machine coordinates), with X size = A, Y size = B, with X grid size = I, Y grid size = J. I*J must be <= grid size from configuration. Omitting I or J or both will use grid size from configuration |
-
----
 
 ### Example Commands
 
@@ -319,11 +309,9 @@ Probes the grid from X=50, Y=0, X size = 100, Y size = 50, X grid size = 9, Y gr
 </sl-alert>
 {:/nomarkdown}
 
----
-
 ## Further Reading
 
 - [ZProbe module documentation](zprobe)
-- [Leveling strategies](leveling-strategy)
+- [Leveling strategies](/zprobe)
 - [CNC Mill Guide](cnc-mill-guide)
 - [G31 and G32 G-codes](supported-g-codes)

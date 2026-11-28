@@ -1,13 +1,18 @@
 ---
+title: "Github"
 permalink: /github
 ---
 
+Smoothie is a community effort, and any help is very welcome.
 
-{% include developers/contributing-for-include.md %}
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="book"></sl-icon>
+  <strong>Learn more:</strong> <a href="/contributing">How to contribute</a>
+</sl-alert>
+{:/nomarkdown}
 
-# How to submit a pull request to the Smoothieware Github project
-
-
+## How to submit a pull request to the Smoothieware Github project
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -38,11 +43,7 @@ permalink: /github
 </versioned>
 {:/nomarkdown}
 
-
-
-## Fork the original repository
-
-
+### Fork the original repository
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -63,8 +64,6 @@ Create a Fork in your GitHub of [Smoothieware V2 repository](https://github.com/
 </versioned>
 {:/nomarkdown}
 
-
-
 <a href="/images/github-1.png">
   <img src="/images/github-1.png" alt="Fork button"/>
 </a>
@@ -75,7 +74,7 @@ You will now have a forked repository in your list of repositories.
   <img src="/images/github-2.png" alt="Forked repository"/>
 </a>
 
-## Clone the forked repository
+### Clone the forked repository
 
 You can get the URL for cloning that repository by clicking the copy URL button.
 
@@ -85,7 +84,7 @@ You can get the URL for cloning that repository by clicking the copy URL button.
 
 On your local workstation clone the repository: `git clone <your GitHub fork of Smoothie>`
 
-## Create a new branch for your bugfix / feature
+### Create a new branch for your bugfix / feature
 
 Create a fix branch with a descriptive name: `git checkout -b fix/some-error`
 
@@ -104,26 +103,24 @@ Edit the file to fix the error.
   <strong>Please</strong>
   <ul>
     <li>Check the fix!!!</li>
-    <li>Make sure your changes are coincide with our <a href="coding-standards.md">coding standards</a>! (use 4 spaces per indent and not tabs, etc.)</li>
+    <li>Make sure your changes are coincide with our <a href="/coding-standards">coding standards</a>! (use 4 spaces per indent and not tabs, etc.)</li>
   </ul>
 </sl-alert>
 {:/nomarkdown}
 
-## Commit your changes and push it back on GitHub
+### Commit your changes and push it back on GitHub
 
 Commit the changes: `git commit -am 'introduced lots of bugs'`
 
 Push the branch to your GitHub: `git push origin fix/some-error`
 
-## Submit your pull request
+### Submit your pull request
 
 In GitHub, there should be a button that says pull request for that branch, click it.
 
 <a href="/images/github-4.png">
   <img src="/images/github-4.png" alt="Pull request button"/>
 </a>
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -144,8 +141,6 @@ Select master as the destination branch, add comments.
 </versioned>
 {:/nomarkdown}
 
-
-
 <a href="/images/github-5.png">
   <img src="/images/github-5.png" alt="Selecting branch"/>
 </a>
@@ -163,6 +158,6 @@ Select master as the destination branch, add comments.
 
 Finally, submit the pull request.
 
-## Want to learn Git?
+### Want to learn Git?
 
 Try [this game](http://pcottle.github.io/learnGitBranching/).

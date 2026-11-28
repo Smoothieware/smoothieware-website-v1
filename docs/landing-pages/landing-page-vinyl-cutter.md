@@ -1,12 +1,13 @@
 ---
+title: "Vinyl cutter"
 permalink: /landing-page-vinyl-cutter
 ---
 
-# Vinyl Cutter Controller Failed? Upgrade to Modern Control
+{::nomarkdown}
+<span id="vinyl-cutter-controller-failed-upgrade-to-modern-control"></span>
+{:/nomarkdown}
 
 **Thousands of vinyl cutters become useless when controllers fail.** Smoothieboard v2 works with virtually any vinyl cutter, from desktop units to large format plotters. Professional cutting quality, modern software compatibility, and open-source reliability. Upgrade your existing equipment instead of replacing it.
-
-![Large format vinyl cutter with Smoothieboard visible](/images/smoothieboard-vinyl-cutter-hero.jpg)
 
 **Upgrade Your Vinyl Cutter - $200**
 
@@ -16,8 +17,6 @@ permalink: /landing-page-vinyl-cutter
 ✅ **Professional Cutting Quality**
 ✅ **Business-Smart Investment**
 ✅ **Future-Proof Open Hardware**
-
----
 
 ## Why Vinyl Cutters Become Useless
 
@@ -37,36 +36,32 @@ permalink: /landing-page-vinyl-cutter
 - ✅ Advanced features and expandability
 - ✅ Cost-effective upgrade solution
 
----
-
 ## Works with Virtually Every Vinyl Cutter
 
 ### Large Format Professional Cutters:
-- **Roland Series:** Camm-1, GX, CX series plotters
-- **Graphtec:** CE, FC, CE series cutters
-- **Mimaki:** CG series cutting plotters
-- **Summa:** D, S, F series cutters
-- **US Cutter:** LaserPoint, MH, Titan series
+- Roland Series: Camm-1, GX, CX series plotters
+- Graphtec: CE, FC, CE series cutters
+- Mimaki: CG series cutting plotters
+- Summa: D, S, F series cutters
+- US Cutter: LaserPoint, MH, Titan series
 
 ### Chinese Import Cutters:
-- **Refine, Redsail, Rabbit** series
-- **Various 28", 34", 48"** Chinese cutters
-- **Large format imports** from multiple manufacturers
-- **DIY and custom-built** large format cutters
+- Refine, Redsail, Rabbit series
+- Various 28", 34", 48" Chinese cutters
+- Large format imports from multiple manufacturers
+- DIY and custom-built large format cutters
 
 ### Desktop and Hobby Cutters:
-- **Cricut (older models)** with controller replacement
-- **Silhouette** series machines
-- **Brother ScanNCut** older models
-- **USCutter MH, Vinyl Express** desktop models
+- Cricut (older models) with controller replacement
+- Silhouette series machines
+- Brother ScanNCut older models
+- USCutter MH, Vinyl Express desktop models
 
 ### Industrial and Specialty Cutters:
-- **Textile cutters** for fabric and garment industry
-- **Print-and-cut** machines from various manufacturers
-- **Sign making plotters** from any era
-- **Custom-built cutting solutions**
-
----
+- Textile cutters for fabric and garment industry
+- Print-and-cut machines from various manufacturers
+- Sign making plotters from any era
+- Custom-built cutting solutions
 
 ## Modern Vinyl Cutting Capabilities
 
@@ -91,8 +86,6 @@ permalink: /landing-page-vinyl-cutter
 - ✅ **Batch cutting** capabilities
 - ✅ **Production optimization** features
 
----
-
 ## Designed for Large Format Cutting
 
 ### Big Cutter Advantages:
@@ -110,33 +103,29 @@ permalink: /landing-page-vinyl-cutter
 - Industrial pattern making
 - Custom wallpaper production
 
----
-
 ## Upgrade vs Replace: The Smart Business Choice
 
 ### Cost Comparison:
-- **New Large Format Cutter:** $5,000 - $20,000+
-- **Smoothieboard Upgrade:** $200 + installation time
-- **Business Downtime:** Minimal vs. weeks for new equipment
-- **ROI:** Often achieved in first few jobs
+- New Large Format Cutter: $5,000 - $20,000+
+- Smoothieboard Upgrade: $200 + installation time
+- Business Downtime: Minimal vs. weeks for new equipment
+- ROI: Often achieved in first few jobs
 
 ### Business Benefits:
-- **Keep existing equipment investment**
-- **Minimal downtime** during upgrade
-- **Improved reliability** vs aging controllers
-- **Modern features** extend equipment life
-- **Future-proof** with open-source hardware
-- **Support and documentation** for long-term maintenance
-
----
+- Keep existing equipment investment
+- Minimal downtime during upgrade
+- Improved reliability vs aging controllers
+- Modern features extend equipment life
+- Future-proof with open-source hardware
+- Support and documentation for long-term maintenance
 
 ## Professional Installation Support
 
 ### Installation Options:
-- **DIY Installation:** Step-by-step guides for technical users
-- **Professional Installation:** Network of qualified installers
-- **Phone Support:** Technical support during installation
-- **Community Help:** Active user community for troubleshooting
+- DIY Installation: Step-by-step guides for technical users
+- Professional Installation: Network of qualified installers
+- Phone Support: Technical support during installation
+- Community Help: Active user community for troubleshooting
 
 ### What's Included:
 - Smoothieboard v2 Prime controller
@@ -153,8 +142,6 @@ permalink: /landing-page-vinyl-cutter
 - Email support for technical questions
 - Regular firmware updates
 
----
-
 ## Sign Shops and Graphics Professionals Using Smoothieboard
 
 ### Success Stories:
@@ -165,13 +152,11 @@ Search for authentic quotes from:
 - Print shops with expanded capabilities
 
 ### Application Examples:
-- **Vehicle Wrap Shops:** Large format precision cutting
-- **Sign Making Businesses:** Consistent quality production
-- **Textile Manufacturers:** Pattern cutting automation
-- **Educational Institutions:** Student project equipment
-- **Print Shops:** In-house cutting capabilities
-
----
+- Vehicle Wrap Shops: Large format precision cutting
+- Sign Making Businesses: Consistent quality production
+- Textile Manufacturers: Pattern cutting automation
+- Educational Institutions: Student project equipment
+- Print Shops: In-house cutting capabilities
 
 ## Professional Controller Specifications
 
@@ -196,15 +181,13 @@ Search for authentic quotes from:
 - External driver support for very large machines
 - Integrated power management
 
----
-
 ## Ready to Upgrade Your Vinyl Cutter?
 
 ### Smoothieboard v2 Prime - $200
 
 #### Choose Your Configuration:
-- **TMC2660 (1.2-2.2A):** Standard vinyl cutters
-- **TMC2590 (2.5-4.6A):** Large format and heavy cutting
+- TMC2660 (1.2-2.2A): Standard vinyl cutters
+- TMC2590 (2.5-4.6A): Large format and heavy cutting
 
 #### Vinyl Cutter Upgrade Kit Includes:
 - Smoothieboard v2 Prime controller
@@ -224,8 +207,6 @@ Search for authentic quotes from:
 #### Where to Buy:
 - [Robosprout (USA) - Ships worldwide](https://www.robosprout.com)
 
----
-
 ## Upgrade Your Vinyl Cutter to Modern Control
 
 **[Upgrade Your Vinyl Cutter - $200](https://www.robosprout.com)**
@@ -234,8 +215,6 @@ Search for authentic quotes from:
 - Professional Cutting Quality
 - Business-Smart Investment
 - Future-Proof Open Hardware
-
----
 
 *Smoothieboard v2 is OSHWA certified open hardware (FR000021). Proven in thousands of vinyl cutting applications worldwide. Save thousands versus new equipment while getting modern features and reliability.*
 

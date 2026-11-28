@@ -20,7 +20,7 @@ permalink: /extensions/led-matrix-8x8
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/led-matrix-8x8/led-matrix-8x8-diagram.png" alt="Top view of the LED matrix board: the 8x8 matrix in the upper area, driver and buffer chips below and a socket on the left and right edges.">
+    <img src="/images/extensions/led-matrix-8x8/led-matrix-8x8-diagram.webp" alt="Top view of the LED matrix board: the 8x8 matrix in the upper area, driver and buffer chips below and a socket on the left and right edges.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -79,7 +79,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/led-matrix-8x8/led-matrix-8x8-diagram.png" alt="Top view of the LED matrix board with 10 numbered markers that are explained in the list below.">
+      <img src="/images/extensions/led-matrix-8x8/led-matrix-8x8-diagram.webp" alt="Top view of the LED matrix board with 10 numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb" href="#tour-1" style="left:50.0%;top:35.4%" aria-label="1: led matrix (ds1)">1<span class="xb-pop"><b>LED matrix (DS1)</b> — Fit with its pin 1 at the lower left.</span></a>
       <a class="xb-mk xb-pl" href="#tour-2" style="left:7.8%;top:72.0%" aria-label="2: input socket s in (j1)">2<span class="xb-pop"><b>Input socket S IN (J1)</b> — Load 6, data 7, clock 9, 5&nbsp;V on 2.</span></a>
       <a class="xb-mk xb-pr" href="#tour-3" style="left:92.2%;top:72.0%" aria-label="3: chain socket chain (j2)">3<span class="xb-pop"><b>Chain socket CHAIN (J2)</b> — Data and clock continue.</span></a>
@@ -303,7 +303,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/led-matrix-8x8/led-matrix-8x8-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/led-matrix-8x8/led-matrix-8x8-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
-    <tr><td><a href="/images/extensions/led-matrix-8x8/led-matrix-8x8-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/led-matrix-8x8/led-matrix-8x8-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

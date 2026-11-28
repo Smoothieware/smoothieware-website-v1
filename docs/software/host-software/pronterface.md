@@ -1,9 +1,11 @@
 ---
+title: "Pronterface"
 permalink: /pronterface
 ---
 
-
-# Pronterface
+{::nomarkdown}
+<span id="pronterface"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/pronterface.png">
@@ -21,7 +23,7 @@ Mainly for 3D printers, but very useful for debugging problems with any types of
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  Pronterface is designed for 3D printers and will do weird things for CNC mills and laser cutters (like ignoring some commands).<br><br>For CNC mills/routers, use <a href="bcnc">bCNC</a> and for laser cutters use <a href="visicut">Visicut</a>.
+  Pronterface is designed for 3D printers and will do weird things for CNC mills and laser cutters (like ignoring some commands).<br><br>For CNC mills/routers, use <a href="bcnc">bCNC</a> and for laser cutters use <a href="https://visicut.org/">Visicut</a>.
 </sl-alert>
 
 ## Getting it

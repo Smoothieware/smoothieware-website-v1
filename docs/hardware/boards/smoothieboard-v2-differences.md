@@ -3,7 +3,9 @@ permalink: /smoothieboard-v2-differences
 title: Smoothieboard V2 vs V1 - Complete Comparison
 ---
 
-# Smoothieboard V2 vs V1 - Complete Comparison
+{::nomarkdown}
+<span id="smoothieboard-v2-vs-v1---complete-comparison"></span>
+{:/nomarkdown}
 
 This comprehensive guide documents all the differences between Smoothieboard V2 and V1, including hardware specifications, firmware architecture, configuration changes, and migration considerations.
 
@@ -33,8 +35,6 @@ This comprehensive guide documents all the differences between Smoothieboard V2 
 | **Stepper Drivers** | A5984 (basic) | TMC2660/2590 (SpreadCycle) | SPI-configurable drivers |
 | **Expansion GPIO** | Limited | 90 pins (Gadgeteer) | Extensive |
 | **Price** | $100-150 | $230 | Higher |
-
----
 
 ## 1. Hardware Platform
 
@@ -104,8 +104,6 @@ This comprehensive guide documents all the differences between Smoothieboard V2 
 | **Width** | 105 mm | ~120-130 mm |
 | **Mounting** | 4 corner M3 holes | 4 corner M3 holes |
 
----
-
 ## 2. Stepper Motor Drivers
 
 ### 2.1 Driver Comparison
@@ -172,8 +170,6 @@ Key changes:
 - Current in milliamps (v2) vs amps (v1)
 - INI sections replace flat config
 
----
-
 ## 3. Power System
 
 ### 3.1 Power Architecture
@@ -193,9 +189,9 @@ Key changes:
 | **5V Regulator** | Optional (solder on) | Onboard 3A |
 
 **V2 5V Power Sources (automatic selection):**
-1. **Onboard Regulator:** 3A from Vmot (JP16 to disable)
-2. **USB Power:** ~500mA (JP15 to disable)
-3. **External 5V:** Via 5VIN header
+1. Onboard Regulator: 3A from Vmot (JP16 to disable)
+2. USB Power: ~500mA (JP15 to disable)
+3. External 5V: Via 5VIN header
 
 ### 3.2 MOSFET Outputs
 
@@ -212,8 +208,6 @@ Key changes:
   <strong>Thermal Runaway Protection:</strong> V2's high-side PFET can instantly kill all 4 low-current outputs. If a MOSFET fails shorted, the watchdog can still disconnect power - a significant safety improvement over V1.
 </sl-alert>
 {:/nomarkdown}
-
----
 
 ## 4. Inputs and Expansion
 
@@ -271,8 +265,6 @@ V2 introduces 9 standardized Gadgeteer headers (GA through GI):
 - External stepper drivers
 - Sensors, Raspberry Pi, custom boards
 
----
-
 ## 5. Connectivity
 
 ### 5.1 Storage
@@ -311,10 +303,8 @@ V2 introduces 9 standardized Gadgeteer headers (GA through GI):
 - [HTTP and WebSocket](/network#v2-http-and-websocket-server) (port 80): static web files plus command and upload sockets
 - [Network shell](/network#v2-network-shell) (port 23): G-code and console commands
 - [FTP](/network#v2-ftp-server) (port 21): unencrypted standard file transfer, not SFTP
-- **Auto-Update:** Network firmware update commands
+- Auto-Update: Network firmware update commands
 - [NTP](/network#v2-ntp-clock-setup) (outbound UDP port 123): real-time-clock synchronization
-
----
 
 ## 6. Firmware Architecture
 
@@ -381,8 +371,6 @@ alpha.max_rate = 30000
 </sl-alert>
 {:/nomarkdown}
 
----
-
 ## 7. Configuration Reference
 
 ### 7.1 Key Setting Mappings
@@ -432,8 +420,6 @@ alpha.max_rate = 30000
 
 Example: {::nomarkdown}<pin>PG10^</pin>{:/nomarkdown} (PG10 with pullup enabled)
 
----
-
 ## 8. Feature Status
 
 ### 8.1 Modules Ported from V1
@@ -466,7 +452,7 @@ Example: {::nomarkdown}<pin>PG10^</pin>{:/nomarkdown} (PG10 with pullup enabled)
 | **Configurable Prime Drivers** | SpreadCycle current control and StallGuard2 load detection; no StealthChop2 |
 | **OTA Updates** | Network firmware updates |
 | **[Slaved Axes](/actuator-slaving)** | Software-parallel internal TMC motors and independent G28.7 alignment |
-| **[Auxiliary UART target](/uart#send-text-to-a-connected-device-v2-only)** | Send device messages with `echo -1` |
+| **[Auxiliary UART target](/uart#send-text-to-a-connected-device)** | Send device messages with `echo -1` |
 | **[NIST G30/G30.1](/g30#nist-stored-position-in-v2-grbl-mode)** | Stored machine position in GRBL mode |
 | **[`ed` and `le`](/console-commands#ed)** | Streaming file editor plus interactive line editing and session history |
 | **[O-word Subroutines](/subroutines)** | Limited named subroutine definitions and calls |
@@ -478,8 +464,6 @@ Example: {::nomarkdown}<pin>PG10^</pin>{:/nomarkdown} (PG10 with pullup enabled)
 - SCARA calibration
 - Rotary Delta calibration
 - Some advanced features
-
----
 
 ## 9. When to Choose Each Version
 
@@ -502,8 +486,6 @@ Example: {::nomarkdown}<pin>PG10^</pin>{:/nomarkdown} (PG10 with pullup enabled)
 - Simple application (basic 3D printer)
 - Need 5 on-board drivers (V1 5X variant)
 - Want proven reliability
-
----
 
 ## 10. Troubleshooting Quick Reference
 
@@ -540,8 +522,6 @@ Example: {::nomarkdown}<pin>PG10^</pin>{:/nomarkdown} (PG10 with pullup enabled)
 - Try ping from computer
 - Test Telnet (port 23) or HTTP (port 80) individually
 
----
-
 ## Related Pages
 
 - [Smoothieboard V2 Prime](/smoothieboard-v2-prime) - Technical specifications
@@ -549,7 +529,5 @@ Example: {::nomarkdown}<pin>PG10^</pin>{:/nomarkdown} (PG10 with pullup enabled)
 - [STM32H7 Pin Usage](/stm32h7-pin-usage) - Complete pin assignments
 - [Smoothieboards](/smoothieboards) - All board versions
 - [Configuring Smoothie](/configuring-smoothie) - Configuration guide
-
----
 
 *Last updated: November 2025*

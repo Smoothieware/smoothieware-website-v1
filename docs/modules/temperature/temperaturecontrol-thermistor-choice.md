@@ -1,4 +1,5 @@
 ---
+title: "Thermistor choice"
 permalink: /temperaturecontrol-thermistor-choice
 ---
 

@@ -1,9 +1,11 @@
 ---
+title: "Glossary"
 permalink: /glossary
 ---
 
-
-# Glossary
+{::nomarkdown}
+<span id="glossary"></span>
+{:/nomarkdown}
 
 This page provides definitions for common terms used in the Smoothieware documentation.
 
@@ -86,8 +88,8 @@ See the [delta guide](/delta) for setup instructions.
 An endstop is a sensor (usually a mechanical switch or optical sensor) placed at the end of an axis to detect when the moving parts reach their limit. Smoothieboard has 6 endstop inputs: two for each of the three primary axes (min and max positions).
 
 Endstops serve two main purposes:
-- **[Homing](#homing)**: Finding a known reference position
-- **Limit protection**: Preventing the machine from moving beyond safe boundaries
+- [Homing](#homing): Finding a known reference position
+- Limit protection: Preventing the machine from moving beyond safe boundaries
 
 See the [endstops documentation](/endstops) for wiring and configuration.
 
@@ -132,8 +134,8 @@ See the [supported G-codes](/supported-g-codes) documentation for a complete ref
 ### GitHub
 GitHub is a web-based platform for version control and collaboration. The Smoothieware project uses GitHub to host its source code, track issues, and manage contributions from the community.
 
-- **Firmware repository**: [github.com/Smoothieware/Smoothieware](https://github.com/Smoothieware/Smoothieware)
-- **Documentation**: [github.com/Smoothieware/smoothieware-website-v1](https://github.com/Smoothieware/smoothieware-website-v1)
+- Firmware repository: [github.com/Smoothieware/Smoothieware](https://github.com/Smoothieware/Smoothieware)
+- Documentation: [github.com/Smoothieware/smoothieware-website-v1](https://github.com/Smoothieware/smoothieware-website-v1)
 
 See the [GitHub guide](/github) for how to contribute.
 
@@ -162,20 +164,20 @@ The `G28` command triggers homing. See the [G28 documentation](/g28) for details
 ### Host Software
 Software running on a computer that communicates with [Smoothieboard](/smoothieboards) to send commands and monitor status. Examples include:
 
-- **[Pronterface](/pronterface)**: Simple, reliable host for 3D printing
-- **[OctoPrint](/octoprint)**: Web-based print server
-- **[LaserWeb](/laserweb)**: Specialized for laser cutting
-- **[bCNC](/bcnc)**: CNC-focused with visualization
+- [Pronterface](/pronterface): Simple, reliable host for 3D printing
+- [OctoPrint](/octoprint): Web-based print server
+- [LaserWeb](/laserweb): Specialized for laser cutting
+- [bCNC](/bcnc): CNC-focused with visualization
 
 See the [software page](/software) for a complete list.
 
 ### Hotend
 The component of a [3D printer](/3d-printer-guide) that melts filament for extrusion. A hotend typically consists of:
 
-- **Heater block**: Contains the heating element
-- **Heat break**: Thermal barrier preventing heat from traveling up
-- **Heat sink**: Dissipates heat from the cold end
-- **[Nozzle](#nozzle)**: The opening through which molten plastic exits
+- Heater block: Contains the heating element
+- Heat break: Thermal barrier preventing heat from traveling up
+- Heat sink: Dissipates heat from the cold end
+- [Nozzle](#nozzle): The opening through which molten plastic exits
 
 See the [extruder documentation](/extruder) for configuration.
 
@@ -203,8 +205,8 @@ Modules can be enabled or disabled through the [configuration file](/configuring
 
 MOSFETs are electronic switches used on [Smoothieboard](/smoothieboards) to control high-current devices. Smoothieboard has two types:
 
-- **Small MOSFETs**: For lower-power devices like fans and [hotends](#hotend) (typically up to 5A)
-- **Big MOSFETs**: For higher-power devices like [heated beds](#heated-bed) (typically up to 15-20A)
+- Small MOSFETs: For lower-power devices like fans and [hotends](#hotend) (typically up to 5A)
+- Big MOSFETs: For higher-power devices like [heated beds](#heated-bed) (typically up to 15-20A)
 
 These are controlled via [PWM](#pwm) for variable power output or simple on/off switching.
 
@@ -215,8 +217,8 @@ These are controlled via [PWM](#pwm) for variable power output or simple on/off 
 
 These terms describe the default state of a switch:
 
-- **NC (Normally Closed)**: The circuit is connected when the switch is not activated. Opening the circuit triggers detection. NC is preferred for [endstops](#endstop) because a broken wire is detected as a triggered endstop (fail-safe).
-- **NO (Normally Open)**: The circuit is disconnected when the switch is not activated. Closing the circuit triggers detection.
+- NC (Normally Closed): The circuit is connected when the switch is not activated. Opening the circuit triggers detection. NC is preferred for [endstops](#endstop) because a broken wire is detected as a triggered endstop (fail-safe).
+- NO (Normally Open): The circuit is disconnected when the switch is not activated. Closing the circuit triggers detection.
 
 See the [endstops documentation](/endstops) for configuration of NC and NO switches.
 
@@ -240,9 +242,9 @@ Smoothieboard supports various panel types including RepRap Discount panels and 
 
 A control algorithm used to maintain temperature stability in [hotends](#hotend) and [heated beds](#heated-bed). PID tuning adjusts how aggressively the heater responds to temperature differences:
 
-- **P (Proportional)**: Response proportional to current error
-- **I (Integral)**: Response based on accumulated error over time
-- **D (Derivative)**: Response based on rate of change
+- P (Proportional): Response proportional to current error
+- I (Integral): Response based on accumulated error over time
+- D (Derivative): Response based on rate of change
 
 See the [PID tuning guide](/temperaturecontrol-pid-autotuning) for automatic tuning.
 
@@ -271,17 +273,17 @@ See the [Pronterface documentation](/pronterface) for setup and usage.
 A device that converts mains [AC](#ac) power to low-voltage [DC](#dc) for electronics. [Smoothieboard](/smoothieboards) typically requires 12V or 24V DC power.
 
 Common PSU types:
-- **Brick/Laptop style**: Compact, enclosed units with barrel connectors
-- **ATX**: Computer power supplies, provide multiple voltages
-- **Switching/Industrial**: Open-frame supplies with screw terminals
+- Brick/Laptop style: Compact, enclosed units with barrel connectors
+- ATX: Computer power supplies, provide multiple voltages
+- Switching/Industrial: Open-frame supplies with screw terminals
 
 Choose a PSU with sufficient wattage for your [stepper motors](/stepper-motors), heaters, and other loads.
 
 ### Pullup, Pulldown
 Resistors used to ensure a [GPIO](#gpio) pin has a defined logic state when not actively driven:
 
-- **Pullup resistor**: Connects the pin to the positive voltage, defaulting to HIGH
-- **Pulldown resistor**: Connects the pin to ground, defaulting to LOW
+- Pullup resistor: Connects the pin to the positive voltage, defaulting to HIGH
+- Pulldown resistor: Connects the pin to ground, defaulting to LOW
 
 [Smoothieboard](/smoothieboards) has internal pullup resistors that can be enabled in the [pin configuration](/pin-configuration). These are commonly used with [endstop](#endstop) switches.
 
@@ -319,11 +321,11 @@ See the [SD card documentation](/sd-card) for formatting and usage.
 ### Sensor
 A device that detects physical properties and converts them to electrical signals. Common sensors in CNC applications include:
 
-- **[Thermistors](#thermistor)**: Measure temperature
-- **[Endstops](#endstop)**: Detect position limits
-- **[Z-probe](#z-probe)**: Measure bed distance
-- **[Hall effect sensors](#hall-effect-sensor)**: Detect magnetic fields
-- **Optical sensors**: Detect light/objects
+- [Thermistors](#thermistor): Measure temperature
+- [Endstops](#endstop): Detect position limits
+- [Z-probe](#z-probe): Measure bed distance
+- [Hall effect sensors](#hall-effect-sensor): Detect magnetic fields
+- Optical sensors: Detect light/objects
 
 See the [sensor types documentation](/sensor-types) for configuration options.
 
@@ -331,7 +333,7 @@ See the [sensor types documentation](/sensor-types) for configuration options.
 See [MOSFETs](#mosfets).
 
 ### Spindle
-A rotating tool holder used in [CNC mills](/cnc-mill-guide) and routers. Unlike a stationary [laser](#laser) or [hotend](#hotend), spindles rotate cutting tools at high speeds to remove material. Smoothieware can control spindle speed via [PWM](#pwm) or RS485.
+A rotating tool holder used in [CNC mills](/cnc-mill-guide) and routers. Unlike a stationary [laser](/laser) or [hotend](#hotend), spindles rotate cutting tools at high speeds to remove material. Smoothieware can control spindle speed via [PWM](#pwm) or RS485.
 
 See the [spindle module documentation](/spindle-module) for configuration.
 
@@ -345,7 +347,7 @@ See the [stepper motor documentation](/stepper-motors) for wiring and configurat
 ### STM32H745
 The dual-core ARM Cortex-M7/M4 microcontroller used in Smoothieboard V2. This advanced microcontroller features a 480MHz Cortex-M7 core for high-performance processing and a 240MHz Cortex-M4 core for secondary tasks. The STM32H745 provides significantly more processing power than the [LPC1769](#lpc1769), enabling advanced features, faster [G-code](#g-code) processing, and smoother motion control.
 
-See the [Smoothieboard V2 documentation](/smoothieboard-v2) for board-specific information.
+See the [Smoothieboard V2 documentation](/smoothieboard-v2-differences) for board-specific information.
 
 ## T
 
@@ -385,9 +387,9 @@ See the [Smoothieboard documentation](/smoothieboard) for power input specificat
 ### Voltage
 Voltage is the electrical potential difference between two points, measured in Volts (V). It can be thought of as the "pressure" pushing [current](#current) through a circuit. Common voltages in Smoothieboard setups:
 
-- **5V**: Logic level for signals, USB power
-- **12V**: Common for 3D printers
-- **24V**: Higher performance, faster heating, more motor torque
+- 5V: Logic level for signals, USB power
+- 12V: Common for 3D printers
+- 24V: Higher performance, faster heating, more motor torque
 
 ## Z
 
@@ -395,9 +397,9 @@ Voltage is the electrical potential difference between two points, measured in V
 A sensor used to measure the distance between the tool (typically a [nozzle](#nozzle)) and the [bed](#bed). Z-probes enable automatic bed leveling and mesh compensation, improving print quality on uneven surfaces.
 
 Types of Z-probes:
-- **Inductive/capacitive**: Detect metal beds
-- **BLTouch/servo probes**: Mechanical touch sensor
-- **[FSR](/using-fsrs)**: Force-sensitive resistors
-- **Conductive nozzle**: Uses the nozzle itself
+- Inductive/capacitive: Detect metal beds
+- BLTouch/servo probes: Mechanical touch sensor
+- [FSR](/using-fsrs): Force-sensitive resistors
+- Conductive nozzle: Uses the nozzle itself
 
 See the [Z-probe documentation](/zprobe) for wiring and configuration.

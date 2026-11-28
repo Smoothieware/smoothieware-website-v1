@@ -1,8 +1,11 @@
 ---
+title: "PWM capable pins"
 permalink: /pwm-capable
 ---
 
-# PWM Capable Pins
+{::nomarkdown}
+<span id="pwm-capable-pins"></span>
+{:/nomarkdown}
 
 This page is a summary of [LPC1769 Pin Usage](lpc1769-pin-usage) concerning only hardware PWM capable pins.
 

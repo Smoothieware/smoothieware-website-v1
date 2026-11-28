@@ -1,4 +1,5 @@
 ---
+title: "Main power input"
 permalink: /main-power-input
 ---
 

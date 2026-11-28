@@ -1,4 +1,5 @@
 ---
+title: "Delta grid calibration options"
 permalink: /delta-grid-calibration-options
 ---
 

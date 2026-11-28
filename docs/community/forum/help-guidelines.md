@@ -1,4 +1,5 @@
 ---
+title: "Help guidelines"
 permalink: /help-guidelines
 ---
 

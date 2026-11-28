@@ -4,7 +4,9 @@ layout: default
 title: Debug - Versioned Tags
 ---
 
-# Versioned Tag Debug Page
+{::nomarkdown}
+<span id="versioned-tag-debug-page"></span>
+{:/nomarkdown}
 
 This page demonstrates the `<versioned>` custom tags that display version-specific content based on the user's version preference (v1/v2).
 

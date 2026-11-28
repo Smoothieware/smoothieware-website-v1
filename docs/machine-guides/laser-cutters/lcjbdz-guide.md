@@ -1,9 +1,11 @@
 ---
+title: "LCJBDZ guide"
 permalink: /lcjbdz-guide
 ---
 
-
-# Your guide to installing Smoothieboard in a Red Box Laser Cutting machine
+{::nomarkdown}
+<span id="your-guide-to-installing-smoothieboard-in-a-red-box-laser-cutting-machine"></span>
+{:/nomarkdown}
 
 This is an in-progress guide/log of my conversion of a 60W Liaocheng city Dongchangfu District Branch painted laser equipment Co. (LCJBDZ) CNC laser cutter to run a Smoothieboard. They're the red box lasers available for very little money on Amazon.
 
@@ -52,7 +54,22 @@ While this machine does come with a safety switch on the door, it also comes wit
 
 Also, the seams around the door aren't protected and there's a set of vent holes in the front of the door. Plug all of these, both to improve safety by preventing people from looking in and to improve exhaust airflow (by forcing it to come in from the bottom). Some soft window insulation and some aluminum tape (respectively) work beautifully for these tasks.
 
-{% include hardware/wiring/warning-for-include.md %}
+## Safety warnings
+
+{::nomarkdown}
+<sl-alert variant="danger" open>
+  <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
+  <strong>Make sure you read this. Seriously. Not kidding. Do it. It's important.</strong>
+  <ul>
+    <li>Check the polarity of every power input, and check it again. Reversed polarity can damage or destroy all or part of your board. The 3.5mm and 5mm power connectors are inverted, so rely on the diagrams.</li>
+    <li>Never connect or disconnect stepper motors while the board is powered.</li>
+    <li>Keep anything metallic away from the board, a short will destroy it.</li>
+    <li>Never put 12V or 24V into a 5V, endstop or thermistor input.</li>
+    <li>If your machine has heaters, set up <a href="/temperaturecontrol#safety">the heater safety measures</a>. Fires will kill you if you don't.</li>
+  </ul>
+  Before you wire anything, read <a href="/warning">all the wiring safety warnings</a>.
+</sl-alert>
+{:/nomarkdown}
 
 ## Endstops
 

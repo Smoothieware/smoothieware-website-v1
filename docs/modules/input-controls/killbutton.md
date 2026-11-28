@@ -1,9 +1,11 @@
 ---
+title: "Kill button"
 permalink: /killbutton
 ---
 
-
-# Smoothie Kill Button
+{::nomarkdown}
+<span id="smoothie-kill-button"></span>
+{:/nomarkdown}
 
 There are two solutions for implementing a kill button on the Smoothieboard:
 
@@ -26,8 +28,6 @@ Wire a simple button on two pins.
   <img src="/images/recovered/simple-button.png" alt="Simple Button" style="width: 300px; height: 300px; float: right; margin-left: 1rem;"/>
 </a>
 {:/nomarkdown}
-
-
 
 The button may be configured as a kill switch, which will halt all operations, turn off heaters, and pause the host. It can be cleared with a {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown} command or by resetting the board. To enable a kill button, the following configuration is added:
 
@@ -113,11 +113,20 @@ unkill_enable = false        # do not unkill when button held or released
 </versioned>
 {:/nomarkdown}
 
-
-
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Normally Closed (NC) Kill Button Warning:</strong> If your kill button is "Normally Closed" (NC), it will be pressed at boot time. By default, the bootloader reads the <pin>2.12</pin> pin at boot time and if it is closed, will enter DFU mode. This means that you cannot use pin <pin>2.12</pin> for a normally closed kill button as it will prevent the board from booting normally. The solution is very simple: just use any other pin and edit the configuration accordingly.
 </sl-alert>
 
-{% include troubleshooting/stopping-smoothie-for-include.md %}
+## Stopping Smoothie
+
+Pressing the kill button stops everything instantly. {::nomarkdown}<mcode>M112</mcode>{:/nomarkdown} does the same from your host, but it has to wait for the receive buffer to have room, Control-X doesn't.
+
+Heaters are turned off, the file being played is aborted, and the position is lost, so you will have to home again. Smoothie then stays in the Halt state until you send {::nomarkdown}<mcode>M999</mcode>{:/nomarkdown}, or hold the flashing kill button for 2 seconds.
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="book"></sl-icon>
+  <strong>Learn more:</strong> <a href="/stopping-smoothie">Stopping Smoothie</a>
+</sl-alert>
+{:/nomarkdown}

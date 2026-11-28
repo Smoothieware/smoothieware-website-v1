@@ -1,15 +1,24 @@
 ---
+title: "Coding standards"
 permalink: /coding-standards
 ---
 
-# Coding Standards
+{::nomarkdown}
+<span id="coding-standards"></span>
+{:/nomarkdown}
 
 Lots of people work together on Smoothie's code.
 
-{% include developers/contributing-for-include.md %}
+Smoothie is a community effort, and any help is very welcome.
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="book"></sl-icon>
+  <strong>Learn more:</strong> <a href="/contributing">How to contribute</a>
+</sl-alert>
+{:/nomarkdown}
 
 In order to make everybody's life easier, and keep the codebase clean and manageable, here are a few rules you should follow when coding Smoothie stuff:
-
 
 ## Do not include other headers in a header file unless absolutely necessary to define something in that header
 

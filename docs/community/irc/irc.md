@@ -4,7 +4,9 @@ layout: default
 title: Smoothie IRC Channel
 ---
 
-# Smoothie IRC Channel
+{::nomarkdown}
+<span id="smoothie-irc-channel"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/hashtag.png">
@@ -16,7 +18,14 @@ IRC, or "Internet Relay Chat", is a nice way to chat directly with other communi
 
 Before you use Smoothie's IRC channel, please read the following advice:
 
-{% include community/forum/help-guidelines-for-include.md %}
+Before asking for help, please read the help guidelines : giving your board version, firmware version, configuration file and a clear description of the problem gets you an answer much faster.
+
+{::nomarkdown}
+<sl-alert variant="primary" open>
+  <sl-icon slot="icon" name="book"></sl-icon>
+  <strong>Learn more:</strong> <a href="/help-guidelines">Help guidelines</a>
+</sl-alert>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="primary" open>

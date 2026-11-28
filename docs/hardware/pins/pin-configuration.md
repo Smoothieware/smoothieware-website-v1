@@ -1,4 +1,5 @@
 ---
+title: "Pin configuration"
 permalink: /pin-configuration
 ---
 

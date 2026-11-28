@@ -1,9 +1,11 @@
 ---
+title: "Motion control"
 permalink: /motion-control
 ---
 
-
-# Motion control
+{::nomarkdown}
+<span id="motion-control"></span>
+{:/nomarkdown}
 
 Smoothie reads G-code instructions and converts those into movement, typically by turning motors.
 
@@ -16,7 +18,6 @@ Related motion features:
 - [Feed Hold and Cycle Start](/feed-hold), the merged V2 real-time `!` and `~` controls (installed firmware may predate them)
 - [Slaved Axes](/actuator-slaving), dual internal-driver motors with independent alignment
 - [Backlash Compensation](/backlash-compensation), experimental V1 branch and pending V2 PR; see the version-specific instructions
-
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -45,8 +46,6 @@ And that acceleration's value is a function of the torque of your motors and the
 
 You set the acceleration value by modifying the `acceleration` value in your configuration file:
 
-
-
 {::nomarkdown}
 <versioned orientation="horizontal">
 <v1>
@@ -70,8 +69,6 @@ default_acceleration = 3000.0  # Acceleration in mm/second/second
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 The units are millimeters per second per second, which means how many "millimeters per second" worth of speed is added every second.
 
@@ -125,8 +122,6 @@ Like acceleration, this is a value you will have to "play with" to find the righ
 
 You change it by changing the `junction_deviation` value in config.
 
-
-
 {::nomarkdown}
 <versioned orientation="horizontal">
 <v1>
@@ -150,8 +145,6 @@ xy_junction_deviation = 0.05  # Similar to the old "max_jerk", in millimeters
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 `0.05` is a typical value for a 3D printer.
 
@@ -184,8 +177,6 @@ Setting a maximum speed ensures that Smoothie will never go higher than that spe
 This is useful if the machine would "skip" steps or have other problems if too high a speed was required, which is the case in most machines.
 
 To set the maximum speed for an axis, edit the `max_speed` configuration option for that axis:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -221,8 +212,6 @@ The units for the speed limit are millimeters per minute.
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 {::nomarkdown}
 <sl-alert variant="primary" open>

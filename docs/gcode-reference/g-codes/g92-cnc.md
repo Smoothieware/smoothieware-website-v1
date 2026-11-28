@@ -1,8 +1,11 @@
 ---
+title: "G92 (CNC mode)"
 permalink: /g92-cnc
 ---
 
-# {::nomarkdown}<gcode>G92</gcode>{:/nomarkdown} G-code
+{::nomarkdown}
+<span id="-g-code"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/gcode.png">
@@ -56,8 +59,6 @@ Which means: set a global offset of 10 in the X axis and 10 in the Y axis.
 
 ## Parameters
 
-
-
 | Parameter | Usage               | Example  |
 | --------- | ------------------- | -------- |
 | `X`       | Offset in the X axis | <gcode>G92</gcode> X10 |
@@ -66,8 +67,6 @@ Which means: set a global offset of 10 in the X axis and 10 in the Y axis.
 | `A`       | Offset in the A axis | <gcode>G92</gcode> A10 |
 | `B`       | Offset in the B axis | <gcode>G92</gcode> B10 |
 | `C`       | Offset in the C axis | <gcode>G92</gcode> C10 |
-
-
 
 ## Friend Gcodes
 

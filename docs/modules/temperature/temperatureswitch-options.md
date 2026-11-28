@@ -1,4 +1,5 @@
 ---
+title: "Temperature switch options"
 permalink: /temperatureswitch-options
 ---
 

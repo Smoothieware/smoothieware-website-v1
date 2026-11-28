@@ -3,7 +3,9 @@ permalink: /backlash-compensation
 title: Backlash Compensation (Experimental)
 ---
 
-# Backlash Compensation (Experimental)
+{::nomarkdown}
+<span id="backlash-compensation-experimental"></span>
+{:/nomarkdown}
 
 Mechanical backlash is free movement between reversing a drive and seeing the axis move. The experimental implementation adds extra motor steps after a direction change while keeping the reported actuator position unchanged.
 

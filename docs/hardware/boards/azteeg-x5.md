@@ -1,8 +1,11 @@
 ---
+title: "Azteeg X5"
 permalink: /azteeg-x5
 ---
 
-# Super Quick Start Up Guide
+{::nomarkdown}
+<span id="super-quick-start-up-guide"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <a href="/images/board.png">
@@ -19,15 +22,15 @@ The Azteeg X5 mini comes pre-flashed with a bootloader, so you're ready to get s
 
 ## Installation Steps
 
-1. **Download the latest firmware** from [Smoothieware Edge FirmwareBin](https://github.com/Smoothieware/Smoothieware/tree/edge/FirmwareBin).
+1. Download the latest firmware from [Smoothieware Edge FirmwareBin](https://github.com/Smoothieware/Smoothieware/tree/edge/FirmwareBin).
 
-2. **Get the config file** for the Azteeg X5 mini from Github:
+2. Get the config file for the Azteeg X5 mini from Github:
    - [AzteegX5Mini](https://github.com/Smoothieware/Smoothieware/tree/edge/ConfigSamples/AzteegX5Mini) for Cartesian machines
    - [AzteegX5Mini.delta](https://github.com/Smoothieware/Smoothieware/tree/edge/ConfigSamples/AzteegX5Mini.delta) for Delta machines
 
-3. **Copy files to SD card**: Copy both `firmware.bin` and the config file to your SD card, then safely remove the card from your computer.
+3. Copy files to SD card: Copy both `firmware.bin` and the config file to your SD card, then safely remove the card from your computer.
 
-4. **Insert and power on**: Insert the SD card into the Azteeg X5 mini card slot and plug in your USB cable.
+4. Insert and power on: Insert the SD card into the Azteeg X5 mini card slot and plug in your USB cable.
 
    {::nomarkdown}
    <sl-alert variant="warning" open>
@@ -36,15 +39,15 @@ The Azteeg X5 mini comes pre-flashed with a bootloader, so you're ready to get s
    </sl-alert>
    {:/nomarkdown}
 
-5. **Watch the boot sequence**: The X5 mini will boot and read the files on the card looking for new firmware. LEDs will count up and then start flashing to indicate that Smoothieware is now running.
+5. Watch the boot sequence: The X5 mini will boot and read the files on the card looking for new firmware. LEDs will count up and then start flashing to indicate that Smoothieware is now running.
 
-6. **Connect to Smoothie**: You may now connect to Smoothie with [Pronterface](pronterface) or Repetier Host at any baud rate.
+6. Connect to Smoothie: You may now connect to Smoothie with [Pronterface](pronterface) or Repetier Host at any baud rate.
 
    If using **Windows**, you will need to install an inf serial driver for it to recognize the "Smoothie-serial" showing up on your PC. See [Windows Drivers](/windows-drivers).
 
    Mac OS/X and Linux have the drivers built in. You can ignore any messages about missing DFU drivers.
 
-7. **Install micro stepping jumpers**:
+7. Install micro stepping jumpers:
 
    {::nomarkdown}
    <sl-alert variant="danger" open>

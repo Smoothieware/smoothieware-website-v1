@@ -1,9 +1,11 @@
 ---
+title: "Fusion360"
 permalink: /fusion360
 ---
 
-
-# Fusion 360 with Smoothieware
+{::nomarkdown}
+<span id="fusion-360-with-smoothieware"></span>
+{:/nomarkdown}
 
 This page is currently under development.
 
@@ -17,7 +19,9 @@ For a comprehensive tutorial on using Fusion 360 with CNC machines, watch this v
 </div>
 {:/nomarkdown}
 
-## Coming Soon
+## More to come
+
+{::nomarkdown}<p><a href="mailto:wolf.arthur@gmail.com">Coming soon</a></p>{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>

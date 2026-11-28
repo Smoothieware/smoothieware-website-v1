@@ -1,8 +1,11 @@
 ---
+title: "Flashing the bootloader"
 permalink: /flashing-the-bootloader
 ---
 
-# Flashing the Bootloader
+{::nomarkdown}
+<span id="flashing-the-bootloader"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <versioned orientation="vertical">

@@ -1,9 +1,11 @@
 ---
+title: "Coronavirus"
 permalink: /coronavirus
 ---
 
-
-# Coronavirus
+{::nomarkdown}
+<span id="coronavirus"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="warning" open>
@@ -56,7 +58,7 @@ Here's a list of "main" social media groups per country:
 - [United Kingdom (3D Crowd)](https://www.prusaprinters.org/group/3dcrowd-uk-mb5KPRn)
 - [United Kingdom (Print for victory)](http://printforvictory.org/)
 - [France (Covid3D JOGL/Assistance Publique Hopitaux de Paris)](https://covid3d.org/): this is if you have design know-how, and want to help design OS projects that help with the crisis)
-- [Canada](covidstop.ca)
+- Canada
 - [Slovakia](https://pomoznemocnici.sk/) (thanks Brano)
 - Please add your country.
 

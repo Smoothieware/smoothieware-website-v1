@@ -1,5 +1,7 @@
 
-# Spindle Control
+{::nomarkdown}
+<span id="spindle-control"></span>
+{:/nomarkdown}
 
 <!-- learning-diagram:50-spindle-module -->
 {::nomarkdown}
@@ -10,9 +12,6 @@
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">The spindle command becomes a configured output <a href="#learning-diagram-50-spindle-module" aria-label="Permanent link to The spindle command becomes a configured output" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-
-
-
 
 {::nomarkdown}
 <a href="/images/temporary/cnc-spindle-generic.jpg">

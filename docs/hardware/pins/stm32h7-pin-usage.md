@@ -1,9 +1,11 @@
 ---
+title: "STM32H7 pin usage"
 permalink: /stm32h7-pin-usage
 ---
 
-
-# STM32H745 Pin Usage (V2 Prime)
+{::nomarkdown}
+<span id="stm32h745-pin-usage-v2-prime"></span>
+{:/nomarkdown}
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -272,7 +274,7 @@ V2 uses several pin naming formats depending on the function:
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>TMC2660 Motor Driver Circuit</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>TMC2660 Motor Driver Circuit</h3></div>
   <a href="/images/v2-schematic/parts/motor-driver-tmc2660.png">
     <img src="/images/v2-schematic/parts/motor-driver-tmc2660.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -304,7 +306,7 @@ The V2 Prime has 4 onboard TMC2660 stepper drivers. All drivers share an SPI bus
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>Thermistor Input Circuit</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>Thermistor Input Circuit</h3></div>
   <a href="/images/v2-schematic/parts/inputs-full.png">
     <img src="/images/v2-schematic/parts/inputs-full.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -342,7 +344,7 @@ V2 Prime has 4 buffered thermistor inputs via an LMV324 op-amp buffer, plus addi
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>Endstop Input Circuit</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>Endstop Input Circuit</h3></div>
   <a href="/images/v2-schematic/parts/inputs-full.png">
     <img src="/images/v2-schematic/parts/inputs-full.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -372,7 +374,7 @@ Each endstop has a 3-way solder jumper (JP1-JP6) to configure pull-up or pull-do
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>Probe Input Circuit</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>Probe Input Circuit</h3></div>
   <a href="/images/v2-schematic/parts/inputs-full.png">
     <img src="/images/v2-schematic/parts/inputs-full.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -401,7 +403,7 @@ Each endstop has a 3-way solder jumper (JP1-JP6) to configure pull-up or pull-do
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>MOSFET Output Circuit</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>MOSFET Output Circuit</h3></div>
   <a href="/images/v2-schematic/parts/mosfet-outputs.png">
     <img src="/images/v2-schematic/parts/mosfet-outputs.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -466,7 +468,7 @@ V2 has multiple hardware timer channels available for PWM:
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>USB Host + Device Circuit</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>USB Host + Device Circuit</h3></div>
   <a href="/images/v2-schematic/parts/usb-host-device.png">
     <img src="/images/v2-schematic/parts/usb-host-device.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -587,7 +589,7 @@ V2 has multiple hardware timer channels available for PWM:
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>SWD/JTAG Debug Interface</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>SWD/JTAG Debug Interface</h3></div>
   <a href="/images/v2-schematic/parts/swd-jtag.png">
     <img src="/images/v2-schematic/parts/swd-jtag.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -651,7 +653,7 @@ Board ID values:
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>LED Indicator Circuit</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>LED Indicator Circuit</h3></div>
   <a href="/images/v2-schematic/parts/leds.png">
     <img src="/images/v2-schematic/parts/leds.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -671,7 +673,7 @@ Board ID values:
 
 {::nomarkdown}
 <div class='panel panel-default wrap_right' style='width:420px;padding:10px;float:right;margin-left:1rem'>
-  <div class='panel-heading'><h4 class='panel-title'>Expansion Headers Schematic</h4></div>
+  <div class='panel-heading'><h3 class='panel-title'>Expansion Headers Schematic</h3></div>
   <a href="/images/v2-schematic/parts/expansion-headers.png">
     <img src="/images/v2-schematic/parts/expansion-headers.png" style="width: 400px; height: auto;"/>
   </a><br/>
@@ -902,8 +904,8 @@ For users migrating from V1, here's how key functions map between versions:
 
 ## Related Documentation
 
-- [V2 Schematic Reference](/v2-schematic) - Complete schematic documentation
-- [Smoothieboard V2](/smoothieboard-v2) - Main V2 documentation
+- [V2 Schematic Reference](/smoothieboard-v2-schematic) - Complete schematic documentation
+- [Smoothieboard V2](/smoothieboard-v2-differences) - Main V2 documentation
 - [LPC1769 Pin Usage](/lpc1769-pin-usage) - V1 pin reference (for comparison)
 - [Pin Configuration](/pin-configuration) - How to configure pins in config file
 

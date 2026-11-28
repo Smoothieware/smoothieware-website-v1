@@ -1,15 +1,15 @@
 ---
+title: "Steinhart-Hart"
 permalink: /steinharthart
 ---
 
-
-# Steinhart-Hart Thermistor Configuration
+{::nomarkdown}
+<span id="steinhart-hart-thermistor-configuration"></span>
+{:/nomarkdown}
 
 To add a new thermistor, you need to calculate the Steinhart Hart coefficients and then enter them into the <a href="/configuring-smoothie">configuration file</a> or using {::nomarkdown}<mcode>M305</mcode>{:/nomarkdown} and save with {::nomarkdown}<mcode>M500</mcode>{:/nomarkdown}.
 
 ## Using R-T Curve Method
-
-
 
 This can be done by adding this to the configuration:
 
@@ -40,8 +40,6 @@ hotend.rt_curve = 20.0,126800,150,1360,240,206.5
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 Where the 6 numbers are temperature/resistance pairs for three sets of readings.
 
@@ -76,8 +74,6 @@ and save with {::nomarkdown}<mcode>M500</mcode>{:/nomarkdown} to the config-over
 
 Or enter them in the config:
 
-
-
 {::nomarkdown}
 <versioned orientation="vertical">
 <v1>
@@ -106,8 +102,6 @@ hotend.coefficients = 0.000722376862540841,0.000216302098124288,0.00000009264016
 </versioned>
 {:/nomarkdown}
 
-
-
 Another alternative is to issue the command:
 
 ```plaintext
@@ -127,8 +121,6 @@ If there is a beta specified in the config, that will be used unless overridden 
 Predefined thermistors for which the new Steinhart Hart Coefficients are known will use them, the older predefined ones will continue to use Beta.
 
 You can force smoothie to continue to use the old beta settings for all predefined thermistors by setting:
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -157,5 +149,3 @@ hotend.use_beta_table = true    # force predefined thermistors to use the old be
 </v2>
 </versioned>
 {:/nomarkdown}
-
-

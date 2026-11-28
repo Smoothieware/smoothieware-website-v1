@@ -1,5 +1,4 @@
 
-
 <!-- learning-diagram:32-delta-grid -->
 {::nomarkdown}
 <figure id="learning-diagram-32-delta-grid" style="clear: both; max-width: 960px; margin: 2rem auto; scroll-margin-top: 16vh;">

@@ -1,5 +1,7 @@
 
-# Unboxing
+{::nomarkdown}
+<span id="unboxing"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -38,11 +40,11 @@ The first thing you might want to do before you start connecting your board is t
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
   <strong>Own a non-Smoothieboard board?</strong><br><br>
-  If you don't have a Smoothieboard but have or consider purchasing an MKS board, please make sure you read <a href="troubleshooting#what-is-wrong-with-mks">What's wrong with MKS</a>
+  If you don't have a Smoothieboard but have or consider purchasing an MKS board, please make sure you read <a href="/troubleshooting#8-before-asking-the-community-for-help">What's wrong with MKS</a>
 </sl-alert>
 {:/nomarkdown}
 
-# Connecting via USB
+## Connecting via USB
 
 {::nomarkdown}
 <a href="/images/files-on-sd.png">
@@ -138,7 +140,7 @@ If you are already familiar with it, you can try connecting right now and get an
 
 If not, we explain it all later in this guide.
 
-# Connecting via the network
+## Connecting via the network
 
 {::nomarkdown}
 <a href="/images/network-cables.png">
@@ -157,7 +159,7 @@ The Smoothieboard V1 can optionally be connected to an Ethernet network via USB-
 
 This allows you to access a web interface the board can serve, and control the machine via your browser.
 
-It also allows you to connect software that supports it (like [Pronterface](pronterface) and [Visicut](visicut)) via the network.
+It also allows you to connect software that supports it (like [Pronterface](pronterface) and [Visicut](https://visicut.org/)) via the network.
 
 Network connectivity is optional and disabled by default, but is easy to enable and configure if you have the appropriate hardware.
 
@@ -172,7 +174,7 @@ The Smoothieboard V2 Prime includes an onboard Ethernet port (RJ45) with integra
 
 This allows you to access a web interface the board serves, and control the machine via your browser.
 
-It also allows you to connect software that supports it (like [Pronterface](pronterface) and [Visicut](visicut)) to your Smoothieboard via the network.
+It also allows you to connect software that supports it (like [Pronterface](pronterface) and [Visicut](https://visicut.org/)) to your Smoothieboard via the network.
 
 Network is disabled by default but is very easy to enable and configure. It is the recommended primary method of communicating with your V2 Smoothieboard.
 
@@ -183,7 +185,7 @@ Network is disabled by default but is very easy to enable and configure. It is t
 
 You can find all the information you need about using the network interface here: [Network interface](/network)
 
-# Updating your firmware
+## Updating your firmware
 
 {::nomarkdown}
 <a href="/images/firmware-upgrade.png">

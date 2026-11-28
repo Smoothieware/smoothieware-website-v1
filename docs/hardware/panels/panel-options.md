@@ -1,4 +1,5 @@
 ---
+title: "Panel options"
 permalink: /panel-options
 ---
 

@@ -4,7 +4,9 @@ layout: default
 title: Moving from Marlin to Smoothie
 ---
 
-# Moving from Marlin to Smoothie
+{::nomarkdown}
+<span id="moving-from-marlin-to-smoothie"></span>
+{:/nomarkdown}
 
 If you are a Marlin user moving to a Smoothie system, you might have an existing configuration you want to port over.
 
@@ -847,7 +849,7 @@ While in Smoothie you use the [Filament detector](filament-detector) module
 
 In Marlin, you can use `autostart.g` or similar startup scripts to run commands when the board boots.
 
-In Smoothie, this is handled by the [on_boot.gcode](on_boot.gcode) file.
+In Smoothie, this is handled by the [on_boot.gcode](/on-boot-gcode) file.
 
 Simply create a file called `on_boot.gcode` in the root of your SD card and add the G-code commands you want to run on startup (one per line).
 
@@ -864,7 +866,7 @@ on_boot_gcode_enable true
 on_boot_gcode /sd/on_boot.gcode
 ```
 
-See the [on_boot.gcode documentation](on_boot.gcode) for more details and examples.
+See the [on_boot.gcode documentation](/on-boot-gcode) for more details and examples.
 
 ## Bed levelling
 

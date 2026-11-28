@@ -4,7 +4,9 @@ layout: default
 title: Submit Windows System Information
 ---
 
-# How to submit Windows System Information
+{::nomarkdown}
+<span id="how-to-submit-windows-system-information"></span>
+{:/nomarkdown}
 
 If you are experiencing driver problems on Windows, we may ask you to complete these steps to submit your system's information for review.
 
@@ -22,8 +24,6 @@ With reports from multiple affected machines, we hope to identify the specific c
 ## Steps to Submit System Information
 
 Please perform the following steps on the computer with the driver difficulties:
-
-
 
 1. Plug a Smoothieboard into a USB port of this computer.
 

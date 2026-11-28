@@ -20,7 +20,7 @@ permalink: /extensions/laser-barrier-board
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/laser-barrier-board/receiver-diagram.png" alt="Top view of the receiver board: a ten-contact socket at the left, three logic chips in a row, an infrared receiver module at the right edge and a link connector at the bottom.">
+    <img src="/images/extensions/laser-barrier-board/receiver-diagram.webp" alt="Top view of the receiver board: a ten-contact socket at the left, three logic chips in a row, an infrared receiver module at the right edge and a link connector at the bottom.">
     <figcaption>The receiver board, drawn from the design files. The emitter is a smaller board, shown in the board tour.</figcaption>
   </figure>
 </div>
@@ -86,7 +86,7 @@ The numbers on each drawing match the list below it. Boards are shown from the c
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the emitter board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/laser-barrier-board/emitter-diagram.png" alt="Top view of the emitter board with six numbered markers that are explained in the list below.">
+      <img src="/images/extensions/laser-barrier-board/emitter-diagram.webp" alt="Top view of the emitter board with six numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pl" href="#tour-1" style="left:15.5%;top:70%" aria-label="1: link connector">1<span class="xb-pop"><b>Link connector (J1)</b> — three contacts from the receiver: 1 ground, 2 link 5&nbsp;V, 3 gate. Two footprints for the same contacts sit side by side; fit one. In both, the contacts run 1, 2, 3 from top to bottom. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pb" href="#tour-2" style="left:40.9%;top:30.7%" aria-label="2: carrier generator">2<span class="xb-pop"><b>Carrier generator</b> — U1, a TLC555 timer chip that makes the pulse train (the carrier). Its resistors and capacitor are chosen for about 38&nbsp;kHz. The gate contact enables it through its reset pin.</span></a>
       <a class="xb-mk" href="#tour-3" style="left:59.5%;top:58%" aria-label="3: LED switch">3<span class="xb-pop"><b>LED switch</b> — Q1, an AO3400A MOSFET that switches the infrared LED on and off at the carrier rate.</span></a>
@@ -111,7 +111,7 @@ The numbers on each drawing match the list below it. Boards are shown from the c
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the receiver board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/laser-barrier-board/receiver-diagram.png" alt="Top view of the receiver board with eleven numbered markers that are explained in the list below.">
+      <img src="/images/extensions/laser-barrier-board/receiver-diagram.webp" alt="Top view of the receiver board with eleven numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb xb-pl" href="#tour-6" style="left:10.5%;top:43.7%" aria-label="6: Gadgeteer socket">6<span class="xb-pop"><b>Gadgeteer socket X IN (J1)</b> — the 10-contact socket that connects to the controller. Five contacts are used: 3.3&nbsp;V, 5&nbsp;V, beam state, emitter enable and ground, plus one optional raw output. <i>See the pinout.</i></span></a>
       <a class="xb-mk xb-pb xb-pr" href="#tour-7" style="left:90%;top:43%" aria-label="7: infrared receiver">7<span class="xb-pop"><b>Infrared receiver (U1)</b> — a TSSP4038 receiver module for 38&nbsp;kHz modulated infrared. It sits at the right-hand edge, facing out.</span></a>
       <a class="xb-mk xb-pb" href="#tour-8" style="left:45.5%;top:15%" aria-label="8: tick generator">8<span class="xb-pop"><b>Tick generator</b> — U7, a TLC555 timer chip on the 3.3&nbsp;V rail. It makes the receiver&rsquo;s own clock, about 4.7&nbsp;kHz. The counter divides it into phases.</span></a>
@@ -377,8 +377,8 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
     <tr><td><a href="/images/extensions/laser-barrier-board/receiver-schematic.pdf">Receiver schematic (PDF)</a></td><td>The receiver circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/laser-barrier-board/emitter-bom.csv">Emitter parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
     <tr><td><a href="/images/extensions/laser-barrier-board/receiver-bom.csv">Receiver parts list (CSV)</a></td><td>Every component with its value and footprint</td></tr>
-    <tr><td><a href="/images/extensions/laser-barrier-board/emitter-diagram.png">Emitter drawing (SVG)</a></td><td>The top view at full resolution</td></tr>
-    <tr><td><a href="/images/extensions/laser-barrier-board/receiver-diagram.png">Receiver drawing (SVG)</a></td><td>The top view at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/laser-barrier-board/emitter-diagram.webp">Emitter drawing (WebP)</a></td><td>The top view at full resolution</td></tr>
+    <tr><td><a href="/images/extensions/laser-barrier-board/receiver-diagram.webp">Receiver drawing (WebP)</a></td><td>The top view at full resolution</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

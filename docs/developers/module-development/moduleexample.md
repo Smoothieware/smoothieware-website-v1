@@ -1,9 +1,11 @@
 ---
+title: "Module example"
 permalink: /moduleexample
 ---
 
-
-# Module Example
+{::nomarkdown}
+<span id="module-example"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="primary" open>

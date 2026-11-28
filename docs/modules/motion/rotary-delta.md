@@ -1,8 +1,11 @@
 ---
+title: "Rotary delta"
 permalink: /rotary-delta
 ---
 
-# Rotary Delta
+{::nomarkdown}
+<span id="rotary-delta"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -28,16 +31,16 @@ A rotary delta robot uses three rotating arms with joints instead of the linear 
 
 This design offers some potential advantages:
 
-- **More compact**: No need for tall vertical rails
-- **Different workspace**: Can reach different areas compared to linear deltas
-- **Interesting kinematics**: Unique motion characteristics
+- More compact: No need for tall vertical rails
+- Different workspace: Can reach different areas compared to linear deltas
+- Interesting kinematics: Unique motion characteristics
 
 However, rotary deltas come with significant challenges:
 
-- **Complex calibration**: Extremely difficult to calibrate accurately
-- **Homing difficulties**: Finding the home position is challenging
-- **Limited tooling**: Few resources and tools available
-- **Unproven in practice**: Very few working examples exist
+- Complex calibration: Extremely difficult to calibrate accurately
+- Homing difficulties: Finding the home position is challenging
+- Limited tooling: Few resources and tools available
+- Unproven in practice: Very few working examples exist
 
 ## Current Implementation Status
 
@@ -56,8 +59,6 @@ However, the source code may be helpful if you can read C++ code:
 - [Rotary Delta Calibration](https://github.com/smoothieware/smoothieware/tree/edge/src/modules/tools/rotarydeltacalibration) - Calibration module (note: link may not work, check repository)
 
 ## Configuration
-
-
 
 To use the rotary delta arm solution, you would set in your config file:
 
@@ -89,17 +90,15 @@ However, be aware that additional configuration parameters will be needed, and t
 
 You will likely need to examine the source code to understand what parameters are required.
 
-
-
 ## Challenges You Will Face
 
 If you attempt to build and use a rotary delta with Smoothieboard, be prepared for:
 
-1. **Mechanical complexity**: Building the robot itself is challenging
-2. **Calibration nightmare**: Getting accurate calibration is extremely difficult
-3. **Homing problems**: Establishing a reliable home position is tough
-4. **Code debugging**: You will likely need to modify the source code
-5. **Limited community support**: Very few people have experience with this
+1. Mechanical complexity: Building the robot itself is challenging
+2. Calibration nightmare: Getting accurate calibration is extremely difficult
+3. Homing problems: Establishing a reliable home position is tough
+4. Code debugging: You will likely need to modify the source code
+5. Limited community support: Very few people have experience with this
 
 ## Comparison with Other Arm Solutions
 
@@ -129,8 +128,8 @@ Linear deltas are well-documented, well-tested, and have excellent community sup
 
 For developers interested in the implementation or considering modifications:
 
-- **v1:** [RotaryDeltaSolution.cpp](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/robot/arm_solutions/RotaryDeltaSolution.cpp)
-- **v2:** [RotaryDeltaSolution.cpp](https://github.com/Smoothieware/Smoothieware-v2/blob/main/Firmware/src/robot/arm_solutions/RotaryDeltaSolution.cpp)
+- v1: [RotaryDeltaSolution.cpp](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/robot/arm_solutions/RotaryDeltaSolution.cpp)
+- v2: [RotaryDeltaSolution.cpp](https://github.com/Smoothieware/Smoothieware-v2/blob/main/Firmware/src/robot/arm_solutions/RotaryDeltaSolution.cpp)
 
 The source code contains the kinematic equations and may be helpful if you're implementing or debugging a rotary delta system.
 

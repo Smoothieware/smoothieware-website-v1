@@ -1,4 +1,5 @@
 ---
+title: "Logic power"
 permalink: /logic-power
 ---
 

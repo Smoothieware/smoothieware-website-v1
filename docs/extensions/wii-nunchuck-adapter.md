@@ -20,7 +20,7 @@ permalink: /extensions/wii-nunchuck-adapter
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/wii-nunchuck-adapter/wii-nunchuck-adapter-diagram.png" alt="Top view of the adapter: a shaped tongue at one end that enters the controller plug, a socket on the left and right edges and a Qwiic connector.">
+    <img src="/images/extensions/wii-nunchuck-adapter/wii-nunchuck-adapter-diagram.webp" alt="Top view of the adapter: a shaped tongue at one end that enters the controller plug, a socket on the left and right edges and a Qwiic connector.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -83,7 +83,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/wii-nunchuck-adapter/wii-nunchuck-adapter-diagram.png" alt="Top view of the Nunchuck adapter with 10 numbered markers that are explained in the list below.">
+      <img src="/images/extensions/wii-nunchuck-adapter/wii-nunchuck-adapter-diagram.webp" alt="Top view of the Nunchuck adapter with 10 numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pb" href="#tour-1" style="left:50.0%;top:11.9%" aria-label="1: controller tongue (j4)">1<span class="xb-pop"><b>Controller tongue (J4)</b> — The controller plug pushes onto this edge.</span></a>
       <a class="xb-mk xb-pl" href="#tour-2" style="left:13.3%;top:50.0%" aria-label="2: input socket i in (j1)">2<span class="xb-pop"><b>Input socket I IN (J1)</b> — SDA on contact 8, SCL on 9.</span></a>
       <a class="xb-mk xb-pr" href="#tour-3" style="left:86.7%;top:50.0%" aria-label="3: chain socket chain (j2)">3<span class="xb-pop"><b>Chain socket CHAIN (J2)</b> — Continues the bus.</span></a>
@@ -314,7 +314,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/wii-nunchuck-adapter/wii-nunchuck-adapter-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/wii-nunchuck-adapter/wii-nunchuck-adapter-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
-    <tr><td><a href="/images/extensions/wii-nunchuck-adapter/wii-nunchuck-adapter-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/wii-nunchuck-adapter/wii-nunchuck-adapter-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

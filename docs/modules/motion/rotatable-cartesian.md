@@ -1,4 +1,5 @@
 ---
+title: "Rotatable cartesian"
 permalink: /rotatable-cartesian
 ---
 
@@ -22,7 +23,7 @@ permalink: /rotatable-cartesian
 </versioned>
 {:/nomarkdown}
 
-# Rotatable Cartesian Arm Solution
+## Rotatable Cartesian Arm Solution
 
 <!-- learning-diagram:38-rotatable-cartesian -->
 {::nomarkdown}
@@ -34,14 +35,11 @@ permalink: /rotatable-cartesian
 </figure>
 {:/nomarkdown}
 
-
-
-
 Rotatable Cartesian is a variant of the standard Cartesian arm solution that allows you to rotate the entire coordinate system by a specified angle.
 
 This is useful when your machine's physical frame is not aligned with the desired working coordinate system, or when you want to work at an angle without physically rotating your workpiece or machine.
 
-## What is Rotatable Cartesian?
+### What is Rotatable Cartesian?
 
 In a standard Cartesian system, the X, Y, and Z axes are fixed relative to the machine's frame. The Rotatable Cartesian solution applies a rotation transformation to the X-Y plane, effectively rotating your coordinate system by a specified angle.
 
@@ -51,7 +49,7 @@ In a standard Cartesian system, the X, Y, and Z axes are fixed relative to the m
 - All G-code coordinates are automatically transformed to the rotated frame
 - Each motor still controls a single linear axis (unlike CoreXY)
 
-## Mathematical Transformation
+### Mathematical Transformation
 
 The rotatable cartesian solution applies a 2D rotation matrix to the X and Y coordinates:
 
@@ -63,14 +61,14 @@ Gamma position = Z (unchanged)
 
 Where `angle` is the rotation angle specified in the configuration (converted from degrees to radians).
 
-## When to Use Rotatable Cartesian
+### When to Use Rotatable Cartesian
 
 Rotatable Cartesian is useful in specific scenarios:
 
-1. **Misaligned Machines**: Your machine frame is built at an angle, but you want to work in a standard X/Y coordinate system
-2. **Angled Workpieces**: You have a workpiece mounted at an angle and want to mill/cut along its natural axes
-3. **Workspace Optimization**: You want to maximize usable workspace when your machine is positioned at an angle to your work table
-4. **Calibration Compensation**: Your machine has a slight angular misalignment that you want to correct in software
+1. Misaligned Machines: Your machine frame is built at an angle, but you want to work in a standard X/Y coordinate system
+2. Angled Workpieces: You have a workpiece mounted at an angle and want to mill/cut along its natural axes
+3. Workspace Optimization: You want to maximize usable workspace when your machine is positioned at an angle to your work table
+4. Calibration Compensation: Your machine has a slight angular misalignment that you want to correct in software
 
 {::nomarkdown}
 <sl-alert variant="primary" open>
@@ -79,7 +77,7 @@ Rotatable Cartesian is useful in specific scenarios:
 </sl-alert>
 {:/nomarkdown}
 
-## Configuration
+### Configuration
 
 {::nomarkdown}
 <versioned>
@@ -92,7 +90,7 @@ To configure your machine to use the Rotatable Cartesian arm solution, add this 
 arm_solution rotatable_cartesian
 ```
 
-### Angle Parameter
+#### Angle Parameter
 
 The rotation angle is specified using the `alpha_angle` parameter:
 
@@ -106,7 +104,7 @@ alpha_angle    45.0    # Rotation angle in degrees (default: 0.0)
 - Positive angles rotate counter-clockwise when viewed from above (looking down at the X-Y plane)
 - The angle is applied to the entire coordinate system
 
-### Complete Configuration Example
+#### Complete Configuration Example
 
 ```
 # Rotatable Cartesian arm solution
@@ -152,9 +150,9 @@ gamma_max_rate                               6000
 </versioned>
 {:/nomarkdown}
 
-## Understanding the Rotation
+### Understanding the Rotation
 
-### Example: 45-Degree Rotation
+#### Example: 45-Degree Rotation
 
 If you set `alpha_angle 45.0`:
 
@@ -162,7 +160,7 @@ If you set `alpha_angle 45.0`:
 - A command to move to `X0 Y10` would result in the toolhead moving to approximately `X-7.07 Y7.07` in machine coordinates
 - The Z axis remains unchanged
 
-### Coordinate System Visualization
+#### Coordinate System Visualization
 
 ```
 Standard Cartesian (alpha_angle = 0):
@@ -180,14 +178,14 @@ Rotated Cartesian (alpha_angle = 45):
    +------> X (rotated)
 ```
 
-## Common Use Cases
+### Common Use Cases
 
 {::nomarkdown}
 <versioned>
 <v1>
 {:/nomarkdown}
 
-### Case 1: Machine Built at an Angle
+#### Case 1: Machine Built at an Angle
 
 Your machine frame was built with the gantry at 15° to your work table:
 
@@ -198,7 +196,7 @@ alpha_angle  15.0    # Compensate for 15° misalignment
 
 Now when you command `X100 Y0`, the machine will move 100mm along your work table's X direction, even though the gantry is angled.
 
-### Case 2: Diamond-Oriented Workspace
+#### Case 2: Diamond-Oriented Workspace
 
 Your machine is positioned at 45° to maximize diagonal workspace:
 
@@ -207,7 +205,7 @@ arm_solution rotatable_cartesian
 alpha_angle  45.0    # Rotate to diamond orientation
 ```
 
-### Case 3: Small Angular Calibration
+#### Case 3: Small Angular Calibration
 
 Your machine has a 2° misalignment that's difficult to correct mechanically:
 
@@ -233,9 +231,7 @@ alpha_angle  2.0    # Small correction angle
 </versioned>
 {:/nomarkdown}
 
-## Migration to Smoothieware v2
-
-
+### Migration to Smoothieware v2
 
 {::nomarkdown}
 <sl-alert variant="danger" open>
@@ -250,23 +246,21 @@ alpha_angle  2.0    # Small correction angle
 </sl-alert>
 {:/nomarkdown}
 
+### Troubleshooting
 
-
-## Troubleshooting
-
-### Problem: Movement directions are unexpected
+#### Problem: Movement directions are unexpected
 
 **Solution:** Remember that the rotation is counter-clockwise when viewed from above. If movements seem reversed, try using a negative angle instead of positive (e.g., use `-30` instead of `330`).
 
-### Problem: Movements are correct but distances are wrong
+#### Problem: Movements are correct but distances are wrong
 
 **Solution:** Check your `alpha_steps_per_mm` and `beta_steps_per_mm` settings. The rotation transformation doesn't change distances, only directions.
 
-### Problem: Homing doesn't work correctly
+#### Problem: Homing doesn't work correctly
 
 **Solution:** Endstops are still in machine coordinates (not rotated). Make sure your endstop positions match your machine's physical axes, not the rotated coordinate system.
 
-## Comparison with Other Solutions
+### Comparison with Other Solutions
 
 | Feature | Rotatable Cartesian | Standard Cartesian | CoreXY |
 |---------|---------------------|-------------------|---------|
@@ -276,13 +270,13 @@ alpha_angle  2.0    # Small correction angle
 | v1 Support | Yes | Yes | Yes |
 | v2 Support | No | Yes | Yes |
 
-## Source Code
+### Source Code
 
 For developers or those interested in the implementation details, the Rotatable Cartesian solution is implemented in:
 
-- **v1:** [RotatableCartesianSolution.cpp](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/robot/arm_solutions/RotatableCartesianSolution.cpp)
+- v1: [RotatableCartesianSolution.cpp](https://github.com/Smoothieware/Smoothieware/blob/edge/src/modules/robot/arm_solutions/RotatableCartesianSolution.cpp)
 
-## See Also
+### See Also
 
 - [Arm Solutions](arm-solutions) - Overview of all arm solution types
 - [Cartesian](cartesian) - Standard Cartesian configuration

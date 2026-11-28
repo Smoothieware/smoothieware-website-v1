@@ -1,4 +1,5 @@
 ---
+title: "Forum guidelines"
 permalink: /forum-guidelines
 ---
 

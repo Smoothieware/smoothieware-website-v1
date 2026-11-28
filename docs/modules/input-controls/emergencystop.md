@@ -1,9 +1,11 @@
 ---
+title: "Emergency stop"
 permalink: /emergencystop
 ---
 
-
-# Emergency Stop Setup
+{::nomarkdown}
+<span id="emergency-stop-setup"></span>
+{:/nomarkdown}
 
 This chapter should give you an idea about how to realize a proper emergency stop setup.
 
@@ -118,7 +120,6 @@ The VFD is powered via mains directly, so we will disconnect it as well.
   <strong>Stay Alive</strong><br><br>
   Working with mains voltage and even DC voltages above 50VDC is considered deadly! Make sure you know what you do or if not, ask a person with the necessary skills to help you!
 </sl-alert>
-{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -127,7 +128,7 @@ The VFD is powered via mains directly, so we will disconnect it as well.
 </sl-alert>
 {:/nomarkdown}
 
-The K1 relay is wired to the play/pause button ([see the details here](pausebutton)).
+The K1 relay is wired to the play/pause button ([see the details here](/kill-pause-button)).
 
 This has the effect that if you push an emergency stop button, the Smoothieboard will be stopped as well.
 
@@ -190,17 +191,17 @@ After configuring your emergency stop setup, it's essential to verify that it wo
 
 ### Testing Software Kill Button
 
-1. **Check endstop states** using the <mcode>M119</mcode> command in the console
+1. Check endstop states using the <mcode>M119</mcode> command in the console
    - This will show the current state of all configured endstops and kill buttons
    - Verify that your kill button shows the correct state (triggered/not triggered)
 
-2. **Test software emergency stop** with the `M112` command
+2. Test software emergency stop with the `M112` command
    - Send `M112` from the console to trigger a firmware emergency stop
    - Verify that all motion stops immediately
    - If `unkill_enable = false`, verify that you cannot resume without reset/power cycle
    - If `unkill_enable = true`, test the unkill command to verify recovery works
 
-3. **Test physical kill button**
+3. Test physical kill button
    - Press the physical kill button
    - Verify all motion stops immediately
    - Check that the board enters kill state
@@ -209,17 +210,17 @@ After configuring your emergency stop setup, it's essential to verify that it wo
 
 ### Testing Hardware Emergency Stop
 
-1. **Test contactor operation**
+1. Test contactor operation
    - Press emergency stop button
    - Verify that power to motors is immediately cut
    - Check that contactor releases audibly/visibly
    - Verify motors are de-energized
 
-2. **Test multiple e-stop buttons** (if applicable)
+2. Test multiple e-stop buttons (if applicable)
    - Test each emergency stop button individually
    - Verify all buttons trigger the emergency stop circuit
 
-3. **Test recovery procedure**
+3. Test recovery procedure
    - Release emergency stop button
    - Verify motors do not restart automatically
    - Test ON button (if using latching circuit)

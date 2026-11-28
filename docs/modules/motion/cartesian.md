@@ -1,8 +1,11 @@
 ---
+title: "Cartesian"
 permalink: /cartesian
 ---
 
-# Cartesian Arm Solution
+{::nomarkdown}
+<span id="cartesian-arm-solution"></span>
+{:/nomarkdown}
 
 <!-- learning-diagram:34-cartesian-axes -->
 {::nomarkdown}
@@ -13,9 +16,6 @@ permalink: /cartesian
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Cartesian motion maps one actuator to each axis <a href="#learning-diagram-34-cartesian-axes" aria-label="Permanent link to Cartesian motion maps one actuator to each axis" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-
-
-
 
 {::nomarkdown}
 <sl-alert variant="neutral" open>
@@ -28,9 +28,9 @@ The Cartesian arm solution is the most common type of machine configuration used
 
 In a Cartesian machine, each actuator (motor and linear rail) directly corresponds to an axis in Cartesian space:
 
-- **Alpha actuator** controls the **X axis**
-- **Beta actuator** controls the **Y axis**
-- **Gamma actuator** controls the **Z axis**
+- Alpha actuator controls the **X axis**
+- Beta actuator controls the **Y axis**
+- Gamma actuator controls the **Z axis**
 
 This is the simplest arm solution, as there is a direct 1:1 relationship between the motors and the movement in space - no mathematical conversion is needed.
 
@@ -38,15 +38,13 @@ This is the simplest arm solution, as there is a direct 1:1 relationship between
 
 Cartesian is the default and most straightforward arm solution for several reasons:
 
-- **Simple to understand**: Direct motor-to-axis mapping makes troubleshooting easy
-- **Easy to calibrate**: Steps-per-mm calculation is straightforward for each axis
-- **Predictable behavior**: What you command is exactly what moves
-- **Wide support**: Almost all CAM software and G-code assumes Cartesian by default
-- **Proven reliability**: Decades of industrial and hobbyist use
+- Simple to understand: Direct motor-to-axis mapping makes troubleshooting easy
+- Easy to calibrate: Steps-per-mm calculation is straightforward for each axis
+- Predictable behavior: What you command is exactly what moves
+- Wide support: Almost all CAM software and G-code assumes Cartesian by default
+- Proven reliability: Decades of industrial and hobbyist use
 
 ## Configuration
-
-
 
 To configure your machine to use the Cartesian arm solution, add this to your configuration file:
 
@@ -80,11 +78,7 @@ arm_solution = cartesian
 
 This is the default setting in Smoothieware, so if you don't specify an arm solution, Cartesian will be used automatically.
 
-
-
 ### Complete Configuration Example
-
-
 
 Here's a typical Cartesian configuration:
 
@@ -159,38 +153,36 @@ max_rate = 300
 </versioned>
 {:/nomarkdown}
 
-
-
 ## Common Cartesian Machines
 
 Cartesian configurations are used in:
 
-- **Most desktop 3D printers** - Prusa i3, Creality Ender, Ultimaker, MakerBot, etc.
-- **CNC routers and mills** - ShopBot, X-Carve, Shapeoko, industrial mills
-- **Laser cutters** - Most CO2 and diode laser cutters
-- **Pick and place machines** - SMT assembly machines
-- **Vinyl cutters** - Cricut, Silhouette, Roland cutters
-- **Plasma cutters** - CNC plasma tables
+- Most desktop 3D printers - Prusa i3, Creality Ender, Ultimaker, MakerBot, etc.
+- CNC routers and mills - ShopBot, X-Carve, Shapeoko, industrial mills
+- Laser cutters - Most CO2 and diode laser cutters
+- Pick and place machines - SMT assembly machines
+- Vinyl cutters - Cricut, Silhouette, Roland cutters
+- Plasma cutters - CNC plasma tables
 
 ## Advantages and Disadvantages
 
 ### Advantages ✅
 
-- **Simplicity**: Easiest to understand and troubleshoot
-- **Direct control**: Each motor controls exactly one axis
-- **Easy calibration**: Straightforward steps-per-mm calculation
-- **Large build volume**: Can be scaled easily in any direction
-- **Well documented**: Extensive community knowledge and resources
-- **Predictable costs**: Standard linear rails and components
-- **Universal G-code**: Works with all standard G-code without modification
+- Simplicity: Easiest to understand and troubleshoot
+- Direct control: Each motor controls exactly one axis
+- Easy calibration: Straightforward steps-per-mm calculation
+- Large build volume: Can be scaled easily in any direction
+- Well documented: Extensive community knowledge and resources
+- Predictable costs: Standard linear rails and components
+- Universal G-code: Works with all standard G-code without modification
 
 ### Disadvantages ❌
 
-- **Moving mass**: Often requires moving the bed (Z) or entire gantry (X/Y)
-- **Speed limitations**: Limited by the mass being moved
-- **Workspace shape**: Rectangular workspace may not be optimal for all applications
-- **Mechanical complexity**: Requires precise alignment of perpendicular axes
-- **Belt stretch**: Long X or Y belts can stretch under acceleration
+- Moving mass: Often requires moving the bed (Z) or entire gantry (X/Y)
+- Speed limitations: Limited by the mass being moved
+- Workspace shape: Rectangular workspace may not be optimal for all applications
+- Mechanical complexity: Requires precise alignment of perpendicular axes
+- Belt stretch: Long X or Y belts can stretch under acceleration
 
 ## Comparison with Other Arm Solutions
 

@@ -20,7 +20,7 @@ permalink: /extensions/led-bar-8
     </div>
   </div>
   <figure>
-    <img src="/images/extensions/led-bar-8/led-bar-8-diagram.png" alt="Top view of the LED bar board: a ten-contact socket on the left and right edges and a row of eight small LEDs.">
+    <img src="/images/extensions/led-bar-8/led-bar-8-diagram.webp" alt="Top view of the LED bar board: a ten-contact socket on the left and right edges and a row of eight small LEDs.">
     <figcaption>Top view, drawn from the board&rsquo;s design files. This is a drawing, not a photograph.</figcaption>
   </figure>
 </div>
@@ -78,7 +78,7 @@ The numbers on the drawing match the list below it. The board is shown from the 
 <figure class="xb-tour">
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
-      <img src="/images/extensions/led-bar-8/led-bar-8-diagram.png" alt="Top view of the LED bar board with 10 numbered markers that are explained in the list below.">
+      <img src="/images/extensions/led-bar-8/led-bar-8-diagram.webp" alt="Top view of the LED bar board with 10 numbered markers that are explained in the list below.">
       <a class="xb-mk xb-pl" href="#tour-1" style="left:5.5%;top:50.0%" aria-label="1: input socket y in (j1)">1<span class="xb-pop"><b>Input socket Y IN (J1)</b> — Seven signals on contacts 3 to 9.</span></a>
       <a class="xb-mk xb-pr" href="#tour-2" style="left:94.5%;top:50.0%" aria-label="2: chain socket chain (j2)">2<span class="xb-pop"><b>Chain socket CHAIN (J2)</b> — Next board; all signal links are open as delivered.</span></a>
       <a class="xb-mk" href="#tour-3" style="left:48.0%;top:66.1%" aria-label="3: lamps 1 to 7 (d1 to d7)">3<span class="xb-pop"><b>Lamps 1 to 7 (D1 to D7)</b> — Lamp 1 follows contact 3, and so on to lamp 7 on contact 9.</span></a>
@@ -364,7 +364,7 @@ Still stuck? Read [how to ask for help](/help-guidelines) or see the general [tr
   <tbody>
     <tr><td><a href="/images/extensions/led-bar-8/led-bar-8-schematic.pdf">Schematic (PDF)</a></td><td>The circuit diagram</td></tr>
     <tr><td><a href="/images/extensions/led-bar-8/led-bar-8-bom.csv">Parts list (CSV)</a></td><td>Every component with its value, footprint and part number where one is chosen</td></tr>
-    <tr><td><a href="/images/extensions/led-bar-8/led-bar-8-diagram.png">Board drawing (PNG)</a></td><td>The top view used on this page</td></tr>
+    <tr><td><a href="/images/extensions/led-bar-8/led-bar-8-diagram.webp">Board drawing (WebP)</a></td><td>The top view used on this page</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

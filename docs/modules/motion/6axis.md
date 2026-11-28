@@ -4,7 +4,9 @@ layout: default
 title: 6 Axis Configuration
 ---
 
-# 6 axis
+{::nomarkdown}
+<span id="6-axis"></span>
+{:/nomarkdown}
 
 <!-- learning-diagram:37-six-axis -->
 {::nomarkdown}
@@ -15,9 +17,6 @@ title: 6 Axis Configuration
   <figcaption style="margin-top: 0.6rem; font-size: 0.92rem; opacity: 0.82; text-align: center;">Six axes add A, B, and C rotation <a href="#learning-diagram-37-six-axis" aria-label="Permanent link to Six axes add A, B, and C rotation" style="margin-left: 0.35rem; text-decoration: none;">#</a></figcaption>
 </figure>
 {:/nomarkdown}
-
-
-
 
 {::nomarkdown}
 <a href="/images/circuit.png">
@@ -64,8 +63,6 @@ Once that is done (and only once that is done), you need to do the same process,
 make
 ```
 
-
-
 You now do:
 
 {::nomarkdown}
@@ -107,8 +104,6 @@ rake axis=6 paxis=4 -m
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 ### Primary Axis Configuration
 
@@ -162,8 +157,6 @@ Once your firmware is compiled, you can now flash it to the board and start usin
 {:/nomarkdown}
 
 ### Configuration
-
-
 
 You can now add the following to your configuration file:
 
@@ -246,8 +239,6 @@ acceleration = 500.0   # mm/sec²
 
 This configuration is very similar to that of your XYZ axes, and you need to change the values to fit your setup.
 
-
-
 ### Endstop Configuration
 
 Optionally if you are using endstops on the A, B, or C axis, you need to **replace** your endstops section with the following (it is also found in the [snippets example](https://github.com/Smoothieware/Smoothieware/blob/edge/ConfigSamples/Snippets/abc-endstop.config)):
@@ -267,8 +258,6 @@ Optionally if you are using endstops on the A, B, or C axis, you need to **repla
 {:/nomarkdown}
 
 **NOTE** The ABC axis will always home after the XYZ axis home and will home individually, unless `homing_order` is defined in which case all axes will home individually in the order specified.
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">

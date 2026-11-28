@@ -1,8 +1,11 @@
 ---
+title: "Smoothieboard v2 original"
 permalink: /smoothieboard-v2-original
 ---
 
-# Smoothieboard v2 Original (LPC4330) - Cancelled Design
+{::nomarkdown}
+<span id="smoothieboard-v2-original-lpc4330---cancelled-design"></span>
+{:/nomarkdown}
 
 {::nomarkdown}
 <sl-alert variant="danger" open>
@@ -446,8 +449,6 @@ This design represents an interesting case study in open-source hardware develop
   <strong>Looking for actual hardware?</strong> Check out the <a href="smoothieboard-v2-prime">v2 Prime</a> for the current high-end board, or <a href="smoothieboard-v1-specifications">v1</a> for the proven, lower-cost option that's been in production since 2013.
 </sl-alert>
 {:/nomarkdown}
-
----
 
 *This page documents the cancelled LPC4330 design for historical purposes.*
 *Last updated: 2025-10-21*

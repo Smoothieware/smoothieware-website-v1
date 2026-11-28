@@ -1,4 +1,5 @@
 ---
+title: "Laser guides"
 permalink: /laser-guides
 ---
 

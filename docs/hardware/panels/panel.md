@@ -1,9 +1,11 @@
 ---
+title: "Panel"
 permalink: /panel
 ---
 
-
-# Using Panel controllers with Smoothieboard
+{::nomarkdown}
+<span id="using-panel-controllers-with-smoothieboard"></span>
+{:/nomarkdown}
 
 « Panels » are a combination of a LCD screen, and some sort of input method ( encoder wheel, or buttons ).
 
@@ -38,8 +40,6 @@ Here are all the configuration options available for the Panel module :
 {% include hardware/panels/panel-options-for-include.md %}
 
 ### Custom menu entries
-
-
 
 Menu entries can be added from the config file for simple commands, for instance the following adds a Power on and Power off menu entry.
 Note that _ will be converted to a space when displayed in the Menu. Commands can be seperated with a |. If you want to add a menu entry that probes your z-axis you will have to use a command like {::nomarkdown}<gcode>G30</gcode>{:/nomarkdown} Z0 followed by a {::nomarkdown}<gcode>G0</gcode>{:/nomarkdown} Z10. For this you need a custom menu entry "custom_menu.zprobe.command G30Z0|G0Z10". This moves the z-axis down untill it hits the probe, sets Z to 0 and moves 10 back up.
@@ -111,8 +111,6 @@ command = M24
 </versioned>
 {:/nomarkdown}
 
-
-
 ### External SD card setup
 
 <sl-alert variant="warning" open>
@@ -173,7 +171,7 @@ It is one of the most popular options for panel controllers.
   The normal recommended 5V regulator will not supply enough current for those panels - if the panel powers up, it will have very low contrast.<br><br>
   Use Recom part <code>R-78E5.0-**1.0**</code> instead - it will supply 1 amp (vs 0.5 amps for the normally recommended regulator).<br><br>
   It is available at Digikey, and likely at other major electronics component sites.<br><br>
-  See <a href="voltageregulator.md">Voltage Regulator</a>.<br><br>
+  See <a href="/voltageregulator">Voltage Regulator</a>.<br><br>
   As an alternative to replacing the R-78E5.0 part on the Smoothieboard, solder a 5V 0.5 amp or 1 amp regulator to the adaptor card in the location marked. Ordinary 7805 regulators will work in that role. See <a href="https://en.wikipedia.org/wiki/78xx">78xx</a>
 </sl-alert>
 
@@ -181,7 +179,7 @@ It is one of the most popular options for panel controllers.
   <sl-icon slot="icon" name="info-circle"></sl-icon>
   <strong>Adapter</strong><br><br>
   There is an adapter board to easily connect a ReprapDiscount GLCD to a Smoothieboard with flat cable, however note this is entirely optional.<br><br>
-  You can find information about it at the <a href="rrdglcdadapter.md">RRDGLCDAdapter</a> page.<br><br>
+  You can find information about it at the <a href="/rrdglcdadapter">RRDGLCDAdapter</a> page.<br><br>
   It's sources are available on <a href="https://github.com/llegoff/GlcdAdapter2">github</a>.<br><br>
   Note that you may have to solder physical pins to the board for pins <pin>3.25</pin> and <pin>3.26</pin>, otherwise the rotary encoder will not work.
 </sl-alert>
@@ -200,8 +198,6 @@ It is one of the most popular options for panel controllers.
 
 On the back of the GLCD EXP1 is to left and EXP2 is to right, pin 1 is bottom left, pin 2 is top left etc.
 5v is EXP1 pin 10, Gnd is EXP1 pin 9
-
-
 
 {::nomarkdown}
 <versioned orientation="vertical">
@@ -260,8 +256,6 @@ Note: V2 uses STM32 pin naming (e.g., PG7 instead of 0.16).
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 You can find a list of pins on the Smoothieboard to connect to the panel [here](http://chibidibidiwah.wdfiles.com/local--files/panel/smoothieboard2sd.jpg) and [here](http://chibidibidiwah.wdfiles.com/local--files/panel/GLCDPINOUTS2SD.jpg).
 

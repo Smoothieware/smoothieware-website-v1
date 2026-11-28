@@ -1,4 +1,5 @@
 ---
+title: "Joystick options"
 permalink: /joystick-options
 ---
 

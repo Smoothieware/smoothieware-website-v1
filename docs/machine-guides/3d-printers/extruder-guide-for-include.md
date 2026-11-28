@@ -1,11 +1,11 @@
 
-# Extruder
+{::nomarkdown}
+<span id="extruder"></span>
+{:/nomarkdown}
 
 Extruders are used to push plastic filament through a hotend, to achieve the awesome feat of [3D Printing](http://en.wikipedia.org/wiki/3D_printing).
 
-This module controls the motor that pushes the filament, it does not take care of the hotend itself, which is the job of [TemperatureControl](temperature-control).
-
-
+This module controls the motor that pushes the filament, it does not take care of the hotend itself, which is the job of [TemperatureControl](/temperaturecontrol).
 
 **Steps Per Millimeter Configuration:**
 
@@ -34,8 +34,6 @@ hotend.steps_per_mm = 140
 </v2>
 </versioned>
 {:/nomarkdown}
-
-
 
 You can create as many Extruder modules as you want (although you may run out of memory and Smoothie will no longer boot), as long as you give them different module names.
 
@@ -90,9 +88,9 @@ Further explanation can be found in Triffid Hunter's guide, linked above.
 
 <sl-alert variant="warning" open>
   <sl-icon slot="icon" name="exclamation-triangle"></sl-icon>
-  In the current <strong>edge</strong> builds, when a filament diameter is specified either from {::nomarkdown}<mcode>M200</mcode>{:/nomarkdown} Dxxx or the config setting Smoothie expects all E values specified to be in mm³, so when you click extrude 10mm in Pronterface Smoothie will actually extrude 10mm³. And E values in a gcode file will all be expected to be mm³.
+  In the current <strong>edge</strong> builds, when a filament diameter is specified either from <mcode>M200</mcode> Dxxx or the config setting Smoothie expects all E values specified to be in mm³, so when you click extrude 10mm in Pronterface Smoothie will actually extrude 10mm³. And E values in a gcode file will all be expected to be mm³.
   <br><br>
-  Note that when firmware retraction is specified via {::nomarkdown}<mcode>M207</mcode>{:/nomarkdown} the retraction length is still in mm not mm³, but will be converted to mm³ based on the filament diameter at the time of extrusion.
+  Note that when firmware retraction is specified via <mcode>M207</mcode> the retraction length is still in mm not mm³, but will be converted to mm³ based on the filament diameter at the time of extrusion.
   <br><br>
   In the current <strong>master</strong> builds, only print moves have E specified in mm³, retract or extrude only moves are still in mm. The change in edge is to be more compliant with other firmwares and user expectations.
 </sl-alert>
