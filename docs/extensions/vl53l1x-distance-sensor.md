@@ -30,7 +30,7 @@ permalink: /extensions/vl53l1x-distance-sensor
   <div class="xb-stat"><b>0x29</b><span>I2C address at power-up</span></div>
   <div class="xb-stat"><b>3.3 V</b><span>supply and logic only</span></div>
   <div class="xb-stat"><b>40 mA</b><span>peak current</span></div>
-  <div class="xb-stat"><b>40 &times; 40</b><span>millimetres, four M3 holes</span></div>
+  <div class="xb-stat"><b>30 &times; 40</b><span>millimetres, four M3 holes</span></div>
 </div>
 <nav class="xb-nav" aria-label="On this page">
   <a href="#specs">Tech specs</a>
@@ -77,7 +77,7 @@ permalink: /extensions/vl53l1x-distance-sensor
     <tr><td>Supply</td><td>3.3&nbsp;V only, 40&nbsp;mA peak</td></tr>
     <tr><td>Pull-ups</td><td>3.3&nbsp;k&Omega; on SDA and SCL, removable</td></tr>
     <tr><td>Connectors</td><td>Two Gadgeteer type I sockets (Samtec SHF-105, 1.27&nbsp;mm), Qwiic, and holes for a 1&times;4 2.54&nbsp;mm header</td></tr>
-    <tr><td>Size</td><td>40 &times; 40&nbsp;mm, four M3 holes on a 30 &times; 30&nbsp;mm square</td></tr>
+    <tr><td>Size</td><td>30 &times; 40&nbsp;mm, four M3 holes on a 20 &times; 30&nbsp;mm rectangle</td></tr>
     <tr><td>Works with</td><td><a href="/smoothieboard-v2-prime">Smoothieboard V2 Prime</a> header GG electrically; no firmware driver</td></tr>
     <tr><td>Licence</td><td>Open hardware, CERN-OHL-S-2.0</td></tr>
   </tbody>
@@ -95,17 +95,17 @@ The numbers on the drawing match the list below it. The board is shown from the 
   <div class="xb-tour-scroll" tabindex="0" role="region" aria-label="Annotated top view of the board">
     <div class="xb-tour-stage">
       <img src="/images/extensions/vl53l1x-distance-sensor/vl53l1x-distance-sensor-diagram.png" alt="Top view of the distance sensor board with 11 numbered markers that are explained in the list below.">
-      <a class="xb-mk xb-pb" href="#tour-1" style="left:42.5%;top:20.0%" aria-label="1: input socket i in">1<span class="xb-pop"><b>Input socket I IN</b> — The ribbon cable from the controller goes here.</span></a>
-      <a class="xb-mk xb-pb" href="#tour-2" style="left:57.5%;top:20.0%" aria-label="2: chain socket chain">2<span class="xb-pop"><b>Chain socket CHAIN</b> — Passes the bus on to the next board.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-1" style="left:40.2%;top:20.0%" aria-label="1: input socket i in">1<span class="xb-pop"><b>Input socket I IN</b> — The ribbon cable from the controller goes here.</span></a>
+      <a class="xb-mk xb-pb" href="#tour-2" style="left:59.8%;top:20.0%" aria-label="2: chain socket chain">2<span class="xb-pop"><b>Chain socket CHAIN</b> — Passes the bus on to the next board.</span></a>
       <a class="xb-mk" href="#tour-3" style="left:50.0%;top:58.8%" aria-label="3: distance sensor">3<span class="xb-pop"><b>Distance sensor</b> — The VL53L1X module. Remove the protective film on top, and keep everything out of its view.</span></a>
-      <a class="xb-mk" href="#tour-4" style="left:39.2%;top:58.4%" aria-label="4: supply capacitors">4<span class="xb-pop"><b>Supply capacitors</b> — Smooth the supply right next to the module.</span></a>
-      <a class="xb-mk" href="#tour-5" style="left:60.5%;top:58.4%" aria-label="5: interrupt and shutdown resistors">5<span class="xb-pop"><b>Interrupt and shutdown resistors</b> — Hold both lines high when nothing drives them.</span></a>
-      <a class="xb-mk xb-pl" href="#tour-6" style="left:20.2%;top:56.0%" aria-label="6: bus pull-ups">6<span class="xb-pop"><b>Bus pull-ups</b> — 3.3&nbsp;k&Omega;; disconnect them with the two links underneath.</span></a>
-      <a class="xb-mk xb-pb xb-pr" href="#tour-7" style="left:90.0%;top:42.9%" aria-label="7: power light pwr">7<span class="xb-pop"><b>Power light PWR</b> — Green while 3.3&nbsp;V is present.</span></a>
-      <a class="xb-mk xb-pr" href="#tour-8" style="left:90.0%;top:57.1%" aria-label="8: interrupt light int">8<span class="xb-pop"><b>Interrupt light INT</b> — Blue while the sensor pulls its interrupt line low.</span></a>
-      <a class="xb-mk" href="#tour-9" style="left:40.9%;top:73.8%" aria-label="9: 2.54 mm header">9<span class="xb-pop"><b>2.54 mm header</b> — Ground, 3.3&nbsp;V, SDA, SCL, for jumper wires. Solder it only if you want it.</span></a>
+      <a class="xb-mk" href="#tour-4" style="left:36.3%;top:58.4%" aria-label="4: supply capacitors">4<span class="xb-pop"><b>Supply capacitors</b> — Smooth the supply right next to the module.</span></a>
+      <a class="xb-mk" href="#tour-5" style="left:63.7%;top:58.4%" aria-label="5: interrupt and shutdown resistors">5<span class="xb-pop"><b>Interrupt and shutdown resistors</b> — Hold both lines high when nothing drives them.</span></a>
+      <a class="xb-mk xb-pl" href="#tour-6" style="left:22.5%;top:56.0%" aria-label="6: bus pull-ups">6<span class="xb-pop"><b>Bus pull-ups</b> — 3.3&nbsp;k&Omega;; disconnect them with the two links underneath.</span></a>
+      <a class="xb-mk xb-pb xb-pr" href="#tour-7" style="left:85.6%;top:42.9%" aria-label="7: power light pwr">7<span class="xb-pop"><b>Power light PWR</b> — Green while 3.3&nbsp;V is present.</span></a>
+      <a class="xb-mk xb-pr" href="#tour-8" style="left:85.6%;top:57.1%" aria-label="8: interrupt light int">8<span class="xb-pop"><b>Interrupt light INT</b> — Blue while the sensor pulls its interrupt line low.</span></a>
+      <a class="xb-mk" href="#tour-9" style="left:38.1%;top:73.8%" aria-label="9: 2.54 mm header">9<span class="xb-pop"><b>2.54 mm header</b> — Ground, 3.3&nbsp;V, SDA, SCL, for jumper wires. Solder it only if you want it.</span></a>
       <a class="xb-mk" href="#tour-10" style="left:50.0%;top:86.2%" aria-label="10: qwiic connector">10<span class="xb-pop"><b>Qwiic connector</b> — The same bus on a four-way cable.</span></a>
-      <a class="xb-mk xb-pb xb-pl" href="#tour-11" style="left:14.3%;top:14.3%" aria-label="11: mounting hole">11<span class="xb-pop"><b>Mounting hole</b> — One of four M3 holes.</span></a>
+      <a class="xb-mk xb-pb xb-pl" href="#tour-11" style="left:18.8%;top:14.3%" aria-label="11: mounting hole">11<span class="xb-pop"><b>Mounting hole</b> — One of four M3 holes.</span></a>
     </div>
   </div>
   <ol class="xb-tour-list">
@@ -179,7 +179,7 @@ Both carry the same four signals.
 {::nomarkdown}
 <figure class="xb-fig">
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Minimum wiring">
-  <svg viewBox="0 0 1200 500" role="img" aria-labelledby="xb-tof-wire"><title id="xb-tof-wire">Wiring: one ten-way ribbon cable from Smoothieboard V2 Prime socket G_G to the sensor board socket marked I IN.</title><image href="/images/extensions/differential-i2c-signal-extender/smoothieboard-v2-prime.webp" x="10" y="10" width="440" height="440"/><text x="230" y="480" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Smoothieboard V2 Prime, socket G_G</text><image href="/images/extensions/vl53l1x-distance-sensor/vl53l1x-distance-sensor-diagram.png" x="560" y="100" width="360.9" height="360.9"/><path d="M220 283 H470 V25 H712.1 V167.1" fill="none" stroke="#0d0f12" stroke-width="16"/><path d="M220 283 H470 V25 H712.1 V167.1" fill="none" stroke="#9aa4b2" stroke-width="12"/><circle cx="220" cy="283" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><circle cx="712.1" cy="167.1" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><text x="740" y="490" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Distance sensor board</text><text x="594" y="65" text-anchor="middle" font-size="17" font-weight="700" fill="#9fd0ff" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Ten-way ribbon, G_G to I IN</text></svg>
+  <svg viewBox="0 0 1200 500" role="img" aria-labelledby="xb-tof-wire"><title id="xb-tof-wire">Wiring: one ten-way ribbon cable from Smoothieboard V2 Prime socket G_G to the sensor board socket marked I IN.</title><image href="/images/extensions/differential-i2c-signal-extender/smoothieboard-v2-prime.webp" x="10" y="10" width="440" height="440"/><text x="230" y="480" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Smoothieboard V2 Prime, socket G_G</text><image href="/images/extensions/vl53l1x-distance-sensor/vl53l1x-distance-sensor-diagram.png" x="605" y="100" width="270.9" height="360.9"/><path d="M220 283 H470 V25 H712.1 V167.1" fill="none" stroke="#0d0f12" stroke-width="16"/><path d="M220 283 H470 V25 H712.1 V167.1" fill="none" stroke="#9aa4b2" stroke-width="12"/><circle cx="220" cy="283" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><circle cx="712.1" cy="167.1" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><text x="740" y="490" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Distance sensor board</text><text x="594" y="65" text-anchor="middle" font-size="17" font-weight="700" fill="#9fd0ff" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Ten-way ribbon, G_G to I IN</text></svg>
   </div>
   <figcaption>One ribbon cable carries power, I2C, the interrupt and the shutdown line. Check pin 1 at both ends before power on.</figcaption>
 </figure>
@@ -235,7 +235,7 @@ Both sensors answer at address 0x29 after power-up. The board lets the controlle
 {::nomarkdown}
 <figure class="xb-fig">
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Two sensors">
-  <svg viewBox="0 0 1200 500" role="img" aria-labelledby="xb-tof-two"><title id="xb-tof-two">Two sensor boards: controller socket G_G to I IN of the first board, and CHAIN of the first board to I IN of the second.</title><image href="/images/extensions/differential-i2c-signal-extender/smoothieboard-v2-prime.webp" x="10" y="10" width="440" height="440"/><text x="230" y="480" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Smoothieboard V2 Prime, socket G_G</text><image href="/images/extensions/vl53l1x-distance-sensor/vl53l1x-distance-sensor-diagram.png" x="520" y="150" width="240.6" height="240.6"/><image href="/images/extensions/vl53l1x-distance-sensor/vl53l1x-distance-sensor-diagram.png" x="870" y="150" width="240.6" height="240.6"/><path d="M220 283 H470 V25 H621.4 V194.7" fill="none" stroke="#0d0f12" stroke-width="16"/><path d="M220 283 H470 V25 H621.4 V194.7" fill="none" stroke="#9aa4b2" stroke-width="12"/><circle cx="220" cy="283" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><circle cx="621.4" cy="194.7" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><path d="M659.2 194.7 V50 H971.4 V194.7" fill="none" stroke="#0d0f12" stroke-width="16"/><path d="M659.2 194.7 V50 H971.4 V194.7" fill="none" stroke="#9aa4b2" stroke-width="12"/><circle cx="659.2" cy="194.7" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><circle cx="971.4" cy="194.7" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><text x="640" y="440" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Sensor A: enabled by pin 6</text><text x="990" y="440" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Sensor B: enabled by pin 3</text></svg>
+  <svg viewBox="0 0 1200 500" role="img" aria-labelledby="xb-tof-two"><title id="xb-tof-two">Two sensor boards: controller socket G_G to I IN of the first board, and CHAIN of the first board to I IN of the second.</title><image href="/images/extensions/differential-i2c-signal-extender/smoothieboard-v2-prime.webp" x="10" y="10" width="440" height="440"/><text x="230" y="480" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Smoothieboard V2 Prime, socket G_G</text><image href="/images/extensions/vl53l1x-distance-sensor/vl53l1x-distance-sensor-diagram.png" x="550" y="150" width="180.6" height="240.6"/><image href="/images/extensions/vl53l1x-distance-sensor/vl53l1x-distance-sensor-diagram.png" x="900" y="150" width="180.6" height="240.6"/><path d="M220 283 H470 V25 H621.4 V194.7" fill="none" stroke="#0d0f12" stroke-width="16"/><path d="M220 283 H470 V25 H621.4 V194.7" fill="none" stroke="#9aa4b2" stroke-width="12"/><circle cx="220" cy="283" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><circle cx="621.4" cy="194.7" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><path d="M659.2 194.7 V50 H971.4 V194.7" fill="none" stroke="#0d0f12" stroke-width="16"/><path d="M659.2 194.7 V50 H971.4 V194.7" fill="none" stroke="#9aa4b2" stroke-width="12"/><circle cx="659.2" cy="194.7" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><circle cx="971.4" cy="194.7" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><text x="640" y="440" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Sensor A: enabled by pin 6</text><text x="990" y="440" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Sensor B: enabled by pin 3</text></svg>
   </div>
   <figcaption>Two sensors on one port. Change the solder links on the underside as listed below before connecting.</figcaption>
 </figure>
@@ -259,7 +259,7 @@ Chain a <a href="/extensions/nine-axis-imu">9-axis IMU board</a> behind the sens
 {::nomarkdown}
 <figure class="xb-fig">
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Sensor with an IMU">
-  <svg viewBox="0 0 1200 500" role="img" aria-labelledby="xb-tof-imu"><title id="xb-tof-imu">A sensor board chained to a 9-axis IMU board on the same I2C bus.</title><image href="/images/extensions/differential-i2c-signal-extender/smoothieboard-v2-prime.webp" x="10" y="10" width="440" height="440"/><text x="230" y="480" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Smoothieboard V2 Prime, socket G_G</text><image href="/images/extensions/vl53l1x-distance-sensor/vl53l1x-distance-sensor-diagram.png" x="520" y="150" width="240.6" height="240.6"/><image href="/images/extensions/nine-axis-imu/nine-axis-imu-diagram.png" x="880" y="150" width="252" height="252"/><path d="M220 283 H470 V25 H621.4 V194.7" fill="none" stroke="#0d0f12" stroke-width="16"/><path d="M220 283 H470 V25 H621.4 V194.7" fill="none" stroke="#9aa4b2" stroke-width="12"/><circle cx="220" cy="283" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><circle cx="621.4" cy="194.7" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><path d="M659.2 194.7 V50 H850 V276 H912" fill="none" stroke="#0d0f12" stroke-width="16"/><path d="M659.2 194.7 V50 H850 V276 H912" fill="none" stroke="#9aa4b2" stroke-width="12"/><circle cx="659.2" cy="194.7" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><circle cx="912" cy="276" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><text x="640" y="440" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Distance sensor, 0x29</text><text x="1006" y="440" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">9-axis IMU, 0x28</text></svg>
+  <svg viewBox="0 0 1200 500" role="img" aria-labelledby="xb-tof-imu"><title id="xb-tof-imu">A sensor board chained to a 9-axis IMU board on the same I2C bus.</title><image href="/images/extensions/differential-i2c-signal-extender/smoothieboard-v2-prime.webp" x="10" y="10" width="440" height="440"/><text x="230" y="480" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Smoothieboard V2 Prime, socket G_G</text><image href="/images/extensions/vl53l1x-distance-sensor/vl53l1x-distance-sensor-diagram.png" x="550" y="150" width="180.6" height="240.6"/><image href="/images/extensions/nine-axis-imu/nine-axis-imu-diagram.png" x="880" y="150" width="252" height="252"/><path d="M220 283 H470 V25 H621.4 V194.7" fill="none" stroke="#0d0f12" stroke-width="16"/><path d="M220 283 H470 V25 H621.4 V194.7" fill="none" stroke="#9aa4b2" stroke-width="12"/><circle cx="220" cy="283" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><circle cx="621.4" cy="194.7" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><path d="M659.2 194.7 V50 H850 V276 H912" fill="none" stroke="#0d0f12" stroke-width="16"/><path d="M659.2 194.7 V50 H850 V276 H912" fill="none" stroke="#9aa4b2" stroke-width="12"/><circle cx="659.2" cy="194.7" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><circle cx="912" cy="276" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><text x="640" y="440" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Distance sensor, 0x29</text><text x="1006" y="440" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">9-axis IMU, 0x28</text></svg>
   </div>
   <figcaption>A distance sensor and an orientation sensor share the two bus wires. Their addresses differ.</figcaption>
 </figure>
@@ -279,7 +279,7 @@ A Qwiic or STEMMA QT cable, or the four-pin 2.54&nbsp;mm header, connects the bo
 {::nomarkdown}
 <figure class="xb-fig">
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Qwiic cable">
-  <svg viewBox="0 0 1200 420" role="img" aria-labelledby="xb-tof-qwiic"><title id="xb-tof-qwiic">Qwiic cable between the Qwiic connectors of two boards, shown with two sensor boards.</title><image href="/images/extensions/vl53l1x-distance-sensor/vl53l1x-distance-sensor-diagram.png" x="150" y="30" width="280.7" height="280.7"/><image href="/images/extensions/vl53l1x-distance-sensor/vl53l1x-distance-sensor-diagram.png" x="700" y="30" width="280.7" height="280.7"/><path d="M290.4 285.8 V380 H840.4 V285.8" fill="none" stroke="#0d0f12" stroke-width="12"/><path d="M290.4 285.8 V380 H840.4 V285.8" fill="none" stroke="#5fb3ff" stroke-width="8"/><circle cx="290.4" cy="285.8" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><circle cx="840.4" cy="285.8" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><text x="600" y="405" text-anchor="middle" font-size="20" font-weight="700" fill="#9fd0ff" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Four-way Qwiic cable: ground, 3.3 V, SDA, SCL</text></svg>
+  <svg viewBox="0 0 1200 420" role="img" aria-labelledby="xb-tof-qwiic"><title id="xb-tof-qwiic">Qwiic cable between the Qwiic connectors of two boards, shown with two sensor boards.</title><image href="/images/extensions/vl53l1x-distance-sensor/vl53l1x-distance-sensor-diagram.png" x="185" y="30" width="210.7" height="280.7"/><image href="/images/extensions/vl53l1x-distance-sensor/vl53l1x-distance-sensor-diagram.png" x="735" y="30" width="210.7" height="280.7"/><path d="M290.4 285.8 V380 H840.4 V285.8" fill="none" stroke="#0d0f12" stroke-width="12"/><path d="M290.4 285.8 V380 H840.4 V285.8" fill="none" stroke="#5fb3ff" stroke-width="8"/><circle cx="290.4" cy="285.8" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><circle cx="840.4" cy="285.8" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><text x="600" y="405" text-anchor="middle" font-size="20" font-weight="700" fill="#9fd0ff" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Four-way Qwiic cable: ground, 3.3 V, SDA, SCL</text></svg>
   </div>
   <figcaption>Qwiic carries only power and I2C: no interrupt and no shutdown line, so two of these sensors cannot be told apart this way.</figcaption>
 </figure>
@@ -385,7 +385,7 @@ The CHAIN socket carries the same contact numbers as the input: nothing shifts. 
 {::nomarkdown}
 <figure class="xb-fig">
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Two sensors">
-  <svg viewBox="0 0 1200 500" role="img" aria-labelledby="xb-tof-chain"><title id="xb-tof-chain">Two sensor boards: controller socket G_G to I IN of the first board, and CHAIN of the first board to I IN of the second.</title><image href="/images/extensions/differential-i2c-signal-extender/smoothieboard-v2-prime.webp" x="10" y="10" width="440" height="440"/><text x="230" y="480" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Smoothieboard V2 Prime, socket G_G</text><image href="/images/extensions/vl53l1x-distance-sensor/vl53l1x-distance-sensor-diagram.png" x="520" y="150" width="240.6" height="240.6"/><image href="/images/extensions/vl53l1x-distance-sensor/vl53l1x-distance-sensor-diagram.png" x="870" y="150" width="240.6" height="240.6"/><path d="M220 283 H470 V25 H621.4 V194.7" fill="none" stroke="#0d0f12" stroke-width="16"/><path d="M220 283 H470 V25 H621.4 V194.7" fill="none" stroke="#9aa4b2" stroke-width="12"/><circle cx="220" cy="283" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><circle cx="621.4" cy="194.7" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><path d="M659.2 194.7 V50 H971.4 V194.7" fill="none" stroke="#0d0f12" stroke-width="16"/><path d="M659.2 194.7 V50 H971.4 V194.7" fill="none" stroke="#9aa4b2" stroke-width="12"/><circle cx="659.2" cy="194.7" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><circle cx="971.4" cy="194.7" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><text x="640" y="440" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Sensor A: enabled by pin 6</text><text x="990" y="440" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Sensor B: enabled by pin 3</text></svg>
+  <svg viewBox="0 0 1200 500" role="img" aria-labelledby="xb-tof-chain"><title id="xb-tof-chain">Two sensor boards: controller socket G_G to I IN of the first board, and CHAIN of the first board to I IN of the second.</title><image href="/images/extensions/differential-i2c-signal-extender/smoothieboard-v2-prime.webp" x="10" y="10" width="440" height="440"/><text x="230" y="480" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Smoothieboard V2 Prime, socket G_G</text><image href="/images/extensions/vl53l1x-distance-sensor/vl53l1x-distance-sensor-diagram.png" x="550" y="150" width="180.6" height="240.6"/><image href="/images/extensions/vl53l1x-distance-sensor/vl53l1x-distance-sensor-diagram.png" x="900" y="150" width="180.6" height="240.6"/><path d="M220 283 H470 V25 H621.4 V194.7" fill="none" stroke="#0d0f12" stroke-width="16"/><path d="M220 283 H470 V25 H621.4 V194.7" fill="none" stroke="#9aa4b2" stroke-width="12"/><circle cx="220" cy="283" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><circle cx="621.4" cy="194.7" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><path d="M659.2 194.7 V50 H971.4 V194.7" fill="none" stroke="#0d0f12" stroke-width="16"/><path d="M659.2 194.7 V50 H971.4 V194.7" fill="none" stroke="#9aa4b2" stroke-width="12"/><circle cx="659.2" cy="194.7" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><circle cx="971.4" cy="194.7" r="6" fill="#5fb3ff" stroke="#0d0f12" stroke-width="1.5"/><text x="640" y="440" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Sensor A: enabled by pin 6</text><text x="990" y="440" text-anchor="middle" font-size="20" font-weight="700" fill="#e6ebf2" stroke="#0d0f12" stroke-width="4" paint-order="stroke">Sensor B: enabled by pin 3</text></svg>
   </div>
   <figcaption>Two sensors on one port. Change the solder links on the underside as listed below before connecting.</figcaption>
 </figure>
@@ -450,41 +450,41 @@ For drilling a mounting plate or designing an enclosure. Positions are hole cent
 <figure class="xb-fig">
   <div class="xb-fig-scroll" tabindex="0" role="region" aria-label="Mounting drawing">
   <svg viewBox="0 0 1000 480" role="img" aria-labelledby="xb-tof-mount-t">
-  <title id="xb-tof-mount-t">Mounting drawing of the distance sensor board, component side: outline 40 by 40 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
+  <title id="xb-tof-mount-t">Mounting drawing of the distance sensor board, component side: outline 30 by 40 millimetres with 4 mounting holes. Hole positions are listed in the table below.</title>
   <text x="480.0" y="24" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="1" fill="#a9b4c2">COMPONENT SIDE · millimetres</text>
-  <rect x="310.0" y="78.0" width="340.0" height="340.0" rx="8.5" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
-  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M310.0 56H650.0"/><path d="M310.0 50V62"/><path d="M650.0 50V62"/><path d="M676.0 78.0V418.0"/><path d="M670.0 78.0h12"/><path d="M670.0 418.0h12"/></g>
-  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">40</text>
-  <text x="688.0" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">40</text>
-  <circle cx="310.0" cy="78.0" r="4" fill="#ffcc33"/>
-  <text x="298.0" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
-  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M252.0 104.0h30" fill="none"/><path d="M286.0 104.0l-8 -4v8z"/><path d="M252.0 104.0v30" fill="none"/><path d="M252.0 138.0l-4 -8h8z"/></g>
-  <text x="290.0" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
-  <text x="248.0" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
-  <circle cx="352.5" cy="120.5" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M334.9 120.5h35.2M352.5 102.9v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="338.9" y="154.1" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 5.00</text>
-  <circle cx="607.5" cy="120.5" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M589.9 120.5h35.2M607.5 102.9v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="621.1" y="154.1" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  35.00, 5.00</text>
-  <circle cx="352.5" cy="375.5" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M334.9 375.5h35.2M352.5 357.9v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="338.9" y="351.9" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 35.00</text>
-  <circle cx="607.5" cy="375.5" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
-  <path d="M589.9 375.5h35.2M607.5 357.9v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
-  <text x="621.1" y="351.9" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  35.00, 35.00</text>
+  <rect x="352.5" y="78.0" width="255.0" height="340.0" rx="8.5" fill="#1f2226" stroke="#e6ebf2" stroke-width="1.5"/>
+  <g stroke="#a9b4c2" stroke-width="1.2" fill="none"><path d="M352.5 56H607.5"/><path d="M352.5 50V62"/><path d="M607.5 50V62"/><path d="M633.5 78.0V418.0"/><path d="M627.5 78.0h12"/><path d="M627.5 418.0h12"/></g>
+  <text x="480.0" y="48" text-anchor="middle" font-size="15" font-weight="700" fill="#e6ebf2">30</text>
+  <text x="645.5" y="253.0" font-size="15" font-weight="700" fill="#e6ebf2">40</text>
+  <circle cx="352.5" cy="78.0" r="4" fill="#ffcc33"/>
+  <text x="340.5" y="83.0" text-anchor="end" font-size="14" font-weight="700" fill="#ffcc33">0, 0</text>
+  <g stroke="#ffcc33" stroke-width="1.5" fill="#ffcc33"><path d="M294.5 104.0h30" fill="none"/><path d="M328.5 104.0l-8 -4v8z"/><path d="M294.5 104.0v30" fill="none"/><path d="M294.5 138.0l-4 -8h8z"/></g>
+  <text x="332.5" y="109.0" font-size="12" font-weight="700" fill="#ffcc33">X</text>
+  <text x="290.5" y="154.0" font-size="12" font-weight="700" fill="#ffcc33">Y</text>
+  <circle cx="395.0" cy="120.5" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M377.4 120.5h35.2M395.0 102.9v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="381.4" y="154.1" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">1</tspan>  5.00, 5.00</text>
+  <circle cx="565.0" cy="120.5" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M547.4 120.5h35.2M565.0 102.9v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="578.6" y="154.1" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">2</tspan>  25.00, 5.00</text>
+  <circle cx="395.0" cy="375.5" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M377.4 375.5h35.2M395.0 357.9v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="381.4" y="351.9" text-anchor="start" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">3</tspan>  5.00, 35.00</text>
+  <circle cx="565.0" cy="375.5" r="13.6" fill="#141920" stroke="#ffcc33" stroke-width="2"/>
+  <path d="M547.4 375.5h35.2M565.0 357.9v35.2" stroke="#ffcc33" stroke-width=".8" fill="none"/>
+  <text x="578.6" y="351.9" text-anchor="end" font-size="13" fill="#e6ebf2"><tspan font-weight="700" fill="#ffcc33">4</tspan>  25.00, 35.00</text>
   <text x="480.0" y="448.0" text-anchor="middle" font-size="13" fill="#a9b4c2">Numbered rings are mounting holes. Positions are hole centres, X then Y, from the marked corner.</text>
   </svg>
   </div>
-  <figcaption>Board outline 40 × 40&nbsp;mm, corners rounded to a 1&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
+  <figcaption>Board outline 30 × 40&nbsp;mm, corners rounded to a 1&nbsp;mm radius, board thickness 1.6&nbsp;mm. Drawn from the design files, component side up, in the same orientation as the board tour.</figcaption>
 </figure>
 <div class="xb-tablewrap"><table>
   <thead><tr><th>Hole</th><th>X (mm)</th><th>Y (mm)</th><th>Diameter</th><th>Use</th></tr></thead>
   <tbody>
     <tr><td>1</td><td>5.00</td><td>5.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
-    <tr><td>2</td><td>35.00</td><td>5.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>2</td><td>25.00</td><td>5.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
     <tr><td>3</td><td>5.00</td><td>35.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
-    <tr><td>4</td><td>35.00</td><td>35.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
+    <tr><td>4</td><td>25.00</td><td>35.00</td><td>3.2&nbsp;mm, not plated</td><td>Mounting, M3 screw</td></tr>
   </tbody>
 </table></div>
 {:/nomarkdown}

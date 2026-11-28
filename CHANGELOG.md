@@ -6,6 +6,10 @@ History: see CHANGELOG.archive.md.
 
 ## [Unreleased]
 
+### Changed
+
+- VL53L1X distance sensor board page: updated for the narrower 30 x 40 mm board.
+
 ### Added
 
 - VL53L1X distance sensor board page, listed on the extension boards page and the homepage, linked with the ultrasonic distance sensor page.
