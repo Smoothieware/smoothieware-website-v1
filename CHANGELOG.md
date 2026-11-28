@@ -23,7 +23,7 @@ History: see CHANGELOG.archive.md.
 
 ### Changed
 - One greyscale design for the whole site: 2 px corners, quieter callouts and buttons, and a single table style without vertical lines. Diagrams take half the page width; board tours show the drawing beside its numbered list.
-- Laser PSU adapter board: redrawn schematic PDF, one A2 page with a titled box for each function; the circuit is unchanged.
+- Laser PSU adapter board: redrawn schematic PDF, four A3 pages (overview, protect loops, gating and outputs, power) with clearer wiring and notes; the circuit is unchanged.
 - Troubleshooting page: the comic is half as large and floats to the right of the text, the empty table of contents is gone, and the title, sections and problems use heading levels 1, 2 and 3.
 - Troubleshooting page: the long config override article inside the steps is now a short warning box linking to the override pages, as its own numbered step.
 - The 3D printer guide no longer repeats the whole troubleshooting page; it links to it.
