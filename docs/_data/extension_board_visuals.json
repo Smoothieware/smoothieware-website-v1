@@ -142,41 +142,41 @@
       ]
     }
   ],
-  "arduino-to-gadgeteer-shield": [
+  "arduino-expansion-shield": [
     {
       "role": "arduino to gadgeteer shield",
       "version": "v23",
-      "cad_source_path": "extension-boards/src/arduino-to-gadgeteer-shield/attempt/versions/v23/arduino-to-gadgeteer-shield.kicad_pcb",
+      "cad_source_path": "extension-boards/src/arduino-expansion-shield/attempt/versions/v23/arduino-expansion-shield.kicad_pcb",
       "cad_sha256": "0b7a248e97f693b161c925b0e67203beb9d78e952986434c63034b61f5fde4ec",
       "diagram": {
-        "url": "/images/extensions/arduino-to-gadgeteer-shield/arduino-to-gadgeteer-shield-diagram.webp",
+        "url": "/images/extensions/arduino-expansion-shield/arduino-expansion-shield-diagram.webp",
         "sha256": "fcead12460f549d81df6c3fcccdfaf647496a953cffcb10aadeeaed283fa3bc7",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/arduino-to-gadgeteer-shield/v23/arduino-to-gadgeteer-shield.svg",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/arduino-expansion-shield/v23/arduino-expansion-shield.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "0b7a248e97f693b161c925b0e67203beb9d78e952986434c63034b61f5fde4ec",
         "caption": "v23; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/arduino-to-gadgeteer-shield/arduino-to-gadgeteer-shield-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/arduino-expansion-shield/arduino-expansion-shield-diagram.svg",
         "archived_svg_sha256": "0640b89d6627e6dff1d108eadc1dcf9ae1ae94d02af0a987e7b65d094451608b"
       },
       "renders": [
         {
-          "url": "/images/extensions/arduino-to-gadgeteer-shield/arduino-to-gadgeteer-shield-populated-isometric.png",
+          "url": "/images/extensions/arduino-expansion-shield/arduino-expansion-shield-populated-isometric.png",
           "sha256": "d0823748cf1a6bef70b641e536d652ed33494bc2deac1b6d73d0d4f7810effcd",
-          "source_path": "extension-boards/src/arduino-to-gadgeteer-shield/attempt/versions/v23/populations/arduino-to-gadgeteer-shield/normal/populated-isometric.png",
+          "source_path": "extension-boards/src/arduino-expansion-shield/attempt/versions/v23/populations/arduino-expansion-shield/normal/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/arduino-to-gadgeteer-shield/arduino-to-gadgeteer-shield-populated-top.png",
+          "url": "/images/extensions/arduino-expansion-shield/arduino-expansion-shield-populated-top.png",
           "sha256": "a78f1f628247c7e3318dd9d0f8daf666730a2a16c28e672b7f310af6a905e0d6",
-          "source_path": "extension-boards/src/arduino-to-gadgeteer-shield/attempt/versions/v23/populations/arduino-to-gadgeteer-shield/normal/populated-top.png",
+          "source_path": "extension-boards/src/arduino-expansion-shield/attempt/versions/v23/populations/arduino-expansion-shield/normal/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/arduino-to-gadgeteer-shield/arduino-to-gadgeteer-shield-populated-bottom.png",
+          "url": "/images/extensions/arduino-expansion-shield/arduino-expansion-shield-populated-bottom.png",
           "sha256": "85048f1495a875787016ee6bb746c195de14696653c749fa41f655b65b441049",
-          "source_path": "extension-boards/src/arduino-to-gadgeteer-shield/attempt/versions/v23/populations/arduino-to-gadgeteer-shield/normal/populated-bottom.png",
+          "source_path": "extension-boards/src/arduino-expansion-shield/attempt/versions/v23/populations/arduino-expansion-shield/normal/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         }
@@ -349,41 +349,41 @@
       ]
     }
   ],
-  "bouni-spindle-module-boards": [
+  "spindle-control-breakouts": [
     {
       "role": "bsm analog",
       "version": "v19",
-      "cad_source_path": "extension-boards/src/bouni-spindle-module-boards/attempt/versions/v19/bsm-analog.kicad_pcb",
+      "cad_source_path": "extension-boards/src/spindle-control-breakouts/attempt/versions/v19/bsm-analog.kicad_pcb",
       "cad_sha256": "01b040015d706fac4c0320b3fe3569fcf9fb813fe0c36afb1b99ae0b49a1551f",
       "diagram": {
-        "url": "/images/extensions/bouni-spindle-module-boards/bsm-analog-diagram.webp",
+        "url": "/images/extensions/spindle-control-breakouts/bsm-analog-diagram.webp",
         "sha256": "9187fbd1f30db21940cd118562de5a8007f0b92030711b874df2500720daae08",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/bouni-spindle-module-boards/v19/bsm-analog.svg",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/spindle-control-breakouts/v19/bsm-analog.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "01b040015d706fac4c0320b3fe3569fcf9fb813fe0c36afb1b99ae0b49a1551f",
         "caption": "v19; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/bouni-spindle-module-boards/bsm-analog-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/spindle-control-breakouts/bsm-analog-diagram.svg",
         "archived_svg_sha256": "2ffe5d6ac9a8baf99bfcb7e1bf0a294a488aa5ae3564515bd5c56e16169f6871"
       },
       "renders": [
         {
-          "url": "/images/extensions/bouni-spindle-module-boards/bsm-analog-populated-isometric.png",
+          "url": "/images/extensions/spindle-control-breakouts/bsm-analog-populated-isometric.png",
           "sha256": "58139ae3f3df55c31892f2564263d359b4fc3df212a2f646cfba5b4aba8cff0b",
-          "source_path": "extension-boards/src/bouni-spindle-module-boards/attempt/versions/v19/populations/bsm-analog/normal/populated-isometric.png",
+          "source_path": "extension-boards/src/spindle-control-breakouts/attempt/versions/v19/populations/bsm-analog/normal/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/bouni-spindle-module-boards/bsm-analog-populated-top.png",
+          "url": "/images/extensions/spindle-control-breakouts/bsm-analog-populated-top.png",
           "sha256": "e62343442c1f4de0d1bf43f96b8af220d8b79f7a49e265681216f9a241af65a8",
-          "source_path": "extension-boards/src/bouni-spindle-module-boards/attempt/versions/v19/populations/bsm-analog/normal/populated-top.png",
+          "source_path": "extension-boards/src/spindle-control-breakouts/attempt/versions/v19/populations/bsm-analog/normal/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/bouni-spindle-module-boards/bsm-analog-populated-bottom.png",
+          "url": "/images/extensions/spindle-control-breakouts/bsm-analog-populated-bottom.png",
           "sha256": "419d7941804080c09c9bf36327e7025b0288be62a8ce02dcdacb19819cc10ef2",
-          "source_path": "extension-boards/src/bouni-spindle-module-boards/attempt/versions/v19/populations/bsm-analog/normal/populated-bottom.png",
+          "source_path": "extension-boards/src/spindle-control-breakouts/attempt/versions/v19/populations/bsm-analog/normal/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         }
@@ -392,37 +392,37 @@
     {
       "role": "bsm rs485",
       "version": "v19",
-      "cad_source_path": "extension-boards/src/bouni-spindle-module-boards/attempt/versions/v19/bsm-rs485.kicad_pcb",
+      "cad_source_path": "extension-boards/src/spindle-control-breakouts/attempt/versions/v19/bsm-rs485.kicad_pcb",
       "cad_sha256": "84d4c269ae2b24f15c380d55d3c20271fec3f1f7131ec071f9db58b1a5ef1ca2",
       "diagram": {
-        "url": "/images/extensions/bouni-spindle-module-boards/bsm-rs485-diagram.webp",
+        "url": "/images/extensions/spindle-control-breakouts/bsm-rs485-diagram.webp",
         "sha256": "beefd632dd6418a93033cd64e47684282aa4cf705de8410849eafb717d779152",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/bouni-spindle-module-boards/v19/bsm-rs485.svg",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/spindle-control-breakouts/v19/bsm-rs485.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "84d4c269ae2b24f15c380d55d3c20271fec3f1f7131ec071f9db58b1a5ef1ca2",
         "caption": "v19; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/bouni-spindle-module-boards/bsm-rs485-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/spindle-control-breakouts/bsm-rs485-diagram.svg",
         "archived_svg_sha256": "e214df36aacf0c802de6418c1d2f167301a11f30aa4753a8ce306a3e1da04e03"
       },
       "renders": [
         {
-          "url": "/images/extensions/bouni-spindle-module-boards/bsm-rs485-populated-isometric.png",
+          "url": "/images/extensions/spindle-control-breakouts/bsm-rs485-populated-isometric.png",
           "sha256": "f1e010b6ae58bebbc31ae2c740b5eb32ee71efed797d2b9f5430dd8968be57d9",
-          "source_path": "extension-boards/src/bouni-spindle-module-boards/attempt/versions/v19/populations/bsm-rs485/normal/populated-isometric.png",
+          "source_path": "extension-boards/src/spindle-control-breakouts/attempt/versions/v19/populations/bsm-rs485/normal/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/bouni-spindle-module-boards/bsm-rs485-populated-top.png",
+          "url": "/images/extensions/spindle-control-breakouts/bsm-rs485-populated-top.png",
           "sha256": "4857d4ca632bf2ec253048f784f287fd087c6ec5ca0d465b9fbc2476184c98c9",
-          "source_path": "extension-boards/src/bouni-spindle-module-boards/attempt/versions/v19/populations/bsm-rs485/normal/populated-top.png",
+          "source_path": "extension-boards/src/spindle-control-breakouts/attempt/versions/v19/populations/bsm-rs485/normal/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/bouni-spindle-module-boards/bsm-rs485-populated-bottom.png",
+          "url": "/images/extensions/spindle-control-breakouts/bsm-rs485-populated-bottom.png",
           "sha256": "be92b3ecc9f9276dc9f21097260679dc1bd853319c2897c6307c22bde6c7aff7",
-          "source_path": "extension-boards/src/bouni-spindle-module-boards/attempt/versions/v19/populations/bsm-rs485/normal/populated-bottom.png",
+          "source_path": "extension-boards/src/spindle-control-breakouts/attempt/versions/v19/populations/bsm-rs485/normal/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         }
@@ -511,41 +511,41 @@
       ]
     }
   ],
-  "buzzer-module": [
+  "buzzer-breakout": [
     {
-      "role": "buzzer module",
+      "role": "Buzzer breakout",
       "version": "v14",
-      "cad_source_path": "extension-boards/src/buzzer-module/attempt/versions/v14/buzzer-module.kicad_pcb",
+      "cad_source_path": "extension-boards/src/buzzer-breakout/attempt/versions/v14/buzzer-breakout.kicad_pcb",
       "cad_sha256": "6bc77eda610bb58ec562285216d892c781092cf5743c45742f3bd0db7fafa9a0",
       "diagram": {
-        "url": "/images/extensions/buzzer-module/buzzer-module-diagram.webp",
+        "url": "/images/extensions/buzzer-breakout/buzzer-breakout-diagram.webp",
         "sha256": "e71b4fa5b1672fb3c911fbfd7d486ea22d6a1ad566f294dfdc3f7ff60da44a18",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/buzzer-module/v14/buzzer-module.svg",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/buzzer-breakout/v14/buzzer-breakout.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "6bc77eda610bb58ec562285216d892c781092cf5743c45742f3bd0db7fafa9a0",
         "caption": "v14; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/buzzer-module/buzzer-module-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/buzzer-breakout/buzzer-breakout-diagram.svg",
         "archived_svg_sha256": "8322f2b1aef5fbb0adbbbbfd2aa0be583a3c3fb5a4ec45a6f1502fd987c7ea54"
       },
       "renders": [
         {
-          "url": "/images/extensions/buzzer-module/buzzer-module-populated-isometric.png",
+          "url": "/images/extensions/buzzer-breakout/buzzer-breakout-populated-isometric.png",
           "sha256": "515fc2d442abc0f8fb297220853736b544527dd57a2c1c074e903f8eb8eaa654",
-          "source_path": "extension-boards/src/buzzer-module/attempt/versions/v14/populations/buzzer-module/normal/populated-isometric.png",
+          "source_path": "extension-boards/src/buzzer-breakout/attempt/versions/v14/populations/buzzer-breakout/normal/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/buzzer-module/buzzer-module-populated-top.png",
+          "url": "/images/extensions/buzzer-breakout/buzzer-breakout-populated-top.png",
           "sha256": "8908710e5c7a428fbf6bc4ce7f6fa918ac252c7bcd71d12143fabff3c829be56",
-          "source_path": "extension-boards/src/buzzer-module/attempt/versions/v14/populations/buzzer-module/normal/populated-top.png",
+          "source_path": "extension-boards/src/buzzer-breakout/attempt/versions/v14/populations/buzzer-breakout/normal/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/buzzer-module/buzzer-module-populated-bottom.png",
+          "url": "/images/extensions/buzzer-breakout/buzzer-breakout-populated-bottom.png",
           "sha256": "a5396e111e89ad1509aaf8975e98210e9a14823d6bb3fff07cd82cb09a6fd087",
-          "source_path": "extension-boards/src/buzzer-module/attempt/versions/v14/populations/buzzer-module/normal/populated-bottom.png",
+          "source_path": "extension-boards/src/buzzer-breakout/attempt/versions/v14/populations/buzzer-breakout/normal/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         }
@@ -1054,82 +1054,82 @@
       ]
     }
   ],
-  "d-sub-to-gadgeteer-in": [
+  "d-sub-input-adapter": [
     {
       "role": "d sub to gadgeteer in",
       "version": "v24",
-      "cad_source_path": "extension-boards/src/d-sub-to-gadgeteer-in/attempt/versions/v24/d-sub-to-gadgeteer-in.kicad_pcb",
+      "cad_source_path": "extension-boards/src/d-sub-input-adapter/attempt/versions/v24/d-sub-input-adapter.kicad_pcb",
       "cad_sha256": "8906d78334a380bf63d9708ec3bfc7f5995b9a053607717ca8d7d9d7d20ace3f",
       "diagram": {
-        "url": "/images/extensions/d-sub-to-gadgeteer-in/d-sub-to-gadgeteer-in-diagram.webp",
+        "url": "/images/extensions/d-sub-input-adapter/d-sub-input-adapter-diagram.webp",
         "sha256": "53e48a307f6f2bdd76b2f5ee8a8f7e20f1fc0993731c64545106eff38b17141b",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/d-sub-to-gadgeteer-in/v24/d-sub-to-gadgeteer-in.svg",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/d-sub-input-adapter/v24/d-sub-input-adapter.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "8906d78334a380bf63d9708ec3bfc7f5995b9a053607717ca8d7d9d7d20ace3f",
         "caption": "v24; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/d-sub-to-gadgeteer-in/d-sub-to-gadgeteer-in-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/d-sub-input-adapter/d-sub-input-adapter-diagram.svg",
         "archived_svg_sha256": "1068ccc9dfa8b315cdba1d376be8be5afefa2e11dbdd46f7d3de588f596d3f97"
       },
       "renders": [
         {
-          "url": "/images/extensions/d-sub-to-gadgeteer-in/d-sub-to-gadgeteer-in-populated-isometric.png",
+          "url": "/images/extensions/d-sub-input-adapter/d-sub-input-adapter-populated-isometric.png",
           "sha256": "49fcd55140e82c5cab1215aae7753471980ccdfe8a4b60c2c93775921d85fd84",
-          "source_path": "extension-boards/src/d-sub-to-gadgeteer-in/attempt/versions/v24/populations/d-sub-to-gadgeteer-in/normal/populated-isometric.png",
+          "source_path": "extension-boards/src/d-sub-input-adapter/attempt/versions/v24/populations/d-sub-input-adapter/normal/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/d-sub-to-gadgeteer-in/d-sub-to-gadgeteer-in-populated-top.png",
+          "url": "/images/extensions/d-sub-input-adapter/d-sub-input-adapter-populated-top.png",
           "sha256": "529e217a80f24635f77f08da224b31782629de157579dd7114de8e348a615304",
-          "source_path": "extension-boards/src/d-sub-to-gadgeteer-in/attempt/versions/v24/populations/d-sub-to-gadgeteer-in/normal/populated-top.png",
+          "source_path": "extension-boards/src/d-sub-input-adapter/attempt/versions/v24/populations/d-sub-input-adapter/normal/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/d-sub-to-gadgeteer-in/d-sub-to-gadgeteer-in-populated-bottom.png",
+          "url": "/images/extensions/d-sub-input-adapter/d-sub-input-adapter-populated-bottom.png",
           "sha256": "946d2727a7561296a81269b85d6e6b29e687273aa1cc88687530ceaecf591acf",
-          "source_path": "extension-boards/src/d-sub-to-gadgeteer-in/attempt/versions/v24/populations/d-sub-to-gadgeteer-in/normal/populated-bottom.png",
+          "source_path": "extension-boards/src/d-sub-input-adapter/attempt/versions/v24/populations/d-sub-input-adapter/normal/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         }
       ]
     }
   ],
-  "d-sub-to-gadgeteer-out": [
+  "d-sub-output-adapter": [
     {
       "role": "d sub to gadgeteer out",
       "version": "v26",
-      "cad_source_path": "extension-boards/src/d-sub-to-gadgeteer-out/attempt/versions/v26/d-sub-to-gadgeteer-out.kicad_pcb",
+      "cad_source_path": "extension-boards/src/d-sub-output-adapter/attempt/versions/v26/d-sub-output-adapter.kicad_pcb",
       "cad_sha256": "0ecb09617a1a22caf214f748eedec55577eb7fe3c1e5d47de3deaf39aacd816c",
       "diagram": {
-        "url": "/images/extensions/d-sub-to-gadgeteer-out/d-sub-to-gadgeteer-out-diagram.webp",
+        "url": "/images/extensions/d-sub-output-adapter/d-sub-output-adapter-diagram.webp",
         "sha256": "c96b0f1a97b644657956e4925f50e2f172ebd267cd64d0e81df363ece4a7c86d",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/d-sub-to-gadgeteer-out/v26/d-sub-to-gadgeteer-out.svg",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/d-sub-output-adapter/v26/d-sub-output-adapter.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "0ecb09617a1a22caf214f748eedec55577eb7fe3c1e5d47de3deaf39aacd816c",
         "caption": "v26; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/d-sub-to-gadgeteer-out/d-sub-to-gadgeteer-out-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/d-sub-output-adapter/d-sub-output-adapter-diagram.svg",
         "archived_svg_sha256": "8a61b89fc451f78145b3a16e6af08b2981f473ae6768c7af451844082ad1539d"
       },
       "renders": [
         {
-          "url": "/images/extensions/d-sub-to-gadgeteer-out/d-sub-to-gadgeteer-out-populated-isometric.png",
+          "url": "/images/extensions/d-sub-output-adapter/d-sub-output-adapter-populated-isometric.png",
           "sha256": "f4506c5c139a586d9630e1b469480aee69b8f1a8536b5dcb41d0656dd65a95cd",
-          "source_path": "extension-boards/src/d-sub-to-gadgeteer-out/attempt/versions/v26/populations/d-sub-to-gadgeteer-out/normal/populated-isometric.png",
+          "source_path": "extension-boards/src/d-sub-output-adapter/attempt/versions/v26/populations/d-sub-output-adapter/normal/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/d-sub-to-gadgeteer-out/d-sub-to-gadgeteer-out-populated-top.png",
+          "url": "/images/extensions/d-sub-output-adapter/d-sub-output-adapter-populated-top.png",
           "sha256": "441a8c73dfcbd3c2d587c8863af2a9ed1a4f92fe3b96f947d303e04f9447de1e",
-          "source_path": "extension-boards/src/d-sub-to-gadgeteer-out/attempt/versions/v26/populations/d-sub-to-gadgeteer-out/normal/populated-top.png",
+          "source_path": "extension-boards/src/d-sub-output-adapter/attempt/versions/v26/populations/d-sub-output-adapter/normal/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/d-sub-to-gadgeteer-out/d-sub-to-gadgeteer-out-populated-bottom.png",
+          "url": "/images/extensions/d-sub-output-adapter/d-sub-output-adapter-populated-bottom.png",
           "sha256": "e4f72f44e42d907a0fa403eb9df29e1c189301f2ab183633b141ff4e31169d78",
-          "source_path": "extension-boards/src/d-sub-to-gadgeteer-out/attempt/versions/v26/populations/d-sub-to-gadgeteer-out/normal/populated-bottom.png",
+          "source_path": "extension-boards/src/d-sub-output-adapter/attempt/versions/v26/populations/d-sub-output-adapter/normal/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         }
@@ -1259,41 +1259,41 @@
       ]
     }
   ],
-  "gadgeteer-to-can": [
+  "can-bus-adapter": [
     {
       "role": "gadgeteer to can",
       "version": "v21",
-      "cad_source_path": "extension-boards/src/gadgeteer-to-can/attempt/versions/v21/gadgeteer-to-can.kicad_pcb",
+      "cad_source_path": "extension-boards/src/can-bus-adapter/attempt/versions/v21/can-bus-adapter.kicad_pcb",
       "cad_sha256": "06e0655a5f39ab8ec8997d30d5c99ebca10117a1e5a735ae4bf2a73989245575",
       "diagram": {
-        "url": "/images/extensions/gadgeteer-to-can/gadgeteer-to-can-diagram.webp",
+        "url": "/images/extensions/can-bus-adapter/can-bus-adapter-diagram.webp",
         "sha256": "12c6ac63e5b630954a58cc85ad56c72eb53223f789eaeed25ade44b033e670bc",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/gadgeteer-to-can/v21/gadgeteer-to-can.svg",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/can-bus-adapter/v21/can-bus-adapter.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "06e0655a5f39ab8ec8997d30d5c99ebca10117a1e5a735ae4bf2a73989245575",
         "caption": "v21; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/gadgeteer-to-can/gadgeteer-to-can-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/can-bus-adapter/can-bus-adapter-diagram.svg",
         "archived_svg_sha256": "19703f4ace2cec372ea0085ce1da51fc87ca9689e13d0cb9edc04a63cde52da2"
       },
       "renders": [
         {
-          "url": "/images/extensions/gadgeteer-to-can/gadgeteer-to-can-populated-isometric.png",
+          "url": "/images/extensions/can-bus-adapter/can-bus-adapter-populated-isometric.png",
           "sha256": "923bed2b7390c0f090e8e61baf74d9cdd61df45899d1d13680f56513f2d33e96",
-          "source_path": "extension-boards/src/gadgeteer-to-can/attempt/versions/v21/populations/gadgeteer-to-can/normal/populated-isometric.png",
+          "source_path": "extension-boards/src/can-bus-adapter/attempt/versions/v21/populations/can-bus-adapter/normal/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/gadgeteer-to-can/gadgeteer-to-can-populated-top.png",
+          "url": "/images/extensions/can-bus-adapter/can-bus-adapter-populated-top.png",
           "sha256": "082dfa903b2c799afb22b09e452efa32bed0e11a40b0ae808e0114372b685a95",
-          "source_path": "extension-boards/src/gadgeteer-to-can/attempt/versions/v21/populations/gadgeteer-to-can/normal/populated-top.png",
+          "source_path": "extension-boards/src/can-bus-adapter/attempt/versions/v21/populations/can-bus-adapter/normal/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/gadgeteer-to-can/gadgeteer-to-can-populated-bottom.png",
+          "url": "/images/extensions/can-bus-adapter/can-bus-adapter-populated-bottom.png",
           "sha256": "52e330035e7d716cc165b9683baf2483c6480116ba2777f74e0992c14ab044c8",
-          "source_path": "extension-boards/src/gadgeteer-to-can/attempt/versions/v21/populations/gadgeteer-to-can/normal/populated-bottom.png",
+          "source_path": "extension-boards/src/can-bus-adapter/attempt/versions/v21/populations/can-bus-adapter/normal/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         }
@@ -2140,41 +2140,41 @@
       ]
     }
   ],
-  "perma-proto-gadgeteer": [
+  "perma-proto-breadboard": [
     {
       "role": "perma proto gadgeteer",
       "version": "v17",
-      "cad_source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v17/perma-proto-gadgeteer.kicad_pcb",
+      "cad_source_path": "extension-boards/src/perma-proto-breadboard/attempt/versions/v17/perma-proto-breadboard.kicad_pcb",
       "cad_sha256": "a8bb21d95a234d017856c549a8701a58bd39a8bb710682a70ce97117fa0f82a4",
       "diagram": {
-        "url": "/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.webp",
+        "url": "/images/extensions/perma-proto-breadboard/perma-proto-breadboard-diagram.webp",
         "sha256": "819b954ca311e9eddff7adce8567eef1d10c857c24ffa4ca00801b54528c0d28",
-        "source_path": "smoothie-diagrams/data/website-extension-svg/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.svg",
+        "source_path": "smoothie-diagrams/data/website-extension-svg/perma-proto-breadboard/perma-proto-breadboard-diagram.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "a8bb21d95a234d017856c549a8701a58bd39a8bb710682a70ce97117fa0f82a4",
         "caption": "v17; drawn from this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/perma-proto-gadgeteer/perma-proto-gadgeteer-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/perma-proto-breadboard/perma-proto-breadboard-diagram.svg",
         "archived_svg_sha256": "87e8e86e438fd0e7809aeebb6f64b12641a0cf563523a9ea988342f5116e5591"
       },
       "renders": [
         {
-          "url": "/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-populated-isometric.png",
+          "url": "/images/extensions/perma-proto-breadboard/perma-proto-breadboard-populated-isometric.png",
           "sha256": "4cd055900ff7a881ececd4d69a73eb9e0bef266198b5991a6bc0ebdaf457c678",
-          "source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v17/renders/populated-isometric.png",
+          "source_path": "extension-boards/src/perma-proto-breadboard/attempt/versions/v17/renders/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Computer render of the populated board, not a photograph."
         },
         {
-          "url": "/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-populated-top.png",
+          "url": "/images/extensions/perma-proto-breadboard/perma-proto-breadboard-populated-top.png",
           "sha256": "7663eead692e27e22eb9a09456b3a63715e14d7407641ccf931193966a5ff288",
-          "source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v17/renders/populated-top.png",
+          "source_path": "extension-boards/src/perma-proto-breadboard/attempt/versions/v17/renders/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Computer render of the populated board, not a photograph."
         },
         {
-          "url": "/images/extensions/perma-proto-gadgeteer/perma-proto-gadgeteer-populated-bottom.png",
+          "url": "/images/extensions/perma-proto-breadboard/perma-proto-breadboard-populated-bottom.png",
           "sha256": "f1e1227d12dc88e9820afc87ecf5b4826de6a6680948f35795ad1517e5da8ea6",
-          "source_path": "extension-boards/src/perma-proto-gadgeteer/attempt/versions/v17/renders/populated-bottom.png",
+          "source_path": "extension-boards/src/perma-proto-breadboard/attempt/versions/v17/renders/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Computer render of the populated board, not a photograph."
         }
@@ -2324,41 +2324,41 @@
       ]
     }
   ],
-  "qwiic-to-gadgeteer-adapter": [
+  "qwiic-expansion-adapter": [
     {
       "role": "qwiic to gadgeteer adapter",
       "version": "v20",
-      "cad_source_path": "extension-boards/src/qwiic-to-gadgeteer-adapter/attempt/versions/v20/qwiic-to-gadgeteer-adapter.kicad_pcb",
+      "cad_source_path": "extension-boards/src/qwiic-expansion-adapter/attempt/versions/v20/qwiic-expansion-adapter.kicad_pcb",
       "cad_sha256": "0037e26e223670937dabe70666af8e9a526ad10f041c50918c602a4beb123646",
       "diagram": {
-        "url": "/images/extensions/qwiic-to-gadgeteer-adapter/qwiic-to-gadgeteer-adapter-diagram.png",
+        "url": "/images/extensions/qwiic-expansion-adapter/qwiic-expansion-adapter-diagram.png",
         "sha256": "849c778e219d73616c5798236e5dd6f4a02dbab78616c343282920581e58b0f2",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/qwiic-to-gadgeteer-adapter/v20/qwiic-to-gadgeteer-adapter.svg",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/qwiic-expansion-adapter/v20/qwiic-expansion-adapter.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "0037e26e223670937dabe70666af8e9a526ad10f041c50918c602a4beb123646",
         "caption": "v20; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/qwiic-to-gadgeteer-adapter/qwiic-to-gadgeteer-adapter-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/qwiic-expansion-adapter/qwiic-expansion-adapter-diagram.svg",
         "archived_svg_sha256": "51110a03bc829015f36288c7ae424d4ab57c597122ff6de1e85389cca30d556e"
       },
       "renders": [
         {
-          "url": "/images/extensions/qwiic-to-gadgeteer-adapter/qwiic-to-gadgeteer-adapter-populated-isometric.png",
+          "url": "/images/extensions/qwiic-expansion-adapter/qwiic-expansion-adapter-populated-isometric.png",
           "sha256": "b18d6bd793eb9f7411c7607a3ba4b05b8900cb3a6b2eb8bab246f425ec4d1e74",
-          "source_path": "extension-boards/src/qwiic-to-gadgeteer-adapter/attempt/versions/v20/populations/qwiic-to-gadgeteer-adapter/normal/populated-isometric.png",
+          "source_path": "extension-boards/src/qwiic-expansion-adapter/attempt/versions/v20/populations/qwiic-expansion-adapter/normal/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/qwiic-to-gadgeteer-adapter/qwiic-to-gadgeteer-adapter-populated-top.png",
+          "url": "/images/extensions/qwiic-expansion-adapter/qwiic-expansion-adapter-populated-top.png",
           "sha256": "e4481d4039127d376311be00410566c3cc51fc95034366c1226ad665faa939cd",
-          "source_path": "extension-boards/src/qwiic-to-gadgeteer-adapter/attempt/versions/v20/populations/qwiic-to-gadgeteer-adapter/normal/populated-top.png",
+          "source_path": "extension-boards/src/qwiic-expansion-adapter/attempt/versions/v20/populations/qwiic-expansion-adapter/normal/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/qwiic-to-gadgeteer-adapter/qwiic-to-gadgeteer-adapter-populated-bottom.png",
+          "url": "/images/extensions/qwiic-expansion-adapter/qwiic-expansion-adapter-populated-bottom.png",
           "sha256": "abcb5cb466dbb13912a801418e876e7bf0c295220fd73b14f6980a6300d7200c",
-          "source_path": "extension-boards/src/qwiic-to-gadgeteer-adapter/attempt/versions/v20/populations/qwiic-to-gadgeteer-adapter/normal/populated-bottom.png",
+          "source_path": "extension-boards/src/qwiic-expansion-adapter/attempt/versions/v20/populations/qwiic-expansion-adapter/normal/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         }
@@ -3305,41 +3305,41 @@
       ]
     }
   ],
-  "wireless-gadgeteer-extender": [
+  "wireless-expansion-extender": [
     {
-      "role": "wireless gadgeteer extender",
+      "role": "Wireless expansion extender",
       "version": "v19",
-      "cad_source_path": "extension-boards/src/wireless-gadgeteer-extender/attempt/versions/v19/wireless-gadgeteer-extender.kicad_pcb",
+      "cad_source_path": "extension-boards/src/wireless-expansion-extender/attempt/versions/v19/wireless-expansion-extender.kicad_pcb",
       "cad_sha256": "7cc492849c362ed2d2a481624ab3cf8c247aac8725129ad46560462c733fecf3",
       "diagram": {
-        "url": "/images/extensions/wireless-gadgeteer-extender/wireless-gadgeteer-extender-diagram.png",
+        "url": "/images/extensions/wireless-expansion-extender/wireless-expansion-extender-diagram.png",
         "sha256": "8610785839971800d3257a15ae8994204f5610255aef5eb5a946ec43ebf4486a",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/wireless-gadgeteer-extender/v19/wireless-gadgeteer-extender.svg",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/wireless-expansion-extender/v19/wireless-expansion-extender.svg",
         "source_hash_matches": true,
         "embedded_cad_sha256": "7cc492849c362ed2d2a481624ab3cf8c247aac8725129ad46560462c733fecf3",
         "caption": "v19; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/wireless-gadgeteer-extender/wireless-gadgeteer-extender-diagram.svg",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/wireless-expansion-extender/wireless-expansion-extender-diagram.svg",
         "archived_svg_sha256": "825ccc680c11d2cddcf20606d174f5bce21e5471bf68526378b250c044444e21"
       },
       "renders": [
         {
-          "url": "/images/extensions/wireless-gadgeteer-extender/wireless-gadgeteer-extender-populated-isometric.png",
+          "url": "/images/extensions/wireless-expansion-extender/wireless-expansion-extender-populated-isometric.png",
           "sha256": "5e19939b251b11ba1bbecb7119c07541b988f6b4fcf7722c37a73e326fd9034f",
-          "source_path": "extension-boards/src/wireless-gadgeteer-extender/attempt/versions/v19/populations/wireless-gadgeteer-extender/normal/populated-isometric.png",
+          "source_path": "extension-boards/src/wireless-expansion-extender/attempt/versions/v19/populations/wireless-expansion-extender/normal/populated-isometric.png",
           "label": "Populated board, perspective view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/wireless-gadgeteer-extender/wireless-gadgeteer-extender-populated-top.png",
+          "url": "/images/extensions/wireless-expansion-extender/wireless-expansion-extender-populated-top.png",
           "sha256": "45934f972602be51080b44971e5a44616dba0a52ee8d37076f1db41b482eafdf",
-          "source_path": "extension-boards/src/wireless-gadgeteer-extender/attempt/versions/v19/populations/wireless-gadgeteer-extender/normal/populated-top.png",
+          "source_path": "extension-boards/src/wireless-expansion-extender/attempt/versions/v19/populations/wireless-expansion-extender/normal/populated-top.png",
           "label": "Populated board, top view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         },
         {
-          "url": "/images/extensions/wireless-gadgeteer-extender/wireless-gadgeteer-extender-populated-bottom.png",
+          "url": "/images/extensions/wireless-expansion-extender/wireless-expansion-extender-populated-bottom.png",
           "sha256": "8cc11b4ab9c48f3eaea655fd43f572b6b8b0529b334bb1675f791f5104c3790a",
-          "source_path": "extension-boards/src/wireless-gadgeteer-extender/attempt/versions/v19/populations/wireless-gadgeteer-extender/normal/populated-bottom.png",
+          "source_path": "extension-boards/src/wireless-expansion-extender/attempt/versions/v19/populations/wireless-expansion-extender/normal/populated-bottom.png",
           "label": "Populated board, bottom view",
           "caption": "Normal connector population; source and image hashes verified. Computer render, not a photograph."
         }

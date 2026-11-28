@@ -22,6 +22,8 @@ History: see CHANGELOG.archive.md.
 - Extension board pages: the board drawings now show lights in their real colours, solder links, test pads and the holes of parts soldered underneath; page text that called these "not drawn" is corrected.
 
 ### Changed
+
+- Rename 22 extension-board guides and retain redirects from their previous addresses. Expand the RS232 BREAKOUT (bouni) wiring and reference guide.
 - One greyscale design for the whole site: 2 px corners, quieter callouts and buttons, and a single table style without vertical lines. Diagrams take half the page width; board tours show the drawing beside its numbered list.
 - Laser PSU adapter board: redrawn schematic PDF, four A3 pages (overview, protect loops, gating and outputs, power) with clearer wiring and notes; the circuit is unchanged.
 - Troubleshooting page: the comic is half as large and floats to the right of the text, the empty table of contents is gone, and the title, sections and problems use heading levels 1, 2 and 3.

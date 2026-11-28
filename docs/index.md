@@ -364,7 +364,7 @@ The [complete extension-board directory](/extension-boards) describes what each 
 ### Motor and motion control
 
 - [Advanced H-bridge encoder board](/extensions/advanced-h-bridge-encoder-board)
-- [Bouni analog spindle control](/extensions/bouni-analog-spindle-control)
+- [ANALOG SPINDLE CONTROL BREAKOUT (bouni)](/extensions/analog-spindle-control-breakout)
 - [External STEP/DIR signal breakout](/extensions/historical-external-stepper-signal-breakout)¹
 - [Six-axis interface board](/extensions/historical-six-axis-breakout)¹
 - [Leadshine-like external servo drivers](/extensions/leadshine-like-external-servo-drivers)
@@ -375,7 +375,7 @@ The [complete extension-board directory](/extension-boards) describes what each 
 - [Stepper motor driver breakout board (Allegro)](/extensions/stepper-driver-breakout-allegro)
 - [Stepper motor driver breakout board (Trinamic)](/extensions/stepper-driver-breakout-trinamic)
 - [Position feedback board](/extensions/position-feedback-board)
-- [Bouni spindle control](/extensions/bouni-spindle-module-boards)
+- [SPINDLE CONTROL BREAKOUTS (bouni)](/extensions/spindle-control-breakouts)
 - [Three-channel A5984 stepper driver board](/extensions/three-channel-a5984-stepper-driver)
 
 {::nomarkdown}
@@ -441,7 +441,7 @@ The [complete extension-board directory](/extension-boards) describes what each 
 - [Extruder toolhead harness without motor](/extensions/historical-extruder-toolhead-harness-without-motor)¹
 - [Flambegate — High-side heater shutoff](/extensions/historical-flambegate)¹
 - [Flambehub — Hardware trigger and power-disconnect hub](/extensions/historical-flambehub)¹
-- [Four-PWM/two-input/probe interface](/extensions/historical-gadgeteer-pwm-io-board)¹
+- [Four-PWM/two-input/probe interface](/extensions/historical-pwm-io-board)¹
 - [Gate boards](/extensions/gate-boards)
 - [Additional general purpose outputs breakout / Servo board](/extensions/general-purpose-output-servo-board)
 - [IR remote emitter](/extensions/infrared-remote-emitter)
@@ -475,26 +475,27 @@ The [complete extension-board directory](/extension-boards) describes what each 
 
 - [64-pin SPI I/O expander](/extensions/spi-io-expander)
 - [Bidirectional level shifting board](/extensions/bidirectional-level-shifting-board)
-- [Bouni RS-485 spindle control](/extensions/bouni-rs485-spindle-control)
+- [RS232 BREAKOUT (bouni)](/extensions/rs232-breakout)
+- [RS485/SPINDLE CONTROL BREAKOUT (bouni)](/extensions/rs485-spindle-control-breakout)
 - [Cheap UART adapter breakout](/extensions/cheap-uart-adapter-breakout)
 - [Differential I2C signal extender](/extensions/differential-i2c-signal-extender)
 - [Differential signal extender](/extensions/differential-signal-extender)
 - [Differential SPI LVDS extender](/extensions/historical-differential-spi-lvds-extender)¹
 - [Differential SPI signal extender](/extensions/differential-spi-signal-extender)
 - [Differential STEP/DIR/ENABLE extender](/extensions/differential-step-dir-en-extender)
-- [Fourteen channel 3.3/5 V level shifter](/extensions/historical-gadgeteer-3v3-5v-level-shifter)¹
-- [Gadgeteer RS-232 level adapter](/extensions/historical-gadgeteer-rs232-adapter)¹
-- [Gadgeteer-to-CAN adapter](/extensions/gadgeteer-to-can)
-- [Gadgeteer Qwiic hub](/extensions/historical-gadgeteer-qwiic-adapter)¹
+- [Fourteen-channel 3.3/5 V level shifter](/extensions/historical-3v3-5v-level-shifter)¹
+- [RS-232 level adapter](/extensions/historical-rs232-level-adapter)¹
+- [CAN bus adapter](/extensions/can-bus-adapter)
+- [Qwiic hub](/extensions/historical-qwiic-hub)¹
 - [jaUART CP2104 USB-UART adapter](/extensions/historical-jauart-usb-uart-adapter)¹
 - [Long distance extender](/extensions/long-distance-extender)
 - [Opto-isolation pass-through board](/extensions/opto-isolation-pass-through-board)
-- [Qwiic-to-Gadgeteer adapter](/extensions/qwiic-to-gadgeteer-adapter)
+- [Qwiic expansion adapter](/extensions/qwiic-expansion-adapter)
 - [Serial to WiFi board](/extensions/serial-to-wifi-board)
 - [SPI hub](/extensions/spi-hub)
 - [UART breakout](/extensions/uart-breakout)
 - [USB/Serial breakout](/extensions/usb-serial-breakout)
-- [Wireless Gadgeteer extender](/extensions/wireless-gadgeteer-extender)
+- [Wireless expansion extender](/extensions/wireless-expansion-extender)
 - [Wireless series Smoothieboard-side master](/extensions/wireless-series-master)
 - [BreakoutPins](/extensions/historical-breakoutpins)¹
 - [BreakoutTerm](/extensions/historical-breakoutterm)¹
@@ -515,11 +516,11 @@ The [complete extension-board directory](/extension-boards) describes what each 
 - [16-key keypad](/extensions/sixteen-key-keypad)
 - [8x8 LED matrix](/extensions/led-matrix-8x8)
 - [Button boards](/extensions/button-boards)
-- [Buzzer module](/extensions/buzzer-module)
+- [Buzzer breakout](/extensions/buzzer-breakout)
 - [Camera trigger board](/extensions/camera-trigger-board)
 - [Character LCD display](/extensions/character-lcd-display)
 - [Debug probe](/extensions/debug-probe)
-- [DIP-switch and debounced-input board](/extensions/historical-gadgeteer-dip-switch-board)¹
+- [DIP-switch and debounced-input board](/extensions/historical-dip-switch-board)¹
 - [GLCD breakout](/extensions/glcd-breakout)
 - [Handwheel encoder interface](/extensions/rotary-encoder-handwheel-interface)
 - [LED bar, 8 lamps](/extensions/led-bar-8)
@@ -527,7 +528,7 @@ The [complete extension-board directory](/extension-boards) describes what each 
 - [RGB LED board](/extensions/rgb-led-board)
 - [Rotary potentiometer board](/extensions/rotary-potentiometer-board)
 - [SD audio player](/extensions/sd-audio-player)
-- [Seven-LED GPIO board](/extensions/historical-gadgeteer-led-breakout)¹
+- [Seven-LED GPIO board](/extensions/historical-seven-led-breakout)¹
 - [LED breakout](/extensions/led-breakout)
 - [SD card breakout](/extensions/sd-card-breakout)
 - [Thumb joystick breakout](/extensions/joystick-breakout)
@@ -546,25 +547,25 @@ The [complete extension-board directory](/extension-boards) describes what each 
 ### Host adapters and prototyping
 
 - [Arduino adapter](/extensions/arduino-adapter)
-- [Arduino-to-Gadgeteer shield](/extensions/arduino-to-gadgeteer-shield)
+- [Arduino expansion shield](/extensions/arduino-expansion-shield)
 - [BeagleBone breakout](/extensions/beaglebone-breakout)
 - [Breadboard board](/extensions/breadboard-board)
 - [C.H.I.P. breakout board](/extensions/chip-breakout-board)
 - [CPLD adapter](/extensions/cpld-adapter)
-- [D-sub-to-Gadgeteer IN adapter](/extensions/d-sub-to-gadgeteer-in)
-- [D-sub-to-Gadgeteer OUT adapter](/extensions/d-sub-to-gadgeteer-out)
+- [D-sub input adapter](/extensions/d-sub-input-adapter)
+- [D-sub output adapter](/extensions/d-sub-output-adapter)
 - [Dual-device I2C digital potentiometer](/extensions/historical-dual-digital-potentiometer)¹
-- [ESP32 DevKit to Gadgeteer host board](/extensions/esp32-to-gadgeteer-host)
-- [Five-port Gadgeteer header adapter](/extensions/historical-five-port-gadgeteer-header-adapter)¹
+- [ESP32 DevKit expansion host](/extensions/esp32-devkit-expansion-host)
+- [Five-port expansion header adapter](/extensions/historical-five-port-header-adapter)¹
 - [Intel Edison breakout](/extensions/intel-edison-breakout)
 - [Papilio adapter](/extensions/papilio-adapter)
 - [Parallel port breakout](/extensions/parallel-port-breakout)
-- [Gadgeteer perma-proto breadboard](/extensions/perma-proto-gadgeteer)
-- [Raspberry Pi 40-pin to Gadgeteer HAT](/extensions/raspberry-pi-to-gadgeteer-hat)
+- [Perma-proto breadboard](/extensions/perma-proto-breadboard)
+- [Raspberry Pi 40-pin expansion HAT](/extensions/raspberry-pi-expansion-hat)
 - [Raspberry Pi Zero breakout](/extensions/raspberry-pi-zero-breakout)
 - [Raw pins breakout](/extensions/raw-pins-breakout)
 - [Raw pins screw terminal breakout](/extensions/raw-pins-screw-terminal-breakout)
-- [Teensy 4.1 to Gadgeteer host board](/extensions/teensy-to-gadgeteer-host)
+- [Teensy 4.1 expansion host](/extensions/teensy-expansion-host)
 - [C.H.I.P. DIP computer carrier](/extensions/historical-chip-dip-computer-carrier)¹
 - [Raspberry Pi Zero carrier with Ethernet](/extensions/historical-raspberry-pi-zero-ethernet)¹
 - [Raspberry Pi Zero carrier interface](/extensions/historical-raspberry-pi-zero-interface)¹

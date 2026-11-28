@@ -28,8 +28,8 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/advanced-h-bridge-encoder-board">Advanced H-bridge encoder board</a></p><p>A brushed DC motor controller combining a VNH5019A-E H-bridge, quadrature encoder inputs and current monitoring.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/bouni-analog-spindle-control" aria-label="Open the Bouni analog spindle control guide"><img src="/images/extensions/bouni-analog-spindle-control/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/bouni-analog-spindle-control">Bouni analog spindle control</a></p><p>Converts a controller PWM signal into an analog speed command and provides separate run control.</p></td>
+    <td><a href="/extensions/analog-spindle-control-breakout" aria-label="Open the ANALOG SPINDLE CONTROL BREAKOUT (bouni) guide"><img src="/images/extensions/analog-spindle-control-breakout/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/analog-spindle-control-breakout">ANALOG SPINDLE CONTROL BREAKOUT (bouni)</a></p><p>Converts a controller PWM signal into an analog speed command and provides separate run control.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/historical-external-stepper-signal-breakout" aria-label="Open the External STEP/DIR signal breakout guide"><img src="/images/extensions/historical-external-stepper-signal-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -72,8 +72,8 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/stepper-driver-breakout-trinamic">Stepper motor driver breakout board (Trinamic TMC2660)</a></p><p>Adds one bipolar TMC2660 stepper channel controlled by STEP/DIR and SPI.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/bouni-spindle-module-boards" aria-label="Open the Bouni spindle control guide"><img src="/images/extensions/bouni-analog-spindle-control/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/bouni-spindle-module-boards">Bouni spindle control</a></p><p>Starting page for choosing between the analog and the RS-485 spindle control boards.</p></td>
+    <td><a href="/extensions/spindle-control-breakouts" aria-label="Open the SPINDLE CONTROL BREAKOUTS (bouni) guide"><img src="/images/extensions/analog-spindle-control-breakout/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/spindle-control-breakouts">SPINDLE CONTROL BREAKOUTS (bouni)</a></p><p>Starting page for choosing between the analog and the RS-485 spindle control boards.</p></td>
   </tr>
 </tbody>
 <tbody aria-labelledby="sensors-and-inputs">
@@ -250,8 +250,8 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/historical-flambehub">Flambehub — Hardware trigger and power-disconnect hub</a></p><p>Flambehub combines eight hardware trigger inputs with an MCU input and a relay power-disconnect circuit.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/historical-gadgeteer-pwm-io-board" aria-label="Open the Four-PWM/two-input/probe interface guide"><img src="/images/extensions/historical-gadgeteer-pwm-io-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/historical-gadgeteer-pwm-io-board">Four-PWM/two-input/probe interface</a></p><p>A V2 PWM accessory combining four MOSFET-buffered PWM outputs, two passively debounced switch inputs and an LMV331 comparator probe input.</p></td>
+    <td><a href="/extensions/historical-pwm-io-board" aria-label="Open the Four-PWM/two-input/probe interface guide"><img src="/images/extensions/historical-pwm-io-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-pwm-io-board">Four-PWM/two-input/probe interface</a></p><p>A V2 PWM accessory combining four MOSFET-buffered PWM outputs, two passively debounced switch inputs and an LMV331 comparator probe input.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/gate-boards" aria-label="Open the Gate boards guide"><img src="/images/extensions/gate-boards/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
@@ -345,8 +345,12 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/bidirectional-level-shifting-board">Bidirectional level shifting board</a></p><p>A seven-channel digital level interface between a 3.3 V host domain and a separate peripheral domain.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/bouni-rs485-spindle-control" aria-label="Open the Bouni RS-485 spindle control guide"><img src="/images/extensions/bouni-rs485-spindle-control/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/bouni-rs485-spindle-control">Bouni RS-485 spindle control</a></p><p>Provides an isolated RS-485 connection between a controller and a compatible drive.</p></td>
+    <td>DE-9 and screw terminals</td>
+    <td><p class="extension-board-name"><a href="/extensions/rs232-breakout">RS232 BREAKOUT (bouni)</a></p><p>Isolated three-wire serial link with a nine-pin D-sub and screw terminals.</p></td>
+  </tr>
+  <tr>
+    <td><a href="/extensions/rs485-spindle-control-breakout" aria-label="Open the RS485/SPINDLE CONTROL BREAKOUT (bouni) guide"><img src="/images/extensions/rs485-spindle-control-breakout/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/rs485-spindle-control-breakout">RS485/SPINDLE CONTROL BREAKOUT (bouni)</a></p><p>Provides an isolated RS-485 connection between a controller and a compatible drive.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/cheap-uart-adapter-breakout" aria-label="Open the Cheap UART adapter breakout guide"><img src="/images/extensions/cheap-uart-adapter-breakout/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
@@ -373,20 +377,20 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/differential-step-dir-en-extender">Differential step/dir/en extender</a></p><p>A host and remote board carrying STEP, DIR and ENABLE to a Leadshine DM556E.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/historical-gadgeteer-3v3-5v-level-shifter" aria-label="Open the Fourteen channel 3.3/5 V level shifter guide"><img src="/images/extensions/historical-gadgeteer-3v3-5v-level-shifter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/historical-gadgeteer-3v3-5v-level-shifter">Fourteen channel 3.3/5 V level shifter</a></p><p>Fourteen bidirectional translation channels interface two seven-signal Gadgeteer groups to 5 V-side pin rows.</p></td>
+    <td><a href="/extensions/historical-3v3-5v-level-shifter" aria-label="Open the Fourteen-channel 3.3/5 V level shifter guide"><img src="/images/extensions/historical-3v3-5v-level-shifter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-3v3-5v-level-shifter">Fourteen-channel 3.3/5 V level shifter</a></p><p>Fourteen bidirectional translation channels interface two seven-signal Gadgeteer groups to 5 V-side pin rows.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/historical-gadgeteer-qwiic-adapter" aria-label="Open the Historical Gadgeteer Qwiic hub guide"><img src="/images/extensions/historical-gadgeteer-qwiic-adapter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/historical-gadgeteer-qwiic-adapter">Historical Gadgeteer Qwiic hub</a></p><p>This passive adapter exposes the Gadgeteer I2C pair through four Qwiic-style four-contact connectors while retaining a second ten-contact header.</p></td>
+    <td><a href="/extensions/historical-qwiic-hub" aria-label="Open the Qwiic hub guide"><img src="/images/extensions/historical-qwiic-hub/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-qwiic-hub">Qwiic hub</a></p><p>This passive adapter exposes the Gadgeteer I2C pair through four Qwiic-style four-contact connectors while retaining a second ten-contact header.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/historical-gadgeteer-rs232-adapter" aria-label="Open the Gadgeteer RS-232 level adapter guide"><img src="/images/extensions/historical-gadgeteer-rs232-adapter/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/historical-gadgeteer-rs232-adapter">Gadgeteer RS-232 level adapter</a></p><p>A MAX3232 converts host UART/control signals into bipolar RS-232 electrical levels.</p></td>
+    <td><a href="/extensions/historical-rs232-level-adapter" aria-label="Open the RS-232 level adapter guide"><img src="/images/extensions/historical-rs232-level-adapter/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-rs232-level-adapter">RS-232 level adapter</a></p><p>A MAX3232 converts host UART/control signals into bipolar RS-232 electrical levels.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/gadgeteer-to-can" aria-label="Open the Gadgeteer-to-CAN adapter guide"><img src="/images/extensions/gadgeteer-to-can/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/gadgeteer-to-can">Gadgeteer-to-CAN adapter</a></p><p>An isolated CAN transceiver between a controller CAN transmit and receive pair and a three-way CAN bus terminal.</p></td>
+    <td><a href="/extensions/can-bus-adapter" aria-label="Open the CAN bus adapter guide"><img src="/images/extensions/can-bus-adapter/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/can-bus-adapter">CAN bus adapter</a></p><p>An isolated CAN transceiver between a controller CAN transmit and receive pair and a three-way CAN bus terminal.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/historical-jauart-usb-uart-adapter" aria-label="Open the jaUART CP2104 USB-UART adapter guide"><img src="/images/extensions/historical-jauart-usb-uart-adapter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -405,8 +409,8 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/opto-isolation-pass-through-board">Opto-Isolation pass-through board</a></p><p>Isolated SPI and control signals between a controller and a separately grounded peripheral.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/qwiic-to-gadgeteer-adapter" aria-label="Open the Qwiic-to-Gadgeteer adapter guide"><img src="/images/extensions/qwiic-to-gadgeteer-adapter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/qwiic-to-gadgeteer-adapter">Qwiic-to-Gadgeteer adapter</a></p><p>A passive adapter from a ten-contact Gadgeteer I²C socket to two 3.3 V Qwiic ports, with a chain socket.</p></td>
+    <td><a href="/extensions/qwiic-expansion-adapter" aria-label="Open the Qwiic expansion adapter guide"><img src="/images/extensions/qwiic-expansion-adapter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/qwiic-expansion-adapter">Qwiic expansion adapter</a></p><p>A passive adapter from a ten-contact Gadgeteer I²C socket to two 3.3 V Qwiic ports, with a chain socket.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/serial-to-wifi-board" aria-label="Open the Serial to WiFi Board guide"><img src="/images/extensions/serial-to-wifi-board/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -433,8 +437,8 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/usb-serial-breakout">USB/Serial breakout</a></p><p>A USB-B to 3.3 V UART interface on a Gadgeteer U connector, with an FT231XS bridge, activity lights and a chain socket.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/wireless-gadgeteer-extender" aria-label="Open the Wireless gadgeteer extender guide"><img src="/images/extensions/wireless-gadgeteer-extender/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/wireless-gadgeteer-extender">Wireless gadgeteer extender</a></p><p>One board per end of a radio link carrying seven digital channels, based on the MDBT42Q nRF52832 module, for use with your own firmware.</p></td>
+    <td><a href="/extensions/wireless-expansion-extender" aria-label="Open the Wireless expansion extender guide"><img src="/images/extensions/wireless-expansion-extender/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/wireless-expansion-extender">Wireless expansion extender</a></p><p>One board per end of a radio link carrying seven digital channels, based on the MDBT42Q nRF52832 module, for use with your own firmware.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/wireless-series-master" aria-label="Open the Wireless series — Smoothieboard-side “Master guide"><img src="/images/extensions/wireless-series-master/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -456,8 +460,8 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/button-boards">Button boards</a></p><p>Presents seven mechanical momentary buttons to a Gadgeteer host socket.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/buzzer-module" aria-label="Open the Buzzer module guide"><img src="/images/extensions/buzzer-module/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/buzzer-module">Buzzer module</a></p><p>A 5 V active buzzer with a MOSFET driver, a Gadgeteer input and chain socket, and an alternative three-pin input.</p></td>
+    <td><a href="/extensions/buzzer-breakout" aria-label="Open the Buzzer breakout guide"><img src="/images/extensions/buzzer-breakout/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/buzzer-breakout">Buzzer breakout</a></p><p>A 5 V active buzzer with a MOSFET driver, a Gadgeteer input and chain socket, and an alternative three-pin input.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/camera-trigger-board" aria-label="Open the Camera trigger board guide"><img src="/images/extensions/camera-trigger-board/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
@@ -472,16 +476,16 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/debug-probe">Debug Probe (Black Magic Probe clone)</a></p><p>A USB debug probe that connects a development computer to the controller’s SWD/JTAG interface.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/historical-gadgeteer-dip-switch-board" aria-label="Open the DIP-switch and debounced-input board guide"><img src="/images/extensions/historical-gadgeteer-dip-switch-board/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/historical-gadgeteer-dip-switch-board">DIP-switch and debounced-input board</a></p><p>Four onboard DIP switches and three conditioned external inputs provide seven digital states for V2.</p></td>
+    <td><a href="/extensions/historical-dip-switch-board" aria-label="Open the DIP-switch and debounced-input board guide"><img src="/images/extensions/historical-dip-switch-board/directory-preview.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-dip-switch-board">DIP-switch and debounced-input board</a></p><p>Four onboard DIP switches and three conditioned external inputs provide seven digital states for V2.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/rotary-encoder-handwheel-interface" aria-label="Open the Handwheel encoder interface guide"><img src="/images/extensions/rotary-encoder-handwheel-interface/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/rotary-encoder-handwheel-interface">Handwheel encoder interface</a></p><p>Connects a 5 V jogging handwheel or encoder to the controller.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/historical-gadgeteer-led-breakout" aria-label="Open the Historical seven-LED GPIO board guide"><img src="/images/extensions/historical-gadgeteer-led-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/historical-gadgeteer-led-breakout">Historical seven-LED GPIO board</a></p><p>Seven indicators connect host GPIOs through1 kΩ resistors to LED anodes, with cathodes at ground.</p></td>
+    <td><a href="/extensions/historical-seven-led-breakout" aria-label="Open the Seven-LED GPIO board guide"><img src="/images/extensions/historical-seven-led-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-seven-led-breakout">Seven-LED GPIO board</a></p><p>Seven indicators connect host GPIOs through1 kΩ resistors to LED anodes, with cathodes at ground.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/glcd-breakout" aria-label="Open the GLCD breakout guide"><img src="/images/extensions/glcd-breakout/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
@@ -539,8 +543,8 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/arduino-adapter">Arduino adapter</a></p><p>A carrier that connects an Arduino Uno-format shield to five Gadgeteer sockets of a controller, with software-configured signal direction and two Qwiic ports.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/arduino-to-gadgeteer-shield" aria-label="Open the Arduino-to-Gadgeteer shield guide"><img src="/images/extensions/arduino-to-gadgeteer-shield/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/arduino-to-gadgeteer-shield">Arduino-to-Gadgeteer shield</a></p><p>A shield that gives an Arduino Due six Gadgeteer sockets and a Qwiic port, with switched signals and current-limited supply rails.</p></td>
+    <td><a href="/extensions/arduino-expansion-shield" aria-label="Open the Arduino expansion shield guide"><img src="/images/extensions/arduino-expansion-shield/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/arduino-expansion-shield">Arduino expansion shield</a></p><p>A shield that gives an Arduino Due six Gadgeteer sockets and a Qwiic port, with switched signals and current-limited supply rails.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/beaglebone-breakout" aria-label="Open the BeagleBone breakout guide"><img src="/images/extensions/beaglebone-breakout/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
@@ -571,24 +575,24 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/cpld-adapter">CPLD adapter</a></p><p>A MachXO2 CPLD between controller STEP/DIR/ENABLE signals and a 5 V logic receiver.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/d-sub-to-gadgeteer-in" aria-label="Open the D-sub-to-Gadgeteer IN adapter guide"><img src="/images/extensions/d-sub-to-gadgeteer-in/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/d-sub-to-gadgeteer-in">D-sub-to-Gadgeteer IN adapter</a></p><p>The controller end of a DE-9 extension for a Gadgeteer socket: seven signals, 5 V and ground onto a DE-9 cable.</p></td>
+    <td><a href="/extensions/d-sub-input-adapter" aria-label="Open the D-sub input adapter guide"><img src="/images/extensions/d-sub-input-adapter/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/d-sub-input-adapter">D-sub input adapter</a></p><p>The controller end of a DE-9 extension for a Gadgeteer socket: seven signals, 5 V and ground onto a DE-9 cable.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/d-sub-to-gadgeteer-out" aria-label="Open the D-sub-to-Gadgeteer OUT adapter guide"><img src="/images/extensions/d-sub-to-gadgeteer-out/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/d-sub-to-gadgeteer-out">D-sub-to-Gadgeteer OUT adapter</a></p><p>The remote end of a DE-9 extension for a Gadgeteer socket: seven signals and 5 V in, a socket and a locally made 3.3 V out.</p></td>
+    <td><a href="/extensions/d-sub-output-adapter" aria-label="Open the D-sub output adapter guide"><img src="/images/extensions/d-sub-output-adapter/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/d-sub-output-adapter">D-sub output adapter</a></p><p>The remote end of a DE-9 extension for a Gadgeteer socket: seven signals and 5 V in, a socket and a locally made 3.3 V out.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/historical-dual-digital-potentiometer" aria-label="Open the Dual-device I2C digital potentiometer guide"><img src="/images/extensions/historical-dual-digital-potentiometer/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
     <td><p class="extension-board-name"><a href="/extensions/historical-dual-digital-potentiometer">Dual-device I2C digital potentiometer</a></p><p>Two MCP44X1-family devices expose four wiper outputs each.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/esp32-to-gadgeteer-host" aria-label="Open the ESP32 DevKit to Gadgeteer host board guide"><img src="/images/extensions/esp32-to-gadgeteer-host/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/esp32-to-gadgeteer-host">ESP32 DevKit to Gadgeteer host board</a></p><p>A carrier that gives an ESP32-DevKitC-32E five Gadgeteer sockets and an I²C connector, with series resistors and ESD protection.</p></td>
+    <td><a href="/extensions/esp32-devkit-expansion-host" aria-label="Open the ESP32 DevKit expansion host guide"><img src="/images/extensions/esp32-devkit-expansion-host/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/esp32-devkit-expansion-host">ESP32 DevKit expansion host</a></p><p>A carrier that gives an ESP32-DevKitC-32E five Gadgeteer sockets and an I²C connector, with series resistors and ESD protection.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/historical-five-port-gadgeteer-header-adapter" aria-label="Open the Five-port Gadgeteer header adapter guide"><img src="/images/extensions/historical-five-port-gadgeteer-header-adapter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/historical-five-port-gadgeteer-header-adapter">Five-port Gadgeteer header adapter</a></p><p>This passive carrier converts five ten-contact Gadgeteer ports into seven-signal2.54 mm socket rows and shared power breakouts.</p></td>
+    <td><a href="/extensions/historical-five-port-header-adapter" aria-label="Open the Five-port expansion header adapter guide"><img src="/images/extensions/historical-five-port-header-adapter/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/historical-five-port-header-adapter">Five-port expansion header adapter</a></p><p>This passive carrier converts five ten-contact Gadgeteer ports into seven-signal2.54 mm socket rows and shared power breakouts.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/intel-edison-breakout" aria-label="Open the Intel Edison breakout guide"><img src="/images/extensions/intel-edison-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -603,12 +607,12 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/parallel-port-breakout">Parallel-port bench test jig</a></p><p>A bench fixture with digital isolators for exercising twelve parallel-port outputs and five inputs against a dummy DB25.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/perma-proto-gadgeteer" aria-label="Open the Gadgeteer perma-proto guide"><img src="/images/extensions/perma-proto-gadgeteer/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/perma-proto-gadgeteer">Gadgeteer perma-proto</a></p><p>Use this passive board to solder a low-voltage prototype on existing Smoothieboard pins, with power lamps and a second connector you wire yourself.</p></td>
+    <td><a href="/extensions/perma-proto-breadboard" aria-label="Open the Perma-proto breadboard guide"><img src="/images/extensions/perma-proto-breadboard/directory-board-render.webp" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/perma-proto-breadboard">Perma-proto breadboard</a></p><p>Use this passive board to solder a low-voltage prototype on existing Smoothieboard pins, with power lamps and a second connector you wire yourself.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/raspberry-pi-to-gadgeteer-hat" aria-label="Open the Raspberry Pi 40-pin to Gadgeteer HAT guide"><img src="/images/extensions/raspberry-pi-to-gadgeteer-hat/guides/raspberry-pi-hat-abstract.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/raspberry-pi-to-gadgeteer-hat">Raspberry Pi 40-pin to Gadgeteer HAT</a></p><p>A Raspberry Pi 40-pin HAT with five Gadgeteer sockets and a Qwiic port, with series resistors and ESD protection on every GPIO.</p></td>
+    <td><a href="/extensions/raspberry-pi-expansion-hat" aria-label="Open the Raspberry Pi 40-pin expansion HAT guide"><img src="/images/extensions/raspberry-pi-expansion-hat/guides/raspberry-pi-hat-abstract.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/raspberry-pi-expansion-hat">Raspberry Pi 40-pin expansion HAT</a></p><p>A Raspberry Pi 40-pin HAT with five Gadgeteer sockets and a Qwiic port, with series resistors and ESD protection on every GPIO.</p></td>
   </tr>
   <tr>
     <td><a href="/extensions/raspberry-pi-zero-breakout" aria-label="Open the Raspberry Pi Zero breakout guide"><img src="/images/extensions/raspberry-pi-zero-breakout/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
@@ -631,8 +635,8 @@ Historical entries appear alongside related modern boards. A similar name does n
     <td><p class="extension-board-name"><a href="/extensions/raw-pins-screw-terminal-breakout">Raw pins screw terminal breakout</a></p><p>Exposes low-voltage signal, rail and ground contacts at screw terminals, with a downstream chain port.</p></td>
   </tr>
   <tr>
-    <td><a href="/extensions/teensy-to-gadgeteer-host" aria-label="Open the Teensy 4.1 to Gadgeteer host board guide"><img src="/images/extensions/teensy-to-gadgeteer-host/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
-    <td><p class="extension-board-name"><a href="/extensions/teensy-to-gadgeteer-host">Teensy 4.1 to Gadgeteer host board</a></p><p>A carrier that gives a Teensy 4.1 six Gadgeteer sockets and an I²C connector, with series resistors and ESD protection.</p></td>
+    <td><a href="/extensions/teensy-expansion-host" aria-label="Open the Teensy 4.1 expansion host guide"><img src="/images/extensions/teensy-expansion-host/directory-board-render.png" alt="" loading="lazy" decoding="async"></a></td>
+    <td><p class="extension-board-name"><a href="/extensions/teensy-expansion-host">Teensy 4.1 expansion host</a></p><p>A carrier that gives a Teensy 4.1 six Gadgeteer sockets and an I²C connector, with series resistors and ESD protection.</p></td>
   </tr>
 </tbody>
 </table>
