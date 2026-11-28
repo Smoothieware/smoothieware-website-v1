@@ -1,0 +1,56 @@
+References,Quantity,Value,Footprint,Manufacturer,MPN,Source
+C1 C2 C15,3,100nF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,,
+C10,1,10uF 50V X7R,Capacitor_SMD:C_1210_3225Metric,,,
+C13 C14,2,22uF 10V X7R,Capacitor_SMD:C_1206_3216Metric,,,
+C17 C18,2,2.2uF 16V X7R,Capacitor_SMD:C_0805_2012Metric,,,
+C3 CF4 CF5 C16,4,10uF 16V X7R,Capacitor_SMD:C_0805_2012Metric,,,
+C4,1,1nF 2kV X7R,Capacitor_SMD:C_1206_3216Metric,,,
+CF1,1,100nF 25V X7R,Capacitor_SMD:C_0603_1608Metric,,,
+CF2 C11 C12,3,100nF 50V X7R,Capacitor_SMD:C_0603_1608Metric,,,
+CF3,1,1uF 50V X7R,Capacitor_SMD:C_0603_1608Metric,,,
+D1,1,B340A,Diode_SMD:D_SMA,Diodes Incorporated,B340A-13-F,
+D2,1,SMBJ15A,Diode_SMD:D_SMB,Littelfuse,SMBJ15A,
+D3,1,GREEN 3V3,LED_SMD:LED_0603_1608Metric,Lite-On,LTST-C190KGKT,
+D4,1,RED 5V,LED_SMD:LED_0603_1608Metric,Lite-On,LTST-C190KRKT,
+DF1 DF6,2,1N4148WS-7-F,Diode_SMD:D_SOD-323,Diodes Incorporated,1N4148WS-7-F,
+DF2,1,RED FAULT,LED_SMD:LED_0805_2012Metric,Lite-On,LTST-C170KRKT,
+DF3 DF9 DF10,3,BAT54WS-7-F,Diode_SMD:D_SOD-323,Diodes Incorporated,BAT54WS-7-F,
+DF4 DF11,2,BZT52C12S-7-F,Diode_SMD:D_SOD-323,Diodes Incorporated,BZT52C12S-7-F,
+DF5,1,RED OVERVOLTAGE,LED_SMD:LED_0805_2012Metric,Lite-On,LTST-C170KRKT,
+DF7,1,BZT52C3V9S-7-F,Diode_SMD:D_SOD-323,Diodes Incorporated,BZT52C3V9S-7-F,
+DF8,1,RED REVERSE,LED_SMD:LED_0805_2012Metric,Lite-On,LTST-C170KRKT,
+F1,1,MF-NSMF012-2,Fuse:Fuse_1206_3216Metric,,,
+J1,1,I OUT A,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC,https://suddendocs.samtec.com/catalog_english/shf.pdf
+J2,1,I OUT B,SmoothieBoardgen:Samtec_SHF105_TH_LC,Samtec,SHF-105-01-L-D-TH-LC,https://suddendocs.samtec.com/catalog_english/shf.pdf
+J3,1,12V DC IN,"TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal",Phoenix Contact,1715721,
+J5,1,CABLE IN,Connector_RJ:RJ45_Amphenol_RJHSE5380,Amphenol,RJHSE-5380,https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/rjhse538x.pdf
+J6,1,QWIIC 3V3,Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal,JST,SM04B-SRSS-TB(LF)(SN),https://www.jst-mfg.com/product/pdf/eng/eSH.pdf
+J8,1,CABLE OUT,Connector_RJ:RJ45_Amphenol_RJHSE5380,Amphenol,RJHSE-5380,https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/rjhse538x.pdf
+L1,1,4.7uH 2A,Inductor_SMD:L_Bourns-SRN4018,Bourns,SRN4018-4R7M,
+QF1 QF2,2,MMBT3904-7-F,Package_TO_SOT_SMD:SOT-23,Diodes Incorporated,MMBT3904-7-F,https://www.diodes.com/assets/Datasheets/ds30036.pdf
+QF3,1,BSS84-7-F,Package_TO_SOT_SMD:SOT-23,Diodes Incorporated,BSS84-7-F,https://www.diodes.com/assets/Datasheets/ds30149.pdf
+R1 R2,2,3k3 1%,Resistor_SMD:R_0603_1608Metric,,,
+R10,1,470R,Resistor_SMD:R_0603_1608Metric,,,
+R11,1,10k,Resistor_SMD:R_0603_1608Metric,,,
+R12,1,150k 1%,Resistor_SMD:R_0603_1608Metric,,,
+R15,1,1k,Resistor_SMD:R_0603_1608Metric,,,
+R9,1,1M,Resistor_SMD:R_0603_1608Metric,,,
+RF1,1,72.0k 0.1%,Resistor_SMD:R_0603_1608Metric,,,
+RF10,1,10k 0.25W,Resistor_SMD:R_1206_3216Metric,,,
+RF11,1,4.7k 0.25W,Resistor_SMD:R_1206_3216Metric,,,
+RF12 RF13,2,47k 1%,Resistor_SMD:R_0603_1608Metric,,,
+RF16,1,2.2k 1%,Resistor_SMD:R_0603_1608Metric,,,
+RF17,1,100k 1%,Resistor_SMD:R_0603_1608Metric,,,
+RF2 RF4 RF8,3,10k 0.1%,Resistor_SMD:R_0603_1608Metric,,,
+RF3,1,110k 0.1%,Resistor_SMD:R_0603_1608Metric,,,
+RF5,1,24.0k 1%,Resistor_SMD:R_0603_1608Metric,,,
+RF6 RF14 RF15,3,10k 1%,Resistor_SMD:R_0603_1608Metric,,,
+RF7,1,45.3k 0.1%,Resistor_SMD:R_0603_1608Metric,,,
+RF9,1,8.2k 0.25W,Resistor_SMD:R_1206_3216Metric,,,
+U1,1,PCA9615DP,Package_SO:TSSOP-10_3x3mm_P0.5mm,NXP,PCA9615DPJ,https://www.nxp.com/docs/en/data-sheet/PCA9615.pdf
+U2 U6,2,TPD4E1U06DBVR,Package_TO_SOT_SMD:SOT-23-6,Texas Instruments,TPD4E1U06DBVR,https://www.ti.com/lit/ds/symlink/tpd4e1u06.pdf
+U3,1,AP63205WU-7,Package_TO_SOT_SMD:TSOT-23-6,Diodes Incorporated,AP63205WU-7,https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf
+U4,1,TPS2553DBVR,Package_TO_SOT_SMD:SOT-23-6,Texas Instruments,TPS2553DBVR,https://www.ti.com/lit/ds/symlink/tps2553.pdf
+U5,1,AP2112K-3.3,Package_TO_SOT_SMD:SOT-23-5,Diodes Incorporated,AP2112K-3.3TRG1,https://www.diodes.com/assets/Datasheets/AP2112.pdf
+UF1,1,TPS26600PWPR,Package_SO:HTSSOP-16-1EP_4.4x5mm_P0.65mm_EP3.4x5mm_Mask2.66x2.46mm,Texas Instruments,TPS26600PWPR,https://www.ti.com/lit/ds/symlink/tps2660.pdf
+UF2,1,TL431BIDBZR,Package_TO_SOT_SMD:SOT-23,Texas Instruments,TL431BIDBZR,https://www.ti.com/lit/ds/symlink/tl431.pdf

@@ -8,6 +8,7 @@ History: see CHANGELOG.archive.md.
 
 ### Fixed
 
+- Differential I2C signal extender page: the network jacks now open over the board edge; the remote has separate IN and OUT jacks for chaining, and the new terminator board closes the end of the cable.
 - Laser diode driver page rewritten for the real-diode board: wiring diagrams, pinout, Smoothieware V2 configuration examples, troubleshooting and simulation results. The page comes with new laser head, door switch, key switch and Smoothieboard Prime drawings and hosted chip datasheets. Updated to board revision v46: regulator diode moved next to the regulator, alignment marks, a second ground test point, manufacturing notes and full part numbers, with new drawing, renders, schematic and parts list.
 - Laser power-supply adapter page: simulation graphs redrawn in the site dark style (same data).
 - Three older breakout board pages now have eight board-tour points; the Bouni spindle chooser page shows both boards.
@@ -35,7 +36,7 @@ History: see CHANGELOG.archive.md.
 - Pictures are at most three quarters of the page width and half the screen height, keeping their proportions.
 - Full-screen image viewer for pictures and diagrams on every page: next and previous, wheel and pinch zoom, drag to pan, keyboard control.
 - Quick page search (Ctrl+K or /), "On this page" contents on wide screens, reading progress, back-to-top and copy buttons on code blocks.
-- New page: Differential I2C signal extender, a host and remote board pair, with drawings, wiring examples, limits, schematics and parts lists.
+- New page: Differential I2C signal extender (host board, chainable remote boards and a terminator board), with drawings, wiring examples, limits, schematics and parts lists.
 - Gadgeteer perma-proto page: new example project that delays STEP and DIR signals by about 1, 10 or 20 µs, with a DIP switch to choose which signal, fixed-capacitor and trimmer-capacitor drawings, a capacitor table, a timing graph and two chip datasheets.
 - A page for the Endstop inputs (basic) board: pinout, wiring, configuration, limits, mounting, electrical and simulation data, with a comparison against the Endstop and probe inputs (advanced) board on both pages.
 - Perma-proto Gadgeteer board page rebuilt, with three example projects (touch plate switch, 555 solenoid tapper, stepper motor as handwheel), populated-board drawings and Smoothie V2 settings.

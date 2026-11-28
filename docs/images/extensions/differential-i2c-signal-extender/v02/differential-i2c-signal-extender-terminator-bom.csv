@@ -1,0 +1,7 @@
+References,Quantity,Value,Footprint,Manufacturer,MPN,Source
+C1,1,100nF 16V X7R,Capacitor_SMD:C_0603_1608Metric,,,
+D1,1,RED 5V,LED_SMD:LED_0603_1608Metric,Lite-On,LTST-C190KRKT,
+J1,1,CABLE,Connector_RJ:RJ45_Amphenol_RJHSE5380,Amphenol,RJHSE-5380,https://cdn.amphenol-cs.com/media/wysiwyg/files/drawing/rjhse538x.pdf
+R1,1,1k,Resistor_SMD:R_0603_1608Metric,,,
+R3 R5 R6 R8,4,604R 1%,Resistor_SMD:R_0805_2012Metric,,,
+R4 R7,2,120R 1% 0.25W,Resistor_SMD:R_1206_3216Metric,,,

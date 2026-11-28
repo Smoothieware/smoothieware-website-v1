@@ -803,35 +803,52 @@
   "differential-i2c-signal-extender": [
     {
       "role": "host",
-      "version": "v01",
-      "cad_source_path": "extension-boards/src/differential-i2c-signal-extender/attempt/versions/v01/host/die-host.kicad_pcb",
-      "cad_sha256": "ff12c0e6b3cf76b4dc2236a72489b4a55f214d6ab83df9d903f927c8b433181d",
+      "version": "v02",
+      "cad_source_path": "extension-boards/src/differential-i2c-signal-extender/attempt/versions/v02/host/die-host.kicad_pcb",
+      "cad_sha256": "56b13f965aacb639d05efd03173d97a683d1c382fb29f75831f3d79a3ffcd4ed",
       "diagram": {
-        "url": "/images/extensions/differential-i2c-signal-extender/v01/differential-i2c-signal-extender-host-diagram.png",
-        "sha256": "23a952b3aa3be6d79eef34f18f87474e618face04c7325e71a8842fd704f3705",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/differential-i2c-signal-extender/v01/die-host.svg",
+        "url": "/images/extensions/differential-i2c-signal-extender/v02/differential-i2c-signal-extender-host-diagram.png",
+        "sha256": "8e8a09943543b0da79382bff7dc40ec8223d8941813122fe0e767f5e71db3191",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/differential-i2c-signal-extender/v02/die-host.svg",
         "source_hash_matches": true,
-        "embedded_cad_sha256": "ff12c0e6b3cf76b4dc2236a72489b4a55f214d6ab83df9d903f927c8b433181d",
-        "caption": "v01; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/differential-i2c-signal-extender/v01/differential-i2c-signal-extender-host-diagram.svg",
-        "archived_svg_sha256": "9b1a95a152fdde29bbeef6730702fe5695c4ed80f2e5d76c9002f4de18594353"
+        "embedded_cad_sha256": "56b13f965aacb639d05efd03173d97a683d1c382fb29f75831f3d79a3ffcd4ed",
+        "caption": "v02; source hash matches this CAD revision.",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/differential-i2c-signal-extender/v02/differential-i2c-signal-extender-host-diagram.svg",
+        "archived_svg_sha256": "fb900af53fe913218ac5cc2389fff19c6fddf64ef8babe537c58bcdaff5c4abe"
       },
       "renders": []
     },
     {
       "role": "remote",
-      "version": "v01",
-      "cad_source_path": "extension-boards/src/differential-i2c-signal-extender/attempt/versions/v01/remote/die-remote.kicad_pcb",
-      "cad_sha256": "d63b16d1291dbf833933ece7d67cdd47f380719341461832b76eb438c2ec22c8",
+      "version": "v02",
+      "cad_source_path": "extension-boards/src/differential-i2c-signal-extender/attempt/versions/v02/remote/die-remote.kicad_pcb",
+      "cad_sha256": "b1d3a6e5eee18079bed86320c7e04cf5246974521c3cb2a53580b46223d45bcd",
       "diagram": {
-        "url": "/images/extensions/differential-i2c-signal-extender/v01/differential-i2c-signal-extender-remote-diagram.png",
-        "sha256": "fe4623080d0dd089bd8eda12eb059bb78d904a4af393a5624949df1b21b44af5",
-        "source_path": "smoothie-diagrams/data/extension-board-renders/differential-i2c-signal-extender/v01/die-remote.svg",
+        "url": "/images/extensions/differential-i2c-signal-extender/v02/differential-i2c-signal-extender-remote-diagram.png",
+        "sha256": "c1b45cfcdae5de3cb13cd72cc816efd28cdd528a2e043df9ec46c87751f624d7",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/differential-i2c-signal-extender/v02/die-remote.svg",
         "source_hash_matches": true,
-        "embedded_cad_sha256": "d63b16d1291dbf833933ece7d67cdd47f380719341461832b76eb438c2ec22c8",
-        "caption": "v01; source hash matches this CAD revision.",
-        "archived_svg": "smoothie-diagrams/data/website-extension-svg/differential-i2c-signal-extender/v01/differential-i2c-signal-extender-remote-diagram.svg",
-        "archived_svg_sha256": "6d81ca76366fbcba012963964b9960e5055941ee7e218350fb5f7f7db9c1f4b1"
+        "embedded_cad_sha256": "b1d3a6e5eee18079bed86320c7e04cf5246974521c3cb2a53580b46223d45bcd",
+        "caption": "v02; source hash matches this CAD revision.",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/differential-i2c-signal-extender/v02/differential-i2c-signal-extender-remote-diagram.svg",
+        "archived_svg_sha256": "c9990cb9089904420ad200807d717815c946bee2378ce05d14b53c15a9f0b6f0"
+      },
+      "renders": []
+    },
+    {
+      "role": "terminator",
+      "version": "v02",
+      "cad_source_path": "extension-boards/src/differential-i2c-signal-extender/attempt/versions/v02/terminator/die-terminator.kicad_pcb",
+      "cad_sha256": "5397d1a8766fc07e8f7225a36b5d7f359aef1c77407358930bedb198ab3ac419",
+      "diagram": {
+        "url": "/images/extensions/differential-i2c-signal-extender/v02/differential-i2c-signal-extender-terminator-diagram.png",
+        "sha256": "a5dc2f28f133df5a95c427bcc0e18409d582db9b129e7e83f64cfc5de6b1fef7",
+        "source_path": "smoothie-diagrams/data/extension-board-renders/differential-i2c-signal-extender/v02/die-terminator.svg",
+        "source_hash_matches": true,
+        "embedded_cad_sha256": "5397d1a8766fc07e8f7225a36b5d7f359aef1c77407358930bedb198ab3ac419",
+        "caption": "v02; source hash matches this CAD revision.",
+        "archived_svg": "smoothie-diagrams/data/website-extension-svg/differential-i2c-signal-extender/v02/differential-i2c-signal-extender-terminator-diagram.svg",
+        "archived_svg_sha256": "5790ef6163c0657bffb5a4da4368ed9c0b91f1590bcdd66b7029bd07fd604928"
       },
       "renders": []
     }
